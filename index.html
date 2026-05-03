@@ -612,28 +612,33 @@ function buildStandings() {
     </tr>`;
   });
   
-  // Wall of Shame / Currently Paying logic
-  const relegationZone = sorted.slice(-3).reverse();
+  // Wall of Shame / Currently Paying logic (Based on LATEST GW performance)
+  const latestIdx = MAX_GW - 1;
+  const currentPayers = gwData.map(m => ({
+    manager: m.manager,
+    gwPt: m.gwPts[latestIdx],
+    weeklyRank: m.weeklyRanks[latestIdx]
+  })).sort((a, b) => b.weeklyRank - a.weeklyRank).slice(0, 3); // Worst 3 ranks
+  
   const shameEl = document.getElementById('wall-of-shame');
-  if (relegationZone.length === 3) {
+  if (currentPayers.length === 3) {
     shameEl.style.display = 'block';
     let shameHtml = `
       <div class="shame-banner">
         <div class="shame-title">
           <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
-          RELEGATION ZONE: THE CURRENT PAYERS
+          GW${MAX_GW} RELEGATION: THE CURRENT PAYERS
         </div>`;
     
-    relegationZone.forEach((m, idx) => {
+    currentPayers.forEach((m) => {
       const payRecord = payments.find(p => p.manager === m.manager);
       const outstanding = payRecord ? payRecord.owed - payRecord.paid : 0;
-      const rank = sorted.length - idx;
       shameHtml += `
         <div class="shame-card">
-          <div class="shame-rank">${rank}</div>
+          <div class="shame-rank">${m.weeklyRank}</div>
           <div class="shame-info">
             <div class="shame-name">${m.manager.split(' ')[0]}</div>
-            <div class="shame-amt">Owes: R${outstanding.toLocaleString()}</div>
+            <div class="shame-amt">Total Debt: R${outstanding.toLocaleString()}</div>
           </div>
         </div>`;
     });
