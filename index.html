@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FPL 2025/26 · Mini-League Dashboard</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root {
+    --green: #00ff87;
+    --green-dim: #00c96a;
+    --green-dark: #003d20;
+    --purple: #6c5ce7;
+    --purple-light: #a29bfe;
+    --red: #ff4757;
+    --amber: #ffa502;
+    --bg: #0d0f0e;
+    --surface: #141716;
+    --surface2: #1c1f1d;
+    --surface3: #222623;
+    --border: rgba(255,255,255,0.07);
+    --border-green: rgba(0,255,135,0.2);
+    --text: #f0f2f0;
+    --text-muted: #7a8a7e;
+    --text-dim: #4a5a4e;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:var(--font-body); font-size:14px; line-height:1.6; min-height:100vh; }
+  body::before { content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events:none; z-index:0; opacity:0.4; }
+  .page { position:relative; z-index:1; max-width:1200px; margin:0 auto; padding:0 24px 60px; }
+
+  header { padding:48px 0 40px; border-bottom:1px solid var(--border); margin-bottom:40px; position:relative; overflow:hidden; }
+  header::after { content:'FPL'; position:absolute; right:-20px; top:-10px; font-family:var(--font-display); font-size:200px; color:rgba(0,255,135,0.03); line-height:1; pointer-events:none; user-select:none; }
+  .header-top { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  .league-badge { display:flex; align-items:center; gap:16px; }
+  .badge-icon { width:52px; height:52px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .badge-icon svg { width:28px; height:28px; }
+  .league-name { font-family:var(--font-display); font-size:42px; letter-spacing:2px; line-height:1; }
+  .league-season { font-size:12px; color:var(--text-muted); letter-spacing:2px; text-transform:uppercase; margin-top:4px; font-family:var(--font-mono); }
+  .header-stats { display:flex; gap:32px; flex-wrap:wrap; }
+  .hstat { text-align:right; }
+  .hstat-value { font-family:var(--font-display); font-size:32px; color:var(--green); line-height:1; }
+  .hstat-label { font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-top:2px; }
+
+  .nav { display:flex; gap:4px; margin-bottom:32px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:4px; width:fit-content; flex-wrap:wrap; }
+  .nav-tab { padding:8px 20px; border-radius:9px; cursor:pointer; font-size:13px; font-weight:500; color:var(--text-muted); transition:all 0.2s; border:none; background:transparent; font-family:var(--font-body); white-space:nowrap; }
+  .nav-tab:hover { color:var(--text); }
+  .nav-tab.active { background:var(--surface3); color:var(--green); border:1px solid var(--border-green); }
+
+  .section { display:none; }
+  .section.active { display:block; }
+
+  .metrics-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:32px; }
+  .metric-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; position:relative; overflow:hidden; transition:border-color 0.2s; }
+  .metric-card:hover { border-color:var(--border-green); }
+  .metric-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--green); opacity:0; transition:opacity 0.2s; }
+  .metric-card:hover::before { opacity:1; }
+  .metric-label { font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; font-family:var(--font-mono); margin-bottom:8px; }
+  .metric-value { font-family:var(--font-display); font-size:36px; line-height:1; color:var(--text); }
+  .metric-value.green { color:var(--green); }
+  .metric-value.red { color:var(--red); }
+  .metric-value.amber { color:var(--amber); }
+  .metric-sub { font-size:11px; color:var(--text-dim); margin-top:4px; }
+
+  .standings-table { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+  .standings-table table { width:100%; border-collapse:collapse; }
+  .standings-table thead { background:var(--surface2); border-bottom:1px solid var(--border); }
+  .standings-table th { padding:12px 16px; font-size:11px; font-weight:500; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; text-align:left; font-family:var(--font-mono); }
+  .standings-table th:not(:first-child) { text-align:right; }
+  .standings-table td { padding:14px 16px; border-bottom:1px solid var(--border); vertical-align:middle; }
+  .standings-table tr:last-child td { border-bottom:none; }
+  .standings-table tr { transition:background 0.15s; }
+  .standings-table tr:hover { background:var(--surface2); }
+  .standings-table td:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) { text-align:right; }
+  .rank { font-family:var(--font-display); font-size:22px; color:var(--text-dim); width:40px; display:inline-block; }
+  .rank.top3 { color:var(--green); }
+  .manager-name { font-weight:500; font-size:14px; }
+  .team-name { font-size:12px; color:var(--text-muted); margin-top:1px; }
+  .pts { font-family:var(--font-mono); font-size:16px; font-weight:500; }
+  .pts-bar-wrap { width:80px; display:inline-block; vertical-align:middle; }
+  .pts-bar-bg { background:var(--surface3); height:4px; border-radius:2px; }
+  .pts-bar-fill { height:4px; border-radius:2px; background:var(--green); }
+  .bottom-badge { display:inline-block; font-size:10px; padding:2px 8px; background:rgba(255,71,87,0.15); color:var(--red); border-radius:999px; border:1px solid rgba(255,71,87,0.3); font-family:var(--font-mono); vertical-align:middle; margin-left:6px; }
+
+  .chart-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin-bottom:20px; }
+  .chart-title { font-family:var(--font-display); font-size:20px; letter-spacing:1px; color:var(--text); margin-bottom:4px; }
+  .chart-sub { font-size:12px; color:var(--text-muted); margin-bottom:20px; }
+
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px; }
+  @media (max-width:700px) { .two-col { grid-template-columns:1fr; } }
+
+  .payment-table-wrap { overflow-x:auto; }
+  .payment-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .payment-table thead { border-bottom:1px solid var(--border); }
+  .payment-table th { padding:10px 12px; font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; font-family:var(--font-mono); text-align:left; white-space:nowrap; font-weight:400; }
+  .payment-table td { padding:12px 12px; border-bottom:1px solid var(--border); vertical-align:middle; }
+  .payment-table tr:last-child td { border-bottom:none; }
+  .payment-table tr:hover { background:var(--surface2); }
+  .prog-bar { width:70px; display:inline-block; vertical-align:middle; }
+  .prog-bg { background:var(--surface3); height:4px; border-radius:2px; }
+  .prog-fill { height:4px; border-radius:2px; }
+  .badge { display:inline-block; padding:2px 10px; border-radius:999px; font-size:11px; font-family:var(--font-mono); }
+  .badge-green { background:rgba(0,255,135,0.1); color:var(--green-dim); border:1px solid rgba(0,255,135,0.2); }
+  .badge-red { background:rgba(255,71,87,0.1); color:var(--red); border:1px solid rgba(255,71,87,0.25); }
+  .badge-amber { background:rgba(255,165,2,0.1); color:var(--amber); border:1px solid rgba(255,165,2,0.25); }
+  .badge-purple { background:rgba(108,92,231,0.15); color:var(--purple-light); border:1px solid rgba(108,92,231,0.3); }
+  .amt-red { color:var(--red); font-family:var(--font-mono); font-weight:500; }
+  .amt-green { color:var(--green-dim); font-family:var(--font-mono); font-weight:500; }
+  .amt-purple { color:var(--purple-light); font-family:var(--font-mono); font-weight:500; }
+  .amt-muted { color:var(--text-muted); font-family:var(--font-mono); }
+
+  .lmp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; margin-bottom:24px; }
+  .lmp-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px; transition:border-color 0.2s; }
+  .lmp-card:hover { border-color:var(--border-green); }
+  .lmp-name { font-weight:500; font-size:13px; margin-bottom:2px; }
+  .lmp-team { font-size:11px; color:var(--text-muted); margin-bottom:10px; }
+  .lmp-stat-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+  .lmp-stat-label { font-size:11px; color:var(--text-dim); }
+  .lmp-stat-val { font-family:var(--font-mono); font-size:12px; }
+  .heat-row { display:flex; gap:2px; margin-top:10px; flex-wrap:wrap; }
+  .heat-cell { width:10px; height:10px; border-radius:2px; background:var(--surface3); }
+  .heat-cell.h1 { background:rgba(0,255,135,0.15); }
+  .heat-cell.h2 { background:rgba(0,255,135,0.35); }
+  .heat-cell.h3 { background:rgba(0,255,135,0.6); }
+
+  .monthly-pills { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+  .mpill { background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 16px; text-align:center; min-width:90px; transition:border-color 0.2s; }
+  .mpill:hover { border-color:var(--border-green); }
+  .mpill-month { font-size:11px; color:var(--text-muted); font-family:var(--font-mono); margin-bottom:4px; }
+  .mpill-amt { font-family:var(--font-display); font-size:20px; color:var(--green); }
+  .mpill-amt.zero { color:var(--red); }
+
+  .debtor-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; display:flex; align-items:center; gap:16px; margin-bottom:10px; transition:border-color 0.2s; }
+  .debtor-card:hover { border-color:rgba(255,71,87,0.3); }
+  .debtor-rank-circle { width:36px; height:36px; border-radius:50%; background:rgba(255,71,87,0.1); border:1px solid rgba(255,71,87,0.3); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:16px; color:var(--red); flex-shrink:0; }
+  .debtor-info { flex:1; min-width:0; }
+  .debtor-name { font-weight:500; font-size:14px; }
+  .debtor-team { font-size:12px; color:var(--text-muted); }
+  .debtor-bar-wrap { width:120px; flex-shrink:0; }
+  .debtor-bar-bg { background:var(--surface3); height:6px; border-radius:3px; }
+  .debtor-bar-fill { height:6px; border-radius:3px; }
+  .debtor-bar-label { font-size:11px; color:var(--text-muted); margin-top:4px; font-family:var(--font-mono); }
+  .debtor-amount { font-family:var(--font-display); font-size:28px; color:var(--red); flex-shrink:0; }
+
+  .section-heading { display:flex; align-items:baseline; gap:12px; margin-bottom:20px; }
+  .section-heading h2 { font-family:var(--font-display); font-size:28px; letter-spacing:1px; }
+  .section-heading .sh-line { flex:1; height:1px; background:var(--border); }
+  .section-heading .sh-sub { font-size:12px; color:var(--text-muted); font-family:var(--font-mono); }
+
+  /* ── GW TAB STYLES ── */
+  .gw-selector { display:flex; align-items:center; gap:12px; margin-bottom:28px; flex-wrap:wrap; }
+  .gw-selector-label { font-family:var(--font-display); font-size:22px; letter-spacing:1px; white-space:nowrap; }
+  .gw-nav { width:32px; height:32px; border-radius:50%; background:var(--surface2); border:1px solid var(--border); color:var(--text-muted); cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; transition:all 0.2s; flex-shrink:0; }
+  .gw-nav:hover { border-color:var(--border-green); color:var(--green); }
+  .gw-nav:disabled { opacity:0.3; cursor:default; }
+  .gw-pills { display:flex; gap:4px; flex-wrap:wrap; flex:1; }
+  .gw-pill { padding:4px 10px; border-radius:6px; font-size:12px; font-family:var(--font-mono); cursor:pointer; background:transparent; border:1px solid var(--border); color:var(--text-muted); transition:all 0.15s; }
+  .gw-pill:hover { border-color:var(--border-green); color:var(--green); }
+  .gw-pill.active { background:var(--surface3); border-color:var(--green); color:var(--green); }
+
+  .gw-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:18px; transition:border-color 0.2s; position:relative; }
+  .gw-card:hover { border-color:var(--border-green); }
+  .gw-card.rank-1 { border-color:rgba(0,255,135,0.4); }
+  .gw-card.rank-bottom { border-color:rgba(255,71,87,0.3); }
+  .gw-cards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
+  .gw-rank-badge { font-family:var(--font-display); font-size:40px; line-height:1; }
+  .gw-rank-badge.top3 { color:var(--green); }
+  .gw-rank-badge.mid { color:var(--text-dim); }
+  .gw-rank-badge.bot { color:var(--red); }
+  .gw-card-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px; }
+  .gw-team { font-weight:500; font-size:14px; }
+  .gw-manager { font-size:12px; color:var(--text-muted); margin-top:1px; }
+  .gw-stat-row { display:flex; justify-content:space-between; margin-bottom:5px; border-bottom:1px solid var(--border); padding-bottom:5px; }
+  .gw-stat-row:last-of-type { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .gw-stat-key { font-size:12px; color:var(--text-muted); }
+  .gw-stat-val { font-family:var(--font-mono); font-size:12px; }
+  .chip-tag { display:inline-block; font-size:10px; padding:2px 8px; background:rgba(108,92,231,0.15); color:var(--purple-light); border-radius:999px; border:1px solid rgba(108,92,231,0.3); font-family:var(--font-mono); margin-top:8px; }
+  .season-sparkline { display:flex; gap:1px; align-items:flex-end; height:24px; margin-top:10px; }
+  .spark-bar { flex:1; border-radius:1px; min-height:2px; transition:opacity 0.2s; }
+  .spark-bar.current { opacity:1; }
+  .spark-bar.other { opacity:0.35; }
+  .gw-summary-banner { background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius); padding:16px 20px; margin-bottom:20px; display:flex; gap:32px; flex-wrap:wrap; }
+  .gw-summary-stat { text-align:center; }
+  .gw-summary-val { font-family:var(--font-display); font-size:28px; color:var(--green); line-height:1; }
+  .gw-summary-lbl { font-size:11px; color:var(--text-muted); font-family:var(--font-mono); margin-top:2px; }
+
+  .rank-trend { font-size:10px; margin-left:4px; font-weight:700; }
+  .trend-up { color:var(--green); }
+  .trend-down { color:var(--red); }
+  .trend-flat { color:var(--text-dim); }
+
+  .chip-grid { display:flex; gap:4px; margin-top:8px; flex-wrap:wrap; }
+  .chip-icon { font-size:9px; padding:2px 6px; border-radius:4px; font-family:var(--font-mono); text-transform:uppercase; font-weight:600; border:1px solid rgba(255,255,255,0.1); }
+  .chip-icon.used { background:var(--surface3); color:var(--text-dim); text-decoration:line-through; }
+  .chip-icon.available { background:rgba(0,255,135,0.1); color:var(--green); border-color:rgba(0,255,135,0.3); }
+  .chip-icon.WC { color:#38d9a9; }
+  .chip-icon.TC { color:#ff6b6b; }
+  .chip-icon.BB { color:#4dabf7; }
+  .chip-icon.FH { color:#fab005; }
+
+  .h2h-tool { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin-bottom:32px; }
+  .h2h-header { display:flex; align-items:center; gap:16px; margin-bottom:24px; }
+  .h2h-select { background:var(--surface2); border:1px solid var(--border); color:var(--text); padding:8px 12px; border-radius:var(--radius-sm); font-family:var(--font-body); outline:none; cursor:pointer; min-width:180px; }
+  .h2h-select:focus { border-color:var(--green); }
+  .h2h-vs { font-family:var(--font-display); font-size:24px; color:var(--text-dim); }
+  .h2h-grid { display:grid; grid-template-columns:1fr auto 1fr; gap:16px; align-items:center; }
+  .h2h-row { display:contents; }
+  .h2h-val { font-family:var(--font-display); font-size:28px; text-align:center; }
+  .h2h-val.win { color:var(--green); }
+  .h2h-val.lose { color:var(--red); }
+  .h2h-label { font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; font-family:var(--font-mono); text-align:center; white-space:nowrap; padding:12px 0; border-bottom:1px solid var(--border); }
+  .h2h-val-box { padding:12px 0; border-bottom:1px solid var(--border); display:flex; flex-direction:column; align-items:center; }
+  .h2h-sub { font-size:10px; color:var(--text-dim); margin-top:2px; }
+
+  footer { border-top:1px solid var(--border); padding:24px 0 0; margin-top:48px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+  footer p { font-size:12px; color:var(--text-dim); font-family:var(--font-mono); }
+  .green-dot { display:inline-block; width:6px; height:6px; background:var(--green); border-radius:50%; margin-right:6px; vertical-align:middle; animation:pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+  .section.active > * { animation:fadeUp 0.3s ease forwards; }
+  ::-webkit-scrollbar { width:6px; height:6px; }
+  ::-webkit-scrollbar-track { background:var(--bg); }
+  ::-webkit-scrollbar-thumb { background:var(--surface3); border-radius:3px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="header-top">
+      <div class="league-badge">
+        <div class="badge-icon">
+          <svg viewBox="0 0 28 28" fill="none"><path d="M14 2L17.5 9.5L26 10.5L20 16.5L21.5 25L14 21L6.5 25L8 16.5L2 10.5L10.5 9.5L14 2Z" fill="#0d0f0e" stroke="#0d0f0e" stroke-width="1"/></svg>
+        </div>
+        <div>
+          <div class="league-name">FPL MINI-LEAGUE</div>
+          <div class="league-season">2025/26 SEASON · 17 MANAGERS</div>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="hstat"><div class="hstat-value" id="current-gw-header">GW34</div><div class="hstat-label">Current GW</div></div>
+        <div class="hstat"><div class="hstat-value">R18,150</div><div class="hstat-label">Prize Pool</div></div>
+        <div class="hstat"><div class="hstat-value">2084</div><div class="hstat-label">Top Score</div></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="nav-tab active" onclick="showSection('standings',this)">Standings</button>
+    <button class="nav-tab" onclick="showSection('payments',this)">Payments</button>
+    <button class="nav-tab" onclick="showSection('debtors',this)">Who Owes</button>
+    <button class="nav-tab" onclick="showSection('lmp',this)">Last Man Paying</button>
+    <button class="nav-tab" onclick="showSection('captains',this)">GW Rank</button>
+    <button class="nav-tab" onclick="showSection('h2h',this)">Head-to-Head</button>
+    <button class="nav-tab" onclick="showSection('runin',this)">The Run In</button>
+  </nav>
+
+  <!-- STANDINGS -->
+  <section class="section active" id="standings">
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="metric-label">League leader</div><div class="metric-value green" style="font-size:22px;font-family:var(--font-body);font-weight:600;">Šeśko Mode</div><div class="metric-sub">Nkosi The Chef · 2,084 pts</div></div>
+      <div class="metric-card"><div class="metric-label">Points gap (1st → last)</div><div class="metric-value amber">367</div><div class="metric-sub">2084 vs 1717</div></div>
+      <div class="metric-card"><div class="metric-label">In relegation zone</div><div class="metric-value red">3</div><div class="metric-sub">Bottom 3 pay out</div></div>
+      <div class="metric-card"><div class="metric-label">Most bottom finishes</div><div class="metric-value" style="font-size:20px;font-family:var(--font-body);font-weight:600;">Sthe</div><div class="metric-sub">Sthe Coqueto · 13 times</div></div>
+    </div>
+    <div class="section-heading"><h2>League Table</h2><div class="sh-line"></div><span class="sh-sub">GW34 · All time</span></div>
+    <div class="standings-table">
+      <table>
+        <thead><tr><th>#</th><th>Manager / Team</th><th style="text-align:right">Points</th><th style="text-align:right">vs Leader</th><th style="text-align:right">Bottom apps</th><th style="text-align:right">Progress</th></tr></thead>
+        <tbody id="standings-body"></tbody>
+      </table>
+    </div>
+    <div class="section-heading" style="margin-top:32px;"><h2>Season Points Race</h2><div class="sh-line"></div><span class="sh-sub">Cumulative GW-by-GW</span></div>
+    <div class="chart-card">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;" id="race-legend"></div>
+      <div style="position:relative;width:100%;height:360px;"><canvas id="standingsChart" role="img" aria-label="Line chart showing cumulative points over 34 gameweeks for all managers">Season points race across 34 gameweeks.</canvas></div>
+    </div>
+  </section>
+
+  <!-- PAYMENTS -->
+  <section class="section" id="payments">
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="metric-label">Total owed</div><div class="metric-value">R18,150</div><div class="metric-sub">Joining fee + fines</div></div>
+      <div class="metric-card"><div class="metric-label">Collected</div><div class="metric-value green">R11,650</div><div class="metric-sub">64% of total</div></div>
+      <div class="metric-card"><div class="metric-label">Still outstanding</div><div class="metric-value red">R6,500</div><div class="metric-sub">36% unpaid</div></div>
+      <div class="metric-card"><div class="metric-label">Fully settled</div><div class="metric-value amber">4</div><div class="metric-sub">Kudzai, Luthando, Mbuyi, Nkosi</div></div>
+    </div>
+    <div class="section-heading"><h2>Monthly Collections</h2><div class="sh-line"></div></div>
+    <div class="monthly-pills" id="monthly-pills"></div>
+    <div class="chart-card"><div class="chart-title">Owed vs Paid</div><div class="chart-sub">Light bar = total owed · Dark bar = amount paid</div><div style="position:relative;width:100%;height:340px;"><canvas id="paymentChart" role="img" aria-label="Grouped bar chart owed vs paid per manager">Owed vs paid per manager.</canvas></div></div>
+    <div class="section-heading" style="margin-top:32px;"><h2>Full Payment Breakdown</h2><div class="sh-line"></div></div>
+    <div class="chart-card"><div class="payment-table-wrap"><table class="payment-table"><thead><tr><th>Manager</th><th>Team</th><th>Base</th><th>Fines</th><th>Total owed</th><th>Paid</th><th>Outstanding</th><th>Progress</th><th>Status</th></tr></thead><tbody id="payment-table-body"></tbody></table></div></div>
+  </section>
+
+  <!-- DEBTORS -->
+  <section class="section" id="debtors">
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="metric-label">Managers with debt</div><div class="metric-value red">13</div><div class="metric-sub">of 17 managers</div></div>
+      <div class="metric-card"><div class="metric-label">Largest single debt</div><div class="metric-value red">R2,150</div><div class="metric-sub">President Gamede · R0 paid</div></div>
+      <div class="metric-card"><div class="metric-label">Avg outstanding</div><div class="metric-value amber">R382</div><div class="metric-sub">Across all 17 managers</div></div>
+      <div class="metric-card"><div class="metric-label">Overpaid</div><div class="metric-value" style="color:var(--purple-light);">0</div><div class="metric-sub">No managers in credit</div></div>
+    </div>
+    <div class="section-heading"><h2>Debt Rankings</h2><div class="sh-line"></div><span class="sh-sub">Sorted by outstanding amount</span></div>
+    <div id="debtors-list"></div>
+  </section>
+
+  <!-- LMP -->
+  <section class="section" id="lmp">
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="metric-label">Total LMP fines</div><div class="metric-value red">R15,850</div><div class="metric-sub">Joining fees included</div></div>
+      <div class="metric-card"><div class="metric-label">GWs played so far</div><div class="metric-value" id="lmp-gw-value">34</div><div class="metric-sub">of 38 total</div></div>
+      <div class="metric-card"><div class="metric-label">Most bottom finishes</div><div class="metric-value" style="font-size:20px;font-family:var(--font-body);font-weight:600;">Sthe</div><div class="metric-sub">Sthe Coqueto · 13 times</div></div>
+      <div class="metric-card"><div class="metric-label">Safest manager</div><div class="metric-value" style="font-size:20px;font-family:var(--font-body);font-weight:600;">Mbuyi</div><div class="metric-sub">Walala WaSalah · 0 times</div></div>
+    </div>
+    <div class="section-heading"><h2>Bottom 3 Appearances</h2><div class="sh-line"></div></div>
+    <div class="chart-card" style="margin-bottom:24px;"><div style="position:relative;width:100%;height:320px;"><canvas id="lmpChart" role="img" aria-label="Bar chart of bottom 3 appearances per manager">Bottom 3 count per manager.</canvas></div></div>
+    <div class="section-heading"><h2>Manager Profiles</h2><div class="sh-line"></div><span class="sh-sub">GW heat map · darker = more bottom finishes</span></div>
+    <div class="lmp-grid" id="lmp-cards"></div>
+  </section>
+
+  <!-- GW RANK (DYNAMIC) -->
+  <section class="section" id="captains">
+    <div class="metrics-grid" id="gw-metrics"></div>
+
+    <div class="gw-selector">
+      <div class="gw-selector-label">Gameweek</div>
+      <button class="gw-nav" id="gw-prev" onclick="changeGW(-1)">&#8592;</button>
+      <div class="gw-pills" id="gw-pills"></div>
+      <button class="gw-nav" id="gw-next" onclick="changeGW(1)">&#8594;</button>
+    </div>
+
+    <div class="gw-summary-banner" id="gw-summary"></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;">
+      <div class="chart-card" style="margin:0;">
+        <div class="chart-title" id="gw-rank-chart-title">GW Rank</div>
+        <div class="chart-sub">Lower rank = better (1st is best)</div>
+        <div style="position:relative;width:100%;height:400px;"><canvas id="gwRankChart" role="img" aria-label="Horizontal bar chart of GW rank">GW rank per team.</canvas></div>
+      </div>
+      <div class="chart-card" style="margin:0;">
+        <div class="chart-title" id="gw-pts-chart-title">GW Points</div>
+        <div class="chart-sub">Raw points scored this gameweek</div>
+        <div style="position:relative;width:100%;height:400px;"><canvas id="gwPtsChart" role="img" aria-label="Horizontal bar chart of GW points">GW points per team.</canvas></div>
+      </div>
+    </div>
+
+    <div class="section-heading"><h2 id="gw-cards-heading">GW Results</h2><div class="sh-line"></div><span class="sh-sub" id="gw-cards-sub"></span></div>
+    <div class="gw-cards-grid" id="gw-cards"></div>
+  </section>
+
+  <!-- HEAD TO HEAD -->
+  <section class="section" id="h2h">
+    <div class="metrics-grid" id="h2h-metrics">
+      <div class="metric-card"><div class="metric-label">Transfer King</div><div class="metric-value green" id="transfer-king">--</div><div class="metric-sub">Most points after hits</div></div>
+      <div class="metric-card"><div class="metric-label">Least Hits Taken</div><div class="metric-value" id="least-hits">--</div><div class="metric-sub">Most conservative manager</div></div>
+      <div class="metric-card"><div class="metric-label">Most Points Spent</div><div class="metric-value red" id="most-spent">--</div><div class="metric-sub">Total transfer hit costs</div></div>
+      <div class="metric-card"><div class="metric-label">Chip Strategy</div><div class="metric-value amber" id="chips-remaining">--</div><div class="metric-sub">Average chips left per manager</div></div>
+    </div>
+    <div class="section-heading"><h2>Manager Face-Off</h2><div class="sh-line"></div><span class="sh-sub">Compare any two managers</span></div>
+    <div class="h2h-tool">
+      <div id="h2h-trash-talk" style="background:rgba(108,92,231,0.1); border:1px solid rgba(108,92,231,0.3); border-radius:var(--radius-sm); padding:16px; margin-bottom:20px; font-style:italic; color:var(--purple-light); text-align:center; font-size:14px;">
+        <!-- Insight injected by JS -->
+      </div>
+      <div class="h2h-header">
+        <select id="h2h-1" class="h2h-select" onchange="updateH2H()"></select>
+        <div class="h2h-vs">VS</div>
+        <select id="h2h-2" class="h2h-select" onchange="updateH2H()"></select>
+      </div>
+      <div class="h2h-grid" id="h2h-results">
+        <!-- Results injected by JS -->
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Rank Comparison</div>
+      <div class="chart-sub">Cumulative season rank movement</div>
+      <div style="position:relative;width:100%;height:300px;"><canvas id="h2hChart"></canvas></div>
+    </div>
+  </section>
+
+  <section class="section" id="runin">
+    <style>
+      /* ── RUN IN: scoped styles ── */
+      #runin { padding: 0; }
+      #runin-inner {
+        background: #0d0d0f;
+        border: 1px solid rgba(255,255,255,0.07);
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 600px;
+      }
+      #ri-header {
+        padding: 32px 28px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .ri-wordmark-sup {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(232,230,227,0.38);
+        margin-bottom: 4px;
+      }
+      .ri-wordmark-title {
+        font-family: 'DM Serif Display', serif;
+        font-style: italic;
+        font-size: clamp(28px, 5vw, 54px);
+        line-height: 0.95;
+        color: #e8e6e3;
+        letter-spacing: -1px;
+      }
+      .ri-wordmark-title em { color: #c9f542; font-style: normal; }
+      .ri-header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+      .ri-season-badge {
+        font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+        color: rgba(232,230,227,0.38); border: 1px solid rgba(255,255,255,0.07);
+        padding: 5px 12px; border-radius: 20px;
+      }
+      .ri-gw-display {
+        font-family: 'DM Serif Display', serif;
+        font-size: clamp(24px, 4vw, 42px);
+        color: #c9f542; line-height: 1; min-width: 100px; text-align: right;
+      }
+      #ri-chart-section { flex: 1; padding: 20px 28px 0; position: relative; }
+      #ri-canvas-wrap { position: relative; width: 100%; }
+      #ri-canvas { display: block; width: 100%; height: auto; cursor: crosshair; }
+      #ri-controls { padding: 16px 28px; display: flex; align-items: center; gap: 16px; }
+      .ri-play-btn {
+        width: 40px; height: 40px; border-radius: 50%; background: #c9f542;
+        border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0; transition: transform 0.15s, opacity 0.15s;
+      }
+      .ri-play-btn:hover { transform: scale(1.08); }
+      .ri-play-btn:active { transform: scale(0.95); }
+      .ri-play-btn svg { width: 15px; height: 15px; fill: #0d0d0f; }
+      .ri-slider-track {
+        flex: 1; position: relative; height: 2px;
+        background: rgba(255,255,255,0.07); border-radius: 1px;
+      }
+      .ri-slider-fill {
+        position: absolute; left: 0; top: 0; bottom: 0;
+        background: #c9f542; border-radius: 1px; pointer-events: none;
+      }
+      #ri-slider {
+        position: absolute; inset: -12px 0; width: 100%;
+        opacity: 0; cursor: pointer; height: 26px;
+      }
+      .ri-gw-ticks {
+        display: flex; justify-content: space-between;
+        padding: 5px 0 0; font-size: 9px; font-weight: 500;
+        letter-spacing: 1px; color: rgba(232,230,227,0.38);
+      }
+      #ri-lb {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 1px;
+        background: rgba(255,255,255,0.07);
+        border-top: 1px solid rgba(255,255,255,0.07);
+        margin-top: 4px;
+      }
+      .ri-lb-item {
+        background: #0d0d0f; padding: 12px 14px;
+        display: flex; align-items: center; gap: 8px;
+        cursor: pointer; transition: background 0.15s; position: relative;
+      }
+      .ri-lb-item:hover { background: #141416; }
+      .ri-lb-item.ri-active { background: #141416; }
+      .ri-lb-item.ri-active::before {
+        content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+        width: 2px; background: var(--ri-item-color, #c9f542);
+      }
+      .ri-lb-item.ri-dimmed { opacity: 0.22; }
+      .ri-lb-rank { font-size: 11px; font-weight: 700; color: rgba(232,230,227,0.38); min-width: 16px; }
+      .ri-lb-rank.ri-podium { color: #c9f542; }
+      .ri-lb-rank.ri-danger { color: #ff5c5c; }
+      .ri-lb-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+      .ri-lb-info { flex: 1; min-width: 0; }
+      .ri-lb-name { font-size: 11px; font-weight: 500; color: #e8e6e3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .ri-lb-team { font-size: 10px; color: rgba(232,230,227,0.38); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .ri-lb-pts { font-size: 11px; font-weight: 700; color: rgba(232,230,227,0.38); font-family: 'DM Serif Display', serif; }
+      .ri-tip {
+        position: absolute; background: #141416; border: 1px solid rgba(255,255,255,0.07);
+        border-radius: 10px; padding: 9px 13px; pointer-events: none;
+        opacity: 0; transition: opacity 0.1s; font-size: 12px; white-space: nowrap; z-index: 20;
+      }
+      .ri-tip.ri-show { opacity: 1; }
+      .ri-tip-name { font-weight: 700; margin-bottom: 2px; }
+      .ri-tip-detail { color: rgba(232,230,227,0.38); font-size: 11px; }
+      @media (max-width: 520px) {
+        #ri-header, #ri-chart-section, #ri-controls { padding-left: 16px; padding-right: 16px; }
+        #ri-lb { grid-template-columns: 1fr 1fr; }
+      }
+    </style>
+
+    <div id="runin-inner">
+      <div id="ri-header">
+        <div>
+          <div class="ri-wordmark-sup" id="ri-wordmark-sup">Season Rankings · GW 1 — X</div>
+          <div class="ri-wordmark-title">The Run <em>In</em></div>
+        </div>
+        <div class="ri-header-right">
+          <span class="ri-season-badge">2025/26</span>
+          <div class="ri-gw-display" id="ri-gwDisplay">—</div>
+        </div>
+      </div>
+
+      <div id="ri-chart-section">
+        <div id="ri-canvas-wrap">
+          <canvas id="ri-canvas"></canvas>
+          <div class="ri-tip" id="ri-tip">
+            <div class="ri-tip-name" id="ri-tipName"></div>
+            <div class="ri-tip-detail" id="ri-tipDetail"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="ri-controls">
+        <button class="ri-play-btn" id="ri-playBtn" aria-label="Play / Pause">
+          <svg id="ri-playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div style="flex:1">
+          <div class="ri-slider-track">
+            <div class="ri-slider-fill" id="ri-sliderFill" style="width:0%"></div>
+            <input type="range" id="ri-slider" min="0" max="34" step="0.01" value="0">
+          </div>
+          <div class="ri-gw-ticks" id="ri-gw-ticks">
+            <span>GW1</span><span>GW5</span><span>GW10</span><span>GW15</span>
+            <span>GW20</span><span>GW25</span><span>GW34</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="ri-lb"></div>
+    </div>
+  </section>
+
+  <footer style="margin-top: 48px;">
+    <p><span class="green-dot"></span>FPL 2025/26 Mini-League · Updated <span id="footer-gw">GW</span></p>
+    <p>Data sourced from FPL_2025.xlsx</p>
+  </footer>
+</div>
+
+<script>
+// ── STATE & VARIABLES ─────────────────────────
+let standings = [];
+let payments = [];
+let monthly = {};
+let lmpData = [];
+let gwData = [];
+let RI_M = [];
+let MAX_GW = 1;
+let currentGW = 1;
+let gwRankChart = null;
+let gwPtsChart = null;
+const WC2_TEAMS = new Set(['Sthe Coqueto','Hidden Hills','Iam_ntombela','Šeśko Mode','TAYDO FC','A Cunha Matata','JustGimmeDeLigt']);
+
+// ── SECTION SWITCH ───────────────────────────
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+// ── STANDINGS ────────────────────────────────
+function buildStandings() {
+  const sorted = [...standings].sort((a,b) => b.pts - a.pts);
+  const maxPts = sorted[0].pts;
+  const tbody = document.getElementById('standings-body');
+  tbody.innerHTML = '';
+  sorted.forEach((m, i) => {
+    const rank = i + 1;
+    const managerData = gwData.find(d => d.manager === m.manager);
+    const prevRank = managerData && managerData.gwRanks && managerData.gwRanks.length > 1 ? managerData.gwRanks[MAX_GW - 2] : rank;
+    const trend = prevRank - rank;
+    const trendIcon = trend > 0 ? '<span class="rank-trend trend-up">▲ ' + trend + '</span>' : trend < 0 ? '<span class="rank-trend trend-down">▼ ' + Math.abs(trend) + '</span>' : '<span class="rank-trend trend-flat">▬</span>';
+    
+    const gap = m.pts - maxPts;
+    const pct = Math.round((m.pts / maxPts) * 100);
+    const isBottom = rank >= 15;
+    tbody.innerHTML += `<tr>
+      <td><span class="rank ${rank <= 3 ? 'top3' : ''}">${rank}</span>${trendIcon}</td>
+      <td><div class="manager-name">${m.manager}${isBottom ? '<span class="bottom-badge">bottom 3</span>' : ''}</div><div class="team-name">${m.team}</div></td>
+      <td style="text-align:right"><span class="pts">${m.pts.toLocaleString()}</span></td>
+      <td style="text-align:right;font-family:var(--font-mono);color:var(--text-muted)">${gap === 0 ? '—' : gap}</td>
+      <td style="text-align:right"><span style="font-family:var(--font-mono);font-size:13px;color:${m.bottomApps >= 8 ? 'var(--red)' : m.bottomApps >= 5 ? 'var(--amber)' : 'var(--text-muted)'}">${m.bottomApps}</span></td>
+      <td style="text-align:right"><div class="pts-bar-wrap"><div class="pts-bar-bg"><div class="pts-bar-fill" style="width:${pct}%"></div></div></div></td>
+    </tr>`;
+  });
+  
+  // Season Points Race chart
+  const COLORS = ['#e63946','#f4845f','#4dabf7','#b197fc','#ff6b9d','#38d9a9','#9775fa','#339af0','#ff8c42','#74c0fc','#ffa94d','#5c7cfa','#c9f542','#da77f2','#63e6be','#ffe066','#ff6b6b'];
+  const GW_LABELS = Array.from({length:MAX_GW},(_,i)=>'GW'+(i+1));
+
+  const datasets = gwData.map((m, idx) => {
+    let running = 0;
+    const cum = m.gwPts.map(p => { running += p; return running; });
+    const color = COLORS[idx % COLORS.length];
+    const isFinal = [...gwData].sort((a,b)=>b.total-a.total).indexOf(m);
+    return {
+      label: m.team,
+      data: cum,
+      borderColor: color,
+      backgroundColor: 'transparent',
+      borderWidth: isFinal < 3 ? 2.5 : isFinal >= 14 ? 1.5 : 1.5,
+      pointRadius: 0,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: color,
+      tension: 0.3,
+    };
+  });
+
+  const legendEl = document.getElementById('race-legend');
+  if (legendEl) {
+    legendEl.innerHTML = '';
+    gwData.forEach((m, idx) => {
+      const color = COLORS[idx % COLORS.length];
+      const pill = document.createElement('span');
+      pill.style.cssText = `display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--text-muted);cursor:pointer;padding:3px 8px;border-radius:999px;border:1px solid var(--border);transition:all 0.15s;font-family:var(--font-mono);`;
+      pill.innerHTML = `<span style="width:8px;height:8px;border-radius:50%;background:${color};flex-shrink:0;display:inline-block;"></span>${m.team}`;
+      let hidden = false;
+      pill.addEventListener('click', () => {
+        hidden = !hidden;
+        pill.style.opacity = hidden ? '0.35' : '1';
+        const ci = raceChart.data.datasets.findIndex(d => d.label === m.team);
+        if (ci >= 0) { raceChart.setDatasetVisibility(ci, !hidden); raceChart.update(); }
+      });
+      legendEl.appendChild(pill);
+    });
+  }
+
+  const raceChart = new Chart(document.getElementById('standingsChart'), {
+    type: 'line',
+    data: { labels: GW_LABELS, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1c1f1d', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1, titleColor: '#7a8a7e', bodyColor: '#f0f2f0', padding: 10,
+          callbacks: {
+            title: items => items[0].label,
+            afterBody: items => {
+              const sorted = [...items].sort((a,b) => b.parsed.y - a.parsed.y);
+              return sorted.map((it,i) => (i===0?'🥇':i===1?'🥈':i===2?'🥉':'') + ' ' + it.dataset.label + ': ' + it.parsed.y.toLocaleString());
+            },
+            label: () => null,
+          }
+        }
+      },
+      scales: {
+        x: { ticks: { color: '#4a5a4e', font: { size: 10 }, maxRotation: 0, autoSkip: true, maxTicksLimit: 8 }, grid: { color: 'rgba(255,255,255,0.04)' } },
+        y: { ticks: { color: '#7a8a7e', font: { size: 11 }, callback: v => v.toLocaleString() }, grid: { color: 'rgba(255,255,255,0.04)' } }
+      }
+    }
+  });
+}
+
+// ── PAYMENTS ─────────────────────────────────
+function buildPayments() {
+  const pillContainer = document.getElementById('monthly-pills');
+  pillContainer.innerHTML = '';
+  Object.entries(monthly).forEach(([m,v]) => {
+    pillContainer.innerHTML += `<div class="mpill"><div class="mpill-month">${m}</div><div class="mpill-amt ${v===0?'zero':''}">R${v.toLocaleString()}</div></div>`;
+  });
+  const tbody = document.getElementById('payment-table-body');
+  tbody.innerHTML = '';
+  payments.forEach(p => {
+    const outstanding = p.owed - p.paid;
+    const pct = Math.min(100, Math.round((p.paid / p.owed) * 100));
+    let statusBadge, barColor;
+    if (outstanding < 0) { statusBadge = '<span class="badge badge-purple">Overpaid</span>'; barColor = '#6c5ce7'; }
+    else if (outstanding === 0) { statusBadge = '<span class="badge badge-green">Settled</span>'; barColor = '#00c96a'; }
+    else if (pct >= 70) { statusBadge = '<span class="badge badge-amber">Mostly paid</span>'; barColor = '#ffa502'; }
+    else if (pct === 0) { statusBadge = '<span class="badge badge-red">Nothing paid</span>'; barColor = '#ff4757'; }
+    else { statusBadge = '<span class="badge badge-amber">Partial</span>'; barColor = '#ffa502'; }
+    const outDisplay = outstanding > 0 ? `<span class="amt-red">R${outstanding.toLocaleString()}</span>` : outstanding < 0 ? `<span class="amt-purple">R${Math.abs(outstanding).toLocaleString()} credit</span>` : `<span class="amt-green">—</span>`;
+    tbody.innerHTML += `<tr><td style="font-weight:500">${p.manager.split(' ')[0]}</td><td style="color:var(--text-muted)">${p.team}</td><td class="amt-muted">R${p.base.toLocaleString()}</td><td class="amt-muted">${p.fines>0?'R'+p.fines:'—'}</td><td style="font-family:var(--font-mono)">R${p.owed.toLocaleString()}</td><td class="amt-green">R${p.paid.toLocaleString()}</td><td>${outDisplay}</td><td><div class="prog-bar"><div class="prog-bg"><div class="prog-fill" style="width:${pct}%;background:${barColor}"></div></div><span style="font-size:10px;color:var(--text-dim);font-family:var(--font-mono)">${pct}%</span></div></td><td>${statusBadge}</td></tr>`;
+  });
+  const sorted = [...payments].sort((a,b)=>b.owed-a.owed);
+  new Chart(document.getElementById('paymentChart'),{type:'bar',data:{labels:sorted.map(p=>p.manager.split(' ')[0]),datasets:[{label:'Total Owed',data:sorted.map(p=>p.owed),backgroundColor:'rgba(0,255,135,0.15)',borderColor:'rgba(0,255,135,0.4)',borderWidth:1,borderRadius:3},{label:'Paid',data:sorted.map(p=>p.paid),backgroundColor:'rgba(0,255,135,0.6)',borderColor:'#00ff87',borderWidth:1,borderRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#7a8a7e',font:{size:11},maxRotation:40,autoSkip:false},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{color:'#7a8a7e',font:{size:11},callback:v=>'R'+v},grid:{color:'rgba(255,255,255,0.04)'}}}}});
+}
+
+// ── DEBTORS ──────────────────────────────────
+function buildDebtors() {
+  const debtors = [...payments].map(p=>({...p,outstanding:p.owed-p.paid})).sort((a,b)=>b.outstanding-a.outstanding);
+  const container = document.getElementById('debtors-list');
+  container.innerHTML = '';
+  debtors.forEach((d,i) => {
+    if (d.outstanding <= 0) return;
+    const pct = Math.round((d.paid/d.owed)*100);
+    const barColor = d.outstanding>600?'#ff4757':d.outstanding>300?'#ffa502':'#00c96a';
+    container.innerHTML += `<div class="debtor-card"><div class="debtor-rank-circle">${i+1}</div><div class="debtor-info"><div class="debtor-name">${d.manager}</div><div class="debtor-team">${d.team}</div></div><div class="debtor-bar-wrap"><div class="debtor-bar-bg"><div class="debtor-bar-fill" style="width:${pct}%;background:${barColor}"></div></div><div class="debtor-bar-label">${pct}% paid · R${d.paid.toLocaleString()} of R${d.owed.toLocaleString()}</div></div><div class="debtor-amount">R${d.outstanding.toLocaleString()}</div></div>`;
+  });
+  const settled = payments.filter(p=>p.owed<=p.paid);
+  if (settled.length) {
+    container.innerHTML += `<div style="margin-top:24px;margin-bottom:12px;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-family:var(--font-mono)">Settled / Overpaid</div>`;
+    settled.forEach(d => {
+      const outstanding = d.owed - d.paid;
+      container.innerHTML += `<div class="debtor-card" style="border-color:rgba(0,255,135,0.2)"><div class="debtor-rank-circle" style="background:rgba(0,255,135,0.1);border-color:rgba(0,255,135,0.3);color:var(--green)">✓</div><div class="debtor-info"><div class="debtor-name">${d.manager}</div><div class="debtor-team">${d.team}</div></div><div style="font-size:12px;color:var(--text-muted);font-family:var(--font-mono)">R${d.paid.toLocaleString()} paid</div><div class="debtor-amount" style="color:${outstanding<0?'var(--purple-light)':'var(--green-dim)'}">${outstanding<0?'R'+Math.abs(outstanding)+' credit':'Settled'}</div></div>`;
+    });
+  }
+}
+
+// ── LMP ──────────────────────────────────────
+function buildLMP() {
+  const sorted = [...lmpData].sort((a,b)=>b.apps-a.apps);
+  const maxApps = sorted[0].apps;
+  const container = document.getElementById('lmp-cards');
+  container.innerHTML = '';
+  document.getElementById('lmp-gw-value').innerText = MAX_GW;
+  
+  sorted.forEach(m => {
+    const pct = maxApps>0?Math.round((m.apps/maxApps)*100):0;
+    const barColor = m.apps>=10?'#ff4757':m.apps>=6?'#ffa502':'#00c96a';
+    let heatHtml = '<div class="heat-row">';
+    for (let gw=1;gw<=32;gw++) { const intensity=m.apps>=10?'h3':m.apps>=5?'h2':m.apps>0?'h1':''; heatHtml+=`<div class="heat-cell ${gw<=m.apps?intensity:''}" title="GW${gw}"></div>`; }
+    heatHtml += '</div>';
+    container.innerHTML += `<div class="lmp-card"><div class="lmp-name">${m.manager.split(' ')[0]}</div><div class="lmp-team">${m.team}</div><div class="lmp-stat-row"><span class="lmp-stat-label">Bottom 3 appearances</span><span class="lmp-stat-val" style="color:${barColor}">${m.apps}</span></div><div class="lmp-stat-row"><span class="lmp-stat-label">LMP fines generated</span><span class="lmp-stat-val">R${m.fines.toLocaleString()}</span></div><div style="background:var(--surface3);height:4px;border-radius:2px;margin-top:8px;"><div style="width:${pct}%;height:4px;border-radius:2px;background:${barColor}"></div></div>${heatHtml}</div>`;
+  });
+  new Chart(document.getElementById('lmpChart'),{type:'bar',data:{labels:sorted.map(m=>m.team),datasets:[{label:'Bottom 3 appearances',data:sorted.map(m=>m.apps),backgroundColor:sorted.map(m=>m.apps>=10?'rgba(255,71,87,0.6)':m.apps>=6?'rgba(255,165,2,0.5)':'rgba(0,255,135,0.4)'),borderColor:sorted.map(m=>m.apps>=10?'#ff4757':m.apps>=6?'#ffa502':'#00ff87'),borderWidth:1,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#7a8a7e',font:{size:11},maxRotation:40,autoSkip:false},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{color:'#7a8a7e',font:{size:11},stepSize:1},grid:{color:'rgba(255,255,255,0.04)'}}}}});
+}
+
+// ── GW PILLS ─────────────────────────────────
+function buildGWPills() {
+  const container = document.getElementById('gw-pills');
+  container.innerHTML = '';
+  for (let gw = 1; gw <= MAX_GW; gw++) {
+    const pill = document.createElement('button');
+    pill.className = 'gw-pill' + (gw === currentGW ? ' active' : '');
+    pill.textContent = `GW${gw}`;
+    pill.onclick = () => selectGW(gw);
+    container.appendChild(pill);
+  }
+}
+
+function changeGW(dir) {
+  const next = currentGW + dir;
+  if (next >= 1 && next <= MAX_GW) selectGW(next);
+}
+
+function selectGW(gw) {
+  currentGW = gw;
+  document.querySelectorAll('.gw-pill').forEach((p, i) => p.classList.toggle('active', i + 1 === gw));
+  document.getElementById('gw-prev').disabled = gw === 1;
+  document.getElementById('gw-next').disabled = gw === MAX_GW;
+  renderGW(gw);
+}
+
+// ── GW RENDER ────────────────────────────────
+function renderGW(gw) {
+  const idx = gw - 1;
+
+  const enriched = gwData.map(m => ({
+    ...m,
+    gwPt: m.gwPts[idx],
+    gwRank: m.gwRanks[idx],
+    weeklyRank: m.weeklyRanks[idx],
+    ytd: m.gwPts.slice(0, idx+1).reduce((a,b)=>a+b,0),
+    bestGW: Math.max(...m.gwPts.slice(0, idx+1)),
+    worstGW: Math.min(...m.gwPts.slice(0, idx+1).filter(v=>v>0)),
+    avgGW: Math.round(m.gwPts.slice(0, idx+1).filter(v=>v>0).reduce((a,b)=>a+b,0) / (idx+1)),
+  }));
+
+  const sortedByRank = [...enriched].sort((a,b) => a.weeklyRank - b.weeklyRank);
+  const sortedByPts = [...enriched].sort((a,b) => b.gwPt - a.gwPt);
+  const winner = sortedByRank[0];
+  const loser = sortedByRank[sortedByRank.length-1];
+  const maxPts = sortedByPts[0].gwPt;
+  const minPts = sortedByPts[sortedByPts.length-1].gwPt;
+  const avgPts = Math.round(enriched.reduce((a,m)=>a+m.gwPt,0) / enriched.length);
+
+  document.getElementById('gw-cards-heading').textContent = `GW${gw} Results`;
+  document.getElementById('gw-cards-sub').textContent = `${enriched.length} managers · sorted by weekly rank`;
+  document.getElementById('gw-rank-chart-title').textContent = `GW${gw} Rank (Weekly)`;
+  document.getElementById('gw-pts-chart-title').textContent = `GW${gw} Points`;
+
+  document.getElementById('gw-summary').innerHTML = `
+    <div class="gw-summary-stat"><div class="gw-summary-val">${winner.manager}</div><div class="gw-summary-lbl">GW winner</div></div>
+    <div class="gw-summary-stat"><div class="gw-summary-val">${maxPts}</div><div class="gw-summary-lbl">Highest pts</div></div>
+    <div class="gw-summary-stat"><div class="gw-summary-val">${avgPts}</div><div class="gw-summary-lbl">Average pts</div></div>
+    <div class="gw-summary-stat"><div class="gw-summary-val">${minPts}</div><div class="gw-summary-lbl">Lowest pts</div></div>
+    <div class="gw-summary-stat"><div class="gw-summary-val" style="color:var(--red)">${loser.manager}</div><div class="gw-summary-lbl">Last place (GW)</div></div>
+    <div class="gw-summary-stat"><div class="gw-summary-val">${maxPts - minPts}</div><div class="gw-summary-lbl">pts spread (top vs bottom)</div></div>
+  `;
+
+  document.getElementById('gw-metrics').innerHTML = `
+    <div class="metric-card"><div class="metric-label">GW${gw} winner</div><div class="metric-value green" style="font-size:20px;font-family:var(--font-body);font-weight:600;">${winner.manager}</div><div class="metric-sub">${winner.team} · weekly rank 1st · ${winner.gwPt} pts</div></div>
+    <div class="metric-card"><div class="metric-label">Highest points</div><div class="metric-value green">${maxPts}</div><div class="metric-sub">${sortedByPts[0].manager}</div></div>
+    <div class="metric-card"><div class="metric-label">League average</div><div class="metric-value amber">${avgPts}</div><div class="metric-sub">GW${gw} average score</div></div>
+    <div class="metric-card"><div class="metric-label">Last place (Weekly)</div><div class="metric-value red" style="font-size:20px;font-family:var(--font-body);font-weight:600;">${loser.manager}</div><div class="metric-sub">${loser.team} · rank ${loser.weeklyRank} · ${loser.gwPt} pts</div></div>
+  `;
+
+  if (gwRankChart) gwRankChart.destroy();
+  if (gwPtsChart) gwPtsChart.destroy();
+
+  gwRankChart = new Chart(document.getElementById('gwRankChart'), {
+    type:'bar', data:{ labels: sortedByRank.map(m=>m.manager), datasets:[{ label:'Weekly Rank', data: sortedByRank.map(m=>m.weeklyRank), backgroundColor: sortedByRank.map(m=>m.weeklyRank<=3?'rgba(0,255,135,0.7)':m.weeklyRank>=15?'rgba(255,71,87,0.5)':'rgba(0,255,135,0.25)'), borderColor: sortedByRank.map(m=>m.weeklyRank<=3?'#00ff87':m.weeklyRank>=15?'#ff4757':'rgba(0,255,135,0.4)'), borderWidth:1,borderRadius:4 }] },
+    options:{ indexAxis:'y',responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{reverse:false,min:0,max:17,ticks:{color:'#7a8a7e',font:{size:11},stepSize:1},grid:{color:'rgba(255,255,255,0.04)'}}, y:{ticks:{color:'#7a8a7e',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}} } }
+  });
+
+  gwPtsChart = new Chart(document.getElementById('gwPtsChart'), {
+    type:'bar', data:{ labels: sortedByPts.map(m=>m.manager), datasets:[{ label:'GW Points', data: sortedByPts.map(m=>m.gwPt), backgroundColor: sortedByPts.map(m=>m.gwPt>=avgPts?'rgba(0,255,135,0.7)':'rgba(255,71,87,0.4)'), borderColor: sortedByPts.map(m=>m.gwPt>=avgPts?'#00ff87':'#ff4757'), borderWidth:1,borderRadius:4 }] },
+    options:{ indexAxis:'y',responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{ticks:{color:'#7a8a7e',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}}, y:{ticks:{color:'#7a8a7e',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}} } }
+  });
+
+  const cardsContainer = document.getElementById('gw-cards');
+  cardsContainer.innerHTML = '';
+  sortedByRank.forEach(m => {
+    const allPts = m.gwPts.slice(0, MAX_GW);
+    const maxPtAll = Math.max(...allPts.filter(v=>v>0));
+    const rankClass = m.weeklyRank === 1 ? 'top3' : m.weeklyRank <= 3 ? 'top3' : m.weeklyRank >= 15 ? 'bot' : 'mid';
+    const cardClass = m.weeklyRank === 1 ? 'rank-1' : m.weeklyRank >= 15 ? 'rank-bottom' : '';
+    const suffix = m.weeklyRank===1?'st':m.weeklyRank===2?'nd':m.weeklyRank===3?'rd':'th';
+    const aboveAvg = m.gwPt >= avgPts;
+    
+    const allRanks = m.weeklyRanks.slice(0, MAX_GW);
+    const validPts = m.gwPts.slice(0, MAX_GW).filter(v => v > 0);
+    const leagueAvgPts = Math.round(gwData.reduce((s,d) => s + d.gwPts.slice(0,MAX_GW).filter(v=>v>0).reduce((a,b)=>a+b,0)/d.gwPts.slice(0,MAX_GW).filter(v=>v>0).length, 0) / gwData.length);
+    const mAvg = Math.round(validPts.reduce((a,b)=>a+b,0)/validPts.length);
+    const mStdev = Math.round(Math.sqrt(validPts.reduce((s,v)=>s+Math.pow(v-mAvg,2),0)/validPts.length));
+    const gwWins = allRanks.filter(r=>r===1).length;
+    const gwLasts = allRanks.filter(r=>r===17).length;
+    const swings = m.gwPts.slice(0,MAX_GW).map((v,i,a)=>i===0?0:Math.abs(v-a[i-1]));
+    const maxSwing = Math.max(...swings);
+    const maxSwingGW = swings.indexOf(maxSwing) + 1;
+    let topStreak=0, curStreak=0; allRanks.forEach(r=>{ if(r<=8){curStreak++;topStreak=Math.max(topStreak,curStreak);}else{curStreak=0;} });
+    let botStreak=0, curBot=0; allRanks.forEach(r=>{ if(r>=10){curBot++;botStreak=Math.max(botStreak,curBot);}else{curBot=0;} });
+    const bestGWScore = Math.max(...validPts);
+    const bestGWNum = m.gwPts.indexOf(bestGWScore)+1;
+    const aboveAvgCount = validPts.filter(v=>v>=leagueAvgPts).length;
+
+    const chipsUsed = m.chips || [];
+    const chipNames = { 'wildcard': 'WC', '3_captain': 'TC', 'bench_boost': 'BB', 'freehit': 'FH' };
+    const chipHtml = Object.keys(chipNames).map(c => {
+      const used = chipsUsed.find(cu => cu.name === c);
+      return `<span class="chip-icon ${used?'used':'available'} ${chipNames[c]}">${chipNames[c]}${used?' • GW'+used.event:''}</span>`;
+    }).join('');
+
+    let funFact = '';
+    if (gwWins >= 4) funFact = `🏆 ${gwWins} GW wins — most in the league`;
+    else if (gwWins === 0 && m.gwRanks[0] > 0) funFact = `😬 Yet to win a single gameweek`;
+    else if (gwLasts >= 4) funFact = `💀 Finished last ${gwLasts} times this season`;
+    else if (mStdev <= 13) funFact = `🧱 Most consistent — stdev of just ${mStdev} pts`;
+    else if (mStdev >= 17) funFact = `🎢 Feast or famine — stdev of ${mStdev} pts`;
+    else if (topStreak >= 7) funFact = `🔥 ${topStreak}-GW top-half streak this season`;
+    else if (botStreak >= 8) funFact = `📉 ${botStreak}-GW run in bottom half`;
+    else if (maxSwing >= 57) funFact = `⚡ Biggest single-GW swing — ${maxSwing} pts at GW${maxSwingGW}`;
+    else if (gwWins >= 2) funFact = `🏅 ${gwWins} GW wins · best score ${bestGWScore} pts (GW${bestGWNum})`;
+    else if (aboveAvgCount >= 18) funFact = `📈 Above league avg in ${aboveAvgCount} of 34 GWs`;
+    else if (aboveAvgCount <= 13) funFact = `📉 Below league avg in ${34-aboveAvgCount} of 34 GWs`;
+    else funFact = `⚡ Biggest swing — ${maxSwing} pts in a single week (GW${maxSwingGW})`;
+
+    const sparkBars = allPts.filter(v=>v>0).map((v,i,arr) => {
+      const h = Math.round((v/maxPtAll)*100);
+      const isCurrent = i === idx;
+      return `<div class="spark-bar ${isCurrent?'current':'other'}" style="height:${h}%;background:${isCurrent?'var(--green)':'var(--text-dim)'}"></div>`;
+    }).join('');
+
+    cardsContainer.innerHTML += `
+      <div class="gw-card ${cardClass}">
+        <div class="gw-card-header">
+          <div>
+            <div class="gw-team">${m.manager}</div>
+            <div class="gw-manager">${m.team}</div>
+          </div>
+          <div class="gw-rank-badge ${rankClass}">${m.weeklyRank}<span style="font-size:18px">${suffix}</span></div>
+        </div>
+        <div class="gw-stat-row">
+          <span class="gw-stat-key">GW${gw} points</span>
+          <span class="gw-stat-val" style="color:${aboveAvg?'var(--green-dim)':'var(--red)'}">${m.gwPt} ${aboveAvg?'▲':'▼'}</span>
+        </div>
+        <div class="gw-stat-row">
+          <span class="gw-stat-key">vs league avg</span>
+          <span class="gw-stat-val" style="color:${m.gwPt-avgPts>=0?'var(--green-dim)':'var(--red)'}">${m.gwPt-avgPts>=0?'+':''}${m.gwPt-avgPts} pts</span>
+        </div>
+        <div class="gw-stat-row">
+          <span class="gw-stat-key">Season avg / GW</span>
+          <span class="gw-stat-val">${m.avgGW} pts</span>
+        </div>
+        <div class="gw-stat-row">
+          <span class="gw-stat-key">Best GW (season)</span>
+          <span class="gw-stat-val" style="color:var(--green-dim)">${m.bestGW} pts</span>
+        </div>
+        <div class="chip-grid">${chipHtml}</div>
+        <div class="chip-tag" style="background:rgba(255,255,255,0.05);color:var(--text-muted);border-color:rgba(255,255,255,0.1);font-size:10px;">${funFact}</div>
+        <div class="season-sparkline">${sparkBars}</div>
+      </div>`;
+  });
+}
+
+let h2hChart = null;
+
+function buildH2H() {
+  const sel1 = document.getElementById('h2h-1');
+  const sel2 = document.getElementById('h2h-2');
+  sel1.innerHTML = '';
+  sel2.innerHTML = '';
+  gwData.forEach((m, i) => {
+    const opt1 = `<option value="${i}">${m.manager}</option>`;
+    const opt2 = `<option value="${i}" ${i === 1 ? 'selected' : ''}>${m.manager}</option>`;
+    sel1.innerHTML += opt1;
+    sel2.innerHTML += opt2;
+  });
+
+  // Transfer Metrics
+  const transferData = gwData.map(m => ({
+    manager: m.manager,
+    team: m.team,
+    totalHits: m.gwHits.reduce((a, b) => a + b, 0),
+    netPts: m.total - m.gwHits.reduce((a, b) => a + b, 0)
+  }));
+
+  const king = [...transferData].sort((a, b) => b.netPts - a.netPts)[0];
+  const conservative = [...transferData].sort((a, b) => a.totalHits - b.totalHits)[0];
+  const bigSpender = [...transferData].sort((a, b) => b.totalHits - a.totalHits)[0];
+  
+  let totalChips = 0;
+  gwData.forEach(m => totalChips += (4 - (m.chips ? m.chips.length : 0)));
+  const avgChips = (totalChips / gwData.length).toFixed(1);
+
+  document.getElementById('transfer-king').innerText = king.manager.split(' ')[0];
+  document.getElementById('least-hits').innerText = conservative.manager.split(' ')[0];
+  document.getElementById('most-spent').innerText = '-' + bigSpender.totalHits + ' pts';
+  document.getElementById('chips-remaining').innerText = avgChips;
+
+  updateH2H();
+}
+
+function updateH2H() {
+  const m1 = gwData[document.getElementById('h2h-1').value];
+  const m2 = gwData[document.getElementById('h2h-2').value];
+  const results = document.getElementById('h2h-results');
+  const trashBox = document.getElementById('h2h-trash-talk');
+
+  const diff = m1.total - m2.total;
+  const hits1 = m1.gwHits.reduce((a,b)=>a+b,0);
+  const hits2 = m2.gwHits.reduce((a,b)=>a+b,0);
+  
+  let trash = "";
+  if (m1.entry === m2.entry) {
+    trash = "Are you really trying to compare yourself... to yourself? Narcissism level: Expert.";
+  } else if (Math.abs(diff) < 15) {
+    trash = `It's neck and neck! ${Math.abs(diff)} points is basically one lucky captain choice away. The tension is palpable.`;
+  } else if (diff > 100) {
+    trash = `${m1.manager.split(' ')[0]} is absolutely schooling ${m2.manager.split(' ')[0]} right now. A 100+ point lead is basically "look but don't touch" territory.`;
+  } else if (diff < -100) {
+    trash = `${m2.manager.split(' ')[0]} is in a different league. ${m1.manager.split(' ')[0]} might need a wildcard, a prayer, and several tactical fouls to catch up.`;
+  } else if (hits1 > hits2 + 20) {
+    trash = `${m1.manager.split(' ')[0]} is addicted to transfer hits. Spending points to lose points? A bold strategy.`;
+  } else {
+    trash = `${diff > 0 ? m1.manager.split(' ')[0] : m2.manager.split(' ')[0]} has the upper hand, but with ${4-(m1.chips?m1.chips.length:0)} vs ${4-(m2.chips?m2.chips.length:0)} chips left, it's anyone's game.`;
+  }
+  trashBox.innerText = trash;
+
+  const stats = [
+    { label: 'Total Points', val1: m1.total, val2: m2.total, highWins: true },
+    { label: 'GW Avg', val1: Math.round(m1.total/MAX_GW), val2: Math.round(m2.total/MAX_GW), highWins: true },
+    { label: 'Transfer Hits', val1: m1.gwHits.reduce((a,b)=>a+b,0), val2: m2.gwHits.reduce((a,b)=>a+b,0), highWins: false },
+    { label: 'Best GW', val1: Math.max(...m1.gwPts), val2: Math.max(...m2.gwPts), highWins: true },
+    { label: 'Worst GW', val1: Math.min(...m1.gwPts.filter(v=>v>0)), val2: Math.min(...m2.gwPts.filter(v=>v>0)), highWins: true },
+    { label: 'Chips Used', val1: m1.chips?m1.chips.length:0, val2: m2.chips?m2.chips.length:0, highWins: false },
+  ];
+
+  results.innerHTML = stats.map(s => {
+    const win1 = s.highWins ? s.val1 > s.val2 : s.val1 < s.val2;
+    const win2 = s.highWins ? s.val2 > s.val1 : s.val2 < s.val1;
+    return `
+      <div class="h2h-row">
+        <div class="h2h-val-box"><div class="h2h-val ${win1?'win':win2?'lose':''}">${s.val1.toLocaleString()}</div></div>
+        <div class="h2h-label">${s.label}</div>
+        <div class="h2h-val-box"><div class="h2h-val ${win2?'win':win1?'lose':''}">${s.val2.toLocaleString()}</div></div>
+      </div>
+    `;
+  }).join('');
+
+  if (h2hChart) h2hChart.destroy();
+  const GW_LABELS = Array.from({length:MAX_GW},(_,i)=>'GW'+(i+1));
+  h2hChart = new Chart(document.getElementById('h2hChart'), {
+    type: 'line',
+    data: {
+      labels: GW_LABELS,
+      datasets: [
+        { label: m1.team, data: m1.gwRanks, borderColor: '#00ff87', backgroundColor: 'transparent', tension: 0.3, borderWidth: 2 },
+        { label: m2.team, data: m2.gwRanks, borderColor: '#ff4757', backgroundColor: 'transparent', tension: 0.3, borderWidth: 2 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        y: { reverse: true, min: 1, max: 17, ticks: { stepSize: 1, color: '#7a8a7e' }, grid: { color: 'rgba(255,255,255,0.04)' } },
+        x: { ticks: { color: '#4a5a4e', autoSkip: true, maxTicksLimit: 10 }, grid: { display: false } }
+      },
+      plugins: { legend: { labels: { color: '#f0f2f0', font: { family: 'DM Sans' } } } }
+    }
+  });
+}
+
+// ── THE RUN IN CHART LOGIC ───────────────────
+function initRunIn() {
+  RI_M.sort((a,b) => a.f.localeCompare(b.f));
+  const RI_GW = MAX_GW, RI_N = 17;
+  let riGwF = 0, riActiveIdx = -1, riPlaying = false;
+  let riPlayStart = null, riPlayFrom = 0, riAnimId = null;
+  const RI_MS_PER_GW = 1000;
+
+  document.getElementById('ri-wordmark-sup').innerText = `Season Rankings · GW 1 — ${MAX_GW}`;
+  document.getElementById('ri-slider').max = MAX_GW;
+  document.getElementById('ri-gw-ticks').innerHTML = `<span>GW1</span><span>GW5</span><span>GW10</span><span>GW15</span><span>GW20</span><span>GW25</span><span>GW${MAX_GW}</span>`;
+
+  const riCanvas   = document.getElementById('ri-canvas');
+  const riCtx      = riCanvas.getContext('2d');
+  const riSlider   = document.getElementById('ri-slider');
+  const riFill     = document.getElementById('ri-sliderFill');
+  const riDisp     = document.getElementById('ri-gwDisplay');
+  const riPlayBtn  = document.getElementById('ri-playBtn');
+  const riPlayIcon = document.getElementById('ri-playIcon');
+  const riTip      = document.getElementById('ri-tip');
+  const riTipName  = document.getElementById('ri-tipName');
+  const riTipDetail= document.getElementById('ri-tipDetail');
+
+  const RI_DPR = window.devicePixelRatio || 1;
+  let riW, riH, riPad;
+
+  function riResize() {
+    const wrap = document.getElementById('ri-canvas-wrap');
+    if (!wrap) return;
+    const cw = wrap.clientWidth || 800;
+    const ch = Math.max(240, Math.min(480, cw * 0.62));
+    riCanvas.style.width  = cw + 'px';
+    riCanvas.style.height = ch + 'px';
+    riW = Math.round(cw * RI_DPR);
+    riH = Math.round(ch * RI_DPR);
+    riCanvas.width  = riW;
+    riCanvas.height = riH;
+    riCtx.setTransform(RI_DPR, 0, 0, RI_DPR, 0, 0);
+    riPad = { t:32, b:28, l:Math.round(cw*0.042), r:Math.round(cw*0.185) };
+    riDraw();
+  }
+
+  const riCW = () => riCanvas.offsetWidth  || 1;
+  const riCH = () => riCanvas.offsetHeight || 1;
+  const riXP = g  => riPad.l + ((g-1)/(RI_GW-1)) * (riCW()-riPad.l-riPad.r);
+  const riYP = r  => riPad.t + ((r-1)/(RI_N-1))  * (riCH()-riPad.t-riPad.b);
+
+  function riCrY(m, g) {
+    if (g <= 1) return riYP(m.r[0]);
+    if (g >= RI_GW) return riYP(m.r[RI_GW-1]);
+    const i = Math.floor(g) - 1;
+    const t = g - Math.floor(g);
+    const y1 = riYP(m.r[i]);
+    const y2 = riYP(m.r[Math.min(i+1, RI_GW-1)]);
+    const ease = t * t * (3 - 2 * t);
+    return y1 + (y2 - y1) * ease;
+  }
+
+  function riDraw() {
+    const W2=riCW(), H2=riCH();
+    riCtx.clearRect(0,0,W2,H2);
+    const riDrawG = riGwF <= 0 ? 1 : riGwF;
+    const dim = riActiveIdx >= 0;
+
+    const riLabelY = {};
+    const totalH = riCH() - riPad.t - riPad.b;
+    const evenY = RI_M.map((m, idx) => riPad.t + (idx / (RI_N - 1)) * totalH);
+    if (riGwF <= 0) {
+      RI_M.forEach((m, idx) => { riLabelY[idx] = evenY[idx]; });
+    } else {
+      const gForLabel = Math.max(1, Math.min(RI_GW, riDrawG));
+      const blendT = Math.min(1, Math.max(0, (riGwF - 1) / 1.5));
+      const blendEase = blendT * blendT * (3 - 2 * blendT);
+      const minGap = Math.max(13, W2 * 0.013);
+      const yTop = riYP(1);
+      const yBot = riYP(RI_N);
+      let positions = RI_M.map((m, idx) => ({ idx, y: riCrY(m, gForLabel) })).sort((a, b) => a.y - b.y);
+      for (let pass = 0; pass < 10; pass++) {
+        for (let i = 1; i < positions.length; i++) {
+          if (positions[i].y - positions[i-1].y < minGap) {
+            const mid = (positions[i].y + positions[i-1].y) / 2;
+            positions[i-1].y = mid - minGap / 2;
+            positions[i].y = mid + minGap / 2;
+          }
+        }
+        if (positions[0].y < yTop) positions[0].y = yTop;
+        for (let i = 1; i < positions.length; i++) {
+          if (positions[i].y < positions[i-1].y + minGap) positions[i].y = positions[i-1].y + minGap;
+        }
+        if (positions[positions.length-1].y > yBot) positions[positions.length-1].y = yBot;
+        for (let i = positions.length-2; i >= 0; i--) {
+          if (positions[i].y > positions[i+1].y - minGap) positions[i].y = positions[i+1].y - minGap;
+        }
+      }
+      positions.forEach(p => { riLabelY[p.idx] = evenY[p.idx] + (p.y - evenY[p.idx]) * blendEase; });
+    }
+
+    for (let rk=1; rk<=RI_N; rk++) {
+      const y = riYP(rk);
+      riCtx.beginPath(); riCtx.moveTo(riPad.l,y); riCtx.lineTo(W2-riPad.r,y);
+      riCtx.strokeStyle = rk===1?'rgba(201,245,66,0.08)':rk===RI_N?'rgba(255,92,92,0.08)':'rgba(255,255,255,0.04)';
+      riCtx.lineWidth = rk===1||rk===RI_N?1:0.5; riCtx.stroke();
+    }
+    const fz = Math.max(9, W2*0.011);
+    riCtx.font = `400 ${fz}px DM Sans, sans-serif`;
+    riCtx.textAlign = 'right';
+    for (let rk=1; rk<=RI_N; rk++) {
+      riCtx.fillStyle = rk===1?'rgba(201,245,66,0.5)':rk>=15?'rgba(255,92,92,0.4)':'rgba(255,255,255,0.18)';
+      riCtx.fillText(rk, riPad.l-6, riYP(rk)+4);
+    }
+    [1,5,10,15,20,25,32,MAX_GW].forEach(tgw => {
+      if (tgw > riGwF+0.5) return;
+      riCtx.beginPath(); riCtx.moveTo(riXP(tgw),riPad.t); riCtx.lineTo(riXP(tgw),H2-riPad.b);
+      riCtx.strokeStyle='rgba(255,255,255,0.04)'; riCtx.lineWidth=0.5; riCtx.stroke();
+    });
+    const SUB=8;
+    RI_M.forEach((m,idx) => {
+      const hi = riActiveIdx===idx;
+      const d  = dim && !hi;
+      riCtx.save();
+      riCtx.globalAlpha = d?0.05:hi?1:0.5;
+      riCtx.strokeStyle = m.c;
+      riCtx.lineWidth   = d?1:hi?3.5:1.8;
+      riCtx.lineJoin='round'; riCtx.lineCap='round';
+      riCtx.beginPath();
+      const steps = Math.round((riDrawG-1)*SUB);
+      for (let s=0;s<=steps;s++) {
+        const g=1+s/SUB;
+        s===0 ? riCtx.moveTo(riXP(g),riCrY(m,g)) : riCtx.lineTo(riXP(g),riCrY(m,g));
+      }
+      riCtx.lineTo(riXP(riDrawG),riCrY(m,riDrawG));
+      riCtx.stroke();
+      riCtx.restore();
+      const ex=riXP(riDrawG), ey=riCrY(m,riDrawG);
+      riCtx.save();
+      riCtx.globalAlpha = d?0.05:1;
+      riCtx.beginPath(); riCtx.arc(ex,ey,hi?5:3,0,Math.PI*2);
+      riCtx.fillStyle=m.c; riCtx.fill();
+      if (!d) { riCtx.strokeStyle='#0d0d0f'; riCtx.lineWidth=hi?2:1.5; riCtx.stroke(); }
+      if (!d) {
+        const fs=hi?Math.max(12,W2*0.014):Math.max(9,W2*0.011);
+        riCtx.font=`${hi?500:400} ${fs}px DM Sans, sans-serif`;
+        riCtx.fillStyle=hi?m.c:'rgba(232,230,227,0.6)';
+        riCtx.textAlign='left';
+        const labelY = riLabelY[idx] !== undefined ? riLabelY[idx] : ey;
+        riCtx.fillText(m.s, ex+8, labelY);
+      }
+      riCtx.restore();
+    });
+    if (riGwF>1) {
+      const nx=riXP(riGwF);
+      riCtx.save();
+      riCtx.strokeStyle='rgba(201,245,66,0.15)'; riCtx.lineWidth=1;
+      riCtx.setLineDash([2,6]);
+      riCtx.beginPath(); riCtx.moveTo(nx,riPad.t); riCtx.lineTo(nx,H2-riPad.b); riCtx.stroke();
+      riCtx.setLineDash([]);
+      riCtx.restore();
+    }
+  }
+
+  function riSyncUI() {
+    const pct = (riGwF/RI_GW)*100;
+    riFill.style.width = pct+'%';
+    riSlider.value = riGwF;
+    riDisp.textContent = riGwF<=0?'—':'GW '+Math.min(RI_GW,Math.ceil(riGwF));
+    const legGW = Math.max(1,Math.min(RI_GW,Math.round(riGwF)||1));
+    riBuildLB(legGW);
+  }
+
+  let riLastLBGW = -1;
+  function riBuildLB(gw) {
+    if (gw===riLastLBGW) return;
+    riLastLBGW = gw;
+    const lb = document.getElementById('ri-lb');
+    const sorted = RI_M.map((m,i)=>({...m,i,rank:m.r[gw-1]})).sort((a,b)=>a.rank-b.rank);
+    lb.innerHTML='';
+    sorted.forEach(m=>{
+      const el=document.createElement('div');
+      el.className='ri-lb-item'+(riActiveIdx===m.i?' ri-active':'')+(riActiveIdx>=0&&riActiveIdx!==m.i?' ri-dimmed':'');
+      el.style.setProperty('--ri-item-color',m.c);
+      const rCls=m.rank<=3?'ri-podium':m.rank>=15?'ri-danger':'';
+      el.innerHTML=`<span class="ri-lb-rank ${rCls}">${m.rank}</span><span class="ri-lb-dot" style="background:${m.c}"></span><div class="ri-lb-info"><div class="ri-lb-name">${m.f}</div><div class="ri-lb-team">${m.t}</div></div><span class="ri-lb-pts">${m.r[gw-1]}</span>`;
+      el.addEventListener('click',()=>{ riActiveIdx=riActiveIdx===m.i?-1:m.i; riLastLBGW=-1; riBuildLB(gw); riDraw(); });
+      lb.appendChild(el);
+    });
+  }
+
+  function riStopPlay() { riPlaying=false; if(riAnimId){cancelAnimationFrame(riAnimId);riAnimId=null;} riPlayIcon.innerHTML='<path d="M8 5v14l11-7z"/>'; }
+  function riStartPlay() {
+    riStopPlay();
+    riPlayFrom = riGwF>=RI_GW?0:riGwF;
+    riGwF=riPlayFrom; riPlayStart=null; riPlaying=true;
+    riPlayIcon.innerHTML='<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+    function step(ts) {
+      if(!riPlaying)return;
+      if(!riPlayStart)riPlayStart=ts;
+      const elapsed=ts-riPlayStart, remaining=RI_GW-riPlayFrom;
+      const dur=remaining*RI_MS_PER_GW;
+      const raw=Math.min(elapsed/dur,1);
+      const eased=raw<0.5?2*raw*raw:1-Math.pow(-2*raw+2,2)/2;
+      riGwF=riPlayFrom+eased*remaining;
+      riGwF=Math.min(riGwF,RI_GW);
+      riSyncUI(); riDraw();
+      if(raw<1){riAnimId=requestAnimationFrame(step);}
+      else{riGwF=RI_GW;riSyncUI();riDraw();riStopPlay();}
+    }
+    riAnimId=requestAnimationFrame(step);
+  }
+
+  riPlayBtn.addEventListener('click',()=>riPlaying?riStopPlay():riStartPlay());
+  riSlider.addEventListener('input',()=>{ riStopPlay(); riGwF=parseFloat(riSlider.value); riSyncUI(); riDraw(); });
+
+  function riCoords(e) {
+    const rect=riCanvas.getBoundingClientRect();
+    const src=e.touches?e.touches[0]:e;
+    return {x:(src.clientX-rect.left)*(riCW()/rect.width),y:(src.clientY-rect.top)*(riCH()/rect.height)};
+  }
+  function riNearest(cx,cy) {
+    const g=Math.max(1,Math.min(RI_GW,riGwF));
+    let best=null,bd=28;
+    RI_M.forEach((m,i)=>{
+      const d=Math.hypot(cx-riXP(g),cy-riCrY(m,g));
+      if(d<bd){bd=d;best={m,i};}
+    });
+    return best;
+  }
+  riCanvas.addEventListener('mousemove',e=>{
+    if(riGwF<=0)return;
+    const {x,y}=riCoords(e);
+    const h=riNearest(x,y);
+    if(h){
+      const g=Math.max(1,Math.min(RI_GW,Math.round(riGwF)||1));
+      riTipName.textContent=h.m.f; riTipName.style.color=h.m.c;
+      riTipDetail.textContent=`${h.m.t} · #${h.m.r[g-1]} after GW${g}`;
+      const _tg=Math.max(1,Math.min(RI_GW,riGwF||1));
+      let tx=riXP(_tg)+12;
+      let ty=riCrY(h.m,_tg)-46;
+      if(tx+210>riCW())tx=riXP(_tg)-218;
+      if(ty<4)ty=riCrY(h.m,_tg)+12;
+      riTip.style.left=tx+'px'; riTip.style.top=ty+'px';
+      riTip.classList.add('ri-show');
+    } else { riTip.classList.remove('ri-show'); }
+  });
+  riCanvas.addEventListener('mouseleave',()=>riTip.classList.remove('ri-show'));
+  riCanvas.addEventListener('click',e=>{
+    if(riGwF<=0)return;
+    const {x,y}=riCoords(e);
+    const h=riNearest(x,y);
+    if(h){riActiveIdx=riActiveIdx===h.i?-1:h.i;riLastLBGW=-1;riBuildLB(Math.max(1,Math.min(RI_GW,Math.round(riGwF)||1)));riDraw();}
+  });
+  riCanvas.addEventListener('touchstart',e=>{
+    e.preventDefault();
+    if(riGwF<=0)return;
+    const {x,y}=riCoords(e);
+    const h=riNearest(x,y);
+    if(h){riActiveIdx=riActiveIdx===h.i?-1:h.i;riLastLBGW=-1;riBuildLB(Math.max(1,Math.min(RI_GW,Math.round(riGwF)||1)));riDraw();}
+  },{passive:false});
+
+  const origShowSection = window.showSection;
+  window.showSection = function(id, btn) {
+    origShowSection(id, btn);
+    if (id === 'runin') { setTimeout(() => { riResize(); riBuildLB(1); }, 50); }
+  };
+  window.addEventListener('resize', () => { if (document.getElementById('runin').classList.contains('active')) riResize(); });
+  riBuildLB(1);
+}
+
+// ── INIT SECURE DATA FETCH ───────────────────
+fetch('fpl_data.json')
+  .then(response => {
+    if (!response.ok) throw new Error("Network response was not ok");
+    return response.json();
+  })
+  .then(data => {
+    // 1. Assign Data
+    standings = data.standings;
+    payments = data.payments;
+    monthly = data.monthly;
+    lmpData = data.lmpData;
+    gwData = data.gwData;
+    RI_M = data.runInData;
+    MAX_GW = data.MAX_GW || 34;
+
+    // Update Header labels
+    document.getElementById('current-gw-header').innerText = `GW${MAX_GW}`;
+    document.getElementById('footer-gw').innerText = `GW${MAX_GW}`;
+
+    // 2. Build Dashboard
+    buildStandings();
+    buildPayments();
+    buildDebtors();
+    buildLMP();
+    buildGWPills();
+    buildH2H();
+    selectGW(MAX_GW);
+    
+    document.getElementById('gw-prev').disabled = false;
+    document.getElementById('gw-next').disabled = true;
+
+    // 3. Initialize Interactive Canvas
+    initRunIn();
+  })
+  .catch(error => {
+    console.error('Error loading FPL data:', error);
+    alert('FPL Data failed to load. Make sure you are running this file via a Local Web Server (like VS Code Live Server) and that fpl_data.json is in the same folder.');
+  });
+
+</script>
+</body>
+</html>
