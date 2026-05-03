@@ -352,9 +352,9 @@
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;">
       <div class="chart-card" style="margin:0;">
-        <div class="chart-title" id="gw-rank-chart-title">GW Rank</div>
-        <div class="chart-sub">Lower rank = better (1st is best)</div>
-        <div style="position:relative;width:100%;height:400px;"><canvas id="gwRankChart" role="img" aria-label="Horizontal bar chart of GW rank">GW rank per team.</canvas></div>
+        <div class="chart-title" id="gw-diff-chart-title">vs. League Average</div>
+        <div class="chart-sub">Points above or below the weekly mean</div>
+        <div style="position:relative;width:100%;height:400px;"><canvas id="gwDiffChart" role="img" aria-label="Horizontal bar chart of points vs average">Performance relative to average.</canvas></div>
       </div>
       <div class="chart-card" style="margin:0;">
         <div class="chart-title" id="gw-pts-chart-title">GW Points</div>
@@ -574,7 +574,7 @@ let gwData = [];
 let RI_M = [];
 let MAX_GW = 1;
 let currentGW = 1;
-let gwRankChart = null;
+let gwDiffChart = null;
 let gwPtsChart = null;
 const WC2_TEAMS = new Set(['Sthe Coqueto','Hidden Hills','Iam_ntombela','Šeśko Mode','TAYDO FC','A Cunha Matata','JustGimmeDeLigt']);
 
@@ -828,7 +828,7 @@ function renderGW(gw) {
 
   document.getElementById('gw-cards-heading').textContent = `GW${gw} Results`;
   document.getElementById('gw-cards-sub').textContent = `${enriched.length} managers · sorted by weekly rank`;
-  document.getElementById('gw-rank-chart-title').textContent = `GW${gw} Rank (Weekly)`;
+  document.getElementById('gw-diff-chart-title').textContent = `GW${gw} Performance vs Avg`;
   document.getElementById('gw-pts-chart-title').textContent = `GW${gw} Points`;
 
   document.getElementById('gw-summary').innerHTML = `
@@ -847,12 +847,31 @@ function renderGW(gw) {
     <div class="metric-card"><div class="metric-label">Last place (Weekly)</div><div class="metric-value red" style="font-size:20px;font-family:var(--font-body);font-weight:600;">${loser.manager}</div><div class="metric-sub">${loser.team} · rank ${loser.weeklyRank} · ${loser.gwPt} pts</div></div>
   `;
 
-  if (gwRankChart) gwRankChart.destroy();
+  if (gwDiffChart) gwDiffChart.destroy();
   if (gwPtsChart) gwPtsChart.destroy();
 
-  gwRankChart = new Chart(document.getElementById('gwRankChart'), {
-    type:'bar', data:{ labels: sortedByRank.map(m=>m.manager), datasets:[{ label:'Weekly Rank', data: sortedByRank.map(m=>m.weeklyRank), backgroundColor: sortedByRank.map(m=>m.weeklyRank<=3?'rgba(0,255,135,0.7)':m.weeklyRank>=15?'rgba(255,71,87,0.5)':'rgba(0,255,135,0.25)'), borderColor: sortedByRank.map(m=>m.weeklyRank<=3?'#00ff87':m.weeklyRank>=15?'#ff4757':'rgba(0,255,135,0.4)'), borderWidth:1,borderRadius:4 }] },
-    options:{ indexAxis:'y',responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{reverse:false,min:0,max:17,ticks:{color:'#7a8a7e',font:{size:11},stepSize:1},grid:{color:'rgba(255,255,255,0.04)'}}, y:{ticks:{color:'#7a8a7e',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}} } }
+  gwDiffChart = new Chart(document.getElementById('gwDiffChart'), {
+    type:'bar', data:{ 
+      labels: sortedByPts.map(m=>m.manager), 
+      datasets:[{ 
+        label:'vs. Average', 
+        data: sortedByPts.map(m=>m.gwPt - avgPts), 
+        backgroundColor: sortedByPts.map(m=>(m.gwPt - avgPts) >= 0 ? 'rgba(0,255,135,0.7)' : 'rgba(255,71,87,0.6)'), 
+        borderColor: sortedByPts.map(m=>(m.gwPt - avgPts) >= 0 ? '#00ff87' : '#ff4757'), 
+        borderWidth:1,borderRadius:4 
+      }] 
+    },
+    options:{ 
+      indexAxis:'y',responsive:true,maintainAspectRatio:false, 
+      plugins:{
+        legend:{display:false},
+        tooltip: { callbacks: { label: (item) => `${item.raw > 0 ? '+' : ''}${item.raw} pts vs avg` } }
+      }, 
+      scales:{ 
+        x:{ticks:{color:'#7a8a7e',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}}, 
+        y:{ticks:{color:'#7a8a7e',font:{size:11}},grid:{display:false}} 
+      } 
+    }
   });
 
   gwPtsChart = new Chart(document.getElementById('gwPtsChart'), {
