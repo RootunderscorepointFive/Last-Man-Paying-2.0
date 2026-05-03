@@ -631,14 +631,12 @@ function buildStandings() {
         </div>`;
     
     currentPayers.forEach((m) => {
-      const payRecord = payments.find(p => p.manager === m.manager);
-      const outstanding = payRecord ? payRecord.owed - payRecord.paid : 0;
       shameHtml += `
         <div class="shame-card">
           <div class="shame-rank">${m.weeklyRank}</div>
           <div class="shame-info">
             <div class="shame-name">${m.manager.split(' ')[0]}</div>
-            <div class="shame-amt">Total Debt: R${outstanding.toLocaleString()}</div>
+            <div class="shame-amt">Score: ${m.gwPt} pts</div>
           </div>
         </div>`;
     });
