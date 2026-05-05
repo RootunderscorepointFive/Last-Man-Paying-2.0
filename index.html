@@ -102,13 +102,13 @@
   .pitch-row { display:flex; justify-content:space-around; align-items:center; }
   
   .player-card { display:flex; flex-direction:column; align-items:center; width:85px; gap:4px; transition: transform 0.2s; }
-  .player-card:hover { transform: scale(1.1); }
-  .player-shirt { width:36px; height:36px; background:var(--surface2); border-radius:50%; border:2px solid var(--green); display:flex; align-items:center; justify-content:center; position:relative; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
-  .player-shirt svg { width:20px; height:20px; fill:var(--green); }
-  .player-shirt.is-captain::after { content:'C'; position:absolute; top:-5px; right:-5px; width:16px; height:16px; background:var(--amber); color:black; border-radius:50%; font-size:10px; font-weight:900; display:flex; align-items:center; justify-content:center; border:1px solid white; }
-  .player-shirt.is-vice::after { content:'V'; position:absolute; top:-5px; right:-5px; width:16px; height:16px; background:var(--text-dim); color:white; border-radius:50%; font-size:10px; font-weight:900; display:flex; align-items:center; justify-content:center; border:1px solid white; }
+  .player-card:hover { transform: scale(1.15); z-index: 10; }
+  .player-photo { width:52px; height:52px; background:var(--surface3); border-radius:50%; border:2px solid var(--green); display:flex; align-items:center; justify-content:center; position:relative; box-shadow: 0 4px 12px rgba(0,0,0,0.4); overflow: visible; }
+  .player-photo img { width:100%; height:100%; object-fit: cover; border-radius:50%; }
+  .player-photo.is-captain::after { content:'C'; position:absolute; top:-4px; right:-4px; width:18px; height:18px; background:var(--amber); color:black; border-radius:50%; font-size:11px; font-weight:900; display:flex; align-items:center; justify-content:center; border:2px solid white; z-index: 3; }
+  .player-photo.is-vice::after { content:'V'; position:absolute; top:-4px; right:-4px; width:18px; height:18px; background:var(--text-dim); color:white; border-radius:50%; font-size:11px; font-weight:900; display:flex; align-items:center; justify-content:center; border:2px solid white; z-index: 3; }
   
-  .player-info-box { background:rgba(0,0,0,0.7); border-radius:4px; padding:2px 6px; width:100%; text-align:center; border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(2px); }
+  .player-info-box { background:rgba(0,0,0,0.8); border-radius:6px; padding:3px 8px; width:100%; text-align:center; border:1px solid rgba(255,255,255,0.15); backdrop-filter:blur(4px); margin-top: -8px; position: relative; z-index: 2; }
   .p-name { font-size:10px; font-weight:700; color:white; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .p-pts { font-family:var(--font-mono); font-size:9px; color:var(--green); }
 
@@ -116,8 +116,7 @@
   .bench-title { font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; text-align:center; font-family:var(--font-mono); }
   .bench-row { display:flex; justify-content:center; gap:12px; }
   .player-card.bench { width:70px; }
-  .player-card.bench .player-shirt { width:28px; height:28px; border-color:var(--text-dim); }
-  .player-card.bench .player-shirt svg { width:14px; height:14px; fill:var(--text-dim); }
+  .player-card.bench .player-photo { width:40px; height:40px; border-color:var(--text-dim); }
   .captain-pill { display:inline-flex; align-items:center; gap:4px; font-size:10px; padding:2px 8px; background:rgba(255,165,2,0.1); color:var(--amber); border-radius:999px; border:1px solid rgba(255,165,2,0.3); font-family:var(--font-mono); margin-top:4px; }
   .chip-pill { display:inline-flex; align-items:center; gap:4px; font-size:10px; padding:2px 8px; background:rgba(108,92,231,0.1); color:var(--purple-light); border-radius:999px; border:1px solid rgba(108,92,231,0.3); font-family:var(--font-mono); margin-top:4px; margin-left:4px; }
   .rank { font-family:var(--font-display); font-size:22px; color:var(--text-dim); width:40px; display:inline-block; }
@@ -898,14 +897,17 @@ function openTeamModal(managerName) {
   pitch.innerHTML = '';
   bench.innerHTML = '';
   
-  const shirtSvg = `<svg viewBox="0 0 24 24"><path d="M12 2L4 5v3c0 5.25 3.42 10.16 8 11.5 4.58-1.34 8-6.25 8-11.5V5l-8-3z"/></svg>`;
-  
   const createPlayerCard = (p, isBench = false) => {
     const card = document.createElement('div');
     card.className = `player-card ${isBench ? 'bench' : ''}`;
     const capClass = p.is_captain ? 'is-captain' : p.is_vice_captain ? 'is-vice' : '';
+    // FPL Image CDN URL
+    const imgUrl = `https://resources.premierleague.com/premierleague/photos/players/110x140/p${p.code}.png`;
+    
     card.innerHTML = `
-      <div class="player-shirt ${capClass}">${shirtSvg}</div>
+      <div class="player-photo ${capClass}">
+        <img src="${imgUrl}" alt="${p.name}" onerror="this.src='https://fantasy.premierleague.com/static/media/player-missing-110.64095a5f.png'">
+      </div>
       <div class="player-info-box">
         <div class="p-name">${p.name}</div>
       </div>
@@ -913,13 +915,9 @@ function openTeamModal(managerName) {
     return card;
   };
 
-  // Split into starters and bench (FPL picks 1-11 are starters, 12-15 are bench)
-  // Our sync_fpl.js returns them in order but without explicit "is_starter" field
-  // Typically FPL API returns 11 starters first
   const starters = m.currentPicks.slice(0, 11);
   const subs = m.currentPicks.slice(11);
 
-  // Group starters by position
   const rows = { 1: [], 2: [], 3: [], 4: [] };
   starters.forEach(p => rows[p.position].push(p));
 

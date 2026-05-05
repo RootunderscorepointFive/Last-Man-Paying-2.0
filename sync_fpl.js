@@ -115,7 +115,8 @@ async function sync() {
         playerMap[p.id] = {
             web_name: p.web_name,
             team: p.team,
-            element_type: p.element_type
+            element_type: p.element_type,
+            code: p.code
         };
     });
 
@@ -142,6 +143,7 @@ async function sync() {
             id: p.element,
             name: playerMap[p.element].web_name,
             position: playerMap[p.element].element_type,
+            code: playerMap[p.element].code,
             multiplier: p.multiplier,
             is_captain: p.is_captain,
             is_vice_captain: p.is_vice_captain
