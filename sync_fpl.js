@@ -109,6 +109,15 @@ async function sync() {
     
     const bootstrap = await fetchJSON('https://fantasy.premierleague.com/api/bootstrap-static/');
     const currentGW = bootstrap.events.find(e => e.is_current).id;
+    const players = bootstrap.elements;
+    const playerMap = {};
+    players.forEach(p => {
+        playerMap[p.id] = {
+            web_name: p.web_name,
+            team: p.team,
+            element_type: p.element_type
+        };
+    });
 
     const gwData = [];
     const runInData = [];
@@ -119,11 +128,28 @@ async function sync() {
 
     for (let i = 0; i < managers.length; i++) {
         const m = managers[i];
+        console.log(`Fetching history for ${m.player_name}...`);
         const history = await fetchJSON(`https://fantasy.premierleague.com/api/entry/${m.entry}/history/`);
         const pastGWs = history.current.filter(h => h.event <= currentGW);
         const gwPts = pastGWs.map(h => h.points - h.event_transfers_cost);
         const gwHits = pastGWs.map(h => h.event_transfers_cost);
         
+        // Fetch current picks for captain and team drill-down
+        console.log(`Fetching picks for ${m.player_name} (GW${currentGW})...`);
+        const picksData = await fetchJSON(`https://fantasy.premierleague.com/api/entry/${m.entry}/event/${currentGW}/picks/`);
+        
+        const currentPicks = picksData.picks.map(p => ({
+            id: p.element,
+            name: playerMap[p.element].web_name,
+            position: playerMap[p.element].element_type,
+            multiplier: p.multiplier,
+            is_captain: p.is_captain,
+            is_vice_captain: p.is_vice_captain
+        }));
+
+        const captain = currentPicks.find(p => p.is_captain);
+        const activeChip = picksData.active_chip;
+
         gwData.push({
             team: m.entry_name,
             manager: m.player_name,
@@ -131,7 +157,10 @@ async function sync() {
             gwPts: gwPts,
             gwHits: gwHits,
             chips: history.chips,
-            total: m.total
+            total: m.total,
+            currentCaptain: captain ? captain.name : 'Unknown',
+            activeChip: activeChip,
+            currentPicks: currentPicks
         });
     }
 // League ranks per GW (Cumulative for Run-In Chart)

@@ -74,11 +74,28 @@
   .standings-table thead { background:var(--surface2); border-bottom:1px solid var(--border); }
   .standings-table th { padding:12px 16px; font-size:11px; font-weight:500; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; text-align:left; font-family:var(--font-mono); }
   .standings-table th:not(:first-child) { text-align:right; }
-  .standings-table td { padding:14px 16px; border-bottom:1px solid var(--border); vertical-align:middle; }
+  .standings-table td { padding:14px 16px; border-bottom:1px solid var(--border); vertical-align:middle; cursor: pointer; }
   .standings-table tr:last-child td { border-bottom:none; }
   .standings-table tr { transition:background 0.15s; }
   .standings-table tr:hover { background:var(--surface2); }
-  .standings-table td:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) { text-align:right; }
+  .standings-table td:not(:first-child):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) { text-align:right; }
+
+  /* Team Modal */
+  .modal { display:none; position:fixed; z-index:100; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter:blur(4px); align-items:center; justify-content:center; }
+  .modal.active { display:flex; }
+  .modal-content { background:var(--surface); border:1px solid var(--border-green); border-radius:var(--radius); width:90%; max-width:500px; padding:24px; position:relative; animation:fadeUp 0.3s ease; }
+  .modal-close { position:absolute; right:16px; top:16px; font-size:24px; cursor:pointer; color:var(--text-dim); }
+  .modal-close:hover { color:var(--red); }
+  .modal-header { margin-bottom:20px; border-bottom:1px solid var(--border); padding-bottom:12px; }
+  .modal-title { font-family:var(--font-display); font-size:24px; color:var(--green); }
+  .modal-subtitle { font-size:12px; color:var(--text-muted); font-family:var(--font-mono); }
+  .pitch { background:linear-gradient(180deg, #1a4d2e 0%, #0d2b1a 100%); border-radius:var(--radius-sm); padding:16px; display:grid; grid-template-columns:repeat(5, 1fr); gap:8px; border:1px solid rgba(0,255,135,0.1); }
+  .player-slot { text-align:center; padding:8px 4px; border-radius:4px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); }
+  .player-name-small { font-size:10px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .player-pos { font-size:8px; color:var(--text-dim); text-transform:uppercase; margin-bottom:2px; }
+  .player-cap { color:var(--amber); font-weight:bold; font-size:9px; margin-left:2px; }
+  .captain-pill { display:inline-flex; align-items:center; gap:4px; font-size:10px; padding:2px 8px; background:rgba(255,165,2,0.1); color:var(--amber); border-radius:999px; border:1px solid rgba(255,165,2,0.3); font-family:var(--font-mono); margin-top:4px; }
+  .chip-pill { display:inline-flex; align-items:center; gap:4px; font-size:10px; padding:2px 8px; background:rgba(108,92,231,0.1); color:var(--purple-light); border-radius:999px; border:1px solid rgba(108,92,231,0.3); font-family:var(--font-mono); margin-top:4px; margin-left:4px; }
   .rank { font-family:var(--font-display); font-size:22px; color:var(--text-dim); width:40px; display:inline-block; }
   .rank.top3 { color:var(--green); }
   .manager-name { font-weight:500; font-size:14px; }
@@ -558,6 +575,18 @@
     </div>
   </section>
 
+  <div class="modal" id="team-modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <div class="modal-header">
+        <div class="modal-title" id="modal-team-name">Team Name</div>
+        <div class="modal-subtitle" id="modal-manager-name">Manager Name</div>
+      </div>
+      <div class="pitch" id="modal-pitch"></div>
+      <div style="margin-top:16px; font-size:11px; color:var(--text-dim); text-align:center;">Click anywhere outside to close</div>
+    </div>
+  </div>
+
   <footer style="margin-top: 48px;">
     <p><span class="green-dot"></span>FPL 2025/26 Mini-League · Updated <span id="footer-gw">GW</span></p>
     <p>Data sourced from FPL_2025.xlsx</p>
@@ -602,14 +631,27 @@ function buildStandings() {
     const gap = m.pts - maxPts;
     const pct = Math.round((m.pts / maxPts) * 100);
     const isBottom = rank >= 15;
-    tbody.innerHTML += `<tr>
+
+    const captain = managerData ? managerData.currentCaptain : '—';
+    const activeChip = managerData ? managerData.activeChip : null;
+    const chipNames = { 'wildcard': 'WC', '3_captain': 'TC', 'bench_boost': 'BB', 'freehit': 'FH' };
+    const chipHtml = activeChip ? `<span class="chip-pill">${chipNames[activeChip] || activeChip} Active</span>` : '';
+
+    const tr = document.createElement('tr');
+    tr.onclick = () => openTeamModal(m.manager);
+    tr.innerHTML = `
       <td><span class="rank ${rank <= 3 ? 'top3' : ''}">${rank}</span>${trendIcon}</td>
-      <td><div class="manager-name">${m.manager}${isBottom ? '<span class="bottom-badge">bottom 3</span>' : ''}</div><div class="team-name">${m.team}</div></td>
+      <td>
+        <div class="manager-name">${m.manager}${isBottom ? '<span class="bottom-badge">bottom 3</span>' : ''}</div>
+        <div class="team-name">${m.team}</div>
+        <div class="captain-pill">© ${captain}</div>${chipHtml}
+      </td>
       <td style="text-align:right"><span class="pts">${m.pts.toLocaleString()}</span></td>
       <td style="text-align:right;font-family:var(--font-mono);color:var(--text-muted)">${gap === 0 ? '—' : gap}</td>
       <td style="text-align:right"><span style="font-family:var(--font-mono);font-size:13px;color:${m.bottomApps >= 8 ? 'var(--red)' : m.bottomApps >= 5 ? 'var(--amber)' : 'var(--text-muted)'}">${m.bottomApps}</span></td>
       <td style="text-align:right"><div class="pts-bar-wrap"><div class="pts-bar-bg"><div class="pts-bar-fill" style="width:${pct}%"></div></div></div></td>
-    </tr>`;
+    `;
+    tbody.appendChild(tr);
   });
   
   // Wall of Shame / Currently Paying logic (Based on LATEST GW performance)
@@ -801,6 +843,47 @@ function selectGW(gw) {
   document.getElementById('gw-prev').disabled = gw === 1;
   document.getElementById('gw-next').disabled = gw === MAX_GW;
   renderGW(gw);
+}
+
+function openTeamModal(managerName) {
+  const m = gwData.find(d => d.manager === managerName);
+  if (!m) return;
+
+  document.getElementById('modal-team-name').innerText = m.team;
+  document.getElementById('modal-manager-name').innerText = m.manager + ` (GW${MAX_GW})`;
+  
+  const pitch = document.getElementById('modal-pitch');
+  pitch.innerHTML = '';
+  
+  const posNames = { 1: 'GK', 2: 'DEF', 3: 'MID', 4: 'FWD' };
+  
+  // Sort picks by position
+  const sortedPicks = [...m.currentPicks].sort((a,b) => a.position - b.position);
+  
+  sortedPicks.forEach(p => {
+    const slot = document.createElement('div');
+    slot.className = 'player-slot';
+    const isCap = p.is_captain ? '<span class="player-cap">(C)</span>' : p.is_vice_captain ? '<span class="player-cap" style="color:var(--text-dim)">(V)</span>' : '';
+    slot.innerHTML = `
+      <div class="player-pos">${posNames[p.position]}</div>
+      <div class="player-name-small">${p.name}${isCap}</div>
+    `;
+    pitch.appendChild(slot);
+  });
+
+  document.getElementById('team-modal').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('team-modal').classList.remove('active');
+}
+
+// Close modal on outside click
+window.onclick = function(event) {
+  const modal = document.getElementById('team-modal');
+  if (event.target == modal) {
+    closeModal();
+  }
 }
 
 // ── GW RENDER ────────────────────────────────
