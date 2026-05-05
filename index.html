@@ -80,20 +80,44 @@
   .standings-table tr:hover { background:var(--surface2); }
   .standings-table td:not(:first-child):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) { text-align:right; }
 
-  /* Team Modal */
-  .modal { display:none; position:fixed; z-index:100; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter:blur(4px); align-items:center; justify-content:center; }
+  /* Team Modal & Pitch Redesign */
+  .modal { display:none; position:fixed; z-index:100; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); backdrop-filter:blur(8px); align-items:center; justify-content:center; }
   .modal.active { display:flex; }
-  .modal-content { background:var(--surface); border:1px solid var(--border-green); border-radius:var(--radius); width:90%; max-width:500px; padding:24px; position:relative; animation:fadeUp 0.3s ease; }
-  .modal-close { position:absolute; right:16px; top:16px; font-size:24px; cursor:pointer; color:var(--text-dim); }
+  .modal-content { background:var(--surface); border:1px solid var(--border-green); border-radius:24px; width:95%; max-width:550px; padding:32px; position:relative; animation:fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+  .modal-close { position:absolute; right:20px; top:20px; font-size:24px; cursor:pointer; color:var(--text-dim); transition: color 0.2s; }
   .modal-close:hover { color:var(--red); }
-  .modal-header { margin-bottom:20px; border-bottom:1px solid var(--border); padding-bottom:12px; }
-  .modal-title { font-family:var(--font-display); font-size:24px; color:var(--green); }
-  .modal-subtitle { font-size:12px; color:var(--text-muted); font-family:var(--font-mono); }
-  .pitch { background:linear-gradient(180deg, #1a4d2e 0%, #0d2b1a 100%); border-radius:var(--radius-sm); padding:16px; display:grid; grid-template-columns:repeat(5, 1fr); gap:8px; border:1px solid rgba(0,255,135,0.1); }
-  .player-slot { text-align:center; padding:8px 4px; border-radius:4px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); }
-  .player-name-small { font-size:10px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .player-pos { font-size:8px; color:var(--text-dim); text-transform:uppercase; margin-bottom:2px; }
-  .player-cap { color:var(--amber); font-weight:bold; font-size:9px; margin-left:2px; }
+  .modal-header { margin-bottom:24px; text-align:center; }
+  .modal-title { font-family:var(--font-display); font-size:32px; color:var(--green); letter-spacing:1px; line-height:1; margin-bottom:4px; }
+  .modal-subtitle { font-size:13px; color:var(--text-muted); font-family:var(--font-mono); text-transform:uppercase; letter-spacing:1px; }
+
+  .pitch-container { position:relative; background:#1a4d2e; border-radius:16px; padding:20px; overflow:hidden; border:2px solid rgba(255,255,255,0.1); box-shadow: inset 0 0 100px rgba(0,0,0,0.3); }
+  /* Pitch Markings */
+  .pitch-markings { position:absolute; inset:10px; border:2px solid rgba(255,255,255,0.15); pointer-events:none; }
+  .pitch-line-center { position:absolute; top:50%; left:0; right:0; height:2px; background:rgba(255,255,255,0.15); }
+  .pitch-circle { position:absolute; top:50%; left:50%; width:80px; height:80px; border:2px solid rgba(255,255,255,0.15); border-radius:50%; transform:translate(-50%,-50%); }
+  .pitch-box-top { position:absolute; top:0; left:50%; width:160px; height:60px; border:2px solid rgba(255,255,255,0.15); border-top:none; transform:translateX(-50%); }
+  .pitch-box-bot { position:absolute; bottom:0; left:50%; width:160px; height:60px; border:2px solid rgba(255,255,255,0.15); border-bottom:none; transform:translateX(-50%); }
+
+  .pitch-layout { position:relative; z-index:2; display:flex; flex-direction:column; gap:20px; min-height:400px; justify-content:space-around; }
+  .pitch-row { display:flex; justify-content:space-around; align-items:center; }
+  
+  .player-card { display:flex; flex-direction:column; align-items:center; width:85px; gap:4px; transition: transform 0.2s; }
+  .player-card:hover { transform: scale(1.1); }
+  .player-shirt { width:36px; height:36px; background:var(--surface2); border-radius:50%; border:2px solid var(--green); display:flex; align-items:center; justify-content:center; position:relative; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+  .player-shirt svg { width:20px; height:20px; fill:var(--green); }
+  .player-shirt.is-captain::after { content:'C'; position:absolute; top:-5px; right:-5px; width:16px; height:16px; background:var(--amber); color:black; border-radius:50%; font-size:10px; font-weight:900; display:flex; align-items:center; justify-content:center; border:1px solid white; }
+  .player-shirt.is-vice::after { content:'V'; position:absolute; top:-5px; right:-5px; width:16px; height:16px; background:var(--text-dim); color:white; border-radius:50%; font-size:10px; font-weight:900; display:flex; align-items:center; justify-content:center; border:1px solid white; }
+  
+  .player-info-box { background:rgba(0,0,0,0.7); border-radius:4px; padding:2px 6px; width:100%; text-align:center; border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(2px); }
+  .p-name { font-size:10px; font-weight:700; color:white; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .p-pts { font-family:var(--font-mono); font-size:9px; color:var(--green); }
+
+  .bench-container { margin-top:20px; padding-top:16px; border-top:1px dashed rgba(255,255,255,0.1); }
+  .bench-title { font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; text-align:center; font-family:var(--font-mono); }
+  .bench-row { display:flex; justify-content:center; gap:12px; }
+  .player-card.bench { width:70px; }
+  .player-card.bench .player-shirt { width:28px; height:28px; border-color:var(--text-dim); }
+  .player-card.bench .player-shirt svg { width:14px; height:14px; fill:var(--text-dim); }
   .captain-pill { display:inline-flex; align-items:center; gap:4px; font-size:10px; padding:2px 8px; background:rgba(255,165,2,0.1); color:var(--amber); border-radius:999px; border:1px solid rgba(255,165,2,0.3); font-family:var(--font-mono); margin-top:4px; }
   .chip-pill { display:inline-flex; align-items:center; gap:4px; font-size:10px; padding:2px 8px; background:rgba(108,92,231,0.1); color:var(--purple-light); border-radius:999px; border:1px solid rgba(108,92,231,0.3); font-family:var(--font-mono); margin-top:4px; margin-left:4px; }
   .rank { font-family:var(--font-display); font-size:22px; color:var(--text-dim); width:40px; display:inline-block; }
@@ -582,8 +606,25 @@
         <div class="modal-title" id="modal-team-name">Team Name</div>
         <div class="modal-subtitle" id="modal-manager-name">Manager Name</div>
       </div>
-      <div class="pitch" id="modal-pitch"></div>
-      <div style="margin-top:16px; font-size:11px; color:var(--text-dim); text-align:center;">Click anywhere outside to close</div>
+      
+      <div class="pitch-container">
+        <div class="pitch-markings">
+          <div class="pitch-box-top"></div>
+          <div class="pitch-line-center"></div>
+          <div class="pitch-circle"></div>
+          <div class="pitch-box-bot"></div>
+        </div>
+        <div class="pitch-layout" id="modal-pitch">
+          <!-- Position Rows (GK, DEF, MID, FWD) injected here -->
+        </div>
+      </div>
+
+      <div class="bench-container">
+        <div class="bench-title">Substitutes</div>
+        <div class="bench-row" id="modal-bench"></div>
+      </div>
+
+      <div style="margin-top:20px; font-size:11px; color:var(--text-dim); text-align:center; font-family:var(--font-mono);">POINTS ARE LIVE • TAP OUTSIDE TO CLOSE</div>
     </div>
   </div>
 
@@ -853,23 +894,43 @@ function openTeamModal(managerName) {
   document.getElementById('modal-manager-name').innerText = m.manager + ` (GW${MAX_GW})`;
   
   const pitch = document.getElementById('modal-pitch');
+  const bench = document.getElementById('modal-bench');
   pitch.innerHTML = '';
+  bench.innerHTML = '';
   
-  const posNames = { 1: 'GK', 2: 'DEF', 3: 'MID', 4: 'FWD' };
+  const shirtSvg = `<svg viewBox="0 0 24 24"><path d="M12 2L4 5v3c0 5.25 3.42 10.16 8 11.5 4.58-1.34 8-6.25 8-11.5V5l-8-3z"/></svg>`;
   
-  // Sort picks by position
-  const sortedPicks = [...m.currentPicks].sort((a,b) => a.position - b.position);
-  
-  sortedPicks.forEach(p => {
-    const slot = document.createElement('div');
-    slot.className = 'player-slot';
-    const isCap = p.is_captain ? '<span class="player-cap">(C)</span>' : p.is_vice_captain ? '<span class="player-cap" style="color:var(--text-dim)">(V)</span>' : '';
-    slot.innerHTML = `
-      <div class="player-pos">${posNames[p.position]}</div>
-      <div class="player-name-small">${p.name}${isCap}</div>
+  const createPlayerCard = (p, isBench = false) => {
+    const card = document.createElement('div');
+    card.className = `player-card ${isBench ? 'bench' : ''}`;
+    const capClass = p.is_captain ? 'is-captain' : p.is_vice_captain ? 'is-vice' : '';
+    card.innerHTML = `
+      <div class="player-shirt ${capClass}">${shirtSvg}</div>
+      <div class="player-info-box">
+        <div class="p-name">${p.name}</div>
+      </div>
     `;
-    pitch.appendChild(slot);
+    return card;
+  };
+
+  // Split into starters and bench (FPL picks 1-11 are starters, 12-15 are bench)
+  // Our sync_fpl.js returns them in order but without explicit "is_starter" field
+  // Typically FPL API returns 11 starters first
+  const starters = m.currentPicks.slice(0, 11);
+  const subs = m.currentPicks.slice(11);
+
+  // Group starters by position
+  const rows = { 1: [], 2: [], 3: [], 4: [] };
+  starters.forEach(p => rows[p.position].push(p));
+
+  [1, 2, 3, 4].forEach(pos => {
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'pitch-row';
+    rows[pos].forEach(p => rowDiv.appendChild(createPlayerCard(p)));
+    pitch.appendChild(rowDiv);
   });
+
+  subs.forEach(p => bench.appendChild(createPlayerCard(p, true)));
 
   document.getElementById('team-modal').classList.add('active');
 }
