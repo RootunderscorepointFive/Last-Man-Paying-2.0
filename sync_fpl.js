@@ -1,9 +1,27 @@
 const fs = require('fs');
 const xlsx = require('xlsx');
+const path = require('path');
 
 const LEAGUE_ID = '680132';
 const DATA_FILE = 'fpl_data.json';
-const EXCEL_FILE = 'FPL 2025 updated for GW34.xlsx';
+
+// Find the latest Excel file
+const files = fs.readdirSync('.');
+const excelFile = files
+    .filter(f => f.startsWith('FPL 2025 updated for GW') && f.endsWith('.xlsx'))
+    .sort((a, b) => {
+        const gwA = parseInt(a.match(/GW(\d+)/)?.[1] || 0);
+        const gwB = parseInt(b.match(/GW(\d+)/)?.[1] || 0);
+        return gwB - gwA;
+    })[0];
+
+if (!excelFile) {
+    console.error('No matching Excel file found (FPL 2025 updated for GW*.xlsx)');
+    process.exit(1);
+}
+
+const EXCEL_FILE = excelFile;
+console.log(`Using Excel file: ${EXCEL_FILE}`);
 
 async function fetchJSON(url) {
     const response = await fetch(url);

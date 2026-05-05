@@ -254,9 +254,10 @@
         </div>
       </div>
       <div class="header-stats">
-        <div class="hstat"><div class="hstat-value" id="current-gw-header">GW34</div><div class="hstat-label">Current GW</div></div>
-        <div class="hstat"><div class="hstat-value">R18,150</div><div class="hstat-label">Prize Pool</div></div>
-        <div class="hstat"><div class="hstat-value">2084</div><div class="hstat-label">Top Score</div></div>
+        <div class="hstat"><div class="hstat-value" id="current-gw-header">--</div><div class="hstat-label">Current GW</div></div>
+        <div class="hstat"><div class="hstat-value" id="header-prize-pool">--</div><div class="hstat-label">Prize Pool</div></div>
+        <div class="hstat"><div class="hstat-value" id="header-top-score">--</div><div class="hstat-label">Top Score</div></div>
+        <button class="nav-tab" id="refresh-btn" onclick="triggerRefresh()" style="margin-left:10px; background:var(--surface3); border:1px solid var(--border-green); color:var(--green);">Refresh Data</button>
       </div>
     </div>
   </header>
@@ -274,35 +275,35 @@
   <!-- STANDINGS -->
   <section class="section active" id="standings">
     <div class="metrics-grid">
-      <div class="metric-card"><div class="metric-label">League leader</div><div class="metric-value green" style="font-size:22px;font-family:var(--font-body);font-weight:600;">Šeśko Mode</div><div class="metric-sub">Nkosi The Chef · 2,084 pts</div></div>
-      <div class="metric-card"><div class="metric-label">Points gap (1st → last)</div><div class="metric-value amber">367</div><div class="metric-sub">2084 vs 1717</div></div>
-      <div class="metric-card"><div class="metric-label">In relegation zone</div><div class="metric-value red">3</div><div class="metric-sub">Bottom 3 pay out</div></div>
-      <div class="metric-card"><div class="metric-label">Most bottom finishes</div><div class="metric-value" style="font-size:20px;font-family:var(--font-body);font-weight:600;">Sthe</div><div class="metric-sub">Sthe Coqueto · 13 times</div></div>
+      <div class="metric-card"><div class="metric-label">League leader</div><div class="metric-value green" id="stat-leader-team" style="font-size:22px;font-family:var(--font-body);font-weight:600;">--</div><div class="metric-sub" id="stat-leader-manager">--</div></div>
+      <div class="metric-card"><div class="metric-label">Points gap (1st → last)</div><div class="metric-value amber" id="stat-gap">--</div><div class="metric-sub" id="stat-gap-desc">--</div></div>
+      <div class="metric-card"><div class="metric-label">In relegation zone</div><div class="metric-value red" id="stat-relegation">3</div><div class="metric-sub">Bottom 3 pay out</div></div>
+      <div class="metric-card"><div class="metric-label">Most bottom finishes</div><div class="metric-value" id="stat-most-bottom" style="font-size:20px;font-family:var(--font-body);font-weight:600;">--</div><div class="metric-sub" id="stat-most-bottom-desc">--</div></div>
     </div>
     
     <div id="wall-of-shame" style="display:none;"></div>
 
-    <div class="section-heading"><h2>League Table</h2><div class="sh-line"></div><span class="sh-sub">GW34 · All time</span></div>
+    <div class="section-heading"><h2>League Table</h2><div class="sh-line"></div><span class="sh-sub" id="standings-sub">-- · All time</span></div>
     <div class="standings-table">
       <table>
         <thead><tr><th>#</th><th>Manager / Team</th><th style="text-align:right">Points</th><th style="text-align:right">vs Leader</th><th style="text-align:right">Bottom apps</th><th style="text-align:right">Progress</th></tr></thead>
         <tbody id="standings-body"></tbody>
       </table>
     </div>
-    <div class="section-heading" style="margin-top:32px;"><h2>Season Points Race</h2><div class="sh-line"></div><span class="sh-sub">Cumulative GW-by-GW</span></div>
+    <div class="section-heading" style="margin-top:32px;"><h2>Season Points Race</h2><div class="sh-line"></div><span class="sh-sub" id="race-sub">--</span></div>
     <div class="chart-card">
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;" id="race-legend"></div>
-      <div style="position:relative;width:100%;height:360px;"><canvas id="standingsChart" role="img" aria-label="Line chart showing cumulative points over 34 gameweeks for all managers">Season points race across 34 gameweeks.</canvas></div>
+      <div style="position:relative;width:100%;height:360px;"><canvas id="standingsChart" role="img" aria-label="Line chart showing cumulative points over the season">Season points race.</canvas></div>
     </div>
   </section>
 
   <!-- PAYMENTS -->
   <section class="section" id="payments">
     <div class="metrics-grid">
-      <div class="metric-card"><div class="metric-label">Total owed</div><div class="metric-value">R18,150</div><div class="metric-sub">Joining fee + fines</div></div>
-      <div class="metric-card"><div class="metric-label">Collected</div><div class="metric-value green">R11,650</div><div class="metric-sub">64% of total</div></div>
-      <div class="metric-card"><div class="metric-label">Still outstanding</div><div class="metric-value red">R6,500</div><div class="metric-sub">36% unpaid</div></div>
-      <div class="metric-card"><div class="metric-label">Fully settled</div><div class="metric-value amber">4</div><div class="metric-sub">Kudzai, Luthando, Mbuyi, Nkosi</div></div>
+      <div class="metric-card"><div class="metric-label">Total owed</div><div class="metric-value" id="pay-total-owed">--</div><div class="metric-sub">Joining fee + fines</div></div>
+      <div class="metric-card"><div class="metric-label">Collected</div><div class="metric-value green" id="pay-collected">--</div><div class="metric-sub" id="pay-collected-pct">--</div></div>
+      <div class="metric-card"><div class="metric-label">Still outstanding</div><div class="metric-value red" id="pay-outstanding">--</div><div class="metric-sub" id="pay-outstanding-pct">--</div></div>
+      <div class="metric-card"><div class="metric-label">Fully settled</div><div class="metric-value amber" id="pay-settled">--</div><div class="metric-sub" id="pay-settled-list">--</div></div>
     </div>
     <div class="section-heading"><h2>Monthly Collections</h2><div class="sh-line"></div></div>
     <div class="monthly-pills" id="monthly-pills"></div>
@@ -314,10 +315,10 @@
   <!-- DEBTORS -->
   <section class="section" id="debtors">
     <div class="metrics-grid">
-      <div class="metric-card"><div class="metric-label">Managers with debt</div><div class="metric-value red">13</div><div class="metric-sub">of 17 managers</div></div>
-      <div class="metric-card"><div class="metric-label">Largest single debt</div><div class="metric-value red">R2,150</div><div class="metric-sub">President Gamede · R0 paid</div></div>
-      <div class="metric-card"><div class="metric-label">Avg outstanding</div><div class="metric-value amber">R382</div><div class="metric-sub">Across all 17 managers</div></div>
-      <div class="metric-card"><div class="metric-label">Overpaid</div><div class="metric-value" style="color:var(--purple-light);">0</div><div class="metric-sub">No managers in credit</div></div>
+      <div class="metric-card"><div class="metric-label">Managers with debt</div><div class="metric-value red" id="debt-count">13</div><div class="metric-sub">of 17 managers</div></div>
+      <div class="metric-card"><div class="metric-label">Largest single debt</div><div class="metric-value red" id="debt-largest-amt">R2,150</div><div class="metric-sub" id="debt-largest-desc">President Gamede · R0 paid</div></div>
+      <div class="metric-card"><div class="metric-label">Avg outstanding</div><div class="metric-value amber" id="debt-avg">R382</div><div class="metric-sub">Across all 17 managers</div></div>
+      <div class="metric-card"><div class="metric-label">Overpaid</div><div class="metric-value" id="debt-overpaid-count" style="color:var(--purple-light);">0</div><div class="metric-sub">No managers in credit</div></div>
     </div>
     <div class="section-heading"><h2>Debt Rankings</h2><div class="sh-line"></div><span class="sh-sub">Sorted by outstanding amount</span></div>
     <div id="debtors-list"></div>
@@ -326,10 +327,10 @@
   <!-- LMP -->
   <section class="section" id="lmp">
     <div class="metrics-grid">
-      <div class="metric-card"><div class="metric-label">Total LMP fines</div><div class="metric-value red">R15,850</div><div class="metric-sub">Joining fees included</div></div>
+      <div class="metric-card"><div class="metric-label">Total LMP fines</div><div class="metric-value red" id="lmp-total-fines">R15,850</div><div class="metric-sub">Joining fees included</div></div>
       <div class="metric-card"><div class="metric-label">GWs played so far</div><div class="metric-value" id="lmp-gw-value">34</div><div class="metric-sub">of 38 total</div></div>
-      <div class="metric-card"><div class="metric-label">Most bottom finishes</div><div class="metric-value" style="font-size:20px;font-family:var(--font-body);font-weight:600;">Sthe</div><div class="metric-sub">Sthe Coqueto · 13 times</div></div>
-      <div class="metric-card"><div class="metric-label">Safest manager</div><div class="metric-value" style="font-size:20px;font-family:var(--font-body);font-weight:600;">Mbuyi</div><div class="metric-sub">Walala WaSalah · 0 times</div></div>
+      <div class="metric-card"><div class="metric-label">Most bottom finishes</div><div class="metric-value" id="lmp-most-bottom" style="font-size:20px;font-family:var(--font-body);font-weight:600;">Sthe</div><div class="metric-sub" id="lmp-most-bottom-desc">Sthe Coqueto · 13 times</div></div>
+      <div class="metric-card"><div class="metric-label">Safest manager</div><div class="metric-value" id="lmp-safest" style="font-size:20px;font-family:var(--font-body);font-weight:600;">Mbuyi</div><div class="metric-sub" id="lmp-safest-desc">Walala WaSalah · 0 times</div></div>
     </div>
     <div class="section-heading"><h2>Bottom 3 Appearances</h2><div class="sh-line"></div></div>
     <div class="chart-card" style="margin-bottom:24px;"><div style="position:relative;width:100%;height:320px;"><canvas id="lmpChart" role="img" aria-label="Bar chart of bottom 3 appearances per manager">Bottom 3 count per manager.</canvas></div></div>
@@ -1338,6 +1339,31 @@ function initRunIn() {
   riBuildLB(1);
 }
 
+function triggerRefresh() {
+  const btn = document.getElementById('refresh-btn');
+  const originalText = btn.innerText;
+  btn.innerText = 'Refreshing...';
+  btn.disabled = true;
+
+  fetch('/refresh')
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        window.location.reload();
+      } else {
+        alert('Refresh failed: ' + (data.error || 'Unknown error'));
+        btn.innerText = originalText;
+        btn.disabled = false;
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      alert('Refresh failed. This feature requires the local server (serve.js) to be running.');
+      btn.innerText = originalText;
+      btn.disabled = false;
+    });
+}
+
 // ── INIT SECURE DATA FETCH ───────────────────
 fetch('fpl_data.json')
   .then(response => {
@@ -1354,9 +1380,81 @@ fetch('fpl_data.json')
     RI_M = data.runInData;
     MAX_GW = data.MAX_GW || 34;
 
-    // Update Header labels
-    document.getElementById('current-gw-header').innerText = `GW${MAX_GW}`;
-    document.getElementById('footer-gw').innerText = `GW${MAX_GW}`;
+    try {
+      // Update Header labels
+      if (document.getElementById('current-gw-header')) document.getElementById('current-gw-header').innerText = `GW${MAX_GW}`;
+      if (document.getElementById('footer-gw')) document.getElementById('footer-gw').innerText = `GW${MAX_GW}`;
+      if (document.getElementById('standings-sub')) document.getElementById('standings-sub').innerText = `GW${MAX_GW} · All time`;
+      if (document.getElementById('race-sub')) document.getElementById('race-sub').innerText = `Cumulative GW-by-GW (up to GW${MAX_GW})`;
+
+      // Update Standings Metrics
+      if (standings && standings.length > 0) {
+        const sortedStandings = [...standings].sort((a,b) => b.pts - a.pts);
+        const leader = sortedStandings[0];
+        const last = sortedStandings[sortedStandings.length - 1];
+        
+        if (document.getElementById('header-top-score')) document.getElementById('header-top-score').innerText = leader.pts.toLocaleString();
+        if (document.getElementById('stat-leader-team')) document.getElementById('stat-leader-team').innerText = leader.team;
+        if (document.getElementById('stat-leader-manager')) document.getElementById('stat-leader-manager').innerText = `${leader.manager} · ${leader.pts.toLocaleString()} pts`;
+        if (document.getElementById('stat-gap')) document.getElementById('stat-gap').innerText = (leader.pts - last.pts).toLocaleString();
+        if (document.getElementById('stat-gap-desc')) document.getElementById('stat-gap-desc').innerText = `${leader.pts.toLocaleString()} vs ${last.pts.toLocaleString()}`;
+      }
+      
+      if (lmpData && lmpData.length > 0) {
+        const sortedLMP = [...lmpData].sort((a,b) => b.apps - a.apps);
+        const sortedSafest = [...lmpData].sort((a,b) => a.apps - b.apps);
+        if (document.getElementById('stat-most-bottom')) document.getElementById('stat-most-bottom').innerText = sortedLMP[0].manager.split(' ')[0];
+        if (document.getElementById('stat-most-bottom-desc')) document.getElementById('stat-most-bottom-desc').innerText = `${sortedLMP[0].manager} · ${sortedLMP[0].apps} times`;
+        
+        if (document.getElementById('lmp-total-fines')) {
+          let totalLMPFines = 0;
+          lmpData.forEach(m => totalLMPFines += m.fines);
+          document.getElementById('lmp-total-fines').innerText = `R${totalLMPFines.toLocaleString()}`;
+        }
+        if (document.getElementById('lmp-most-bottom')) document.getElementById('lmp-most-bottom').innerText = sortedLMP[0].manager.split(' ')[0];
+        if (document.getElementById('lmp-most-bottom-desc')) document.getElementById('lmp-most-bottom-desc').innerText = `${sortedLMP[0].manager} · ${sortedLMP[0].apps} times`;
+        if (document.getElementById('lmp-safest')) document.getElementById('lmp-safest').innerText = sortedSafest[0].manager.split(' ')[0];
+        if (document.getElementById('lmp-safest-desc')) document.getElementById('lmp-safest-desc').innerText = `${sortedSafest[0].manager} · ${sortedSafest[0].apps} times`;
+      }
+
+      // Update Payment Metrics
+      if (payments && payments.length > 0) {
+        let totalOwed = 0, totalPaid = 0, settledCount = 0, settledNames = [];
+        payments.forEach(p => {
+          totalOwed += (p.owed || 0);
+          totalPaid += (p.paid || 0);
+          if (p.paid >= p.owed) {
+            settledCount++;
+            settledNames.push(p.manager.split(' ')[0]);
+          }
+        });
+        const outstanding = totalOwed - totalPaid;
+        const paidPct = totalOwed > 0 ? Math.round((totalPaid / totalOwed) * 100) : 0;
+        
+        if (document.getElementById('header-prize-pool')) document.getElementById('header-prize-pool').innerText = `R${totalOwed.toLocaleString()}`;
+        if (document.getElementById('pay-total-owed')) document.getElementById('pay-total-owed').innerText = `R${totalOwed.toLocaleString()}`;
+        if (document.getElementById('pay-collected')) document.getElementById('pay-collected').innerText = `R${totalPaid.toLocaleString()}`;
+        if (document.getElementById('pay-collected-pct')) document.getElementById('pay-collected-pct').innerText = `${paidPct}% of total`;
+        if (document.getElementById('pay-outstanding')) document.getElementById('pay-outstanding').innerText = `R${outstanding.toLocaleString()}`;
+        if (document.getElementById('pay-outstanding-pct')) document.getElementById('pay-outstanding-pct').innerText = `${100 - paidPct}% unpaid`;
+        if (document.getElementById('pay-settled')) document.getElementById('pay-settled').innerText = settledCount;
+        if (document.getElementById('pay-settled-list')) document.getElementById('pay-settled-list').innerText = settledNames.join(', ');
+
+        // Update Debtors Metrics
+        const debtors = payments.map(p => ({...p, outstanding: p.owed - p.paid})).sort((a,b) => b.outstanding - a.outstanding);
+        const actualDebtors = debtors.filter(d => d.outstanding > 0);
+        const overpaid = debtors.filter(d => d.outstanding < 0);
+        if (document.getElementById('debt-count')) document.getElementById('debt-count').innerText = actualDebtors.length;
+        if (actualDebtors.length > 0 && document.getElementById('debt-largest-amt')) {
+          document.getElementById('debt-largest-amt').innerText = `R${actualDebtors[0].outstanding.toLocaleString()}`;
+          document.getElementById('debt-largest-desc').innerText = `${actualDebtors[0].manager} · R${actualDebtors[0].paid.toLocaleString()} paid`;
+        }
+        if (document.getElementById('debt-avg')) document.getElementById('debt-avg').innerText = `R${Math.round(outstanding / payments.length).toLocaleString()}`;
+        if (document.getElementById('debt-overpaid-count')) document.getElementById('debt-overpaid-count').innerText = overpaid.length;
+      }
+    } catch (e) {
+      console.error("Error updating metrics:", e);
+    }
 
     // 2. Build Dashboard
     buildStandings();
