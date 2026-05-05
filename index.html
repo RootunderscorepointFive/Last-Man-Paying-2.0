@@ -257,7 +257,6 @@
         <div class="hstat"><div class="hstat-value" id="current-gw-header">--</div><div class="hstat-label">Current GW</div></div>
         <div class="hstat"><div class="hstat-value" id="header-prize-pool">--</div><div class="hstat-label">Prize Pool</div></div>
         <div class="hstat"><div class="hstat-value" id="header-top-score">--</div><div class="hstat-label">Top Score</div></div>
-        <button class="nav-tab" id="refresh-btn" onclick="triggerRefresh()" style="margin-left:10px; background:var(--surface3); border:1px solid var(--border-green); color:var(--green);">Refresh Data</button>
       </div>
     </div>
   </header>
@@ -1337,31 +1336,6 @@ function initRunIn() {
   };
   window.addEventListener('resize', () => { if (document.getElementById('runin').classList.contains('active')) riResize(); });
   riBuildLB(1);
-}
-
-function triggerRefresh() {
-  const btn = document.getElementById('refresh-btn');
-  const originalText = btn.innerText;
-  btn.innerText = 'Refreshing...';
-  btn.disabled = true;
-
-  fetch('/refresh')
-    .then(res => res.json())
-    .then(data => {
-      if (data.success) {
-        window.location.reload();
-      } else {
-        alert('Refresh failed: ' + (data.error || 'Unknown error'));
-        btn.innerText = originalText;
-        btn.disabled = false;
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      alert('Refresh failed. This feature requires the local server (serve.js) to be running.');
-      btn.innerText = originalText;
-      btn.disabled = false;
-    });
 }
 
 // ── INIT SECURE DATA FETCH ───────────────────
