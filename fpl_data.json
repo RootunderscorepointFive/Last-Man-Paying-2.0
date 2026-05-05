@@ -11,7 +11,7 @@
       "manager": "Nhlakanipho Ntombela",
       "team": "Iam_ntombela",
       "pts": 2059,
-      "bottomApps": 4
+      "bottomApps": 5
     },
     {
       "manager": "Mhlengi Kunene",
@@ -53,7 +53,7 @@
       "manager": "Thato Choshi",
       "team": "TAYDO FC",
       "pts": 1913,
-      "bottomApps": 7
+      "bottomApps": 8
     },
     {
       "manager": "Mtho Mabizela",
@@ -101,7 +101,7 @@
       "manager": "Minenhle Khumalo",
       "team": "Hot Slot FC",
       "pts": 1769,
-      "bottomApps": 12
+      "bottomApps": 13
     }
   ],
   "payments": [
@@ -264,8 +264,8 @@
     {
       "manager": "Minenhle Khumalo",
       "team": "Hot Slot FC",
-      "apps": 12,
-      "fines": 1450
+      "apps": 13,
+      "fines": 1550
     },
     {
       "manager": "Thembalethu Miya",
@@ -292,6 +292,12 @@
       "fines": 1150
     },
     {
+      "manager": "Thato Choshi",
+      "team": "TAYDO FC",
+      "apps": 8,
+      "fines": 1050
+    },
+    {
       "manager": "Kudzai Kupeta",
       "team": "Rice Rice Baby",
       "apps": 8,
@@ -310,28 +316,22 @@
       "fines": 950
     },
     {
-      "manager": "Thato Choshi",
-      "team": "TAYDO FC",
-      "apps": 7,
-      "fines": 950
-    },
-    {
       "manager": "Mtho Mabizela",
       "team": "Joao Island",
       "apps": 7,
       "fines": 950
     },
     {
-      "manager": "President Gamede",
-      "team": "Los Primeros",
+      "manager": "Nhlakanipho Ntombela",
+      "team": "Iam_ntombela",
       "apps": 5,
       "fines": 750
     },
     {
-      "manager": "Nhlakanipho Ntombela",
-      "team": "Iam_ntombela",
-      "apps": 4,
-      "fines": 650
+      "manager": "President Gamede",
+      "team": "Los Primeros",
+      "apps": 5,
+      "fines": 750
     },
     {
       "manager": "Mhlengi Kunene",
