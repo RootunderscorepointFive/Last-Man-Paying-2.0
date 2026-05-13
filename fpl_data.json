@@ -4,103 +4,103 @@
     {
       "manager": "Nkosi The Chef",
       "team": "Šeśko Mode",
-      "pts": 2195,
+      "pts": 2208,
       "bottomApps": 1
-    },
-    {
-      "manager": "Mhlengi Kunene",
-      "team": "Hidden Hills",
-      "pts": 2128,
-      "bottomApps": 3
     },
     {
       "manager": "Nhlakanipho Ntombela",
       "team": "Iam_ntombela",
-      "pts": 2118,
+      "pts": 2136,
       "bottomApps": 5
+    },
+    {
+      "manager": "Mhlengi Kunene",
+      "team": "Hidden Hills",
+      "pts": 2132,
+      "bottomApps": 3
     },
     {
       "manager": "Mbuyi Katumba",
       "team": "Walala WaSalah",
-      "pts": 2083,
+      "pts": 2093,
       "bottomApps": 0
     },
     {
       "manager": "Siyanda Ndaba",
       "team": "JustGimmeDeLigt",
-      "pts": 2068,
+      "pts": 2084,
       "bottomApps": 7
     },
     {
       "manager": "Luthando Ngidi",
       "team": "Palmergeddon",
-      "pts": 2049,
+      "pts": 2080,
       "bottomApps": 3
     },
     {
       "manager": "Lethu Mkhwanazi",
       "team": "Bruno, dos, tres",
-      "pts": 2016,
+      "pts": 2040,
       "bottomApps": 7
     },
     {
       "manager": "Thato Choshi",
       "team": "TAYDO FC",
-      "pts": 1973,
+      "pts": 1991,
       "bottomApps": 8
     },
     {
       "manager": "Bheka Bhengu",
       "team": "SzoboSlay",
-      "pts": 1972,
+      "pts": 1991,
       "bottomApps": 9
     },
     {
       "manager": "Mtho Mabizela",
       "team": "Joao Island",
-      "pts": 1950,
+      "pts": 1975,
       "bottomApps": 7
-    },
-    {
-      "manager": "Thembalethu Miya",
-      "team": "Root_.5 FC",
-      "pts": 1938,
-      "bottomApps": 10
     },
     {
       "manager": "Learnmore Ntshangase",
       "team": "A Cunha Matata",
-      "pts": 1935,
+      "pts": 1958,
+      "bottomApps": 10
+    },
+    {
+      "manager": "Thembalethu Miya",
+      "team": "Root_.5 FC",
+      "pts": 1952,
       "bottomApps": 10
     },
     {
       "manager": "Fanele Msweli",
       "team": "Boehlys World Champs",
-      "pts": 1915,
+      "pts": 1946,
       "bottomApps": 10
     },
     {
       "manager": "President Gamede",
       "team": "Los Primeros",
-      "pts": 1909,
+      "pts": 1924,
       "bottomApps": 5
     },
     {
       "manager": "Kudzai Kupeta",
       "team": "Rice Rice Baby",
-      "pts": 1891,
+      "pts": 1918,
       "bottomApps": 8
     },
     {
       "manager": "Sthe Coqueto",
       "team": "Sthe Coqueto",
-      "pts": 1859,
+      "pts": 1889,
       "bottomApps": 13
     },
     {
       "manager": "Minenhle Khumalo",
       "team": "Hot Slot FC",
-      "pts": 1816,
+      "pts": 1836,
       "bottomApps": 13
     }
   ],
@@ -114,19 +114,19 @@
       "paid": 450
     },
     {
-      "manager": "Mhlengi Kunene",
-      "team": "Hidden Hills",
-      "base": 550,
-      "fines": 0,
-      "owed": 550,
-      "paid": 550
-    },
-    {
       "manager": "Nhlakanipho Ntombela",
       "team": "Iam_ntombela",
       "base": 650,
       "fines": 0,
       "owed": 650,
+      "paid": 550
+    },
+    {
+      "manager": "Mhlengi Kunene",
+      "team": "Hidden Hills",
+      "base": 550,
+      "fines": 0,
+      "owed": 550,
       "paid": 550
     },
     {
@@ -183,14 +183,6 @@
       "base": 950,
       "fines": 0,
       "owed": 950,
-      "paid": 750
-    },
-    {
-      "manager": "Thembalethu Miya",
-      "team": "Root_.5 FC",
-      "base": 1250,
-      "fines": 0,
-      "owed": 1250,
       "paid": 950
     },
     {
@@ -199,6 +191,14 @@
       "base": 1250,
       "fines": 100,
       "owed": 1350,
+      "paid": 950
+    },
+    {
+      "manager": "Thembalethu Miya",
+      "team": "Root_.5 FC",
+      "base": 1250,
+      "fines": 0,
+      "owed": 1250,
       "paid": 950
     },
     {
@@ -248,7 +248,7 @@
     "Oct": 2200,
     "Nov": 100,
     "Dec": 3550,
-    "Jan": 3150,
+    "Jan": 3350,
     "Feb": 200,
     "Mar": 0,
     "Apr": 1100,
@@ -268,14 +268,14 @@
       "fines": 1550
     },
     {
-      "manager": "Thembalethu Miya",
-      "team": "Root_.5 FC",
+      "manager": "Learnmore Ntshangase",
+      "team": "A Cunha Matata",
       "apps": 10,
       "fines": 1250
     },
     {
-      "manager": "Learnmore Ntshangase",
-      "team": "A Cunha Matata",
+      "manager": "Thembalethu Miya",
+      "team": "Root_.5 FC",
       "apps": 10,
       "fines": 1250
     },
@@ -399,7 +399,7 @@
         134,
         60,
         56,
-        55
+        68
       ],
       "gwHits": [
         0,
@@ -481,7 +481,7 @@
           "event": 34
         }
       ],
-      "total": 2195,
+      "total": 2208,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -695,346 +695,7 @@
         1,
         5,
         12,
-        9
-      ]
-    },
-    {
-      "team": "Hidden Hills",
-      "manager": "Mhlengi Kunene",
-      "entry": 3390995,
-      "gwPts": [
-        62,
-        37,
-        56,
-        69,
-        76,
-        78,
-        79,
-        57,
-        42,
-        71,
-        36,
-        38,
-        50,
-        56,
-        60,
-        64,
-        79,
-        39,
-        37,
-        44,
-        53,
-        31,
-        49,
-        53,
-        74,
-        67,
-        52,
-        66,
-        79,
-        47,
-        48,
-        66,
-        115,
-        65,
-        59,
-        74
-      ],
-      "gwHits": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        4,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "chips": [
-        {
-          "name": "wildcard",
-          "time": "2025-08-24T16:34:43.564492Z",
-          "event": 3
-        },
-        {
-          "name": "bboost",
-          "time": "2025-09-20T09:52:51.281106Z",
-          "event": 5
-        },
-        {
-          "name": "3xc",
-          "time": "2025-09-27T09:54:04.979156Z",
-          "event": 6
-        },
-        {
-          "name": "freehit",
-          "time": "2025-11-28T15:20:29.852875Z",
-          "event": 13
-        },
-        {
-          "name": "wildcard",
-          "time": "2026-04-10T07:05:11.427556Z",
-          "event": 32
-        },
-        {
-          "name": "3xc",
-          "time": "2026-04-17T07:04:05.328647Z",
-          "event": 33
-        },
-        {
-          "name": "freehit",
-          "time": "2026-04-24T10:46:13.483381Z",
-          "event": 34
-        },
-        {
-          "name": "bboost",
-          "time": "2026-05-04T21:09:18.241372Z",
-          "event": 36
-        }
-      ],
-      "total": 2128,
-      "currentCaptain": "Haaland",
-      "activeChip": "bboost",
-      "currentPicks": [
-        {
-          "id": 139,
-          "name": "Verbruggen",
-          "position": 1,
-          "code": 489639,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 411,
-          "name": "O'Reilly",
-          "position": 2,
-          "code": 472769,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 151,
-          "name": "Van Hecke",
-          "position": 2,
-          "code": 469142,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 72,
-          "name": "Senesi",
-          "position": 2,
-          "code": 221466,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 329,
-          "name": "Wilson",
-          "position": 3,
-          "code": 153682,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 82,
-          "name": "Semenyo",
-          "position": 3,
-          "code": 437730,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 449,
-          "name": "B.Fernandes",
-          "position": 3,
-          "code": 141746,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true
-        },
-        {
-          "id": 387,
-          "name": "Szoboszlai",
-          "position": 3,
-          "code": 424876,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 178,
-          "name": "Welbeck",
-          "position": 4,
-          "code": 50175,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 624,
-          "name": "Bowen",
-          "position": 4,
-          "code": 178186,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 430,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false
-        },
-        {
-          "id": 67,
-          "name": "Petrović",
-          "position": 1,
-          "code": 457569,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 74,
-          "name": "Truffert",
-          "position": 2,
-          "code": 494521,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 295,
-          "name": "Keane",
-          "position": 2,
-          "code": 106611,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 303,
-          "name": "Garner",
-          "position": 3,
-          "code": 232928,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        }
-      ],
-      "gwRanks": [
-        6,
-        12,
-        7,
-        8,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        2,
-        3,
-        3,
-        3,
-        3,
-        4,
-        5,
-        5,
-        5,
-        6,
-        6,
-        4,
-        6,
-        6,
-        5,
-        4,
-        4,
-        3,
-        4,
-        4,
-        4,
-        3,
-        3,
-        3,
-        2
-      ],
-      "weeklyRanks": [
-        6,
-        16,
-        2,
-        9,
-        1,
-        1,
-        4,
-        11,
-        11,
-        6,
-        12,
-        5,
-        4,
-        13,
-        5,
-        12,
-        8,
-        11,
-        10,
-        11,
-        12,
-        14,
-        5,
-        9,
-        7,
-        4,
-        2,
-        11,
-        2,
-        13,
-        15,
-        2,
-        3,
-        3,
-        6,
-        1
+        11
       ]
     },
     {
@@ -1077,7 +738,7 @@
         121,
         56,
         54,
-        59
+        77
       ],
       "gwHits": [
         0,
@@ -1159,7 +820,7 @@
           "event": 34
         }
       ],
-      "total": 2118,
+      "total": 2136,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -1322,9 +983,9 @@
         4,
         4,
         4,
-        5,
         4,
         4,
+        4,
         3,
         3,
         2,
@@ -1335,7 +996,7 @@
         2,
         2,
         2,
-        3
+        2
       ],
       "weeklyRanks": [
         10,
@@ -1374,6 +1035,345 @@
         7,
         15,
         6
+      ]
+    },
+    {
+      "team": "Hidden Hills",
+      "manager": "Mhlengi Kunene",
+      "entry": 3390995,
+      "gwPts": [
+        62,
+        37,
+        56,
+        69,
+        76,
+        78,
+        79,
+        57,
+        42,
+        71,
+        36,
+        38,
+        50,
+        56,
+        60,
+        64,
+        79,
+        39,
+        37,
+        44,
+        53,
+        31,
+        49,
+        53,
+        74,
+        67,
+        52,
+        66,
+        79,
+        47,
+        48,
+        66,
+        115,
+        65,
+        59,
+        78
+      ],
+      "gwHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "chips": [
+        {
+          "name": "wildcard",
+          "time": "2025-08-24T16:34:43.564492Z",
+          "event": 3
+        },
+        {
+          "name": "bboost",
+          "time": "2025-09-20T09:52:51.281106Z",
+          "event": 5
+        },
+        {
+          "name": "3xc",
+          "time": "2025-09-27T09:54:04.979156Z",
+          "event": 6
+        },
+        {
+          "name": "freehit",
+          "time": "2025-11-28T15:20:29.852875Z",
+          "event": 13
+        },
+        {
+          "name": "wildcard",
+          "time": "2026-04-10T07:05:11.427556Z",
+          "event": 32
+        },
+        {
+          "name": "3xc",
+          "time": "2026-04-17T07:04:05.328647Z",
+          "event": 33
+        },
+        {
+          "name": "freehit",
+          "time": "2026-04-24T10:46:13.483381Z",
+          "event": 34
+        },
+        {
+          "name": "bboost",
+          "time": "2026-05-04T21:09:18.241372Z",
+          "event": 36
+        }
+      ],
+      "total": 2132,
+      "currentCaptain": "Haaland",
+      "activeChip": "bboost",
+      "currentPicks": [
+        {
+          "id": 139,
+          "name": "Verbruggen",
+          "position": 1,
+          "code": 489639,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 411,
+          "name": "O'Reilly",
+          "position": 2,
+          "code": 472769,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 151,
+          "name": "Van Hecke",
+          "position": 2,
+          "code": 469142,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 72,
+          "name": "Senesi",
+          "position": 2,
+          "code": 221466,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 329,
+          "name": "Wilson",
+          "position": 3,
+          "code": 153682,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 82,
+          "name": "Semenyo",
+          "position": 3,
+          "code": 437730,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 449,
+          "name": "B.Fernandes",
+          "position": 3,
+          "code": 141746,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true
+        },
+        {
+          "id": 387,
+          "name": "Szoboszlai",
+          "position": 3,
+          "code": 424876,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 178,
+          "name": "Welbeck",
+          "position": 4,
+          "code": 50175,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 624,
+          "name": "Bowen",
+          "position": 4,
+          "code": 178186,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 430,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false
+        },
+        {
+          "id": 67,
+          "name": "Petrović",
+          "position": 1,
+          "code": 457569,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 74,
+          "name": "Truffert",
+          "position": 2,
+          "code": 494521,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 295,
+          "name": "Keane",
+          "position": 2,
+          "code": 106611,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 303,
+          "name": "Garner",
+          "position": 3,
+          "code": 232928,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        }
+      ],
+      "gwRanks": [
+        6,
+        12,
+        7,
+        8,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        5,
+        5,
+        5,
+        6,
+        6,
+        5,
+        6,
+        6,
+        5,
+        4,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "weeklyRanks": [
+        6,
+        16,
+        2,
+        9,
+        1,
+        1,
+        4,
+        11,
+        11,
+        6,
+        12,
+        5,
+        4,
+        13,
+        5,
+        12,
+        8,
+        11,
+        10,
+        11,
+        12,
+        14,
+        5,
+        9,
+        7,
+        4,
+        2,
+        11,
+        2,
+        13,
+        15,
+        2,
+        3,
+        3,
+        6,
+        4
       ]
     },
     {
@@ -1416,7 +1416,7 @@
         109,
         56,
         66,
-        45
+        55
       ],
       "gwHits": [
         0,
@@ -1493,7 +1493,7 @@
           "event": 36
         }
       ],
-      "total": 2083,
+      "total": 2093,
       "currentCaptain": "Haaland",
       "activeChip": "wildcard",
       "currentPicks": [
@@ -1707,7 +1707,7 @@
         5,
         8,
         2,
-        13
+        15
       ]
     },
     {
@@ -1750,7 +1750,7 @@
         112,
         71,
         62,
-        56
+        72
       ],
       "gwHits": [
         0,
@@ -1832,7 +1832,7 @@
           "event": 36
         }
       ],
-      "total": 2068,
+      "total": 2084,
       "currentCaptain": "Haaland",
       "activeChip": "3xc",
       "currentPicks": [
@@ -2089,7 +2089,7 @@
         91,
         58,
         57,
-        23
+        54
       ],
       "gwHits": [
         0,
@@ -2166,7 +2166,7 @@
           "event": 33
         }
       ],
-      "total": 2049,
+      "total": 2080,
       "currentCaptain": "Cherki",
       "activeChip": null,
       "currentPicks": [
@@ -2380,7 +2380,7 @@
         7,
         6,
         10,
-        17
+        16
       ]
     },
     {
@@ -2423,7 +2423,7 @@
         87,
         41,
         59,
-        49
+        73
       ],
       "gwHits": [
         0,
@@ -2500,7 +2500,7 @@
           "event": 36
         }
       ],
-      "total": 2016,
+      "total": 2040,
       "currentCaptain": "Haaland",
       "activeChip": "3xc",
       "currentPicks": [
@@ -2714,7 +2714,7 @@
         9,
         14,
         7,
-        11
+        7
       ]
     },
     {
@@ -2757,7 +2757,7 @@
         107,
         61,
         45,
-        60
+        78
       ],
       "gwHits": [
         0,
@@ -2834,7 +2834,7 @@
           "event": 36
         }
       ],
-      "total": 1973,
+      "total": 1991,
       "currentCaptain": "Haaland",
       "activeChip": "3xc",
       "currentPicks": [
@@ -3048,7 +3048,7 @@
         6,
         4,
         17,
-        4
+        5
       ]
     },
     {
@@ -3091,7 +3091,7 @@
         90,
         35,
         56,
-        52
+        71
       ],
       "gwHits": [
         0,
@@ -3168,7 +3168,7 @@
           "event": 36
         }
       ],
-      "total": 1972,
+      "total": 1991,
       "currentCaptain": "Haaland",
       "activeChip": "3xc",
       "currentPicks": [
@@ -3425,7 +3425,7 @@
         82,
         46,
         87,
-        38
+        63
       ],
       "gwHits": [
         0,
@@ -3497,7 +3497,7 @@
           "event": 35
         }
       ],
-      "total": 1950,
+      "total": 1975,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -3711,336 +3711,7 @@
         11,
         12,
         1,
-        15
-      ]
-    },
-    {
-      "team": "Root_.5 FC",
-      "manager": "Thembalethu Miya",
-      "entry": 1243183,
-      "gwPts": [
-        52,
-        38,
-        35,
-        64,
-        55,
-        53,
-        62,
-        51,
-        29,
-        58,
-        29,
-        45,
-        59,
-        55,
-        53,
-        76,
-        79,
-        55,
-        39,
-        42,
-        64,
-        31,
-        57,
-        45,
-        80,
-        45,
-        37,
-        62,
-        74,
-        46,
-        51,
-        66,
-        80,
-        52,
-        61,
-        58
-      ],
-      "gwHits": [
-        0,
-        0,
-        12,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "chips": [
-        {
-          "name": "wildcard",
-          "time": "2025-11-21T20:53:15.635906Z",
-          "event": 12
-        },
-        {
-          "name": "3xc",
-          "time": "2025-12-25T09:24:50.118069Z",
-          "event": 18
-        },
-        {
-          "name": "bboost",
-          "time": "2025-12-30T11:15:05.086471Z",
-          "event": 19
-        },
-        {
-          "name": "freehit",
-          "time": "2026-04-23T22:03:19.852912Z",
-          "event": 34
-        },
-        {
-          "name": "wildcard",
-          "time": "2026-05-01T15:24:50.316999Z",
-          "event": 35
-        },
-        {
-          "name": "3xc",
-          "time": "2026-05-01T20:59:54.045917Z",
-          "event": 36
-        }
-      ],
-      "total": 1938,
-      "currentCaptain": "Haaland",
-      "activeChip": "3xc",
-      "currentPicks": [
-        {
-          "id": 253,
-          "name": "Henderson",
-          "position": 1,
-          "code": 172649,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 440,
-          "name": "Dalot",
-          "position": 2,
-          "code": 216051,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 72,
-          "name": "Senesi",
-          "position": 2,
-          "code": 221466,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 260,
-          "name": "Guéhi",
-          "position": 2,
-          "code": 209036,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 449,
-          "name": "B.Fernandes",
-          "position": 3,
-          "code": 141746,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 387,
-          "name": "Szoboszlai",
-          "position": 3,
-          "code": 424876,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 267,
-          "name": "Sarr",
-          "position": 3,
-          "code": 232185,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 417,
-          "name": "Cherki",
-          "position": 3,
-          "code": 466052,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true
-        },
-        {
-          "id": 430,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 3,
-          "is_captain": true,
-          "is_vice_captain": false
-        },
-        {
-          "id": 136,
-          "name": "Thiago",
-          "position": 4,
-          "code": 502500,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 283,
-          "name": "Mateta",
-          "position": 4,
-          "code": 231747,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 1,
-          "name": "Raya",
-          "position": 1,
-          "code": 154561,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 11,
-          "name": "White",
-          "position": 2,
-          "code": 198869,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 575,
-          "name": "Van de Ven",
-          "position": 2,
-          "code": 491279,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false
-        },
-        {
-          "id": 26,
-          "name": "Zubimendi",
-          "position": 3,
-          "code": 481655,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false
-        }
-      ],
-      "gwRanks": [
-        12,
-        14,
-        15,
-        16,
-        15,
-        13,
-        14,
-        14,
-        16,
-        17,
-        17,
-        16,
-        13,
-        15,
-        14,
-        13,
-        12,
-        10,
-        10,
-        11,
-        10,
-        12,
-        10,
-        11,
-        10,
-        11,
-        12,
-        12,
-        12,
-        13,
-        13,
-        12,
-        12,
-        11,
-        11,
-        11
-      ],
-      "weeklyRanks": [
-        12,
-        15,
-        16,
-        12,
-        4,
-        10,
-        12,
-        16,
-        17,
-        13,
-        14,
-        3,
-        3,
-        15,
-        9,
-        7,
-        9,
-        1,
-        7,
-        14,
-        4,
-        15,
-        1,
-        13,
-        4,
-        16,
-        15,
-        14,
-        7,
-        14,
-        12,
-        4,
-        12,
-        10,
-        5,
-        7
+        14
       ]
     },
     {
@@ -4083,7 +3754,7 @@
         78,
         51,
         63,
-        62
+        85
       ],
       "gwHits": [
         0,
@@ -4155,7 +3826,7 @@
           "event": 36
         }
       ],
-      "total": 1935,
+      "total": 1958,
       "currentCaptain": "Haaland",
       "activeChip": "3xc",
       "currentPicks": [
@@ -4331,7 +4002,7 @@
         13,
         13,
         13,
-        12
+        11
       ],
       "weeklyRanks": [
         14,
@@ -4370,6 +4041,335 @@
         11,
         3,
         3
+      ]
+    },
+    {
+      "team": "Root_.5 FC",
+      "manager": "Thembalethu Miya",
+      "entry": 1243183,
+      "gwPts": [
+        52,
+        38,
+        35,
+        64,
+        55,
+        53,
+        62,
+        51,
+        29,
+        58,
+        29,
+        45,
+        59,
+        55,
+        53,
+        76,
+        79,
+        55,
+        39,
+        42,
+        64,
+        31,
+        57,
+        45,
+        80,
+        45,
+        37,
+        62,
+        74,
+        46,
+        51,
+        66,
+        80,
+        52,
+        61,
+        72
+      ],
+      "gwHits": [
+        0,
+        0,
+        12,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "chips": [
+        {
+          "name": "wildcard",
+          "time": "2025-11-21T20:53:15.635906Z",
+          "event": 12
+        },
+        {
+          "name": "3xc",
+          "time": "2025-12-25T09:24:50.118069Z",
+          "event": 18
+        },
+        {
+          "name": "bboost",
+          "time": "2025-12-30T11:15:05.086471Z",
+          "event": 19
+        },
+        {
+          "name": "freehit",
+          "time": "2026-04-23T22:03:19.852912Z",
+          "event": 34
+        },
+        {
+          "name": "wildcard",
+          "time": "2026-05-01T15:24:50.316999Z",
+          "event": 35
+        },
+        {
+          "name": "3xc",
+          "time": "2026-05-01T20:59:54.045917Z",
+          "event": 36
+        }
+      ],
+      "total": 1952,
+      "currentCaptain": "Haaland",
+      "activeChip": "3xc",
+      "currentPicks": [
+        {
+          "id": 253,
+          "name": "Henderson",
+          "position": 1,
+          "code": 172649,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 440,
+          "name": "Dalot",
+          "position": 2,
+          "code": 216051,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 72,
+          "name": "Senesi",
+          "position": 2,
+          "code": 221466,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 260,
+          "name": "Guéhi",
+          "position": 2,
+          "code": 209036,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 449,
+          "name": "B.Fernandes",
+          "position": 3,
+          "code": 141746,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 387,
+          "name": "Szoboszlai",
+          "position": 3,
+          "code": 424876,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 267,
+          "name": "Sarr",
+          "position": 3,
+          "code": 232185,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 417,
+          "name": "Cherki",
+          "position": 3,
+          "code": 466052,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true
+        },
+        {
+          "id": 430,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 3,
+          "is_captain": true,
+          "is_vice_captain": false
+        },
+        {
+          "id": 136,
+          "name": "Thiago",
+          "position": 4,
+          "code": 502500,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 283,
+          "name": "Mateta",
+          "position": 4,
+          "code": 231747,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 1,
+          "name": "Raya",
+          "position": 1,
+          "code": 154561,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 11,
+          "name": "White",
+          "position": 2,
+          "code": 198869,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 575,
+          "name": "Van de Ven",
+          "position": 2,
+          "code": 491279,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "id": 26,
+          "name": "Zubimendi",
+          "position": 3,
+          "code": 481655,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false
+        }
+      ],
+      "gwRanks": [
+        12,
+        14,
+        15,
+        16,
+        15,
+        13,
+        14,
+        14,
+        16,
+        17,
+        17,
+        16,
+        13,
+        15,
+        14,
+        13,
+        12,
+        10,
+        10,
+        11,
+        10,
+        12,
+        10,
+        11,
+        10,
+        11,
+        12,
+        12,
+        12,
+        13,
+        13,
+        12,
+        12,
+        11,
+        11,
+        12
+      ],
+      "weeklyRanks": [
+        12,
+        15,
+        16,
+        12,
+        4,
+        10,
+        12,
+        16,
+        17,
+        13,
+        14,
+        3,
+        3,
+        15,
+        9,
+        7,
+        9,
+        1,
+        7,
+        14,
+        4,
+        15,
+        1,
+        13,
+        4,
+        16,
+        15,
+        14,
+        7,
+        14,
+        12,
+        4,
+        12,
+        10,
+        5,
+        9
       ]
     },
     {
@@ -4412,7 +4412,7 @@
         52,
         74,
         55,
-        63
+        94
       ],
       "gwHits": [
         0,
@@ -4484,7 +4484,7 @@
           "event": 36
         }
       ],
-      "total": 1915,
+      "total": 1946,
       "currentCaptain": "Guéhi",
       "activeChip": "bboost",
       "currentPicks": [
@@ -4698,7 +4698,7 @@
         17,
         1,
         14,
-        2
+        1
       ]
     },
     {
@@ -4741,7 +4741,7 @@
         74,
         22,
         59,
-        33
+        48
       ],
       "gwHits": [
         0,
@@ -4803,7 +4803,7 @@
           "event": 25
         }
       ],
-      "total": 1909,
+      "total": 1924,
       "currentCaptain": "B.Fernandes",
       "activeChip": null,
       "currentPicks": [
@@ -5017,7 +5017,7 @@
         14,
         17,
         8,
-        16
+        17
       ]
     },
     {
@@ -5060,7 +5060,7 @@
         67,
         55,
         59,
-        41
+        68
       ],
       "gwHits": [
         0,
@@ -5132,7 +5132,7 @@
           "event": 30
         }
       ],
-      "total": 1891,
+      "total": 1918,
       "currentCaptain": "Semenyo",
       "activeChip": null,
       "currentPicks": [
@@ -5346,7 +5346,7 @@
         15,
         9,
         9,
-        14
+        12
       ]
     },
     {
@@ -5389,7 +5389,7 @@
         64,
         38,
         57,
-        60
+        90
       ],
       "gwHits": [
         0,
@@ -5461,7 +5461,7 @@
           "event": 36
         }
       ],
-      "total": 1859,
+      "total": 1889,
       "currentCaptain": "Haaland",
       "activeChip": "3xc",
       "currentPicks": [
@@ -5675,7 +5675,7 @@
         16,
         15,
         11,
-        5
+        2
       ]
     },
     {
@@ -5718,7 +5718,7 @@
         83,
         45,
         52,
-        47
+        67
       ],
       "gwHits": [
         0,
@@ -5785,7 +5785,7 @@
           "event": 34
         }
       ],
-      "total": 1816,
+      "total": 1836,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -5999,7 +5999,7 @@
         10,
         13,
         16,
-        12
+        13
       ]
     }
   ],
@@ -6049,50 +6049,6 @@
       "c": "#e63946"
     },
     {
-      "f": "Mhlengi Kunene",
-      "s": "Mhlengi",
-      "t": "Hidden Hills",
-      "r": [
-        6,
-        12,
-        7,
-        8,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        2,
-        3,
-        3,
-        3,
-        3,
-        4,
-        5,
-        5,
-        5,
-        6,
-        6,
-        4,
-        6,
-        6,
-        5,
-        4,
-        4,
-        3,
-        4,
-        4,
-        4,
-        3,
-        3,
-        3,
-        2
-      ],
-      "c": "#f4845f"
-    },
-    {
       "f": "Nhlakanipho Ntombela",
       "s": "Nhlakanipho",
       "t": "Iam_ntombela",
@@ -6119,19 +6075,63 @@
         4,
         4,
         4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        2,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "c": "#f4845f"
+    },
+    {
+      "f": "Mhlengi Kunene",
+      "s": "Mhlengi",
+      "t": "Hidden Hills",
+      "r": [
+        6,
+        12,
+        7,
+        8,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        5,
+        5,
+        5,
+        6,
+        6,
+        5,
+        6,
+        6,
         5,
         4,
         4,
         3,
+        4,
+        4,
+        4,
         3,
-        2,
-        2,
         3,
         3,
-        2,
-        2,
-        2,
-        2,
         3
       ],
       "c": "#4dabf7"
@@ -6445,50 +6445,6 @@
       "c": "#74c0fc"
     },
     {
-      "f": "Thembalethu Miya",
-      "s": "Thembalethu",
-      "t": "Root_.5 FC",
-      "r": [
-        12,
-        14,
-        15,
-        16,
-        15,
-        13,
-        14,
-        14,
-        16,
-        17,
-        17,
-        16,
-        13,
-        15,
-        14,
-        13,
-        12,
-        10,
-        10,
-        11,
-        10,
-        12,
-        10,
-        11,
-        10,
-        11,
-        12,
-        12,
-        12,
-        13,
-        13,
-        12,
-        12,
-        11,
-        11,
-        11
-      ],
-      "c": "#ffa94d"
-    },
-    {
       "f": "Learnmore Ntshangase",
       "s": "Learnmore",
       "t": "A Cunha Matata",
@@ -6528,6 +6484,50 @@
         13,
         13,
         13,
+        11
+      ],
+      "c": "#ffa94d"
+    },
+    {
+      "f": "Thembalethu Miya",
+      "s": "Thembalethu",
+      "t": "Root_.5 FC",
+      "r": [
+        12,
+        14,
+        15,
+        16,
+        15,
+        13,
+        14,
+        14,
+        16,
+        17,
+        17,
+        16,
+        13,
+        15,
+        14,
+        13,
+        12,
+        10,
+        10,
+        11,
+        10,
+        12,
+        10,
+        11,
+        10,
+        11,
+        12,
+        12,
+        12,
+        13,
+        13,
+        12,
+        12,
+        11,
+        11,
         12
       ],
       "c": "#5c7cfa"
