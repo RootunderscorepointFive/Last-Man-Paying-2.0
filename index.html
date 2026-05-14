@@ -701,9 +701,9 @@ function buildStandings() {
   
   // Wall of Shame / Currently Paying logic (Based on LATEST GW performance)
   const latestIdx = MAX_GW - 1;
-  const latestScores = gwData.map(m => m.gwPts[latestIdx]).sort((a, b) => a - b);
-  // The threshold is the 3rd lowest score
-  const bottomThreshold = latestScores[2]; 
+  const uniqueScores = [...new Set(gwData.map(m => m.gwPts[latestIdx]))].sort((a, b) => a - b);
+  // The threshold is the 3rd lowest UNIQUE score
+  const bottomThreshold = uniqueScores[2]; 
   
   const currentPayers = gwData
     .filter(m => m.gwPts[latestIdx] <= bottomThreshold)
@@ -1038,8 +1038,8 @@ function renderGW(gw) {
     options:{ indexAxis:'y',responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{ticks:{color:'#7a8a7e',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}}, y:{ticks:{color:'#7a8a7e',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}} } }
   });
 
-  const gwScores = enriched.map(m => m.gwPt).sort((a, b) => a - b);
-  const bottomThreshold = gwScores[2];
+  const uniqueGWScores = [...new Set(enriched.map(m => m.gwPt))].sort((a, b) => a - b);
+  const bottomThreshold = uniqueGWScores[2];
 
   const cardsContainer = document.getElementById('gw-cards');
   cardsContainer.innerHTML = '';
