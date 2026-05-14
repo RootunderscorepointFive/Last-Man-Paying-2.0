@@ -659,6 +659,11 @@ function showSection(id, btn) {
 function buildStandings() {
   const sorted = [...standings].sort((a,b) => b.pts - a.pts);
   const maxPts = sorted[0].pts;
+  
+  // Handle ties for bottom 3 in overall standings
+  const totalScores = sorted.map(m => m.pts).sort((a, b) => a - b);
+  const overallBottomThreshold = totalScores[2];
+
   const tbody = document.getElementById('standings-body');
   tbody.innerHTML = '';
   sorted.forEach((m, i) => {
@@ -670,7 +675,7 @@ function buildStandings() {
     
     const gap = m.pts - maxPts;
     const pct = Math.round((m.pts / maxPts) * 100);
-    const isBottom = rank >= 15;
+    const isBottom = m.pts <= overallBottomThreshold;
 
     const captain = managerData ? managerData.currentCaptain : '—';
     const activeChip = managerData ? managerData.activeChip : null;
@@ -696,20 +701,32 @@ function buildStandings() {
   
   // Wall of Shame / Currently Paying logic (Based on LATEST GW performance)
   const latestIdx = MAX_GW - 1;
-  const currentPayers = gwData.map(m => ({
-    manager: m.manager,
-    gwPt: m.gwPts[latestIdx],
-    weeklyRank: m.weeklyRanks[latestIdx]
-  })).sort((a, b) => b.weeklyRank - a.weeklyRank).slice(0, 3); // Worst 3 ranks
+  const latestScores = gwData.map(m => m.gwPts[latestIdx]).sort((a, b) => a - b);
+  // The threshold is the 3rd lowest score
+  const bottomThreshold = latestScores[2]; 
   
+  const currentPayers = gwData
+    .filter(m => m.gwPts[latestIdx] <= bottomThreshold)
+    .map(m => ({
+      manager: m.manager,
+      gwPt: m.gwPts[latestIdx],
+      weeklyRank: m.weeklyRanks[latestIdx]
+    }))
+    .sort((a, b) => a.gwPt - b.gwPt || a.weeklyRank - b.weeklyRank); // Sort by pts ascending
+
+  // Update relegation metric card
+  if (document.getElementById('stat-relegation')) {
+    document.getElementById('stat-relegation').innerText = currentPayers.length;
+  }
+
   const shameEl = document.getElementById('wall-of-shame');
-  if (currentPayers.length === 3) {
+  if (currentPayers.length >= 3) {
     shameEl.style.display = 'block';
     let shameHtml = `
       <div class="shame-banner">
         <div class="shame-title">
           <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
-          GW${MAX_GW} RELEGATION: THE CURRENT PAYERS
+          GW${MAX_GW} RELEGATION: THE CURRENT PAYERS (${currentPayers.length})
         </div>`;
     
     currentPayers.forEach((m) => {
@@ -1021,13 +1038,17 @@ function renderGW(gw) {
     options:{ indexAxis:'y',responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{ticks:{color:'#7a8a7e',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}}, y:{ticks:{color:'#7a8a7e',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}} } }
   });
 
+  const gwScores = enriched.map(m => m.gwPt).sort((a, b) => a - b);
+  const bottomThreshold = gwScores[2];
+
   const cardsContainer = document.getElementById('gw-cards');
   cardsContainer.innerHTML = '';
   sortedByRank.forEach(m => {
     const allPts = m.gwPts.slice(0, MAX_GW);
     const maxPtAll = Math.max(...allPts.filter(v=>v>0));
-    const rankClass = m.weeklyRank === 1 ? 'top3' : m.weeklyRank <= 3 ? 'top3' : m.weeklyRank >= 15 ? 'bot' : 'mid';
-    const cardClass = m.weeklyRank === 1 ? 'rank-1' : m.weeklyRank >= 15 ? 'rank-bottom' : '';
+    const isBottom = m.gwPt <= bottomThreshold;
+    const rankClass = m.weeklyRank === 1 ? 'top3' : m.weeklyRank <= 3 ? 'top3' : isBottom ? 'bot' : 'mid';
+    const cardClass = m.weeklyRank === 1 ? 'rank-1' : isBottom ? 'rank-bottom' : '';
     const suffix = m.weeklyRank===1?'st':m.weeklyRank===2?'nd':m.weeklyRank===3?'rd':'th';
     const aboveAvg = m.gwPt >= avgPts;
     
