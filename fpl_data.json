@@ -17,7 +17,7 @@
       "manager": "Nhlakanipho Ntombela",
       "team": "Iam_ntombela",
       "pts": 2190,
-      "bottomApps": 5
+      "bottomApps": 6
     },
     {
       "manager": "Luthando Ngidi",
@@ -29,7 +29,7 @@
       "manager": "Mbuyi Katumba",
       "team": "Walala WaSalah",
       "pts": 2160,
-      "bottomApps": 1
+      "bottomApps": 2
     },
     {
       "manager": "Siyanda Ndaba",
@@ -77,7 +77,7 @@
       "manager": "Fanele Msweli",
       "team": "Boehlys World Champs",
       "pts": 2019,
-      "bottomApps": 10
+      "bottomApps": 11
     },
     {
       "manager": "President Gamede",
@@ -124,9 +124,9 @@
     {
       "manager": "Nhlakanipho Ntombela",
       "team": "Iam_ntombela",
-      "base": 750,
+      "base": 850,
       "fines": 0,
-      "owed": 750,
+      "owed": 850,
       "paid": 550
     },
     {
@@ -140,9 +140,9 @@
     {
       "manager": "Mbuyi Katumba",
       "team": "Walala WaSalah",
-      "base": 350,
+      "base": 450,
       "fines": 0,
-      "owed": 350,
+      "owed": 450,
       "paid": 250
     },
     {
@@ -204,9 +204,9 @@
     {
       "manager": "Fanele Msweli",
       "team": "Boehlys World Champs",
-      "base": 1250,
+      "base": 1350,
       "fines": 0,
-      "owed": 1250,
+      "owed": 1350,
       "paid": 1250
     },
     {
@@ -268,6 +268,12 @@
       "fines": 1550
     },
     {
+      "manager": "Fanele Msweli",
+      "team": "Boehlys World Champs",
+      "apps": 11,
+      "fines": 1350
+    },
+    {
       "manager": "Learnmore Ntshangase",
       "team": "A Cunha Matata",
       "apps": 10,
@@ -276,12 +282,6 @@
     {
       "manager": "Thembalethu Miya",
       "team": "Root_.5 FC",
-      "apps": 10,
-      "fines": 1250
-    },
-    {
-      "manager": "Fanele Msweli",
-      "team": "Boehlys World Champs",
       "apps": 10,
       "fines": 1250
     },
@@ -322,16 +322,16 @@
       "fines": 950
     },
     {
-      "manager": "President Gamede",
-      "team": "Los Primeros",
+      "manager": "Nhlakanipho Ntombela",
+      "team": "Iam_ntombela",
       "apps": 6,
       "fines": 850
     },
     {
-      "manager": "Nhlakanipho Ntombela",
-      "team": "Iam_ntombela",
-      "apps": 5,
-      "fines": 750
+      "manager": "President Gamede",
+      "team": "Los Primeros",
+      "apps": 6,
+      "fines": 850
     },
     {
       "manager": "Luthando Ngidi",
@@ -346,14 +346,14 @@
       "fines": 550
     },
     {
-      "manager": "Nkosi The Chef",
-      "team": "Šeśko Mode",
-      "apps": 1,
-      "fines": 350
-    },
-    {
       "manager": "Mbuyi Katumba",
       "team": "Walala WaSalah",
+      "apps": 2,
+      "fines": 450
+    },
+    {
+      "manager": "Nkosi The Chef",
+      "team": "Šeśko Mode",
       "apps": 1,
       "fines": 350
     }
