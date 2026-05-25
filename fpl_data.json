@@ -71,7 +71,7 @@
       "manager": "Thembalethu Miya",
       "team": "Root_.5 FC",
       "pts": 2072,
-      "bottomApps": 10
+      "bottomApps": 11
     },
     {
       "manager": "Fanele Msweli",
@@ -101,7 +101,7 @@
       "manager": "Minenhle Khumalo",
       "team": "Hot Slot FC",
       "pts": 1943,
-      "bottomApps": 14
+      "bottomApps": 13
     }
   ],
   "payments": [
@@ -196,9 +196,9 @@
     {
       "manager": "Thembalethu Miya",
       "team": "Root_.5 FC",
-      "base": 1250,
+      "base": 1350,
       "fines": 0,
-      "owed": 1250,
+      "owed": 1350,
       "paid": 950
     },
     {
@@ -236,9 +236,9 @@
     {
       "manager": "Minenhle Khumalo",
       "team": "Hot Slot FC",
-      "base": 1900,
+      "base": 1800,
       "fines": 0,
-      "owed": 1900,
+      "owed": 1800,
       "paid": 950
     }
   ],
@@ -264,8 +264,14 @@
     {
       "manager": "Minenhle Khumalo",
       "team": "Hot Slot FC",
-      "apps": 14,
-      "fines": 1650
+      "apps": 13,
+      "fines": 1550
+    },
+    {
+      "manager": "Thembalethu Miya",
+      "team": "Root_.5 FC",
+      "apps": 11,
+      "fines": 1350
     },
     {
       "manager": "Fanele Msweli",
@@ -276,12 +282,6 @@
     {
       "manager": "Learnmore Ntshangase",
       "team": "A Cunha Matata",
-      "apps": 10,
-      "fines": 1250
-    },
-    {
-      "manager": "Thembalethu Miya",
-      "team": "Root_.5 FC",
       "apps": 10,
       "fines": 1250
     },
