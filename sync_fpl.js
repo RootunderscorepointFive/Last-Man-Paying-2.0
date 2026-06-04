@@ -39,6 +39,8 @@ async function sync() {
     const pastGWs = history.current.filter(h => h.event <= currentGW);
     const gwPts = pastGWs.map(h => h.points - h.event_transfers_cost); // post-hits
     const gwHits = pastGWs.map(h => h.event_transfers_cost);
+    const benchTotal = pastGWs.reduce((a, h) => a + (h.points_on_bench || 0), 0);
+    const transfersTotal = pastGWs.reduce((a, h) => a + (h.event_transfers || 0), 0);
 
     const picksData = await fetchJSON(`${API}/entry/${m.entry}/event/${currentGW}/picks/`);
     const currentPicks = picksData.picks.map(p => ({
@@ -50,7 +52,7 @@ async function sync() {
 
     gwData.push({
       team: m.entry_name, manager: m.player_name, entry: m.entry,
-      gwPts, gwHits, chips: history.chips, total: m.total,
+      gwPts, gwHits, benchTotal, transfersTotal, chips: history.chips, total: m.total,
       currentCaptain: captain ? captain.name : 'Unknown',
       activeChip: picksData.active_chip, currentPicks,
     });

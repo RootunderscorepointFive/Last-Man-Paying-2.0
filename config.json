@@ -16,6 +16,10 @@
     "branch_code": "470010",
     "reference_format": "{first_name} FPL"
   },
+  "epithet_overrides": {
+    "_note": "Season-specific manual pins for epithet judgment calls the linear ruleset can't express. Review/clear each season.",
+    "Siyanda Ndaba": "The Dark Horse"
+  },
   "run_in": {
     "activate_from_gw": 32,
     "enabled": false,

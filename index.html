@@ -128,6 +128,8 @@
   .pts-bar-bg { background:var(--surface3); height:4px; border-radius:2px; }
   .pts-bar-fill { height:4px; border-radius:2px; background:var(--green); }
   .bottom-badge { display:inline-block; font-size:10px; padding:2px 8px; background:rgba(255,71,87,0.15); color:var(--red); border-radius:999px; border:1px solid rgba(255,71,87,0.3); font-family:var(--font-mono); vertical-align:middle; margin-left:6px; }
+  .epithet { display:inline-block; font-family:var(--font-mono); font-size:10px; letter-spacing:0.5px; text-transform:uppercase; color:var(--amber); margin:3px 0 1px; cursor:help; }
+  .epithet::before { content:'» '; opacity:0.6; }
 
   .chart-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin-bottom:20px; }
   .chart-title { font-family:var(--font-display); font-size:20px; letter-spacing:1px; color:var(--text); margin-bottom:4px; }
@@ -688,6 +690,7 @@ function buildStandings() {
       <td><span class="rank ${rank <= 3 ? 'top3' : ''}">${rank}</span>${trendIcon}</td>
       <td>
         <div class="manager-name">${m.manager}${isBottom ? '<span class="bottom-badge">bottom 3</span>' : ''}</div>
+        ${m.epithet ? `<div class="epithet" title="${m.epithet_tagline || ''}">${m.epithet}</div>` : ''}
         <div class="team-name">${m.team}</div>
         <div class="captain-pill">© ${captain}</div>${chipHtml}
       </td>
@@ -1534,7 +1537,8 @@ function buildViewModel(config, ledger, api) {
   })).sort((a, b) => b.apps - a.apps);
   const standings = (api.standings || []).map(s => {
     const m = byName[vmNorm(s.manager)];
-    return { ...s, bottomApps: m ? bottomCount(m) : s.bottomApps };
+    return { ...s, bottomApps: m ? bottomCount(m) : s.bottomApps,
+             epithet: m ? m.epithet : null, epithet_tagline: m ? m.epithet_tagline : null };
   });
 
   return {

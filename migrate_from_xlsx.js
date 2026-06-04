@@ -139,6 +139,20 @@ for (const name of Object.keys(budget)) {
   });
 }
 
+// ---- 4b. Known corrections (NOT a broader reconciliation — one-off fixes for
+// entries we've confirmed were mis-recorded in the Excel sheet).
+const KNOWN_CORRECTIONS = [
+  { name: 'Minenhle Khumalo', gw: 38, fromType: 'bottom', toType: 'losers_fine',
+    reason: 'End-of-season losers fine (manual penalty recorded against GW38 in Excel, not an LMP bottom-3 result)' },
+];
+for (const c of KNOWN_CORRECTIONS) {
+  const m = managers.find(x => x.name === c.name);
+  if (!m) continue;
+  const f = m.fines.find(x => x.type === c.fromType && x.gw === c.gw);
+  if (f) { f.type = c.toType; f.reason = c.reason; }
+  if (c.toType !== 'bottom') m.bottom_finishes = m.bottom_finishes.filter(g => g !== c.gw);
+}
+
 // ---- 5. data.json
 const data = {
   generated_at: GENERATED_AT,

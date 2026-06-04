@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T09:18:08.169Z",
+  "generated_at": "2026-06-04T11:02:27.440Z",
   "source": "one-time migration from FPL 2025 updated for GW34.xlsx",
   "last_synced_gw": 38,
   "managers": [
@@ -247,15 +247,15 @@
           "id": "f_6487265_14",
           "gw": 38,
           "amount": 100,
-          "type": "bottom",
+          "type": "losers_fine",
           "status": "confirmed",
-          "reason": "LMP bottom finish — GW38",
+          "reason": "End-of-season losers fine (manual penalty recorded against GW38 in Excel, not an LMP bottom-3 result)",
           "paid_date": "migrated",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
           "reversed_date": null,
-          "added_by": "migration",
+          "added_by": "migration-correction",
           "added_date": "2026-06-04T09:18:08.169Z",
           "edited_by": null,
           "edited_date": null,
@@ -293,9 +293,10 @@
         29,
         30,
         32,
-        35,
-        38
-      ]
+        35
+      ],
+      "epithet": "Wooden Spoon",
+      "epithet_tagline": "Fewest total points — 1 943"
     },
     {
       "entry": 6175620,
@@ -571,7 +572,9 @@
         33,
         34,
         38
-      ]
+      ],
+      "epithet": "The Regular",
+      "epithet_tagline": "Most bottom finishes — 14 of 38"
     },
     {
       "entry": 5265465,
@@ -790,7 +793,9 @@
         31,
         33,
         37
-      ]
+      ],
+      "epithet": "Old Reliable",
+      "epithet_tagline": "Bottom 3 gameweeks in a row"
     },
     {
       "entry": 1243183,
@@ -1009,7 +1014,9 @@
         27,
         30,
         38
-      ]
+      ],
+      "epithet": "Trigger Happy",
+      "epithet_tagline": "Itchy trigger finger — 40 transfers"
     },
     {
       "entry": 5253170,
@@ -1227,7 +1234,9 @@
         24,
         26,
         29
-      ]
+      ],
+      "epithet": "Departure Lounge",
+      "epithet_tagline": "Stuck at the relegation gate — 10 bottom finishes"
     },
     {
       "entry": 4608814,
@@ -1444,7 +1453,9 @@
         21,
         25,
         34
-      ]
+      ],
+      "epithet": "Best Bench",
+      "epithet_tagline": "Left 397 points rotting on the bench"
     },
     {
       "entry": 6410488,
@@ -1661,7 +1672,9 @@
         31,
         35,
         38
-      ]
+      ],
+      "epithet": "Glass Cannon",
+      "epithet_tagline": "Most volatile scorer — swings of ±19"
     },
     {
       "entry": 4990240,
@@ -1823,7 +1836,9 @@
         20,
         24,
         36
-      ]
+      ],
+      "epithet": "The Vibe",
+      "epithet_tagline": "Quietly fine — 2 103 pts, no fuss"
     },
     {
       "entry": 8924713,
@@ -1985,7 +2000,9 @@
         18,
         20,
         33
-      ]
+      ],
+      "epithet": "The Tinkerman",
+      "epithet_tagline": "Can't stop fiddling — 44 transfers, 28 hit pts, 15th to show for it"
     },
     {
       "entry": 3703048,
@@ -2146,7 +2163,9 @@
         25,
         27,
         32
-      ]
+      ],
+      "epithet": "The Banker",
+      "epithet_tagline": "Top weekly scorer 5 times"
     },
     {
       "entry": 7264842,
@@ -2307,7 +2326,9 @@
         26,
         27,
         32
-      ]
+      ],
+      "epithet": "The Dark Horse",
+      "epithet_tagline": "Quietly finished 5th without owning a single category"
     },
     {
       "entry": 7022245,
@@ -2431,7 +2452,9 @@
         23,
         35,
         37
-      ]
+      ],
+      "epithet": "One-Hit Wonder",
+      "epithet_tagline": "One big week — season-high 121, forgettable rest"
     },
     {
       "entry": 3983382,
@@ -2591,7 +2614,9 @@
         23,
         34,
         36
-      ]
+      ],
+      "epithet": "The Fugitive",
+      "epithet_tagline": "Owes the pot the most — R100"
     },
     {
       "entry": 5029495,
@@ -2695,7 +2720,9 @@
         14,
         21,
         36
-      ]
+      ],
+      "epithet": "Steady Eddie",
+      "epithet_tagline": "Steadiest scorer — swings of only ±15.3"
     },
     {
       "entry": 3390995,
@@ -2762,7 +2789,9 @@
         2,
         22,
         31
-      ]
+      ],
+      "epithet": "The Phoenix",
+      "epithet_tagline": "Rose from the ashes — climbed 9 places"
     },
     {
       "entry": 8695328,
@@ -2810,7 +2839,9 @@
       "bottom_finishes": [
         36,
         37
-      ]
+      ],
+      "epithet": "The Patient One",
+      "epithet_tagline": "Only 35 transfers all season"
     },
     {
       "entry": 4764943,
@@ -2857,7 +2888,9 @@
       ],
       "bottom_finishes": [
         14
-      ]
+      ],
+      "epithet": "The Chef's Special",
+      "epithet_tagline": "League leader — 2 339 pts"
     }
   ]
 }

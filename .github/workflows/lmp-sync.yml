@@ -54,6 +54,9 @@ jobs:
           if [ "$DRY" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           node apply_lmp_fines.js $ARGS
 
+      - name: Generate epithets
+        run: node generate_epithets.js
+
       - name: Commit & push if changed
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |

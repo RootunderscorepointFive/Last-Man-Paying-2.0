@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LMP TERMINAL · LIVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0d10;
+    --bg-2: #0f1318;
+    --panel: #131820;
+    --panel-2: #181f29;
+    --border: #2a3340;
+    --border-bright: #3a4654;
+    --text: #d8dde4;
+    --dim: #6e7a87;
+    --amber: #ffb547;
+    --amber-bright: #ffd27a;
+    --green: #4ade80;
+    --green-dim: #2a7a48;
+    --red: #ff5d5d;
+    --red-dim: #8a2828;
+    --blue: #5eaaff;
+  }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    min-height: 100vh;
+  }
+  body {
+    background-image:
+      radial-gradient(ellipse at top, rgba(255,181,71,0.04), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(94,170,255,0.03), transparent 50%);
+  }
+
+  /* Top status bar */
+  .topbar {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 6px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .topbar .brand {
+    color: var(--amber);
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  .topbar .brand::before {
+    content: '◆';
+    margin-right: 8px;
+  }
+  .topbar .live::before {
+    content: '●';
+    color: var(--red);
+    margin-right: 6px;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .topbar .right { display: flex; gap: 20px; color: var(--dim); }
+  .topbar .right strong { color: var(--text); margin-left: 6px; }
+
+  /* Ticker tape */
+  .ticker {
+    background: var(--bg-2);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    height: 32px;
+    position: relative;
+  }
+  .ticker-track {
+    display: flex;
+    gap: 36px;
+    padding: 8px 0;
+    white-space: nowrap;
+    animation: scroll 60s linear infinite;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .tick {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+  .tick .sym { color: var(--text); font-weight: 600; letter-spacing: 1px; }
+  .tick .val { color: var(--text); font-variant-numeric: tabular-nums; }
+  .tick .chg { font-variant-numeric: tabular-nums; }
+  .tick .chg.up { color: var(--green); }
+  .tick .chg.dn { color: var(--red); }
+  .tick .arrow.up::before { content: '▲ '; }
+  .tick .arrow.dn::before { content: '▼ '; }
+
+  /* Main grid */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+  }
+  .grid > * { background: var(--bg); }
+  .grid-full { grid-column: 1 / -1; }
+  .grid-2 { grid-column: span 2; }
+
+  .panel {
+    padding: 14px 18px;
+    min-height: 100px;
+  }
+  .panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--border-bright);
+    margin-bottom: 12px;
+  }
+  .panel-title {
+    color: var(--amber);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .panel-title::before {
+    content: '› ';
+    color: var(--dim);
+  }
+  .panel-meta {
+    font-size: 10px;
+    color: var(--dim);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* KPI cells */
+  .kpi {
+    padding: 16px 18px;
+  }
+  .kpi-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 6px;
+  }
+  .kpi-value {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -1px;
+  }
+  .kpi-change {
+    font-size: 11px;
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+  .kpi-change.up { color: var(--green); }
+  .kpi-change.dn { color: var(--red); }
+  .kpi-value.amber { color: var(--amber); }
+  .kpi-value.red { color: var(--red); }
+  .kpi-value.green { color: var(--green); }
+
+  /* Bottom three featured panel */
+  .featured {
+    background:
+      linear-gradient(180deg, rgba(255,93,93,0.06), transparent 60%),
+      var(--bg);
+    border-left: 2px solid var(--red);
+  }
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 28px 1fr auto auto;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .bottom-row:last-child { border-bottom: none; }
+  .bottom-row .rk {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--red);
+    line-height: 1;
+    text-align: center;
+  }
+  .bottom-row .nm {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: var(--text);
+  }
+  .bottom-row .epi {
+    font-size: 11px;
+    color: var(--dim);
+    font-style: italic;
+  }
+  .bottom-row .px {
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    color: var(--text);
+    text-align: right;
+  }
+  .bottom-row .px small { color: var(--dim); display: block; font-size: 10px; letter-spacing: 1px; }
+  .bottom-row .fee {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--red);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Sparkline chart */
+  .spark {
+    height: 140px;
+    margin-top: 8px;
+    width: 100%;
+  }
+  .spark svg { width: 100%; height: 100%; display: block; }
+  .spark-axis { font-size: 9px; color: var(--dim); font-family: 'IBM Plex Mono', monospace; }
+
+  /* Heat bars */
+  .heat-row {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 12px;
+  }
+  .heat-row .label { color: var(--text); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .heat-row .bar {
+    height: 10px;
+    background: var(--panel);
+    border: 1px solid var(--border-bright);
+    position: relative;
+    overflow: hidden;
+  }
+  .heat-row .bar .fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--red-dim), var(--red));
+  }
+  .heat-row .bar .fill.green { background: linear-gradient(90deg, var(--green-dim), var(--green)); }
+  .heat-row .bar .fill.amber { background: linear-gradient(90deg, #6a4a14, var(--amber)); }
+  .heat-row .val { font-variant-numeric: tabular-nums; color: var(--text); min-width: 60px; text-align: right; font-size: 12px; }
+
+  /* Holdings table */
+  .holdings {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  .holdings thead th {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--border-bright);
+    font-weight: 600;
+  }
+  .holdings thead th.r { text-align: right; }
+  .holdings tbody td {
+    padding: 9px 8px;
+    border-bottom: 1px dashed var(--border);
+    vertical-align: middle;
+  }
+  .holdings tbody tr:hover { background: rgba(255,181,71,0.04); }
+  .holdings .sym { color: var(--amber); font-weight: 600; letter-spacing: 1px; font-size: 11px; }
+  .holdings .name { color: var(--text); font-weight: 500; }
+  .holdings .epi { color: var(--dim); font-size: 10.5px; font-style: italic; }
+  .holdings .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .holdings .pos { color: var(--green); }
+  .holdings .neg { color: var(--red); }
+  .holdings .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .pill-debt { color: var(--red); border-color: var(--red-dim); background: rgba(255,93,93,0.08); }
+  .pill-clear { color: var(--green); border-color: var(--green-dim); background: rgba(74,222,128,0.06); }
+
+  /* Mini terminal output for commands */
+  .terminal {
+    background: var(--bg-2);
+    border: 1px solid var(--border-bright);
+    padding: 12px 14px;
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .terminal .prompt { color: var(--amber); }
+  .terminal .out { color: var(--dim); }
+  .terminal .ok { color: var(--green); }
+
+  /* Action bar */
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border-top: 1px solid var(--border-bright);
+  }
+  .action {
+    background: var(--panel);
+    padding: 14px;
+    text-align: left;
+    cursor: pointer;
+    border: none;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    transition: background 0.15s;
+  }
+  .action:hover { background: var(--panel-2); }
+  .action .key {
+    display: inline-block;
+    padding: 1px 6px;
+    border: 1px solid var(--border-bright);
+    font-size: 10px;
+    color: var(--amber);
+    margin-right: 8px;
+  }
+  .action .label { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+  .action .desc { font-size: 10px; color: var(--dim); margin-top: 4px; letter-spacing: 0.5px; }
+
+  /* Footer */
+  .footer {
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .footer .ok { color: var(--green); }
+
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; }
+    .grid-2 { grid-column: span 1; }
+    .actions { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top status -->
+<div class="topbar">
+  <div class="brand">LMP · TERMINAL</div>
+  <div class="right">
+    <span class="live">LIVE</span>
+    <span>GW <strong>34/38</strong></span>
+    <span>SESSION <strong>2025-26</strong></span>
+    <span>UTC <strong>14:22:08</strong></span>
+  </div>
+</div>
+
+<!-- Scrolling ticker -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="tick"><span class="sym">GAMD</span><span class="val">28</span><span class="chg dn arrow dn">−42</span></span>
+    <span class="tick"><span class="sym">STHE</span><span class="val">34</span><span class="chg dn arrow dn">−36</span></span>
+    <span class="tick"><span class="sym">THBO</span><span class="val">38</span><span class="chg dn arrow dn">−32</span></span>
+    <span class="tick"><span class="sym">MZSI</span><span class="val">38</span><span class="chg dn arrow dn">−32</span></span>
+    <span class="tick"><span class="sym">LKKR</span><span class="val">38</span><span class="chg dn arrow dn">−32</span></span>
+    <span class="tick"><span class="sym">MBUY</span><span class="val">94</span><span class="chg up arrow up">+24</span></span>
+    <span class="tick"><span class="sym">BEAST</span><span class="val">71</span><span class="chg up arrow up">+1</span></span>
+    <span class="tick"><span class="sym">RED ARMY</span><span class="val">68</span><span class="chg dn arrow dn">−2</span></span>
+    <span class="tick"><span class="sym">SHARKS</span><span class="val">82</span><span class="chg up arrow up">+12</span></span>
+    <span class="tick"><span class="sym">JOZI XI</span><span class="val">75</span><span class="chg up arrow up">+5</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="tick"><span class="sym">GAMD</span><span class="val">28</span><span class="chg dn arrow dn">−42</span></span>
+    <span class="tick"><span class="sym">STHE</span><span class="val">34</span><span class="chg dn arrow dn">−36</span></span>
+    <span class="tick"><span class="sym">THBO</span><span class="val">38</span><span class="chg dn arrow dn">−32</span></span>
+    <span class="tick"><span class="sym">MZSI</span><span class="val">38</span><span class="chg dn arrow dn">−32</span></span>
+    <span class="tick"><span class="sym">LKKR</span><span class="val">38</span><span class="chg dn arrow dn">−32</span></span>
+    <span class="tick"><span class="sym">MBUY</span><span class="val">94</span><span class="chg up arrow up">+24</span></span>
+    <span class="tick"><span class="sym">BEAST</span><span class="val">71</span><span class="chg up arrow up">+1</span></span>
+    <span class="tick"><span class="sym">RED ARMY</span><span class="val">68</span><span class="chg dn arrow dn">−2</span></span>
+    <span class="tick"><span class="sym">SHARKS</span><span class="val">82</span><span class="chg up arrow up">+12</span></span>
+    <span class="tick"><span class="sym">JOZI XI</span><span class="val">75</span><span class="chg up arrow up">+5</span></span>
+  </div>
+</div>
+
+<!-- KPI row -->
+<div class="grid">
+  <div class="kpi">
+    <div class="kpi-label">Outstanding · League</div>
+    <div class="kpi-value red">R7,450</div>
+    <div class="kpi-change dn">▼ R450 since GW33</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">Collected · Season</div>
+    <div class="kpi-value green">R8,400</div>
+    <div class="kpi-change up">▲ R250 this week</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">Total Levied</div>
+    <div class="kpi-value amber">R15,850</div>
+    <div class="kpi-change">+ R250 GW34 fines</div>
+  </div>
+</div>
+
+<!-- Main analytics row -->
+<div class="grid">
+
+  <!-- Bottom 3 featured -->
+  <div class="panel featured grid-2">
+    <div class="panel-head">
+      <div class="panel-title">GW34 · Bottom Tally · Five Charged</div>
+      <div class="panel-meta">Threshold: 38 pts · Rule: ≤ 3rd lowest</div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="rk">1</div>
+      <div>
+        <div class="nm">GAMD <span class="epi">· President Gamede · "The Regular"</span></div>
+      </div>
+      <div class="px">28 pts<small>−42 vs avg</small></div>
+      <div class="fee">R50</div>
+    </div>
+    <div class="bottom-row">
+      <div class="rk">2</div>
+      <div>
+        <div class="nm">STHE <span class="epi">· Sthe Coqueto · "Old Reliable"</span></div>
+      </div>
+      <div class="px">34 pts<small>−36 vs avg</small></div>
+      <div class="fee">R50</div>
+    </div>
+    <div class="bottom-row">
+      <div class="rk">3</div>
+      <div>
+        <div class="nm">THBO <span class="epi">· Thabo's XI · "Captain Curse"</span></div>
+      </div>
+      <div class="px">38 pts<small>−32 vs avg</small></div>
+      <div class="fee">R50</div>
+    </div>
+    <div class="bottom-row">
+      <div class="rk">=</div>
+      <div>
+        <div class="nm">MZSI <span class="epi">· FC Mzansi · "Tied to His Fate"</span></div>
+      </div>
+      <div class="px">38 pts<small>−32 vs avg</small></div>
+      <div class="fee">R50</div>
+    </div>
+    <div class="bottom-row">
+      <div class="rk">=</div>
+      <div>
+        <div class="nm">LKKR <span class="epi">· The Lekker XI · "Newly Indebted"</span></div>
+      </div>
+      <div class="px">38 pts<small>−32 vs avg</small></div>
+      <div class="fee">R50</div>
+    </div>
+
+    <div class="terminal">
+      <div><span class="prompt">LMP&gt;</span> resolve_bottom --gw 34 --rule "≤ 3rd-lowest"</div>
+      <div class="out">parsing 17 entries from fpl_api... ok</div>
+      <div class="out">3rd-lowest score: 38 pts. tied at threshold: 3</div>
+      <div class="ok">→ 5 managers charged R50 ea. total: R250 added to ledger.</div>
+    </div>
+  </div>
+
+  <!-- Right column: bottom-finish heat -->
+  <div class="panel">
+    <div class="panel-head">
+      <div class="panel-title">Bottom Frequency · Season</div>
+      <div class="panel-meta">Career hits</div>
+    </div>
+    <div class="heat-row"><span class="label">Sthe Coqueto</span><span class="bar"><span class="fill" style="width: 100%;"></span></span><span class="val">13</span></div>
+    <div class="heat-row"><span class="label">P. Gamede</span><span class="bar"><span class="fill" style="width: 84%;"></span></span><span class="val">11</span></div>
+    <div class="heat-row"><span class="label">Thabo's XI</span><span class="bar"><span class="fill" style="width: 54%;"></span></span><span class="val">7</span></div>
+    <div class="heat-row"><span class="label">FC Mzansi</span><span class="bar"><span class="fill" style="width: 38%;"></span></span><span class="val">5</span></div>
+    <div class="heat-row"><span class="label">The Beast</span><span class="bar"><span class="fill" style="width: 30%;"></span></span><span class="val">4</span></div>
+    <div class="heat-row"><span class="label">Red Army</span><span class="bar"><span class="fill amber" style="width: 22%;"></span></span><span class="val">3</span></div>
+    <div class="heat-row"><span class="label">Sharks FC</span><span class="bar"><span class="fill amber" style="width: 15%;"></span></span><span class="val">2</span></div>
+    <div class="heat-row"><span class="label">Lekker XI</span><span class="bar"><span class="fill amber" style="width: 8%;"></span></span><span class="val">1</span></div>
+    <div class="heat-row"><span class="label">Mbuyi · WW</span><span class="bar"><span class="fill green" style="width: 0%;"></span></span><span class="val">0</span></div>
+  </div>
+</div>
+
+<!-- Chart row -->
+<div class="grid">
+  <div class="panel grid-2">
+    <div class="panel-head">
+      <div class="panel-title">Season Debt Curve · Cumulative</div>
+      <div class="panel-meta">GW1 — GW34 · ZAR</div>
+    </div>
+    <div class="spark">
+      <svg viewBox="0 0 600 140" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ff5d5d" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#ff5d5d" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4ade80" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- grid lines -->
+        <g stroke="#2a3340" stroke-width="0.5" stroke-dasharray="3,3">
+          <line x1="0" y1="35" x2="600" y2="35"/>
+          <line x1="0" y1="70" x2="600" y2="70"/>
+          <line x1="0" y1="105" x2="600" y2="105"/>
+        </g>
+        <!-- y axis labels -->
+        <g fill="#6e7a87" font-family="IBM Plex Mono" font-size="9">
+          <text x="4" y="12">R16k</text>
+          <text x="4" y="47">R12k</text>
+          <text x="4" y="82">R8k</text>
+          <text x="4" y="117">R4k</text>
+        </g>
+        <!-- area: total levied -->
+        <path d="M 30 130 L 50 124 L 80 118 L 110 112 L 140 104 L 170 96 L 200 88 L 230 80 L 260 72 L 290 64 L 320 58 L 350 50 L 380 44 L 410 38 L 440 32 L 470 26 L 500 22 L 530 18 L 560 14 L 580 12 L 580 140 L 30 140 Z" fill="url(#g1)"/>
+        <path d="M 30 130 L 50 124 L 80 118 L 110 112 L 140 104 L 170 96 L 200 88 L 230 80 L 260 72 L 290 64 L 320 58 L 350 50 L 380 44 L 410 38 L 440 32 L 470 26 L 500 22 L 530 18 L 560 14 L 580 12" stroke="#ff5d5d" stroke-width="1.8" fill="none"/>
+        <!-- collected line -->
+        <path d="M 30 138 L 50 135 L 80 132 L 110 128 L 140 122 L 170 115 L 200 108 L 230 102 L 260 96 L 290 90 L 320 84 L 350 78 L 380 72 L 410 68 L 440 62 L 470 56 L 500 50 L 530 46 L 560 42 L 580 40 L 580 140 L 30 140 Z" fill="url(#g2)"/>
+        <path d="M 30 138 L 50 135 L 80 132 L 110 128 L 140 122 L 170 115 L 200 108 L 230 102 L 260 96 L 290 90 L 320 84 L 350 78 L 380 72 L 410 68 L 440 62 L 470 56 L 500 50 L 530 46 L 560 42 L 580 40" stroke="#4ade80" stroke-width="1.8" fill="none"/>
+        <!-- last marker -->
+        <circle cx="580" cy="12" r="3" fill="#ff5d5d"/>
+        <circle cx="580" cy="40" r="3" fill="#4ade80"/>
+        <text x="540" y="8" fill="#ff5d5d" font-family="IBM Plex Mono" font-size="10">R15,850</text>
+        <text x="538" y="55" fill="#4ade80" font-family="IBM Plex Mono" font-size="10">R8,400</text>
+        <!-- x axis -->
+        <g fill="#6e7a87" font-family="IBM Plex Mono" font-size="9">
+          <text x="30" y="138">GW1</text>
+          <text x="200" y="138">GW10</text>
+          <text x="380" y="138">GW20</text>
+          <text x="555" y="138">GW34</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <div class="panel-title">Risk Watch · Next GW</div>
+      <div class="panel-meta">Forecast model</div>
+    </div>
+    <div style="font-size: 11px; color: var(--dim); margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase;">Most likely to bottom</div>
+    <div class="heat-row"><span class="label">P. Gamede</span><span class="bar"><span class="fill" style="width: 88%;"></span></span><span class="val">88%</span></div>
+    <div class="heat-row"><span class="label">Sthe Coqueto</span><span class="bar"><span class="fill" style="width: 74%;"></span></span><span class="val">74%</span></div>
+    <div class="heat-row"><span class="label">Thabo's XI</span><span class="bar"><span class="fill amber" style="width: 52%;"></span></span><span class="val">52%</span></div>
+    <div class="heat-row"><span class="label">FC Mzansi</span><span class="bar"><span class="fill amber" style="width: 41%;"></span></span><span class="val">41%</span></div>
+    <div class="heat-row"><span class="label">Red Army</span><span class="bar"><span class="fill amber" style="width: 28%;"></span></span><span class="val">28%</span></div>
+    <div style="font-size: 9px; color: var(--dim); margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--border-bright); letter-spacing: 1px;">model: 5-gw rolling avg · for entertainment only</div>
+  </div>
+</div>
+
+<!-- Holdings table -->
+<div class="grid">
+  <div class="panel grid-full">
+    <div class="panel-head">
+      <div class="panel-title">Holdings · Outstanding Debt by Manager</div>
+      <div class="panel-meta">Sorted desc · all 17 entries</div>
+    </div>
+    <table class="holdings">
+      <thead>
+        <tr>
+          <th style="width:80px">Sym</th>
+          <th>Manager / Team</th>
+          <th class="r">Bottoms</th>
+          <th class="r">Levied</th>
+          <th class="r">Paid</th>
+          <th class="r">Outstanding</th>
+          <th class="r">Δ Wk</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="sym">GAMD</td>
+          <td><div class="name">President Gamede</div><div class="epi">"The Regular" · Cabinet Reshuffle</div></td>
+          <td class="num">11</td>
+          <td class="num">R2,150</td>
+          <td class="num">R0</td>
+          <td class="num neg">R2,150</td>
+          <td class="num neg">+R50</td>
+          <td><span class="pill pill-debt">Owing</span></td>
+        </tr>
+        <tr>
+          <td class="sym">STHE</td>
+          <td><div class="name">Sthe Coqueto</div><div class="epi">"Old Reliable" · Sthe Coqueto FC</div></td>
+          <td class="num">13</td>
+          <td class="num">R1,950</td>
+          <td class="num">R300</td>
+          <td class="num neg">R1,650</td>
+          <td class="num neg">+R50</td>
+          <td><span class="pill pill-debt">Owing</span></td>
+        </tr>
+        <tr>
+          <td class="sym">THBO</td>
+          <td><div class="name">Thabo's XI</div><div class="epi">"Captain Curse" · Thabo United</div></td>
+          <td class="num">7</td>
+          <td class="num">R1,250</td>
+          <td class="num">R400</td>
+          <td class="num neg">R850</td>
+          <td class="num neg">+R50</td>
+          <td><span class="pill pill-debt">Owing</span></td>
+        </tr>
+        <tr>
+          <td class="sym">MZSI</td>
+          <td><div class="name">FC Mzansi</div><div class="epi">"Tied to His Fate" · FC Mzansi</div></td>
+          <td class="num">5</td>
+          <td class="num">R950</td>
+          <td class="num">R450</td>
+          <td class="num neg">R500</td>
+          <td class="num neg">+R50</td>
+          <td><span class="pill pill-debt">Owing</span></td>
+        </tr>
+        <tr>
+          <td class="sym">LKKR</td>
+          <td><div class="name">The Lekker XI</div><div class="epi">"Newly Indebted" · Lekker FC</div></td>
+          <td class="num">1</td>
+          <td class="num">R200</td>
+          <td class="num">R0</td>
+          <td class="num neg">R200</td>
+          <td class="num neg">+R50</td>
+          <td><span class="pill pill-debt">Owing</span></td>
+        </tr>
+        <tr>
+          <td class="sym">BEAST</td>
+          <td><div class="name">The Beast</div><div class="epi">"All Bark" · Beast Mode FC</div></td>
+          <td class="num">4</td>
+          <td class="num">R800</td>
+          <td class="num">R800</td>
+          <td class="num">R0</td>
+          <td class="num pos">+R200</td>
+          <td><span class="pill pill-clear">Settled</span></td>
+        </tr>
+        <tr>
+          <td class="sym">MBUY</td>
+          <td><div class="name">Mbuyi</div><div class="epi">"The Untouchable" · Walala WaSalah</div></td>
+          <td class="num">0</td>
+          <td class="num">R150</td>
+          <td class="num">R150</td>
+          <td class="num">R0</td>
+          <td class="num">—</td>
+          <td><span class="pill pill-clear">Settled</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Quick actions -->
+<div class="actions">
+  <button class="action">
+    <span class="key">F1</span><span class="label">Email Reminders</span>
+    <div class="desc">13 unpaid · auto-compose</div>
+  </button>
+  <button class="action">
+    <span class="key">F2</span><span class="label">Mark Paid</span>
+    <div class="desc">treasurer · update ledger</div>
+  </button>
+  <button class="action">
+    <span class="key">F3</span><span class="label">Refresh FPL</span>
+    <div class="desc">sync from api · last 2m ago</div>
+  </button>
+  <button class="action">
+    <span class="key">F4</span><span class="label">Export Ledger</span>
+    <div class="desc">csv · xlsx · share link</div>
+  </button>
+</div>
+
+<div class="footer">
+  <div><span class="ok">●</span> CONNECTED · FPL_API v2 · Auto-sync ON</div>
+  <div>17 entries · GW34/38 · LMP TERMINAL v2.0 · © THE LEAGUE</div>
+</div>
+
+</body>
+</html>
