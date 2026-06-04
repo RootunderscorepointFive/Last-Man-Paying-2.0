@@ -10,10 +10,8 @@ name: LMP weekly sync
 # and re-runs are no-ops until there's a new GW to process.
 
 on:
-  # DAILY CRON DISABLED until the GitHub dry-run is verified. Re-enabled in a
-  # follow-up commit once the dispatch dry-run matches the recorded GW34 result.
-  # schedule:
-  #   - cron: '0 6 * * *'      # 06:00 UTC daily; idempotent, only writes on a new finished GW
+  schedule:
+    - cron: '0 6 * * *'        # 06:00 UTC daily; idempotent, only writes on a new finished GW
   workflow_dispatch:
     inputs:
       gw:
@@ -37,9 +35,9 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'   # global fetch built in; no npm install needed
 
