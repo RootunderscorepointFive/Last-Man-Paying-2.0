@@ -1,0 +1,27 @@
+{
+  "season": "2025/26",
+  "fpl_league_id": 680132,
+  "joining_fee": 250,
+  "gw_fine": 100,
+  "total_gws": 38,
+  "managers": {
+    "expected_count": 17,
+    "_note": "Sanity-check only. Actual roster is read live from the FPL API each sync."
+  },
+  "banking": {
+    "account_holder": "SN Zwane",
+    "bank": "Capitec",
+    "account_type": "Savings",
+    "account_number": "1523803027",
+    "branch_code": "470010",
+    "reference_format": "{first_name} FPL"
+  },
+  "run_in": {
+    "activate_from_gw": 32,
+    "enabled": false,
+    "_note": "Run-In screen is parked. Code is built so it can auto-activate from GW32; not shown in nav yet."
+  },
+  "secrets": {
+    "_note": "These are NOT stored here. Set as environment variables in Vercel (and GitHub Actions where needed): TREASURER_PASSWORD, RESEND_API_KEY. Email addresses live in a gitignored emails file, also injected via secret."
+  }
+}

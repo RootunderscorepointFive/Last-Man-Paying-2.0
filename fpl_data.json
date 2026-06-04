@@ -5,357 +5,103 @@
       "manager": "Nkosi The Chef",
       "team": "Šeśko Mode",
       "pts": 2339,
-      "bottomApps": 1
+      "bottomApps": 0
     },
     {
       "manager": "Nhlakanipho Ntombela",
       "team": "Iam_ntombela",
       "pts": 2258,
-      "bottomApps": 6
+      "bottomApps": 0
     },
     {
       "manager": "Mhlengi Kunene",
       "team": "Hidden Hills",
       "pts": 2255,
-      "bottomApps": 3
+      "bottomApps": 0
     },
     {
       "manager": "Luthando Ngidi",
       "team": "Palmergeddon",
       "pts": 2252,
-      "bottomApps": 4
+      "bottomApps": 0
     },
     {
       "manager": "Siyanda Ndaba",
       "team": "JustGimmeDeLigt",
       "pts": 2217,
-      "bottomApps": 7
+      "bottomApps": 0
     },
     {
       "manager": "Mbuyi Katumba",
       "team": "Walala WaSalah",
       "pts": 2212,
-      "bottomApps": 2
+      "bottomApps": 0
     },
     {
       "manager": "Lethu Mkhwanazi",
       "team": "Bruno, dos, tres",
       "pts": 2180,
-      "bottomApps": 7
+      "bottomApps": 0
     },
     {
       "manager": "Bheka Bhengu",
       "team": "SzoboSlay",
       "pts": 2119,
-      "bottomApps": 9
+      "bottomApps": 0
     },
     {
       "manager": "Thato Choshi",
       "team": "TAYDO FC",
       "pts": 2116,
-      "bottomApps": 9
+      "bottomApps": 0
     },
     {
       "manager": "Mtho Mabizela",
       "team": "Joao Island",
       "pts": 2103,
-      "bottomApps": 8
+      "bottomApps": 0
     },
     {
       "manager": "Learnmore Ntshangase",
       "team": "A Cunha Matata",
       "pts": 2077,
-      "bottomApps": 10
+      "bottomApps": 0
     },
     {
       "manager": "Thembalethu Miya",
       "team": "Root_.5 FC",
       "pts": 2072,
-      "bottomApps": 11
+      "bottomApps": 0
     },
     {
       "manager": "Fanele Msweli",
       "team": "Boehlys World Champs",
       "pts": 2066,
-      "bottomApps": 11
+      "bottomApps": 0
     },
     {
       "manager": "President Gamede",
       "team": "Los Primeros",
       "pts": 2061,
-      "bottomApps": 6
+      "bottomApps": 0
     },
     {
       "manager": "Kudzai Kupeta",
       "team": "Rice Rice Baby",
       "pts": 2044,
-      "bottomApps": 8
+      "bottomApps": 0
     },
     {
       "manager": "Sthe Coqueto",
       "team": "Sthe Coqueto",
       "pts": 2007,
-      "bottomApps": 14
+      "bottomApps": 0
     },
     {
       "manager": "Minenhle Khumalo",
       "team": "Hot Slot FC",
       "pts": 1943,
-      "bottomApps": 13
-    }
-  ],
-  "payments": [
-    {
-      "manager": "Nkosi The Chef",
-      "team": "Šeśko Mode",
-      "base": 350,
-      "fines": 100,
-      "owed": 450,
-      "paid": 450
-    },
-    {
-      "manager": "Nhlakanipho Ntombela",
-      "team": "Iam_ntombela",
-      "base": 850,
-      "fines": 0,
-      "owed": 850,
-      "paid": 550
-    },
-    {
-      "manager": "Mhlengi Kunene",
-      "team": "Hidden Hills",
-      "base": 550,
-      "fines": 0,
-      "owed": 550,
-      "paid": 550
-    },
-    {
-      "manager": "Luthando Ngidi",
-      "team": "Palmergeddon",
-      "base": 650,
-      "fines": 100,
-      "owed": 750,
-      "paid": 650
-    },
-    {
-      "manager": "Siyanda Ndaba",
-      "team": "JustGimmeDeLigt",
-      "base": 950,
-      "fines": 100,
-      "owed": 1050,
-      "paid": 650
-    },
-    {
-      "manager": "Mbuyi Katumba",
-      "team": "Walala WaSalah",
-      "base": 450,
-      "fines": 0,
-      "owed": 450,
-      "paid": 250
-    },
-    {
-      "manager": "Lethu Mkhwanazi",
-      "team": "Bruno, dos, tres",
-      "base": 950,
-      "fines": 100,
-      "owed": 1050,
-      "paid": 450
-    },
-    {
-      "manager": "Bheka Bhengu",
-      "team": "SzoboSlay",
-      "base": 1150,
-      "fines": 200,
-      "owed": 1350,
-      "paid": 650
-    },
-    {
-      "manager": "Thato Choshi",
-      "team": "TAYDO FC",
-      "base": 1150,
-      "fines": 200,
-      "owed": 1350,
-      "paid": 1050
-    },
-    {
-      "manager": "Mtho Mabizela",
-      "team": "Joao Island",
-      "base": 1050,
-      "fines": 0,
-      "owed": 1050,
-      "paid": 950
-    },
-    {
-      "manager": "Learnmore Ntshangase",
-      "team": "A Cunha Matata",
-      "base": 1250,
-      "fines": 100,
-      "owed": 1350,
-      "paid": 950
-    },
-    {
-      "manager": "Thembalethu Miya",
-      "team": "Root_.5 FC",
-      "base": 1350,
-      "fines": 0,
-      "owed": 1350,
-      "paid": 950
-    },
-    {
-      "manager": "Fanele Msweli",
-      "team": "Boehlys World Champs",
-      "base": 1350,
-      "fines": 0,
-      "owed": 1350,
-      "paid": 1250
-    },
-    {
-      "manager": "President Gamede",
-      "team": "Los Primeros",
-      "base": 850,
-      "fines": 1600,
-      "owed": 2450,
-      "paid": 2350
-    },
-    {
-      "manager": "Kudzai Kupeta",
-      "team": "Rice Rice Baby",
-      "base": 1050,
-      "fines": 0,
-      "owed": 1050,
-      "paid": 1050
-    },
-    {
-      "manager": "Sthe Coqueto",
-      "team": "Sthe Coqueto",
-      "base": 1650,
-      "fines": 0,
-      "owed": 1650,
-      "paid": 1000
-    },
-    {
-      "manager": "Minenhle Khumalo",
-      "team": "Hot Slot FC",
-      "base": 1800,
-      "fines": 0,
-      "owed": 1800,
-      "paid": 950
-    }
-  ],
-  "monthly": {
-    "Aug": 0,
-    "Sep": 1350,
-    "Oct": 2200,
-    "Nov": 100,
-    "Dec": 3550,
-    "Jan": 3350,
-    "Feb": 200,
-    "Mar": 0,
-    "Apr": 1100,
-    "May": 2350
-  },
-  "lmpData": [
-    {
-      "manager": "Sthe Coqueto",
-      "team": "Sthe Coqueto",
-      "apps": 14,
-      "fines": 1650
-    },
-    {
-      "manager": "Minenhle Khumalo",
-      "team": "Hot Slot FC",
-      "apps": 13,
-      "fines": 1550
-    },
-    {
-      "manager": "Thembalethu Miya",
-      "team": "Root_.5 FC",
-      "apps": 11,
-      "fines": 1350
-    },
-    {
-      "manager": "Fanele Msweli",
-      "team": "Boehlys World Champs",
-      "apps": 11,
-      "fines": 1350
-    },
-    {
-      "manager": "Learnmore Ntshangase",
-      "team": "A Cunha Matata",
-      "apps": 10,
-      "fines": 1250
-    },
-    {
-      "manager": "Bheka Bhengu",
-      "team": "SzoboSlay",
-      "apps": 9,
-      "fines": 1150
-    },
-    {
-      "manager": "Thato Choshi",
-      "team": "TAYDO FC",
-      "apps": 9,
-      "fines": 1150
-    },
-    {
-      "manager": "Mtho Mabizela",
-      "team": "Joao Island",
-      "apps": 8,
-      "fines": 1050
-    },
-    {
-      "manager": "Kudzai Kupeta",
-      "team": "Rice Rice Baby",
-      "apps": 8,
-      "fines": 1050
-    },
-    {
-      "manager": "Siyanda Ndaba",
-      "team": "JustGimmeDeLigt",
-      "apps": 7,
-      "fines": 950
-    },
-    {
-      "manager": "Lethu Mkhwanazi",
-      "team": "Bruno, dos, tres",
-      "apps": 7,
-      "fines": 950
-    },
-    {
-      "manager": "Nhlakanipho Ntombela",
-      "team": "Iam_ntombela",
-      "apps": 6,
-      "fines": 850
-    },
-    {
-      "manager": "President Gamede",
-      "team": "Los Primeros",
-      "apps": 6,
-      "fines": 850
-    },
-    {
-      "manager": "Luthando Ngidi",
-      "team": "Palmergeddon",
-      "apps": 4,
-      "fines": 650
-    },
-    {
-      "manager": "Mhlengi Kunene",
-      "team": "Hidden Hills",
-      "apps": 3,
-      "fines": 550
-    },
-    {
-      "manager": "Mbuyi Katumba",
-      "team": "Walala WaSalah",
-      "apps": 2,
-      "fines": 450
-    },
-    {
-      "manager": "Nkosi The Chef",
-      "team": "Šeśko Mode",
-      "apps": 1,
-      "fines": 350
+      "bottomApps": 0
     }
   ],
   "gwData": [

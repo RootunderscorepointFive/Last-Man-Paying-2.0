@@ -1,0 +1,16 @@
+# Dependencies (only needed locally for the migration script)
+node_modules/
+
+# Secrets — emails live here, loaded via Vercel secret. NEVER commit.
+emails.json
+.env
+.env.local
+
+# Lighthouse / audit scratch
+rendered_dom.html
+screenshot_*.png
+nul
+
+# OS
+.DS_Store
+Thumbs.db

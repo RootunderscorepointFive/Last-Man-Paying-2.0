@@ -1501,13 +1501,59 @@ function initRunIn() {
   riBuildLB(1);
 }
 
-// ── INIT SECURE DATA FETCH ───────────────────
-fetch('fpl_data.json')
-  .then(response => {
-    if (!response.ok) throw new Error("Network response was not ok");
-    return response.json();
-  })
-  .then(data => {
+// ── DATA ADAPTER ─────────────────────────────
+// Money/fines/bottom-finishes now come from data.json (ex-Excel flow).
+// Live points/charts still come from fpl_data.json (formalised in Phase 3).
+// config.json drives the fee constants. The adapter rebuilds the legacy
+// view-model so the existing render functions work unchanged.
+function vmNorm(s) { return String(s || '').replace(/\s+/g, ' ').trim(); }
+function buildViewModel(config, ledger, api) {
+  const JOIN = (config && config.joining_fee) || 250;
+  const FINE = (config && config.gw_fine) || 100;
+  const byName = {};
+  ledger.managers.forEach(m => { byName[vmNorm(m.name)] = m; });
+
+  const live = f => !f.reversed;                                  // reversed fines don't count
+  const bottomCount = m => (m.bottom_finishes || []).length;
+  const activeFines = m => (m.fines || []).filter(live);
+  const disciplinary = m => activeFines(m).filter(f => f.type !== 'bottom').reduce((a, f) => a + f.amount, 0);
+  const owed = m => JOIN + activeFines(m).reduce((a, f) => a + f.amount, 0);
+  const paid = m => (m.joining_fee_paid ? JOIN : 0) + activeFines(m).filter(f => f.paid_date).reduce((a, f) => a + f.amount, 0);
+
+  const payments = ledger.managers.map(m => ({
+    manager: m.name, team: m.team,
+    base: JOIN + bottomCount(m) * FINE,
+    fines: disciplinary(m),
+    owed: owed(m),
+    paid: paid(m),
+  }));
+  const lmpData = ledger.managers.map(m => ({
+    manager: m.name, team: m.team,
+    apps: bottomCount(m),
+    fines: JOIN + bottomCount(m) * FINE,
+  })).sort((a, b) => b.apps - a.apps);
+  const standings = (api.standings || []).map(s => {
+    const m = byName[vmNorm(s.manager)];
+    return { ...s, bottomApps: m ? bottomCount(m) : s.bottomApps };
+  });
+
+  return {
+    MAX_GW: api.MAX_GW,
+    standings, payments, lmpData,
+    monthly: api.monthly || {},
+    gwData: api.gwData,
+    runInData: api.runInData,
+  };
+}
+
+// ── INIT: config + ledger (data.json) + live API (fpl_data.json) ──
+Promise.all([
+  fetch('config.json').then(r => r.ok ? r.json() : null).catch(() => null),
+  fetch('data.json').then(r => { if (!r.ok) throw new Error('data.json not found'); return r.json(); }),
+  fetch('fpl_data.json').then(r => { if (!r.ok) throw new Error('fpl_data.json not found'); return r.json(); }),
+])
+  .then(([config, ledger, api]) => {
+    const data = buildViewModel(config, ledger, api);
     // 1. Assign Data
     standings = data.standings;
     payments = data.payments;
