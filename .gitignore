@@ -6,9 +6,13 @@ emails.json
 .env
 .env.local
 
-# Lighthouse / audit scratch
+# Lighthouse / audit / screenshot scratch
 rendered_dom.html
 screenshot_*.png
+shot_*.png
+shot.js
+probe.js
+terminal_dbg.html
 nul
 
 # OS
