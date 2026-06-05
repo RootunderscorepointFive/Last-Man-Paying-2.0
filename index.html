@@ -435,6 +435,67 @@ tabs.forEach((t,i)=>{
 const tick = () => { $('#tb-clock').textContent = new Date().toISOString().slice(11,19); };
 tick(); setInterval(tick, 1000);
 
+// ── TREASURER ACTIONS (top-level so buttons work regardless of data load) ──
+let MANAGERS = [];                       // populated when data.json loads
+const tModal = $('#tmodal'); let tSubmit = null;
+function toast(msg, kind){ const t=document.createElement('div'); t.className='toast '+(kind||''); t.textContent=msg; $('#toasts').appendChild(t); setTimeout(()=>t.remove(), 5000); }
+function openTreasurer(cfg){
+  $('#tm-title').textContent=cfg.title; $('#tm-sub').textContent=cfg.sub||'password required';
+  $('#tm-body').innerHTML=cfg.bodyHtml||''; $('#tm-err').textContent=''; $('#tm-pass').value='';
+  tSubmit=cfg.onSubmit; tModal.classList.add('active');
+  setTimeout(()=>{ const f=$('#tm-body').querySelector('select,input'); (f||$('#tm-pass')).focus(); }, 50);
+}
+const closeTreasurer=()=>tModal.classList.remove('active');
+$('#tm-x').onclick=$('#tm-cancel').onclick=closeTreasurer;
+tModal.addEventListener('click',e=>{ if(e.target===tModal) closeTreasurer(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape' && tModal.classList.contains('active')) closeTreasurer(); });
+$('#tm-form').addEventListener('submit', async e=>{
+  e.preventDefault(); if(!tSubmit) return;
+  const go=$('#tm-go'); go.disabled=true; $('#tm-err').textContent='';
+  try { await tSubmit($('#tm-pass').value); } finally { go.disabled=false; }
+});
+async function postAction(url, payload){
+  let r;
+  try { r = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }); }
+  catch { const e=new Error('Network error — are you on the Vercel deployment?'); e.code=0; throw e; }
+  if(r.status===401){ const e=new Error('Wrong password.'); e.code=401; throw e; }
+  if(r.status===404){ const e=new Error('Action endpoint not found — treasurer actions run on the Vercel site, not GitHub Pages.'); e.code=404; throw e; }
+  if(!r.ok){ const e=new Error('Server error — try again.'); e.code=r.status; throw e; }
+  return r.json();
+}
+const fn = n => (n||'').trim().split(/\s+/)[0] || n;
+
+// Action #1 — Mark Joining Fee Paid
+function markJoiningFlow(preName){
+  if(!MANAGERS.length){ toast('Data still loading — try again in a second', 'err'); return; }
+  const opts=[...MANAGERS].sort((a,b)=>a.name.localeCompare(b.name))
+    .map(m=>`<option value="${m.name}"${m.name===preName?' selected':''}>${m.name}${m.joining_fee_paid?' — already paid':''}</option>`).join('');
+  openTreasurer({
+    title:'Mark Joining Fee Paid', sub:'records paid + audit, commits to repo',
+    bodyHtml:`<div><label for="tm-mgr">Manager</label><select class="sel" id="tm-mgr">${opts}</select></div>`,
+    onSubmit: async (pass)=>{
+      const name=$('#tm-mgr').value;
+      try {
+        await postAction('/api/mark-joining-paid', { password:pass, name });
+        closeTreasurer();
+        toast(`✓ ${fn(name)} — joining fee marked paid`, 'ok');
+        // optimistic UI: flip the pill now; full refresh after redeploy
+        const m = MANAGERS.find(x=>x.name===name); if(m) m.joining_fee_paid = true;
+        document.querySelectorAll(`[data-join="${CSS.escape(name)}"]`).forEach(el=>{
+          el.outerHTML = '<span class="pill pill-clear">Paid</span>';
+        });
+        toast('committing… ledger fully refreshes after redeploy (~30s)', '');
+      } catch(err){
+        $('#tm-err').textContent = err.message;
+        if(err.code===401) toast('Unauthorized — wrong password', 'err');
+      }
+    }
+  });
+}
+$('#act-lg-markpaid').onclick=()=>markJoiningFlow();
+$('#lg-body').addEventListener('click',e=>{ const c=e.target.closest('[data-join]'); if(c) markJoiningFlow(c.dataset.join); });
+$('#lg-body').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ const c=e.target.closest('[data-join]'); if(c){ e.preventDefault(); markJoiningFlow(c.dataset.join); } } });
+
 // ── data load ──
 Promise.all([
   fetch('config.json').then(r=>r.ok?r.json():null).catch(()=>null),
@@ -447,6 +508,7 @@ Promise.all([
   const L = api.MAX_GW, idx = L-1;
   const gwByEntry = {}; api.gwData.forEach(g=>gwByEntry[g.entry]=g);
   const byName = {}; ledger.managers.forEach(m=>byName[m.name]=m);
+  MANAGERS = ledger.managers;            // enable treasurer flows (top-level wiring)
 
   // chrome
   $('#tb-gw').textContent = `${L}/${TOTAL_GWS}`;
@@ -723,59 +785,6 @@ Promise.all([
   document.addEventListener('keydown',e=>{ if(e.key==='Escape' && sqModal.classList.contains('active')) closeSquad(); });
   $('#st-body').addEventListener('click',e=>{ const tr=e.target.closest('tr[data-mgr]'); if(tr) openSquad(tr.dataset.mgr); });
   $('#st-body').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ const tr=e.target.closest('tr[data-mgr]'); if(tr){ e.preventDefault(); openSquad(tr.dataset.mgr); } } });
-
-  // ── TREASURER ACTIONS (password-gated; call Vercel /api/*) ──
-  const tModal=$('#tmodal'); let tSubmit=null;
-  function toast(msg, kind){ const t=document.createElement('div'); t.className='toast '+(kind||''); t.textContent=msg; $('#toasts').appendChild(t); setTimeout(()=>t.remove(), 5000); }
-  function openTreasurer(cfg){
-    $('#tm-title').textContent=cfg.title; $('#tm-sub').textContent=cfg.sub||'password required';
-    $('#tm-body').innerHTML=cfg.bodyHtml||''; $('#tm-err').textContent=''; $('#tm-pass').value='';
-    tSubmit=cfg.onSubmit; tModal.classList.add('active');
-    setTimeout(()=>{ const f=$('#tm-body').querySelector('select,input'); (f||$('#tm-pass')).focus(); }, 50);
-  }
-  const closeTreasurer=()=>tModal.classList.remove('active');
-  $('#tm-x').onclick=$('#tm-cancel').onclick=closeTreasurer;
-  tModal.addEventListener('click',e=>{ if(e.target===tModal) closeTreasurer(); });
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape' && tModal.classList.contains('active')) closeTreasurer(); });
-  $('#tm-form').addEventListener('submit', async e=>{
-    e.preventDefault(); if(!tSubmit) return;
-    const go=$('#tm-go'); go.disabled=true; $('#tm-err').textContent='';
-    try { await tSubmit($('#tm-pass').value); } finally { go.disabled=false; }
-  });
-  async function postAction(url, payload){
-    let r;
-    try { r = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }); }
-    catch { const e=new Error('Network error — are you on the Vercel deployment?'); e.code=0; throw e; }
-    if(r.status===401){ const e=new Error('Wrong password.'); e.code=401; throw e; }
-    if(r.status===404){ const e=new Error('Action endpoint not found — treasurer actions run on the Vercel site, not GitHub Pages.'); e.code=404; throw e; }
-    if(!r.ok){ const e=new Error('Server error — try again.'); e.code=r.status; throw e; }
-    return r.json();
-  }
-
-  // Action #1 — Mark Joining Fee Paid
-  function markJoiningFlow(preName){
-    const opts=[...ledger.managers].sort((a,b)=>a.name.localeCompare(b.name))
-      .map(m=>`<option value="${m.name}"${m.name===preName?' selected':''}>${m.name}${m.joining_fee_paid?' — already paid':''}</option>`).join('');
-    openTreasurer({
-      title:'Mark Joining Fee Paid', sub:'records paid + audit, commits to repo',
-      bodyHtml:`<div><label for="tm-mgr">Manager</label><select class="sel" id="tm-mgr">${opts}</select></div>`,
-      onSubmit: async (pass)=>{
-        const name=$('#tm-mgr').value;
-        try {
-          await postAction('/api/mark-joining-paid', { password:pass, name });
-          closeTreasurer();
-          toast(`✓ ${firstName(name)} — joining fee marked paid`, 'ok');
-          toast('committing… ledger refreshes after redeploy (~30s)', '');
-        } catch(err){
-          $('#tm-err').textContent = err.message;
-          if(err.code===401) toast('Unauthorized — wrong password', 'err');
-        }
-      }
-    });
-  }
-  $('#act-lg-markpaid').onclick=()=>markJoiningFlow();
-  $('#lg-body').addEventListener('click',e=>{ const c=e.target.closest('[data-join]'); if(c) markJoiningFlow(c.dataset.join); });
-  $('#lg-body').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ const c=e.target.closest('[data-join]'); if(c){ e.preventDefault(); markJoiningFlow(c.dataset.join); } } });
 
 }).catch(e=>{
   $('#ft-status').textContent = 'DATA LOAD FAILED';
