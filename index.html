@@ -309,7 +309,7 @@
     </div>
     <div class="actions">
       <button class="action" disabled><span class="key">F4</span><span class="label">Refresh FPL</span><div class="desc">auto-sync · GitHub Actions</div></button>
-      <button class="action" disabled><span class="key">F5</span><span class="label">Override Result</span><div class="desc">treasurer · Phase 6</div></button>
+      <button class="action" id="act-lmp-override"><span class="key">F5</span><span class="label">Override Result</span><div class="desc">treasurer · disputes</div></button>
     </div>
   </section>
 
@@ -324,9 +324,10 @@
     </div></div>
     <div class="actions">
       <button class="action" disabled><span class="key">F1</span><span class="label">Email Reminders</span><div class="desc">treasurer · Phase 6</div></button>
-      <button class="action" id="act-lg-markpaid"><span class="key">F2</span><span class="label">Mark Paid</span><div class="desc">joining fee · treasurer</div></button>
-      <button class="action" disabled><span class="key">F3</span><span class="label">Add Fine</span><div class="desc">treasurer · Phase 6</div></button>
-      <button class="action" disabled><span class="key">F4</span><span class="label">Export Ledger</span><div class="desc">csv · Phase 8</div></button>
+      <button class="action" id="act-lg-markpaid"><span class="key">F2</span><span class="label">Mark Paid</span><div class="desc">joining fee or fine</div></button>
+      <button class="action" id="act-lg-addfine"><span class="key">F3</span><span class="label">Add Fine</span><div class="desc">manual · audited</div></button>
+      <button class="action" id="act-lg-reverse"><span class="key">F4</span><span class="label">Reverse Fine</span><div class="desc">never deletes</div></button>
+      <button class="action" id="act-lg-edit"><span class="key">F5</span><span class="label">Edit Fine</span><div class="desc">tracked history</div></button>
     </div>
   </section>
   <section id="panel-h2h" role="tabpanel" aria-labelledby="tab-h2h" tabindex="0" hidden>
@@ -465,36 +466,146 @@ async function postAction(url, payload){
 }
 const fn = n => (n||'').trim().split(/\s+/)[0] || n;
 
-// Action #1 — Mark Joining Fee Paid
-function markJoiningFlow(preName){
-  if(!MANAGERS.length){ toast('Data still loading — try again in a second', 'err'); return; }
-  const opts=[...MANAGERS].sort((a,b)=>a.name.localeCompare(b.name))
-    .map(m=>`<option value="${m.name}"${m.name===preName?' selected':''}>${m.name}${m.joining_fee_paid?' — already paid':''}</option>`).join('');
-  openTreasurer({
-    title:'Mark Joining Fee Paid', sub:'records paid + audit, commits to repo',
-    bodyHtml:`<div><label for="tm-mgr">Manager</label><select class="sel" id="tm-mgr">${opts}</select></div>`,
+// shared helpers for the action modals
+let API_DATA = null;                      // fpl_data, set when data loads (for Override)
+const dataReady = () => MANAGERS.length > 0;
+const mgrOptions = pre => [...MANAGERS].sort((a,b)=>a.name.localeCompare(b.name))
+  .map(m=>`<option value="${m.name}"${m.name===pre?' selected':''}>${m.name}</option>`).join('');
+const activeFines = name => { const m=MANAGERS.find(x=>x.name===name); return m ? m.fines.filter(f=>!f.reversed) : []; };
+const fineLabel = f => `${f.gw?'GW'+f.gw:'—'} · R${f.amount} · ${String(f.type).replace(/_/g,' ')}${f.paid_date?' · paid':' · unpaid'}`;
+const onErr = err => { $('#tm-err').textContent = err.message; if(err.code===401) toast('Unauthorized — wrong password','err'); };
+const done = msg => { closeTreasurer(); toast(msg,'ok'); toast('committing… ledger refreshes after redeploy (~30s)',''); };
+
+// F2 — Mark Paid (joining fee OR LMP fine)
+function markPaidFlow(preName){
+  if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
+  openTreasurer({ title:'Mark Paid', sub:'joining fee or LMP fine · commits to repo',
+    bodyHtml:`
+      <div><label for="tm-mgr">Manager</label><select class="sel" id="tm-mgr">${mgrOptions(preName)}</select></div>
+      <div><label for="tm-what">What to mark</label><select class="sel" id="tm-what"><option value="joining">Joining fee</option><option value="fine">LMP fine</option></select></div>
+      <div id="tm-fine-wrap" style="display:none"><label for="tm-fine">Which fine</label><select class="sel" id="tm-fine"></select></div>`,
     onSubmit: async (pass)=>{
-      const name=$('#tm-mgr').value;
+      const name=$('#tm-mgr').value, what=$('#tm-what').value;
       try {
-        await postAction('/api/mark-joining-paid', { password:pass, name });
-        closeTreasurer();
-        toast(`✓ ${fn(name)} — joining fee marked paid`, 'ok');
-        // optimistic UI: flip the pill now; full refresh after redeploy
-        const m = MANAGERS.find(x=>x.name===name); if(m) m.joining_fee_paid = true;
-        document.querySelectorAll(`[data-join="${CSS.escape(name)}"]`).forEach(el=>{
-          el.outerHTML = '<span class="pill pill-clear">Paid</span>';
-        });
-        toast('committing… ledger fully refreshes after redeploy (~30s)', '');
-      } catch(err){
-        $('#tm-err').textContent = err.message;
-        if(err.code===401) toast('Unauthorized — wrong password', 'err');
-      }
+        if(what==='joining'){ await postAction('/api/mark-joining-paid',{password:pass,name});
+          const m=MANAGERS.find(x=>x.name===name); if(m) m.joining_fee_paid=true;
+          document.querySelectorAll(`[data-join="${CSS.escape(name)}"]`).forEach(el=>el.outerHTML='<span class="pill pill-clear">Paid</span>');
+        } else { const target=$('#tm-fine').value; if(!target){ $('#tm-err').textContent='No outstanding fine.'; return; }
+          await postAction('/api/mark-fine-paid',{password:pass,name,target}); }
+        done(`✓ ${fn(name)} — ${what==='joining'?'joining fee':'fine(s)'} marked paid`);
+      } catch(err){ onErr(err); }
+    }
+  });
+  const upd=()=>{ const what=$('#tm-what').value; $('#tm-fine-wrap').style.display = what==='fine'?'block':'none';
+    if(what==='fine'){ const unpaid=activeFines($('#tm-mgr').value).filter(f=>!f.paid_date); const out=unpaid.reduce((a,f)=>a+f.amount,0);
+      $('#tm-fine').innerHTML = unpaid.length ? `<option value="all">All outstanding (R${out})</option>`+unpaid.map(f=>`<option value="${f.id}">${fineLabel(f)}</option>`).join('') : '<option value="">no outstanding fines</option>'; } };
+  $('#tm-mgr').onchange=upd; $('#tm-what').onchange=upd; upd();
+}
+
+// F3 — Add Manual Fine
+function addFineFlow(preName){
+  if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
+  openTreasurer({ title:'Add Manual Fine', sub:'audited · commits to repo',
+    bodyHtml:`
+      <div><label for="tm-mgr">Manager</label><select class="sel" id="tm-mgr">${mgrOptions(preName)}</select></div>
+      <div style="display:flex;gap:10px"><div style="flex:1"><label for="tm-amt">Amount (R)</label><input type="text" id="tm-amt" value="100" inputmode="numeric"></div>
+        <div style="flex:1"><label for="tm-gw">GW tag (optional)</label><input type="text" id="tm-gw" placeholder="—" inputmode="numeric"></div></div>
+      <div><label for="tm-type">Type</label><select class="sel" id="tm-type">
+        <option value="losers_fine">losers fine</option><option value="disciplinary">disciplinary</option><option value="late_payment">late payment</option><option value="adjustment">adjustment</option><option value="other">other</option></select></div>
+      <div><label for="tm-reason">Reason (required)</label><input type="text" id="tm-reason" placeholder="why this fine"></div>`,
+    onSubmit: async (pass)=>{
+      const name=$('#tm-mgr').value, amount=$('#tm-amt').value.trim(), type=$('#tm-type').value, reason=$('#tm-reason').value.trim(), gw=$('#tm-gw').value.trim();
+      if(!(Number(amount)>0)){ $('#tm-err').textContent='Amount must be a positive number.'; return; }
+      if(!reason){ $('#tm-err').textContent='Reason is required.'; return; }
+      try { await postAction('/api/add-fine',{password:pass,name,amount,type,reason,gw}); done(`✓ ${fn(name)} — R${amount} ${type.replace(/_/g,' ')} fine added`); }
+      catch(err){ onErr(err); }
     }
   });
 }
-$('#act-lg-markpaid').onclick=()=>markJoiningFlow();
-$('#lg-body').addEventListener('click',e=>{ const c=e.target.closest('[data-join]'); if(c) markJoiningFlow(c.dataset.join); });
-$('#lg-body').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ const c=e.target.closest('[data-join]'); if(c){ e.preventDefault(); markJoiningFlow(c.dataset.join); } } });
+
+// F4 — Reverse Fine
+function reverseFineFlow(preName){
+  if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
+  openTreasurer({ title:'Reverse Fine', sub:'marks reversed · never deletes',
+    bodyHtml:`
+      <div><label for="tm-mgr">Manager</label><select class="sel" id="tm-mgr">${mgrOptions(preName)}</select></div>
+      <div><label for="tm-fine">Fine to reverse</label><select class="sel" id="tm-fine"></select></div>
+      <div><label for="tm-reason">Reason (required)</label><input type="text" id="tm-reason" placeholder="why reverse this"></div>`,
+    onSubmit: async (pass)=>{
+      const name=$('#tm-mgr').value, fineId=$('#tm-fine').value, reason=$('#tm-reason').value.trim();
+      if(!fineId){ $('#tm-err').textContent='No fine selected.'; return; }
+      if(!reason){ $('#tm-err').textContent='Reason is required.'; return; }
+      try { await postAction('/api/reverse-fine',{password:pass,name,fineId,reason}); done(`✓ ${fn(name)} — fine reversed`); }
+      catch(err){ onErr(err); }
+    }
+  });
+  const fill=()=>{ const fs=activeFines($('#tm-mgr').value); $('#tm-fine').innerHTML = fs.length ? fs.map(f=>`<option value="${f.id}">${fineLabel(f)}</option>`).join('') : '<option value="">no active fines</option>'; };
+  $('#tm-mgr').onchange=fill; fill();
+}
+
+// F5 — Edit Fine
+function editFineFlow(preName){
+  if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
+  openTreasurer({ title:'Edit Fine', sub:'change logged to edit_history',
+    bodyHtml:`
+      <div><label for="tm-mgr">Manager</label><select class="sel" id="tm-mgr">${mgrOptions(preName)}</select></div>
+      <div><label for="tm-fine">Fine</label><select class="sel" id="tm-fine"></select></div>
+      <div style="display:flex;gap:10px"><div style="flex:1"><label for="tm-amt">Amount (R)</label><input type="text" id="tm-amt" inputmode="numeric"></div></div>
+      <div><label for="tm-reason">Reason</label><input type="text" id="tm-reason"></div>
+      <div><label for="tm-note">What changed & why (required)</label><input type="text" id="tm-note" placeholder="e.g. corrected amount typo"></div>`,
+    onSubmit: async (pass)=>{
+      const name=$('#tm-mgr').value, fineId=$('#tm-fine').value, amount=$('#tm-amt').value.trim(), reason=$('#tm-reason').value.trim(), note=$('#tm-note').value.trim();
+      if(!fineId){ $('#tm-err').textContent='No fine selected.'; return; }
+      if(!note){ $('#tm-err').textContent='Edit note is required.'; return; }
+      try { await postAction('/api/edit-fine',{password:pass,name,fineId,amount,reason,note}); done(`✓ ${fn(name)} — fine edited`); }
+      catch(err){ onErr(err); }
+    }
+  });
+  const sync=()=>{ const f=activeFines($('#tm-mgr').value).find(x=>x.id===$('#tm-fine').value); if(f){ $('#tm-amt').value=f.amount; $('#tm-reason').value=f.reason||''; } };
+  const fill=()=>{ const fs=activeFines($('#tm-mgr').value); $('#tm-fine').innerHTML = fs.length ? fs.map(f=>`<option value="${f.id}">${fineLabel(f)}</option>`).join('') : '<option value="">no active fines</option>'; sync(); };
+  $('#tm-mgr').onchange=fill; $('#tm-fine').onchange=sync; fill();
+}
+
+// LMP F5 — Override Bottom-3 Result
+function overrideFlow(){
+  if(!dataReady() || !API_DATA){ toast('Data still loading — try again in a second','err'); return; }
+  const L=API_DATA.MAX_GW;
+  openTreasurer({ title:'Override Bottom-3 Result', sub:'gameweek dispute resolution',
+    bodyHtml:`
+      <div style="background:rgba(255,93,93,0.08);border:1px solid var(--red-dim);padding:8px 10px;color:var(--red);font-size:11px;letter-spacing:0;text-transform:none">⚠ This overrides the FPL API result for GW<span id="tm-gwx">${L}</span>. Use only for genuine disputes.</div>
+      <div><label for="tm-gw">Gameweek</label><input type="text" id="tm-gw" value="${L}" inputmode="numeric"></div>
+      <div><label>Who paid — tick = charged</label><div id="tm-payers" style="max-height:230px;overflow:auto;border:1px solid var(--border);padding:8px"></div></div>
+      <div><label for="tm-reason">Reason (required)</label><input type="text" id="tm-reason" placeholder="dispute detail"></div>`,
+    onSubmit: async (pass)=>{
+      const gw=Number($('#tm-gw').value), reason=$('#tm-reason').value.trim();
+      const payers=[...document.querySelectorAll('#tm-payers input:checked')].map(c=>c.value);
+      if(!gw){ $('#tm-err').textContent='Valid GW required.'; return; }
+      if(!reason){ $('#tm-err').textContent='Reason is required.'; return; }
+      try { await postAction('/api/override-bottom3',{password:pass,gw,payers,reason}); done(`✓ GW${gw} bottom-3 overridden — ${payers.length} charged`); }
+      catch(err){ onErr(err); }
+    }
+  });
+  const render=()=>{
+    const gw=Number($('#tm-gw').value), idx=gw-1; $('#tm-gwx').textContent=gw||'?';
+    const scored=API_DATA.gwData.map(g=>({name:g.manager, s:(g.gwPts||[])[idx]})).filter(x=>x.s!=null);
+    if(!scored.length){ $('#tm-payers').innerHTML='<div style="color:var(--dim);font-size:11px">no data for that GW</div>'; return; }
+    const recorded=new Set(MANAGERS.filter(m=>m.bottom_finishes.includes(gw)).map(m=>m.name));
+    const uniq=[...new Set(scored.map(x=>x.s))].sort((a,b)=>a-b); const thr=uniq.length>=3?uniq[2]:uniq[uniq.length-1];
+    $('#tm-payers').innerHTML=scored.sort((a,b)=>a.s-b.s).map(x=>`<label style="display:flex;align-items:center;gap:8px;padding:3px 0;font-size:12px;text-transform:none;letter-spacing:0">
+      <input type="checkbox" value="${x.name}" ${recorded.has(x.name)?'checked':''}> <span style="flex:1">${x.name}</span>
+      <span style="color:${x.s<=thr?'var(--red)':'var(--dim)'}">${x.s} pts${x.s<=thr?' · API bottom':''}</span></label>`).join('');
+  };
+  $('#tm-gw').oninput=render; render();
+}
+
+// wiring
+$('#act-lg-markpaid').onclick=()=>markPaidFlow();
+$('#act-lg-addfine').onclick=()=>addFineFlow();
+$('#act-lg-reverse').onclick=()=>reverseFineFlow();
+$('#act-lg-edit').onclick=()=>editFineFlow();
+$('#act-lmp-override').onclick=()=>overrideFlow();
+$('#lg-body').addEventListener('click',e=>{ const c=e.target.closest('[data-join]'); if(c) markPaidFlow(c.dataset.join); });
+$('#lg-body').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ const c=e.target.closest('[data-join]'); if(c){ e.preventDefault(); markPaidFlow(c.dataset.join); } } });
 
 // ── data load ──
 Promise.all([
@@ -508,7 +619,7 @@ Promise.all([
   const L = api.MAX_GW, idx = L-1;
   const gwByEntry = {}; api.gwData.forEach(g=>gwByEntry[g.entry]=g);
   const byName = {}; ledger.managers.forEach(m=>byName[m.name]=m);
-  MANAGERS = ledger.managers;            // enable treasurer flows (top-level wiring)
+  MANAGERS = ledger.managers; API_DATA = api;   // enable treasurer flows (top-level wiring)
 
   // chrome
   $('#tb-gw').textContent = `${L}/${TOTAL_GWS}`;
@@ -750,12 +861,15 @@ Promise.all([
       stat('Hits Taken',m.hits,m.hits>=40?'red':'')+stat('Transfers',m.transfers)+stat('Bench Pts',m.bench)+
       stat('Chips Used',m.chipsUsed+'/8')+stat('GW'+L+' Captain',m.captain)+stat('Outstanding',m.outstanding>0?'R'+m.outstanding:'R0',m.outstanding>0?'red':'green');
     $('#pf-spark').innerHTML=sparkline(m.gwPts, m.bottoms>=8?'#ff5d5d':'#4ade80', overallAvgGW);
-    // payment history (one row per fine + joining fee)
-    const lm=byName[m.name], rows=[['—','R250','joining', lm.joining_fee_paid?'migrated':null]];
-    lm.fines.filter(f=>!f.reversed).sort((a,b)=>(a.gw||0)-(b.gw||0)).forEach(f=>rows.push([f.gw?'GW'+f.gw:'—','R'+f.amount,f.type,f.paid_date]));
-    $('#pf-payments').innerHTML=`<table class="ph"><thead><tr><th>GW</th><th class="r">Amount</th><th>Type</th><th>Paid</th></tr></thead><tbody>`+
-      rows.map(r=>{ const pd=r[3]; const t = pd==null?'<span class="unpaid">unpaid</span>':pd==='migrated'?'<span class="paid">pre-system</span>':'<span class="paid">'+pd+'</span>';
-        return `<tr><td>${r[0]}</td><td class="r">${r[1]}</td><td class="typ">${String(r[2]||'').replace(/_/g,' ')}</td><td>${t}</td></tr>`; }).join('')+`</tbody></table>`;
+    // payment history — joining fee + every fine (reversed shown greyed, reason on hover)
+    const lm=byName[m.name];
+    const head=`<tr><td>—</td><td class="r">R250</td><td class="typ">joining</td><td>${lm.joining_fee_paid?'<span class="paid">pre-system</span>':'<span class="unpaid">unpaid</span>'}</td></tr>`;
+    const fineRows=[...lm.fines].sort((a,b)=>(a.gw||0)-(b.gw||0)).map(f=>{
+      const pd=f.paid_date; const paid = pd==null?'<span class="unpaid">unpaid</span>':pd==='migrated'?'<span class="paid">pre-system</span>':`<span class="paid">${String(pd).slice(0,10)}</span>`;
+      if(f.reversed){ return `<tr style="opacity:0.45" title="Reversed: ${(f.reversed_reason||'').replace(/"/g,'&quot;')}"><td>${f.gw?'GW'+f.gw:'—'}</td><td class="r" style="text-decoration:line-through">R${f.amount}</td><td class="typ">${String(f.type).replace(/_/g,' ')} · reversed</td><td>—</td></tr>`; }
+      return `<tr><td>${f.gw?'GW'+f.gw:'—'}</td><td class="r">R${f.amount}</td><td class="typ">${String(f.type).replace(/_/g,' ')}</td><td>${paid}</td></tr>`;
+    }).join('');
+    $('#pf-payments').innerHTML=`<table class="ph"><thead><tr><th>GW</th><th class="r">Amount</th><th>Type</th><th>Paid</th></tr></thead><tbody>${head}${fineRows}</tbody></table>`;
   }
   fillSel($('#pf-sel'), leader.name);
   $('#pf-sel').onchange=renderProfile;
