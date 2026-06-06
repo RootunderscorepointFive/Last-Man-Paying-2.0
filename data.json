@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T09:55:05.174Z",
+  "generated_at": "2026-06-06T08:12:44.068Z",
   "source": "one-time migration from FPL 2025 updated for GW34.xlsx",
   "last_synced_gw": 38,
   "managers": [
@@ -1455,7 +1455,9 @@
         34
       ],
       "epithet": "Best Bench",
-      "epithet_tagline": "Left 397 points rotting on the bench"
+      "epithet_tagline": "Left 397 points rotting on the bench",
+      "joining_fee_paid_by": "treasurer",
+      "joining_fee_paid_date": "2026-06-06T08:12:44.068Z"
     },
     {
       "entry": 6410488,
