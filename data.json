@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T21:12:24.580Z",
+  "generated_at": "2026-06-11T21:14:22.420Z",
   "source": "one-time migration from FPL 2025 updated for GW34.xlsx",
   "last_synced_gw": 38,
   "managers": [
@@ -1419,10 +1419,10 @@
           "status": "confirmed",
           "reason": "Migrated from Excel — GW20 disciplinary fine",
           "paid_date": "migrated",
-          "reversed": false,
-          "reversed_reason": null,
-          "reversed_by": null,
-          "reversed_date": null,
+          "reversed": true,
+          "reversed_reason": "Mistake",
+          "reversed_by": "treasurer",
+          "reversed_date": "2026-06-11T21:14:22.420Z",
           "added_by": "migration",
           "added_date": "2026-06-04T09:18:08.169Z",
           "edited_by": null,
