@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T21:14:22.420Z",
+  "generated_at": "2026-06-11T21:16:53.399Z",
   "source": "one-time migration from FPL 2025 updated for GW34.xlsx",
   "last_synced_gw": 38,
   "managers": [
@@ -1378,10 +1378,10 @@
         {
           "id": "f_4608814_8",
           "gw": 25,
-          "amount": 100,
+          "amount": 1500,
           "type": "bottom",
           "status": "confirmed",
-          "reason": "LMP bottom finish — GW25",
+          "reason": "LMP bottom finish — GW25 plus interest",
           "paid_date": "migrated",
           "reversed": false,
           "reversed_reason": null,
@@ -1389,9 +1389,23 @@
           "reversed_date": null,
           "added_by": "migration",
           "added_date": "2026-06-04T09:18:08.169Z",
-          "edited_by": null,
-          "edited_date": null,
-          "edit_history": []
+          "edited_by": "treasurer",
+          "edited_date": "2026-06-11T21:16:53.399Z",
+          "edit_history": [
+            {
+              "at": "2026-06-11T21:16:53.399Z",
+              "by": "treasurer",
+              "note": "interest",
+              "before": {
+                "amount": 100,
+                "reason": "LMP bottom finish — GW25"
+              },
+              "after": {
+                "amount": 1500,
+                "reason": "LMP bottom finish — GW25 plus interest"
+              }
+            }
+          ]
         },
         {
           "id": "f_4608814_9",
