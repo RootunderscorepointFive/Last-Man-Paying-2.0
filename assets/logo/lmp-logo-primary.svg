@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 140" width="560" height="140" role="img" aria-label="LMP, Last Man Paying, Terminal">
+  <style>
+    .disp{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;font-weight:700;}
+    .sub{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;font-weight:500;}
+  </style>
+
+  <!-- icon -->
+  <g transform="translate(10,14) scale(0.933)">
+    <g stroke="#FFB224" stroke-width="4" fill="none">
+      <path d="M2 16 V2 H16"/>
+      <path d="M104 2 H118 V16"/>
+      <path d="M118 104 V118 H104"/>
+      <path d="M16 118 H2 V104"/>
+    </g>
+    <polyline points="26,40 44,58 26,76" fill="none" stroke="#FFB224" stroke-width="8" stroke-linecap="square"/>
+    <rect x="54" y="34" width="16" height="20" fill="#3DDC97"/>
+    <rect x="72" y="48" width="16" height="20" fill="#FFB224"/>
+    <rect x="90" y="62" width="16" height="20" fill="#FF5D5D"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="158" y="76" class="disp" font-size="58" letter-spacing="4" fill="#D7DCE3">LMP</text>
+  <!-- cursor block -->
+  <rect x="318" y="32" width="22" height="46" fill="#FFB224"/>
+  <!-- subline -->
+  <text x="160" y="112" class="sub" font-size="17" letter-spacing="5.5" fill="#6B7484">LAST MAN PAYING · TERMINAL</text>
+</svg>

@@ -4,22 +4,24 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>LMP TERMINAL · LIVE</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/logo/lmp-logo-favicon.svg">
+<link rel="icon" type="image/svg+xml" sizes="32x32 48x48" href="assets/logo/lmp-logo-icon.svg">
+<link rel="apple-touch-icon" href="assets/logo/lmp-logo-icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #0a0d10; --bg-2: #0f1318; --panel: #131820; --panel-2: #181f29;
+    --bg: #08090C; --bg-2: #0f1318; --panel: #131820; --panel-2: #181f29;
     --border: #2a3340; --border-bright: #3a4654;
-    --text: #d8dde4; --dim: #8a95a2;           /* dim lightened for AA on small text */
-    --amber: #ffb547; --amber-bright: #ffd27a;
-    --green: #4ade80; --green-dim: #2a7a48;
+    --text: #D7DCE3; --dim: #8a95a2;           /* dim lightened for AA on small text */
+    --amber: #FFB224; --amber-bright: #ffd27a; --amber-rgb: 255,178,36;
+    --green: #3DDC97; --green-dim: #2a7a48; --green-rgb: 61,220,151;
     --red: #ff5d5d; --red-dim: #8a2828; --blue: #5eaaff;
   }
   html, body { background: var(--bg); color: var(--text); font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.4; min-height: 100vh; }
-  body { background-image: radial-gradient(ellipse at top, rgba(255,181,71,0.04), transparent 60%), radial-gradient(ellipse at bottom right, rgba(94,170,255,0.03), transparent 50%); }
+  body { background-image: radial-gradient(ellipse at top, rgba(var(--amber-rgb),0.04), transparent 60%), radial-gradient(ellipse at bottom right, rgba(94,170,255,0.03), transparent 50%); }
   .cond { font-family: 'IBM Plex Sans Condensed', sans-serif; }
   a { color: inherit; }
   :focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
@@ -29,9 +31,11 @@
   .skip:focus { left:8px; top:8px; }
 
   /* Top status bar */
-  .topbar { background: var(--panel); border-bottom: 1px solid var(--border); padding: 6px 16px; display: flex; justify-content: space-between; align-items: center; gap:12px; flex-wrap:wrap; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
-  .topbar .brand { color: var(--amber); font-weight: 700; letter-spacing: 3px; }
-  .topbar .brand::before { content: '◆'; margin-right: 8px; }
+  .topbar { background: var(--panel); border-bottom: 1px solid var(--border); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; gap:12px; flex-wrap:wrap; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+  /* masthead: primary lockup, clear space ≈ one cursor block (~12px) honoured via topbar padding + the SVG's own internal margin */
+  .topbar .brand { display: flex; align-items: center; line-height: 0; }
+  .topbar .brand .brand-logo { height: 36px; width: auto; display: block; }
+  @media (max-width: 560px){ .topbar .brand .brand-logo { height: 30px; } }
   .topbar .right { display: flex; gap: 18px; color: var(--dim); flex-wrap:wrap; }
   .topbar .right strong { color: var(--text); margin-left: 6px; }
   .topbar .live::before { content: '●'; color: var(--red); margin-right: 6px; animation: pulse 1.2s ease-in-out infinite; }
@@ -137,7 +141,7 @@
   .holdings thead th { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--dim); text-align:left; padding:7px 8px; border-bottom:1px solid var(--border-bright); font-weight:600; white-space:nowrap; }
   .holdings thead th.r { text-align:right; }
   .holdings tbody td { padding:9px 8px; border-bottom:1px dashed var(--border); vertical-align:middle; }
-  .holdings tbody tr:hover { background:rgba(255,181,71,0.04); }
+  .holdings tbody tr:hover { background:rgba(var(--amber-rgb),0.04); }
   .holdings .sym { color:var(--amber); font-weight:600; letter-spacing:1px; font-size:11px; white-space:nowrap; }
   .holdings .nm2 { color:var(--text); font-weight:600; }
   .holdings .tm { color:var(--dim); font-size:10.5px; }
@@ -150,8 +154,8 @@
 
   .pill { display:inline-block; padding:2px 8px; border:1px solid; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600; white-space:nowrap; }
   .pill-debt { color:var(--red); border-color:var(--red-dim); background:rgba(255,93,93,0.08); }
-  .pill-clear { color:var(--green); border-color:var(--green-dim); background:rgba(74,222,128,0.06); }
-  .pill-amber { color:var(--amber); border-color:#6a4a14; background:rgba(255,181,71,0.07); }
+  .pill-clear { color:var(--green); border-color:var(--green-dim); background:rgba(var(--green-rgb),0.06); }
+  .pill-amber { color:var(--amber); border-color:#6a4a14; background:rgba(var(--amber-rgb),0.07); }
 
   .sortbtn { background:var(--panel-2); border:1px solid var(--border-bright); color:var(--amber); font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; padding:4px 10px; cursor:pointer; }
   .sortbtn:hover { background:var(--border); }
@@ -172,7 +176,7 @@
   .cmp-row .win{color:var(--green); font-weight:700;} .cmp-row .lose{color:var(--dim);}
 
   /* Profile */
-  .prof-hero { border-left:2px solid var(--amber); background:linear-gradient(180deg,rgba(255,181,71,0.06),transparent 60%),var(--bg); padding:16px 18px; }
+  .prof-hero { border-left:2px solid var(--amber); background:linear-gradient(180deg,rgba(var(--amber-rgb),0.06),transparent 60%),var(--bg); padding:16px 18px; }
   .prof-epi { font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:30px; color:var(--amber); line-height:1; }
   .prof-tag { color:var(--text); font-style:italic; margin-top:6px; font-size:12px; }
   .prof-name { font-size:13px; color:var(--text); margin-top:10px; letter-spacing:1px; } .prof-name .tm{color:var(--dim);}
@@ -251,7 +255,33 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <div class="topbar">
-  <div class="brand">LMP · TERMINAL</div>
+  <div class="brand">
+    <svg class="brand-logo" viewBox="0 0 560 140" role="img" aria-label="LMP, Last Man Paying, Terminal">
+      <style>
+        .disp{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;font-weight:700;}
+        .sub{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;font-weight:500;}
+      </style>
+      <!-- icon -->
+      <g transform="translate(10,14) scale(0.933)">
+        <g stroke="#FFB224" stroke-width="4" fill="none">
+          <path d="M2 16 V2 H16"/>
+          <path d="M104 2 H118 V16"/>
+          <path d="M118 104 V118 H104"/>
+          <path d="M16 118 H2 V104"/>
+        </g>
+        <polyline points="26,40 44,58 26,76" fill="none" stroke="#FFB224" stroke-width="8" stroke-linecap="square"/>
+        <rect x="54" y="34" width="16" height="20" fill="#3DDC97"/>
+        <rect x="72" y="48" width="16" height="20" fill="#FFB224"/>
+        <rect x="90" y="62" width="16" height="20" fill="#FF5D5D"/>
+      </g>
+      <!-- wordmark -->
+      <text x="158" y="76" class="disp" font-size="58" letter-spacing="4" fill="#D7DCE3">LMP</text>
+      <!-- cursor block -->
+      <rect x="318" y="32" width="22" height="46" fill="#FFB224"/>
+      <!-- subline -->
+      <text x="160" y="112" class="sub" font-size="17" letter-spacing="5.5" fill="#6B7484">LAST MAN PAYING · TERMINAL</text>
+    </svg>
+  </div>
   <div class="right">
     <span class="live">Live</span>
     <span>GW <strong id="tb-gw">--</strong></span>
@@ -412,6 +442,9 @@ const sym = name => {
   return first.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4) || 'XXXX';
 };
 const firstName = n => (n||'').trim().split(/\s+/)[0] || n;
+// brand colour tokens — single source of truth is :root; read once for JS-drawn graphics
+const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const COL = { amber: cssVar('--amber'), green: cssVar('--green'), red: cssVar('--red'), blue: cssVar('--blue') };
 const epiHtml = (m) => m.epithet
   ? `<span class="epi" tabindex="0" role="note" aria-label="Epithet: ${m.epithet}. ${m.epithet_tagline||''}">${m.epithet}<span class="tip">${m.epithet_tagline||''}</span></span>`
   : '';
@@ -743,8 +776,8 @@ Promise.all([
     const path=arr=>arr.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
     return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="Per-gameweek score, both managers across the season">
       <g stroke="#2a3340" stroke-width="0.5" stroke-dasharray="3,3"><line x1="0" y1="${(h/3).toFixed(0)}" x2="${w}" y2="${(h/3).toFixed(0)}"/><line x1="0" y1="${(2*h/3).toFixed(0)}" x2="${w}" y2="${(2*h/3).toFixed(0)}"/></g>
-      <path d="${path(a)}" stroke="#ffb547" stroke-width="1.6" fill="none"/>
-      <path d="${path(b)}" stroke="#5eaaff" stroke-width="1.6" fill="none"/></svg>`;
+      <path d="${path(a)}" stroke="${COL.amber}" stroke-width="1.6" fill="none"/>
+      <path d="${path(b)}" stroke="${COL.blue}" stroke-width="1.6" fill="none"/></svg>`;
   }
   // per-GW league average (for form dots + sparkline reference)
   const nG = (api.gwData[0] && api.gwData[0].gwPts.length) || 0;
@@ -837,7 +870,7 @@ Promise.all([
       <div><span class="prompt">LMP&gt;</span> head_to_head "${firstName(a.name)}" vs "${firstName(b.name)}" --gws ${n}</div>
       <div class="out">comparing ${n} gameweeks of post-hits scores...</div>
       <div class="ok">→ ${firstName(a.name)} ${aW} — ${bW} ${firstName(b.name)} · ${n-aW-bW} tied · ${ld} leads the GW count</div>`;
-    $('#h2h-legend').innerHTML=`<span style="color:#ffb547">● ${firstName(a.name)}</span><span style="color:#5eaaff">● ${firstName(b.name)}</span>`;
+    $('#h2h-legend').innerHTML=`<span style="color:${COL.amber}">● ${firstName(a.name)}</span><span style="color:${COL.blue}">● ${firstName(b.name)}</span>`;
     $('#h2h-chart').innerHTML=dualLine(a.gwPts,b.gwPts);
   }
   fillSel($('#h2h-a'), leader.name);
@@ -860,7 +893,7 @@ Promise.all([
       stat('Best GW',m.bestGW,'green')+stat('Bottom Fins',m.bottoms,m.bottoms>=8?'red':'')+stat('Weekly Wins',m.weeklyWins)+
       stat('Hits Taken',m.hits,m.hits>=40?'red':'')+stat('Transfers',m.transfers)+stat('Bench Pts',m.bench)+
       stat('Chips Used',m.chipsUsed+'/8')+stat('GW'+L+' Captain',m.captain)+stat('Outstanding',m.outstanding>0?'R'+m.outstanding:'R0',m.outstanding>0?'red':'green');
-    $('#pf-spark').innerHTML=sparkline(m.gwPts, m.bottoms>=8?'#ff5d5d':'#4ade80', overallAvgGW);
+    $('#pf-spark').innerHTML=sparkline(m.gwPts, m.bottoms>=8?COL.red:COL.green, overallAvgGW);
     // payment history — joining fee + every fine (reversed shown greyed, reason on hover)
     const lm=byName[m.name];
     const head=`<tr><td>—</td><td class="r">R250</td><td class="typ">joining</td><td>${lm.joining_fee_paid?'<span class="paid">pre-system</span>':'<span class="unpaid">unpaid</span>'}</td></tr>`;

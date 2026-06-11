@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="LMP league mark">
+  <!-- corner ticks: the terminal panel frame -->
+  <g stroke="#FFB224" stroke-width="4" fill="none">
+    <path d="M2 16 V2 H16"/>
+    <path d="M104 2 H118 V16"/>
+    <path d="M118 104 V118 H104"/>
+    <path d="M16 118 H2 V104"/>
+  </g>
+  <!-- prompt chevron -->
+  <polyline points="26,40 44,58 26,76" fill="none" stroke="#FFB224" stroke-width="8" stroke-linecap="square"/>
+  <!-- the table: three cursor blocks stepping down, last man in red -->
+  <rect x="54" y="34" width="16" height="20" fill="#3DDC97"/>
+  <rect x="72" y="48" width="16" height="20" fill="#FFB224"/>
+  <rect x="90" y="62" width="16" height="20" fill="#FF5D5D"/>
+</svg>

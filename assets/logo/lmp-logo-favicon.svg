@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="LMP">
+  <!-- 16px favicon: frame + middle block dropped for clarity at small sizes (per brand guidelines) -->
+  <!-- prompt chevron -->
+  <polyline points="20,36 44,60 20,84" fill="none" stroke="#FFB224" stroke-width="14" stroke-linecap="square"/>
+  <!-- two blocks: safe green, last-man red -->
+  <rect x="60" y="30" width="20" height="26" fill="#3DDC97"/>
+  <rect x="84" y="58" width="20" height="26" fill="#FF5D5D"/>
+</svg>
