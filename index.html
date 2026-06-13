@@ -244,6 +244,21 @@
   .toast.err { border-color:var(--red-dim); color:var(--red); }
   @keyframes toastin { from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);} }
 
+  /* F1 Email Reminders modal */
+  .rmd-banner { border:1px solid var(--border-bright); background:var(--panel-2); padding:8px 10px; font-size:11px; letter-spacing:0; text-transform:none; color:var(--dim); margin-bottom:10px; }
+  .rmd-banner.warn { border-color:#6a4a14; background:rgba(var(--amber-rgb),0.08); color:var(--amber); }
+  .rmd-list { max-height:260px; overflow:auto; border:1px solid var(--border); }
+  /* scoped under .rmd-list to beat ".tform label" (which forces block + uppercase) */
+  .rmd-list .rmd-row { display:flex; align-items:center; gap:10px; padding:8px 10px; border-bottom:1px solid var(--border); font-size:12px; text-transform:none; letter-spacing:0; cursor:pointer; margin-bottom:0; }
+  .rmd-list .rmd-row:last-child { border-bottom:none; }
+  .rmd-list .rmd-row:hover { background:var(--panel-2); }
+  .rmd-list .rmd-row input { flex:none; }
+  .rmd-main { flex:1; min-width:0; display:flex; flex-direction:column; gap:2px; text-transform:none; }
+  .rmd-name { color:var(--text); }
+  .rmd-amt { margin-left:auto; color:var(--red); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .rmd-bd { color:var(--dim); font-size:10.5px; }
+  .rmd-hint { margin-top:8px; color:var(--dim); font-size:11px; letter-spacing:0; text-transform:none; }
+
   @media (max-width: 900px) {
     .grid { grid-template-columns: 1fr; } .grid-2 { grid-column: span 1; }
     .kpi-value{ font-size:30px; }
@@ -353,7 +368,7 @@
       <div class="terminal" id="lg-terminal"></div>
     </div></div>
     <div class="actions">
-      <button class="action" disabled><span class="key">F1</span><span class="label">Email Reminders</span><div class="desc">treasurer · Phase 6</div></button>
+      <button class="action" id="act-lg-remind"><span class="key">F1</span><span class="label">Email Reminders</span><div class="desc">treasurer · debtors</div></button>
       <button class="action" id="act-lg-markpaid"><span class="key">F2</span><span class="label">Mark Paid</span><div class="desc">joining fee or fine</div></button>
       <button class="action" id="act-lg-addfine"><span class="key">F3</span><span class="label">Add Fine</span><div class="desc">manual · audited</div></button>
       <button class="action" id="act-lg-reverse"><span class="key">F4</span><span class="label">Reverse Fine</span><div class="desc">never deletes</div></button>
@@ -391,6 +406,7 @@
         <div class="statgrid" id="pf-stats"></div>
         <div style="margin-top:14px"><div class="panel-meta" style="margin-bottom:6px">› GW Points · Season <span style="color:var(--dim)">— dashed line = league avg</span></div><div class="spark" id="pf-spark"></div></div>
         <div style="margin-top:16px"><div class="panel-meta" style="margin-bottom:6px">› Payment History</div><div class="tablewrap" id="pf-payments"></div></div>
+        <div style="margin-top:16px"><div class="panel-meta" style="margin-bottom:6px">› Email History</div><div class="tablewrap" id="pf-emails"></div></div>
       </div>
     </div>
     <div class="actions">
@@ -631,7 +647,55 @@ function overrideFlow(){
   $('#tm-gw').oninput=render; render();
 }
 
+// F1 — Email Reminders (Ledger) · sends outstanding-balance reminders via Resend
+let JOINING_FEE = 250;                    // set from config on data load
+const attrEsc = s => String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+// mirror of the server's outstanding maths (non-reversed, unpaid fines + unpaid joining fee)
+function outstandingFE(m){
+  const fines=m.fines.filter(f=>!f.reversed && !f.paid_date);
+  const finesTotal=fines.reduce((a,f)=>a+f.amount,0);
+  const joiningOwed=m.joining_fee_paid?0:JOINING_FEE;
+  return { fines, finesTotal, joiningOwed, total:joiningOwed+finesTotal };
+}
+function remindFlow(){
+  if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
+  const debtors=MANAGERS.map(m=>({m,out:outstandingFE(m)})).filter(x=>x.out.total>0)
+    .sort((a,b)=>b.out.total-a.out.total);
+  if(!debtors.length){ toast('No outstanding balances — nothing to remind','ok'); return; }
+  const rows=debtors.map(({m,out})=>{
+    const bits=[]; if(out.joiningOwed) bits.push(`joining R${out.joiningOwed}`);
+    out.fines.forEach(f=>bits.push(`${f.gw?'GW'+f.gw:'manual'} R${f.amount}`));
+    return `<label class="rmd-row"><input type="checkbox" class="rmd-cb" value="${attrEsc(m.name)}" checked>
+      <span class="rmd-main"><span class="rmd-name">${m.name}</span><span class="rmd-bd">${bits.join(' · ')}</span></span>
+      <span class="rmd-amt">R${out.total}</span></label>`;
+  }).join('');
+  openTreasurer({ title:'Email Reminders', sub:`${debtors.length} with outstanding balances · sends via Resend`,
+    bodyHtml:`<div id="rmd-banner" class="rmd-banner">Sender: checking…</div>
+      <div class="rmd-list">${rows}</div>
+      <div class="rmd-hint">Default: everyone ticked. Untick anyone who shouldn't be emailed (e.g. already paying). Missing addresses are skipped automatically.</div>`,
+    onSubmit: async (pass)=>{
+      const recipients=[...document.querySelectorAll('.rmd-cb:checked')].map(c=>c.value);
+      if(!recipients.length){ $('#tm-err').textContent='Select at least one manager.'; return; }
+      try {
+        const r=await postAction('/api/send-reminders',{password:pass,recipients});
+        let msg=`Sent ${r.sent} reminder${r.sent===1?'':'s'}`; if(r.skipped) msg+=`, skipped ${r.skipped}`;
+        closeTreasurer(); toast(msg,'ok'); toast('audit committing… profile log updates after redeploy','');
+        if(r.skipped && r.skippedDetails && r.skippedDetails.length)
+          toast('Skipped — '+r.skippedDetails.map(s=>`${fn(s.name)}: ${s.reason}`).join('; '),'err');
+      } catch(err){ onErr(err); }
+    }
+  });
+  fetch('/api/health').then(r=>r.ok?r.json():null).then(h=>{
+    const b=$('#rmd-banner'); if(!b) return;
+    const fe=(h&&h.email&&h.email.from_email)||'onboarding@resend.dev';
+    const sandbox=!h||!h.email||h.email.sandbox;
+    b.textContent=sandbox?`Sender: ${fe}. Sandbox until domain verified — emails will land but look unofficial.`:`Sender: ${fe}.`;
+    b.classList.toggle('warn',!!sandbox);
+  }).catch(()=>{ const b=$('#rmd-banner'); if(b){ b.textContent='Sender: onboarding@resend.dev. Sandbox until domain verified — emails will land but look unofficial.'; b.classList.add('warn'); } });
+}
+
 // wiring
+$('#act-lg-remind').onclick=()=>remindFlow();
 $('#act-lg-markpaid').onclick=()=>markPaidFlow();
 $('#act-lg-addfine').onclick=()=>addFineFlow();
 $('#act-lg-reverse').onclick=()=>reverseFineFlow();
@@ -652,7 +716,8 @@ Promise.all([
   const L = api.MAX_GW, idx = L-1;
   const gwByEntry = {}; api.gwData.forEach(g=>gwByEntry[g.entry]=g);
   const byName = {}; ledger.managers.forEach(m=>byName[m.name]=m);
-  MANAGERS = ledger.managers; API_DATA = api;   // enable treasurer flows (top-level wiring)
+  const EMAIL_LOG = ledger.email_log || [];      // Phase 7 audit trail
+  MANAGERS = ledger.managers; API_DATA = api; JOINING_FEE = (config && config.joining_fee) || 250;   // enable treasurer flows (top-level wiring)
 
   // chrome
   $('#tb-gw').textContent = `${L}/${TOTAL_GWS}`;
@@ -903,6 +968,13 @@ Promise.all([
       return `<tr><td>${f.gw?'GW'+f.gw:'—'}</td><td class="r">R${f.amount}</td><td class="typ">${String(f.type).replace(/_/g,' ')}</td><td>${paid}</td></tr>`;
     }).join('');
     $('#pf-payments').innerHTML=`<table class="ph"><thead><tr><th>GW</th><th class="r">Amount</th><th>Type</th><th>Paid</th></tr></thead><tbody>${head}${fineRows}</tbody></table>`;
+    // email history — audit trail of reminders + confirmations sent to this manager
+    const elogs=EMAIL_LOG.filter(e=>e.recipient===m.name).sort((a,b)=>String(b.sent_at||'').localeCompare(String(a.sent_at||'')));
+    $('#pf-emails').innerHTML = elogs.length
+      ? `<table class="ph"><thead><tr><th>Date</th><th>Type</th><th>Subject</th></tr></thead><tbody>`+
+        elogs.map(e=>`<tr><td>${String(e.sent_at||'').slice(0,10)}</td><td class="typ">${String(e.type||'').replace(/</g,'&lt;')}</td><td>${String(e.subject||'').replace(/</g,'&lt;')}</td></tr>`).join('')+
+        `</tbody></table>`
+      : `<div style="color:var(--dim);font-size:11px;padding:8px 0">No emails sent yet.</div>`;
   }
   fillSel($('#pf-sel'), leader.name);
   $('#pf-sel').onchange=renderProfile;
