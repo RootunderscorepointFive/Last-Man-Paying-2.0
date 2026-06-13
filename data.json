@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T22:57:16.737Z",
+  "generated_at": "2026-06-13T22:58:23.879Z",
   "source": "one-time migration from FPL 2025 updated for GW34.xlsx",
   "last_synced_gw": 38,
   "managers": [
@@ -2989,6 +2989,13 @@
       "recipient": "Thembalethu Miya",
       "subject": "FPL Last Man Paying — outstanding R100",
       "sent_at": "2026-06-13T13:40:25.777Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Thembalethu Miya",
+      "subject": "FPL Last Man Paying — outstanding R100",
+      "sent_at": "2026-06-13T22:58:23.787Z",
       "sent_by": "treasurer"
     }
   ]
