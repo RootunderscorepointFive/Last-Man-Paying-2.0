@@ -18,10 +18,6 @@ nul
 # Secrets — never track, regardless of contents
 secrets/
 
-# League members' group photo — real people, public repo; deliberately excluded
-# until/unless a placement is approved (kept on disk only)
-assets/group-photo/
-
 # OS
 .DS_Store
 Thumbs.db

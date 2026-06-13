@@ -9,7 +9,8 @@
 <link rel="apple-touch-icon" href="assets/logo/lmp-logo-icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap"></noscript>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -205,6 +206,8 @@
   .modal-sub { font-size:10px; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; margin-top:3px; }
   .modal-x { background:none; border:1px solid var(--border-bright); color:var(--dim); font-family:inherit; font-size:11px; letter-spacing:1px; cursor:pointer; padding:5px 10px; white-space:nowrap; }
   .modal-x:hover { color:var(--red); border-color:var(--red); }
+  .crew-wrap { padding:14px 16px; }
+  .crew-wrap img { display:block; width:100%; height:auto; border:1px solid var(--border-bright); }
   .pitch { background:linear-gradient(180deg,#0e2a1a,#0a1f14); border:1px solid var(--border); margin:14px 14px 0; padding:16px 6px; display:flex; flex-direction:column; gap:16px; }
   .prow { display:flex; justify-content:space-around; gap:4px; }
   .pcard { width:64px; text-align:center; }
@@ -448,6 +451,18 @@
   </div>
 </div>
 
+<!-- easter egg: type "whoami" anywhere to reveal the league -->
+<div class="modal" id="crew-modal" role="dialog" aria-modal="true" aria-label="The League">
+  <div class="modal-card">
+    <div class="modal-top">
+      <div><div class="modal-team"><span style="color:var(--amber)">&rsaquo;</span> whoami --all</div><div class="modal-sub">The League · 2025/26</div></div>
+      <button class="modal-x" id="crew-x" type="button">ESC ✕</button>
+    </div>
+    <div class="crew-wrap"><img id="crew-img" alt="The Last Man Paying league members" loading="lazy"></div>
+    <div class="modal-foot">17 entries · one wooden spoon · tap outside or press ESC to close</div>
+  </div>
+</div>
+
 <div class="toast-wrap" id="toasts" aria-live="polite"></div>
 
 <script>
@@ -499,6 +514,22 @@ const closeTreasurer=()=>tModal.classList.remove('active');
 $('#tm-x').onclick=$('#tm-cancel').onclick=closeTreasurer;
 tModal.addEventListener('click',e=>{ if(e.target===tModal) closeTreasurer(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape' && tModal.classList.contains('active')) closeTreasurer(); });
+
+// ── easter egg: type "whoami" to reveal the league (photo lazy-loaded on trigger only) ──
+(function(){
+  const cm=$('#crew-modal'); if(!cm) return; const img=$('#crew-img');
+  const open=()=>{ if(!img.getAttribute('src')) img.src='assets/group-photo/group-photo.jpeg'; cm.classList.add('active'); };
+  const close=()=>cm.classList.remove('active');
+  $('#crew-x').onclick=close;
+  cm.addEventListener('click',e=>{ if(e.target===cm) close(); });
+  let buf='';
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape' && cm.classList.contains('active')){ close(); return; }
+    const t=e.target; if(t && /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)) return;
+    if(e.key && e.key.length===1 && /[a-z]/i.test(e.key)){ buf=(buf+e.key.toLowerCase()).slice(-6); if(buf==='whoami') open(); }
+  });
+  console.log('%c› try: whoami','color:#FFB224;font-family:monospace;font-size:13px');
+})();
 $('#tm-form').addEventListener('submit', async e=>{
   e.preventDefault(); if(!tSubmit) return;
   const go=$('#tm-go'); go.disabled=true; $('#tm-err').textContent='';
