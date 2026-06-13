@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T13:18:04.846Z",
+  "generated_at": "2026-06-13T13:40:25.850Z",
   "source": "one-time migration from FPL 2025 updated for GW34.xlsx",
   "last_synced_gw": 38,
   "managers": [
@@ -2963,6 +2963,15 @@
       "epithet": "The Chef's Special",
       "epithet_tagline": "League leader — 2,339 pts",
       "credits": 0
+    }
+  ],
+  "email_log": [
+    {
+      "type": "reminder",
+      "recipient": "Thembalethu Miya",
+      "subject": "FPL Last Man Paying — outstanding R100",
+      "sent_at": "2026-06-13T13:40:25.777Z",
+      "sent_by": "treasurer"
     }
   ]
 }
