@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T13:40:25.850Z",
+  "generated_at": "2026-06-13T14:43:44.833Z",
   "source": "one-time migration from FPL 2025 updated for GW34.xlsx",
   "last_synced_gw": 38,
   "managers": [
@@ -1012,10 +1012,10 @@
           "status": "confirmed",
           "reason": "Phase 7 email test",
           "paid_date": null,
-          "reversed": false,
-          "reversed_reason": null,
-          "reversed_by": null,
-          "reversed_date": null,
+          "reversed": true,
+          "reversed_reason": "Phase 7 email test",
+          "reversed_by": "treasurer",
+          "reversed_date": "2026-06-13T14:43:44.833Z",
           "added_by": "treasurer",
           "added_date": "2026-06-13T13:18:04.846Z",
           "edited_by": null,
