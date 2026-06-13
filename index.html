@@ -510,7 +510,7 @@ async function postAction(url, payload){
   catch { const e=new Error('Network error — are you on the Vercel deployment?'); e.code=0; throw e; }
   if(r.status===401){ const e=new Error('Wrong password.'); e.code=401; throw e; }
   if(r.status===404){ const e=new Error('Action endpoint not found — treasurer actions run on the Vercel site, not GitHub Pages.'); e.code=404; throw e; }
-  if(!r.ok){ const e=new Error('Server error — try again.'); e.code=r.status; throw e; }
+  if(!r.ok){ let msg='Server error — try again.'; try{ const j=await r.json(); if(j&&j.error) msg=j.error; }catch{} const e=new Error(msg); e.code=r.status; throw e; }
   return r.json();
 }
 const fn = n => (n||'').trim().split(/\s+/)[0] || n;

@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
         return true;
       }
     );
-    if (result && result.aborted) return res.status(404).json({ error: 'manager or fine not found' });
+    if (result && result.aborted) return res.status(409).json({ error: 'manager or fine not found' });
 
     // Confirmation email — best-effort, never blocks or fails the payment record.
     if (marked > 0) {

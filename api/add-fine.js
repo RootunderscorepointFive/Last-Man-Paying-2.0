@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
       data.generated_at = now;
       return true;
     });
-    if (result && result.aborted) return res.status(404).json({ error: 'manager not found' });
+    if (result && result.aborted) return res.status(409).json({ error: 'manager not found' });
     return res.status(200).json({ ok: true });
   } catch (e) {
     console.error('add-fine:', e.message);

@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
       data.generated_at = new Date().toISOString();
       return true;
     });
-    if (result && result.aborted) return res.status(404).json({ error: 'manager not found' });
+    if (result && result.aborted) return res.status(409).json({ error: 'manager not found' });
 
     // Confirmation email — only if the fee was actually outstanding; best-effort.
     if (didMark) {
