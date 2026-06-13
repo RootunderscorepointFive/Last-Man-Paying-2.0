@@ -9,8 +9,8 @@
 <link rel="apple-touch-icon" href="assets/logo/lmp-logo-icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=optional" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=optional"></noscript>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -82,14 +82,16 @@
   .kpi-sub { font-size: 11px; margin-top: 6px; color: var(--dim); font-variant-numeric: tabular-nums; }
   .kpi-sub.up{color:var(--green);} .kpi-sub.dn{color:var(--red);}
   .kpi-sub .ep { color: var(--amber); }
-  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); }
+  /* reserve a viewport of height so async content injection doesn't shove the footer (CLS) */
+  [role="tabpanel"] { min-height: 100vh; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); min-height: 92px; }
   .kpi-grid > * { background: var(--bg); }
   .records .rec { display: grid; grid-template-columns: 1fr auto; gap: 1px 8px; padding: 5px 0; border-bottom: 1px dashed var(--border); }
   .records .rec:last-child { border-bottom: none; }
   .records .rl { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dim); align-self: center; }
   .records .rv { font-family: 'IBM Plex Sans Condensed', sans-serif; font-weight: 700; font-size: 17px; line-height: 1; color: var(--amber); text-align: right; font-variant-numeric: tabular-nums; }
   .records .rw { grid-column: 1 / -1; font-size: 9px; color: var(--dim); letter-spacing: 0.5px; }
-  @media (max-width: 900px) { .kpi-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .kpi-grid { grid-template-columns: 1fr; min-height: 489px; } }
 
   /* Featured bottom-3 */
   .featured { background: linear-gradient(180deg, rgba(255,93,93,0.06), transparent 60%), var(--bg); border-left: 2px solid var(--red); }
