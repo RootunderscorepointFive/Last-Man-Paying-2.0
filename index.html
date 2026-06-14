@@ -269,6 +269,43 @@
     .kpi-value{ font-size:30px; }
     .cmp-pickers, .cmp-head, .cmp-row { grid-template-columns: 1fr 70px 1fr; }
   }
+
+  .offseason { background:rgba(var(--amber-rgb),0.09); border-bottom:1px solid #6a4a14; color:var(--amber); font-size:11px; letter-spacing:1px; padding:9px 16px; text-transform:uppercase; }
+  .offseason strong { color:var(--text); font-weight:700; }
+
+  /* ── The Run In ── */
+  .ri-shell { padding:0; overflow:hidden; }
+  .ri-head { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap; padding:18px 20px 4px; }
+  .ri-title { font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:clamp(26px,5vw,46px); line-height:0.95; color:var(--text); letter-spacing:-0.5px; }
+  .ri-title em { color:var(--amber); font-style:normal; }
+  .ri-subtitle { font-size:11px; color:var(--dim); letter-spacing:1px; margin-top:6px; text-transform:uppercase; }
+  .ri-head-right { display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+  .ri-seasonpick { font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--dim); display:flex; align-items:center; gap:8px; }
+  .ri-seasonpick .sel { width:auto; min-width:160px; }
+  .ri-gwdisp { font-family:'IBM Plex Sans Condensed',sans-serif; font-size:clamp(22px,4vw,38px); color:var(--amber); line-height:1; }
+  #ri-canvas-wrap { position:relative; width:100%; padding:14px 20px 0; }
+  #ri-canvas { display:block; width:100%; height:auto; }
+  .ri-controls { display:flex; align-items:center; gap:16px; padding:14px 20px; }
+  .ri-play { width:38px; height:38px; border-radius:50%; background:var(--amber); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .ri-play:hover { filter:brightness(1.12); }
+  .ri-play svg { width:14px; height:14px; fill:var(--bg); }
+  .ri-track { position:relative; height:3px; background:var(--border); }
+  .ri-fill { position:absolute; left:0; top:0; bottom:0; background:var(--amber); width:0; pointer-events:none; }
+  #ri-slider { position:absolute; inset:-12px 0; width:100%; height:27px; opacity:0; cursor:pointer; }
+  .ri-ticks { display:flex; justify-content:space-between; padding-top:5px; font-size:9px; letter-spacing:1px; color:var(--dim); }
+  #ri-lb { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:1px; background:var(--border); border-top:1px solid var(--border); margin-top:6px; }
+  .ri-lb-item { background:var(--panel); padding:10px 12px; display:flex; align-items:center; gap:8px; cursor:pointer; position:relative; }
+  .ri-lb-item:hover, .ri-lb-item.ri-active { background:var(--panel-2); }
+  .ri-lb-item.ri-active::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--ri-c,var(--amber)); }
+  .ri-lb-item.ri-dimmed { opacity:0.3; }
+  .ri-lb-rank { font-size:11px; font-weight:700; color:var(--dim); min-width:18px; font-variant-numeric:tabular-nums; }
+  .ri-lb-rank.ri-podium { color:var(--green); } .ri-lb-rank.ri-danger { color:var(--red); }
+  .ri-lb-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+  .ri-lb-info { flex:1; min-width:0; }
+  .ri-lb-name { font-size:11px; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .ri-lb-team { font-size:10px; color:var(--dim); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .ri-empty { padding:64px 20px; text-align:center; color:var(--dim); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; }
+  @media (max-width:520px){ #ri-lb{ grid-template-columns:1fr 1fr; } }
 </style>
 </head>
 <body>
@@ -320,7 +357,9 @@
   <button class="tab" role="tab" id="tab-ledger" aria-controls="panel-ledger" aria-selected="false" tabindex="-1"><span class="idx">03</span>Ledger</button>
   <button class="tab" role="tab" id="tab-h2h" aria-controls="panel-h2h" aria-selected="false" tabindex="-1"><span class="idx">04</span>Head-to-Head</button>
   <button class="tab" role="tab" id="tab-profiles" aria-controls="panel-profiles" aria-selected="false" tabindex="-1"><span class="idx">05</span>Profiles</button>
+  <button class="tab" role="tab" id="tab-runin" aria-controls="panel-runin" aria-selected="false" tabindex="-1"><span class="idx">06</span>The Run In</button>
 </nav>
+<div id="offseason" class="offseason" hidden>● 2026/27 hasn't kicked off — live standings, scores &amp; fines populate after GW1. Head to <strong>The Run In</strong> for last season's story.</div>
 
 <main id="main">
   <section id="panel-standings" role="tabpanel" aria-labelledby="tab-standings" tabindex="0" hidden>
@@ -417,6 +456,33 @@
     <div class="actions">
       <button class="action" id="act-pf-squad"><span class="key">F2</span><span class="label">GW Squad</span><div class="desc">view starting XI</div></button>
       <button class="action" id="act-pf-rand"><span class="key">F1</span><span class="label">Random Manager</span><div class="desc">surprise me</div></button>
+    </div>
+  </section>
+
+  <section id="panel-runin" role="tabpanel" aria-labelledby="tab-runin" tabindex="0" hidden>
+    <div class="panel grid-full ri-shell">
+      <div class="ri-head">
+        <div>
+          <div class="panel-title" id="ri-sup">Season Rankings</div>
+          <div class="ri-title" id="ri-title">The Run In</div>
+          <div class="ri-subtitle" id="ri-subtitle"></div>
+        </div>
+        <div class="ri-head-right">
+          <label class="ri-seasonpick" for="ri-season">Season
+            <select class="sel" id="ri-season"></select>
+          </label>
+          <div class="ri-gwdisp" id="ri-gwDisplay">—</div>
+        </div>
+      </div>
+      <div id="ri-canvas-wrap"><canvas id="ri-canvas"></canvas></div>
+      <div class="ri-controls">
+        <button class="ri-play" id="ri-playBtn" type="button" aria-label="Play / Pause"><svg id="ri-playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        <div style="flex:1">
+          <div class="ri-track"><div class="ri-fill" id="ri-sliderFill"></div><input type="range" id="ri-slider" min="0" max="38" step="0.01" value="0" aria-label="Gameweek scrubber"></div>
+          <div class="ri-ticks" id="ri-ticks"></div>
+        </div>
+      </div>
+      <div id="ri-lb"></div>
     </div>
   </section>
 </main>
@@ -756,6 +822,7 @@ Promise.all([
   $('#tb-gw').textContent = `${L}/${TOTAL_GWS}`;
   $('#tb-session').textContent = SEASON;
   $('#ft-meta').textContent = `${ledger.managers.length} entries · GW${L}/${TOTAL_GWS} · LMP TERMINAL v2.0`;
+  if (L < 1) $('#offseason').hidden = false;   // off-season: season hasn't started
 
   // per-manager GW score
   const scores = api.gwData.map(g=>({ name:g.manager, entry:g.entry, s:(g.gwPts||[])[idx]??0, prev:(g.gwPts||[])[idx-1]??null }));
@@ -791,21 +858,24 @@ Promise.all([
     if(best>top3.v) top3={v:best,who:g.manager};
   });
 
+  const noGw = (api.gwData||[]).length === 0;   // off-season: no current-season data yet
+  const mostName = (noGw || !most || most.bottom_finishes.length===0) ? '—' : firstName(most.name);
+  const mostSub  = (noGw || !most || most.bottom_finishes.length===0) ? 'no bottom finishes yet' : `${most.bottom_finishes.length}× · ${epiHtml(most)}`;
   $('#lmp-kpis').innerHTML = `
     <div class="kpi"><div class="kpi-label">LMP Fines · Levied</div><div class="kpi-value red">R${totalLevied.toLocaleString()}</div><div class="kpi-sub dn">▲ R${(payers.length*GW_FINE).toLocaleString()} this GW</div></div>
     <div class="kpi"><div class="kpi-label">Gameweeks Played</div><div class="kpi-value">${L}<span style="font-size:18px;color:var(--dim)">/${TOTAL_GWS}</span></div><div class="kpi-sub">Season ${SEASON}</div></div>
-    <div class="kpi"><div class="kpi-label">Most Bottom Finishes</div><div class="kpi-value amber cond">${firstName(most.name)}</div><div class="kpi-sub">${most.bottom_finishes.length}× · ${epiHtml(most)}</div></div>
+    <div class="kpi"><div class="kpi-label">Most Bottom Finishes</div><div class="kpi-value amber cond">${mostName}</div><div class="kpi-sub">${mostSub}</div></div>
     <div class="kpi records"><div class="kpi-label">Season Records</div>
-      <div class="rec"><span class="rl">High GW</span><span class="rv">${hi.v}</span><span class="rw">${firstName(hi.who)} · GW${hi.gw}</span></div>
-      <div class="rec"><span class="rl">Big Swing</span><span class="rv">${swing.dir}${swing.v}</span><span class="rw">${firstName(swing.who)} · GW${swing.gw}</span></div>
-      <div class="rec"><span class="rl">Top-3 Run</span><span class="rv">${top3.v}</span><span class="rw">${firstName(top3.who)} · weeks</span></div>
+      <div class="rec"><span class="rl">High GW</span><span class="rv">${noGw?'—':hi.v}</span><span class="rw">${noGw?'—':firstName(hi.who)+' · GW'+hi.gw}</span></div>
+      <div class="rec"><span class="rl">Big Swing</span><span class="rv">${noGw?'—':swing.dir+swing.v}</span><span class="rw">${noGw?'—':firstName(swing.who)+' · GW'+swing.gw}</span></div>
+      <div class="rec"><span class="rl">Top-3 Run</span><span class="rv">${noGw?'—':top3.v}</span><span class="rw">${noGw?'—':firstName(top3.who)+' · weeks'}</span></div>
     </div>`;
 
   // featured reveal — dynamic count word
   const WORDS=['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'];
   const word = (WORDS[payers.length] || payers.length).toString().toUpperCase();
   $('#lmp-rev-title').textContent = `GW${L} · Bottom Tally · ${word} Charged`;
-  $('#lmp-rev-meta').textContent = `Threshold ${thr} pts · Rule: ≤ 3rd-lowest unique`;
+  $('#lmp-rev-meta').textContent = noGw ? 'Awaiting GW1 · no scores yet' : `Threshold ${thr} pts · Rule: ≤ 3rd-lowest unique`;
   $('#lmp-bottom-rows').innerHTML = payers.map((p,i)=>{
     const m = byName[p.name]||{name:p.name};
     const tied = payers.filter(x=>x.s===p.s).length>1;
@@ -815,7 +885,10 @@ Promise.all([
       <div class="px">${p.s} pts<small>${p.s-avg>=0?'+':''}${p.s-avg} vs avg</small></div>
       <div class="fee">R${GW_FINE}</div></div>`;
   }).join('');
-  $('#lmp-terminal').innerHTML = `
+  $('#lmp-terminal').innerHTML = noGw ? `
+    <div><span class="prompt">LMP&gt;</span> resolve_bottom --season 2026/27</div>
+    <div class="out">no gameweeks played yet · awaiting GW1 sync</div>
+    <div class="ok">→ 0 charged · ledger opens when the season kicks off</div>` : `
     <div><span class="prompt">LMP&gt;</span> resolve_bottom --gw ${L} --rule "≤ 3rd-lowest-unique"</div>
     <div class="out">parsing ${scores.length} entries from fpl_api... ok</div>
     <div class="out">3rd-lowest unique score: ${thr} pts · at or below threshold: ${payers.length}</div>
@@ -1037,6 +1110,153 @@ Promise.all([
   document.addEventListener('keydown',e=>{ if(e.key==='Escape' && sqModal.classList.contains('active')) closeSquad(); });
   $('#st-body').addEventListener('click',e=>{ const tr=e.target.closest('tr[data-mgr]'); if(tr) openSquad(tr.dataset.mgr); });
   $('#st-body').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ const tr=e.target.closest('tr[data-mgr]'); if(tr){ e.preventDefault(); openSquad(tr.dataset.mgr); } } });
+
+  // ── THE RUN IN · dual-mode multi-season race ──────────────────────────────
+  (function setupRunIn(){
+    const THRESHOLD = (config && config.run_in_threshold) || 10;
+    const CURRENT = (config && config.current_season) || '2026-27';
+    const ARCHIVE = ((config && config.season_archive) || []).slice().sort().reverse();
+    const latestArchive = ARCHIVE[0];
+    const label = id => String(id).replace('-', '/');
+    // current-season GW lives in data.json (the working file), not fpl_data.json
+    let currentGW = (ledger && ledger.last_synced_gw) || 0;
+    if (window.__RUNIN_FAKE_GW != null) currentGW = window.__RUNIN_FAKE_GW;  // test hook
+    const RI_COL = { panel:'#131820', dim:'#8a95a2', text:'#d8dde4', amber:'#FFB224', green:'#3DDC97', red:'#FF5D5D', grid:'rgba(255,255,255,0.05)' };
+
+    const cache = {};
+    const currentPayload = () => ({ id:CURRENT, label:label(CURRENT)+' (current)', series:(api.runInData||[]), maxGw:(api.MAX_GW||0), isCurrent:true });
+    async function archivePayload(id){
+      if(cache[id]) return cache[id];
+      const j = await fetch('data/seasons/'+id+'.json').then(r=>r.json());
+      const ri = j.run_in || {};
+      return (cache[id] = { id, label:label(id), series:(ri.series||[]), maxGw:(ri.max_gw||0), isCurrent:false });
+    }
+
+    const sel = $('#ri-season');
+    (function buildDropdown(){
+      const opts = [];
+      if (currentGW >= THRESHOLD) opts.push(`<option value="${CURRENT}">${label(CURRENT)} (current)</option>`);
+      ARCHIVE.forEach(id => opts.push(`<option value="${id}">${label(id)}</option>`));
+      sel.innerHTML = opts.join('');
+      sel.closest('.ri-seasonpick').style.display = opts.length > 1 ? '' : 'none';
+    })();
+
+    let selectedSeason = (currentGW >= THRESHOLD) ? CURRENT : latestArchive;
+    if (selectedSeason) sel.value = selectedSeason;
+    let engine = null, shown = false;
+
+    function setTitles(p){
+      const sup=$('#ri-sup'), title=$('#ri-title'), sub=$('#ri-subtitle');
+      if (p.isCurrent){ sup.textContent='Season Rankings · live'; title.innerHTML='The Run <em>In</em>'; sub.textContent=`${label(CURRENT)} · building live · GW ${currentGW}/38`; }
+      else if (currentGW < THRESHOLD && p.id === latestArchive){ sup.textContent=p.label; title.innerHTML=`${p.label} · Final <em>Story</em>`; sub.textContent=`Current season activates from GW${THRESHOLD}`; }
+      else { sup.textContent=`${p.label} · archive`; title.innerHTML='The Run <em>In</em>'; sub.textContent=`${p.label} · final standings`; }
+    }
+
+    async function render(){
+      const p = (selectedSeason === CURRENT) ? currentPayload() : await archivePayload(selectedSeason);
+      setTitles(p);
+      if (engine && engine.destroy) engine.destroy();
+      engine = null;
+      const canvas=$('#ri-canvas'), lb=$('#ri-lb'), wrap=$('#ri-canvas-wrap');
+      const hasData = p.series && p.series.length && p.maxGw >= 1;
+      let empty = document.getElementById('ri-empty');
+      if (!hasData){
+        canvas.style.display='none'; lb.innerHTML=''; $('#ri-gwDisplay').textContent='—';
+        $('#ri-slider').disabled=true; $('#ri-playBtn').disabled=true;
+        if(!empty){ empty=document.createElement('div'); empty.className='ri-empty'; empty.id='ri-empty'; wrap.appendChild(empty); }
+        empty.textContent = p.isCurrent ? "Season hasn't started — the race begins at GW1." : 'No race data for this season.';
+        return;
+      }
+      if(empty) empty.remove();
+      canvas.style.display=''; $('#ri-slider').disabled=false; $('#ri-playBtn').disabled=false;
+      engine = createRaceEngine(p);
+      if (shown) engine.show();
+    }
+
+    function createRaceEngine(payload){
+      const RI_M = payload.series.slice().sort((a,b)=>a.f.localeCompare(b.f));
+      const RI_GW = payload.maxGw, RI_N = RI_M.length;
+      let gwF=0, activeIdx=-1, playing=false, playStart=null, playFrom=0, animId=null, lastLBGW=-1;
+      const MS_PER_GW = 900;
+      const ac = new AbortController(), sig = ac.signal;
+      const canvas=$('#ri-canvas'), ctx=canvas.getContext('2d');
+      const slider=$('#ri-slider'), fill=$('#ri-sliderFill'), disp=$('#ri-gwDisplay');
+      const playBtn=$('#ri-playBtn'), playIcon=$('#ri-playIcon');
+      const DPR=window.devicePixelRatio||1; let pad;
+      slider.max=RI_GW; slider.value=0; fill.style.width='0%';
+      const ticks=[1,5,10,15,20,25,30,RI_GW].filter((v,i,a)=>v<=RI_GW&&a.indexOf(v)===i);
+      $('#ri-ticks').innerHTML = ticks.map(t=>`<span>GW${t}</span>`).join('');
+
+      const CW=()=>canvas.offsetWidth||1, CH=()=>canvas.offsetHeight||1;
+      const XP=g=>pad.l+((g-1)/(RI_GW-1||1))*(CW()-pad.l-pad.r);
+      const YP=r=>pad.t+((r-1)/(RI_N-1||1))*(CH()-pad.t-pad.b);
+      function crY(m,g){ if(g<=1)return YP(m.r[0]); if(g>=RI_GW)return YP(m.r[RI_GW-1]); const i=Math.floor(g)-1,t=g-Math.floor(g),y1=YP(m.r[i]),y2=YP(m.r[Math.min(i+1,RI_GW-1)]),e=t*t*(3-2*t); return y1+(y2-y1)*e; }
+
+      function resize(){
+        const wrap=$('#ri-canvas-wrap'); if(!wrap)return;
+        const cw=(wrap.clientWidth-40)||760, ch=Math.max(260,Math.min(460,cw*0.6));
+        canvas.style.width=cw+'px'; canvas.style.height=ch+'px';
+        canvas.width=Math.round(cw*DPR); canvas.height=Math.round(ch*DPR);
+        ctx.setTransform(DPR,0,0,DPR,0,0);
+        pad={ t:28, b:26, l:Math.round(cw*0.05), r:Math.round(cw*0.2) };
+        draw();
+      }
+      function draw(){
+        const W=CW(),H=CH(); ctx.clearRect(0,0,W,H);
+        const drawG=gwF<=0?1:gwF, dim=activeIdx>=0;
+        // de-collide labels
+        const totalH=CH()-pad.t-pad.b, evenY=RI_M.map((m,i)=>pad.t+(i/(RI_N-1||1))*totalH), labelY={};
+        if(gwF<=0){ RI_M.forEach((m,i)=>labelY[i]=evenY[i]); }
+        else{
+          const gFor=Math.max(1,Math.min(RI_GW,drawG)), blend=Math.min(1,Math.max(0,(gwF-1)/1.5)), be=blend*blend*(3-2*blend);
+          const minGap=Math.max(13,W*0.013), yTop=YP(1), yBot=YP(RI_N);
+          let pos=RI_M.map((m,i)=>({i,y:crY(m,gFor)})).sort((a,b)=>a.y-b.y);
+          for(let p=0;p<10;p++){ for(let k=1;k<pos.length;k++){ if(pos[k].y-pos[k-1].y<minGap){ const mid=(pos[k].y+pos[k-1].y)/2; pos[k-1].y=mid-minGap/2; pos[k].y=mid+minGap/2; } } if(pos[0].y<yTop)pos[0].y=yTop; for(let k=1;k<pos.length;k++) if(pos[k].y<pos[k-1].y+minGap)pos[k].y=pos[k-1].y+minGap; if(pos[pos.length-1].y>yBot)pos[pos.length-1].y=yBot; for(let k=pos.length-2;k>=0;k--) if(pos[k].y>pos[k+1].y-minGap)pos[k].y=pos[k+1].y-minGap; }
+          pos.forEach(p=>labelY[p.i]=evenY[p.i]+(p.y-evenY[p.i])*be);
+        }
+        for(let rk=1;rk<=RI_N;rk++){ const y=YP(rk); ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(W-pad.r,y); ctx.strokeStyle=rk===1?'rgba(61,220,151,0.10)':rk===RI_N?'rgba(255,93,93,0.10)':RI_COL.grid; ctx.lineWidth=rk===1||rk===RI_N?1:0.5; ctx.stroke(); }
+        const fz=Math.max(9,W*0.011); ctx.font=`400 ${fz}px 'IBM Plex Mono',monospace`; ctx.textAlign='right';
+        for(let rk=1;rk<=RI_N;rk++){ ctx.fillStyle=rk===1?'rgba(61,220,151,0.6)':rk>=RI_N-2?'rgba(255,93,93,0.5)':'rgba(216,221,228,0.25)'; ctx.fillText(rk,pad.l-6,YP(rk)+4); }
+        const SUB=8;
+        RI_M.forEach((m,idx)=>{
+          const hi=activeIdx===idx, d=dim&&!hi;
+          ctx.save(); ctx.globalAlpha=d?0.06:hi?1:0.55; ctx.strokeStyle=m.c||RI_COL.amber; ctx.lineWidth=d?1:hi?3.5:1.8; ctx.lineJoin='round'; ctx.lineCap='round'; ctx.beginPath();
+          const steps=Math.round((drawG-1)*SUB);
+          for(let s=0;s<=steps;s++){ const g=1+s/SUB; s===0?ctx.moveTo(XP(g),crY(m,g)):ctx.lineTo(XP(g),crY(m,g)); }
+          ctx.lineTo(XP(drawG),crY(m,drawG)); ctx.stroke(); ctx.restore();
+          const ex=XP(drawG),ey=crY(m,drawG);
+          ctx.save(); ctx.globalAlpha=d?0.06:1; ctx.beginPath(); ctx.arc(ex,ey,hi?5:3,0,Math.PI*2); ctx.fillStyle=m.c||RI_COL.amber; ctx.fill();
+          if(!d){ ctx.strokeStyle=RI_COL.panel; ctx.lineWidth=hi?2:1.5; ctx.stroke();
+            const fs=hi?Math.max(12,W*0.014):Math.max(9,W*0.011); ctx.font=`${hi?600:400} ${fs}px 'IBM Plex Mono',monospace`; ctx.fillStyle=hi?(m.c||RI_COL.amber):'rgba(216,221,228,0.6)'; ctx.textAlign='left'; ctx.fillText(m.s,ex+8,labelY[idx]!==undefined?labelY[idx]:ey); }
+          ctx.restore();
+        });
+        if(gwF>1){ const nx=XP(gwF); ctx.save(); ctx.strokeStyle='rgba(255,178,36,0.2)'; ctx.lineWidth=1; ctx.setLineDash([2,6]); ctx.beginPath(); ctx.moveTo(nx,pad.t); ctx.lineTo(nx,H-pad.b); ctx.stroke(); ctx.setLineDash([]); ctx.restore(); }
+      }
+      function syncUI(){ fill.style.width=(gwF/RI_GW)*100+'%'; slider.value=gwF; disp.textContent=gwF<=0?'—':'GW '+Math.min(RI_GW,Math.ceil(gwF)); buildLB(Math.max(1,Math.min(RI_GW,Math.round(gwF)||1))); }
+      function buildLB(gw){ if(gw===lastLBGW)return; lastLBGW=gw; const lb=$('#ri-lb'); const sorted=RI_M.map((m,i)=>({...m,i,rank:m.r[gw-1]})).sort((a,b)=>a.rank-b.rank); lb.innerHTML=''; sorted.forEach(m=>{ const el=document.createElement('div'); el.className='ri-lb-item'+(activeIdx===m.i?' ri-active':'')+(activeIdx>=0&&activeIdx!==m.i?' ri-dimmed':''); el.style.setProperty('--ri-c',m.c||RI_COL.amber); const rc=m.rank<=3?'ri-podium':m.rank>=RI_N-2?'ri-danger':''; el.innerHTML=`<span class="ri-lb-rank ${rc}">${m.rank}</span><span class="ri-lb-dot" style="background:${m.c||RI_COL.amber}"></span><div class="ri-lb-info"><div class="ri-lb-name">${m.f}</div><div class="ri-lb-team">${m.t}</div></div>`; el.addEventListener('click',()=>{ activeIdx=activeIdx===m.i?-1:m.i; lastLBGW=-1; buildLB(gw); draw(); },{signal:sig}); lb.appendChild(el); }); }
+      function stop(){ playing=false; if(animId){cancelAnimationFrame(animId);animId=null;} playIcon.innerHTML='<path d="M8 5v14l11-7z"/>'; }
+      function start(){ stop(); playFrom=gwF>=RI_GW?0:gwF; gwF=playFrom; playStart=null; playing=true; playIcon.innerHTML='<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>'; function step(ts){ if(!playing)return; if(!playStart)playStart=ts; const remaining=RI_GW-playFrom, dur=Math.max(1,remaining*MS_PER_GW), raw=Math.min((ts-playStart)/dur,1), e=raw<0.5?2*raw*raw:1-Math.pow(-2*raw+2,2)/2; gwF=Math.min(playFrom+e*remaining,RI_GW); syncUI(); draw(); if(raw<1){animId=requestAnimationFrame(step);} else{gwF=RI_GW;syncUI();draw();stop();} } animId=requestAnimationFrame(step); }
+      playBtn.addEventListener('click',()=>playing?stop():start(),{signal:sig});
+      slider.addEventListener('input',()=>{ stop(); gwF=parseFloat(slider.value); syncUI(); draw(); },{signal:sig});
+      window.addEventListener('resize',()=>{ if(!$('#panel-runin').hidden) resize(); },{signal:sig});
+
+      let firstShow=true;
+      return {
+        show(){ resize(); syncUI(); if(firstShow){ firstShow=false; start(); } },
+        pause(){ stop(); },
+        resize(){ resize(); },
+        destroy(){ stop(); ac.abort(); },
+      };
+    }
+
+    sel.addEventListener('change',()=>{ selectedSeason=sel.value; render(); });
+    const panel=$('#panel-runin');
+    new MutationObserver(()=>{
+      if(!panel.hidden){ if(!shown){ shown=true; if(engine) engine.show(); } }
+      else { shown=false; if(engine) engine.pause(); }
+    }).observe(panel,{attributes:true,attributeFilter:['hidden']});
+    render();
+  })();
 
 }).catch(e=>{
   $('#ft-status').textContent = 'DATA LOAD FAILED';

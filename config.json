@@ -1,5 +1,8 @@
 {
-  "season": "2025/26",
+  "season": "2026/27",
+  "current_season": "2026-27",
+  "season_archive": ["2025-26"],
+  "run_in_threshold": 10,
   "fpl_league_id": 680132,
   "joining_fee": 250,
   "gw_fine": 100,
@@ -21,9 +24,7 @@
     "Siyanda Ndaba": "The Dark Horse"
   },
   "run_in": {
-    "activate_from_gw": 32,
-    "enabled": false,
-    "_note": "Run-In screen is parked. Code is built so it can auto-activate from GW32; not shown in nav yet."
+    "_note": "The Run In tab shows the latest archived season as a finished story until the current season reaches run_in_threshold (GW10), then defaults to the current season with archives available via dropdown. run_in_threshold is the single source of truth — never hardcode the GW elsewhere."
   },
   "secrets": {
     "_note": "These are NOT stored here. Set as environment variables in Vercel (and GitHub Actions where needed): TREASURER_PASSWORD, RESEND_API_KEY. Email addresses live in a gitignored emails file, also injected via secret."
