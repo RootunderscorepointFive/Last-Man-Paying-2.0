@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T12:54:00.148Z",
+  "generated_at": "2026-06-14T13:26:36.847Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -192,5 +192,15 @@
       "credits": 0
     }
   ],
-  "email_log": []
+  "email_log": [
+    {
+      "type": "announcement",
+      "recipients": [
+        "Thembalethu Miya"
+      ],
+      "subject": "26/27 Test",
+      "sent_at": "2026-06-14T13:26:36.847Z",
+      "sent_by": "treasurer"
+    }
+  ]
 }
