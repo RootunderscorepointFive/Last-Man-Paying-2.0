@@ -236,7 +236,8 @@
   .tform { padding:16px; display:flex; flex-direction:column; gap:14px; }
   .tform label { display:block; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--dim); margin-bottom:5px; }
   .tform input[type=password], .tform input[type=text] { background:var(--panel-2); border:1px solid var(--border-bright); color:var(--text); font-family:'IBM Plex Mono',monospace; font-size:13px; padding:9px 10px; width:100%; }
-  .tform input:focus, .tform .sel:focus { border-color:var(--amber); outline:none; }
+  .tform textarea { background:var(--panel-2); border:1px solid var(--border-bright); color:var(--text); font-family:'IBM Plex Mono',monospace; font-size:13px; padding:9px 10px; width:100%; resize:vertical; line-height:1.5; }
+  .tform input:focus, .tform .sel:focus, .tform textarea:focus { border-color:var(--amber); outline:none; }
   .tbtns { display:flex; gap:8px; justify-content:flex-end; }
   .btn { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase; padding:8px 14px; border:1px solid var(--border-bright); background:var(--panel-2); color:var(--text); cursor:pointer; }
   .btn:hover { background:var(--border); } .btn[disabled]{ opacity:0.5; cursor:wait; }
@@ -417,6 +418,7 @@
       <button class="action" id="act-lg-addfine"><span class="key">F3</span><span class="label">Add Fine</span><div class="desc">manual · audited</div></button>
       <button class="action" id="act-lg-reverse"><span class="key">F4</span><span class="label">Reverse Fine</span><div class="desc">never deletes</div></button>
       <button class="action" id="act-lg-edit"><span class="key">F5</span><span class="label">Edit Fine</span><div class="desc">tracked history</div></button>
+      <button class="action" id="act-lg-announce"><span class="key">F6</span><span class="label">Send Announcement</span><div class="desc">treasurer · league-wide</div></button>
     </div>
   </section>
   <section id="panel-h2h" role="tabpanel" aria-labelledby="tab-h2h" tabindex="0" hidden>
@@ -793,8 +795,48 @@ function remindFlow(){
   }).catch(()=>{ const b=$('#rmd-banner'); if(b){ b.textContent='Sender: onboarding@resend.dev. Sandbox until domain verified — emails will land but look unofficial.'; b.classList.add('warn'); } });
 }
 
+// fill the sandbox banner of an open modal from /api/health
+function fillSenderBanner(id){
+  fetch('/api/health').then(r=>r.ok?r.json():null).then(h=>{
+    const b=$('#'+id); if(!b) return;
+    const fe=(h&&h.email&&h.email.from_email)||'onboarding@resend.dev';
+    const sandbox=!h||!h.email||h.email.sandbox;
+    b.textContent=sandbox?`Sender: ${fe}. Sandbox until domain verified — emails will land but look unofficial.`:`Sender: ${fe}.`;
+    b.classList.toggle('warn',!!sandbox);
+  }).catch(()=>{ const b=$('#'+id); if(b){ b.textContent='Sender: onboarding@resend.dev. Sandbox until domain verified — emails will land but look unofficial.'; b.classList.add('warn'); } });
+}
+
+// F6 — Send Announcement (Ledger) · general league-wide comms (not debt)
+function announceFlow(){
+  if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
+  const rows=[...MANAGERS].sort((a,b)=>a.name.localeCompare(b.name)).map(m=>
+    `<label class="rmd-row"><input type="checkbox" class="anc-cb" value="${attrEsc(m.name)}" checked>
+      <span class="rmd-main"><span class="rmd-name">${m.name}</span><span class="rmd-bd">${m.team}</span></span></label>`).join('');
+  openTreasurer({ title:'Send Announcement', sub:`league-wide comms · sends via Resend`,
+    bodyHtml:`<div id="anc-banner" class="rmd-banner">Sender: checking…</div>
+      <div><label for="anc-subject">Subject</label><input type="text" id="anc-subject" placeholder="e.g. GW1 deadline — Friday 18:30"></div>
+      <div><label for="anc-body">Message</label><textarea id="anc-body" rows="5" placeholder="Your announcement to the league…"></textarea></div>
+      <div><label>Recipients · ${MANAGERS.length} (untick to exclude)</label><div class="rmd-list">${rows}</div></div>`,
+    onSubmit: async (pass)=>{
+      const subject=$('#anc-subject').value.trim(), msg=$('#anc-body').value, recipients=[...document.querySelectorAll('.anc-cb:checked')].map(c=>c.value);
+      if(!subject){ $('#tm-err').textContent='Subject is required.'; return; }
+      if(!msg.trim()){ $('#tm-err').textContent='Message is required.'; return; }
+      if(!recipients.length){ $('#tm-err').textContent='Select at least one recipient.'; return; }
+      try {
+        const r=await postAction('/api/send-announcement',{password:pass,subject,body:msg,recipients});
+        let m=`Sent ${r.sent} announcement${r.sent===1?'':'s'}`; if(r.skipped) m+=`, skipped ${r.skipped}`;
+        closeTreasurer(); toast(m,'ok'); toast('audit committing… profile log updates after redeploy','');
+        if(r.skipped && r.skippedDetails && r.skippedDetails.length)
+          toast('Skipped — '+r.skippedDetails.map(s=>`${fn(s.name)}: ${s.reason}`).join('; '),'err');
+      } catch(err){ onErr(err); }
+    }
+  });
+  fillSenderBanner('anc-banner');
+}
+
 // wiring
 $('#act-lg-remind').onclick=()=>remindFlow();
+$('#act-lg-announce').onclick=()=>announceFlow();
 $('#act-lg-markpaid').onclick=()=>markPaidFlow();
 $('#act-lg-addfine').onclick=()=>addFineFlow();
 $('#act-lg-reverse').onclick=()=>reverseFineFlow();
@@ -1075,7 +1117,7 @@ Promise.all([
     }).join('');
     $('#pf-payments').innerHTML=`<table class="ph"><thead><tr><th>GW</th><th class="r">Amount</th><th>Type</th><th>Paid</th></tr></thead><tbody>${head}${fineRows}</tbody></table>`;
     // email history — audit trail of reminders + confirmations sent to this manager
-    const elogs=EMAIL_LOG.filter(e=>e.recipient===m.name).sort((a,b)=>String(b.sent_at||'').localeCompare(String(a.sent_at||'')));
+    const elogs=EMAIL_LOG.filter(e=>e.recipient===m.name || (e.recipients||[]).includes(m.name)).sort((a,b)=>String(b.sent_at||'').localeCompare(String(a.sent_at||'')));
     $('#pf-emails').innerHTML = elogs.length
       ? `<table class="ph"><thead><tr><th>Date</th><th>Type</th><th>Subject</th></tr></thead><tbody>`+
         elogs.map(e=>`<tr><td>${String(e.sent_at||'').slice(0,10)}</td><td class="typ">${String(e.type||'').replace(/</g,'&lt;')}</td><td>${String(e.subject||'').replace(/</g,'&lt;')}</td></tr>`).join('')+

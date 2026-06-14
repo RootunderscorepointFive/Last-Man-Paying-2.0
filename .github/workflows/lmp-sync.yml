@@ -10,13 +10,11 @@ name: LMP weekly sync
 # and re-runs are no-ops until there's a new GW to process.
 
 on:
-  # OFF-SEASON PAUSE (2026/27 rollover): the daily cron is disabled while the
-  # FPL API still returns 2025/26 final data — an automatic run re-applies last
-  # season's GW38 fines and overwrites the clean reset. Re-enable this schedule
-  # once the 2026/27 FPL season kicks off (first GW1 fixtures live), or add a
-  # season-aware guard so the sync skips data that predates config.current_season.
-  # schedule:
-  #   - cron: '0 6 * * *'      # 06:00 UTC daily; idempotent, only writes on a new finished GW
+  # Daily cron is safe to run year-round: the "Season guard" step below skips the
+  # sync while the FPL API still serves a previous season's data (off-season),
+  # and auto-resumes when the season matching config.current_season kicks off.
+  schedule:
+    - cron: '0 6 * * *'        # 06:00 UTC daily; idempotent, only writes on a new finished GW
   workflow_dispatch:
     inputs:
       gw:
@@ -46,10 +44,16 @@ jobs:
         with:
           node-version: '20'   # global fetch built in; no npm install needed
 
+      - name: Season guard
+        id: guard
+        run: node season_guard.js   # writes proceed=true|false; skips off-season previous-season data
+
       - name: Refresh live points (FPL API)
+        if: steps.guard.outputs.proceed == 'true'
         run: node sync_fpl.js
 
       - name: Apply LMP bottom-3 fines
+        if: steps.guard.outputs.proceed == 'true'
         env:
           GW: ${{ github.event.inputs.gw }}
           DRY: ${{ github.event.inputs.dry_run }}
@@ -60,10 +64,11 @@ jobs:
           node apply_lmp_fines.js $ARGS
 
       - name: Generate epithets
+        if: steps.guard.outputs.proceed == 'true'
         run: node generate_epithets.js
 
       - name: Commit & push if changed
-        if: ${{ github.event.inputs.dry_run != 'true' }}
+        if: ${{ steps.guard.outputs.proceed == 'true' && github.event.inputs.dry_run != 'true' }}
         run: |
           git config user.name  "lmp-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
