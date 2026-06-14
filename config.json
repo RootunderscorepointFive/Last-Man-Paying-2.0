@@ -26,6 +26,57 @@
   "run_in": {
     "_note": "The Run In tab shows the latest archived season as a finished story until the current season reaches run_in_threshold (GW10), then defaults to the current season with archives available via dropdown. run_in_threshold is the single source of truth — never hardcode the GW elsewhere."
   },
+  "rules": {
+    "season": "2026/27",
+    "agreed_on": "10 August 2025",
+    "valid_until": "30 May 2026 (UEFA Champions League final)",
+    "sections": [
+      {
+        "heading": "Joining Fee",
+        "body": "R250 per member. Used to book a venue for the UEFA Champions League final viewing. Due by 30 September 2025. Failure to pay results in gameweek fines being accrued (R100 per GW) until payment is made."
+      },
+      {
+        "heading": "Last Man Paying — Weekly Fines",
+        "body": "Each gameweek, the three teams with the lowest scores pay R100 each. If there is a tie at the third, second, or first lowest score, all tied teams pay."
+      },
+      {
+        "heading": "End of Season Penalty",
+        "body": "The player with the lowest aggregate score at the end of the season pays an additional R250."
+      },
+      {
+        "heading": "Payment Schedule",
+        "body": "Payments are split into two this season. First payment is due at the end of Gameweek 19 (BEFORE GAMEWEEK 20 BEGINS). Failure to pay by the deadline results in R100 accruing for each subsequent gameweek (from the start of GW20). Reference your EFT with your name followed by 'FPL' — e.g. 'Sthe FPL'."
+      },
+      {
+        "heading": "Leaving the League",
+        "body": "Members who wish to leave after Gameweek 18 may do so, but must pay the amount accumulated plus an additional 150% of that amount. They will also not be allowed to attend future events unless they comply with this rule."
+      },
+      {
+        "heading": "The Venue",
+        "body": "The person at the bottom of the log at the end of GW19 is responsible for finding the venue for the final by 31 January 2026. The venue must be in Gauteng and must be approved by the person at the top of the log at the end of GW19. Failure to find a venue by 31 January 2026 results in R100 fines per gameweek until finalised."
+      },
+      {
+        "heading": "The Winner",
+        "body": "Selects alcohol of their choice to be consumed during the Champions League final. Receives a football jersey as a reward — strictly replica / fan jersey, no authentics."
+      },
+      {
+        "heading": "The Loser",
+        "body": "Must buy ice from their own personal funds and serves as squire to the winner. If the squire is unavailable due to circumstances beyond their control, the duties fall to the second-biggest loser at the board's discretion."
+      },
+      {
+        "heading": "Guests",
+        "body": "Male guests wishing to watch along must pay the average contribution made throughout the season (determined at season end). Female guests are welcome to join after the game."
+      },
+      {
+        "heading": "Force Majeure",
+        "body": "If COVID-19 or a similar event interrupts the games, these rules remain in place. No concessions or force majeure will be applied."
+      },
+      {
+        "heading": "Banking Details",
+        "body": "Refer to the banking block in any reminder email, or the league treasurer. Reference: {first_name} FPL."
+      }
+    ]
+  },
   "secrets": {
     "_note": "These are NOT stored here. Set as environment variables in Vercel (and GitHub Actions where needed): TREASURER_PASSWORD, RESEND_API_KEY. Email addresses live in a gitignored emails file, also injected via secret."
   }

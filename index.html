@@ -271,6 +271,14 @@
     .cmp-pickers, .cmp-head, .cmp-row { grid-template-columns: 1fr 70px 1fr; }
   }
 
+  .tb-rules { background:none; border:1px solid var(--border-bright); color:var(--amber); font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; cursor:pointer; }
+  .tb-rules:hover { background:var(--panel-2); border-color:var(--amber); }
+  .rules-body { padding:6px 18px 4px; }
+  .rules-sec { padding:14px 0; border-bottom:1px dashed var(--border-bright); }
+  .rules-sec:last-child { border-bottom:none; }
+  .rules-sec h4 { color:var(--amber); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; margin-bottom:7px; }
+  .rules-sec p { color:var(--text); font-size:13px; line-height:1.6; letter-spacing:0.2px; }
+  .rules-meta { padding:12px 0 2px; color:var(--dim); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; }
   .offseason { background:rgba(var(--amber-rgb),0.09); border-bottom:1px solid #6a4a14; color:var(--amber); font-size:11px; letter-spacing:1px; padding:9px 16px; text-transform:uppercase; }
   .offseason strong { color:var(--text); font-weight:700; }
 
@@ -341,6 +349,7 @@
     </svg>
   </div>
   <div class="right">
+    <button class="tb-rules" id="tb-rules" type="button">Rules</button>
     <span class="live">Live</span>
     <span>GW <strong id="tb-gw">--</strong></span>
     <span>Session <strong id="tb-session">--</strong></span>
@@ -530,6 +539,17 @@
     </div>
     <div class="crew-wrap"><img id="crew-img" alt="The Last Man Paying league members" loading="lazy"></div>
     <div class="modal-foot">17 entries · one wooden spoon · tap outside or press ESC to close</div>
+  </div>
+</div>
+
+<div class="modal" id="rules-modal" role="dialog" aria-modal="true" aria-labelledby="rules-title">
+  <div class="modal-card">
+    <div class="modal-top">
+      <div><div class="modal-team" id="rules-title">› league_rules</div><div class="modal-sub" id="rules-sub">—</div></div>
+      <button class="modal-x" id="rules-x" type="button">ESC ✕</button>
+    </div>
+    <div class="rules-body" id="rules-body"></div>
+    <div class="modal-foot">tap outside or press ESC to close</div>
   </div>
 </div>
 
@@ -860,6 +880,22 @@ Promise.all([
   $('#tb-session').textContent = SEASON;
   $('#ft-meta').textContent = `${ledger.managers.length} entries · GW${L}/${TOTAL_GWS} · LMP TERMINAL v2.0`;
   if (L < 1) $('#offseason').hidden = false;   // off-season: season hasn't started
+
+  // ── Rules modal (content from config.rules) ──
+  const rEsc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const rules = config && config.rules;
+  if (rules) {
+    $('#rules-sub').textContent = `Season ${rules.season}`;
+    const meta = `<div class="rules-meta">Agreed ${rEsc(rules.agreed_on)} · valid until ${rEsc(rules.valid_until)}</div>`;
+    const secs = (rules.sections||[]).map(s=>`<div class="rules-sec"><h4>${rEsc(s.heading)}</h4><p>${rEsc(s.body)}</p></div>`).join('');
+    $('#rules-body').innerHTML = meta + secs;
+  } else { $('#tb-rules').style.display = 'none'; }
+  const rulesModal = $('#rules-modal');
+  const closeRules = () => rulesModal.classList.remove('active');
+  $('#tb-rules').onclick = () => rulesModal.classList.add('active');
+  $('#rules-x').onclick = closeRules;
+  rulesModal.addEventListener('click', e => { if (e.target === rulesModal) closeRules(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && rulesModal.classList.contains('active')) closeRules(); });
 
   // per-manager GW score
   const scores = api.gwData.map(g=>({ name:g.manager, entry:g.entry, s:(g.gwPts||[])[idx]??0, prev:(g.gwPts||[])[idx-1]??null }));
