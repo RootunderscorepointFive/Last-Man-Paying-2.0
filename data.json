@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T13:26:36.847Z",
+  "generated_at": "2026-06-14T20:45:19.981Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -75,7 +75,26 @@
       "name": "Thato Choshi",
       "team": "TAYDO FC",
       "joining_fee_paid": false,
-      "fines": [],
+      "fines": [
+        {
+          "id": "f_6410488_1781469920159",
+          "gw": null,
+          "amount": 1023,
+          "type": "other",
+          "status": "confirmed",
+          "reason": "He had a plus one last during last seasons final.",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "treasurer",
+          "added_date": "2026-06-14T20:45:19.981Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
       "bottom_finishes": [],
       "epithet": null,
       "epithet_tagline": null,
