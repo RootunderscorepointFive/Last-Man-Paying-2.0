@@ -10,8 +10,13 @@ name: LMP weekly sync
 # and re-runs are no-ops until there's a new GW to process.
 
 on:
-  schedule:
-    - cron: '0 6 * * *'        # 06:00 UTC daily; idempotent, only writes on a new finished GW
+  # OFF-SEASON PAUSE (2026/27 rollover): the daily cron is disabled while the
+  # FPL API still returns 2025/26 final data — an automatic run re-applies last
+  # season's GW38 fines and overwrites the clean reset. Re-enable this schedule
+  # once the 2026/27 FPL season kicks off (first GW1 fixtures live), or add a
+  # season-aware guard so the sync skips data that predates config.current_season.
+  # schedule:
+  #   - cron: '0 6 * * *'      # 06:00 UTC daily; idempotent, only writes on a new finished GW
   workflow_dispatch:
     inputs:
       gw:
