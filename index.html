@@ -786,24 +786,19 @@ function remindFlow(){
       } catch(err){ onErr(err); }
     }
   });
-  fetch('/api/health').then(r=>r.ok?r.json():null).then(h=>{
-    const b=$('#rmd-banner'); if(!b) return;
-    const fe=(h&&h.email&&h.email.from_email)||'onboarding@resend.dev';
-    const sandbox=!h||!h.email||h.email.sandbox;
-    b.textContent=sandbox?`Sender: ${fe}. Sandbox until domain verified — emails will land but look unofficial.`:`Sender: ${fe}.`;
-    b.classList.toggle('warn',!!sandbox);
-  }).catch(()=>{ const b=$('#rmd-banner'); if(b){ b.textContent='Sender: onboarding@resend.dev. Sandbox until domain verified — emails will land but look unofficial.'; b.classList.add('warn'); } });
+  fillSenderBanner('rmd-banner');
 }
 
 // fill the sandbox banner of an open modal from /api/health
+const SANDBOX_NOTE = fe => `Sender: ${fe}. SANDBOX — Resend only delivers to the account owner (themba2miya@gmail.com); every other recipient is skipped until a domain is verified. Set FROM_EMAIL to a verified domain to send league-wide.`;
 function fillSenderBanner(id){
   fetch('/api/health').then(r=>r.ok?r.json():null).then(h=>{
     const b=$('#'+id); if(!b) return;
     const fe=(h&&h.email&&h.email.from_email)||'onboarding@resend.dev';
     const sandbox=!h||!h.email||h.email.sandbox;
-    b.textContent=sandbox?`Sender: ${fe}. Sandbox until domain verified — emails will land but look unofficial.`:`Sender: ${fe}.`;
+    b.textContent=sandbox?SANDBOX_NOTE(fe):`Sender: ${fe}.`;
     b.classList.toggle('warn',!!sandbox);
-  }).catch(()=>{ const b=$('#'+id); if(b){ b.textContent='Sender: onboarding@resend.dev. Sandbox until domain verified — emails will land but look unofficial.'; b.classList.add('warn'); } });
+  }).catch(()=>{ const b=$('#'+id); if(b){ b.textContent=SANDBOX_NOTE('onboarding@resend.dev'); b.classList.add('warn'); } });
 }
 
 // F6 — Send Announcement (Ledger) · general league-wide comms (not debt)
