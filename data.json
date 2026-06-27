@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T20:45:19.981Z",
+  "generated_at": "2026-06-27T05:33:29.063Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -219,6 +219,13 @@
       ],
       "subject": "26/27 Test",
       "sent_at": "2026-06-14T13:26:36.847Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Thembalethu Miya",
+      "subject": "FPL Last Man Paying — outstanding R250",
+      "sent_at": "2026-06-27T05:33:28.999Z",
       "sent_by": "treasurer"
     }
   ]
