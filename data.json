@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T05:33:29.063Z",
+  "generated_at": "2026-06-27T05:36:23.801Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -226,6 +226,15 @@
       "recipient": "Thembalethu Miya",
       "subject": "FPL Last Man Paying — outstanding R250",
       "sent_at": "2026-06-27T05:33:28.999Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "announcement",
+      "recipients": [
+        "Thembalethu Miya"
+      ],
+      "subject": "Smoke test please ignore",
+      "sent_at": "2026-06-27T05:36:23.801Z",
       "sent_by": "treasurer"
     }
   ]
