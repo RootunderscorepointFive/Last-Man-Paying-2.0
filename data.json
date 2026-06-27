@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T05:36:23.801Z",
+  "generated_at": "2026-06-27T05:39:46.655Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -235,6 +235,30 @@
       ],
       "subject": "Smoke test please ignore",
       "sent_at": "2026-06-27T05:36:23.801Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "announcement",
+      "recipients": [
+        "Bheka Bhengu",
+        "Fanele Msweli",
+        "Kudzai Kupeta",
+        "Learnmore Ntshangase",
+        "Lethu Mkhwanazi",
+        "Luthando Ngidi",
+        "Mbuyi Katumba",
+        "Mhlengi Kunene",
+        "Minenhle Khumalo",
+        "Mtho Mabizela",
+        "Nkosi The Chef",
+        "President Gamede",
+        "Siyanda Ndaba",
+        "Sthe Coqueto",
+        "Thato Choshi",
+        "Thembalethu Miya"
+      ],
+      "subject": "System Check: Last Man Paying Notification",
+      "sent_at": "2026-06-27T05:39:46.655Z",
       "sent_by": "treasurer"
     }
   ]
