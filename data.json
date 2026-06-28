@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T05:39:46.655Z",
+  "generated_at": "2026-06-28T13:37:42.997Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -259,6 +259,16 @@
       ],
       "subject": "System Check: Last Man Paying Notification",
       "sent_at": "2026-06-27T05:39:46.655Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "announcement",
+      "recipients": [
+        "Nhlakanipho Ntombela",
+        "Thembalethu Miya"
+      ],
+      "subject": "26/27 Test",
+      "sent_at": "2026-06-28T13:37:42.997Z",
       "sent_by": "treasurer"
     }
   ]
