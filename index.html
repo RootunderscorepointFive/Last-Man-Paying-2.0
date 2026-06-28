@@ -1288,7 +1288,7 @@ Promise.all([
           pos.forEach(p=>labelY[p.i]=evenY[p.i]+(p.y-evenY[p.i])*be);
         }
         for(let rk=1;rk<=RI_N;rk++){ const y=YP(rk); ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(W-pad.r,y); ctx.strokeStyle=rk===1?'rgba(61,220,151,0.10)':rk===RI_N?'rgba(255,93,93,0.10)':RI_COL.grid; ctx.lineWidth=rk===1||rk===RI_N?1:0.5; ctx.stroke(); }
-        const fz=Math.max(9,W*0.011); ctx.font=`400 ${fz}px 'IBM Plex Mono',monospace`; ctx.textAlign='right';
+        const fz=Math.min(13, Math.max(9,W*0.011)); ctx.font=`400 ${fz}px 'IBM Plex Mono',monospace`; ctx.textAlign='right';
         for(let rk=1;rk<=RI_N;rk++){ ctx.fillStyle=rk===1?'rgba(61,220,151,0.6)':rk>=RI_N-2?'rgba(255,93,93,0.5)':'rgba(216,221,228,0.25)'; ctx.fillText(rk,pad.l-6,YP(rk)+4); }
         const SUB=8;
         RI_M.forEach((m,idx)=>{
@@ -1300,7 +1300,7 @@ Promise.all([
           const ex=XP(drawG),ey=crY(m,drawG);
           ctx.save(); ctx.globalAlpha=d?0.06:1; ctx.beginPath(); ctx.arc(ex,ey,hi?5:3,0,Math.PI*2); ctx.fillStyle=m.c||RI_COL.amber; ctx.fill();
           if(!d){ ctx.strokeStyle=RI_COL.panel; ctx.lineWidth=hi?2:1.5; ctx.stroke();
-            const fs=hi?Math.max(12,W*0.014):Math.max(9,W*0.011); ctx.font=`${hi?600:400} ${fs}px 'IBM Plex Mono',monospace`; ctx.fillStyle=hi?(m.c||RI_COL.amber):'rgba(216,221,228,0.6)'; ctx.textAlign='left'; ctx.fillText(m.s,ex+8,labelY[idx]!==undefined?labelY[idx]:ey); }
+            const fs=hi?Math.min(15, Math.max(12,W*0.014)):Math.min(13, Math.max(9,W*0.011)); ctx.font=`${hi?600:400} ${fs}px 'IBM Plex Mono',monospace`; ctx.fillStyle=hi?(m.c||RI_COL.amber):'rgba(216,221,228,0.6)'; ctx.textAlign='left'; ctx.fillText(m.s,ex+8,labelY[idx]!==undefined?labelY[idx]:ey); }
           ctx.restore();
         });
         if(gwF>1){ const nx=XP(gwF); ctx.save(); ctx.strokeStyle='rgba(255,178,36,0.2)'; ctx.lineWidth=1; ctx.setLineDash([2,6]); ctx.beginPath(); ctx.moveTo(nx,pad.t); ctx.lineTo(nx,H-pad.b); ctx.stroke(); ctx.setLineDash([]); ctx.restore(); }
