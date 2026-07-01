@@ -316,46 +316,6 @@
   .ri-empty { padding:64px 20px; text-align:center; color:var(--dim); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; }
   @media (max-width:520px){ #ri-lb{ grid-template-columns:1fr 1fr; } }
 
-  /* ── Squads Tab ── */
-  .mgr-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:1px; background:var(--border); padding:0; }
-  .mgr-card { background:var(--panel); padding:12px 10px; cursor:pointer; border:none; width:100%; text-align:left; font-family:'IBM Plex Mono',monospace; border-bottom:2px solid transparent; transition:background 0.1s; }
-  .mgr-card:hover { background:var(--panel-2); }
-  .mgr-card.active { background:var(--bg); border-bottom-color:var(--amber); }
-  .mgr-card .mc-sym { color:var(--amber); font-size:11px; font-weight:700; letter-spacing:2px; }
-  .mgr-card .mc-team { color:var(--text); font-size:11px; margin-top:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .mgr-card .mc-mgr { color:var(--dim); font-size:10px; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .mgr-card .mc-meta { display:flex; gap:6px; margin-top:5px; align-items:center; }
-  .mgr-card .mc-rank { font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:13px; color:var(--dim); }
-  .mgr-card .mc-rank.top { color:var(--amber); }
-  .mgr-card .mc-val { font-size:9px; color:var(--green); letter-spacing:0.5px; }
-  .sq-header { display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px; padding:16px 18px 12px; }
-  .sq-title { font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:28px; color:var(--amber); line-height:1; }
-  .sq-subtitle { font-size:10px; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; margin-top:4px; }
-  .sq-meta-row { display:flex; gap:18px; flex-wrap:wrap; }
-  .sq-stat { text-align:right; }
-  .sq-stat .ssl { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--dim); }
-  .sq-stat .ssv { font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:19px; color:var(--text); font-variant-numeric:tabular-nums; }
-  .sq-stat .ssv.amber{color:var(--amber);} .sq-stat .ssv.green{color:var(--green);}
-  .sq-pitch-full { background:linear-gradient(180deg,#0e2a1a,#0a1f14); border:1px solid var(--border); margin:0 14px 14px; padding:20px 8px 10px; display:flex; flex-direction:column; gap:20px; }
-  .sq-chip-banner { background:rgba(var(--amber-rgb),0.12); border:1px solid #6a4a14; color:var(--amber); font-size:10px; letter-spacing:2px; text-transform:uppercase; text-align:center; padding:5px; margin-bottom:6px; }
-  .sq-prow { display:flex; justify-content:space-around; gap:4px; flex-wrap:wrap; }
-  .sq-pcard { width:72px; text-align:center; }
-  .sq-pphoto { width:50px; height:64px; object-fit:cover; margin:0 auto; background:var(--panel-2); border:1px solid var(--border-bright); display:block; }
-  .sq-pcard.cap .sq-pphoto { border-color:var(--amber); box-shadow:0 0 0 2px var(--amber); }
-  .sq-pcard.vice .sq-pphoto { border-color:var(--blue); box-shadow:0 0 0 2px var(--blue); }
-  .sq-pname { font-size:9px; color:#e8edf2; margin-top:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .sq-price { font-size:9px; color:var(--green); font-variant-numeric:tabular-nums; }
-  .sq-pts { font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:13px; font-variant-numeric:tabular-nums; color:var(--text); }
-  .sq-cap-badge { font-size:8px; font-weight:700; letter-spacing:1px; }
-  .sq-cap-badge.c { color:var(--amber); } .sq-cap-badge.v { color:var(--blue); }
-  .sq-bench-row { display:flex; justify-content:center; gap:10px; align-items:flex-start; margin:0 14px; padding:12px 0 8px; border-top:1px dashed var(--border); }
-  .sq-bench-label { align-self:center; font-size:9px; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; margin-right:4px; }
-  .sq-ownership-bar { height:3px; background:var(--panel); border:1px solid var(--border); margin-top:2px; }
-  .sq-ownership-bar .f { height:100%; background:var(--green); }
-  #sq-tab-placeholder { padding:56px 18px; text-align:center; }
-  .sq-offseason-msg { color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; font-size:11px; }
-  .sq-offseason-msg strong { display:block; color:var(--amber); font-size:20px; font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; letter-spacing:0; margin-bottom:8px; }
-
   /* ── Analytics Tab ── */
   .an-banner { padding:10px 18px; background:rgba(var(--amber-rgb),0.07); border-bottom:1px solid #6a4a14; color:var(--amber); font-size:11px; letter-spacing:1px; text-transform:uppercase; display:flex; align-items:center; gap:10px; }
   .an-banner span { color:var(--dim); }
@@ -444,8 +404,7 @@
   <button class="tab" role="tab" id="tab-h2h" aria-controls="panel-h2h" aria-selected="false" tabindex="-1"><span class="idx">04</span>Head-to-Head</button>
   <button class="tab" role="tab" id="tab-profiles" aria-controls="panel-profiles" aria-selected="false" tabindex="-1"><span class="idx">05</span>Profiles</button>
   <button class="tab" role="tab" id="tab-runin" aria-controls="panel-runin" aria-selected="false" tabindex="-1"><span class="idx">06</span>The Run In</button>
-  <button class="tab" role="tab" id="tab-squads" aria-controls="panel-squads" aria-selected="false" tabindex="-1"><span class="idx">07</span>Squads</button>
-  <button class="tab" role="tab" id="tab-analytics" aria-controls="panel-analytics" aria-selected="false" tabindex="-1"><span class="idx">08</span>Analytics</button>
+  <button class="tab" role="tab" id="tab-analytics" aria-controls="panel-analytics" aria-selected="false" tabindex="-1"><span class="idx">07</span>Analytics</button>
 </nav>
 <div id="offseason" class="offseason" hidden>● 2026/27 hasn't kicked off — live standings, scores &amp; fines populate after GW1. Head to <strong>The Run In</strong> for last season's story.</div>
 
@@ -546,13 +505,6 @@
       <button class="action" id="act-pf-squad"><span class="key">F2</span><span class="label">GW Squad</span><div class="desc">view starting XI</div></button>
       <button class="action" id="act-pf-rand"><span class="key">F1</span><span class="label">Random Manager</span><div class="desc">surprise me</div></button>
     </div>
-  </section>
-
-  <section id="panel-squads" role="tabpanel" aria-labelledby="tab-squads" tabindex="0" hidden>
-    <div class="mgr-grid" id="sq-tab-mgr-grid"></div>
-    <div id="sq-tab-header"></div>
-    <div id="sq-tab-pitch"></div>
-    <div id="sq-tab-placeholder"></div>
   </section>
 
   <section id="panel-analytics" role="tabpanel" aria-labelledby="tab-analytics" tabindex="0" hidden>
@@ -1424,343 +1376,178 @@ Promise.all([
     render();
   })();
 
-  // ── SQUADS TAB ──────────────────────────────────────────────────────────────
-  (function setupSquadsTab(){
-    const hasData = api.gwData && api.gwData.length > 0 && api.gwData[0].currentPicks && api.gwData[0].currentPicks.length > 0;
-    const sortedMgrs = [...MM].sort((a,b) => b.pts - a.pts);
-
-    if (!hasData) {
-      $('#sq-tab-placeholder').innerHTML = `
-        <div class="sq-offseason-msg">
-          <strong>Season hasn't started yet</strong>
-          Squads populate automatically after GW1 sync.<br>
-          Check back once the season kicks off in August.
-        </div>`;
-      return;
-    }
-
-    let activeMgr = sortedMgrs[0].name;
-
-    function renderMgrGrid() {
-      $('#sq-tab-mgr-grid').innerHTML = sortedMgrs.map((m,i) => {
-        const g = gwByEntry[m.entry] || {};
-        const val = g.squadValue ? '£'+(g.squadValue/10).toFixed(1)+'m' : '';
-        return `<button class="mgr-card${m.name===activeMgr?' active':''}" data-sqmgr="${m.name}">
-          <div class="mc-sym">${sym(m.name)}</div>
-          <div class="mc-team">${m.team}</div>
-          <div class="mc-mgr">${m.name.split(' ')[0]}</div>
-          <div class="mc-meta">
-            <span class="mc-rank ${i<3?'top':''}">${i+1}</span>
-            ${val?`<span class="mc-val">${val}</span>`:''}
-          </div>
-        </button>`;
-      }).join('');
-    }
-
-    function renderSquadPitch(name) {
-      const m = mmByName[name];
-      const g = m && gwByEntry[m.entry];
-      if (!g || !g.currentPicks || !g.currentPicks.length) {
-        $('#sq-tab-header').innerHTML = '';
-        $('#sq-tab-pitch').innerHTML = `<div class="an-placeholder">No squad data for ${name}</div>`;
-        return;
-      }
-      const pos = posByName[name] || '—';
-      const squadVal = g.squadValue ? '£'+(g.squadValue/10).toFixed(1)+'m' : '—';
-      const captain = g.currentPicks.find(p => p.is_captain);
-      const chipLabels = {'wildcard':'WC','bboost':'BB','3xc':'TC','freehit':'FH','manager':'MC'};
-      const chipCls   = {'wildcard':'chip-wc','bboost':'chip-bb','3xc':'chip-tc','freehit':'chip-fh','manager':'chip-mc'};
-      const chipsUsed = (g.chips||[]).map(c=>`<span class="chip-badge ${chipCls[c.name]||''}">${chipLabels[c.name]||c.name.toUpperCase()} GW${c.event}</span>`).join(' ');
-
-      $('#sq-tab-header').innerHTML = `
-        <div class="sq-header">
-          <div>
-            <div class="sq-title">${g.team}</div>
-            <div class="sq-subtitle">${g.manager} · ${ordOf(pos)} in league</div>
-          </div>
-          <div class="sq-meta-row">
-            <div class="sq-stat"><div class="ssl">Squad Value</div><div class="ssv green">${squadVal}</div></div>
-            <div class="sq-stat"><div class="ssl">GW${L} Pts</div><div class="ssv amber">${(g.gwPts||[])[idx]??'—'}</div></div>
-            <div class="sq-stat"><div class="ssl">Captain</div><div class="ssv" style="font-size:14px">${captain?captain.name:'—'}</div></div>
-          </div>
-        </div>
-        ${g.activeChip?`<div style="padding:0 14px 10px"><div class="sq-chip-banner">Active chip: ${chipLabels[g.activeChip]||g.activeChip.toUpperCase()}</div></div>`:''}
-        ${chipsUsed?`<div style="padding:0 18px 10px;display:flex;gap:6px;flex-wrap:wrap">${chipsUsed}</div>`:''}`;
-
-      const card = (p, bench) => {
-        const cls = p.is_captain ? 'cap' : p.is_vice_captain ? 'vice' : '';
-        const badge = p.is_captain ? '<span class="sq-cap-badge c">CAPT</span>' : p.is_vice_captain ? '<span class="sq-cap-badge v">VICE</span>' : '<span class="sq-cap-badge">&nbsp;</span>';
-        const price = p.cost ? `<div class="sq-price">£${(p.cost/10).toFixed(1)}m</div>` : '';
-        const gwPt = (g.gwPts||[])[idx];
-        const pts = !bench && gwPt != null ? `<div class="sq-pts">${p.multiplier > 1 ? gwPt * p.multiplier : '—'}</div>` : '';
-        const img = `https://resources.premierleague.com/premierleague/photos/players/110x140/p${p.code}.png`;
-        return `<div class="sq-pcard ${cls}${bench?' bench-card':''}">
-          <img class="sq-pphoto" src="${img}" alt="${p.name}" loading="lazy" onerror="this.src='https://fantasy.premierleague.com/static/media/player-missing-110.64095a5f.png'">
-          <div class="sq-pname">${p.name}</div>
-          ${price}${badge}
-        </div>`;
-      };
-
-      const starters = g.currentPicks.slice(0, 11);
-      const bench = g.currentPicks.slice(11);
-      const rows = {1:[],2:[],3:[],4:[]};
-      starters.forEach(p => { (rows[p.position]||rows[3]).push(p); });
-
-      $('#sq-tab-pitch').innerHTML = `
-        <div class="sq-pitch-full">
-          ${[1,2,3,4].map(pos => `<div class="sq-prow">${rows[pos].map(p=>card(p,false)).join('')}</div>`).join('')}
-        </div>
-        <div class="sq-bench-row">
-          <span class="sq-bench-label">Bench</span>
-          ${bench.map(p=>card(p,true)).join('')}
-        </div>`;
-    }
-
-    renderMgrGrid();
-    renderSquadPitch(activeMgr);
-
-    $('#sq-tab-mgr-grid').addEventListener('click', e => {
-      const btn = e.target.closest('[data-sqmgr]');
-      if (!btn) return;
-      activeMgr = btn.dataset.sqmgr;
-      renderMgrGrid();
-      renderSquadPitch(activeMgr);
-    });
-  })();
-
-  // ── ANALYTICS TAB ──────────────────────────────────────────────────────────
+  // ── ANALYTICS TAB (player / football focused) ───────────────────────────────
   (function setupAnalyticsTab(){
-    const noGw = !api.gwData || api.gwData.length === 0 || (api.gwData[0].gwPts||[]).length === 0;
-    const chipLabels = {'wildcard':'Wildcard','bboost':'Bench Boost','3xc':'Triple Captain','freehit':'Free Hit','manager':'Manager'};
-    const chipCls   = {'wildcard':'chip-wc','bboost':'chip-bb','3xc':'chip-tc','freehit':'chip-fh','manager':'chip-mc'};
+    const leagueOwn  = api.leagueOwnership  || [];
+    const fplXfers   = api.topFplTransfers  || [];
+    const totalMgrs  = api.gwData && api.gwData.length ? api.gwData.length : MM.length;
+    const noData     = !hasData && !leagueOwn.length && !fplXfers.length;
+    const posName    = ['','GK','DEF','MID','FWD'];
+    const playerImg  = code => `https://resources.premierleague.com/premierleague/photos/players/110x140/p${code}.png`;
 
-    if (noGw) {
-      $('#an-banner-wrap').innerHTML = `<div class="an-banner">● 2026/27 hasn't started · <span>stats populate from GW1 · 2025/26 season summary below</span></div>`;
-
-      // Off-season: show what we CAN compute from data.json
-      const topBottoms = [...MM].sort((a,b) => b.bottoms - a.bottoms);
-      const totalFines = MM.reduce((a,m) => a + m.lmpFines + m.otherFines, 0);
-      const topDebtor = [...MM].sort((a,b) => b.outstanding - a.outstanding)[0];
-
-      $('#an-kpis').innerHTML = `
-        <div class="kpi"><div class="kpi-label">2025/26 · LMP Fines Total</div><div class="kpi-value red">R${totalFines.toLocaleString()}</div><div class="kpi-sub">across all managers</div></div>
-        <div class="kpi"><div class="kpi-label">Most Bottom Finishes</div><div class="kpi-value amber cond">${firstName(topBottoms[0].name)}</div><div class="kpi-sub">${topBottoms[0].bottoms}× bottom finish${epiHtml(topBottoms[0])}</div></div>
-        <div class="kpi"><div class="kpi-label">Managers Debt-Free</div><div class="kpi-value green">${MM.filter(m=>m.outstanding<=0).length}<span style="font-size:18px;color:var(--dim)">/${MM.length}</span></div><div class="kpi-sub">fully settled up</div></div>
-        <div class="kpi"><div class="kpi-label">Largest Outstanding</div><div class="kpi-value ${topDebtor.outstanding>0?'red':''}">${topDebtor.outstanding>0?'R'+topDebtor.outstanding.toLocaleString():'—'}</div><div class="kpi-sub">${topDebtor.outstanding>0?firstName(topDebtor.name):'all cleared'}</div></div>`;
-
-      $('#an-grid-top').innerHTML = `<div class="panel grid-full">
-        <div class="panel-head"><div class="panel-title">Bottom Frequency · 2025/26 Season</div><div class="panel-meta">LMP hits — last season</div></div>
-        ${topBottoms.map(m => {
-          const pct = Math.round(m.bottoms / Math.max(1, topBottoms[0].bottoms) * 100);
-          const cls = m.bottoms === 0 ? 'green' : m.bottoms <= 3 ? 'amber' : '';
-          return `<div class="heat-row"><span class="label">${m.name} ${epiHtml(m)}</span><span class="bar"><span class="fill ${cls}" style="width:${pct}%"></span></span><span class="val">${m.bottoms}</span></div>`;
-        }).join('')}
-      </div>`;
-
-      $('#an-grid-mid').innerHTML = `<div class="panel grid-full">
-        <div class="an-placeholder">Full season analytics — bench points, hit tracker, chip timeline, form table, H2H matrix, squad ownership — activate from GW1.</div>
-      </div>`;
+    if (noData) {
+      $('#an-banner-wrap').innerHTML = `<div class="an-banner">● 2026/27 Pre-Season · <span>Player analytics unlock once managers submit GW1 squads</span></div>`;
+      $('#an-kpis').innerHTML = '';
+      $('#an-grid-top').innerHTML = `<div class="panel grid-full"><div class="an-placeholder" style="padding:32px 20px;text-align:center"><strong style="display:block;margin-bottom:8px;color:var(--text)">Season Preview</strong>Ownership stats, differentials, captain consensus and transfer heatmaps will appear here once managers submit their GW1 squads and the first sync runs.</div></div>`;
+      $('#an-grid-mid').innerHTML = '';
+      $('#an-grid-bot').innerHTML = '';
       return;
     }
 
-    // ── Live season analytics ──
-
-    // KPIs
-    const totalBench = MM.reduce((a,m) => {
-      const g = gwByEntry[m.entry]; return a + (g ? g.bench || 0 : 0);
-    }, 0);
-    const totalHitsVal = MM.reduce((a,m) => {
-      const g = gwByEntry[m.entry]; return a + (g ? g.hits || 0 : 0);
-    }, 0);
-    const totalChips = MM.reduce((a,m) => a + m.chipsUsed, 0);
-    const totalWeeklyWins = MM.reduce((a,m) => a + m.weeklyWins, 0);
-
-    $('#an-banner-wrap').innerHTML = '';
-    $('#an-kpis').innerHTML = `
-      <div class="kpi"><div class="kpi-label">Bench Pts Wasted · League</div><div class="kpi-value red">${totalBench.toLocaleString()}</div><div class="kpi-sub">total across all managers</div></div>
-      <div class="kpi"><div class="kpi-label">Total Hits Taken</div><div class="kpi-value amber">${totalHitsVal}</div><div class="kpi-sub">-4 pts each · ${MM.length} managers</div></div>
-      <div class="kpi"><div class="kpi-label">Chips Deployed</div><div class="kpi-value">${totalChips}<span style="font-size:18px;color:var(--dim)">/${MM.length*5}</span></div><div class="kpi-sub">across the league this season</div></div>
-      <div class="kpi"><div class="kpi-label">Weekly GW Wins</div><div class="kpi-value green">${totalWeeklyWins}</div><div class="kpi-sub">across ${nG} gameweeks · ${Math.round(totalWeeklyWins/nG*10)/10} avg per GW</div></div>`;
-
-    // Bench + Hits panels
-    const sortedBench = [...MM].sort((a,b) => {
-      const ga = gwByEntry[a.entry], gb = gwByEntry[b.entry];
-      return (gb?gb.bench||0:0) - (ga?ga.bench||0:0);
+    // Captain counts from current picks
+    const capCounts = {};
+    (api.gwData || []).forEach(g => {
+      const cap = (g.currentPicks||[]).find(p => p.is_captain);
+      if (!cap) return;
+      if (!capCounts[cap.id]) capCounts[cap.id] = { name: cap.name, code: cap.code, pos: cap.position, cost: cap.cost, count: 0, managers: [] };
+      capCounts[cap.id].count++;
+      capCounts[cap.id].managers.push(g.manager.split(' ')[0]);
     });
-    const maxBench = Math.max(1, ...sortedBench.map(m => { const g=gwByEntry[m.entry]; return g?g.bench||0:0; }));
-    const sortedHits = [...MM].sort((a,b) => b.hits - a.hits);
-    const maxHits = Math.max(1, ...sortedHits.map(m => m.hits));
+    const capRanked = Object.values(capCounts).sort((a,b) => b.count - a.count);
 
-    $('#an-grid-top').innerHTML = `
-      <div class="panel">
-        <div class="panel-head"><div class="panel-title">Bench Points Wasted</div><div class="panel-meta">season total</div></div>
-        ${sortedBench.map(m => {
-          const b = gwByEntry[m.entry]&&gwByEntry[m.entry].bench||0;
-          const pct = Math.round(b/maxBench*100);
-          return `<div class="heat-row"><span class="label">${firstName(m.name)} ${epiHtml(m)}</span><span class="bar"><span class="fill ${b>80?'':'amber'}" style="width:${pct}%"></span></span><span class="val">${b}</span></div>`;
-        }).join('')}
-      </div>
-      <div class="panel">
-        <div class="panel-head"><div class="panel-title">Hit Tracker</div><div class="panel-meta">-4 pts per hit · season</div></div>
-        ${sortedHits.map(m => {
-          const pct = Math.round(m.hits/maxHits*100);
-          const gwHitsArr = gwByEntry[m.entry] && gwByEntry[m.entry].gwHits || [];
-          const hitGws = gwHitsArr.filter(h=>h>0).length;
-          return `<div class="heat-row"><span class="label">${firstName(m.name)}<span style="color:var(--dim);font-size:10px"> ${hitGws}× hit GWs</span></span><span class="bar"><span class="fill${m.hits>=40?' ':'green '}" style="width:${pct}%"></span></span><span class="val">${m.hits}</span></div>`;
-        }).join('')}
-      </div>`;
+    const templateThreshold = Math.max(2, Math.round(totalMgrs * 0.6));
+    const templatePlayers = leagueOwn.filter(p => p.count >= templateThreshold);
 
-    // Chip usage table
-    const chipRows = [...MM].map(m => {
-      const g = gwByEntry[m.entry];
-      const chips = g ? (g.chips||[]) : [];
-      const used = chips.reduce((o,c) => { o[c.name]=c.event; return o; }, {});
-      return { m, used };
-    }).sort((a,b) => Object.keys(b.used).length - Object.keys(a.used).length);
-    const chipTypes = ['wildcard','wildcard','bboost','3xc','freehit','manager'];
-    const chipCols  = ['WC1','WC2','BB','TC','FH','MC'];
+    const differentials = leagueOwn
+      .filter(p => parseFloat(p.fpl_pct||0) >= 15 && p.count <= 2)
+      .sort((a,b) => parseFloat(b.fpl_pct) - parseFloat(a.fpl_pct))
+      .slice(0, 8);
 
-    const chipTableRows = chipRows.map(({m, used}) => {
-      const wcs = (gwByEntry[m.entry]&&gwByEntry[m.entry].chips||[]).filter(c=>c.name==='wildcard');
-      const cols = [
-        wcs[0]?`<span class="chip-badge chip-wc">GW${wcs[0].event}</span>`:'<span class="dim">—</span>',
-        wcs[1]?`<span class="chip-badge chip-wc">GW${wcs[1].event}</span>`:'<span class="dim">—</span>',
-        used['bboost']?`<span class="chip-badge chip-bb">GW${used['bboost']}</span>`:'<span class="dim">—</span>',
-        used['3xc']?`<span class="chip-badge chip-tc">GW${used['3xc']}</span>`:'<span class="dim">—</span>',
-        used['freehit']?`<span class="chip-badge chip-fh">GW${used['freehit']}</span>`:'<span class="dim">—</span>',
-        used['manager']?`<span class="chip-badge chip-mc">GW${used['manager']}</span>`:'<span class="dim">—</span>',
-      ];
-      const total = Object.keys(used).length;
-      return `<tr><td><span style="font-weight:600">${firstName(m.name)}</span></td>${cols.map(c=>`<td class="r">${c}</td>`).join('')}<td class="r"><span style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;color:${total>=3?'var(--amber)':total===0?'var(--red)':'var(--text)'}">${total}/5</span></td></tr>`;
-    }).join('');
+    const squadVals = (api.gwData||[])
+      .filter(g => g.squadValue)
+      .map(g => ({ manager: g.manager.split(' ')[0], team: g.team, value: g.squadValue }))
+      .sort((a,b) => b.value - a.value);
+    const maxSqVal = squadVals.length ? squadVals[0].value : 1;
 
-    // Weekly winners table
-    const gwWinners = [];
-    for (let g = 0; g < nG; g++) {
-      const winner = api.gwData.reduce((best, mgr) => {
-        const pts = (mgr.gwPts||[])[g]||0;
-        return pts > (best.pts||0) ? {name: mgr.manager, pts} : best;
-      }, {pts:-1});
-      gwWinners.push({gw: g+1, winner: winner.name, pts: winner.pts});
-    }
-    const winCounts = {};
-    gwWinners.forEach(w => { winCounts[w.winner] = (winCounts[w.winner]||0)+1; });
-    const gwWinnerRows = gwWinners.slice().reverse().slice(0, 15).map(w =>
-      `<tr><td class="amb">GW${w.gw}</td><td>${firstName(w.winner)}</td><td class="r amb">${w.pts} pts</td></tr>`).join('');
+    // Top owned player in the league
+    const topOwned = leagueOwn[0];
+    const topXfer  = fplXfers[0];
+    const capTop   = capRanked[0];
 
-    // Form table (last 5 GWs)
-    const last5 = Math.min(5, nG);
-    const formRows = [...MM].sort((a,b) => b.pts - a.pts).map((m,rank) => {
-      const gp = m.gwPts;
-      const last5Pts = gp.slice(-last5);
-      const last5Avg = last5Pts.length ? Math.round(last5Pts.reduce((a,b)=>a+b,0)/last5Pts.length) : 0;
-      const formRanks = (gwByEntry[m.entry]&&gwByEntry[m.entry].gwRanks||[]).slice(-last5);
-      const trend = formRanks.length>=2 ? (formRanks[formRanks.length-1] < formRanks[0] ? '▲' : formRanks[formRanks.length-1] > formRanks[0] ? '▼' : '—') : '—';
-      const trendCls = trend==='▲'?'grn':trend==='▼'?'red':'dim';
-      const dots = last5Pts.map((v,i) => {
-        const diff = v - (leagueAvgPerGW[nG-last5+i]||0);
-        const c = diff>=5?'g':diff<=-5?'r':'a';
-        return `<span class="fd ${c}" title="GW${nG-last5+i+1}: ${v} pts"></span>`;
-      }).join('');
-      return `<tr><td><span class="rkn ${rank<3?'top':''}">${rank+1}</span></td><td><span style="font-weight:600">${firstName(m.name)}</span> ${epiHtml(m)}</td><td class="r">${m.pts.toLocaleString()}</td><td class="r">${last5Avg}</td><td><span class="form-dots">${dots}</span></td><td class="r ${trendCls}">${trend}</td></tr>`;
-    }).join('');
+    $('#an-banner-wrap').innerHTML = `<div class="an-banner">● GW${L} Analytics · <span>${totalMgrs} squads · ${leagueOwn.length} players tracked</span></div>`;
 
-    $('#an-grid-mid').innerHTML = `
-      <div class="panel grid-2">
-        <div class="panel-head"><div class="panel-title">Chip Usage · Season Timeline</div><div class="panel-meta">all 5 chips tracked</div></div>
-        <div class="tablewrap"><table class="an-table">
-          <thead><tr><th>Manager</th><th class="r">WC1</th><th class="r">WC2</th><th class="r">BB</th><th class="r">TC</th><th class="r">FH</th><th class="r">MC</th><th class="r">Used</th></tr></thead>
-          <tbody>${chipTableRows}</tbody>
-        </table></div>
-      </div>
-      <div class="panel">
-        <div class="panel-head"><div class="panel-title">Weekly GW Winners</div><div class="panel-meta">last 15 GWs</div></div>
-        <div class="tablewrap"><table class="an-table">
-          <thead><tr><th>GW</th><th>Winner</th><th class="r">Score</th></tr></thead>
-          <tbody>${gwWinnerRows}</tbody>
-        </table></div>
-      </div>`;
+    $('#an-kpis').innerHTML = `
+      <div class="kpi"><div class="kpi-label">Most Owned in League</div><div class="kpi-value amber cond">${topOwned ? topOwned.name : '—'}</div><div class="kpi-sub">${topOwned ? topOwned.count+'/'+totalMgrs+' managers · '+parseFloat(topOwned.fpl_pct||0).toFixed(1)+'% FPL' : ''}</div></div>
+      <div class="kpi"><div class="kpi-label">Top Global Transfer In</div><div class="kpi-value grn cond">${topXfer ? topXfer.name : '—'}</div><div class="kpi-sub">${topXfer ? '+'+topXfer.transfers_in.toLocaleString()+' GW'+L : ''}</div></div>
+      <div class="kpi"><div class="kpi-label">Captain Consensus</div><div class="kpi-value cond">${capTop ? capTop.name : '—'}</div><div class="kpi-sub">${capTop ? capTop.count+' of '+totalMgrs+' managers armband' : 'no picks yet'}</div></div>
+      <div class="kpi"><div class="kpi-label">Template Players</div><div class="kpi-value">${templatePlayers.length}</div><div class="kpi-sub">owned by ≥${templateThreshold} of ${totalMgrs} managers</div></div>`;
 
-    // H2H matrix
-    const mgrsForMatrix = [...MM].sort((a,b) => b.pts - a.pts);
-    const matrixData = mgrsForMatrix.map(a => mgrsForMatrix.map(b => {
-      if (a.name === b.name) return null;
-      const n = Math.min(a.gwPts.length, b.gwPts.length);
-      let w=0,l=0;
-      for(let i=0;i<n;i++){ if(a.gwPts[i]>b.gwPts[i]) w++; else if(a.gwPts[i]<b.gwPts[i]) l++; }
-      return {w,l,d:n-w-l};
-    }));
-
-    const matrixHead = `<tr><th></th>${mgrsForMatrix.map(m=>`<th title="${m.name}">${sym(m.name)}</th>`).join('')}</tr>`;
-    const matrixBody = mgrsForMatrix.map((m,i) =>
-      `<tr><td class="row-head">${firstName(m.name)}</td>${mgrsForMatrix.map((_,j) => {
-        if (i===j) return `<td class="self"></td>`;
-        const cell = matrixData[i][j];
-        if (!cell) return `<td>—</td>`;
-        const cls = cell.w > cell.l ? 'win' : cell.l > cell.w ? 'lose' : 'draw';
-        return `<td class="${cls}" title="${m.name} vs ${mgrsForMatrix[j].name}: ${cell.w}W ${cell.l}L ${cell.d}D">${cell.w}-${cell.l}</td>`;
-      }).join('')}</tr>`
-    ).join('');
-
-    // Mini-league ownership
-    const leagueOwn = api.leagueOwnership || [];
-    const totalMgrs = api.gwData.length || MM.length;
-    const ownRows = leagueOwn.slice(0, 15).map(p => {
-      const pct = Math.round(p.count / totalMgrs * 100);
-      const posBadge = ['','GK','DEF','MID','FWD'][p.position]||'';
-      const img = `https://resources.premierleague.com/premierleague/photos/players/110x140/p${p.code}.png`;
+    // Panel 1: Mini-League Ownership
+    const ownRows = leagueOwn.slice(0, 20).map(p => {
+      const pct  = Math.round(p.count / totalMgrs * 100);
+      const diff = (pct - parseFloat(p.fpl_pct||0)).toFixed(0);
+      const diffCls = diff > 0 ? 'grn' : diff < 0 ? 'red' : 'dim';
       return `<tr>
-        <td><img class="own-photo" src="${img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
-        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posBadge}</div></td>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.cost/10).toFixed(1)}m</div></td>
         <td class="r"><span class="amb" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:18px">${p.count}</span><span style="color:var(--dim);font-size:10px">/${totalMgrs}</span></td>
-        <td class="r" style="min-width:60px">
+        <td class="r">
           <div>${pct}%</div>
           <div class="sq-ownership-bar" style="margin-left:auto;width:60px"><div class="f" style="width:${pct}%"></div></div>
         </td>
         <td class="r dim">${parseFloat(p.fpl_pct||0).toFixed(1)}%</td>
+        <td class="r ${diffCls}">${diff>0?'+':''}${diff}pp</td>
       </tr>`;
     }).join('');
 
-    // Top FPL transfers (global)
-    const xferRows = (api.topFplTransfers||[]).slice(0,10).map(p => {
-      const posBadge = ['','GK','DEF','MID','FWD'][p.position]||'';
+    // Panel 2: Captain picks
+    const capRows = capRanked.map(p => {
+      const pct = Math.round(p.count / totalMgrs * 100);
+      return `<tr>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posName[p.pos]||''} · £${p.cost?(p.cost/10).toFixed(1)+'m':''}</div></td>
+        <td class="r"><span class="amb" style="font-weight:700;font-size:18px;font-family:'IBM Plex Sans Condensed',sans-serif">${p.count}</span><span style="color:var(--dim);font-size:10px">/${totalMgrs}</span></td>
+        <td class="r">${pct}%</td>
+        <td style="font-size:11px;color:var(--dim)">${p.managers.join(', ')}</td>
+      </tr>`;
+    }).join('');
+
+    $('#an-grid-top').innerHTML = `
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Mini-League Ownership</div><div class="panel-meta">GW${L} squads · ${leagueOwn.length} players</div></div>
+        <div class="tablewrap"><table class="an-table">
+          <thead><tr><th></th><th>Player</th><th class="r">Owned</th><th class="r">League %</th><th class="r">FPL %</th><th class="r">vs FPL</th></tr></thead>
+          <tbody>${ownRows || `<tr><td colspan="6" class="dim" style="text-align:center;padding:14px">No squad data yet</td></tr>`}</tbody>
+        </table></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Captain Picks · GW${L}</div><div class="panel-meta">armband distribution</div></div>
+        <div class="tablewrap"><table class="an-table">
+          <thead><tr><th></th><th>Player</th><th class="r">Count</th><th class="r">%</th><th>Managers</th></tr></thead>
+          <tbody>${capRows || `<tr><td colspan="5" class="dim" style="text-align:center;padding:14px">No captain data yet</td></tr>`}</tbody>
+        </table></div>
+      </div>`;
+
+    // Panel 3: Differentials
+    const diffRows = differentials.map(p => {
+      const leaguePct = Math.round(p.count / totalMgrs * 100);
+      const edge = (leaguePct - parseFloat(p.fpl_pct||0)).toFixed(0);
+      return `<tr>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.cost/10).toFixed(1)}m</div></td>
+        <td class="r grn">${parseFloat(p.fpl_pct||0).toFixed(1)}%</td>
+        <td class="r red">${leaguePct}%</td>
+        <td class="r red" style="font-weight:700">${edge}pp</td>
+      </tr>`;
+    }).join('');
+
+    // Panel 4: Top FPL transfers with league ownership indicator
+    const leagueOwnIds = new Set(leagueOwn.map(p => p.id));
+    const xferRows = fplXfers.slice(0, 12).map(p => {
+      const inLeague = leagueOwnIds.has(p.id);
       const net = (p.transfers_in||0) - (p.transfers_out||0);
       return `<tr>
-        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posBadge} · £${(p.now_cost/10).toFixed(1)}m</div></td>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.now_cost/10).toFixed(1)}m</div></td>
         <td class="r grn">+${(p.transfers_in||0).toLocaleString()}</td>
-        <td class="r red">-${(p.transfers_out||0).toLocaleString()}</td>
         <td class="r ${net>=0?'grn':'red'}">${net>=0?'+':''}${net.toLocaleString()}</td>
+        <td class="r">${inLeague ? `<span style="color:var(--green);font-size:11px">✓ in league</span>` : `<span style="color:var(--dim);font-size:11px">not owned</span>`}</td>
       </tr>`;
+    }).join('');
+
+    $('#an-grid-mid').innerHTML = `
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Differentials · GW${L}</div><div class="panel-meta">≥15% FPL ownership · ≤2 league owners — hidden gems</div></div>
+        <div class="tablewrap"><table class="an-table">
+          <thead><tr><th></th><th>Player</th><th class="r">FPL %</th><th class="r">League %</th><th class="r">Edge</th></tr></thead>
+          <tbody>${diffRows || `<tr><td colspan="5" class="dim" style="text-align:center;padding:14px">No differentials this GW</td></tr>`}</tbody>
+        </table></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Top Global Transfers In · GW${L}</div><div class="panel-meta">most transferred in globally — who's riding the wave?</div></div>
+        <div class="tablewrap"><table class="an-table">
+          <thead><tr><th></th><th>Player</th><th class="r">Transfers In</th><th class="r">Net</th><th class="r">League</th></tr></thead>
+          <tbody>${xferRows || `<tr><td colspan="5" class="dim" style="text-align:center;padding:14px">No transfer data</td></tr>`}</tbody>
+        </table></div>
+      </div>`;
+
+    // Panel 5: Template players + squad values
+    const tplRows = templatePlayers.map(p => {
+      const pct = Math.round(p.count / totalMgrs * 100);
+      return `<tr>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.cost/10).toFixed(1)}m</div></td>
+        <td class="r"><span class="amb" style="font-weight:700;font-size:18px;font-family:'IBM Plex Sans Condensed',sans-serif">${p.count}/${totalMgrs}</span></td>
+        <td class="r">${pct}%</td>
+      </tr>`;
+    }).join('');
+
+    const sqValRows = squadVals.map((m,i) => {
+      const pct = Math.round(m.value / maxSqVal * 100);
+      return `<div class="heat-row"><span class="label">${m.manager}</span><span class="bar"><span class="fill ${i===0?'':'amber'}" style="width:${pct}%"></span></span><span class="val">£${(m.value/10).toFixed(1)}m</span></div>`;
     }).join('');
 
     $('#an-grid-bot').innerHTML = `
-      <div class="panel grid-full">
-        <div class="panel-head"><div class="panel-title">Form Table · Last ${last5} GWs</div><div class="panel-meta">avg score + trend vs league avg</div></div>
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Template Players</div><div class="panel-meta">owned by ≥${templateThreshold} of ${totalMgrs} managers (${Math.round(templateThreshold/totalMgrs*100)}%+)</div></div>
         <div class="tablewrap"><table class="an-table">
-          <thead><tr><th>#</th><th>Manager</th><th class="r">Total Pts</th><th class="r">Last ${last5} Avg</th><th>Form</th><th class="r">Trend</th></tr></thead>
-          <tbody>${formRows}</tbody>
-        </table></div>
-      </div>
-      <div class="panel grid-full">
-        <div class="panel-head"><div class="panel-title">Head-to-Head Win Matrix</div><div class="panel-meta">W-L per GW across the season · read row vs column</div></div>
-        <div class="an-matrix-wrap"><table class="an-matrix">
-          <thead>${matrixHead}</thead>
-          <tbody>${matrixBody}</tbody>
+          <thead><tr><th></th><th>Player</th><th class="r">Owned</th><th class="r">League %</th></tr></thead>
+          <tbody>${tplRows || `<tr><td colspan="4" class="dim" style="text-align:center;padding:14px">No template players yet</td></tr>`}</tbody>
         </table></div>
       </div>
       <div class="panel">
-        <div class="panel-head"><div class="panel-title">Mini-League Ownership</div><div class="panel-meta">GW${L} squad · out of ${totalMgrs}</div></div>
-        <div class="tablewrap"><table class="an-table">
-          <thead><tr><th></th><th>Player</th><th class="r">Owned</th><th class="r">League %</th><th class="r">FPL %</th></tr></thead>
-          <tbody>${ownRows||`<tr><td colspan="5" class="dim" style="text-align:center;padding:14px">No ownership data yet</td></tr>`}</tbody>
-        </table></div>
-      </div>
-      <div class="panel">
-        <div class="panel-head"><div class="panel-title">Top FPL Transfers · GW${L}</div><div class="panel-meta">global FPL transfers in</div></div>
-        <div class="tablewrap"><table class="an-table">
-          <thead><tr><th>Player</th><th class="r">In</th><th class="r">Out</th><th class="r">Net</th></tr></thead>
-          <tbody>${xferRows||`<tr><td colspan="4" class="dim" style="text-align:center;padding:14px">No transfer data</td></tr>`}</tbody>
-        </table></div>
+        <div class="panel-head"><div class="panel-title">Squad Values</div><div class="panel-meta">total squad cost · GW${L}</div></div>
+        ${sqValRows || `<div class="an-placeholder">No squad value data</div>`}
       </div>`;
   })();
 
