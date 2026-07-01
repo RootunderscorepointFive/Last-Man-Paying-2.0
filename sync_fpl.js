@@ -27,8 +27,19 @@ async function sync() {
 
   const playerMap = {};
   bootstrap.elements.forEach(p => {
-    playerMap[p.id] = { web_name: p.web_name, team: p.team, element_type: p.element_type, code: p.code };
+    playerMap[p.id] = {
+      web_name: p.web_name, team: p.team, element_type: p.element_type, code: p.code,
+      now_cost: p.now_cost, selected_by_percent: p.selected_by_percent,
+    };
   });
+
+  // Top FPL transfers this GW (global, not mini-league)
+  const topFplTransfers = [...bootstrap.elements]
+    .sort((a, b) => b.transfers_in_event - a.transfers_in_event)
+    .slice(0, 20)
+    .map(p => ({ id: p.id, name: p.web_name, code: p.code, position: p.element_type,
+      now_cost: p.now_cost, transfers_in: p.transfers_in_event, transfers_out: p.transfers_out_event,
+      selected_by_percent: p.selected_by_percent }));
 
   const COLORS = ['#e63946','#f4845f','#4dabf7','#b197fc','#ff6b9d','#38d9a9','#9775fa','#339af0','#ff8c42','#74c0fc','#ffa94d','#5c7cfa','#c9f542','#da77f2','#63e6be','#ffe066','#ff6b6b'];
 
@@ -43,18 +54,24 @@ async function sync() {
     const transfersTotal = pastGWs.reduce((a, h) => a + (h.event_transfers || 0), 0);
 
     const picksData = await fetchJSON(`${API}/entry/${m.entry}/event/${currentGW}/picks/`);
-    const currentPicks = picksData.picks.map(p => ({
-      id: p.element, name: playerMap[p.element].web_name, position: playerMap[p.element].element_type,
-      code: playerMap[p.element].code, multiplier: p.multiplier,
-      is_captain: p.is_captain, is_vice_captain: p.is_vice_captain,
-    }));
+    const currentPicks = picksData.picks.map(p => {
+      const pl = playerMap[p.element] || {};
+      return {
+        id: p.element, name: pl.web_name, position: pl.element_type,
+        code: pl.code, multiplier: p.multiplier,
+        is_captain: p.is_captain, is_vice_captain: p.is_vice_captain,
+        cost: pl.now_cost || 0,
+        ownership: pl.selected_by_percent || '0',
+      };
+    });
     const captain = currentPicks.find(p => p.is_captain);
+    const squadValue = currentPicks.reduce((a, p) => a + (p.cost || 0), 0);
 
     gwData.push({
       team: m.entry_name, manager: m.player_name, entry: m.entry,
       gwPts, gwHits, benchTotal, transfersTotal, chips: history.chips, total: m.total,
       currentCaptain: captain ? captain.name : 'Unknown',
-      activeChip: picksData.active_chip, currentPicks,
+      activeChip: picksData.active_chip, currentPicks, squadValue,
     });
   }
 
@@ -78,7 +95,18 @@ async function sync() {
     f: m.manager, s: m.manager.split(' ')[0], t: m.team, r: m.gwRanks, c: COLORS[i % COLORS.length],
   }));
 
-  const out = { MAX_GW: currentGW, standings, gwData, runInData };
+  // Mini-league ownership: count how many managers own each player in their current squad
+  const ownershipCount = {};
+  gwData.forEach(g => {
+    (g.currentPicks || []).forEach(p => {
+      if (!ownershipCount[p.id]) ownershipCount[p.id] = { id: p.id, name: p.name, code: p.code, position: p.position, cost: p.cost, fpl_pct: p.ownership, count: 0 };
+      ownershipCount[p.id].count++;
+    });
+  });
+  const leagueOwnership = Object.values(ownershipCount)
+    .sort((a, b) => b.count - a.count || parseFloat(b.fpl_pct) - parseFloat(a.fpl_pct));
+
+  const out = { MAX_GW: currentGW, standings, gwData, runInData, leagueOwnership, topFplTransfers };
   fs.writeFileSync(DATA_FILE, JSON.stringify(out, null, 2));
   console.log(`Done. fpl_data.json updated through GW${currentGW} (${managers.length} managers).`);
 }
