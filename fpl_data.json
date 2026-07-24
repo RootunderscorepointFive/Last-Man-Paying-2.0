@@ -1,6 +1,374 @@
 {
   "MAX_GW": 0,
-  "standings": [],
-  "gwData": [],
-  "runInData": []
+  "standings": [
+    {
+      "manager": "Kwazi Mthembu",
+      "team": "Brothers xGaramazov",
+      "pts": 0,
+      "bottomApps": 0
+    },
+    {
+      "manager": "Fanele Msweli",
+      "team": "Project X(abi Alonso",
+      "pts": 0,
+      "bottomApps": 0
+    },
+    {
+      "manager": "Msizi Bhengu",
+      "team": "Invincible United",
+      "pts": 0,
+      "bottomApps": 0
+    },
+    {
+      "manager": "Nkosi The Chef",
+      "team": "The Mainoo Event",
+      "pts": 0,
+      "bottomApps": 0
+    },
+    {
+      "manager": "Thembalethu Miya",
+      "team": "Root_.5 FC",
+      "pts": 0,
+      "bottomApps": 0
+    },
+    {
+      "manager": "Mhlengi Kunene",
+      "team": "Hidden Hills",
+      "pts": 0,
+      "bottomApps": 0
+    }
+  ],
+  "gwData": [
+    {
+      "team": "Brothers xGaramazov",
+      "manager": "Kwazi Mthembu",
+      "entry": 804065,
+      "gwPts": [],
+      "gwHits": [],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 0,
+      "currentCaptain": "Unknown",
+      "activeChip": null,
+      "currentPicks": [],
+      "squadValue": 0
+    },
+    {
+      "team": "Project X(abi Alonso",
+      "manager": "Fanele Msweli",
+      "entry": 800204,
+      "gwPts": [],
+      "gwHits": [],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 0,
+      "currentCaptain": "Unknown",
+      "activeChip": null,
+      "currentPicks": [],
+      "squadValue": 0
+    },
+    {
+      "team": "Invincible United",
+      "manager": "Msizi Bhengu",
+      "entry": 770193,
+      "gwPts": [],
+      "gwHits": [],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 0,
+      "currentCaptain": "Unknown",
+      "activeChip": null,
+      "currentPicks": [],
+      "squadValue": 0
+    },
+    {
+      "team": "The Mainoo Event",
+      "manager": "Nkosi The Chef",
+      "entry": 112702,
+      "gwPts": [],
+      "gwHits": [],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 0,
+      "currentCaptain": "Unknown",
+      "activeChip": null,
+      "currentPicks": [],
+      "squadValue": 0
+    },
+    {
+      "team": "Root_.5 FC",
+      "manager": "Thembalethu Miya",
+      "entry": 170177,
+      "gwPts": [],
+      "gwHits": [],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 0,
+      "currentCaptain": "Unknown",
+      "activeChip": null,
+      "currentPicks": [],
+      "squadValue": 0
+    },
+    {
+      "team": "Hidden Hills",
+      "manager": "Mhlengi Kunene",
+      "entry": 194373,
+      "gwPts": [],
+      "gwHits": [],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 0,
+      "currentCaptain": "Unknown",
+      "activeChip": null,
+      "currentPicks": [],
+      "squadValue": 0
+    }
+  ],
+  "runInData": [
+    {
+      "f": "Kwazi Mthembu",
+      "s": "Kwazi",
+      "t": "Brothers xGaramazov",
+      "c": "#e63946"
+    },
+    {
+      "f": "Fanele Msweli",
+      "s": "Fanele",
+      "t": "Project X(abi Alonso",
+      "c": "#f4845f"
+    },
+    {
+      "f": "Msizi Bhengu",
+      "s": "Msizi",
+      "t": "Invincible United",
+      "c": "#4dabf7"
+    },
+    {
+      "f": "Nkosi The Chef",
+      "s": "Nkosi",
+      "t": "The Mainoo Event",
+      "c": "#b197fc"
+    },
+    {
+      "f": "Thembalethu Miya",
+      "s": "Thembalethu",
+      "t": "Root_.5 FC",
+      "c": "#ff6b9d"
+    },
+    {
+      "f": "Mhlengi Kunene",
+      "s": "Mhlengi",
+      "t": "Hidden Hills",
+      "c": "#38d9a9"
+    }
+  ],
+  "leagueOwnership": [],
+  "topFplTransfers": [
+    {
+      "id": 1,
+      "name": "Raya",
+      "code": 154561,
+      "position": 1,
+      "now_cost": 60,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "29.2"
+    },
+    {
+      "id": 2,
+      "name": "Arrizabalaga",
+      "code": 109745,
+      "position": 1,
+      "now_cost": 50,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "0.3"
+    },
+    {
+      "id": 3,
+      "name": "Meslier",
+      "code": 437495,
+      "position": 1,
+      "now_cost": 50,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "0.1"
+    },
+    {
+      "id": 4,
+      "name": "Gabriel",
+      "code": 226597,
+      "position": 2,
+      "now_cost": 80,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "24.2"
+    },
+    {
+      "id": 5,
+      "name": "J.Timber",
+      "code": 445122,
+      "position": 2,
+      "now_cost": 65,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "0.9"
+    },
+    {
+      "id": 6,
+      "name": "Saliba",
+      "code": 462424,
+      "position": 2,
+      "now_cost": 60,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "0.5"
+    },
+    {
+      "id": 7,
+      "name": "Lewis-Skelly",
+      "code": 499169,
+      "position": 3,
+      "now_cost": 55,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "0.3"
+    },
+    {
+      "id": 8,
+      "name": "Calafiori",
+      "code": 466075,
+      "position": 2,
+      "now_cost": 55,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "11.6"
+    },
+    {
+      "id": 9,
+      "name": "Hincapie",
+      "code": 448104,
+      "position": 2,
+      "now_cost": 55,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "6.1"
+    },
+    {
+      "id": 10,
+      "name": "White",
+      "code": 198869,
+      "position": 2,
+      "now_cost": 55,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "0.0"
+    },
+    {
+      "id": 11,
+      "name": "Mosquera",
+      "code": 500040,
+      "position": 2,
+      "now_cost": 55,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "14.9"
+    },
+    {
+      "id": 12,
+      "name": "Saka",
+      "code": 223340,
+      "position": 3,
+      "now_cost": 95,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "11.3"
+    },
+    {
+      "id": 13,
+      "name": "Rice",
+      "code": 204480,
+      "position": 3,
+      "now_cost": 75,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "23.1"
+    },
+    {
+      "id": 14,
+      "name": "Eze",
+      "code": 232413,
+      "position": 3,
+      "now_cost": 65,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "3.1"
+    },
+    {
+      "id": 15,
+      "name": "Ødegaard",
+      "code": 184029,
+      "position": 3,
+      "now_cost": 65,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "2.7"
+    },
+    {
+      "id": 16,
+      "name": "Madueke",
+      "code": 248857,
+      "position": 3,
+      "now_cost": 65,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "0.3"
+    },
+    {
+      "id": 17,
+      "name": "Merino",
+      "code": 195384,
+      "position": 3,
+      "now_cost": 60,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "1.1"
+    },
+    {
+      "id": 18,
+      "name": "Martinelli",
+      "code": 444145,
+      "position": 3,
+      "now_cost": 65,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "0.3"
+    },
+    {
+      "id": 19,
+      "name": "Zubimendi",
+      "code": 481655,
+      "position": 3,
+      "now_cost": 55,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "1.3"
+    },
+    {
+      "id": 20,
+      "name": "Dowman",
+      "code": 616077,
+      "position": 3,
+      "now_cost": 55,
+      "transfers_in": 0,
+      "transfers_out": 0,
+      "selected_by_percent": "0.2"
+    }
+  ]
 }
