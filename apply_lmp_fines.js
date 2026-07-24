@@ -40,79 +40,34 @@ function computeBottom3(scores) {
   return { threshold, payers };
 }
 
-// Registered roster from a league payload: standings (scored members) unioned
-// with new_entries (pre-season joiners), de-duped by entry and normalised to a
-// stable { entry, entry_name, player_name } shape.
-function rosterOf(league) {
-  const norm = (m) => ({
-    entry: m.entry,
-    entry_name: m.entry_name,
-    player_name: m.player_name
-      || [m.player_first_name, m.player_last_name].filter(Boolean).join(' ').trim()
-      || 'Unknown',
-  });
-  const seen = new Set();
-  const out = [];
-  const src = [
-    ...((league.standings && league.standings.results) || []),
-    ...((league.new_entries && league.new_entries.results) || []),
-  ];
-  for (const m of src) {
-    if (seen.has(m.entry)) continue;
-    seen.add(m.entry);
-    out.push(norm(m));
-  }
-  return out;
-}
-
 async function main() {
   const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
   const league = await fetchJSON(`${API}/leagues-classic/${LEAGUE_ID}/standings/`);
-  // Registered roster = scored members (standings) UNION pre-season joiners
-  // (new_entries), so a manager who has registered but hasn't played yet still
-  // gets a ledger record — and therefore shows in the standings before GW1.
-  const entries = rosterOf(league);
+  const entries = league.standings.results; // dynamic — absorbs roster changes
   if (config.managers && config.managers.expected_count && entries.length !== config.managers.expected_count) {
     console.warn(`⚠ roster size ${entries.length} != expected ${config.managers.expected_count} (sanity-check only, continuing)`);
-  }
-
-  // Reconcile roster into the ledger UP FRONT: every registered manager gets a
-  // record (at zero) whether or not a gameweek has been played. This is what
-  // makes newly-registered players appear on the Standings tab pre-season.
-  const byEntry = {};
-  data.managers.forEach(m => { byEntry[m.entry] = m; });
-  let rosterChanged = false;
-  for (const e of entries) {
-    if (!byEntry[e.entry]) {
-      const rec = { entry: e.entry, name: e.player_name, team: e.entry_name,
-                    joining_fee_paid: false, fines: [], bottom_finishes: [],
-                    epithet: null, epithet_tagline: null, credits: 0 };
-      data.managers.push(rec); byEntry[e.entry] = rec; rosterChanged = true;
-      console.log(`+ new manager added at zero: ${e.player_name} (${e.entry_name})`);
-    } else {
-      const m = byEntry[e.entry];
-      if (m.name !== e.player_name) { m.name = e.player_name; rosterChanged = true; }  // keep fresh
-      if (m.team !== e.entry_name)  { m.team = e.entry_name;  rosterChanged = true; }
-    }
   }
 
   const bootstrap = await fetchJSON(`${API}/bootstrap-static/`);
   const finished = bootstrap.events.filter(e => e.finished).map(e => e.id);
   const latestFinished = finished.length ? Math.max(...finished) : null;
   if (targetGW == null) targetGW = latestFinished;
+  if (targetGW == null) { console.log('No finished GW yet — nothing to fine. Exiting cleanly.'); return; }
 
-  // Pre-season: no finished gameweek to fine yet. Persist any roster additions
-  // (so the standings list newly-registered managers), then stop before fines.
-  if (targetGW == null) {
-    if (!DRY_RUN && rosterChanged) {
-      data.generated_at = new Date().toISOString();
-      fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
-      console.log('Roster updated (pre-season) — no finished GW to fine yet.');
+  // Reconcile roster: every live entry must have a manager record.
+  const byEntry = {};
+  data.managers.forEach(m => { byEntry[m.entry] = m; });
+  for (const e of entries) {
+    if (!byEntry[e.entry]) {
+      const rec = { entry: e.entry, name: e.player_name, team: e.entry_name,
+                    joining_fee_paid: false, fines: [], bottom_finishes: [] };
+      data.managers.push(rec); byEntry[e.entry] = rec;
+      console.log(`+ new manager added at zero: ${e.player_name} (${e.entry_name})`);
     } else {
-      console.log('No finished GW yet — nothing to fine.');
+      byEntry[e.entry].name = e.player_name;   // keep names/teams fresh
+      byEntry[e.entry].team = e.entry_name;
     }
-    return;
   }
 
   // Post-hits score for the target GW, per entry.
@@ -155,7 +110,7 @@ async function main() {
 
   console.log(`\n${applied} fine(s) ${DRY_RUN ? 'would be' : ''} applied, ${skipped} already present (idempotent).`);
 
-  if (!DRY_RUN && (applied > 0 || rosterChanged)) {
+  if (!DRY_RUN && applied > 0) {
     data.last_synced_gw = Math.max(data.last_synced_gw || 0, targetGW);
     data.generated_at = now;
     fs.writeFileSync('data.json', JSON.stringify(data, null, 2));

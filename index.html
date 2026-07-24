@@ -1038,9 +1038,23 @@ Promise.all([
       owed, paid, outstanding:owed-paid };
   });
   const mmByName={}; MM.forEach(x=>mmByName[x.name]=x);
+  const mmByEntry={}; MM.forEach(x=>mmByEntry[x.entry]=x);
   const posByName={}; [...MM].sort((a,b)=>b.pts-a.pts).forEach((m,i)=>posByName[m.name]=i+1);
   const leader=[...MM].sort((a,b)=>b.pts-a.pts)[0];
   const ordOf=n=>n+({1:'st',2:'nd',3:'rd'}[n%100>>3===1?0:n%10]||'th');
+
+  // Standings roster is driven by LIVE activation, not the carried-over ledger:
+  // only teams present in the current-season FPL feed (fpl_data.json) appear, and
+  // the list grows as each manager activates their 26/27 squad. Money, bottoms and
+  // epithets are looked up from the ledger by entry where they exist; points-based
+  // columns stay blank until scores arrive.
+  const SR = (api.gwData||[]).map(g=>{
+    const led = mmByEntry[g.entry] || {};
+    return { entry:g.entry, name:g.manager, team:g.team,
+      epithet:led.epithet||null, epithet_tagline:led.epithet_tagline||null,
+      pts:g.total||0, gwPts:g.gwPts||[], bottoms:led.bottoms||0,
+      weeklyRankNow:(g.weeklyRanks||[])[idx]||0 };
+  });
 
   function sparkline(vals,color,avgVal){
     if(!vals.length) return '';
@@ -1082,26 +1096,36 @@ Promise.all([
   // ── STANDINGS ──
   let stSort='total';
   function renderStandings(){
-    const sorted=[...MM].sort((a,b)=>b.pts-a.pts), last=sorted[sorted.length-1];
-    const leagueAvg=Math.round(MM.reduce((a,x)=>a+x.pts,0)/MM.length);
+    // Empty until at least one manager has activated their season (live feed).
+    if(!SR.length){
+      $('#st-kpis').innerHTML=`
+        <div class="kpi"><div class="kpi-label">Teams Activated</div><div class="kpi-value amber">0</div><div class="kpi-sub">of ${SEASON}</div></div>
+        <div class="kpi"><div class="kpi-label">Status</div><div class="kpi-value cond">Pre-season</div><div class="kpi-sub">awaiting first activation</div></div>
+        <div class="kpi"><div class="kpi-label">In The Drop</div><div class="kpi-value">—</div><div class="kpi-sub">no scores yet</div></div>
+        <div class="kpi"><div class="kpi-label">League Average</div><div class="kpi-value">—</div><div class="kpi-sub">season points</div></div>`;
+      $('#st-body').innerHTML=`<tr><td colspan="7" style="padding:26px 12px;text-align:center;color:var(--dim)">No teams have activated their ${SEASON} squad yet — the table fills in as managers set up their team.</td></tr>`;
+      return;
+    }
+    const sorted=[...SR].sort((a,b)=>b.pts-a.pts), last=sorted[sorted.length-1], sLeader=sorted[0];
+    const leagueAvg=Math.round(SR.reduce((a,x)=>a+x.pts,0)/SR.length);
     $('#st-kpis').innerHTML=`
-      <div class="kpi"><div class="kpi-label">League Leader</div><div class="kpi-value amber cond">${firstName(leader.name)}</div><div class="kpi-sub">${leader.pts.toLocaleString()} pts · ${epiHtml(leader)}</div></div>
-      <div class="kpi"><div class="kpi-label">Points Gap · 1st→Last</div><div class="kpi-value">${(leader.pts-last.pts).toLocaleString()}</div><div class="kpi-sub">${leader.pts.toLocaleString()} vs ${last.pts.toLocaleString()}</div></div>
-      <div class="kpi"><div class="kpi-label">In The Drop · GW${L}</div><div class="kpi-value red">${payers.length}</div><div class="kpi-sub">charged this gameweek</div></div>
-      <div class="kpi"><div class="kpi-label">League Average</div><div class="kpi-value green">${leagueAvg.toLocaleString()}</div><div class="kpi-sub">season points</div></div>`;
-    const rows=[...MM]; const maxPts=Math.max(...MM.map(x=>x.pts));
+      <div class="kpi"><div class="kpi-label">${noGw?'Teams Activated':'League Leader'}</div><div class="kpi-value amber cond">${noGw?SR.length:firstName(sLeader.name)}</div><div class="kpi-sub">${noGw?'of '+SEASON:sLeader.pts.toLocaleString()+' pts · '+epiHtml(sLeader)}</div></div>
+      <div class="kpi"><div class="kpi-label">Points Gap · 1st→Last</div><div class="kpi-value">${noGw?'—':(sLeader.pts-last.pts).toLocaleString()}</div><div class="kpi-sub">${noGw?'awaiting GW1':sLeader.pts.toLocaleString()+' vs '+last.pts.toLocaleString()}</div></div>
+      <div class="kpi"><div class="kpi-label">In The Drop${noGw?'':' · GW'+L}</div><div class="kpi-value red">${noGw?'—':payers.length}</div><div class="kpi-sub">${noGw?'no scores yet':'charged this gameweek'}</div></div>
+      <div class="kpi"><div class="kpi-label">League Average</div><div class="kpi-value green">${noGw?'—':leagueAvg.toLocaleString()}</div><div class="kpi-sub">season points</div></div>`;
+    const rows=[...SR]; const maxPts=Math.max(...SR.map(x=>x.pts));
     if(stSort==='total') rows.sort((a,b)=>b.pts-a.pts);
     else rows.sort((a,b)=>(a.weeklyRankNow||99)-(b.weeklyRankNow||99));
     $('#st-body').innerHTML=rows.map((m,i)=>{
       const rank=i+1, gap=m.pts-maxPts;
-      return `<tr class="clk" tabindex="0" data-mgr="${m.name}" aria-label="${m.name} — open GW${L} squad">
-        <td><span class="rkn ${rank<=3?'top':''}">${rank}</span></td>
+      return `<tr class="${noGw?'':'clk'}" ${noGw?'':'tabindex="0"'} data-mgr="${m.name}" aria-label="${m.name}${noGw?'':' — open GW'+L+' squad'}">
+        <td><span class="rkn ${(!noGw&&rank<=3)?'top':''}">${noGw?'·':rank}</span></td>
         <td><span class="nm2">${m.name}</span> ${epiHtml(m)}<div class="tm">${m.team}</div></td>
-        <td class="num">${m.pts.toLocaleString()}</td>
-        <td class="num ${gap<0?'neg':''}">${gap===0?'—':gap}</td>
-        <td class="num">${m.weeklyRankNow||'—'}</td>
-        <td class="num" style="color:${m.bottoms>=8?'var(--red)':m.bottoms>=5?'var(--amber)':'var(--dim)'}">${m.bottoms}</td>
-        <td>${formDots(m)}</td></tr>`;
+        <td class="num">${noGw?'—':m.pts.toLocaleString()}</td>
+        <td class="num ${(!noGw&&gap<0)?'neg':''}">${noGw?'—':(gap===0?'—':gap)}</td>
+        <td class="num">${noGw?'—':(m.weeklyRankNow||'—')}</td>
+        <td class="num" style="color:${m.bottoms>=8?'var(--red)':m.bottoms>=5?'var(--amber)':'var(--dim)'}">${noGw?'—':m.bottoms}</td>
+        <td>${noGw?'':formDots(m)}</td></tr>`;
     }).join('');
   }
   const toggleSort=()=>{ stSort=stSort==='total'?'gwrank':'total';
