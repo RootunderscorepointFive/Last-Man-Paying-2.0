@@ -10,11 +10,15 @@ name: LMP weekly sync
 # and re-runs are no-ops until there's a new GW to process.
 
 on:
-  # Daily cron is safe to run year-round: the "Season guard" step below skips the
+  # Hourly cron is safe to run year-round: the "Season guard" step below skips the
   # sync while the FPL API still serves a previous season's data (off-season),
   # and auto-resumes when the season matching config.current_season kicks off.
+  # Runs are idempotent and only commit when something actually changed, so most
+  # hourly runs are no-ops; the point is near-real-time standings as managers
+  # activate pre-season and as live points/transfers move on match days.
+  # Free on public repos (unlimited GitHub-hosted minutes); job is ~15s.
   schedule:
-    - cron: '0 6 * * *'        # 06:00 UTC daily; idempotent, only writes on a new finished GW
+    - cron: '0 * * * *'        # top of every hour (UTC); idempotent, commits only on change
   workflow_dispatch:
     inputs:
       gw:

@@ -53,7 +53,7 @@ async function main() {
   const finished = bootstrap.events.filter(e => e.finished).map(e => e.id);
   const latestFinished = finished.length ? Math.max(...finished) : null;
   if (targetGW == null) targetGW = latestFinished;
-  if (targetGW == null) { console.error('No finished GW to process.'); process.exit(1); }
+  if (targetGW == null) { console.log('No finished GW yet — nothing to fine. Exiting cleanly.'); return; }
 
   // Reconcile roster: every live entry must have a manager record.
   const byEntry = {};

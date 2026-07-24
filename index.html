@@ -406,7 +406,7 @@
   <button class="tab" role="tab" id="tab-runin" aria-controls="panel-runin" aria-selected="false" tabindex="-1"><span class="idx">06</span>The Run In</button>
   <button class="tab" role="tab" id="tab-analytics" aria-controls="panel-analytics" aria-selected="false" tabindex="-1"><span class="idx">07</span>Analytics</button>
 </nav>
-<div id="offseason" class="offseason" hidden>● 2026/27 hasn't kicked off — live standings, scores &amp; fines populate after GW1. Head to <strong>The Run In</strong> for last season's story.</div>
+<div id="offseason" class="offseason" hidden>● 2026/27 hasn't kicked off — registered teams are listed below; live scores &amp; fines begin rolling in after GW1. Head to <strong>The Run In</strong> for last season's story.</div>
 
 <main id="main">
   <section id="panel-standings" role="tabpanel" aria-labelledby="tab-standings" tabindex="0" hidden>
@@ -420,7 +420,7 @@
     </div></div>
     <div class="actions">
       <button class="action" id="act-st-sort"><span class="key">F1</span><span class="label">Toggle Sort</span><div class="desc" id="act-st-sort-d">total ↔ gw rank</div></button>
-      <button class="action" disabled><span class="key">F4</span><span class="label">Refresh FPL</span><div class="desc">auto-sync · GitHub Actions</div></button>
+      <button class="action" disabled><span class="key">F4</span><span class="label">Refresh FPL</span><div class="desc">updates automatically</div></button>
     </div>
   </section>
 
@@ -444,7 +444,7 @@
       </div>
     </div>
     <div class="actions">
-      <button class="action" disabled><span class="key">F4</span><span class="label">Refresh FPL</span><div class="desc">auto-sync · GitHub Actions</div></button>
+      <button class="action" disabled><span class="key">F4</span><span class="label">Refresh FPL</span><div class="desc">updates automatically</div></button>
       <button class="action" id="act-lmp-override"><span class="key">F5</span><span class="label">Override Result</span><div class="desc">treasurer · disputes</div></button>
     </div>
   </section>
@@ -465,6 +465,7 @@
       <button class="action" id="act-lg-reverse"><span class="key">F4</span><span class="label">Reverse Fine</span><div class="desc">never deletes</div></button>
       <button class="action" id="act-lg-edit"><span class="key">F5</span><span class="label">Edit Fine</span><div class="desc">tracked history</div></button>
       <button class="action" id="act-lg-announce"><span class="key">F6</span><span class="label">Send Announcement</span><div class="desc">treasurer · league-wide</div></button>
+      <button class="action" id="act-lg-payment"><span class="key">F7</span><span class="label">Record Payment</span><div class="desc">amount · banks overpay</div></button>
     </div>
   </section>
   <section id="panel-h2h" role="tabpanel" aria-labelledby="tab-h2h" tabindex="0" hidden>
@@ -673,9 +674,9 @@ $('#tm-form').addEventListener('submit', async e=>{
 async function postAction(url, payload){
   let r;
   try { r = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }); }
-  catch { const e=new Error('Network error — are you on the Vercel deployment?'); e.code=0; throw e; }
+  catch { const e=new Error('Network error — please try again.'); e.code=0; throw e; }
   if(r.status===401){ const e=new Error('Wrong password.'); e.code=401; throw e; }
-  if(r.status===404){ const e=new Error('Action endpoint not found — treasurer actions run on the Vercel site, not GitHub Pages.'); e.code=404; throw e; }
+  if(r.status===404){ const e=new Error('Action unavailable — please use the live site.'); e.code=404; throw e; }
   if(!r.ok){ let msg='Server error — try again.'; try{ const j=await r.json(); if(j&&j.error) msg=j.error; }catch{} const e=new Error(msg); e.code=r.status; throw e; }
   return r.json();
 }
@@ -689,12 +690,12 @@ const mgrOptions = pre => [...MANAGERS].sort((a,b)=>a.name.localeCompare(b.name)
 const activeFines = name => { const m=MANAGERS.find(x=>x.name===name); return m ? m.fines.filter(f=>!f.reversed) : []; };
 const fineLabel = f => `${f.gw?'GW'+f.gw:'—'} · R${f.amount} · ${String(f.type).replace(/_/g,' ')}${f.paid_date?' · paid':' · unpaid'}`;
 const onErr = err => { $('#tm-err').textContent = err.message; if(err.code===401) toast('Unauthorized — wrong password','err'); };
-const done = msg => { closeTreasurer(); toast(msg,'ok'); toast('committing… ledger refreshes after redeploy (~30s)',''); };
+const done = msg => { closeTreasurer(); toast(msg,'ok'); toast('saving… ledger refreshes shortly',''); };
 
 // F2 — Mark Paid (joining fee OR LMP fine)
 function markPaidFlow(preName){
   if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
-  openTreasurer({ title:'Mark Paid', sub:'joining fee or LMP fine · commits to repo',
+  openTreasurer({ title:'Mark Paid', sub:'joining fee or LMP fine · audited',
     bodyHtml:`
       <div><label for="tm-mgr">Manager</label><select class="sel" id="tm-mgr">${mgrOptions(preName)}</select></div>
       <div><label for="tm-what">What to mark</label><select class="sel" id="tm-what"><option value="joining">Joining fee</option><option value="fine">LMP fine</option></select></div>
@@ -717,10 +718,34 @@ function markPaidFlow(preName){
   $('#tm-mgr').onchange=upd; $('#tm-what').onchange=upd; upd();
 }
 
+// F7 — Record Payment (amount; allocates to what's owed, banks overpayment as credit)
+function recordPaymentFlow(preName){
+  if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
+  openTreasurer({ title:'Record Payment', sub:'allocates to what’s owed · banks overpay as credit',
+    bodyHtml:`
+      <div><label for="tm-mgr">Manager</label><select class="sel" id="tm-mgr">${mgrOptions(preName)}</select></div>
+      <div><label for="tm-amt">Amount received (R)</label><input type="text" id="tm-amt" value="" inputmode="numeric" placeholder="e.g. 350"></div>
+      <div id="tm-owe" style="color:var(--dim);font-size:11px;margin-top:-4px"></div>`,
+    onSubmit: async (pass)=>{
+      const name=$('#tm-mgr').value, amount=Number($('#tm-amt').value.trim());
+      if(!(amount>0)){ $('#tm-err').textContent='Enter a positive amount.'; return; }
+      try {
+        const r=await postAction('/api/record-payment',{password:pass,name,amount});
+        const cr = (r&&r.credits>0)?` · R${Number(r.credits).toLocaleString()} banked as credit`:'';
+        done(`✓ ${fn(name)} — R${amount.toLocaleString()} recorded${cr}`);
+      } catch(err){ onErr(err); }
+    }
+  });
+  const showOwe=()=>{ const m=MANAGERS.find(x=>x.name===$('#tm-mgr').value); const el=$('#tm-owe'); if(!m||!el) return;
+    const o=outstandingFE(m);
+    el.textContent = o.total>0 ? `Currently owes R${o.total.toLocaleString()}` : (o.remainingCredit>0?`Fully settled · R${o.remainingCredit.toLocaleString()} credit on account`:'Fully settled'); };
+  $('#tm-mgr').onchange=showOwe; showOwe();
+}
+
 // F3 — Add Manual Fine
 function addFineFlow(preName){
   if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
-  openTreasurer({ title:'Add Manual Fine', sub:'audited · commits to repo',
+  openTreasurer({ title:'Add Manual Fine', sub:'audited',
     bodyHtml:`
       <div><label for="tm-mgr">Manager</label><select class="sel" id="tm-mgr">${mgrOptions(preName)}</select></div>
       <div style="display:flex;gap:10px"><div style="flex:1"><label for="tm-amt">Amount (R)</label><input type="text" id="tm-amt" value="100" inputmode="numeric"></div>
@@ -821,7 +846,10 @@ function outstandingFE(m){
   const fines=m.fines.filter(f=>!f.reversed && !f.paid_date);
   const finesTotal=fines.reduce((a,f)=>a+f.amount,0);
   const joiningOwed=m.joining_fee_paid?0:JOINING_FEE;
-  return { fines, finesTotal, joiningOwed, total:joiningOwed+finesTotal };
+  const gross=joiningOwed+finesTotal;
+  const credits=Math.max(0,m.credits||0);
+  const appliedCredit=Math.min(credits,gross);
+  return { fines, finesTotal, joiningOwed, gross, credits, remainingCredit:credits-appliedCredit, total:gross-appliedCredit };
 }
 function remindFlow(){
   if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
@@ -845,7 +873,7 @@ function remindFlow(){
       try {
         const r=await postAction('/api/send-reminders',{password:pass,recipients});
         let msg=`Sent ${r.sent} reminder${r.sent===1?'':'s'}`; if(r.skipped) msg+=`, skipped ${r.skipped}`;
-        closeTreasurer(); toast(msg,'ok'); toast('audit committing… profile log updates after redeploy','');
+        closeTreasurer(); toast(msg,'ok'); toast('saving… profile log updates shortly','');
         if(r.skipped && r.skippedDetails && r.skippedDetails.length)
           toast('Skipped — '+r.skippedDetails.map(s=>`${fn(s.name)}: ${s.reason}`).join('; '),'err');
       } catch(err){ onErr(err); }
@@ -885,7 +913,7 @@ function announceFlow(){
       try {
         const r=await postAction('/api/send-announcement',{password:pass,subject,body:msg,recipients});
         let m=`Sent ${r.sent} announcement${r.sent===1?'':'s'}`; if(r.skipped) m+=`, skipped ${r.skipped}`;
-        closeTreasurer(); toast(m,'ok'); toast('audit committing… profile log updates after redeploy','');
+        closeTreasurer(); toast(m,'ok'); toast('saving… profile log updates shortly','');
         if(r.skipped && r.skippedDetails && r.skippedDetails.length)
           toast('Skipped — '+r.skippedDetails.map(s=>`${fn(s.name)}: ${s.reason}`).join('; '),'err');
       } catch(err){ onErr(err); }
@@ -898,12 +926,13 @@ function announceFlow(){
 $('#act-lg-remind').onclick=()=>remindFlow();
 $('#act-lg-announce').onclick=()=>announceFlow();
 $('#act-lg-markpaid').onclick=()=>markPaidFlow();
+$('#act-lg-payment').onclick=()=>recordPaymentFlow();
 $('#act-lg-addfine').onclick=()=>addFineFlow();
 $('#act-lg-reverse').onclick=()=>reverseFineFlow();
 $('#act-lg-edit').onclick=()=>editFineFlow();
 $('#act-lmp-override').onclick=()=>overrideFlow();
-$('#lg-body').addEventListener('click',e=>{ const c=e.target.closest('[data-join]'); if(c) markPaidFlow(c.dataset.join); });
-$('#lg-body').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ const c=e.target.closest('[data-join]'); if(c){ e.preventDefault(); markPaidFlow(c.dataset.join); } } });
+$('#lg-body').addEventListener('click',e=>{ const j=e.target.closest('[data-join]'); if(j){ markPaidFlow(j.dataset.join); return; } const p=e.target.closest('[data-pay]'); if(p) recordPaymentFlow(p.dataset.pay); });
+$('#lg-body').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ const j=e.target.closest('[data-join]'); if(j){ e.preventDefault(); markPaidFlow(j.dataset.join); return; } const p=e.target.closest('[data-pay]'); if(p){ e.preventDefault(); recordPaymentFlow(p.dataset.pay); } } });
 
 // ── data load ──
 Promise.all([
@@ -976,7 +1005,7 @@ Promise.all([
     if(best>top3.v) top3={v:best,who:g.manager};
   });
 
-  const noGw = (api.gwData||[]).length === 0;   // off-season: no current-season data yet
+  const noGw = !(api.gwData||[]).some(g => (g.gwPts||[]).length > 0);   // off-season: no scored gameweeks yet
   const mostName = (noGw || !most || most.bottom_finishes.length===0) ? '—' : firstName(most.name);
   const mostSub  = (noGw || !most || most.bottom_finishes.length===0) ? 'no bottom finishes yet' : `${most.bottom_finishes.length}× · ${epiHtml(most)}`;
   $('#lmp-kpis').innerHTML = `
@@ -1008,7 +1037,7 @@ Promise.all([
     <div class="out">no gameweeks played yet · awaiting GW1 sync</div>
     <div class="ok">→ 0 charged · ledger opens when the season kicks off</div>` : `
     <div><span class="prompt">LMP&gt;</span> resolve_bottom --gw ${L} --rule "≤ 3rd-lowest-unique"</div>
-    <div class="out">parsing ${scores.length} entries from fpl_api... ok</div>
+    <div class="out">parsing ${scores.length} entries from live feed... ok</div>
     <div class="out">3rd-lowest unique score: ${thr} pts · at or below threshold: ${payers.length}</div>
     <div class="ok">→ ${payers.length} manager${payers.length>1?'s':''} charged R${GW_FINE} ea · R${(payers.length*GW_FINE).toLocaleString()} added to ledger</div>`;
 
@@ -1028,6 +1057,9 @@ Promise.all([
     const gp = g.gwPts||[]; const af = m.fines.filter(f=>!f.reversed);
     const owed = 250 + af.reduce((a,f)=>a+f.amount,0);
     const paid = (m.joining_fee_paid?250:0) + af.filter(f=>f.paid_date).reduce((a,f)=>a+f.amount,0);
+    const creditsBal = Math.max(0, m.credits||0);              // prepaid, offsets what's owed
+    const grossDue = owed - paid;                              // unpaid before credit
+    const creditLeft = Math.max(0, creditsBal - grossDue);     // surplus carried on account
     return { entry:m.entry, name:m.name, team:m.team, epithet:m.epithet, epithet_tagline:m.epithet_tagline,
       pts:g.total||0, gwPts:gp, bottoms:m.bottom_finishes.length,
       bestGW:Math.max(0,...(gp.length?gp:[0])), avgGW:gp.length?Math.round(gp.reduce((a,b)=>a+b,0)/gp.length):0,
@@ -1035,12 +1067,26 @@ Promise.all([
       chipsUsed:(g.chips||[]).length, captain:g.currentCaptain||'—', weeklyWins:(g.weeklyRanks||[]).filter(r=>r===1).length,
       weeklyRankNow:(g.weeklyRanks||[])[idx]||0, joining_fee_paid:m.joining_fee_paid,
       lmpFines:m.bottom_finishes.length*GW_FINE, otherFines:af.filter(f=>f.type!=='bottom').reduce((a,f)=>a+f.amount,0),
-      owed, paid, outstanding:owed-paid };
+      owed, paid, credits:creditsBal, creditLeft, outstanding:Math.max(0, grossDue-creditsBal) };
   });
   const mmByName={}; MM.forEach(x=>mmByName[x.name]=x);
+  const mmByEntry={}; MM.forEach(x=>mmByEntry[x.entry]=x);
   const posByName={}; [...MM].sort((a,b)=>b.pts-a.pts).forEach((m,i)=>posByName[m.name]=i+1);
   const leader=[...MM].sort((a,b)=>b.pts-a.pts)[0];
   const ordOf=n=>n+({1:'st',2:'nd',3:'rd'}[n%100>>3===1?0:n%10]||'th');
+
+  // Standings roster is driven by LIVE activation, not the carried-over ledger:
+  // only teams present in the current-season FPL feed (fpl_data.json) appear, and
+  // the list grows as each manager activates their 26/27 squad. Money, bottoms and
+  // epithets are looked up from the ledger by entry where they exist; points-based
+  // columns stay blank until scores arrive.
+  const SR = (api.gwData||[]).map(g=>{
+    const led = mmByEntry[g.entry] || {};
+    return { entry:g.entry, name:g.manager, team:g.team,
+      epithet:led.epithet||null, epithet_tagline:led.epithet_tagline||null,
+      pts:g.total||0, gwPts:g.gwPts||[], bottoms:led.bottoms||0,
+      weeklyRankNow:(g.weeklyRanks||[])[idx]||0 };
+  });
 
   function sparkline(vals,color,avgVal){
     if(!vals.length) return '';
@@ -1082,26 +1128,36 @@ Promise.all([
   // ── STANDINGS ──
   let stSort='total';
   function renderStandings(){
-    const sorted=[...MM].sort((a,b)=>b.pts-a.pts), last=sorted[sorted.length-1];
-    const leagueAvg=Math.round(MM.reduce((a,x)=>a+x.pts,0)/MM.length);
+    // Empty until at least one manager has activated their season (live feed).
+    if(!SR.length){
+      $('#st-kpis').innerHTML=`
+        <div class="kpi"><div class="kpi-label">Teams Activated</div><div class="kpi-value amber">0</div><div class="kpi-sub">of ${SEASON}</div></div>
+        <div class="kpi"><div class="kpi-label">Status</div><div class="kpi-value cond">Pre-season</div><div class="kpi-sub">awaiting first activation</div></div>
+        <div class="kpi"><div class="kpi-label">In The Drop</div><div class="kpi-value">—</div><div class="kpi-sub">no scores yet</div></div>
+        <div class="kpi"><div class="kpi-label">League Average</div><div class="kpi-value">—</div><div class="kpi-sub">season points</div></div>`;
+      $('#st-body').innerHTML=`<tr><td colspan="7" style="padding:26px 12px;text-align:center;color:var(--dim)">No teams have activated their ${SEASON} squad yet — the table fills in as managers set up their team.</td></tr>`;
+      return;
+    }
+    const sorted=[...SR].sort((a,b)=>b.pts-a.pts), last=sorted[sorted.length-1], sLeader=sorted[0];
+    const leagueAvg=Math.round(SR.reduce((a,x)=>a+x.pts,0)/SR.length);
     $('#st-kpis').innerHTML=`
-      <div class="kpi"><div class="kpi-label">League Leader</div><div class="kpi-value amber cond">${firstName(leader.name)}</div><div class="kpi-sub">${leader.pts.toLocaleString()} pts · ${epiHtml(leader)}</div></div>
-      <div class="kpi"><div class="kpi-label">Points Gap · 1st→Last</div><div class="kpi-value">${(leader.pts-last.pts).toLocaleString()}</div><div class="kpi-sub">${leader.pts.toLocaleString()} vs ${last.pts.toLocaleString()}</div></div>
-      <div class="kpi"><div class="kpi-label">In The Drop · GW${L}</div><div class="kpi-value red">${payers.length}</div><div class="kpi-sub">charged this gameweek</div></div>
-      <div class="kpi"><div class="kpi-label">League Average</div><div class="kpi-value green">${leagueAvg.toLocaleString()}</div><div class="kpi-sub">season points</div></div>`;
-    const rows=[...MM]; const maxPts=Math.max(...MM.map(x=>x.pts));
+      <div class="kpi"><div class="kpi-label">${noGw?'Teams Activated':'League Leader'}</div><div class="kpi-value amber cond">${noGw?SR.length:firstName(sLeader.name)}</div><div class="kpi-sub">${noGw?'of '+SEASON:sLeader.pts.toLocaleString()+' pts · '+epiHtml(sLeader)}</div></div>
+      <div class="kpi"><div class="kpi-label">Points Gap · 1st→Last</div><div class="kpi-value">${noGw?'—':(sLeader.pts-last.pts).toLocaleString()}</div><div class="kpi-sub">${noGw?'awaiting GW1':sLeader.pts.toLocaleString()+' vs '+last.pts.toLocaleString()}</div></div>
+      <div class="kpi"><div class="kpi-label">In The Drop${noGw?'':' · GW'+L}</div><div class="kpi-value red">${noGw?'—':payers.length}</div><div class="kpi-sub">${noGw?'no scores yet':'charged this gameweek'}</div></div>
+      <div class="kpi"><div class="kpi-label">League Average</div><div class="kpi-value green">${noGw?'—':leagueAvg.toLocaleString()}</div><div class="kpi-sub">season points</div></div>`;
+    const rows=[...SR]; const maxPts=Math.max(...SR.map(x=>x.pts));
     if(stSort==='total') rows.sort((a,b)=>b.pts-a.pts);
     else rows.sort((a,b)=>(a.weeklyRankNow||99)-(b.weeklyRankNow||99));
     $('#st-body').innerHTML=rows.map((m,i)=>{
       const rank=i+1, gap=m.pts-maxPts;
-      return `<tr class="clk" tabindex="0" data-mgr="${m.name}" aria-label="${m.name} — open GW${L} squad">
-        <td><span class="rkn ${rank<=3?'top':''}">${rank}</span></td>
+      return `<tr class="${noGw?'':'clk'}" ${noGw?'':'tabindex="0"'} data-mgr="${m.name}" aria-label="${m.name}${noGw?'':' — open GW'+L+' squad'}">
+        <td><span class="rkn ${(!noGw&&rank<=3)?'top':''}">${noGw?'·':rank}</span></td>
         <td><span class="nm2">${m.name}</span> ${epiHtml(m)}<div class="tm">${m.team}</div></td>
-        <td class="num">${m.pts.toLocaleString()}</td>
-        <td class="num ${gap<0?'neg':''}">${gap===0?'—':gap}</td>
-        <td class="num">${m.weeklyRankNow||'—'}</td>
-        <td class="num" style="color:${m.bottoms>=8?'var(--red)':m.bottoms>=5?'var(--amber)':'var(--dim)'}">${m.bottoms}</td>
-        <td>${formDots(m)}</td></tr>`;
+        <td class="num">${noGw?'—':m.pts.toLocaleString()}</td>
+        <td class="num ${(!noGw&&gap<0)?'neg':''}">${noGw?'—':(gap===0?'—':gap)}</td>
+        <td class="num">${noGw?'—':(m.weeklyRankNow||'—')}</td>
+        <td class="num" style="color:${m.bottoms>=8?'var(--red)':m.bottoms>=5?'var(--amber)':'var(--dim)'}">${noGw?'—':m.bottoms}</td>
+        <td>${noGw?'':formDots(m)}</td></tr>`;
     }).join('');
   }
   const toggleSort=()=>{ stSort=stSort==='total'?'gwrank':'total';
@@ -1128,7 +1184,7 @@ Promise.all([
         <td class="num">R${m.owed.toLocaleString()}</td>
         <td class="num pos">R${m.paid.toLocaleString()}</td>
         <td class="num ${m.outstanding>0?'neg':''}">${m.outstanding>0?'R'+m.outstanding.toLocaleString():'—'}</td>
-        <td>${m.outstanding<=0?'<span class="pill pill-clear">Settled</span>':'<span class="pill pill-debt">Owing</span>'}</td></tr>`).join('');
+        <td>${m.outstanding<=0?`<span class="pill pill-clear">Settled${m.creditLeft>0?` · +R${m.creditLeft.toLocaleString()} cr`:''}</span>`:'<span class="pill pill-debt clk" data-pay="'+m.name+'" tabindex="0" role="button" title="Record a payment">Owing · pay?</span>'}</td></tr>`).join('');
     $('#lg-terminal').innerHTML=`
       <div><span class="prompt">LMP&gt;</span> compute_prize_pool</div>
       <div class="out">joining fees collected: ${joinPaidCount} × R250 = R${joinCollected.toLocaleString()}</div>
