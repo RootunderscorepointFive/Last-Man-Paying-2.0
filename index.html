@@ -976,7 +976,7 @@ Promise.all([
     if(best>top3.v) top3={v:best,who:g.manager};
   });
 
-  const noGw = (api.gwData||[]).length === 0;   // off-season: no current-season data yet
+  const noGw = !(api.gwData||[]).some(g => (g.gwPts||[]).length > 0);   // off-season: no scored gameweeks yet
   const mostName = (noGw || !most || most.bottom_finishes.length===0) ? '—' : firstName(most.name);
   const mostSub  = (noGw || !most || most.bottom_finishes.length===0) ? 'no bottom finishes yet' : `${most.bottom_finishes.length}× · ${epiHtml(most)}`;
   $('#lmp-kpis').innerHTML = `
