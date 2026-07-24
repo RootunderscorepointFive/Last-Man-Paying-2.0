@@ -1437,14 +1437,19 @@ Promise.all([
     const leagueOwn  = api.leagueOwnership  || [];
     const fplXfers   = api.topFplTransfers  || [];
     const totalMgrs  = api.gwData && api.gwData.length ? api.gwData.length : MM.length;
-    const noData     = !hasData && !leagueOwn.length && !fplXfers.length;
+    // Pre-season = no squads submitted (ownership is derived from picks) and no
+    // scored gameweeks yet. The global transfers list is always populated, so it
+    // must NOT gate this — and `hasData` from the Run-In chart isn't in scope here.
+    const hasScores  = (api.gwData || []).some(g => (g.gwPts || []).length > 0);
+    const noData     = !leagueOwn.length && !hasScores;
     const posName    = ['','GK','DEF','MID','FWD'];
     const playerImg  = code => `https://resources.premierleague.com/premierleague/photos/players/110x140/p${code}.png`;
 
     if (noData) {
       $('#an-banner-wrap').innerHTML = `<div class="an-banner">● 2026/27 Pre-Season · <span>Player analytics unlock once managers submit GW1 squads</span></div>`;
-      $('#an-kpis').innerHTML = '';
-      $('#an-grid-top').innerHTML = `<div class="panel grid-full"><div class="an-placeholder" style="padding:32px 20px;text-align:center"><strong style="display:block;margin-bottom:8px;color:var(--text)">Season Preview</strong>Ownership stats, differentials, captain consensus and transfer heatmaps will appear here once managers submit their GW1 squads and the first sync runs.</div></div>`;
+      // Hide the empty KPI grid (it reserves min-height, esp. 489px on mobile).
+      $('#an-kpis').innerHTML = ''; $('#an-kpis').style.display = 'none';
+      $('#an-grid-top').innerHTML = `<div class="an-empty-season" style="grid-column:1/-1"><strong>Season Preview</strong>Ownership, differentials, captain consensus and transfer heatmaps unlock once managers submit their GW1 squads and the first scored gameweek lands.</div>`;
       $('#an-grid-mid').innerHTML = '';
       $('#an-grid-bot').innerHTML = '';
       return;
