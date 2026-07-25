@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T06:25:08.943Z",
+  "generated_at": "2026-07-25T08:45:03.205Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -294,6 +294,16 @@
       ],
       "subject": "FPL 26/27 Key dates",
       "sent_at": "2026-07-23T06:18:36.366Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "announcement",
+      "recipients": [
+        "Kwazi Mthembu",
+        "Msizi Bhengu"
+      ],
+      "subject": "This is a smoke test",
+      "sent_at": "2026-07-25T08:45:03.205Z",
       "sent_by": "treasurer"
     }
   ]
