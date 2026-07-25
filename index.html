@@ -446,6 +446,7 @@
     <div class="actions">
       <button class="action" disabled><span class="key">F4</span><span class="label">Refresh FPL</span><div class="desc">updates automatically</div></button>
       <button class="action" id="act-lmp-override"><span class="key">F5</span><span class="label">Override Result</span><div class="desc">treasurer · disputes</div></button>
+      <button class="action" id="act-lmp-weekly"><span class="key">F6</span><span class="label">Send Weekly Summary</span><div class="desc">infographic + email</div></button>
     </div>
   </section>
 
@@ -806,6 +807,27 @@ function editFineFlow(preName){
   $('#tm-mgr').onchange=fill; $('#tm-fine').onchange=sync; fill();
 }
 
+// LMP F6 — Send Weekly Summary (infographic + email, league-wide)
+function weeklySummaryFlow(){
+  if(!dataReady() || !API_DATA){ toast('Data still loading — try again in a second','err'); return; }
+  const scored = (API_DATA.gwData||[]).some(g=>(g.gwPts||[]).length>0);
+  if(!scored){ toast('No scored gameweek yet — the weekly report unlocks after GW1','err'); return; }
+  const L = API_DATA.MAX_GW;
+  const imgUrl = `/api/weekly-image?gw=${L}`;
+  openTreasurer({ title:'Send Weekly Summary', sub:`GW${L} · infographic + email`,
+    bodyHtml:`
+      <div style="margin-bottom:10px"><a href="${imgUrl}" target="_blank" rel="noopener" style="color:var(--amber);font-size:12px;text-decoration:none">↗ Open / download the infographic</a></div>
+      <div style="border:1px solid var(--border-bright);border-radius:8px;overflow:hidden;margin-bottom:10px;background:var(--bg)"><img src="${imgUrl}" alt="GW${L} infographic preview" style="width:100%;display:block" onerror="this.parentNode.style.display='none'"></div>
+      <div style="color:var(--dim);font-size:11px;letter-spacing:0;text-transform:none">Emails this report — infographic attached — to every manager with an address on file.</div>`,
+    onSubmit: async (pass)=>{
+      try {
+        const r=await postAction('/api/send-weekly-summary',{password:pass,gw:L});
+        done(`✓ GW${r.gw} summary sent to ${r.sent}${r.skipped?` · ${r.skipped} skipped`:''}`);
+      } catch(err){ onErr(err); }
+    }
+  });
+}
+
 // LMP F5 — Override Bottom-3 Result
 function overrideFlow(){
   if(!dataReady() || !API_DATA){ toast('Data still loading — try again in a second','err'); return; }
@@ -931,6 +953,7 @@ $('#act-lg-addfine').onclick=()=>addFineFlow();
 $('#act-lg-reverse').onclick=()=>reverseFineFlow();
 $('#act-lg-edit').onclick=()=>editFineFlow();
 $('#act-lmp-override').onclick=()=>overrideFlow();
+$('#act-lmp-weekly').onclick=()=>weeklySummaryFlow();
 $('#lg-body').addEventListener('click',e=>{ const j=e.target.closest('[data-join]'); if(j){ markPaidFlow(j.dataset.join); return; } const p=e.target.closest('[data-pay]'); if(p) recordPaymentFlow(p.dataset.pay); });
 $('#lg-body').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ const j=e.target.closest('[data-join]'); if(j){ e.preventDefault(); markPaidFlow(j.dataset.join); return; } const p=e.target.closest('[data-pay]'); if(p){ e.preventDefault(); recordPaymentFlow(p.dataset.pay); } } });
 
