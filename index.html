@@ -919,14 +919,21 @@ function fillSenderBanner(id){
 // F6 — Send Announcement (Ledger) · general league-wide comms (not debt)
 function announceFlow(){
   if(!dataReady()){ toast('Data still loading — try again in a second','err'); return; }
-  const rows=[...MANAGERS].sort((a,b)=>a.name.localeCompare(b.name)).map(m=>
+  // Recipients = ledger managers UNION everyone in the live feed. Newly-activated
+  // members aren't in the ledger yet but are still emailable (send-announcement
+  // looks them up in MANAGER_EMAILS by name), so they must be offered here too.
+  const seen=new Set(); const roster=[];
+  [...MANAGERS].forEach(m=>{ seen.add(m.name); roster.push({name:m.name,team:m.team}); });
+  ((API_DATA&&API_DATA.gwData)||[]).forEach(g=>{ if(g.manager && !seen.has(g.manager)){ seen.add(g.manager); roster.push({name:g.manager,team:g.team||''}); } });
+  roster.sort((a,b)=>a.name.localeCompare(b.name));
+  const rows=roster.map(m=>
     `<label class="rmd-row"><input type="checkbox" class="anc-cb" value="${attrEsc(m.name)}" checked>
       <span class="rmd-main"><span class="rmd-name">${m.name}</span><span class="rmd-bd">${m.team}</span></span></label>`).join('');
   openTreasurer({ title:'Send Announcement', sub:`league-wide comms · sends via Resend`,
     bodyHtml:`<div id="anc-banner" class="rmd-banner">Sender: checking…</div>
       <div><label for="anc-subject">Subject</label><input type="text" id="anc-subject" placeholder="e.g. GW1 deadline — Friday 18:30"></div>
       <div><label for="anc-body">Message</label><textarea id="anc-body" rows="5" placeholder="Your announcement to the league…"></textarea></div>
-      <div><label>Recipients · ${MANAGERS.length} (untick to exclude)</label><div class="rmd-list">${rows}</div></div>`,
+      <div><label>Recipients · ${roster.length} (untick to exclude)</label><div class="rmd-list">${rows}</div></div>`,
     onSubmit: async (pass)=>{
       const subject=$('#anc-subject').value.trim(), msg=$('#anc-body').value, recipients=[...document.querySelectorAll('.anc-cb:checked')].map(c=>c.value);
       if(!subject){ $('#tm-err').textContent='Subject is required.'; return; }
