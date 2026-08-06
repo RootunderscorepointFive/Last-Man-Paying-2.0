@@ -41,6 +41,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 10          # backstop: a normal run is ~15s; fail fast instead of hanging
     steps:
       - uses: actions/checkout@v6
 

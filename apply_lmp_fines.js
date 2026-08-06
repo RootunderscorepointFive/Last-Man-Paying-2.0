@@ -26,10 +26,25 @@ const DRY_RUN = args.includes('--dry-run');
 const gwArg = args.find(a => a.startsWith('--gw='));
 let targetGW = gwArg ? parseInt(gwArg.split('=')[1], 10) : null;
 
-async function fetchJSON(url) {
-  const r = await fetch(url, { headers: { 'User-Agent': 'LMP-Terminal/1.0' } });
-  if (!r.ok) throw new Error(`${url} -> HTTP ${r.status}`);
-  return r.json();
+// Times out a stalled request and retries transient network/timeout errors
+// (never HTTP status errors) so one FPL blip can't hang the whole job.
+async function fetchJSON(url, { retries = 2, timeoutMs = 15000 } = {}) {
+  for (let attempt = 0; ; attempt++) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+    let r;
+    try {
+      r = await fetch(url, { headers: { 'User-Agent': 'LMP-Terminal/1.0' }, signal: ctrl.signal });
+    } catch (e) {
+      clearTimeout(timer);
+      if (attempt >= retries) throw new Error(`${url} -> ${e.name === 'AbortError' ? `timeout after ${timeoutMs}ms` : e.message}`);
+      await new Promise(res => setTimeout(res, 500 * (attempt + 1)));
+      continue;
+    }
+    clearTimeout(timer);
+    if (!r.ok) throw new Error(`${url} -> HTTP ${r.status}`);
+    return r.json();
+  }
 }
 
 // The rule, isolated and testable.
