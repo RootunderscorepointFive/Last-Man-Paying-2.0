@@ -2,6 +2,12 @@
   "MAX_GW": 0,
   "standings": [
     {
+      "manager": "Sthe Coqueto",
+      "team": "Coqueto202",
+      "pts": 0,
+      "bottomApps": 0
+    },
+    {
       "manager": "Learnmore Ntshangase",
       "team": "Cash n Carry.ck",
       "pts": 0,
@@ -57,6 +63,21 @@
     }
   ],
   "gwData": [
+    {
+      "team": "Coqueto202",
+      "manager": "Sthe Coqueto",
+      "entry": 3801396,
+      "gwPts": [],
+      "gwHits": [],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 0,
+      "currentCaptain": "Unknown",
+      "activeChip": null,
+      "currentPicks": [],
+      "squadValue": 0
+    },
     {
       "team": "Cash n Carry.ck",
       "manager": "Learnmore Ntshangase",
@@ -195,58 +216,64 @@
   ],
   "runInData": [
     {
+      "f": "Sthe Coqueto",
+      "s": "Sthe",
+      "t": "Coqueto202",
+      "c": "#e63946"
+    },
+    {
       "f": "Learnmore Ntshangase",
       "s": "Learnmore",
       "t": "Cash n Carry.ck",
-      "c": "#e63946"
+      "c": "#f4845f"
     },
     {
       "f": "Mtho Mabizela",
       "s": "Mtho",
       "t": "Reece's Pieces",
-      "c": "#f4845f"
+      "c": "#4dabf7"
     },
     {
       "f": "Luthando Ngidi",
       "s": "Luthando",
       "t": "Cops and Rogers",
-      "c": "#4dabf7"
+      "c": "#b197fc"
     },
     {
       "f": "Kwazi Mthembu",
       "s": "Kwazi",
       "t": "Brothers xGaramazov",
-      "c": "#b197fc"
+      "c": "#ff6b9d"
     },
     {
       "f": "Fanele Msweli",
       "s": "Fanele",
       "t": "Project X_abi Alonso",
-      "c": "#ff6b9d"
+      "c": "#38d9a9"
     },
     {
       "f": "Msizi Bhengu",
       "s": "Msizi",
       "t": "Invincible United",
-      "c": "#38d9a9"
+      "c": "#9775fa"
     },
     {
       "f": "Nkosi The Chef",
       "s": "Nkosi",
       "t": "The Mainoo Event",
-      "c": "#9775fa"
+      "c": "#339af0"
     },
     {
       "f": "Thembalethu Miya",
       "s": "Thembalethu",
       "t": "Root_.5 FC",
-      "c": "#339af0"
+      "c": "#ff8c42"
     },
     {
       "f": "Mhlengi Kunene",
       "s": "Mhlengi",
       "t": "Hidden Hills",
-      "c": "#ff8c42"
+      "c": "#74c0fc"
     }
   ],
   "leagueOwnership": [],
