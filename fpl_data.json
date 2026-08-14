@@ -2,6 +2,12 @@
   "MAX_GW": 0,
   "standings": [
     {
+      "manager": "Lethu Mkhwanazi",
+      "team": "You Know Fernandes",
+      "pts": 0,
+      "bottomApps": 0
+    },
+    {
       "manager": "Bheka Bhengu",
       "team": "Khuphuka FC",
       "pts": 0,
@@ -75,6 +81,21 @@
     }
   ],
   "gwData": [
+    {
+      "team": "You Know Fernandes",
+      "manager": "Lethu Mkhwanazi",
+      "entry": 4370096,
+      "gwPts": [],
+      "gwHits": [],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 0,
+      "currentCaptain": "Unknown",
+      "activeChip": null,
+      "currentPicks": [],
+      "squadValue": 0
+    },
     {
       "team": "Khuphuka FC",
       "manager": "Bheka Bhengu",
@@ -258,76 +279,82 @@
   ],
   "runInData": [
     {
+      "f": "Lethu Mkhwanazi",
+      "s": "Lethu",
+      "t": "You Know Fernandes",
+      "c": "#e63946"
+    },
+    {
       "f": "Bheka Bhengu",
       "s": "Bheka",
       "t": "Khuphuka FC",
-      "c": "#e63946"
+      "c": "#f4845f"
     },
     {
       "f": "Nhlakanipho Ntombela",
       "s": "Nhlakanipho",
       "t": "iam_ntombela",
-      "c": "#f4845f"
+      "c": "#4dabf7"
     },
     {
       "f": "Sthe Coqueto",
       "s": "Sthe",
       "t": "Coqueto202",
-      "c": "#4dabf7"
+      "c": "#b197fc"
     },
     {
       "f": "Learnmore Ntshangase",
       "s": "Learnmore",
       "t": "Cash n Carry.ck",
-      "c": "#b197fc"
+      "c": "#ff6b9d"
     },
     {
       "f": "Mtho Mabizela",
       "s": "Mtho",
       "t": "Reece's Pieces",
-      "c": "#ff6b9d"
+      "c": "#38d9a9"
     },
     {
       "f": "Luthando Ngidi",
       "s": "Luthando",
       "t": "Cops and Rogers",
-      "c": "#38d9a9"
+      "c": "#9775fa"
     },
     {
       "f": "Kwazi Mthembu",
       "s": "Kwazi",
       "t": "Brothers xGaramazov",
-      "c": "#9775fa"
+      "c": "#339af0"
     },
     {
       "f": "Fanele Msweli",
       "s": "Fanele",
       "t": "Project X_abi Alonso",
-      "c": "#339af0"
+      "c": "#ff8c42"
     },
     {
       "f": "Msizi Bhengu",
       "s": "Msizi",
       "t": "Invincible United",
-      "c": "#ff8c42"
+      "c": "#74c0fc"
     },
     {
       "f": "Nkosi The Chef",
       "s": "Nkosi",
       "t": "The Mainoo Event",
-      "c": "#74c0fc"
+      "c": "#ffa94d"
     },
     {
       "f": "Thembalethu Miya",
       "s": "Thembalethu",
       "t": "Root_.5 FC",
-      "c": "#ffa94d"
+      "c": "#5c7cfa"
     },
     {
       "f": "Mhlengi Kunene",
       "s": "Mhlengi",
       "t": "Hidden Hills",
-      "c": "#5c7cfa"
+      "c": "#c9f542"
     }
   ],
   "leagueOwnership": [],
