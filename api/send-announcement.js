@@ -29,6 +29,7 @@ module.exports = async (req, res) => {
       const { subject: subj, html, text } = announcementEmail({ name, subject, body: message });
       try { await resendSend({ to, subject: subj, html, text }); sent.push(name); }
       catch (e) { console.error('send-announcement send failed:', name, e.message); skipped.push({ name, reason: 'send failed' }); }
+      await new Promise(r => setTimeout(r, 120)); // stay under Resend's ~10 req/s
     }
 
     if (sent.length) {
