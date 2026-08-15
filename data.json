@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T15:28:18.936Z",
+  "generated_at": "2026-08-15T16:14:34.668Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -304,6 +304,29 @@
       ],
       "subject": "This is a smoke test",
       "sent_at": "2026-07-25T08:45:03.205Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "announcement",
+      "recipients": [
+        "Bheka Bhengu",
+        "Fanele Msweli",
+        "Kudzai Kupeta",
+        "Kwazi Mthembu",
+        "Learnmore Ntshangase",
+        "Lethu Mkhwanazi",
+        "Luthando Ngidi",
+        "Mbuyi Katumba",
+        "Mhlengi Kunene",
+        "Minenhle Khumalo",
+        "President Gamede",
+        "Siyanda Ndaba",
+        "Sthe Coqueto",
+        "Thato Choshi",
+        "Thembalethu Miya"
+      ],
+      "subject": "FPL AGM Tomorrow - Voting Rights & Proxy Summary",
+      "sent_at": "2026-08-15T16:14:34.668Z",
       "sent_by": "treasurer"
     }
   ]
