@@ -40,6 +40,7 @@ module.exports = async (req, res) => {
       if (!to) { skipped.push({ name, reason: 'no email on file' }); continue; }
       try { await resendSend({ to, subject, html, text, attachments }); sent.push(name); }
       catch (e) { console.error('send-weekly-summary send failed:', name, e.message); skipped.push({ name, reason: 'send failed' }); }
+      await new Promise(r => setTimeout(r, 120)); // stay under Resend's ~10 req/s
     }
 
     if (sent.length) {

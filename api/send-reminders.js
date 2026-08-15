@@ -58,6 +58,7 @@ module.exports = async (req, res) => {
         console.error('send-reminders send failed:', name, e.message);
         skipped.push({ name, reason: 'send failed' });
       }
+      await new Promise(r => setTimeout(r, 120)); // stay under Resend's ~10 req/s
     }
 
     // Persist audit AFTER sends (so a 409 retry never re-sends; appending is
