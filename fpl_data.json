@@ -2,6 +2,12 @@
   "MAX_GW": 0,
   "standings": [
     {
+      "manager": "Minenhle Khumalo",
+      "team": "The Wirtz Edge",
+      "pts": 0,
+      "bottomApps": 0
+    },
+    {
       "manager": "President Gamede",
       "team": "Los Primeros",
       "pts": 0,
@@ -99,6 +105,21 @@
     }
   ],
   "gwData": [
+    {
+      "team": "The Wirtz Edge",
+      "manager": "Minenhle Khumalo",
+      "entry": 6404452,
+      "gwPts": [],
+      "gwHits": [],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 0,
+      "currentCaptain": "Unknown",
+      "activeChip": null,
+      "currentPicks": [],
+      "squadValue": 0
+    },
     {
       "team": "Los Primeros",
       "manager": "President Gamede",
@@ -342,100 +363,106 @@
   ],
   "runInData": [
     {
+      "f": "Minenhle Khumalo",
+      "s": "Minenhle",
+      "t": "The Wirtz Edge",
+      "c": "#e63946"
+    },
+    {
       "f": "President Gamede",
       "s": "President",
       "t": "Los Primeros",
-      "c": "#e63946"
+      "c": "#f4845f"
     },
     {
       "f": "Zazi Zuma",
       "s": "Zazi",
       "t": "Mpendles Finest",
-      "c": "#f4845f"
+      "c": "#4dabf7"
     },
     {
       "f": "Kudzai Kupeta",
       "s": "Kudzai",
       "t": "Champions FC",
-      "c": "#4dabf7"
+      "c": "#b197fc"
     },
     {
       "f": "Lethu Mkhwanazi",
       "s": "Lethu",
       "t": "You Know Fernandes",
-      "c": "#b197fc"
+      "c": "#ff6b9d"
     },
     {
       "f": "Bheka Bhengu",
       "s": "Bheka",
       "t": "Khuphuka FC",
-      "c": "#ff6b9d"
+      "c": "#38d9a9"
     },
     {
       "f": "Nhlakanipho Ntombela",
       "s": "Nhlakanipho",
       "t": "iam_ntombela",
-      "c": "#38d9a9"
+      "c": "#9775fa"
     },
     {
       "f": "Sthe Coqueto",
       "s": "Sthe",
       "t": "Coqueto202",
-      "c": "#9775fa"
+      "c": "#339af0"
     },
     {
       "f": "Learnmore Ntshangase",
       "s": "Learnmore",
       "t": "Cash n Carry.ck",
-      "c": "#339af0"
+      "c": "#ff8c42"
     },
     {
       "f": "Mtho Mabizela",
       "s": "Mtho",
       "t": "Reece's Pieces",
-      "c": "#ff8c42"
+      "c": "#74c0fc"
     },
     {
       "f": "Luthando Ngidi",
       "s": "Luthando",
       "t": "Cops and Rogers",
-      "c": "#74c0fc"
+      "c": "#ffa94d"
     },
     {
       "f": "Kwazi Mthembu",
       "s": "Kwazi",
       "t": "Brothers xGaramazov",
-      "c": "#ffa94d"
+      "c": "#5c7cfa"
     },
     {
       "f": "Fanele Msweli",
       "s": "Fanele",
       "t": "Project X_abi Alonso",
-      "c": "#5c7cfa"
+      "c": "#c9f542"
     },
     {
       "f": "Msizi Bhengu",
       "s": "Msizi",
       "t": "Invincible United",
-      "c": "#c9f542"
+      "c": "#da77f2"
     },
     {
       "f": "Nkosi The Chef",
       "s": "Nkosi",
       "t": "The Mainoo Event",
-      "c": "#da77f2"
+      "c": "#63e6be"
     },
     {
       "f": "Thembalethu Miya",
       "s": "Thembalethu",
       "t": "Root_.5 FC",
-      "c": "#63e6be"
+      "c": "#ffe066"
     },
     {
       "f": "Mhlengi Kunene",
       "s": "Mhlengi",
       "t": "Hidden Hills",
-      "c": "#ffe066"
+      "c": "#ff6b6b"
     }
   ],
   "leagueOwnership": [],
@@ -448,7 +475,7 @@
       "now_cost": 60,
       "transfers_in": 0,
       "transfers_out": 0,
-      "selected_by_percent": "35.4"
+      "selected_by_percent": "35.5"
     },
     {
       "id": 2,
@@ -518,7 +545,7 @@
       "now_cost": 55,
       "transfers_in": 0,
       "transfers_out": 0,
-      "selected_by_percent": "30.1"
+      "selected_by_percent": "30.3"
     },
     {
       "id": 9,
@@ -548,7 +575,7 @@
       "now_cost": 55,
       "transfers_in": 0,
       "transfers_out": 0,
-      "selected_by_percent": "10.2"
+      "selected_by_percent": "10.0"
     },
     {
       "id": 12,
