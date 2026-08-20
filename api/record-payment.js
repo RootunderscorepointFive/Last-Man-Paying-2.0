@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
   if (!name) return res.status(400).json({ error: 'name required' });
   if (!(amount > 0)) return res.status(400).json({ error: 'amount must be positive' });
 
-  const fee = config.joining_fee || 250;
+  const fee = config.joining_fee || 300;
   try {
     let allocated = [], creditsAfter = 0, newBalance = 0;
     const result = await mutateData(

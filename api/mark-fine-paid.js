@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
         const pay = f => { if (!f.reversed && !f.paid_date) { f.paid_date = now; f.paid_by = 'treasurer'; marked++; paidAmount += f.amount; } };
         if (target === 'all') m.fines.forEach(pay);
         else { const f = m.fines.find(x => x.id === target); if (!f) return false; pay(f); }
-        newBalance = outstandingOf(m, config.joining_fee || 250).total;
+        newBalance = outstandingOf(m, config.joining_fee || 300).total;
         data.generated_at = now;
         return true;
       }
