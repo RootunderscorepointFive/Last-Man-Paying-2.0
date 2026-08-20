@@ -398,8 +398,8 @@
 </div>
 
 <nav class="tabs" role="tablist" aria-label="LMP Terminal screens">
-  <button class="tab" role="tab" id="tab-standings" aria-controls="panel-standings" aria-selected="false" tabindex="-1"><span class="idx">01</span>Standings</button>
-  <button class="tab" role="tab" id="tab-lmp" aria-controls="panel-lmp" aria-selected="true" tabindex="0"><span class="idx">02</span>Last Man Paying</button>
+  <button class="tab" role="tab" id="tab-standings" aria-controls="panel-standings" aria-selected="true" tabindex="0"><span class="idx">01</span>Standings</button>
+  <button class="tab" role="tab" id="tab-lmp" aria-controls="panel-lmp" aria-selected="false" tabindex="-1"><span class="idx">02</span>Last Man Paying</button>
   <button class="tab" role="tab" id="tab-ledger" aria-controls="panel-ledger" aria-selected="false" tabindex="-1"><span class="idx">03</span>Ledger</button>
   <button class="tab" role="tab" id="tab-h2h" aria-controls="panel-h2h" aria-selected="false" tabindex="-1"><span class="idx">04</span>Head-to-Head</button>
   <button class="tab" role="tab" id="tab-profiles" aria-controls="panel-profiles" aria-selected="false" tabindex="-1"><span class="idx">05</span>Profiles</button>
@@ -409,7 +409,7 @@
 <div id="offseason" class="offseason" hidden>● 2026/27 hasn't kicked off — registered teams are listed below; live scores &amp; fines begin rolling in after GW1. Head to <strong>The Run In</strong> for last season's story.</div>
 
 <main id="main">
-  <section id="panel-standings" role="tabpanel" aria-labelledby="tab-standings" tabindex="0" hidden>
+  <section id="panel-standings" role="tabpanel" aria-labelledby="tab-standings" tabindex="0">
     <div class="kpi-grid" id="st-kpis"></div>
     <div class="grid"><div class="panel grid-full">
       <div class="panel-head"><div class="panel-title">League Table</div>
@@ -424,7 +424,7 @@
     </div>
   </section>
 
-  <section id="panel-lmp" role="tabpanel" aria-labelledby="tab-lmp" tabindex="0">
+  <section id="panel-lmp" role="tabpanel" aria-labelledby="tab-lmp" tabindex="0" hidden>
     <div class="kpi-grid" id="lmp-kpis"></div>
     <div class="grid">
       <div class="panel featured grid-2">
