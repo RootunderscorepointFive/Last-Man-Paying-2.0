@@ -2,6 +2,12 @@
   "MAX_GW": 0,
   "standings": [
     {
+      "manager": "Mbuyi Katumba",
+      "team": "Finding Mbeumo",
+      "pts": 0,
+      "bottomApps": 0
+    },
+    {
       "manager": "Siyanda Ndaba",
       "team": "Amad-ness",
       "pts": 0,
@@ -111,6 +117,21 @@
     }
   ],
   "gwData": [
+    {
+      "team": "Finding Mbeumo",
+      "manager": "Mbuyi Katumba",
+      "entry": 7068091,
+      "gwPts": [],
+      "gwHits": [],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 0,
+      "currentCaptain": "Unknown",
+      "activeChip": null,
+      "currentPicks": [],
+      "squadValue": 0
+    },
     {
       "team": "Amad-ness",
       "manager": "Siyanda Ndaba",
@@ -384,112 +405,118 @@
   ],
   "runInData": [
     {
+      "f": "Mbuyi Katumba",
+      "s": "Mbuyi",
+      "t": "Finding Mbeumo",
+      "c": "#e63946"
+    },
+    {
       "f": "Siyanda Ndaba",
       "s": "Siyanda",
       "t": "Amad-ness",
-      "c": "#e63946"
+      "c": "#f4845f"
     },
     {
       "f": "Minenhle Khumalo",
       "s": "Minenhle",
       "t": "The Wirtz Edge",
-      "c": "#f4845f"
+      "c": "#4dabf7"
     },
     {
       "f": "President Gamede",
       "s": "President",
       "t": "Los Primeros",
-      "c": "#4dabf7"
+      "c": "#b197fc"
     },
     {
       "f": "Zazi Zuma",
       "s": "Zazi",
       "t": "Mpendles Finest",
-      "c": "#b197fc"
+      "c": "#ff6b9d"
     },
     {
       "f": "Kudzai Kupeta",
       "s": "Kudzai",
       "t": "Champions FC",
-      "c": "#ff6b9d"
+      "c": "#38d9a9"
     },
     {
       "f": "Lethu Mkhwanazi",
       "s": "Lethu",
       "t": "You Know Fernandes",
-      "c": "#38d9a9"
+      "c": "#9775fa"
     },
     {
       "f": "Bheka Bhengu",
       "s": "Bheka",
       "t": "Khuphuka FC",
-      "c": "#9775fa"
+      "c": "#339af0"
     },
     {
       "f": "Nhlakanipho Ntombela",
       "s": "Nhlakanipho",
       "t": "iam_ntombela",
-      "c": "#339af0"
+      "c": "#ff8c42"
     },
     {
       "f": "Sthe Coqueto",
       "s": "Sthe",
       "t": "Coqueto202",
-      "c": "#ff8c42"
+      "c": "#74c0fc"
     },
     {
       "f": "Learnmore Ntshangase",
       "s": "Learnmore",
       "t": "Cash n Carry.ck",
-      "c": "#74c0fc"
+      "c": "#ffa94d"
     },
     {
       "f": "Mtho Mabizela",
       "s": "Mtho",
       "t": "Reece's Pieces",
-      "c": "#ffa94d"
+      "c": "#5c7cfa"
     },
     {
       "f": "Luthando Ngidi",
       "s": "Luthando",
       "t": "Cops and Rogers",
-      "c": "#5c7cfa"
+      "c": "#c9f542"
     },
     {
       "f": "Kwazi Mthembu",
       "s": "Kwazi",
       "t": "Brothers xGaramazov",
-      "c": "#c9f542"
+      "c": "#da77f2"
     },
     {
       "f": "Fanele Msweli",
       "s": "Fanele",
       "t": "Project X_abi Alonso",
-      "c": "#da77f2"
+      "c": "#63e6be"
     },
     {
       "f": "Msizi Bhengu",
       "s": "Msizi",
       "t": "Invincible United",
-      "c": "#63e6be"
+      "c": "#ffe066"
     },
     {
       "f": "Nkosi The Chef",
       "s": "Nkosi",
       "t": "The Mainoo Event",
-      "c": "#ffe066"
+      "c": "#ff6b6b"
     },
     {
       "f": "Thembalethu Miya",
       "s": "Thembalethu",
       "t": "Root_.5 FC",
-      "c": "#ff6b6b"
+      "c": "#e63946"
     },
     {
       "f": "Mhlengi Kunene",
       "s": "Mhlengi",
       "t": "Hidden Hills",
-      "c": "#e63946"
+      "c": "#f4845f"
     }
   ],
   "leagueOwnership": [],
@@ -502,7 +529,7 @@
       "now_cost": 60,
       "transfers_in": 0,
       "transfers_out": 0,
-      "selected_by_percent": "36.4"
+      "selected_by_percent": "36.5"
     },
     {
       "id": 2,
@@ -532,7 +559,7 @@
       "now_cost": 80,
       "transfers_in": 0,
       "transfers_out": 0,
-      "selected_by_percent": "29.6"
+      "selected_by_percent": "29.7"
     },
     {
       "id": 5,
@@ -572,7 +599,7 @@
       "now_cost": 55,
       "transfers_in": 0,
       "transfers_out": 0,
-      "selected_by_percent": "32.7"
+      "selected_by_percent": "32.9"
     },
     {
       "id": 9,
@@ -602,7 +629,7 @@
       "now_cost": 55,
       "transfers_in": 0,
       "transfers_out": 0,
-      "selected_by_percent": "8.7"
+      "selected_by_percent": "8.5"
     },
     {
       "id": 12,
