@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T17:57:12.557Z",
+  "generated_at": "2026-08-21T18:21:50.468Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -83,7 +83,7 @@
           "type": "other",
           "status": "confirmed",
           "reason": "He had a plus one last during last seasons final.",
-          "paid_date": null,
+          "paid_date": "2026-08-21T18:21:50.468Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -92,15 +92,33 @@
           "added_date": "2026-06-14T20:45:19.981Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "payment"
         }
       ],
       "bottom_finishes": [],
       "epithet": "The Fugitive",
       "epithet_tagline": "Owes the pot the most — R1273",
-      "credits": 0,
+      "credits": 17,
       "joining_fee_paid_by": "treasurer",
-      "joining_fee_paid_date": "2026-08-21T17:57:12.557Z"
+      "joining_fee_paid_date": "2026-08-21T17:57:12.557Z",
+      "payments": [
+        {
+          "id": "p_7295273_1787336510468",
+          "amount": 1040,
+          "date": "2026-08-21T18:21:50.468Z",
+          "recorded_by": "treasurer",
+          "allocated": [
+            {
+              "kind": "fine",
+              "id": "f_6410488_1781469920159",
+              "gw": null,
+              "amount": 1023
+            }
+          ],
+          "credit_after": 17
+        }
+      ]
     },
     {
       "entry": 3484324,
