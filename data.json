@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T16:42:20.602Z",
+  "generated_at": "2026-08-21T17:57:12.557Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -74,7 +74,7 @@
       "entry": 7295273,
       "name": "Thato Choshi",
       "team": "Taydo FC",
-      "joining_fee_paid": false,
+      "joining_fee_paid": true,
       "fines": [
         {
           "id": "f_6410488_1781469920159",
@@ -98,7 +98,9 @@
       "bottom_finishes": [],
       "epithet": "The Fugitive",
       "epithet_tagline": "Owes the pot the most — R1273",
-      "credits": 0
+      "credits": 0,
+      "joining_fee_paid_by": "treasurer",
+      "joining_fee_paid_date": "2026-08-21T17:57:12.557Z"
     },
     {
       "entry": 3484324,
