@@ -8,7 +8,7 @@
   "gw_fine": 100,
   "total_gws": 38,
   "managers": {
-    "expected_count": 17,
+    "expected_count": 20,
     "_note": "Sanity-check only. Actual roster is read live from the FPL API each sync."
   },
   "banking": {
