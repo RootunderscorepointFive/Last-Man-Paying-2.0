@@ -651,6 +651,11 @@ tick(); setInterval(tick, 1000);
 
 // ── TREASURER ACTIONS (top-level so buttons work regardless of data load) ──
 let MANAGERS = [];                       // populated when data.json loads
+// Set once data loads (see renderMoneyViews below). Treasurer flows call this
+// after a successful write so Owed/Paid/Outstanding and the KPIs update
+// immediately, instead of only catching up once the redeploy lands and the
+// page is reloaded.
+let refreshMoneyViews = null;
 const tModal = $('#tmodal'); let tSubmit = null;
 function toast(msg, kind){ const t=document.createElement('div'); t.className='toast '+(kind||''); t.textContent=msg; $('#toasts').appendChild(t); setTimeout(()=>t.remove(), 5000); }
 function openTreasurer(cfg){
@@ -718,9 +723,15 @@ function markPaidFlow(preName){
       try {
         if(what==='joining'){ await postAction('/api/mark-joining-paid',{password:pass,name});
           const m=MANAGERS.find(x=>x.name===name); if(m) m.joining_fee_paid=true;
-          document.querySelectorAll(`[data-join="${CSS.escape(name)}"]`).forEach(el=>el.outerHTML='<span class="pill pill-clear">Paid</span>');
         } else { const target=$('#tm-fine').value; if(!target){ $('#tm-err').textContent='No outstanding fine.'; return; }
-          await postAction('/api/mark-fine-paid',{password:pass,name,target}); }
+          await postAction('/api/mark-fine-paid',{password:pass,name,target});
+          // Mirrors api/mark-fine-paid.js: pay every unpaid non-reversed fine (target
+          // 'all'), or just the one by id — so Owed/Paid/Outstanding update immediately.
+          const m=MANAGERS.find(x=>x.name===name);
+          if(m){ const now=new Date().toISOString();
+            const pay=f=>{ if(!f.reversed && !f.paid_date) f.paid_date=now; };
+            if(target==='all') m.fines.forEach(pay); else { const f=m.fines.find(x=>x.id===target); if(f) pay(f); } } }
+        if(refreshMoneyViews) refreshMoneyViews();
         done(`✓ ${fn(name)} — ${what==='joining'?'joining fee':'fine(s)'} marked paid`);
       } catch(err){ onErr(err); }
     }
@@ -744,6 +755,17 @@ function recordPaymentFlow(preName){
       if(!(amount>0)){ $('#tm-err').textContent='Enter a positive amount.'; return; }
       try {
         const r=await postAction('/api/record-payment',{password:pass,name,amount});
+        // Apply exactly what the server says it allocated (rather than re-deriving
+        // the joining-fee-then-fines-oldest-first order client-side) so this can't
+        // drift from api/record-payment.js's actual logic.
+        const m=MANAGERS.find(x=>x.name===name);
+        if(m && r){ const now=new Date().toISOString();
+          (r.allocated||[]).forEach(a=>{
+            if(a.kind==='joining') m.joining_fee_paid=true;
+            else if(a.kind==='fine'){ const f=m.fines.find(x=>x.id===a.id); if(f) f.paid_date=now; }
+          });
+          m.credits = r.credits||0; }
+        if(refreshMoneyViews) refreshMoneyViews();
         const cr = (r&&r.credits>0)?` · R${Number(r.credits).toLocaleString()} banked as credit`:'';
         done(`✓ ${fn(name)} — R${amount.toLocaleString()} recorded${cr}`);
       } catch(err){ onErr(err); }
@@ -770,7 +792,18 @@ function addFineFlow(preName){
       const name=$('#tm-mgr').value, amount=$('#tm-amt').value.trim(), type=$('#tm-type').value, reason=$('#tm-reason').value.trim(), gw=$('#tm-gw').value.trim();
       if(!(Number(amount)>0)){ $('#tm-err').textContent='Amount must be a positive number.'; return; }
       if(!reason){ $('#tm-err').textContent='Reason is required.'; return; }
-      try { await postAction('/api/add-fine',{password:pass,name,amount,type,reason,gw}); done(`✓ ${fn(name)} — R${amount} ${type.replace(/_/g,' ')} fine added`); }
+      try {
+        await postAction('/api/add-fine',{password:pass,name,amount,type,reason,gw});
+        // Mirrors api/add-fine.js's push shape exactly.
+        const m=MANAGERS.find(x=>x.name===name);
+        if(m){ const now=new Date().toISOString();
+          m.fines.push({ id:`f_${m.entry}_${Date.now()}`, gw:(gw===''?null:Number(gw)), amount:Number(amount), type,
+            status:'confirmed', reason, paid_date:null,
+            reversed:false, reversed_reason:null, reversed_by:null, reversed_date:null,
+            added_by:'treasurer', added_date:now, edited_by:null, edited_date:null, edit_history:[] }); }
+        if(refreshMoneyViews) refreshMoneyViews();
+        done(`✓ ${fn(name)} — R${amount} ${type.replace(/_/g,' ')} fine added`);
+      }
       catch(err){ onErr(err); }
     }
   });
@@ -788,7 +821,16 @@ function reverseFineFlow(preName){
       const name=$('#tm-mgr').value, fineId=$('#tm-fine').value, reason=$('#tm-reason').value.trim();
       if(!fineId){ $('#tm-err').textContent='No fine selected.'; return; }
       if(!reason){ $('#tm-err').textContent='Reason is required.'; return; }
-      try { await postAction('/api/reverse-fine',{password:pass,name,fineId,reason}); done(`✓ ${fn(name)} — fine reversed`); }
+      try {
+        await postAction('/api/reverse-fine',{password:pass,name,fineId,reason});
+        const m=MANAGERS.find(x=>x.name===name);
+        if(m){ const f=m.fines.find(x=>x.id===fineId);
+          if(f && !f.reversed){ const now=new Date().toISOString();
+            f.reversed=true; f.reversed_reason=reason; f.reversed_by='treasurer'; f.reversed_date=now;
+            if(f.type==='bottom' && f.gw!=null) m.bottom_finishes=m.bottom_finishes.filter(g=>g!==f.gw); } }
+        if(refreshMoneyViews) refreshMoneyViews();
+        done(`✓ ${fn(name)} — fine reversed`);
+      }
       catch(err){ onErr(err); }
     }
   });
@@ -810,7 +852,21 @@ function editFineFlow(preName){
       const name=$('#tm-mgr').value, fineId=$('#tm-fine').value, amount=$('#tm-amt').value.trim(), reason=$('#tm-reason').value.trim(), note=$('#tm-note').value.trim();
       if(!fineId){ $('#tm-err').textContent='No fine selected.'; return; }
       if(!note){ $('#tm-err').textContent='Edit note is required.'; return; }
-      try { await postAction('/api/edit-fine',{password:pass,name,fineId,amount,reason,note}); done(`✓ ${fn(name)} — fine edited`); }
+      try {
+        await postAction('/api/edit-fine',{password:pass,name,fineId,amount,reason,note});
+        const m=MANAGERS.find(x=>x.name===name);
+        if(m){ const f=m.fines.find(x=>x.id===fineId);
+          if(f){ const now=new Date().toISOString();
+            const before={amount:f.amount,reason:f.reason};
+            if(amount!=null && amount!=='' && Number(amount)>0) f.amount=Number(amount);
+            if(reason && reason.trim()) f.reason=reason.trim();
+            f.edited_by='treasurer'; f.edited_date=now;
+            const after={amount:f.amount,reason:f.reason};
+            f.edit_history=f.edit_history||[];
+            f.edit_history.push({at:now,by:'treasurer',note,before,after}); } }
+        if(refreshMoneyViews) refreshMoneyViews();
+        done(`✓ ${fn(name)} — fine edited`);
+      }
       catch(err){ onErr(err); }
     }
   });
@@ -989,6 +1045,11 @@ Promise.all([
   const byName = {}; ledger.managers.forEach(m=>byName[m.name]=m);
   const EMAIL_LOG = ledger.email_log || [];      // Phase 7 audit trail
   MANAGERS = ledger.managers; API_DATA = api; JOINING_FEE = (config && config.joining_fee) || 300;   // enable treasurer flows (top-level wiring)
+  // Shared outer-scope (not re-declared each render) — openSquad/Analytics below
+  // read these by closure, so renderMoneyViews() assigns rather than re-declares.
+  // stSort likewise, so re-running renderMoneyViews() after a treasurer action
+  // doesn't reset the Standings sort toggle back to its default.
+  let MM, mmByName, stSort='total';
 
   // chrome
   $('#tb-gw').textContent = `${L}/${TOTAL_GWS}`;
@@ -1012,6 +1073,11 @@ Promise.all([
   rulesModal.addEventListener('click', e => { if (e.target === rulesModal) closeRules(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && rulesModal.classList.contains('active')) closeRules(); });
 
+  // Everything from here through renderProfile()'s initial call is pure
+  // derived-data + render — no addEventListener calls — so it's wrapped in a
+  // function and safe to re-run after a treasurer action mutates MANAGERS/
+  // ledger.managers in place (see refreshMoneyViews below).
+  function renderMoneyViews(){
   // per-manager GW score
   const scores = api.gwData.map(g=>({ name:g.manager, entry:g.entry, s:(g.gwPts||[])[idx]??0, prev:(g.gwPts||[])[idx-1]??null }));
   const avg = Math.round(scores.reduce((a,x)=>a+x.s,0)/scores.length);
@@ -1093,7 +1159,7 @@ Promise.all([
   }).join('');
 
   // ── shared per-manager stats ──
-  const MM = ledger.managers.map(m=>{
+  MM = ledger.managers.map(m=>{
     const g = gwByEntry[m.entry] || {gwPts:[],gwHits:[],weeklyRanks:[],gwRanks:[],chips:[],benchTotal:0,transfersTotal:0,currentCaptain:'—',total:0};
     const gp = g.gwPts||[]; const af = m.fines.filter(f=>!f.reversed);
     const owed = JOINING_FEE + af.reduce((a,f)=>a+f.amount,0);
@@ -1110,7 +1176,7 @@ Promise.all([
       lmpFines:m.bottom_finishes.length*GW_FINE, otherFines:af.filter(f=>f.type!=='bottom').reduce((a,f)=>a+f.amount,0),
       owed, paid, credits:creditsBal, creditLeft, outstanding:Math.max(0, grossDue-creditsBal) };
   });
-  const mmByName={}; MM.forEach(x=>mmByName[x.name]=x);
+  mmByName={}; MM.forEach(x=>mmByName[x.name]=x);
   const mmByEntry={}; MM.forEach(x=>mmByEntry[x.entry]=x);
   const posByName={}; [...MM].sort((a,b)=>b.pts-a.pts).forEach((m,i)=>posByName[m.name]=i+1);
   const leader=[...MM].sort((a,b)=>b.pts-a.pts)[0];
@@ -1167,7 +1233,6 @@ Promise.all([
   }
 
   // ── STANDINGS ──
-  let stSort='total';
   function renderStandings(){
     // Empty until at least one manager has activated their season (live feed).
     if(!SR.length){
@@ -1259,8 +1324,10 @@ Promise.all([
     $('#h2h-legend').innerHTML=`<span style="color:${COL.amber}">● ${firstName(a.name)}</span><span style="color:${COL.blue}">● ${firstName(b.name)}</span>`;
     $('#h2h-chart').innerHTML=dualLine(a.gwPts,b.gwPts);
   }
-  fillSel($('#h2h-a'), leader.name);
-  fillSel($('#h2h-b'), [...MM].sort((a,b)=>b.bottoms-a.bottoms)[0].name);
+  // Preserve whatever's currently picked across a refresh (e.g. after a
+  // treasurer action) rather than snapping back to the defaults every time.
+  fillSel($('#h2h-a'), $('#h2h-a').value || leader.name);
+  fillSel($('#h2h-b'), $('#h2h-b').value || [...MM].sort((a,b)=>b.bottoms-a.bottoms)[0].name);
   $('#h2h-a').onchange=renderH2H; $('#h2h-b').onchange=renderH2H;
   $('#act-h2h-rand').onclick=()=>{ const i=Math.floor(Math.random()*MM.length); let j; do{j=Math.floor(Math.random()*MM.length);}while(j===i);
     $('#h2h-a').value=MM[i].name; $('#h2h-b').value=MM[j].name; renderH2H(); };
@@ -1297,11 +1364,14 @@ Promise.all([
         `</tbody></table>`
       : `<div style="color:var(--dim);font-size:11px;padding:8px 0">No emails sent yet.</div>`;
   }
-  fillSel($('#pf-sel'), leader.name);
+  fillSel($('#pf-sel'), $('#pf-sel').value || leader.name);
   $('#pf-sel').onchange=renderProfile;
   $('#act-pf-rand').onclick=()=>{ $('#pf-sel').value=MM[Math.floor(Math.random()*MM.length)].name; renderProfile(); };
   $('#act-pf-squad').onclick=()=>openSquad($('#pf-sel').value);
   renderProfile();
+  } // end renderMoneyViews
+  renderMoneyViews();
+  refreshMoneyViews = renderMoneyViews;
 
   // ── GW SQUAD MODAL ──
   const sqModal=$('#squad-modal');
