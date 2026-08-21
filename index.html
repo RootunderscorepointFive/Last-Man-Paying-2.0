@@ -1403,8 +1403,13 @@ Promise.all([
     const ARCHIVE = ((config && config.season_archive) || []).slice().sort().reverse();
     const latestArchive = ARCHIVE[0];
     const label = id => String(id).replace('-', '/');
-    // current-season GW lives in data.json (the working file), not fpl_data.json
-    let currentGW = (ledger && ledger.last_synced_gw) || 0;
+    // The current-season GW must track the same live source as every other tab
+    // (api.MAX_GW) — not ledger.last_synced_gw, which only advances once a GW is
+    // fully finished AND its fines have been applied. That lag left this tab
+    // stuck showing the archived season and "Current season activates from
+    // GW10" even while the topbar/Standings/LMP tabs already showed the current
+    // gameweek live, and would have widened further right as GW10 approached.
+    let currentGW = (api && api.MAX_GW) || 0;
     if (window.__RUNIN_FAKE_GW != null) currentGW = window.__RUNIN_FAKE_GW;  // test hook
     const RI_COL = { panel:'#131820', dim:'#8a95a2', text:'#d8dde4', amber:'#FFB224', green:'#3DDC97', red:'#FF5D5D', grid:'rgba(255,255,255,0.05)' };
 
