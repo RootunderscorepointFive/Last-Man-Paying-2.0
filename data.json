@@ -410,6 +410,13 @@
       "subject": "FPL — payment received",
       "sent_at": "2026-08-21T17:57:13.645Z",
       "sent_by": "treasurer"
+    },
+    {
+      "type": "confirmation",
+      "recipient": "Thato Choshi",
+      "subject": "FPL — payment received",
+      "sent_at": "2026-08-21T18:21:51.879Z",
+      "sent_by": "treasurer"
     }
   ]
 }
