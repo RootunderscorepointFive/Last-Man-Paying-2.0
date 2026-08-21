@@ -31,6 +31,11 @@
   .skip { position:absolute; left:-999px; top:0; background:var(--amber); color:#000; padding:8px 12px; z-index:100; }
   .skip:focus { left:8px; top:8px; }
 
+  /* Pinned header — topbar + ticker + tab nav stay visible while a tab's content scrolls
+     underneath. One sticky wrapper (rather than sticky on each child) so the pieces can't
+     drift out of alignment as their heights change. z-index sits below modals (200) and
+     the toast stack (300) so those still layer above it. */
+  .app-header { position: sticky; top: 0; z-index: 100; }
   /* Top status bar */
   .topbar { background: var(--panel); border-bottom: 1px solid var(--border); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; gap:12px; flex-wrap:wrap; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
   /* masthead: primary lockup, clear space ≈ one cursor block (~12px) honoured via topbar padding + the SVG's own internal margin */
@@ -356,6 +361,7 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<header class="app-header">
 <div class="topbar">
   <div class="brand">
     <svg class="brand-logo" viewBox="0 0 560 140" role="img" aria-label="LMP, Last Man Paying, Terminal">
@@ -406,6 +412,7 @@
   <button class="tab" role="tab" id="tab-runin" aria-controls="panel-runin" aria-selected="false" tabindex="-1"><span class="idx">06</span>The Run In</button>
   <button class="tab" role="tab" id="tab-analytics" aria-controls="panel-analytics" aria-selected="false" tabindex="-1"><span class="idx">07</span>Analytics</button>
 </nav>
+</header>
 <div id="offseason" class="offseason" hidden>● 2026/27 hasn't kicked off — registered teams are listed below; live scores &amp; fines begin rolling in after GW1. Head to <strong>The Run In</strong> for last season's story.</div>
 
 <main id="main">
