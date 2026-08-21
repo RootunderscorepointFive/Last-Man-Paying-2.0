@@ -52,11 +52,18 @@ async function sync() {
   //    empty/broken league below.
   const bootstrap = await fetchJSON(`${API}/bootstrap-static/`);
 
-  const finishedEvent = [...bootstrap.events].filter(e => e.finished).pop();
-  const currentGW = finishedEvent ? finishedEvent.id : 0;   // 0 = no GW played yet
+  // The gameweek currently underway (deadline passed, live scores flowing) is
+  // `is_current`, not `finished` — `finished` only flips true once bonus points
+  // are confirmed, a day or two after the last match. Gating on `finished` left
+  // currentGW at 0 for the whole live gameweek, even though history.current
+  // already carries a live provisional row for it — hence live points never
+  // showing and the site stuck on its off-season "GW0" state mid-gameweek.
+  const currentEvent = bootstrap.events.find(e => e.is_current)
+    || [...bootstrap.events].filter(e => e.finished).pop();
+  const currentGW = currentEvent ? currentEvent.id : 0;   // 0 = no GW started yet
   // The event whose squads are (or are about to become) public — used only to
   // read picks. Picks 404 until that GW's deadline passes; that's handled softly.
-  const squadEvent = bootstrap.events.find(e => e.is_current)
+  const squadEvent = currentEvent
     || bootstrap.events.find(e => e.is_next)
     || bootstrap.events[0];
   const squadGW = squadEvent ? squadEvent.id : 1;
