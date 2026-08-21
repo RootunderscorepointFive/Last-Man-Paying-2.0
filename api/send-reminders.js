@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
       const m = data.managers.find(x => x.name === name);
       if (!m) { skipped.push({ name, reason: 'unknown manager' }); continue; }
 
-      const out = outstandingOf(m, config.joining_fee || 250);
+      const out = outstandingOf(m, config.joining_fee || 300);
       if (out.total <= 0) { skipped.push({ name, reason: 'nothing outstanding' }); continue; }
 
       const to = emails[name];

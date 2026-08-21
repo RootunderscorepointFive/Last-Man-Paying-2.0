@@ -35,8 +35,8 @@
   .topbar { background: var(--panel); border-bottom: 1px solid var(--border); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; gap:12px; flex-wrap:wrap; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
   /* masthead: primary lockup, clear space ≈ one cursor block (~12px) honoured via topbar padding + the SVG's own internal margin */
   .topbar .brand { display: flex; align-items: center; line-height: 0; }
-  .topbar .brand .brand-logo { height: 36px; width: auto; display: block; }
-  @media (max-width: 560px){ .topbar .brand .brand-logo { height: 30px; } }
+  .topbar .brand .brand-logo { height: 52px; width: auto; display: block; }
+  @media (max-width: 560px){ .topbar .brand .brand-logo { height: 44px; } }
   .topbar .right { display: flex; gap: 18px; color: var(--dim); flex-wrap:wrap; }
   .topbar .right strong { color: var(--text); margin-left: 6px; }
   .topbar .live::before { content: '●'; color: var(--red); margin-right: 6px; animation: pulse 1.2s ease-in-out infinite; }
@@ -398,8 +398,8 @@
 </div>
 
 <nav class="tabs" role="tablist" aria-label="LMP Terminal screens">
-  <button class="tab" role="tab" id="tab-standings" aria-controls="panel-standings" aria-selected="false" tabindex="-1"><span class="idx">01</span>Standings</button>
-  <button class="tab" role="tab" id="tab-lmp" aria-controls="panel-lmp" aria-selected="true" tabindex="0"><span class="idx">02</span>Last Man Paying</button>
+  <button class="tab" role="tab" id="tab-standings" aria-controls="panel-standings" aria-selected="true" tabindex="0"><span class="idx">01</span>Standings</button>
+  <button class="tab" role="tab" id="tab-lmp" aria-controls="panel-lmp" aria-selected="false" tabindex="-1"><span class="idx">02</span>Last Man Paying</button>
   <button class="tab" role="tab" id="tab-ledger" aria-controls="panel-ledger" aria-selected="false" tabindex="-1"><span class="idx">03</span>Ledger</button>
   <button class="tab" role="tab" id="tab-h2h" aria-controls="panel-h2h" aria-selected="false" tabindex="-1"><span class="idx">04</span>Head-to-Head</button>
   <button class="tab" role="tab" id="tab-profiles" aria-controls="panel-profiles" aria-selected="false" tabindex="-1"><span class="idx">05</span>Profiles</button>
@@ -409,7 +409,7 @@
 <div id="offseason" class="offseason" hidden>● 2026/27 hasn't kicked off — registered teams are listed below; live scores &amp; fines begin rolling in after GW1. Head to <strong>The Run In</strong> for last season's story.</div>
 
 <main id="main">
-  <section id="panel-standings" role="tabpanel" aria-labelledby="tab-standings" tabindex="0" hidden>
+  <section id="panel-standings" role="tabpanel" aria-labelledby="tab-standings" tabindex="0">
     <div class="kpi-grid" id="st-kpis"></div>
     <div class="grid"><div class="panel grid-full">
       <div class="panel-head"><div class="panel-title">League Table</div>
@@ -424,7 +424,7 @@
     </div>
   </section>
 
-  <section id="panel-lmp" role="tabpanel" aria-labelledby="tab-lmp" tabindex="0">
+  <section id="panel-lmp" role="tabpanel" aria-labelledby="tab-lmp" tabindex="0" hidden>
     <div class="kpi-grid" id="lmp-kpis"></div>
     <div class="grid">
       <div class="panel featured grid-2">
@@ -861,7 +861,7 @@ function overrideFlow(){
 }
 
 // F1 — Email Reminders (Ledger) · sends outstanding-balance reminders via Resend
-let JOINING_FEE = 250;                    // set from config on data load
+let JOINING_FEE = 300;                    // set from config on data load
 const attrEsc = s => String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;');
 // mirror of the server's outstanding maths (non-reversed, unpaid fines + unpaid joining fee)
 function outstandingFE(m){
@@ -977,7 +977,7 @@ Promise.all([
   const gwByEntry = {}; api.gwData.forEach(g=>gwByEntry[g.entry]=g);
   const byName = {}; ledger.managers.forEach(m=>byName[m.name]=m);
   const EMAIL_LOG = ledger.email_log || [];      // Phase 7 audit trail
-  MANAGERS = ledger.managers; API_DATA = api; JOINING_FEE = (config && config.joining_fee) || 250;   // enable treasurer flows (top-level wiring)
+  MANAGERS = ledger.managers; API_DATA = api; JOINING_FEE = (config && config.joining_fee) || 300;   // enable treasurer flows (top-level wiring)
 
   // chrome
   $('#tb-gw').textContent = `${L}/${TOTAL_GWS}`;
@@ -1085,8 +1085,8 @@ Promise.all([
   const MM = ledger.managers.map(m=>{
     const g = gwByEntry[m.entry] || {gwPts:[],gwHits:[],weeklyRanks:[],gwRanks:[],chips:[],benchTotal:0,transfersTotal:0,currentCaptain:'—',total:0};
     const gp = g.gwPts||[]; const af = m.fines.filter(f=>!f.reversed);
-    const owed = 250 + af.reduce((a,f)=>a+f.amount,0);
-    const paid = (m.joining_fee_paid?250:0) + af.filter(f=>f.paid_date).reduce((a,f)=>a+f.amount,0);
+    const owed = JOINING_FEE + af.reduce((a,f)=>a+f.amount,0);
+    const paid = (m.joining_fee_paid?JOINING_FEE:0) + af.filter(f=>f.paid_date).reduce((a,f)=>a+f.amount,0);
     const creditsBal = Math.max(0, m.credits||0);              // prepaid, offsets what's owed
     const grossDue = owed - paid;                              // unpaid before credit
     const creditLeft = Math.max(0, creditsBal - grossDue);     // surplus carried on account
@@ -1199,7 +1199,7 @@ Promise.all([
   function renderLedger(){
     const totalOwed=MM.reduce((a,x)=>a+x.owed,0), collected=MM.reduce((a,x)=>a+x.paid,0), outstanding=totalOwed-collected;
     const settled=MM.filter(x=>x.outstanding<=0).length;
-    const joinPaidCount=MM.filter(x=>x.joining_fee_paid).length, joinCollected=joinPaidCount*250, finesCollected=collected-joinCollected;
+    const joinPaidCount=MM.filter(x=>x.joining_fee_paid).length, joinCollected=joinPaidCount*JOINING_FEE, finesCollected=collected-joinCollected;
     $('#lg-kpis').innerHTML=`
       <div class="kpi"><div class="kpi-label">Prize Pool · Collected</div><div class="kpi-value green">R${collected.toLocaleString()}</div><div class="kpi-sub">joining + fines banked</div></div>
       <div class="kpi"><div class="kpi-label">Outstanding</div><div class="kpi-value red">R${outstanding.toLocaleString()}</div><div class="kpi-sub">${MM.filter(x=>x.outstanding>0).length} still owing</div></div>
@@ -1217,7 +1217,7 @@ Promise.all([
         <td>${m.outstanding<=0?`<span class="pill pill-clear">Settled${m.creditLeft>0?` · +R${m.creditLeft.toLocaleString()} cr`:''}</span>`:'<span class="pill pill-debt clk" data-pay="'+m.name+'" tabindex="0" role="button" title="Record a payment">Owing · pay?</span>'}</td></tr>`).join('');
     $('#lg-terminal').innerHTML=`
       <div><span class="prompt">LMP&gt;</span> compute_prize_pool</div>
-      <div class="out">joining fees collected: ${joinPaidCount} × R250 = R${joinCollected.toLocaleString()}</div>
+      <div class="out">joining fees collected: ${joinPaidCount} × R${JOINING_FEE} = R${joinCollected.toLocaleString()}</div>
       <div class="out">fines collected: R${finesCollected.toLocaleString()}</div>
       <div class="ok">→ prize pool = R${collected.toLocaleString()} · R${outstanding.toLocaleString()} still to bank</div>`;
   }
@@ -1271,7 +1271,7 @@ Promise.all([
     $('#pf-spark').innerHTML=sparkline(m.gwPts, m.bottoms>=8?COL.red:COL.green, overallAvgGW);
     // payment history — joining fee + every fine (reversed shown greyed, reason on hover)
     const lm=byName[m.name];
-    const head=`<tr><td>—</td><td class="r">R250</td><td class="typ">joining</td><td>${lm.joining_fee_paid?'<span class="paid">pre-system</span>':'<span class="unpaid">unpaid</span>'}</td></tr>`;
+    const head=`<tr><td>—</td><td class="r">R${JOINING_FEE}</td><td class="typ">joining</td><td>${lm.joining_fee_paid?'<span class="paid">pre-system</span>':'<span class="unpaid">unpaid</span>'}</td></tr>`;
     const fineRows=[...lm.fines].sort((a,b)=>(a.gw||0)-(b.gw||0)).map(f=>{
       const pd=f.paid_date; const paid = pd==null?'<span class="unpaid">unpaid</span>':pd==='migrated'?'<span class="paid">pre-system</span>':`<span class="paid">${String(pd).slice(0,10)}</span>`;
       if(f.reversed){ return `<tr style="opacity:0.45" title="Reversed: ${(f.reversed_reason||'').replace(/"/g,'&quot;')}"><td>${f.gw?'GW'+f.gw:'—'}</td><td class="r" style="text-decoration:line-through">R${f.amount}</td><td class="typ">${String(f.type).replace(/_/g,' ')} · reversed</td><td>—</td></tr>`; }

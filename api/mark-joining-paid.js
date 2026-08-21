@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
 
   try {
     let didMark = false, newBalance = 0;
-    const fee = config.joining_fee || 250;
+    const fee = config.joining_fee || 300;
     const result = await mutateData(`Treasurer: mark joining fee paid — ${name}`, (data) => {
       const m = data.managers.find(x => x.name === name);
       if (!m) return false; // abort → not found
