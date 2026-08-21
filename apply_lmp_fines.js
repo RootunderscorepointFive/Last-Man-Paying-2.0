@@ -55,34 +55,89 @@ function computeBottom3(scores) {
   return { threshold, payers };
 }
 
+// Registered roster from a league payload: standings (scored members) unioned
+// with new_entries (pre-season/late joiners), de-duped by entry, normalised to
+// { entry, entry_name, player_name }.
+function rosterOf(league) {
+  const norm = (m) => ({
+    entry: m.entry,
+    entry_name: m.entry_name,
+    player_name: m.player_name
+      || [m.player_first_name, m.player_last_name].filter(Boolean).join(' ').trim()
+      || 'Unknown',
+  });
+  const seen = new Set();
+  const out = [];
+  const src = [
+    ...((league.standings && league.standings.results) || []),
+    ...((league.new_entries && league.new_entries.results) || []),
+  ];
+  for (const m of src) {
+    if (seen.has(m.entry)) continue;
+    seen.add(m.entry);
+    out.push(norm(m));
+  }
+  return out;
+}
+
 async function main() {
   const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
   const league = await fetchJSON(`${API}/leagues-classic/${LEAGUE_ID}/standings/`);
-  const entries = league.standings.results; // dynamic — absorbs roster changes
+  // Registered roster = scored members (standings) UNION pre-season/late joiners
+  // (new_entries), so a manager who has registered but not yet been scored still
+  // gets reconciled into the ledger.
+  const entries = rosterOf(league);
   if (config.managers && config.managers.expected_count && entries.length !== config.managers.expected_count) {
     console.warn(`⚠ roster size ${entries.length} != expected ${config.managers.expected_count} (sanity-check only, continuing)`);
+  }
+
+  // Reconcile the ledger by NAME, not FPL entry ID. Entry IDs are NOT stable
+  // across this league's lifetime (e.g. every returning member from last
+  // season has a different entry ID in this league), so matching by entry
+  // would silently create a duplicate zero-balance record for every returning
+  // member instead of updating their existing one — orphaning their fines and
+  // payment history. Name is the durable key (also how MANAGER_EMAILS and
+  // epithet_overrides key managers elsewhere in the app).
+  //
+  // Runs every sync, independent of whether a gameweek has finished, so a
+  // newly-activated member gets a money record (owing the joining fee)
+  // immediately rather than waiting for the first scored GW.
+  const byName = {};
+  data.managers.forEach(m => { byName[m.name] = m; });
+  const byEntry = {};
+  let rosterChanged = false;
+  for (const e of entries) {
+    let m = byName[e.player_name];
+    if (!m) {
+      m = { entry: e.entry, name: e.player_name, team: e.entry_name,
+            joining_fee_paid: false, fines: [], bottom_finishes: [],
+            epithet: null, epithet_tagline: null, credits: 0 };
+      data.managers.push(m); byName[e.player_name] = m; rosterChanged = true;
+      console.log(`+ new manager added at zero: ${e.player_name} (${e.entry_name})`);
+    } else {
+      if (m.entry !== e.entry) { m.entry = e.entry; rosterChanged = true; }
+      if (m.team !== e.entry_name) { m.team = e.entry_name; rosterChanged = true; }
+    }
+    byEntry[e.entry] = m;
   }
 
   const bootstrap = await fetchJSON(`${API}/bootstrap-static/`);
   const finished = bootstrap.events.filter(e => e.finished).map(e => e.id);
   const latestFinished = finished.length ? Math.max(...finished) : null;
   if (targetGW == null) targetGW = latestFinished;
-  if (targetGW == null) { console.log('No finished GW yet — nothing to fine. Exiting cleanly.'); return; }
 
-  // Reconcile roster: every live entry must have a manager record.
-  const byEntry = {};
-  data.managers.forEach(m => { byEntry[m.entry] = m; });
-  for (const e of entries) {
-    if (!byEntry[e.entry]) {
-      const rec = { entry: e.entry, name: e.player_name, team: e.entry_name,
-                    joining_fee_paid: false, fines: [], bottom_finishes: [] };
-      data.managers.push(rec); byEntry[e.entry] = rec;
-      console.log(`+ new manager added at zero: ${e.player_name} (${e.entry_name})`);
+  // Pre-season / no finished GW: persist any roster reconciliation (so newly
+  // activated members show up money-side), then stop before fines.
+  if (targetGW == null) {
+    if (!DRY_RUN && rosterChanged) {
+      data.generated_at = new Date().toISOString();
+      fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+      console.log('Roster reconciled — no finished GW yet, nothing to fine.');
     } else {
-      byEntry[e.entry].name = e.player_name;   // keep names/teams fresh
-      byEntry[e.entry].team = e.entry_name;
+      console.log('No finished GW yet — nothing to fine.');
     }
+    return;
   }
 
   // Post-hits score for the target GW, per entry.
@@ -125,7 +180,7 @@ async function main() {
 
   console.log(`\n${applied} fine(s) ${DRY_RUN ? 'would be' : ''} applied, ${skipped} already present (idempotent).`);
 
-  if (!DRY_RUN && applied > 0) {
+  if (!DRY_RUN && (applied > 0 || rosterChanged)) {
     data.last_synced_gw = Math.max(data.last_synced_gw || 0, targetGW);
     data.generated_at = now;
     fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
