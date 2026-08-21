@@ -385,6 +385,13 @@
       "subject": "Smoke test",
       "sent_at": "2026-08-20T12:45:42.684Z",
       "sent_by": "treasurer"
+    },
+    {
+      "type": "confirmation",
+      "recipient": "Thato Choshi",
+      "subject": "FPL — payment received",
+      "sent_at": "2026-08-21T17:57:13.645Z",
+      "sent_by": "treasurer"
     }
   ]
 }
