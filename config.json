@@ -28,16 +28,40 @@
   },
   "rules": {
     "season": "2026/27",
-    "agreed_on": "10 August 2025",
-    "valid_until": "30 May 2026 (UEFA Champions League final)",
+    "agreed_on": "16 August 2026",
+    "valid_until": "5 June 2027 (UEFA Champions League final)",
     "sections": [
       {
         "heading": "Joining Fee",
-        "body": "R300 per member. Used to book a venue for the UEFA Champions League final viewing. Due by 30 September 2025. Failure to pay results in gameweek fines being accrued (R100 per GW) until payment is made."
+        "body": "R300 per member. Used to book a venue for the UEFA Champions League final viewing. Due by 30 September 2026. Failure to pay results in gameweek fines being accrued (R100 per GW) until payment is made."
       },
       {
         "heading": "Last Man Paying — Weekly Fines",
         "body": "Each gameweek, the three teams with the lowest scores pay R100 each. If there is a tie at the third, second, or first lowest score, all tied teams pay."
+      },
+      {
+        "heading": "Fines",
+        "body": "The default fine for any rule violation not otherwise specified is R150. This is separate from the R100 weekly Last Man Paying contribution."
+      },
+      {
+        "heading": "Payment References",
+        "body": "All EFT payments must be referenced correctly using your name followed by 'FPL' — e.g. 'Sthe FPL'. Failure to reference correctly results in a fine."
+      },
+      {
+        "heading": "Payment Deadline",
+        "body": "Where these rules refer to a 'deadline', this means the official FPL gameweek deadline, not match kick-off."
+      },
+      {
+        "heading": "Treasurer's Reconciliation",
+        "body": "The treasurer must complete a reconciliation at the end of every gameweek, before the next gameweek begins."
+      },
+      {
+        "heading": "Team Activation",
+        "body": "Failure to activate a team or join the league by Gameweek 1 results in a fine."
+      },
+      {
+        "heading": "Deadline Reminders",
+        "body": "No reminders are sent in the two hours before an FPL deadline. Managers are responsible for managing their own teams on time; failure to do so may result in a fine."
       },
       {
         "heading": "End of Season Penalty",
@@ -53,19 +77,35 @@
       },
       {
         "heading": "The Venue",
-        "body": "The person at the bottom of the log at the end of GW19 is responsible for finding the venue for the final by 31 January 2026. The venue must be in Gauteng and must be approved by the person at the top of the log at the end of GW19. Failure to find a venue by 31 January 2026 results in R100 fines per gameweek until finalised."
+        "body": "The person at the bottom of the log at the end of GW19 is responsible for finding the venue for the final by 31 January 2027. The venue must be in Gauteng and must be approved by the person at the top of the log at the end of GW19. Failure to find a venue by 31 January 2027 results in R100 fines per gameweek until finalised."
+      },
+      {
+        "heading": "Final Accommodation",
+        "body": "The Final festivities and accommodation now run for two days. Day 1 is self-catering."
+      },
+      {
+        "heading": "Male Guests",
+        "body": "Male guests wishing to watch along must pay the average contribution made throughout the season (determined at season end)."
+      },
+      {
+        "heading": "Female Guests — Day 1",
+        "body": "Female guests are permitted on Day 1 but must vacate by 13:00 on Day 2 (the day of the Final). Failure to comply results in a fine equal to the average contribution for the season, carried over to the following season."
+      },
+      {
+        "heading": "Female Guests — Final",
+        "body": "Female guests may join the festivities after the 90th-minute final whistle."
       },
       {
         "heading": "The Winner",
         "body": "Selects alcohol of their choice to be consumed during the Champions League final. Receives a football jersey as a reward — strictly replica / fan jersey, no authentics."
       },
       {
-        "heading": "The Loser",
-        "body": "Must buy ice from their own personal funds and serves as squire to the winner. If the squire is unavailable due to circumstances beyond their control, the duties fall to the second-biggest loser at the board's discretion."
+        "heading": "Mini / Squire Rule",
+        "body": "The Squire (the bottom-placed manager) serves the winner and must be the first person to check in on the day of the festivities. Failure to check in first results in a fine equal to the average contribution for the season, carried over to the following season. If the Squire is unavailable due to circumstances beyond their control, the duties fall to the second-biggest loser at the board's discretion."
       },
       {
-        "heading": "Guests",
-        "body": "Male guests wishing to watch along must pay the average contribution made throughout the season (determined at season end). Female guests are welcome to join after the game."
+        "heading": "Bottom 3 Working Committee",
+        "body": "The bottom three managers at the end of the season form the Working Committee for the Final (the Squire is one of the three), responsible for purchasing ice, braai duties, and other administrative/logistical requirements. Duties must be discussed and delegated amongst the three members."
       },
       {
         "heading": "Force Majeure",
