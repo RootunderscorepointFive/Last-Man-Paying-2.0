@@ -110,14 +110,14 @@
       "bottomApps": 0
     },
     {
-      "manager": "Thembalethu Miya",
-      "team": "Root_.5 FC",
+      "manager": "Mhlengi Kunene",
+      "team": "Hidden Hills",
       "pts": 0,
       "bottomApps": 0
     },
     {
-      "manager": "Mhlengi Kunene",
-      "team": "Hidden Hills",
+      "manager": "Thembalethu Miya",
+      "team": "Root_.5 FC",
       "pts": 0,
       "bottomApps": 0
     }
@@ -394,9 +394,9 @@
       "squadValue": 0
     },
     {
-      "team": "Root_.5 FC",
-      "manager": "Thembalethu Miya",
-      "entry": 170177,
+      "team": "Hidden Hills",
+      "manager": "Mhlengi Kunene",
+      "entry": 194373,
       "gwPts": [],
       "gwHits": [],
       "benchTotal": 0,
@@ -409,9 +409,9 @@
       "squadValue": 0
     },
     {
-      "team": "Hidden Hills",
-      "manager": "Mhlengi Kunene",
-      "entry": 194373,
+      "team": "Root_.5 FC",
+      "manager": "Thembalethu Miya",
+      "entry": 170177,
       "gwPts": [],
       "gwHits": [],
       "benchTotal": 0,
@@ -534,15 +534,15 @@
       "c": "#e63946"
     },
     {
-      "f": "Thembalethu Miya",
-      "s": "Thembalethu",
-      "t": "Root_.5 FC",
-      "c": "#f4845f"
-    },
-    {
       "f": "Mhlengi Kunene",
       "s": "Mhlengi",
       "t": "Hidden Hills",
+      "c": "#f4845f"
+    },
+    {
+      "f": "Thembalethu Miya",
+      "s": "Thembalethu",
+      "t": "Root_.5 FC",
       "c": "#4dabf7"
     }
   ],
@@ -626,7 +626,7 @@
       "now_cost": 55,
       "transfers_in": 0,
       "transfers_out": 0,
-      "selected_by_percent": "34.6"
+      "selected_by_percent": "34.7"
     },
     {
       "id": 9,
