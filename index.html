@@ -605,6 +605,11 @@
 <script>
 // ── helpers ──
 const $ = s => document.querySelector(s);
+// Escapes external, user-controllable text (FPL manager/team/player names) before
+// it's inserted into any HTML template — text content or a quoted attribute alike.
+// Without this, a manager could set their FPL team name to something that breaks
+// out of the markup for every visitor.
+const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 const sym = name => {
   const first = (name || '').trim().split(/\s+/)[0] || name || '??';
   return first.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4) || 'XXXX';
@@ -687,7 +692,7 @@ const fn = n => (n||'').trim().split(/\s+/)[0] || n;
 let API_DATA = null;                      // fpl_data, set when data loads (for Override)
 const dataReady = () => MANAGERS.length > 0;
 const mgrOptions = pre => [...MANAGERS].sort((a,b)=>a.name.localeCompare(b.name))
-  .map(m=>`<option value="${m.name}"${m.name===pre?' selected':''}>${m.name}</option>`).join('');
+  .map(m=>`<option value="${esc(m.name)}"${m.name===pre?' selected':''}>${esc(m.name)}</option>`).join('');
 const activeFines = name => { const m=MANAGERS.find(x=>x.name===name); return m ? m.fines.filter(f=>!f.reversed) : []; };
 const fineLabel = f => `${f.gw?'GW'+f.gw:'—'} · R${f.amount} · ${String(f.type).replace(/_/g,' ')}${f.paid_date?' · paid':' · unpaid'}`;
 const onErr = err => { $('#tm-err').textContent = err.message; if(err.code===401) toast('Unauthorized — wrong password','err'); };
@@ -862,7 +867,6 @@ function overrideFlow(){
 
 // F1 — Email Reminders (Ledger) · sends outstanding-balance reminders via Resend
 let JOINING_FEE = 300;                    // set from config on data load
-const attrEsc = s => String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;');
 // mirror of the server's outstanding maths (non-reversed, unpaid fines + unpaid joining fee)
 function outstandingFE(m){
   const fines=m.fines.filter(f=>!f.reversed && !f.paid_date);
@@ -881,8 +885,8 @@ function remindFlow(){
   const rows=debtors.map(({m,out})=>{
     const bits=[]; if(out.joiningOwed) bits.push(`joining R${out.joiningOwed}`);
     out.fines.forEach(f=>bits.push(`${f.gw?'GW'+f.gw:'manual'} R${f.amount}`));
-    return `<label class="rmd-row"><input type="checkbox" class="rmd-cb" value="${attrEsc(m.name)}" checked>
-      <span class="rmd-main"><span class="rmd-name">${m.name}</span><span class="rmd-bd">${bits.join(' · ')}</span></span>
+    return `<label class="rmd-row"><input type="checkbox" class="rmd-cb" value="${esc(m.name)}" checked>
+      <span class="rmd-main"><span class="rmd-name">${esc(m.name)}</span><span class="rmd-bd">${esc(bits.join(' · '))}</span></span>
       <span class="rmd-amt">R${out.total}</span></label>`;
   }).join('');
   openTreasurer({ title:'Email Reminders', sub:`${debtors.length} with outstanding balances · sends via Resend`,
@@ -927,8 +931,8 @@ function announceFlow(){
   ((API_DATA&&API_DATA.gwData)||[]).forEach(g=>{ if(g.manager && !seen.has(g.manager)){ seen.add(g.manager); roster.push({name:g.manager,team:g.team||''}); } });
   roster.sort((a,b)=>a.name.localeCompare(b.name));
   const rows=roster.map(m=>
-    `<label class="rmd-row"><input type="checkbox" class="anc-cb" value="${attrEsc(m.name)}" checked>
-      <span class="rmd-main"><span class="rmd-name">${m.name}</span><span class="rmd-bd">${m.team}</span></span></label>`).join('');
+    `<label class="rmd-row"><input type="checkbox" class="anc-cb" value="${esc(m.name)}" checked>
+      <span class="rmd-main"><span class="rmd-name">${esc(m.name)}</span><span class="rmd-bd">${esc(m.team)}</span></span></label>`).join('');
   openTreasurer({ title:'Send Announcement', sub:`league-wide comms · sends via Resend`,
     bodyHtml:`<div id="anc-banner" class="rmd-banner">Sender: checking…</div>
       <div><label for="anc-subject">Subject</label><input type="text" id="anc-subject" placeholder="e.g. GW1 deadline — Friday 18:30"></div>
@@ -1058,7 +1062,7 @@ Promise.all([
     const tied = payers.filter(x=>x.s===p.s).length>1;
     return `<div class="bottom-row">
       <div class="rk">${tied?'=':i+1}</div>
-      <div><div class="nm">${sym(p.name)} <span style="color:var(--dim);font-weight:400">· ${p.name}</span></div>${epiHtml(m)}</div>
+      <div><div class="nm">${sym(p.name)} <span style="color:var(--dim);font-weight:400">· ${esc(p.name)}</span></div>${epiHtml(m)}</div>
       <div class="px">${p.s} pts<small>${p.s-avg>=0?'+':''}${p.s-avg} vs avg</small></div>
       <div class="fee">R${GW_FINE}</div></div>`;
   }).join('');
@@ -1180,9 +1184,9 @@ Promise.all([
     else rows.sort((a,b)=>(a.weeklyRankNow||99)-(b.weeklyRankNow||99));
     $('#st-body').innerHTML=rows.map((m,i)=>{
       const rank=i+1, gap=m.pts-maxPts;
-      return `<tr class="${noGw?'':'clk'}" ${noGw?'':'tabindex="0"'} data-mgr="${m.name}" aria-label="${m.name}${noGw?'':' — open GW'+L+' squad'}">
+      return `<tr class="${noGw?'':'clk'}" ${noGw?'':'tabindex="0"'} data-mgr="${esc(m.name)}" aria-label="${esc(m.name)}${noGw?'':' — open GW'+L+' squad'}">
         <td><span class="rkn ${(!noGw&&rank<=3)?'top':''}">${noGw?'·':rank}</span></td>
-        <td><span class="nm2">${m.name}</span> ${epiHtml(m)}<div class="tm">${m.team}</div></td>
+        <td><span class="nm2">${esc(m.name)}</span> ${epiHtml(m)}<div class="tm">${esc(m.team)}</div></td>
         <td class="num">${noGw?'—':m.pts.toLocaleString()}</td>
         <td class="num ${(!noGw&&gap<0)?'neg':''}">${noGw?'—':(gap===0?'—':gap)}</td>
         <td class="num">${noGw?'—':(m.weeklyRankNow||'—')}</td>
@@ -1207,14 +1211,14 @@ Promise.all([
       <div class="kpi"><div class="kpi-label">Fully Settled</div><div class="kpi-value">${settled}<span style="font-size:18px;color:var(--dim)">/${MM.length}</span></div><div class="kpi-sub">paid up in full</div></div>`;
     $('#lg-body').innerHTML=[...MM].sort((a,b)=>b.outstanding-a.outstanding).map(m=>`
       <tr>
-        <td><span class="nm2">${m.name}</span> ${epiHtml(m)}<div class="tm">${m.team}</div></td>
-        <td>${m.joining_fee_paid?'<span class="pill pill-clear">Paid</span>':`<span class="pill pill-debt clk" data-join="${m.name}" tabindex="0" role="button" title="Mark joining fee paid">Unpaid · mark?</span>`}</td>
+        <td><span class="nm2">${esc(m.name)}</span> ${epiHtml(m)}<div class="tm">${esc(m.team)}</div></td>
+        <td>${m.joining_fee_paid?'<span class="pill pill-clear">Paid</span>':`<span class="pill pill-debt clk" data-join="${esc(m.name)}" tabindex="0" role="button" title="Mark joining fee paid">Unpaid · mark?</span>`}</td>
         <td class="num" title="${m.bottoms} × R${GW_FINE}">R${m.lmpFines.toLocaleString()} <span style="color:var(--dim);font-size:10px">(${m.bottoms}×)</span></td>
         <td class="num">${m.otherFines?('R'+m.otherFines.toLocaleString()):'—'}</td>
         <td class="num">R${m.owed.toLocaleString()}</td>
         <td class="num pos">R${m.paid.toLocaleString()}</td>
         <td class="num ${m.outstanding>0?'neg':''}">${m.outstanding>0?'R'+m.outstanding.toLocaleString():'—'}</td>
-        <td>${m.outstanding<=0?`<span class="pill pill-clear">Settled${m.creditLeft>0?` · +R${m.creditLeft.toLocaleString()} cr`:''}</span>`:'<span class="pill pill-debt clk" data-pay="'+m.name+'" tabindex="0" role="button" title="Record a payment">Owing · pay?</span>'}</td></tr>`).join('');
+        <td>${m.outstanding<=0?`<span class="pill pill-clear">Settled${m.creditLeft>0?` · +R${m.creditLeft.toLocaleString()} cr`:''}</span>`:`<span class="pill pill-debt clk" data-pay="${esc(m.name)}" tabindex="0" role="button" title="Record a payment">Owing · pay?</span>`}</td></tr>`).join('');
     $('#lg-terminal').innerHTML=`
       <div><span class="prompt">LMP&gt;</span> compute_prize_pool</div>
       <div class="out">joining fees collected: ${joinPaidCount} × R${JOINING_FEE} = R${joinCollected.toLocaleString()}</div>
@@ -1224,7 +1228,7 @@ Promise.all([
   renderLedger();
 
   // ── HEAD-TO-HEAD ──
-  const fillSel=(sel,name)=>{ sel.innerHTML=MM.map(m=>`<option value="${m.name}"${m.name===name?' selected':''}>${m.name}</option>`).join(''); };
+  const fillSel=(sel,name)=>{ sel.innerHTML=MM.map(m=>`<option value="${esc(m.name)}"${m.name===name?' selected':''}>${esc(m.name)}</option>`).join(''); };
   function renderH2H(){
     const a=mmByName[$('#h2h-a').value], b=mmByName[$('#h2h-b').value]; if(!a||!b) return;
     const row=(lab,av,bv,better)=>{ const aw=better==='hi'?av>bv:av<bv, bw=better==='hi'?bv>av:bv<av;
@@ -1260,7 +1264,7 @@ Promise.all([
   function renderProfile(){
     const m=mmByName[$('#pf-sel').value]; if(!m) return; const pos=posByName[m.name];
     $('#pf-hero').innerHTML=`<div class="prof-epi">${m.epithet||'—'}</div><div class="prof-tag">${m.epithet_tagline||''}</div>
-      <div class="prof-name">${m.name} · <span class="tm">${m.team}</span></div>`;
+      <div class="prof-name">${esc(m.name)} · <span class="tm">${esc(m.team)}</span></div>`;
     $('#pf-meta').textContent=`${sym(m.name)} · League ${ordOf(pos)}`;
     const stat=(l,v,c)=>`<div><div class="sl">${l}</div><div class="sv ${c||''}">${v}</div></div>`;
     $('#pf-stats').innerHTML=
@@ -1300,7 +1304,7 @@ Promise.all([
     $('#sq-team').textContent=g.team; $('#sq-sub').textContent=`${g.manager} · GW${L} squad`;
     const card=p=>{ const cls=p.is_captain?'cap':p.is_vice_captain?'vice':''; const badge=p.is_captain?'<span class="pcap c">CAPT</span>':p.is_vice_captain?'<span class="pcap v">VICE</span>':'<span class="pcap">&nbsp;</span>';
       const img=`https://resources.premierleague.com/premierleague/photos/players/110x140/p${p.code}.png`;
-      return `<div class="pcard ${cls}"><img class="pphoto" src="${img}" alt="${p.name}" loading="lazy" onerror="this.src='https://fantasy.premierleague.com/static/media/player-missing-110.64095a5f.png'"><div class="pname">${p.name}</div>${badge}</div>`; };
+      return `<div class="pcard ${cls}"><img class="pphoto" src="${img}" alt="${esc(p.name)}" loading="lazy" onerror="this.src='https://fantasy.premierleague.com/static/media/player-missing-110.64095a5f.png'"><div class="pname">${esc(p.name)}</div>${badge}</div>`; };
     const starters=g.currentPicks.slice(0,11), subs=g.currentPicks.slice(11);
     const rows={1:[],2:[],3:[],4:[]}; starters.forEach(p=>{ (rows[p.position]||rows[3]).push(p); });
     $('#sq-pitch').innerHTML=[1,2,3,4].map(pos=>`<div class="prow">${rows[pos].map(card).join('')}</div>`).join('');
@@ -1529,8 +1533,8 @@ Promise.all([
       const diff = (pct - parseFloat(p.fpl_pct||0)).toFixed(0);
       const diffCls = diff > 0 ? 'grn' : diff < 0 ? 'red' : 'dim';
       return `<tr>
-        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
-        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.cost/10).toFixed(1)}m</div></td>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${esc(p.name)}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.cost/10).toFixed(1)}m</div></td>
         <td class="r"><span class="amb" style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:18px">${p.count}</span><span style="color:var(--dim);font-size:10px">/${totalMgrs}</span></td>
         <td class="r">
           <div>${pct}%</div>
@@ -1545,8 +1549,8 @@ Promise.all([
     const capRows = capRanked.map(p => {
       const pct = Math.round(p.count / totalMgrs * 100);
       return `<tr>
-        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
-        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posName[p.pos]||''} · £${p.cost?(p.cost/10).toFixed(1)+'m':''}</div></td>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${esc(p.name)}</span><div style="font-size:10px;color:var(--dim)">${posName[p.pos]||''} · £${p.cost?(p.cost/10).toFixed(1)+'m':''}</div></td>
         <td class="r"><span class="amb" style="font-weight:700;font-size:18px;font-family:'IBM Plex Sans Condensed',sans-serif">${p.count}</span><span style="color:var(--dim);font-size:10px">/${totalMgrs}</span></td>
         <td class="r">${pct}%</td>
         <td style="font-size:11px;color:var(--dim)">${p.managers.join(', ')}</td>
@@ -1574,8 +1578,8 @@ Promise.all([
       const leaguePct = Math.round(p.count / totalMgrs * 100);
       const edge = (leaguePct - parseFloat(p.fpl_pct||0)).toFixed(0);
       return `<tr>
-        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
-        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.cost/10).toFixed(1)}m</div></td>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${esc(p.name)}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.cost/10).toFixed(1)}m</div></td>
         <td class="r grn">${parseFloat(p.fpl_pct||0).toFixed(1)}%</td>
         <td class="r red">${leaguePct}%</td>
         <td class="r red" style="font-weight:700">${edge}pp</td>
@@ -1588,8 +1592,8 @@ Promise.all([
       const inLeague = leagueOwnIds.has(p.id);
       const net = (p.transfers_in||0) - (p.transfers_out||0);
       return `<tr>
-        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
-        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.now_cost/10).toFixed(1)}m</div></td>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${esc(p.name)}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.now_cost/10).toFixed(1)}m</div></td>
         <td class="r grn">+${(p.transfers_in||0).toLocaleString()}</td>
         <td class="r ${net>=0?'grn':'red'}">${net>=0?'+':''}${net.toLocaleString()}</td>
         <td class="r">${inLeague ? `<span style="color:var(--green);font-size:11px">✓ in league</span>` : `<span style="color:var(--dim);font-size:11px">not owned</span>`}</td>
@@ -1616,8 +1620,8 @@ Promise.all([
     const tplRows = templatePlayers.map(p => {
       const pct = Math.round(p.count / totalMgrs * 100);
       return `<tr>
-        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'"></td>
-        <td><span style="font-weight:600">${p.name}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.cost/10).toFixed(1)}m</div></td>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${esc(p.name)}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · £${(p.cost/10).toFixed(1)}m</div></td>
         <td class="r"><span class="amb" style="font-weight:700;font-size:18px;font-family:'IBM Plex Sans Condensed',sans-serif">${p.count}/${totalMgrs}</span></td>
         <td class="r">${pct}%</td>
       </tr>`;
