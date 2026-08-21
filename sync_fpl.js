@@ -114,11 +114,28 @@ async function sync() {
   for (const m of managers) {
     console.log(`  ${m.player_name}...`);
     const history = await fetchSoft(`${API}/entry/${m.entry}/history/`, { current: [], chips: [] }, 'history');
-    const pastGWs = (history.current || []).filter(h => currentGW && h.event <= currentGW);
-    const gwPts = pastGWs.map(h => h.points - h.event_transfers_cost); // post-hits
-    const gwHits = pastGWs.map(h => h.event_transfers_cost);
-    const benchTotal = pastGWs.reduce((a, h) => a + (h.points_on_bench || 0), 0);
-    const transfersTotal = pastGWs.reduce((a, h) => a + (h.event_transfers || 0), 0);
+    const rows = history.current || [];
+    // FPL's per-entry history is authoritative once a gameweek is settled, but
+    // its `points` field for the live/in-progress gameweek sits at 0 (or
+    // whatever it was at the last internal sync) for hours after kickoff —
+    // even though the mini-league standings' live `total` (m.total, above)
+    // updates continuously as matches are played. So: trust history for every
+    // finished gameweek, but derive the live one dynamically as (live total -
+    // already-settled cumulative), so bottom-3/standings always reflect "as
+    // things stand right now" instead of waiting on history to catch up.
+    // Transfer cost is fixed at the deadline (not points-dependent), so it's
+    // read straight from the row — including the live GW's — when present.
+    let priorCum = 0;
+    const gwPts = [], gwHits = [];
+    for (let gw = 1; gw <= currentGW; gw++) {
+      const row = rows.find(h => h.event === gw);
+      const hits = row ? row.event_transfers_cost : 0;
+      const pts = gw < currentGW ? (row ? row.points - hits : 0) : (m.total || 0) - priorCum - hits;
+      gwPts.push(pts); gwHits.push(hits);
+      priorCum += pts;
+    }
+    const benchTotal = rows.filter(h => h.event < currentGW).reduce((a, h) => a + (h.points_on_bench || 0), 0);
+    const transfersTotal = rows.filter(h => h.event <= currentGW).reduce((a, h) => a + (h.event_transfers || 0), 0);
 
     // Picks are public only after a GW's deadline; before that this 404s.
     const picksData = await fetchSoft(`${API}/entry/${m.entry}/event/${squadGW}/picks/`, { picks: [], active_chip: null }, 'picks');
