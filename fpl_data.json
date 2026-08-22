@@ -38,8 +38,8 @@
       "bottomApps": 0
     },
     {
-      "manager": "Siyanda Ndaba",
-      "team": "Amad-ness",
+      "manager": "Thembalethu Miya",
+      "team": "Root_.5 FC",
       "pts": 15,
       "bottomApps": 0
     },
@@ -50,8 +50,8 @@
       "bottomApps": 0
     },
     {
-      "manager": "Thembalethu Miya",
-      "team": "Root_.5 FC",
+      "manager": "Siyanda Ndaba",
+      "team": "Amad-ness",
       "pts": 15,
       "bottomApps": 0
     },
@@ -74,20 +74,8 @@
       "bottomApps": 0
     },
     {
-      "manager": "Nkosi The Chef",
-      "team": "Mainoo Business",
-      "pts": 9,
-      "bottomApps": 0
-    },
-    {
-      "manager": "Learnmore Ntshangase",
-      "team": "Cash n Carry.ck",
-      "pts": 9,
-      "bottomApps": 0
-    },
-    {
-      "manager": "Thato Choshi",
-      "team": "Taydo FC",
+      "manager": "Zazi Zuma",
+      "team": "Mpendles Finest",
       "pts": 9,
       "bottomApps": 0
     },
@@ -98,26 +86,38 @@
       "bottomApps": 0
     },
     {
+      "manager": "Nkosi The Chef",
+      "team": "Mainoo Business",
+      "pts": 9,
+      "bottomApps": 0
+    },
+    {
+      "manager": "Thato Choshi",
+      "team": "Taydo FC",
+      "pts": 9,
+      "bottomApps": 0
+    },
+    {
+      "manager": "Learnmore Ntshangase",
+      "team": "Cash n Carry.ck",
+      "pts": 9,
+      "bottomApps": 0
+    },
+    {
       "manager": "President Gamede",
       "team": "Los Primeros",
       "pts": 9,
       "bottomApps": 0
     },
     {
-      "manager": "Zazi Zuma",
-      "team": "Mpendles Finest",
-      "pts": 9,
+      "manager": "Sthe Coqueto",
+      "team": "Coqueto202",
+      "pts": 5,
       "bottomApps": 0
     },
     {
       "manager": "Luthando Ngidi",
       "team": "Cops and Rogers",
-      "pts": 5,
-      "bottomApps": 0
-    },
-    {
-      "manager": "Sthe Coqueto",
-      "team": "Coqueto202",
       "pts": 5,
       "bottomApps": 0
     }
@@ -171,7 +171,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "21.7"
+          "ownership": "21.6"
         },
         {
           "id": 388,
@@ -658,7 +658,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "22.1"
+          "ownership": "22.0"
         },
         {
           "id": 532,
@@ -739,7 +739,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "3.9"
+          "ownership": "4.0"
         },
         {
           "id": 8,
@@ -1242,7 +1242,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "21.7"
+          "ownership": "21.6"
         },
         {
           "id": 124,
@@ -1276,9 +1276,9 @@
       ]
     },
     {
-      "team": "Amad-ness",
-      "manager": "Siyanda Ndaba",
-      "entry": 6934465,
+      "team": "Root_.5 FC",
+      "manager": "Thembalethu Miya",
+      "entry": 170177,
       "gwPts": [
         15
       ],
@@ -1289,41 +1289,30 @@
       "transfersTotal": 0,
       "chips": [],
       "total": 15,
-      "currentCaptain": "Mbeumo",
+      "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
         {
-          "id": 140,
-          "name": "Sánchez",
+          "id": 1,
+          "name": "Raya",
           "position": 1,
-          "code": 215059,
+          "code": 154561,
           "multiplier": 1,
           "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 50,
-          "ownership": "2.4"
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "37.6"
         },
         {
-          "id": 32,
-          "name": "Cash",
+          "id": 423,
+          "name": "Shaw",
           "position": 2,
-          "code": 199796,
+          "code": 106760,
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "8.9"
-        },
-        {
-          "id": 259,
-          "name": "Diop",
-          "position": 2,
-          "code": 219924,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "18.6"
+          "ownership": "21.6"
         },
         {
           "id": 8,
@@ -1337,26 +1326,26 @@
           "ownership": "39.8"
         },
         {
-          "id": 423,
-          "name": "Shaw",
+          "id": 499,
+          "name": "Pedro Porro",
           "position": 2,
-          "code": 106760,
+          "code": 441164,
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "21.7"
+          "cost": 55,
+          "ownership": "17.1"
         },
         {
-          "id": 557,
-          "name": "Tzolis",
+          "id": 432,
+          "name": "Mainoo",
           "position": 3,
-          "code": 439509,
+          "code": 516895,
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 65,
-          "ownership": "25.2"
+          "cost": 55,
+          "ownership": "1.0"
         },
         {
           "id": 426,
@@ -1365,7 +1354,7 @@
           "code": 141746,
           "multiplier": 1,
           "is_captain": false,
-          "is_vice_captain": false,
+          "is_vice_captain": true,
           "cost": 120,
           "ownership": "52.0"
         },
@@ -1381,26 +1370,26 @@
           "ownership": "26.3"
         },
         {
-          "id": 427,
-          "name": "Mbeumo",
+          "id": 368,
+          "name": "Szoboszlai",
           "position": 3,
-          "code": 446008,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 80,
-          "ownership": "38.9"
-        },
-        {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
+          "code": 424876,
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 155,
-          "ownership": "69.4"
+          "cost": 70,
+          "ownership": "41.8"
+        },
+        {
+          "id": 346,
+          "name": "Calvert-Lewin",
+          "position": 4,
+          "code": 177815,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "31.4"
         },
         {
           "id": 165,
@@ -1414,37 +1403,26 @@
           "ownership": "64.4"
         },
         {
-          "id": 496,
-          "name": "Kinsky",
-          "position": 1,
-          "code": 485055,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "24.5"
-        },
-        {
-          "id": 455,
-          "name": "Tonali",
-          "position": 3,
-          "code": 432422,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "4.2"
-        },
-        {
-          "id": 272,
-          "name": "Kusi-Asare",
+          "id": 411,
+          "name": "Haaland",
           "position": 4,
-          "code": 631786,
+          "code": 223094,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false,
+          "cost": 155,
+          "ownership": "69.4"
+        },
+        {
+          "id": 497,
+          "name": "Dubravka",
+          "position": 1,
+          "code": 67089,
           "multiplier": 0,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "7.5"
+          "cost": 40,
+          "ownership": "19.8"
         },
         {
           "id": 175,
@@ -1456,6 +1434,28 @@
           "is_vice_captain": false,
           "cost": 40,
           "ownership": "14.0"
+        },
+        {
+          "id": 212,
+          "name": "Hughes",
+          "position": 3,
+          "code": 108413,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "12.2"
+        },
+        {
+          "id": 259,
+          "name": "Diop",
+          "position": 2,
+          "code": 219924,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "18.6"
         }
       ],
       "squadValue": 1000,
@@ -1658,9 +1658,9 @@
       ]
     },
     {
-      "team": "Root_.5 FC",
-      "manager": "Thembalethu Miya",
-      "entry": 170177,
+      "team": "Amad-ness",
+      "manager": "Siyanda Ndaba",
+      "entry": 6934465,
       "gwPts": [
         15
       ],
@@ -1671,30 +1671,41 @@
       "transfersTotal": 0,
       "chips": [],
       "total": 15,
-      "currentCaptain": "Haaland",
+      "currentCaptain": "Mbeumo",
       "activeChip": null,
       "currentPicks": [
         {
-          "id": 1,
-          "name": "Raya",
+          "id": 140,
+          "name": "Sánchez",
           "position": 1,
-          "code": 154561,
+          "code": 215059,
           "multiplier": 1,
           "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "37.6"
+          "is_vice_captain": true,
+          "cost": 50,
+          "ownership": "2.4"
         },
         {
-          "id": 423,
-          "name": "Shaw",
+          "id": 32,
+          "name": "Cash",
           "position": 2,
-          "code": 106760,
+          "code": 199796,
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "21.7"
+          "ownership": "8.9"
+        },
+        {
+          "id": 259,
+          "name": "Diop",
+          "position": 2,
+          "code": 219924,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "18.6"
         },
         {
           "id": 8,
@@ -1708,26 +1719,26 @@
           "ownership": "39.8"
         },
         {
-          "id": 499,
-          "name": "Pedro Porro",
+          "id": 423,
+          "name": "Shaw",
           "position": 2,
-          "code": 441164,
+          "code": 106760,
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "17.1"
+          "cost": 45,
+          "ownership": "21.6"
         },
         {
-          "id": 432,
-          "name": "Mainoo",
+          "id": 557,
+          "name": "Tzolis",
           "position": 3,
-          "code": 516895,
+          "code": 439509,
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "1.0"
+          "cost": 65,
+          "ownership": "25.2"
         },
         {
           "id": 426,
@@ -1736,7 +1747,7 @@
           "code": 141746,
           "multiplier": 1,
           "is_captain": false,
-          "is_vice_captain": true,
+          "is_vice_captain": false,
           "cost": 120,
           "ownership": "52.0"
         },
@@ -1752,26 +1763,26 @@
           "ownership": "26.3"
         },
         {
-          "id": 368,
-          "name": "Szoboszlai",
+          "id": 427,
+          "name": "Mbeumo",
           "position": 3,
-          "code": 424876,
-          "multiplier": 1,
-          "is_captain": false,
+          "code": 446008,
+          "multiplier": 2,
+          "is_captain": true,
           "is_vice_captain": false,
-          "cost": 70,
-          "ownership": "41.8"
+          "cost": 80,
+          "ownership": "38.9"
         },
         {
-          "id": 346,
-          "name": "Calvert-Lewin",
+          "id": 411,
+          "name": "Haaland",
           "position": 4,
-          "code": 177815,
+          "code": 223094,
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "31.4"
+          "cost": 155,
+          "ownership": "69.4"
         },
         {
           "id": 165,
@@ -1785,26 +1796,37 @@
           "ownership": "64.4"
         },
         {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 155,
-          "ownership": "69.4"
-        },
-        {
-          "id": 497,
-          "name": "Dubravka",
+          "id": 496,
+          "name": "Kinsky",
           "position": 1,
-          "code": 67089,
+          "code": 485055,
           "multiplier": 0,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "19.8"
+          "cost": 45,
+          "ownership": "24.5"
+        },
+        {
+          "id": 455,
+          "name": "Tonali",
+          "position": 3,
+          "code": 432422,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "4.3"
+        },
+        {
+          "id": 272,
+          "name": "Kusi-Asare",
+          "position": 4,
+          "code": 631786,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "7.5"
         },
         {
           "id": 175,
@@ -1816,28 +1838,6 @@
           "is_vice_captain": false,
           "cost": 40,
           "ownership": "14.0"
-        },
-        {
-          "id": 212,
-          "name": "Hughes",
-          "position": 3,
-          "code": 108413,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "12.2"
-        },
-        {
-          "id": 259,
-          "name": "Diop",
-          "position": 2,
-          "code": 219924,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "18.6"
         }
       ],
       "squadValue": 1000,
@@ -1907,7 +1907,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "21.7"
+          "ownership": "21.6"
         },
         {
           "id": 557,
@@ -2076,7 +2076,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "10.3"
+          "ownership": "10.2"
         },
         {
           "id": 356,
@@ -2256,7 +2256,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "22.1"
+          "ownership": "22.0"
         },
         {
           "id": 4,
@@ -2278,7 +2278,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "10.3"
+          "ownership": "10.2"
         },
         {
           "id": 11,
@@ -2419,973 +2419,6 @@
       ],
       "weeklyRanks": [
         12
-      ]
-    },
-    {
-      "team": "Mainoo Business",
-      "manager": "Nkosi The Chef",
-      "entry": 112702,
-      "gwPts": [
-        9
-      ],
-      "gwHits": [
-        0
-      ],
-      "benchTotal": 0,
-      "transfersTotal": 0,
-      "chips": [
-        {
-          "name": "bboost",
-          "time": "2026-08-21T16:42:32.535554Z",
-          "event": 1
-        }
-      ],
-      "total": 9,
-      "currentCaptain": "Haaland",
-      "activeChip": "bboost",
-      "currentPicks": [
-        {
-          "id": 109,
-          "name": "Verbruggen",
-          "position": 1,
-          "code": 489639,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "22.1"
-        },
-        {
-          "id": 418,
-          "name": "Maguire",
-          "position": 2,
-          "code": 95658,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 50,
-          "ownership": "18.4"
-        },
-        {
-          "id": 8,
-          "name": "Calafiori",
-          "position": 2,
-          "code": 466075,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "39.8"
-        },
-        {
-          "id": 469,
-          "name": "N.Williams",
-          "position": 2,
-          "code": 215136,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 50,
-          "ownership": "10.3"
-        },
-        {
-          "id": 237,
-          "name": "Ndiaye",
-          "position": 3,
-          "code": 440993,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "15.9"
-        },
-        {
-          "id": 368,
-          "name": "Szoboszlai",
-          "position": 3,
-          "code": 424876,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 70,
-          "ownership": "41.8"
-        },
-        {
-          "id": 426,
-          "name": "B.Fernandes",
-          "position": 3,
-          "code": 141746,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 120,
-          "ownership": "52.0"
-        },
-        {
-          "id": 427,
-          "name": "Mbeumo",
-          "position": 3,
-          "code": 446008,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 80,
-          "ownership": "38.9"
-        },
-        {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 155,
-          "ownership": "69.4"
-        },
-        {
-          "id": 165,
-          "name": "João Pedro",
-          "position": 4,
-          "code": 475168,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 75,
-          "ownership": "64.4"
-        },
-        {
-          "id": 346,
-          "name": "Calvert-Lewin",
-          "position": 4,
-          "code": 177815,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "31.4"
-        },
-        {
-          "id": 496,
-          "name": "Kinsky",
-          "position": 1,
-          "code": 485055,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "24.5"
-        },
-        {
-          "id": 127,
-          "name": "Gomez",
-          "position": 3,
-          "code": 514254,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 50,
-          "ownership": "4.0"
-        },
-        {
-          "id": 304,
-          "name": "O'Shea",
-          "position": 2,
-          "code": 216616,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "3.5"
-        },
-        {
-          "id": 534,
-          "name": "Hume",
-          "position": 2,
-          "code": 487676,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "7.1"
-        }
-      ],
-      "squadValue": 1000,
-      "gwRanks": [
-        13
-      ],
-      "weeklyRanks": [
-        13
-      ]
-    },
-    {
-      "team": "Cash n Carry.ck",
-      "manager": "Learnmore Ntshangase",
-      "entry": 3490103,
-      "gwPts": [
-        9
-      ],
-      "gwHits": [
-        0
-      ],
-      "benchTotal": 0,
-      "transfersTotal": 0,
-      "chips": [],
-      "total": 9,
-      "currentCaptain": "Haaland",
-      "activeChip": null,
-      "currentPicks": [
-        {
-          "id": 412,
-          "name": "Lammens",
-          "position": 1,
-          "code": 465247,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 50,
-          "ownership": "16.7"
-        },
-        {
-          "id": 388,
-          "name": "Guéhi",
-          "position": 2,
-          "code": 209036,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "17.1"
-        },
-        {
-          "id": 8,
-          "name": "Calafiori",
-          "position": 2,
-          "code": 466075,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "39.8"
-        },
-        {
-          "id": 423,
-          "name": "Shaw",
-          "position": 2,
-          "code": 106760,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "21.7"
-        },
-        {
-          "id": 533,
-          "name": "Mukiele",
-          "position": 2,
-          "code": 200834,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "2.9"
-        },
-        {
-          "id": 480,
-          "name": "Gibbs-White",
-          "position": 3,
-          "code": 222531,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 80,
-          "ownership": "11.7"
-        },
-        {
-          "id": 426,
-          "name": "B.Fernandes",
-          "position": 3,
-          "code": 141746,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 120,
-          "ownership": "52.0"
-        },
-        {
-          "id": 542,
-          "name": "E.Le Fée",
-          "position": 3,
-          "code": 484420,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "10.4"
-        },
-        {
-          "id": 68,
-          "name": "Tavernier",
-          "position": 3,
-          "code": 201658,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "1.6"
-        },
-        {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 155,
-          "ownership": "69.4"
-        },
-        {
-          "id": 165,
-          "name": "João Pedro",
-          "position": 4,
-          "code": 475168,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 75,
-          "ownership": "64.4"
-        },
-        {
-          "id": 301,
-          "name": "Palmer",
-          "position": 1,
-          "code": 112520,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "4.8"
-        },
-        {
-          "id": 210,
-          "name": "Wharton",
-          "position": 3,
-          "code": 496221,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "0.9"
-        },
-        {
-          "id": 88,
-          "name": "Kayode",
-          "position": 2,
-          "code": 607464,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "3.2"
-        },
-        {
-          "id": 321,
-          "name": "Walle Egeli",
-          "position": 4,
-          "code": 557012,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "2.2"
-        }
-      ],
-      "squadValue": 1000,
-      "gwRanks": [
-        14
-      ],
-      "weeklyRanks": [
-        14
-      ]
-    },
-    {
-      "team": "Taydo FC",
-      "manager": "Thato Choshi",
-      "entry": 7295273,
-      "gwPts": [
-        9
-      ],
-      "gwHits": [
-        0
-      ],
-      "benchTotal": 0,
-      "transfersTotal": 0,
-      "chips": [],
-      "total": 9,
-      "currentCaptain": "Haaland",
-      "activeChip": null,
-      "currentPicks": [
-        {
-          "id": 496,
-          "name": "Kinsky",
-          "position": 1,
-          "code": 485055,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "24.5"
-        },
-        {
-          "id": 418,
-          "name": "Maguire",
-          "position": 2,
-          "code": 95658,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 50,
-          "ownership": "18.4"
-        },
-        {
-          "id": 8,
-          "name": "Calafiori",
-          "position": 2,
-          "code": 466075,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "39.8"
-        },
-        {
-          "id": 112,
-          "name": "Van Hecke",
-          "position": 2,
-          "code": 469142,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 50,
-          "ownership": "10.8"
-        },
-        {
-          "id": 426,
-          "name": "B.Fernandes",
-          "position": 3,
-          "code": 141746,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 120,
-          "ownership": "52.0"
-        },
-        {
-          "id": 427,
-          "name": "Mbeumo",
-          "position": 3,
-          "code": 446008,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 80,
-          "ownership": "38.9"
-        },
-        {
-          "id": 368,
-          "name": "Szoboszlai",
-          "position": 3,
-          "code": 424876,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 70,
-          "ownership": "41.8"
-        },
-        {
-          "id": 124,
-          "name": "Groß",
-          "position": 3,
-          "code": 60307,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "14.5"
-        },
-        {
-          "id": 346,
-          "name": "Calvert-Lewin",
-          "position": 4,
-          "code": 177815,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "31.4"
-        },
-        {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 155,
-          "ownership": "69.4"
-        },
-        {
-          "id": 165,
-          "name": "João Pedro",
-          "position": 4,
-          "code": 475168,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 75,
-          "ownership": "64.4"
-        },
-        {
-          "id": 109,
-          "name": "Verbruggen",
-          "position": 1,
-          "code": 489639,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "22.1"
-        },
-        {
-          "id": 173,
-          "name": "Thomas",
-          "position": 2,
-          "code": 461102,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "8.1"
-        },
-        {
-          "id": 565,
-          "name": "M.Sangaré",
-          "position": 3,
-          "code": 513545,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "3.3"
-        },
-        {
-          "id": 329,
-          "name": "Rodon",
-          "position": 2,
-          "code": 214225,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "3.7"
-        }
-      ],
-      "squadValue": 1000,
-      "gwRanks": [
-        15
-      ],
-      "weeklyRanks": [
-        15
-      ]
-    },
-    {
-      "team": "Khuphuka FC",
-      "manager": "Bheka Bhengu",
-      "entry": 3808647,
-      "gwPts": [
-        9
-      ],
-      "gwHits": [
-        0
-      ],
-      "benchTotal": 0,
-      "transfersTotal": 0,
-      "chips": [
-        {
-          "name": "bboost",
-          "time": "2026-08-21T16:51:20.481736Z",
-          "event": 1
-        }
-      ],
-      "total": 9,
-      "currentCaptain": "B.Fernandes",
-      "activeChip": "bboost",
-      "currentPicks": [
-        {
-          "id": 496,
-          "name": "Kinsky",
-          "position": 1,
-          "code": 485055,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "24.5"
-        },
-        {
-          "id": 418,
-          "name": "Maguire",
-          "position": 2,
-          "code": 95658,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 50,
-          "ownership": "18.4"
-        },
-        {
-          "id": 8,
-          "name": "Calafiori",
-          "position": 2,
-          "code": 466075,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "39.8"
-        },
-        {
-          "id": 329,
-          "name": "Rodon",
-          "position": 2,
-          "code": 214225,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "3.7"
-        },
-        {
-          "id": 426,
-          "name": "B.Fernandes",
-          "position": 3,
-          "code": 141746,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 120,
-          "ownership": "52.0"
-        },
-        {
-          "id": 124,
-          "name": "Groß",
-          "position": 3,
-          "code": 60307,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "14.5"
-        },
-        {
-          "id": 480,
-          "name": "Gibbs-White",
-          "position": 3,
-          "code": 222531,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 80,
-          "ownership": "11.7"
-        },
-        {
-          "id": 368,
-          "name": "Szoboszlai",
-          "position": 3,
-          "code": 424876,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 70,
-          "ownership": "41.8"
-        },
-        {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 155,
-          "ownership": "69.4"
-        },
-        {
-          "id": 165,
-          "name": "João Pedro",
-          "position": 4,
-          "code": 475168,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 75,
-          "ownership": "64.4"
-        },
-        {
-          "id": 346,
-          "name": "Calvert-Lewin",
-          "position": 4,
-          "code": 177815,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "31.4"
-        },
-        {
-          "id": 109,
-          "name": "Verbruggen",
-          "position": 1,
-          "code": 489639,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "22.1"
-        },
-        {
-          "id": 542,
-          "name": "E.Le Fée",
-          "position": 3,
-          "code": 484420,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "10.4"
-        },
-        {
-          "id": 259,
-          "name": "Diop",
-          "position": 2,
-          "code": 219924,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "18.6"
-        },
-        {
-          "id": 87,
-          "name": "Ajer",
-          "position": 2,
-          "code": 191866,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "3.6"
-        }
-      ],
-      "squadValue": 1000,
-      "gwRanks": [
-        16
-      ],
-      "weeklyRanks": [
-        16
-      ]
-    },
-    {
-      "team": "Los Primeros",
-      "manager": "President Gamede",
-      "entry": 6255346,
-      "gwPts": [
-        9
-      ],
-      "gwHits": [
-        0
-      ],
-      "benchTotal": 0,
-      "transfersTotal": 0,
-      "chips": [],
-      "total": 9,
-      "currentCaptain": "Haaland",
-      "activeChip": null,
-      "currentPicks": [
-        {
-          "id": 497,
-          "name": "Dubravka",
-          "position": 1,
-          "code": 67089,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 40,
-          "ownership": "19.8"
-        },
-        {
-          "id": 112,
-          "name": "Van Hecke",
-          "position": 2,
-          "code": 469142,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 50,
-          "ownership": "10.8"
-        },
-        {
-          "id": 388,
-          "name": "Guéhi",
-          "position": 2,
-          "code": 209036,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "17.1"
-        },
-        {
-          "id": 423,
-          "name": "Shaw",
-          "position": 2,
-          "code": 106760,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "21.7"
-        },
-        {
-          "id": 32,
-          "name": "Cash",
-          "position": 2,
-          "code": 199796,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "8.9"
-        },
-        {
-          "id": 127,
-          "name": "Gomez",
-          "position": 3,
-          "code": 514254,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 50,
-          "ownership": "4.0"
-        },
-        {
-          "id": 397,
-          "name": "Semenyo",
-          "position": 3,
-          "code": 437730,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 85,
-          "ownership": "26.3"
-        },
-        {
-          "id": 426,
-          "name": "B.Fernandes",
-          "position": 3,
-          "code": 141746,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 120,
-          "ownership": "52.0"
-        },
-        {
-          "id": 427,
-          "name": "Mbeumo",
-          "position": 3,
-          "code": 446008,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 80,
-          "ownership": "38.9"
-        },
-        {
-          "id": 12,
-          "name": "Saka",
-          "position": 3,
-          "code": 223340,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 95,
-          "ownership": "9.4"
-        },
-        {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 155,
-          "ownership": "69.4"
-        },
-        {
-          "id": 109,
-          "name": "Verbruggen",
-          "position": 1,
-          "code": 489639,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "22.1"
-        },
-        {
-          "id": 528,
-          "name": "Scarlett",
-          "position": 4,
-          "code": 490145,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "1.7"
-        },
-        {
-          "id": 259,
-          "name": "Diop",
-          "position": 2,
-          "code": 219924,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "18.6"
-        },
-        {
-          "id": 349,
-          "name": "Mateo Joseph",
-          "position": 4,
-          "code": 565297,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "0.1"
-        }
-      ],
-      "squadValue": 1000,
-      "gwRanks": [
-        17
-      ],
-      "weeklyRanks": [
-        17
       ]
     },
     {
@@ -3573,10 +2606,1168 @@
       ],
       "squadValue": 990,
       "gwRanks": [
+        13
+      ],
+      "weeklyRanks": [
+        13
+      ]
+    },
+    {
+      "team": "Khuphuka FC",
+      "manager": "Bheka Bhengu",
+      "entry": 3808647,
+      "gwPts": [
+        9
+      ],
+      "gwHits": [
+        0
+      ],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [
+        {
+          "name": "bboost",
+          "time": "2026-08-21T16:51:20.481736Z",
+          "event": 1
+        }
+      ],
+      "total": 9,
+      "currentCaptain": "B.Fernandes",
+      "activeChip": "bboost",
+      "currentPicks": [
+        {
+          "id": 496,
+          "name": "Kinsky",
+          "position": 1,
+          "code": 485055,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "24.5"
+        },
+        {
+          "id": 418,
+          "name": "Maguire",
+          "position": 2,
+          "code": 95658,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 50,
+          "ownership": "18.4"
+        },
+        {
+          "id": 8,
+          "name": "Calafiori",
+          "position": 2,
+          "code": 466075,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "39.8"
+        },
+        {
+          "id": 329,
+          "name": "Rodon",
+          "position": 2,
+          "code": 214225,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "3.7"
+        },
+        {
+          "id": 426,
+          "name": "B.Fernandes",
+          "position": 3,
+          "code": 141746,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false,
+          "cost": 120,
+          "ownership": "52.0"
+        },
+        {
+          "id": 124,
+          "name": "Groß",
+          "position": 3,
+          "code": 60307,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "14.5"
+        },
+        {
+          "id": 480,
+          "name": "Gibbs-White",
+          "position": 3,
+          "code": 222531,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 80,
+          "ownership": "11.7"
+        },
+        {
+          "id": 368,
+          "name": "Szoboszlai",
+          "position": 3,
+          "code": 424876,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 70,
+          "ownership": "41.8"
+        },
+        {
+          "id": 411,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true,
+          "cost": 155,
+          "ownership": "69.4"
+        },
+        {
+          "id": 165,
+          "name": "João Pedro",
+          "position": 4,
+          "code": 475168,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 75,
+          "ownership": "64.4"
+        },
+        {
+          "id": 346,
+          "name": "Calvert-Lewin",
+          "position": 4,
+          "code": 177815,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "31.4"
+        },
+        {
+          "id": 109,
+          "name": "Verbruggen",
+          "position": 1,
+          "code": 489639,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "22.0"
+        },
+        {
+          "id": 542,
+          "name": "E.Le Fée",
+          "position": 3,
+          "code": 484420,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "10.4"
+        },
+        {
+          "id": 259,
+          "name": "Diop",
+          "position": 2,
+          "code": 219924,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "18.6"
+        },
+        {
+          "id": 87,
+          "name": "Ajer",
+          "position": 2,
+          "code": 191866,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "3.6"
+        }
+      ],
+      "squadValue": 1000,
+      "gwRanks": [
+        14
+      ],
+      "weeklyRanks": [
+        14
+      ]
+    },
+    {
+      "team": "Mainoo Business",
+      "manager": "Nkosi The Chef",
+      "entry": 112702,
+      "gwPts": [
+        9
+      ],
+      "gwHits": [
+        0
+      ],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [
+        {
+          "name": "bboost",
+          "time": "2026-08-21T16:42:32.535554Z",
+          "event": 1
+        }
+      ],
+      "total": 9,
+      "currentCaptain": "Haaland",
+      "activeChip": "bboost",
+      "currentPicks": [
+        {
+          "id": 109,
+          "name": "Verbruggen",
+          "position": 1,
+          "code": 489639,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "22.0"
+        },
+        {
+          "id": 418,
+          "name": "Maguire",
+          "position": 2,
+          "code": 95658,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 50,
+          "ownership": "18.4"
+        },
+        {
+          "id": 8,
+          "name": "Calafiori",
+          "position": 2,
+          "code": 466075,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "39.8"
+        },
+        {
+          "id": 469,
+          "name": "N.Williams",
+          "position": 2,
+          "code": 215136,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 50,
+          "ownership": "10.2"
+        },
+        {
+          "id": 237,
+          "name": "Ndiaye",
+          "position": 3,
+          "code": 440993,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "15.9"
+        },
+        {
+          "id": 368,
+          "name": "Szoboszlai",
+          "position": 3,
+          "code": 424876,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 70,
+          "ownership": "41.8"
+        },
+        {
+          "id": 426,
+          "name": "B.Fernandes",
+          "position": 3,
+          "code": 141746,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true,
+          "cost": 120,
+          "ownership": "52.0"
+        },
+        {
+          "id": 427,
+          "name": "Mbeumo",
+          "position": 3,
+          "code": 446008,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 80,
+          "ownership": "38.9"
+        },
+        {
+          "id": 411,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false,
+          "cost": 155,
+          "ownership": "69.4"
+        },
+        {
+          "id": 165,
+          "name": "João Pedro",
+          "position": 4,
+          "code": 475168,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 75,
+          "ownership": "64.4"
+        },
+        {
+          "id": 346,
+          "name": "Calvert-Lewin",
+          "position": 4,
+          "code": 177815,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "31.4"
+        },
+        {
+          "id": 496,
+          "name": "Kinsky",
+          "position": 1,
+          "code": 485055,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "24.5"
+        },
+        {
+          "id": 127,
+          "name": "Gomez",
+          "position": 3,
+          "code": 514254,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 50,
+          "ownership": "4.0"
+        },
+        {
+          "id": 304,
+          "name": "O'Shea",
+          "position": 2,
+          "code": 216616,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "3.5"
+        },
+        {
+          "id": 534,
+          "name": "Hume",
+          "position": 2,
+          "code": 487676,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "7.1"
+        }
+      ],
+      "squadValue": 1000,
+      "gwRanks": [
+        15
+      ],
+      "weeklyRanks": [
+        15
+      ]
+    },
+    {
+      "team": "Taydo FC",
+      "manager": "Thato Choshi",
+      "entry": 7295273,
+      "gwPts": [
+        9
+      ],
+      "gwHits": [
+        0
+      ],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 9,
+      "currentCaptain": "Haaland",
+      "activeChip": null,
+      "currentPicks": [
+        {
+          "id": 496,
+          "name": "Kinsky",
+          "position": 1,
+          "code": 485055,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "24.5"
+        },
+        {
+          "id": 418,
+          "name": "Maguire",
+          "position": 2,
+          "code": 95658,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 50,
+          "ownership": "18.4"
+        },
+        {
+          "id": 8,
+          "name": "Calafiori",
+          "position": 2,
+          "code": 466075,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "39.8"
+        },
+        {
+          "id": 112,
+          "name": "Van Hecke",
+          "position": 2,
+          "code": 469142,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 50,
+          "ownership": "10.8"
+        },
+        {
+          "id": 426,
+          "name": "B.Fernandes",
+          "position": 3,
+          "code": 141746,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 120,
+          "ownership": "52.0"
+        },
+        {
+          "id": 427,
+          "name": "Mbeumo",
+          "position": 3,
+          "code": 446008,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 80,
+          "ownership": "38.9"
+        },
+        {
+          "id": 368,
+          "name": "Szoboszlai",
+          "position": 3,
+          "code": 424876,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 70,
+          "ownership": "41.8"
+        },
+        {
+          "id": 124,
+          "name": "Groß",
+          "position": 3,
+          "code": 60307,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "14.5"
+        },
+        {
+          "id": 346,
+          "name": "Calvert-Lewin",
+          "position": 4,
+          "code": 177815,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "31.4"
+        },
+        {
+          "id": 411,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false,
+          "cost": 155,
+          "ownership": "69.4"
+        },
+        {
+          "id": 165,
+          "name": "João Pedro",
+          "position": 4,
+          "code": 475168,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true,
+          "cost": 75,
+          "ownership": "64.4"
+        },
+        {
+          "id": 109,
+          "name": "Verbruggen",
+          "position": 1,
+          "code": 489639,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "22.0"
+        },
+        {
+          "id": 173,
+          "name": "Thomas",
+          "position": 2,
+          "code": 461102,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "8.1"
+        },
+        {
+          "id": 565,
+          "name": "M.Sangaré",
+          "position": 3,
+          "code": 513545,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "3.3"
+        },
+        {
+          "id": 329,
+          "name": "Rodon",
+          "position": 2,
+          "code": 214225,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "3.7"
+        }
+      ],
+      "squadValue": 1000,
+      "gwRanks": [
+        16
+      ],
+      "weeklyRanks": [
+        16
+      ]
+    },
+    {
+      "team": "Cash n Carry.ck",
+      "manager": "Learnmore Ntshangase",
+      "entry": 3490103,
+      "gwPts": [
+        9
+      ],
+      "gwHits": [
+        0
+      ],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 9,
+      "currentCaptain": "Haaland",
+      "activeChip": null,
+      "currentPicks": [
+        {
+          "id": 412,
+          "name": "Lammens",
+          "position": 1,
+          "code": 465247,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 50,
+          "ownership": "16.7"
+        },
+        {
+          "id": 388,
+          "name": "Guéhi",
+          "position": 2,
+          "code": 209036,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "17.1"
+        },
+        {
+          "id": 8,
+          "name": "Calafiori",
+          "position": 2,
+          "code": 466075,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "39.8"
+        },
+        {
+          "id": 423,
+          "name": "Shaw",
+          "position": 2,
+          "code": 106760,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "21.6"
+        },
+        {
+          "id": 533,
+          "name": "Mukiele",
+          "position": 2,
+          "code": 200834,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "2.9"
+        },
+        {
+          "id": 480,
+          "name": "Gibbs-White",
+          "position": 3,
+          "code": 222531,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 80,
+          "ownership": "11.7"
+        },
+        {
+          "id": 426,
+          "name": "B.Fernandes",
+          "position": 3,
+          "code": 141746,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true,
+          "cost": 120,
+          "ownership": "52.0"
+        },
+        {
+          "id": 542,
+          "name": "E.Le Fée",
+          "position": 3,
+          "code": 484420,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "10.4"
+        },
+        {
+          "id": 68,
+          "name": "Tavernier",
+          "position": 3,
+          "code": 201658,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "1.6"
+        },
+        {
+          "id": 411,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false,
+          "cost": 155,
+          "ownership": "69.4"
+        },
+        {
+          "id": 165,
+          "name": "João Pedro",
+          "position": 4,
+          "code": 475168,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 75,
+          "ownership": "64.4"
+        },
+        {
+          "id": 301,
+          "name": "Palmer",
+          "position": 1,
+          "code": 112520,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "4.8"
+        },
+        {
+          "id": 210,
+          "name": "Wharton",
+          "position": 3,
+          "code": 496221,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "0.9"
+        },
+        {
+          "id": 88,
+          "name": "Kayode",
+          "position": 2,
+          "code": 607464,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "3.2"
+        },
+        {
+          "id": 321,
+          "name": "Walle Egeli",
+          "position": 4,
+          "code": 557012,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "2.2"
+        }
+      ],
+      "squadValue": 1000,
+      "gwRanks": [
+        17
+      ],
+      "weeklyRanks": [
+        17
+      ]
+    },
+    {
+      "team": "Los Primeros",
+      "manager": "President Gamede",
+      "entry": 6255346,
+      "gwPts": [
+        9
+      ],
+      "gwHits": [
+        0
+      ],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 9,
+      "currentCaptain": "Haaland",
+      "activeChip": null,
+      "currentPicks": [
+        {
+          "id": 497,
+          "name": "Dubravka",
+          "position": 1,
+          "code": 67089,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true,
+          "cost": 40,
+          "ownership": "19.8"
+        },
+        {
+          "id": 112,
+          "name": "Van Hecke",
+          "position": 2,
+          "code": 469142,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 50,
+          "ownership": "10.8"
+        },
+        {
+          "id": 388,
+          "name": "Guéhi",
+          "position": 2,
+          "code": 209036,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "17.1"
+        },
+        {
+          "id": 423,
+          "name": "Shaw",
+          "position": 2,
+          "code": 106760,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "21.6"
+        },
+        {
+          "id": 32,
+          "name": "Cash",
+          "position": 2,
+          "code": 199796,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "8.9"
+        },
+        {
+          "id": 127,
+          "name": "Gomez",
+          "position": 3,
+          "code": 514254,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 50,
+          "ownership": "4.0"
+        },
+        {
+          "id": 397,
+          "name": "Semenyo",
+          "position": 3,
+          "code": 437730,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 85,
+          "ownership": "26.3"
+        },
+        {
+          "id": 426,
+          "name": "B.Fernandes",
+          "position": 3,
+          "code": 141746,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 120,
+          "ownership": "52.0"
+        },
+        {
+          "id": 427,
+          "name": "Mbeumo",
+          "position": 3,
+          "code": 446008,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 80,
+          "ownership": "38.9"
+        },
+        {
+          "id": 12,
+          "name": "Saka",
+          "position": 3,
+          "code": 223340,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 95,
+          "ownership": "9.4"
+        },
+        {
+          "id": 411,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false,
+          "cost": 155,
+          "ownership": "69.4"
+        },
+        {
+          "id": 109,
+          "name": "Verbruggen",
+          "position": 1,
+          "code": 489639,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "22.0"
+        },
+        {
+          "id": 528,
+          "name": "Scarlett",
+          "position": 4,
+          "code": 490145,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "1.7"
+        },
+        {
+          "id": 259,
+          "name": "Diop",
+          "position": 2,
+          "code": 219924,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "18.6"
+        },
+        {
+          "id": 349,
+          "name": "Mateo Joseph",
+          "position": 4,
+          "code": 565297,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "0.1"
+        }
+      ],
+      "squadValue": 1000,
+      "gwRanks": [
         18
       ],
       "weeklyRanks": [
         18
+      ]
+    },
+    {
+      "team": "Coqueto202",
+      "manager": "Sthe Coqueto",
+      "entry": 3801396,
+      "gwPts": [
+        5
+      ],
+      "gwHits": [
+        0
+      ],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [],
+      "total": 5,
+      "currentCaptain": "Haaland",
+      "activeChip": null,
+      "currentPicks": [
+        {
+          "id": 496,
+          "name": "Kinsky",
+          "position": 1,
+          "code": 485055,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "24.5"
+        },
+        {
+          "id": 423,
+          "name": "Shaw",
+          "position": 2,
+          "code": 106760,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "21.6"
+        },
+        {
+          "id": 113,
+          "name": "F.Kadıoğlu",
+          "position": 2,
+          "code": 231416,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "3.0"
+        },
+        {
+          "id": 4,
+          "name": "Gabriel",
+          "position": 2,
+          "code": 226597,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 80,
+          "ownership": "29.7"
+        },
+        {
+          "id": 368,
+          "name": "Szoboszlai",
+          "position": 3,
+          "code": 424876,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 70,
+          "ownership": "41.8"
+        },
+        {
+          "id": 426,
+          "name": "B.Fernandes",
+          "position": 3,
+          "code": 141746,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true,
+          "cost": 120,
+          "ownership": "52.0"
+        },
+        {
+          "id": 40,
+          "name": "Rogers",
+          "position": 3,
+          "code": 244850,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 75,
+          "ownership": "24.4"
+        },
+        {
+          "id": 427,
+          "name": "Mbeumo",
+          "position": 3,
+          "code": 446008,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 80,
+          "ownership": "38.9"
+        },
+        {
+          "id": 248,
+          "name": "Beto",
+          "position": 4,
+          "code": 486385,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "2.8"
+        },
+        {
+          "id": 552,
+          "name": "Brobbey",
+          "position": 4,
+          "code": 441264,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "14.3"
+        },
+        {
+          "id": 411,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false,
+          "cost": 155,
+          "ownership": "69.4"
+        },
+        {
+          "id": 109,
+          "name": "Verbruggen",
+          "position": 1,
+          "code": 489639,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "22.0"
+        },
+        {
+          "id": 212,
+          "name": "Hughes",
+          "position": 3,
+          "code": 108413,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "12.2"
+        },
+        {
+          "id": 539,
+          "name": "O'Nien",
+          "position": 2,
+          "code": 167512,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "3.7"
+        },
+        {
+          "id": 38,
+          "name": "A.García",
+          "position": 2,
+          "code": 606798,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "1.8"
+        }
+      ],
+      "squadValue": 1000,
+      "gwRanks": [
+        19
+      ],
+      "weeklyRanks": [
+        19
       ]
     },
     {
@@ -3627,7 +3818,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "21.7"
+          "ownership": "21.6"
         },
         {
           "id": 259,
@@ -3764,197 +3955,6 @@
       ],
       "squadValue": 1000,
       "gwRanks": [
-        19
-      ],
-      "weeklyRanks": [
-        19
-      ]
-    },
-    {
-      "team": "Coqueto202",
-      "manager": "Sthe Coqueto",
-      "entry": 3801396,
-      "gwPts": [
-        5
-      ],
-      "gwHits": [
-        0
-      ],
-      "benchTotal": 0,
-      "transfersTotal": 0,
-      "chips": [],
-      "total": 5,
-      "currentCaptain": "Haaland",
-      "activeChip": null,
-      "currentPicks": [
-        {
-          "id": 496,
-          "name": "Kinsky",
-          "position": 1,
-          "code": 485055,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "24.5"
-        },
-        {
-          "id": 423,
-          "name": "Shaw",
-          "position": 2,
-          "code": 106760,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "21.7"
-        },
-        {
-          "id": 113,
-          "name": "F.Kadıoğlu",
-          "position": 2,
-          "code": 231416,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "3.0"
-        },
-        {
-          "id": 4,
-          "name": "Gabriel",
-          "position": 2,
-          "code": 226597,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 80,
-          "ownership": "29.7"
-        },
-        {
-          "id": 368,
-          "name": "Szoboszlai",
-          "position": 3,
-          "code": 424876,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 70,
-          "ownership": "41.8"
-        },
-        {
-          "id": 426,
-          "name": "B.Fernandes",
-          "position": 3,
-          "code": 141746,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 120,
-          "ownership": "52.0"
-        },
-        {
-          "id": 40,
-          "name": "Rogers",
-          "position": 3,
-          "code": 244850,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 75,
-          "ownership": "24.4"
-        },
-        {
-          "id": 427,
-          "name": "Mbeumo",
-          "position": 3,
-          "code": 446008,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 80,
-          "ownership": "38.9"
-        },
-        {
-          "id": 248,
-          "name": "Beto",
-          "position": 4,
-          "code": 486385,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "2.8"
-        },
-        {
-          "id": 552,
-          "name": "Brobbey",
-          "position": 4,
-          "code": 441264,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "14.3"
-        },
-        {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 155,
-          "ownership": "69.4"
-        },
-        {
-          "id": 109,
-          "name": "Verbruggen",
-          "position": 1,
-          "code": 489639,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "22.1"
-        },
-        {
-          "id": 212,
-          "name": "Hughes",
-          "position": 3,
-          "code": 108413,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "12.2"
-        },
-        {
-          "id": 539,
-          "name": "O'Nien",
-          "position": 2,
-          "code": 167512,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "3.7"
-        },
-        {
-          "id": 38,
-          "name": "A.García",
-          "position": 2,
-          "code": 606798,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "1.8"
-        }
-      ],
-      "squadValue": 1000,
-      "gwRanks": [
         20
       ],
       "weeklyRanks": [
@@ -4018,9 +4018,9 @@
       "c": "#38d9a9"
     },
     {
-      "f": "Siyanda Ndaba",
-      "s": "Siyanda",
-      "t": "Amad-ness",
+      "f": "Thembalethu Miya",
+      "s": "Thembalethu",
+      "t": "Root_.5 FC",
       "r": [
         7
       ],
@@ -4036,9 +4036,9 @@
       "c": "#339af0"
     },
     {
-      "f": "Thembalethu Miya",
-      "s": "Thembalethu",
-      "t": "Root_.5 FC",
+      "f": "Siyanda Ndaba",
+      "s": "Siyanda",
+      "t": "Amad-ness",
       "r": [
         9
       ],
@@ -4072,72 +4072,72 @@
       "c": "#5c7cfa"
     },
     {
-      "f": "Nkosi The Chef",
-      "s": "Nkosi",
-      "t": "Mainoo Business",
+      "f": "Zazi Zuma",
+      "s": "Zazi",
+      "t": "Mpendles Finest",
       "r": [
         13
       ],
       "c": "#c9f542"
     },
     {
-      "f": "Learnmore Ntshangase",
-      "s": "Learnmore",
-      "t": "Cash n Carry.ck",
+      "f": "Bheka Bhengu",
+      "s": "Bheka",
+      "t": "Khuphuka FC",
       "r": [
         14
       ],
       "c": "#da77f2"
     },
     {
-      "f": "Thato Choshi",
-      "s": "Thato",
-      "t": "Taydo FC",
+      "f": "Nkosi The Chef",
+      "s": "Nkosi",
+      "t": "Mainoo Business",
       "r": [
         15
       ],
       "c": "#63e6be"
     },
     {
-      "f": "Bheka Bhengu",
-      "s": "Bheka",
-      "t": "Khuphuka FC",
+      "f": "Thato Choshi",
+      "s": "Thato",
+      "t": "Taydo FC",
       "r": [
         16
       ],
       "c": "#ffe066"
     },
     {
-      "f": "President Gamede",
-      "s": "President",
-      "t": "Los Primeros",
+      "f": "Learnmore Ntshangase",
+      "s": "Learnmore",
+      "t": "Cash n Carry.ck",
       "r": [
         17
       ],
       "c": "#ff6b6b"
     },
     {
-      "f": "Zazi Zuma",
-      "s": "Zazi",
-      "t": "Mpendles Finest",
+      "f": "President Gamede",
+      "s": "President",
+      "t": "Los Primeros",
       "r": [
         18
       ],
       "c": "#e63946"
     },
     {
-      "f": "Luthando Ngidi",
-      "s": "Luthando",
-      "t": "Cops and Rogers",
+      "f": "Sthe Coqueto",
+      "s": "Sthe",
+      "t": "Coqueto202",
       "r": [
         19
       ],
       "c": "#f4845f"
     },
     {
-      "f": "Sthe Coqueto",
-      "s": "Sthe",
-      "t": "Coqueto202",
+      "f": "Luthando Ngidi",
+      "s": "Luthando",
+      "t": "Cops and Rogers",
       "r": [
         20
       ],
@@ -4214,7 +4214,7 @@
       "code": 106760,
       "position": 2,
       "cost": 45,
-      "fpl_pct": "21.7",
+      "fpl_pct": "21.6",
       "count": 9
     },
     {
@@ -4241,7 +4241,7 @@
       "code": 489639,
       "position": 1,
       "cost": 45,
-      "fpl_pct": "22.1",
+      "fpl_pct": "22.0",
       "count": 7
     },
     {
@@ -4430,7 +4430,7 @@
       "code": 215136,
       "position": 2,
       "cost": 50,
-      "fpl_pct": "10.3",
+      "fpl_pct": "10.2",
       "count": 3
     },
     {
@@ -4740,6 +4740,15 @@
       "count": 1
     },
     {
+      "id": 455,
+      "name": "Tonali",
+      "code": 432422,
+      "position": 3,
+      "cost": 55,
+      "fpl_pct": "4.3",
+      "count": 1
+    },
+    {
       "id": 111,
       "name": "Steele",
       "code": 49262,
@@ -4749,21 +4758,12 @@
       "count": 1
     },
     {
-      "id": 455,
-      "name": "Tonali",
-      "code": 432422,
-      "position": 3,
-      "cost": 55,
-      "fpl_pct": "4.2",
-      "count": 1
-    },
-    {
       "id": 502,
       "name": "Robertson",
       "code": 122798,
       "position": 2,
       "cost": 45,
-      "fpl_pct": "3.9",
+      "fpl_pct": "4.0",
       "count": 1
     },
     {
@@ -5053,8 +5053,8 @@
       "code": 466075,
       "position": 2,
       "now_cost": 55,
-      "transfers_in": 26086,
-      "transfers_out": 1794,
+      "transfers_in": 28691,
+      "transfers_out": 1945,
       "selected_by_percent": "39.8"
     },
     {
@@ -5063,8 +5063,8 @@
       "code": 439509,
       "position": 3,
       "now_cost": 65,
-      "transfers_in": 17888,
-      "transfers_out": 1495,
+      "transfers_in": 19623,
+      "transfers_out": 1665,
       "selected_by_percent": "25.2"
     },
     {
@@ -5073,8 +5073,8 @@
       "code": 219847,
       "position": 4,
       "now_cost": 75,
-      "transfers_in": 13942,
-      "transfers_out": 1154,
+      "transfers_in": 15241,
+      "transfers_out": 1257,
       "selected_by_percent": "5.5"
     },
     {
@@ -5083,8 +5083,8 @@
       "code": 184029,
       "position": 3,
       "now_cost": 65,
-      "transfers_in": 11281,
-      "transfers_out": 1647,
+      "transfers_in": 13129,
+      "transfers_out": 1726,
       "selected_by_percent": "8.2"
     },
     {
@@ -5093,8 +5093,8 @@
       "code": 469142,
       "position": 2,
       "now_cost": 50,
-      "transfers_in": 6913,
-      "transfers_out": 889,
+      "transfers_in": 7657,
+      "transfers_out": 969,
       "selected_by_percent": "10.8"
     },
     {
@@ -5103,8 +5103,8 @@
       "code": 199796,
       "position": 2,
       "now_cost": 45,
-      "transfers_in": 6747,
-      "transfers_out": 937,
+      "transfers_in": 7407,
+      "transfers_out": 1054,
       "selected_by_percent": "8.9"
     },
     {
@@ -5113,8 +5113,8 @@
       "code": 475168,
       "position": 4,
       "now_cost": 75,
-      "transfers_in": 6596,
-      "transfers_out": 1974,
+      "transfers_in": 7319,
+      "transfers_out": 2159,
       "selected_by_percent": "64.4"
     },
     {
@@ -5123,8 +5123,8 @@
       "code": 225796,
       "position": 2,
       "now_cost": 55,
-      "transfers_in": 5518,
-      "transfers_out": 1204,
+      "transfers_in": 6073,
+      "transfers_out": 1343,
       "selected_by_percent": "10.0"
     },
     {
@@ -5133,8 +5133,8 @@
       "code": 199798,
       "position": 2,
       "now_cost": 45,
-      "transfers_in": 5013,
-      "transfers_out": 18011,
+      "transfers_in": 5378,
+      "transfers_out": 19910,
       "selected_by_percent": "13.2"
     },
     {
@@ -5143,8 +5143,8 @@
       "code": 424876,
       "position": 3,
       "now_cost": 70,
-      "transfers_in": 4736,
-      "transfers_out": 2428,
+      "transfers_in": 5291,
+      "transfers_out": 2694,
       "selected_by_percent": "41.8"
     },
     {
@@ -5153,9 +5153,19 @@
       "code": 106760,
       "position": 2,
       "now_cost": 45,
-      "transfers_in": 4711,
-      "transfers_out": 963,
-      "selected_by_percent": "21.7"
+      "transfers_in": 5266,
+      "transfers_out": 1040,
+      "selected_by_percent": "21.6"
+    },
+    {
+      "id": 10,
+      "name": "White",
+      "code": 198869,
+      "position": 2,
+      "now_cost": 55,
+      "transfers_in": 5225,
+      "transfers_out": 894,
+      "selected_by_percent": "4.5"
     },
     {
       "id": 391,
@@ -5163,8 +5173,8 @@
       "code": 477424,
       "position": 2,
       "now_cost": 55,
-      "transfers_in": 4690,
-      "transfers_out": 1131,
+      "transfers_in": 5145,
+      "transfers_out": 1275,
       "selected_by_percent": "11.0"
     },
     {
@@ -5173,19 +5183,9 @@
       "code": 95658,
       "position": 2,
       "now_cost": 50,
-      "transfers_in": 4581,
-      "transfers_out": 925,
+      "transfers_in": 5137,
+      "transfers_out": 1025,
       "selected_by_percent": "18.4"
-    },
-    {
-      "id": 10,
-      "name": "White",
-      "code": 198869,
-      "position": 2,
-      "now_cost": 55,
-      "transfers_in": 4320,
-      "transfers_out": 830,
-      "selected_by_percent": "4.5"
     },
     {
       "id": 346,
@@ -5193,8 +5193,8 @@
       "code": 177815,
       "position": 4,
       "now_cost": 60,
-      "transfers_in": 3643,
-      "transfers_out": 1630,
+      "transfers_in": 4079,
+      "transfers_out": 1784,
       "selected_by_percent": "31.4"
     },
     {
@@ -5203,8 +5203,8 @@
       "code": 97032,
       "position": 2,
       "now_cost": 65,
-      "transfers_in": 3503,
-      "transfers_out": 1399,
+      "transfers_in": 3915,
+      "transfers_out": 1579,
       "selected_by_percent": "19.0"
     },
     {
@@ -5213,8 +5213,8 @@
       "code": 445087,
       "position": 2,
       "now_cost": 55,
-      "transfers_in": 3500,
-      "transfers_out": 758,
+      "transfers_in": 3887,
+      "transfers_out": 848,
       "selected_by_percent": "2.5"
     },
     {
@@ -5223,19 +5223,9 @@
       "code": 223340,
       "position": 3,
       "now_cost": 95,
-      "transfers_in": 3451,
-      "transfers_out": 830,
+      "transfers_in": 3716,
+      "transfers_out": 925,
       "selected_by_percent": "9.4"
-    },
-    {
-      "id": 13,
-      "name": "Rice",
-      "code": 204480,
-      "position": 3,
-      "now_cost": 75,
-      "transfers_in": 3382,
-      "transfers_out": 7433,
-      "selected_by_percent": "18.1"
     },
     {
       "id": 427,
@@ -5243,9 +5233,19 @@
       "code": 446008,
       "position": 3,
       "now_cost": 80,
-      "transfers_in": 3213,
-      "transfers_out": 1442,
+      "transfers_in": 3666,
+      "transfers_out": 1583,
       "selected_by_percent": "38.9"
+    },
+    {
+      "id": 13,
+      "name": "Rice",
+      "code": 204480,
+      "position": 3,
+      "now_cost": 75,
+      "transfers_in": 3553,
+      "transfers_out": 8567,
+      "selected_by_percent": "18.1"
     }
   ]
 }
