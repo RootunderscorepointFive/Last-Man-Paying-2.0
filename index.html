@@ -73,6 +73,16 @@
   .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--border); }
   .grid > * { background: var(--bg); min-width: 0; }
   .grid-full { grid-column: 1 / -1; } .grid-2 { grid-column: span 2; }
+  /* Two-panels-per-row sections (Analytics): a plain 3-col .grid with only 2
+     children leaves a whole unused third column of blank space down the tab —
+     use this instead so the pair splits the row evenly. align-items:start (grid
+     rows otherwise stretch every cell to match the tallest sibling) stops a
+     short table — e.g. only 1-2 qualifying players this early in the season —
+     from being stretched into a mostly-empty card; own background+border keeps
+     each panel a self-contained card instead of leaving the row's border-color
+     background exposed as a stray colored rectangle below the shorter one. */
+  .grid-halves { grid-template-columns: 1fr 1fr; align-items: start; background: var(--bg); }
+  .grid-halves > .panel { border: 1px solid var(--border); }
   .panel { padding: 14px 18px; min-height: 90px; }
   .panel-head { display: flex; justify-content: space-between; align-items: baseline; gap:10px; flex-wrap:wrap; padding-bottom: 6px; border-bottom: 1px dashed var(--border-bright); margin-bottom: 12px; }
   .panel-title { color: var(--amber); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; }
@@ -271,7 +281,7 @@
   .rmd-hint { margin-top:8px; color:var(--dim); font-size:11px; letter-spacing:0; text-transform:none; }
 
   @media (max-width: 900px) {
-    .grid { grid-template-columns: 1fr; } .grid-2 { grid-column: span 1; }
+    .grid { grid-template-columns: 1fr; } .grid-2 { grid-column: span 1; } .grid-halves { grid-template-columns: 1fr; }
     .kpi-value{ font-size:30px; }
     .cmp-pickers, .cmp-head, .cmp-row { grid-template-columns: 1fr 70px 1fr; }
   }
@@ -519,9 +529,9 @@
   <section id="panel-analytics" role="tabpanel" aria-labelledby="tab-analytics" tabindex="0" hidden>
     <div id="an-banner-wrap"></div>
     <div class="kpi-grid" id="an-kpis"></div>
-    <div class="grid" id="an-grid-top"></div>
-    <div class="grid" id="an-grid-mid"></div>
-    <div class="grid" id="an-grid-bot"></div>
+    <div class="grid grid-halves" id="an-grid-top"></div>
+    <div class="grid grid-halves" id="an-grid-mid"></div>
+    <div class="grid grid-halves" id="an-grid-bot"></div>
   </section>
 
   <section id="panel-runin" role="tabpanel" aria-labelledby="tab-runin" tabindex="0" hidden>
@@ -1273,9 +1283,20 @@ Promise.all([
 
   // ── LEDGER ──
   function renderLedger(){
-    const totalOwed=MM.reduce((a,x)=>a+x.owed,0), collected=MM.reduce((a,x)=>a+x.paid,0), outstanding=totalOwed-collected;
+    const totalOwed=MM.reduce((a,x)=>a+x.owed,0);
+    const totalCredits=MM.reduce((a,x)=>a+x.credits,0);
+    const paidTotal=MM.reduce((a,x)=>a+x.paid,0);
+    // "Collected" is all cash actually banked, including credit sitting
+    // unallocated ahead of a future due (e.g. an overpayment) — otherwise money
+    // the treasurer has genuinely received silently vanishes from the prize
+    // pool total just because it hasn't been earmarked to a specific fee/fine
+    // yet. "Outstanding" sums each manager's own already-netted figure rather
+    // than totalOwed-collected, so one manager's credit can't phantom-discount
+    // what a DIFFERENT manager still owes.
+    const collected=paidTotal+totalCredits;
+    const outstanding=MM.reduce((a,x)=>a+x.outstanding,0);
     const settled=MM.filter(x=>x.outstanding<=0).length;
-    const joinPaidCount=MM.filter(x=>x.joining_fee_paid).length, joinCollected=joinPaidCount*JOINING_FEE, finesCollected=collected-joinCollected;
+    const joinPaidCount=MM.filter(x=>x.joining_fee_paid).length, joinCollected=joinPaidCount*JOINING_FEE, finesCollected=paidTotal-joinCollected;
     $('#lg-kpis').innerHTML=`
       <div class="kpi"><div class="kpi-label">Prize Pool · Collected</div><div class="kpi-value green">R${collected.toLocaleString()}</div><div class="kpi-sub">joining + fines banked</div></div>
       <div class="kpi"><div class="kpi-label">Outstanding</div><div class="kpi-value red">R${outstanding.toLocaleString()}</div><div class="kpi-sub">${MM.filter(x=>x.outstanding>0).length} still owing</div></div>
@@ -1295,6 +1316,7 @@ Promise.all([
       <div><span class="prompt">LMP&gt;</span> compute_prize_pool</div>
       <div class="out">joining fees collected: ${joinPaidCount} × R${JOINING_FEE} = R${joinCollected.toLocaleString()}</div>
       <div class="out">fines collected: R${finesCollected.toLocaleString()}</div>
+      ${totalCredits ? `<div class="out">credit banked · unallocated: R${totalCredits.toLocaleString()}</div>` : ''}
       <div class="ok">→ prize pool = R${collected.toLocaleString()} · R${outstanding.toLocaleString()} still to bank</div>`;
   }
   renderLedger();
