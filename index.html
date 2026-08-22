@@ -75,8 +75,14 @@
   .grid-full { grid-column: 1 / -1; } .grid-2 { grid-column: span 2; }
   /* Two-panels-per-row sections (Analytics): a plain 3-col .grid with only 2
      children leaves a whole unused third column of blank space down the tab —
-     use this instead so the pair splits the row evenly. */
-  .grid-halves { grid-template-columns: 1fr 1fr; }
+     use this instead so the pair splits the row evenly. align-items:start (grid
+     rows otherwise stretch every cell to match the tallest sibling) stops a
+     short table — e.g. only 1-2 qualifying players this early in the season —
+     from being stretched into a mostly-empty card; own background+border keeps
+     each panel a self-contained card instead of leaving the row's border-color
+     background exposed as a stray colored rectangle below the shorter one. */
+  .grid-halves { grid-template-columns: 1fr 1fr; align-items: start; background: var(--bg); }
+  .grid-halves > .panel { border: 1px solid var(--border); }
   .panel { padding: 14px 18px; min-height: 90px; }
   .panel-head { display: flex; justify-content: space-between; align-items: baseline; gap:10px; flex-wrap:wrap; padding-bottom: 6px; border-bottom: 1px dashed var(--border-bright); margin-bottom: 12px; }
   .panel-title { color: var(--amber); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; }
