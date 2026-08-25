@@ -363,9 +363,13 @@
   .an-matrix td.draw { color:var(--dim); }
   .an-matrix .row-head { text-align:left; white-space:nowrap; padding-right:8px; color:var(--text); border:none; }
   .own-photo { width:32px; height:40px; object-fit:cover; background:var(--panel-2); border:1px solid var(--border); display:inline-block; vertical-align:middle; }
+  .an-flow { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); align-items:start; }
+  .an-col { display:flex; flex-direction:column; gap:1px; min-width:0; background:var(--border); }
+  .an-col > .panel { background:var(--bg); }
   .an-placeholder { padding:32px 18px; text-align:center; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; font-size:11px; border:1px dashed var(--border-bright); margin:14px 18px; }
   .an-empty-season { padding:48px 18px; text-align:center; color:var(--dim); font-size:11px; letter-spacing:1px; text-transform:uppercase; }
   .an-empty-season strong { display:block; color:var(--amber); font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:22px; letter-spacing:0; margin-bottom:8px; text-transform:none; }
+  @media (max-width: 900px) { .an-flow { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -405,7 +409,7 @@
     <span class="live">Live</span>
     <span>GW <strong id="tb-gw">--</strong></span>
     <span>Session <strong id="tb-session">--</strong></span>
-    <span>UTC <strong id="tb-clock">--:--:--</strong></span>
+    <span>SAST <strong id="tb-clock">--:--:--</strong></span>
   </div>
 </div>
 
@@ -529,9 +533,10 @@
   <section id="panel-analytics" role="tabpanel" aria-labelledby="tab-analytics" tabindex="0" hidden>
     <div id="an-banner-wrap"></div>
     <div class="kpi-grid" id="an-kpis"></div>
-    <div class="grid grid-halves" id="an-grid-top"></div>
-    <div class="grid grid-halves" id="an-grid-mid"></div>
-    <div class="grid grid-halves" id="an-grid-bot"></div>
+    <div class="an-flow" id="an-flow">
+      <div class="an-col" id="an-col-left"></div>
+      <div class="an-col" id="an-col-right"></div>
+    </div>
   </section>
 
   <section id="panel-runin" role="tabpanel" aria-labelledby="tab-runin" tabindex="0" hidden>
@@ -656,7 +661,14 @@ tabs.forEach((t,i)=>{
 });
 
 // ── clock ──
-const tick = () => { $('#tb-clock').textContent = new Date().toISOString().slice(11,19); };
+const saTime = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Africa/Johannesburg',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  hour12: false,
+});
+const tick = () => { $('#tb-clock').textContent = saTime.format(new Date()).replace(/^24:/, '00:'); };
 tick(); setInterval(tick, 1000);
 
 // ── TREASURER ACTIONS (top-level so buttons work regardless of data load) ──
@@ -1156,7 +1168,7 @@ Promise.all([
     <div><span class="prompt">LMP&gt;</span> resolve_bottom --gw ${L} --rule "≤ 3rd-lowest-unique"</div>
     <div class="out">parsing ${scores.length} entries from live feed... ok</div>
     <div class="out">3rd-lowest unique score: ${thr} pts · at or below threshold: ${payers.length}</div>
-    <div class="ok">→ ${payers.length} manager${payers.length>1?'s':''} charged R${GW_FINE} ea · R${(payers.length*GW_FINE).toLocaleString()} added to ledger</div>`;
+    <div class="ok">→ ${payers.length} manager${payers.length>1?'s':''} pending R${GW_FINE} ea · R${(payers.length*GW_FINE).toLocaleString()} awaiting final FPL confirmation</div>`;
 
   // heat bars (season bottom frequency, all managers)
   const maxB = Math.max(1, ...ledger.managers.map(m=>m.bottom_finishes.length));
@@ -1587,9 +1599,8 @@ Promise.all([
       $('#an-banner-wrap').innerHTML = `<div class="an-banner">● 2026/27 Pre-Season · <span>Player analytics unlock once managers submit GW1 squads</span></div>`;
       // Hide the empty KPI grid (it reserves min-height, esp. 489px on mobile).
       $('#an-kpis').innerHTML = ''; $('#an-kpis').style.display = 'none';
-      $('#an-grid-top').innerHTML = `<div class="an-empty-season" style="grid-column:1/-1"><strong>Season Preview</strong>Ownership, differentials, captain consensus and transfer heatmaps unlock once managers submit their GW1 squads and the first scored gameweek lands.</div>`;
-      $('#an-grid-mid').innerHTML = '';
-      $('#an-grid-bot').innerHTML = '';
+      $('#an-col-left').innerHTML = `<div class="an-empty-season"><strong>Season Preview</strong>Ownership, differentials, captain consensus and transfer heatmaps unlock once managers submit their GW1 squads and the first scored gameweek lands.</div>`;
+      $('#an-col-right').innerHTML = '';
       return;
     }
 
@@ -1661,7 +1672,7 @@ Promise.all([
       </tr>`;
     }).join('');
 
-    $('#an-grid-top').innerHTML = `
+    const topPanels = `
       <div class="panel">
         <div class="panel-head"><div class="panel-title">Mini-League Ownership</div><div class="panel-meta">GW${L} squads · ${leagueOwn.length} players</div></div>
         <div class="tablewrap"><table class="an-table">
@@ -1704,7 +1715,7 @@ Promise.all([
       </tr>`;
     }).join('');
 
-    $('#an-grid-mid').innerHTML = `
+    const midPanels = `
       <div class="panel">
         <div class="panel-head"><div class="panel-title">Differentials · GW${L}</div><div class="panel-meta">≥15% FPL ownership · ≤2 league owners — hidden gems</div></div>
         <div class="tablewrap"><table class="an-table">
@@ -1736,7 +1747,7 @@ Promise.all([
       return `<div class="heat-row"><span class="label">${m.manager}</span><span class="bar"><span class="fill ${i===0?'':'amber'}" style="width:${pct}%"></span></span><span class="val">£${(m.value/10).toFixed(1)}m</span></div>`;
     }).join('');
 
-    $('#an-grid-bot').innerHTML = `
+    const botPanels = `
       <div class="panel">
         <div class="panel-head"><div class="panel-title">Template Players</div><div class="panel-meta">owned by ≥${templateThreshold} of ${totalMgrs} managers (${Math.round(templateThreshold/totalMgrs*100)}%+)</div></div>
         <div class="tablewrap"><table class="an-table">
@@ -1748,6 +1759,12 @@ Promise.all([
         <div class="panel-head"><div class="panel-title">Squad Values</div><div class="panel-meta">total squad cost · GW${L}</div></div>
         ${sqValRows || `<div class="an-placeholder">No squad value data</div>`}
       </div>`;
+    const splitPanels = html => [...new DOMParser().parseFromString(html, 'text/html').body.children].map(el => el.outerHTML);
+    const [ownershipPanel, captainPanel] = splitPanels(topPanels);
+    const [differentialsPanel, transfersPanel] = splitPanels(midPanels);
+    const [templatePanel, squadValuesPanel] = splitPanels(botPanels);
+    $('#an-col-left').innerHTML = ownershipPanel + differentialsPanel + templatePanel;
+    $('#an-col-right').innerHTML = captainPanel + transfersPanel + squadValuesPanel;
   })();
 
 }).catch(e=>{
