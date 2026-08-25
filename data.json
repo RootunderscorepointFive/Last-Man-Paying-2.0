@@ -543,6 +543,13 @@
       "subject": "FPL — payment received",
       "sent_at": "2026-08-25T05:15:07.876Z",
       "sent_by": "treasurer"
+    },
+    {
+      "type": "confirmation",
+      "recipient": "Kwazi Mthembu",
+      "subject": "FPL — payment received",
+      "sent_at": "2026-08-25T16:39:10.699Z",
+      "sent_by": "treasurer"
     }
   ]
 }
