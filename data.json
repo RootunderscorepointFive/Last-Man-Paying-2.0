@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T05:08:29.170Z",
+  "generated_at": "2026-08-25T05:08:51.225Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -194,12 +194,14 @@
       "entry": 3477935,
       "name": "Luthando Ngidi",
       "team": "Cops and Rogers",
-      "joining_fee_paid": false,
+      "joining_fee_paid": true,
       "fines": [],
       "bottom_finishes": [],
       "epithet": "The Patient One",
       "epithet_tagline": "Only 0 transfers all season",
-      "credits": 0
+      "credits": 0,
+      "joining_fee_paid_by": "treasurer",
+      "joining_fee_paid_date": "2026-08-25T05:08:51.225Z"
     },
     {
       "entry": 194373,
