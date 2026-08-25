@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-25T11:35:09.423Z",
+  "generated_at": "2026-08-25T13:01:32.626Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
-  "last_synced_gw": 0,
+  "last_synced_gw": 1,
   "managers": [
     {
       "entry": 6404452,
@@ -20,10 +20,31 @@
       "name": "Sthe Coqueto",
       "team": "Coqueto202",
       "joining_fee_paid": false,
-      "fines": [],
-      "bottom_finishes": [],
-      "epithet": null,
-      "epithet_tagline": null,
+      "fines": [
+        {
+          "id": "f_3801396_gw1_bottom",
+          "gw": 1,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW1 (post-hits 36, threshold 40)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-08-25T13:01:32.569Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        1
+      ],
+      "epithet": "Wooden Spoon",
+      "epithet_tagline": "Fewest total points — 36",
       "credits": 0
     },
     {
@@ -162,8 +183,29 @@
       "name": "Siyanda Ndaba",
       "team": "Amad-ness",
       "joining_fee_paid": false,
-      "fines": [],
-      "bottom_finishes": [],
+      "fines": [
+        {
+          "id": "f_6934465_gw1_bottom",
+          "gw": 1,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW1 (post-hits 40, threshold 40)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-08-25T13:01:32.569Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        1
+      ],
       "epithet": "The Dark Horse",
       "epithet_tagline": "Quietly finished 18th without owning a single category",
       "credits": 0
@@ -254,10 +296,31 @@
       "name": "Kwazi Mthembu",
       "team": "Brothers xGaramazov",
       "joining_fee_paid": true,
-      "fines": [],
-      "bottom_finishes": [],
-      "epithet": "Wooden Spoon",
-      "epithet_tagline": "Fewest total points — 31",
+      "fines": [
+        {
+          "id": "f_804065_gw1_bottom",
+          "gw": 1,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW1 (post-hits 31, threshold 40)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-08-25T13:01:32.569Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        1
+      ],
+      "epithet": "The Regular",
+      "epithet_tagline": "Most bottom finishes — 1 of 38",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-08-25T05:10:06.125Z"
