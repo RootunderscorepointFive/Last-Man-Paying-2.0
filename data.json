@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T15:51:34.950Z",
+  "generated_at": "2026-08-25T16:39:09.527Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 1,
@@ -304,7 +304,7 @@
           "type": "bottom",
           "status": "confirmed",
           "reason": "LMP bottom-3 — GW1 (post-hits 31, threshold 40)",
-          "paid_date": null,
+          "paid_date": "2026-08-25T16:39:09.527Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -313,7 +313,8 @@
           "added_date": "2026-08-25T13:01:32.569Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "payment"
         }
       ],
       "bottom_finishes": [
@@ -323,7 +324,24 @@
       "epithet_tagline": "Most bottom finishes — 1 of 38",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
-      "joining_fee_paid_date": "2026-08-25T05:10:06.125Z"
+      "joining_fee_paid_date": "2026-08-25T05:10:06.125Z",
+      "payments": [
+        {
+          "id": "p_804065_1787675949527",
+          "amount": 100,
+          "date": "2026-08-25T16:39:09.527Z",
+          "recorded_by": "treasurer",
+          "allocated": [
+            {
+              "kind": "fine",
+              "id": "f_804065_gw1_bottom",
+              "gw": 1,
+              "amount": 100
+            }
+          ],
+          "credit_after": 0
+        }
+      ]
     },
     {
       "entry": 770193,
