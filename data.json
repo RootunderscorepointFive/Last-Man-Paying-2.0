@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T05:07:47.358Z",
+  "generated_at": "2026-08-25T05:08:29.170Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 0,
@@ -170,12 +170,14 @@
       "entry": 3805612,
       "name": "Nhlakanipho Ntombela",
       "team": "iam_ntombela",
-      "joining_fee_paid": false,
+      "joining_fee_paid": true,
       "fines": [],
       "bottom_finishes": [],
       "epithet": "One-Hit Wonder",
       "epithet_tagline": "One big week — season-high 72, forgettable rest",
-      "credits": 0
+      "credits": 0,
+      "joining_fee_paid_by": "treasurer",
+      "joining_fee_paid_date": "2026-08-25T05:08:29.170Z"
     },
     {
       "entry": 6255346,
