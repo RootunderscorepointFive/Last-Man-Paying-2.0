@@ -4,6 +4,7 @@
 const { requireTreasurer } = require('../lib/auth');
 const { mutateData } = require('../lib/github');
 const { outstandingOf, sendConfirmation, auditEntry } = require('../lib/email');
+const { consumeCredit } = require('../lib/ledger');
 const config = require('../config.json');
 
 module.exports = async (req, res) => {
@@ -14,14 +15,19 @@ module.exports = async (req, res) => {
   if (!name) return res.status(400).json({ error: 'manager name required' });
 
   try {
-    let didMark = false, newBalance = 0;
+    let didMark = false, paidAmount = 0, newBalance = 0;
     const fee = config.joining_fee || 300;
     const result = await mutateData(`Treasurer: mark joining fee paid — ${name}`, (data) => {
       const m = data.managers.find(x => x.name === name);
       if (!m) return false; // abort → not found
       didMark = !m.joining_fee_paid; // only a real state change counts as "received"
+      if (didMark) {
+        const { creditApplied, cashRequired } = consumeCredit(m, fee);
+        paidAmount = cashRequired;
+        if (creditApplied) m.joining_fee_credit_applied = creditApplied;
+      }
       m.joining_fee_paid = true;
-      m.joining_fee_paid_by = 'treasurer';
+      m.joining_fee_paid_by = didMark && paidAmount === 0 ? 'credit' : 'treasurer';
       m.joining_fee_paid_date = new Date().toISOString();
       if (reason) m.joining_fee_paid_reason = reason;
       newBalance = outstandingOf(m, fee).total;
@@ -30,10 +36,10 @@ module.exports = async (req, res) => {
     });
     if (result && result.aborted) return res.status(409).json({ error: 'manager not found' });
 
-    // Confirmation email — only if the fee was actually outstanding; best-effort.
-    if (didMark) {
+    // Confirmation email — only if new cash was actually received; best-effort.
+    if (didMark && paidAmount > 0) {
       try {
-        const conf = await sendConfirmation({ name, paidAmount: fee, newBalance });
+        const conf = await sendConfirmation({ name, paidAmount, newBalance });
         if (conf.sent) {
           await mutateData(`Email: payment confirmation — ${name}`,
             (d) => { (d.email_log = d.email_log || []).push(auditEntry({ type: 'confirmation', recipient: name, subject: conf.subject })); return true; });
