@@ -28,18 +28,18 @@
     {
       "manager": "Learnmore Ntshangase",
       "team": "Cash n Carry.ck",
-      "pts": 87,
-      "bottomApps": 0
-    },
-    {
-      "manager": "Bheka Bhengu",
-      "team": "Khuphuka FC",
-      "pts": 84,
+      "pts": 85,
       "bottomApps": 0
     },
     {
       "manager": "Nhlakanipho Ntombela",
       "team": "iam_ntombela",
+      "pts": 84,
+      "bottomApps": 0
+    },
+    {
+      "manager": "Bheka Bhengu",
+      "team": "Khuphuka FC",
       "pts": 84,
       "bottomApps": 0
     },
@@ -184,7 +184,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "7.4"
+          "ownership": "7.3"
         },
         {
           "id": 8,
@@ -239,7 +239,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 165,
@@ -261,7 +261,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "4.3"
+          "ownership": "4.4"
         },
         {
           "id": 497,
@@ -368,7 +368,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 65,
-          "ownership": "19.4"
+          "ownership": "19.3"
         },
         {
           "id": 200,
@@ -390,7 +390,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 55,
-          "ownership": "13.5"
+          "ownership": "13.4"
         },
         {
           "id": 397,
@@ -401,7 +401,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 85,
-          "ownership": "23.3"
+          "ownership": "23.2"
         },
         {
           "id": 480,
@@ -412,7 +412,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 79,
-          "ownership": "8.3"
+          "ownership": "8.4"
         },
         {
           "id": 13,
@@ -423,7 +423,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 75,
-          "ownership": "16.6"
+          "ownership": "16.5"
         },
         {
           "id": 368,
@@ -434,7 +434,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 379,
@@ -547,7 +547,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "22.4"
+          "ownership": "22.2"
         },
         {
           "id": 418,
@@ -602,7 +602,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 426,
@@ -613,7 +613,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 427,
@@ -624,7 +624,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "34.3"
+          "ownership": "34.2"
         },
         {
           "id": 411,
@@ -635,7 +635,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 165,
@@ -657,7 +657,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "28.0"
+          "ownership": "27.9"
         },
         {
           "id": 109,
@@ -786,7 +786,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 557,
@@ -808,7 +808,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "34.3"
+          "ownership": "34.2"
         },
         {
           "id": 426,
@@ -819,7 +819,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 237,
@@ -841,7 +841,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "28.0"
+          "ownership": "27.9"
         },
         {
           "id": 411,
@@ -852,7 +852,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 497,
@@ -874,7 +874,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "2.7"
+          "ownership": "2.6"
         },
         {
           "id": 175,
@@ -915,7 +915,7 @@
       "entry": 3490103,
       "gwPts": [
         56,
-        31
+        29
       ],
       "gwHits": [
         0,
@@ -924,7 +924,7 @@
       "benchTotal": 14,
       "transfersTotal": 1,
       "chips": [],
-      "total": 87,
+      "total": 85,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -937,7 +937,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "15.4"
+          "ownership": "15.3"
         },
         {
           "id": 388,
@@ -981,7 +981,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "8.1"
+          "ownership": "8.2"
         },
         {
           "id": 426,
@@ -992,7 +992,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 542,
@@ -1025,7 +1025,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "9.6"
+          "ownership": "9.7"
         },
         {
           "id": 411,
@@ -1036,7 +1036,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 165,
@@ -1069,7 +1069,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "19.2"
+          "ownership": "19.1"
         },
         {
           "id": 480,
@@ -1080,7 +1080,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 79,
-          "ownership": "8.3"
+          "ownership": "8.4"
         },
         {
           "id": 321,
@@ -1101,208 +1101,7 @@
       ],
       "weeklyRanks": [
         5,
-        7
-      ]
-    },
-    {
-      "team": "Khuphuka FC",
-      "manager": "Bheka Bhengu",
-      "entry": 3808647,
-      "gwPts": [
-        66,
-        18
-      ],
-      "gwHits": [
-        0,
-        0
-      ],
-      "benchTotal": 0,
-      "transfersTotal": 0,
-      "chips": [
-        {
-          "name": "bboost",
-          "time": "2026-08-21T16:51:20.481736Z",
-          "event": 1
-        }
-      ],
-      "total": 84,
-      "currentCaptain": "B.Fernandes",
-      "activeChip": null,
-      "currentPicks": [
-        {
-          "id": 496,
-          "name": "Kinsky",
-          "position": 1,
-          "code": 485055,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "22.4"
-        },
-        {
-          "id": 418,
-          "name": "Maguire",
-          "position": 2,
-          "code": 95658,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 50,
-          "ownership": "16.6"
-        },
-        {
-          "id": 8,
-          "name": "Calafiori",
-          "position": 2,
-          "code": 466075,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 56,
-          "ownership": "41.7"
-        },
-        {
-          "id": 329,
-          "name": "Rodon",
-          "position": 2,
-          "code": 214225,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "3.6"
-        },
-        {
-          "id": 426,
-          "name": "B.Fernandes",
-          "position": 3,
-          "code": 141746,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 120,
-          "ownership": "46.9"
-        },
-        {
-          "id": 124,
-          "name": "Groß",
-          "position": 3,
-          "code": 60307,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "12.7"
-        },
-        {
-          "id": 542,
-          "name": "E.Le Fée",
-          "position": 3,
-          "code": 484420,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "8.3"
-        },
-        {
-          "id": 368,
-          "name": "Szoboszlai",
-          "position": 3,
-          "code": 424876,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 70,
-          "ownership": "43.2"
-        },
-        {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 155,
-          "ownership": "68.6"
-        },
-        {
-          "id": 165,
-          "name": "João Pedro",
-          "position": 4,
-          "code": 475168,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 76,
-          "ownership": "68.5"
-        },
-        {
-          "id": 346,
-          "name": "Calvert-Lewin",
-          "position": 4,
-          "code": 177815,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "28.0"
-        },
-        {
-          "id": 109,
-          "name": "Verbruggen",
-          "position": 1,
-          "code": 489639,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "21.5"
-        },
-        {
-          "id": 87,
-          "name": "Ajer",
-          "position": 2,
-          "code": 191866,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "4.2"
-        },
-        {
-          "id": 259,
-          "name": "Diop",
-          "position": 2,
-          "code": 219924,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "16.8"
-        },
-        {
-          "id": 480,
-          "name": "Gibbs-White",
-          "position": 3,
-          "code": 222531,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 79,
-          "ownership": "8.3"
-        }
-      ],
-      "squadValue": 1001,
-      "gwRanks": [
-        4,
-        6
-      ],
-      "weeklyRanks": [
-        4,
-        16
+        8
       ]
     },
     {
@@ -1394,7 +1193,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 427,
@@ -1405,7 +1204,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "34.3"
+          "ownership": "34.2"
         },
         {
           "id": 368,
@@ -1416,7 +1215,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 379,
@@ -1449,7 +1248,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "28.0"
+          "ownership": "27.9"
         },
         {
           "id": 109,
@@ -1471,7 +1270,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "4.9"
+          "ownership": "4.8"
         },
         {
           "id": 542,
@@ -1499,11 +1298,212 @@
       "squadValue": 1002,
       "gwRanks": [
         2,
-        7
+        6
       ],
       "weeklyRanks": [
         2,
         19
+      ]
+    },
+    {
+      "team": "Khuphuka FC",
+      "manager": "Bheka Bhengu",
+      "entry": 3808647,
+      "gwPts": [
+        66,
+        18
+      ],
+      "gwHits": [
+        0,
+        0
+      ],
+      "benchTotal": 0,
+      "transfersTotal": 0,
+      "chips": [
+        {
+          "name": "bboost",
+          "time": "2026-08-21T16:51:20.481736Z",
+          "event": 1
+        }
+      ],
+      "total": 84,
+      "currentCaptain": "B.Fernandes",
+      "activeChip": null,
+      "currentPicks": [
+        {
+          "id": 496,
+          "name": "Kinsky",
+          "position": 1,
+          "code": 485055,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "22.2"
+        },
+        {
+          "id": 418,
+          "name": "Maguire",
+          "position": 2,
+          "code": 95658,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 50,
+          "ownership": "16.6"
+        },
+        {
+          "id": 8,
+          "name": "Calafiori",
+          "position": 2,
+          "code": 466075,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 56,
+          "ownership": "41.7"
+        },
+        {
+          "id": 329,
+          "name": "Rodon",
+          "position": 2,
+          "code": 214225,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "3.6"
+        },
+        {
+          "id": 426,
+          "name": "B.Fernandes",
+          "position": 3,
+          "code": 141746,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false,
+          "cost": 120,
+          "ownership": "46.8"
+        },
+        {
+          "id": 124,
+          "name": "Groß",
+          "position": 3,
+          "code": 60307,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "12.6"
+        },
+        {
+          "id": 542,
+          "name": "E.Le Fée",
+          "position": 3,
+          "code": 484420,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "8.3"
+        },
+        {
+          "id": 368,
+          "name": "Szoboszlai",
+          "position": 3,
+          "code": 424876,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 70,
+          "ownership": "43.1"
+        },
+        {
+          "id": 411,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true,
+          "cost": 155,
+          "ownership": "68.7"
+        },
+        {
+          "id": 165,
+          "name": "João Pedro",
+          "position": 4,
+          "code": 475168,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 76,
+          "ownership": "68.5"
+        },
+        {
+          "id": 346,
+          "name": "Calvert-Lewin",
+          "position": 4,
+          "code": 177815,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "27.9"
+        },
+        {
+          "id": 109,
+          "name": "Verbruggen",
+          "position": 1,
+          "code": 489639,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "21.5"
+        },
+        {
+          "id": 87,
+          "name": "Ajer",
+          "position": 2,
+          "code": 191866,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "4.2"
+        },
+        {
+          "id": 259,
+          "name": "Diop",
+          "position": 2,
+          "code": 219924,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "16.8"
+        },
+        {
+          "id": 480,
+          "name": "Gibbs-White",
+          "position": 3,
+          "code": 222531,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 79,
+          "ownership": "8.4"
+        }
+      ],
+      "squadValue": 1001,
+      "gwRanks": [
+        4,
+        7
+      ],
+      "weeklyRanks": [
+        4,
+        16
       ]
     },
     {
@@ -1556,7 +1556,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "8.1"
+          "ownership": "8.2"
         },
         {
           "id": 388,
@@ -1578,7 +1578,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "34.3"
+          "ownership": "34.2"
         },
         {
           "id": 398,
@@ -1600,7 +1600,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 557,
@@ -1622,7 +1622,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "28.0"
+          "ownership": "27.9"
         },
         {
           "id": 106,
@@ -1633,7 +1633,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "16.3"
+          "ownership": "16.2"
         },
         {
           "id": 411,
@@ -1644,7 +1644,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 497,
@@ -1688,7 +1688,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 55,
-          "ownership": "13.5"
+          "ownership": "13.4"
         }
       ],
       "squadValue": 997,
@@ -1740,7 +1740,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "19.2"
+          "ownership": "19.1"
         },
         {
           "id": 8,
@@ -1762,7 +1762,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 55,
-          "ownership": "13.5"
+          "ownership": "13.4"
         },
         {
           "id": 432,
@@ -1784,7 +1784,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 397,
@@ -1795,7 +1795,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 85,
-          "ownership": "23.3"
+          "ownership": "23.2"
         },
         {
           "id": 368,
@@ -1806,7 +1806,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 346,
@@ -1817,7 +1817,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "28.0"
+          "ownership": "27.9"
         },
         {
           "id": 165,
@@ -1839,7 +1839,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 497,
@@ -1935,7 +1935,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 65,
-          "ownership": "19.4"
+          "ownership": "19.3"
         },
         {
           "id": 8,
@@ -1957,7 +1957,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "19.2"
+          "ownership": "19.1"
         },
         {
           "id": 557,
@@ -2001,7 +2001,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 411,
@@ -2012,7 +2012,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 165,
@@ -2034,7 +2034,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 74,
-          "ownership": "6.5"
+          "ownership": "6.4"
         },
         {
           "id": 57,
@@ -2088,7 +2088,7 @@
       ],
       "weeklyRanks": [
         12,
-        8
+        7
       ]
     },
     {
@@ -2119,7 +2119,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "15.4"
+          "ownership": "15.3"
         },
         {
           "id": 4,
@@ -2141,7 +2141,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "19.2"
+          "ownership": "19.1"
         },
         {
           "id": 259,
@@ -2163,7 +2163,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "8.7"
+          "ownership": "8.8"
         },
         {
           "id": 40,
@@ -2185,7 +2185,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 368,
@@ -2196,7 +2196,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 565,
@@ -2207,7 +2207,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "9.6"
+          "ownership": "9.7"
         },
         {
           "id": 411,
@@ -2218,7 +2218,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 165,
@@ -2347,7 +2347,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "8.1"
+          "ownership": "8.2"
         },
         {
           "id": 237,
@@ -2369,7 +2369,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 55,
-          "ownership": "12.7"
+          "ownership": "12.6"
         },
         {
           "id": 426,
@@ -2380,7 +2380,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 368,
@@ -2391,7 +2391,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 411,
@@ -2402,7 +2402,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 165,
@@ -2424,7 +2424,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "28.0"
+          "ownership": "27.9"
         },
         {
           "id": 111,
@@ -2509,7 +2509,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "15.4"
+          "ownership": "15.3"
         },
         {
           "id": 423,
@@ -2520,7 +2520,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "19.2"
+          "ownership": "19.1"
         },
         {
           "id": 387,
@@ -2564,7 +2564,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 368,
@@ -2575,7 +2575,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 237,
@@ -2597,7 +2597,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 165,
@@ -2619,7 +2619,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "28.0"
+          "ownership": "27.9"
         },
         {
           "id": 497,
@@ -2641,7 +2641,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 55,
-          "ownership": "12.7"
+          "ownership": "12.6"
         },
         {
           "id": 175,
@@ -2726,7 +2726,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 65,
-          "ownership": "19.4"
+          "ownership": "19.3"
         },
         {
           "id": 418,
@@ -2748,7 +2748,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "34.3"
+          "ownership": "34.2"
         },
         {
           "id": 368,
@@ -2759,7 +2759,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 40,
@@ -2792,7 +2792,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "4.3"
+          "ownership": "4.4"
         },
         {
           "id": 411,
@@ -2803,7 +2803,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 165,
@@ -2825,7 +2825,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "22.4"
+          "ownership": "22.2"
         },
         {
           "id": 542,
@@ -2899,7 +2899,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "22.4"
+          "ownership": "22.2"
         },
         {
           "id": 173,
@@ -2943,7 +2943,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 427,
@@ -2954,7 +2954,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "34.3"
+          "ownership": "34.2"
         },
         {
           "id": 368,
@@ -2965,7 +2965,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 565,
@@ -2976,7 +2976,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "9.6"
+          "ownership": "9.7"
         },
         {
           "id": 346,
@@ -2987,7 +2987,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "28.0"
+          "ownership": "27.9"
         },
         {
           "id": 411,
@@ -2998,7 +2998,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 165,
@@ -3042,7 +3042,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 55,
-          "ownership": "12.7"
+          "ownership": "12.6"
         },
         {
           "id": 112,
@@ -3053,7 +3053,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "9.4"
+          "ownership": "9.3"
         }
       ],
       "squadValue": 1003,
@@ -3094,7 +3094,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "22.4"
+          "ownership": "22.2"
         },
         {
           "id": 423,
@@ -3105,7 +3105,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "19.2"
+          "ownership": "19.1"
         },
         {
           "id": 113,
@@ -3138,7 +3138,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 426,
@@ -3149,7 +3149,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 40,
@@ -3171,7 +3171,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "34.3"
+          "ownership": "34.2"
         },
         {
           "id": 248,
@@ -3182,7 +3182,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 55,
-          "ownership": "2.3"
+          "ownership": "2.2"
         },
         {
           "id": 552,
@@ -3193,7 +3193,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "12.5"
+          "ownership": "12.4"
         },
         {
           "id": 411,
@@ -3204,7 +3204,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 109,
@@ -3344,7 +3344,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 75,
-          "ownership": "16.6"
+          "ownership": "16.5"
         },
         {
           "id": 428,
@@ -3366,7 +3366,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 76,
-          "ownership": "14.8"
+          "ownership": "15.2"
         },
         {
           "id": 411,
@@ -3377,7 +3377,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 223,
@@ -3388,7 +3388,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 65,
-          "ownership": "4.6"
+          "ownership": "4.5"
         },
         {
           "id": 379,
@@ -3484,7 +3484,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 50,
-          "ownership": "2.2"
+          "ownership": "2.1"
         },
         {
           "id": 586,
@@ -3528,7 +3528,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "19.2"
+          "ownership": "19.1"
         },
         {
           "id": 557,
@@ -3550,7 +3550,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 397,
@@ -3561,7 +3561,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 85,
-          "ownership": "23.3"
+          "ownership": "23.2"
         },
         {
           "id": 427,
@@ -3572,7 +3572,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "34.3"
+          "ownership": "34.2"
         },
         {
           "id": 411,
@@ -3583,7 +3583,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 155,
-          "ownership": "68.6"
+          "ownership": "68.7"
         },
         {
           "id": 165,
@@ -3605,7 +3605,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "22.4"
+          "ownership": "22.2"
         },
         {
           "id": 455,
@@ -3616,7 +3616,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 55,
-          "ownership": "3.7"
+          "ownership": "3.6"
         },
         {
           "id": 272,
@@ -3712,7 +3712,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "9.4"
+          "ownership": "9.3"
         },
         {
           "id": 237,
@@ -3734,7 +3734,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "34.3"
+          "ownership": "34.2"
         },
         {
           "id": 426,
@@ -3745,7 +3745,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 368,
@@ -3756,7 +3756,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "43.2"
+          "ownership": "43.1"
         },
         {
           "id": 565,
@@ -3767,7 +3767,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "9.6"
+          "ownership": "9.7"
         },
         {
           "id": 569,
@@ -3778,7 +3778,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "4.3"
+          "ownership": "4.4"
         },
         {
           "id": 165,
@@ -3811,7 +3811,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "12.5"
+          "ownership": "12.4"
         },
         {
           "id": 182,
@@ -3924,7 +3924,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 96,
-          "ownership": "17.0"
+          "ownership": "17.1"
         },
         {
           "id": 397,
@@ -3935,7 +3935,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 85,
-          "ownership": "23.3"
+          "ownership": "23.2"
         },
         {
           "id": 426,
@@ -3946,7 +3946,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 120,
-          "ownership": "46.9"
+          "ownership": "46.8"
         },
         {
           "id": 427,
@@ -3957,7 +3957,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 80,
-          "ownership": "34.3"
+          "ownership": "34.2"
         },
         {
           "id": 12,
@@ -3979,7 +3979,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "3.9"
+          "ownership": "4.3"
         },
         {
           "id": 165,
@@ -4023,7 +4023,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "9.6"
+          "ownership": "9.8"
         },
         {
           "id": 349,
@@ -4100,21 +4100,21 @@
       "c": "#ff6b9d"
     },
     {
-      "f": "Bheka Bhengu",
-      "s": "Bheka",
-      "t": "Khuphuka FC",
-      "r": [
-        4,
-        6
-      ],
-      "c": "#38d9a9"
-    },
-    {
       "f": "Nhlakanipho Ntombela",
       "s": "Nhlakanipho",
       "t": "iam_ntombela",
       "r": [
         2,
+        6
+      ],
+      "c": "#38d9a9"
+    },
+    {
+      "f": "Bheka Bhengu",
+      "s": "Bheka",
+      "t": "Khuphuka FC",
+      "r": [
+        4,
         7
       ],
       "c": "#9775fa"
@@ -4257,7 +4257,7 @@
       "code": 223094,
       "position": 4,
       "cost": 155,
-      "fpl_pct": "68.6",
+      "fpl_pct": "68.7",
       "count": 16
     },
     {
@@ -4275,7 +4275,7 @@
       "code": 424876,
       "position": 3,
       "cost": 70,
-      "fpl_pct": "43.2",
+      "fpl_pct": "43.1",
       "count": 15
     },
     {
@@ -4293,7 +4293,7 @@
       "code": 141746,
       "position": 3,
       "cost": 120,
-      "fpl_pct": "46.9",
+      "fpl_pct": "46.8",
       "count": 14
     },
     {
@@ -4302,7 +4302,7 @@
       "code": 446008,
       "position": 3,
       "cost": 80,
-      "fpl_pct": "34.3",
+      "fpl_pct": "34.2",
       "count": 10
     },
     {
@@ -4311,7 +4311,7 @@
       "code": 177815,
       "position": 4,
       "cost": 60,
-      "fpl_pct": "28.0",
+      "fpl_pct": "27.9",
       "count": 9
     },
     {
@@ -4347,7 +4347,7 @@
       "code": 106760,
       "position": 2,
       "cost": 45,
-      "fpl_pct": "19.2",
+      "fpl_pct": "19.1",
       "count": 7
     },
     {
@@ -4374,7 +4374,7 @@
       "code": 485055,
       "position": 1,
       "cost": 45,
-      "fpl_pct": "22.4",
+      "fpl_pct": "22.2",
       "count": 6
     },
     {
@@ -4437,7 +4437,7 @@
       "code": 437730,
       "position": 3,
       "cost": 85,
-      "fpl_pct": "23.3",
+      "fpl_pct": "23.2",
       "count": 4
     },
     {
@@ -4455,7 +4455,7 @@
       "code": 60307,
       "position": 3,
       "cost": 55,
-      "fpl_pct": "12.7",
+      "fpl_pct": "12.6",
       "count": 4
     },
     {
@@ -4464,7 +4464,7 @@
       "code": 513545,
       "position": 3,
       "cost": 56,
-      "fpl_pct": "9.6",
+      "fpl_pct": "9.7",
       "count": 4
     },
     {
@@ -4473,7 +4473,7 @@
       "code": 97032,
       "position": 2,
       "cost": 65,
-      "fpl_pct": "19.4",
+      "fpl_pct": "19.3",
       "count": 3
     },
     {
@@ -4491,7 +4491,7 @@
       "code": 465247,
       "position": 1,
       "cost": 50,
-      "fpl_pct": "15.4",
+      "fpl_pct": "15.3",
       "count": 3
     },
     {
@@ -4500,7 +4500,7 @@
       "code": 441164,
       "position": 2,
       "cost": 55,
-      "fpl_pct": "13.5",
+      "fpl_pct": "13.4",
       "count": 3
     },
     {
@@ -4518,7 +4518,7 @@
       "code": 222531,
       "position": 3,
       "cost": 79,
-      "fpl_pct": "8.3",
+      "fpl_pct": "8.4",
       "count": 3
     },
     {
@@ -4527,7 +4527,7 @@
       "code": 607464,
       "position": 2,
       "cost": 46,
-      "fpl_pct": "8.1",
+      "fpl_pct": "8.2",
       "count": 3
     },
     {
@@ -4536,7 +4536,7 @@
       "code": 551466,
       "position": 4,
       "cost": 60,
-      "fpl_pct": "4.3",
+      "fpl_pct": "4.4",
       "count": 3
     },
     {
@@ -4545,7 +4545,7 @@
       "code": 204480,
       "position": 3,
       "cost": 75,
-      "fpl_pct": "16.6",
+      "fpl_pct": "16.5",
       "count": 2
     },
     {
@@ -4554,7 +4554,7 @@
       "code": 441264,
       "position": 4,
       "cost": 60,
-      "fpl_pct": "12.5",
+      "fpl_pct": "12.4",
       "count": 2
     },
     {
@@ -4590,7 +4590,7 @@
       "code": 469142,
       "position": 2,
       "cost": 50,
-      "fpl_pct": "9.4",
+      "fpl_pct": "9.3",
       "count": 2
     },
     {
@@ -4707,7 +4707,7 @@
       "code": 244851,
       "position": 3,
       "cost": 96,
-      "fpl_pct": "17.0",
+      "fpl_pct": "17.1",
       "count": 1
     },
     {
@@ -4716,7 +4716,7 @@
       "code": 502500,
       "position": 4,
       "cost": 80,
-      "fpl_pct": "16.3",
+      "fpl_pct": "16.2",
       "count": 1
     },
     {
@@ -4725,7 +4725,7 @@
       "code": 466052,
       "position": 3,
       "cost": 76,
-      "fpl_pct": "14.8",
+      "fpl_pct": "15.2",
       "count": 1
     },
     {
@@ -4761,7 +4761,7 @@
       "code": 465730,
       "position": 2,
       "cost": 46,
-      "fpl_pct": "9.6",
+      "fpl_pct": "9.8",
       "count": 1
     },
     {
@@ -4779,7 +4779,7 @@
       "code": 17761,
       "position": 2,
       "cost": 60,
-      "fpl_pct": "8.7",
+      "fpl_pct": "8.8",
       "count": 1
     },
     {
@@ -4806,7 +4806,7 @@
       "code": 221466,
       "position": 2,
       "cost": 60,
-      "fpl_pct": "7.4",
+      "fpl_pct": "7.3",
       "count": 1
     },
     {
@@ -4824,7 +4824,7 @@
       "code": 224117,
       "position": 4,
       "cost": 74,
-      "fpl_pct": "6.5",
+      "fpl_pct": "6.4",
       "count": 1
     },
     {
@@ -4846,15 +4846,6 @@
       "count": 1
     },
     {
-      "id": 532,
-      "name": "Ballard",
-      "code": 223827,
-      "position": 2,
-      "cost": 50,
-      "fpl_pct": "4.9",
-      "count": 1
-    },
-    {
       "id": 305,
       "name": "Davis",
       "code": 455084,
@@ -4864,12 +4855,30 @@
       "count": 1
     },
     {
+      "id": 532,
+      "name": "Ballard",
+      "code": 223827,
+      "position": 2,
+      "cost": 50,
+      "fpl_pct": "4.8",
+      "count": 1
+    },
+    {
       "id": 223,
       "name": "Mateta",
       "code": 231747,
       "position": 4,
       "cost": 65,
-      "fpl_pct": "4.6",
+      "fpl_pct": "4.5",
+      "count": 1
+    },
+    {
+      "id": 464,
+      "name": "Wissa",
+      "code": 216646,
+      "position": 4,
+      "cost": 60,
+      "fpl_pct": "4.3",
       "count": 1
     },
     {
@@ -4900,15 +4909,6 @@
       "count": 1
     },
     {
-      "id": 464,
-      "name": "Wissa",
-      "code": 216646,
-      "position": 4,
-      "cost": 60,
-      "fpl_pct": "3.9",
-      "count": 1
-    },
-    {
       "id": 502,
       "name": "Robertson",
       "code": 122798,
@@ -4932,7 +4932,7 @@
       "code": 432422,
       "position": 3,
       "cost": 55,
-      "fpl_pct": "3.7",
+      "fpl_pct": "3.6",
       "count": 1
     },
     {
@@ -4990,15 +4990,6 @@
       "count": 1
     },
     {
-      "id": 527,
-      "name": "Richarlison",
-      "code": 212319,
-      "position": 4,
-      "cost": 60,
-      "fpl_pct": "2.7",
-      "count": 1
-    },
-    {
       "id": 68,
       "name": "Tavernier",
       "code": 201658,
@@ -5013,6 +5004,15 @@
       "code": 557012,
       "position": 4,
       "cost": 45,
+      "fpl_pct": "2.6",
+      "count": 1
+    },
+    {
+      "id": 527,
+      "name": "Richarlison",
+      "code": 212319,
+      "position": 4,
+      "cost": 60,
       "fpl_pct": "2.6",
       "count": 1
     },
@@ -5035,15 +5035,6 @@
       "count": 1
     },
     {
-      "id": 248,
-      "name": "Beto",
-      "code": 486385,
-      "position": 4,
-      "cost": 55,
-      "fpl_pct": "2.3",
-      "count": 1
-    },
-    {
       "id": 113,
       "name": "F.Kadıoğlu",
       "code": 231416,
@@ -5053,11 +5044,11 @@
       "count": 1
     },
     {
-      "id": 140,
-      "name": "Sánchez",
-      "code": 215059,
-      "position": 1,
-      "cost": 50,
+      "id": 248,
+      "name": "Beto",
+      "code": 486385,
+      "position": 4,
+      "cost": 55,
       "fpl_pct": "2.2",
       "count": 1
     },
@@ -5068,6 +5059,15 @@
       "position": 2,
       "cost": 40,
       "fpl_pct": "2.2",
+      "count": 1
+    },
+    {
+      "id": 140,
+      "name": "Sánchez",
+      "code": 215059,
+      "position": 1,
+      "cost": 50,
+      "fpl_pct": "2.1",
       "count": 1
     },
     {
@@ -5168,9 +5168,9 @@
       "code": 466052,
       "position": 3,
       "now_cost": 76,
-      "transfers_in": 349885,
-      "transfers_out": 3463,
-      "selected_by_percent": "14.8"
+      "transfers_in": 379217,
+      "transfers_out": 3971,
+      "selected_by_percent": "15.2"
     },
     {
       "id": 391,
@@ -5178,9 +5178,9 @@
       "code": 477424,
       "position": 2,
       "now_cost": 55,
-      "transfers_in": 98102,
-      "transfers_out": 6609,
-      "selected_by_percent": "15.0"
+      "transfers_in": 115587,
+      "transfers_out": 7907,
+      "selected_by_percent": "15.2"
     },
     {
       "id": 115,
@@ -5188,49 +5188,9 @@
       "code": 465730,
       "position": 2,
       "now_cost": 46,
-      "transfers_in": 85247,
-      "transfers_out": 3334,
-      "selected_by_percent": "9.6"
-    },
-    {
-      "id": 411,
-      "name": "Haaland",
-      "code": 223094,
-      "position": 4,
-      "now_cost": 155,
-      "transfers_in": 59383,
-      "transfers_out": 2751,
-      "selected_by_percent": "68.6"
-    },
-    {
-      "id": 154,
-      "name": "Palmer",
-      "code": 244851,
-      "position": 3,
-      "now_cost": 96,
-      "transfers_in": 55734,
-      "transfers_out": 9463,
-      "selected_by_percent": "17.0"
-    },
-    {
-      "id": 565,
-      "name": "M.Sangaré",
-      "code": 513545,
-      "position": 3,
-      "now_cost": 56,
-      "transfers_in": 44393,
-      "transfers_out": 6190,
-      "selected_by_percent": "9.6"
-    },
-    {
-      "id": 586,
-      "name": "Mendy",
-      "code": 606930,
-      "position": 2,
-      "now_cost": 40,
-      "transfers_in": 35011,
-      "transfers_out": 5106,
-      "selected_by_percent": "4.8"
+      "transfers_in": 101022,
+      "transfers_out": 4224,
+      "selected_by_percent": "9.8"
     },
     {
       "id": 464,
@@ -5238,39 +5198,49 @@
       "code": 216646,
       "position": 4,
       "now_cost": 60,
-      "transfers_in": 34774,
-      "transfers_out": 4737,
-      "selected_by_percent": "3.9"
-    },
-    {
-      "id": 165,
-      "name": "João Pedro",
-      "code": 475168,
-      "position": 4,
-      "now_cost": 76,
-      "transfers_in": 34676,
-      "transfers_out": 12195,
-      "selected_by_percent": "68.5"
-    },
-    {
-      "id": 569,
-      "name": "Gonzalo",
-      "code": 551466,
-      "position": 4,
-      "now_cost": 60,
-      "transfers_in": 32936,
-      "transfers_out": 3774,
+      "transfers_in": 72893,
+      "transfers_out": 5629,
       "selected_by_percent": "4.3"
     },
     {
-      "id": 368,
-      "name": "Szoboszlai",
-      "code": 424876,
+      "id": 411,
+      "name": "Haaland",
+      "code": 223094,
+      "position": 4,
+      "now_cost": 155,
+      "transfers_in": 67696,
+      "transfers_out": 3054,
+      "selected_by_percent": "68.7"
+    },
+    {
+      "id": 154,
+      "name": "Palmer",
+      "code": 244851,
       "position": 3,
-      "now_cost": 70,
-      "transfers_in": 28628,
-      "transfers_out": 30867,
-      "selected_by_percent": "43.2"
+      "now_cost": 96,
+      "transfers_in": 61956,
+      "transfers_out": 11091,
+      "selected_by_percent": "17.1"
+    },
+    {
+      "id": 454,
+      "name": "Elanga",
+      "code": 449434,
+      "position": 3,
+      "now_cost": 60,
+      "transfers_in": 56389,
+      "transfers_out": 3209,
+      "selected_by_percent": "2.8"
+    },
+    {
+      "id": 565,
+      "name": "M.Sangaré",
+      "code": 513545,
+      "position": 3,
+      "now_cost": 56,
+      "transfers_in": 49327,
+      "transfers_out": 7714,
+      "selected_by_percent": "9.7"
     },
     {
       "id": 279,
@@ -5278,9 +5248,49 @@
       "code": 146426,
       "position": 2,
       "now_cost": 40,
-      "transfers_in": 26822,
-      "transfers_out": 1948,
-      "selected_by_percent": "2.4"
+      "transfers_in": 40652,
+      "transfers_out": 2653,
+      "selected_by_percent": "2.5"
+    },
+    {
+      "id": 165,
+      "name": "João Pedro",
+      "code": 475168,
+      "position": 4,
+      "now_cost": 76,
+      "transfers_in": 39523,
+      "transfers_out": 14715,
+      "selected_by_percent": "68.5"
+    },
+    {
+      "id": 586,
+      "name": "Mendy",
+      "code": 606930,
+      "position": 2,
+      "now_cost": 40,
+      "transfers_in": 38210,
+      "transfers_out": 6937,
+      "selected_by_percent": "4.8"
+    },
+    {
+      "id": 569,
+      "name": "Gonzalo",
+      "code": 551466,
+      "position": 4,
+      "now_cost": 60,
+      "transfers_in": 36618,
+      "transfers_out": 5177,
+      "selected_by_percent": "4.4"
+    },
+    {
+      "id": 368,
+      "name": "Szoboszlai",
+      "code": 424876,
+      "position": 3,
+      "now_cost": 70,
+      "transfers_in": 31982,
+      "transfers_out": 38332,
+      "selected_by_percent": "43.1"
     },
     {
       "id": 8,
@@ -5288,8 +5298,8 @@
       "code": 466075,
       "position": 2,
       "now_cost": 56,
-      "transfers_in": 26775,
-      "transfers_out": 9381,
+      "transfers_in": 31646,
+      "transfers_out": 11341,
       "selected_by_percent": "41.7"
     },
     {
@@ -5298,19 +5308,19 @@
       "code": 244850,
       "position": 3,
       "now_cost": 75,
-      "transfers_in": 25777,
-      "transfers_out": 25487,
+      "transfers_in": 28939,
+      "transfers_out": 29141,
       "selected_by_percent": "26.1"
     },
     {
-      "id": 557,
-      "name": "Tzolis",
-      "code": 439509,
-      "position": 3,
-      "now_cost": 65,
-      "transfers_in": 24604,
-      "transfers_out": 14493,
-      "selected_by_percent": "26.0"
+      "id": 572,
+      "name": "Tzolakis",
+      "code": 473284,
+      "position": 1,
+      "now_cost": 45,
+      "transfers_in": 28532,
+      "transfers_out": 2743,
+      "selected_by_percent": "3.6"
     },
     {
       "id": 367,
@@ -5318,9 +5328,29 @@
       "code": 243298,
       "position": 3,
       "now_cost": 70,
-      "transfers_in": 22883,
-      "transfers_out": 8735,
+      "transfers_in": 28384,
+      "transfers_out": 10962,
       "selected_by_percent": "6.9"
+    },
+    {
+      "id": 557,
+      "name": "Tzolis",
+      "code": 439509,
+      "position": 3,
+      "now_cost": 65,
+      "transfers_in": 28032,
+      "transfers_out": 17223,
+      "selected_by_percent": "26.0"
+    },
+    {
+      "id": 109,
+      "name": "Verbruggen",
+      "code": 489639,
+      "position": 1,
+      "now_cost": 45,
+      "transfers_in": 25725,
+      "transfers_out": 10677,
+      "selected_by_percent": "21.5"
     },
     {
       "id": 249,
@@ -5328,39 +5358,9 @@
       "code": 586309,
       "position": 4,
       "now_cost": 55,
-      "transfers_in": 22777,
-      "transfers_out": 6148,
+      "transfers_in": 25711,
+      "transfers_out": 8383,
       "selected_by_percent": "3.7"
-    },
-    {
-      "id": 454,
-      "name": "Elanga",
-      "code": 449434,
-      "position": 3,
-      "now_cost": 60,
-      "transfers_in": 21960,
-      "transfers_out": 2552,
-      "selected_by_percent": "2.4"
-    },
-    {
-      "id": 401,
-      "name": "Marmoush",
-      "code": 438234,
-      "position": 4,
-      "now_cost": 70,
-      "transfers_in": 21828,
-      "transfers_out": 2989,
-      "selected_by_percent": "1.6"
-    },
-    {
-      "id": 88,
-      "name": "Kayode",
-      "code": 607464,
-      "position": 2,
-      "now_cost": 46,
-      "transfers_in": 19854,
-      "transfers_out": 3600,
-      "selected_by_percent": "8.1"
     }
   ]
 }
