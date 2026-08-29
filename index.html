@@ -436,7 +436,7 @@
       <div class="panel-head"><div class="panel-title">League Table</div>
         <div class="panel-meta"><button class="sortbtn" id="st-sort">SORT: TOTAL ▾</button></div></div>
       <div class="tablewrap"><table class="holdings"><thead><tr>
-        <th>#</th><th>Manager / Team</th><th class="r">Total</th><th class="r">vs Lead</th><th class="r">GW Rank</th><th class="r">Bottoms</th><th class="r">Form</th>
+        <th>#</th><th>Manager / Team</th><th class="r">Total</th><th class="r">GW Pts</th><th class="r">vs Lead</th><th class="r">GW Rank</th><th class="r">Bottoms</th><th class="r">Form</th>
       </tr></thead><tbody id="st-body"></tbody></table></div>
     </div></div>
     <div class="actions">
@@ -1263,7 +1263,7 @@ Promise.all([
         <div class="kpi"><div class="kpi-label">Status</div><div class="kpi-value cond">Pre-season</div><div class="kpi-sub">awaiting first activation</div></div>
         <div class="kpi"><div class="kpi-label">In The Drop</div><div class="kpi-value">—</div><div class="kpi-sub">no scores yet</div></div>
         <div class="kpi"><div class="kpi-label">League Average</div><div class="kpi-value">—</div><div class="kpi-sub">season points</div></div>`;
-      $('#st-body').innerHTML=`<tr><td colspan="7" style="padding:26px 12px;text-align:center;color:var(--dim)">No teams have activated their ${SEASON} squad yet — the table fills in as managers set up their team.</td></tr>`;
+      $('#st-body').innerHTML=`<tr><td colspan="8" style="padding:26px 12px;text-align:center;color:var(--dim)">No teams have activated their ${SEASON} squad yet — the table fills in as managers set up their team.</td></tr>`;
       return;
     }
     const sorted=[...SR].sort((a,b)=>b.pts-a.pts), last=sorted[sorted.length-1], sLeader=sorted[0];
@@ -1282,6 +1282,7 @@ Promise.all([
         <td><span class="rkn ${(!noGw&&rank<=3)?'top':''}">${noGw?'·':rank}</span></td>
         <td><span class="nm2">${esc(m.name)}</span> ${epiHtml(m)}<div class="tm">${esc(m.team)}</div></td>
         <td class="num">${noGw?'—':m.pts.toLocaleString()}</td>
+        <td class="num">${noGw?'—':((m.gwPts||[])[idx]??'—')}</td>
         <td class="num ${(!noGw&&gap<0)?'neg':''}">${noGw?'—':(gap===0?'—':gap)}</td>
         <td class="num">${noGw?'—':(m.weeklyRankNow||'—')}</td>
         <td class="num" style="color:${m.bottoms>=8?'var(--red)':m.bottoms>=5?'var(--amber)':'var(--dim)'}">${noGw?'—':m.bottoms}</td>
