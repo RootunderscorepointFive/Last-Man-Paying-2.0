@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T04:50:23.951Z",
+  "generated_at": "2026-09-01T05:41:19.772Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 1,
@@ -262,12 +262,14 @@
       "entry": 7068091,
       "name": "Mbuyi Katumba",
       "team": "Finding Mbeumo",
-      "joining_fee_paid": false,
+      "joining_fee_paid": true,
       "fines": [],
       "bottom_finishes": [],
       "epithet": null,
       "epithet_tagline": null,
-      "credits": 0
+      "credits": 0,
+      "joining_fee_paid_by": "treasurer",
+      "joining_fee_paid_date": "2026-09-01T05:41:19.772Z"
     },
     {
       "entry": 112702,
