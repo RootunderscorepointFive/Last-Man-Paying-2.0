@@ -434,7 +434,7 @@
     <div class="kpi-grid" id="st-kpis"></div>
     <div class="grid"><div class="panel grid-full">
       <div class="panel-head"><div class="panel-title">League Table</div>
-        <div class="panel-meta"><button class="sortbtn" id="st-sort">SORT: TOTAL ▾</button></div></div>
+        <div class="panel-meta"><select class="sortbtn" id="st-gw" aria-label="View standings as of gameweek" style="margin-right:6px"></select><button class="sortbtn" id="st-sort">SORT: TOTAL ▾</button></div></div>
       <div class="tablewrap"><table class="holdings"><thead><tr>
         <th>#</th><th>Manager / Team</th><th class="r">Total</th><th class="r">GW Pts</th><th class="r">vs Lead</th><th class="r">GW Rank</th><th class="r">Bottoms</th><th class="r">Form</th>
       </tr></thead><tbody id="st-body"></tbody></table></div>
@@ -1069,9 +1069,9 @@ Promise.all([
   MANAGERS = ledger.managers; API_DATA = api; JOINING_FEE = (config && config.joining_fee) || 300;   // enable treasurer flows (top-level wiring)
   // Shared outer-scope (not re-declared each render) — openSquad/Analytics below
   // read these by closure, so renderMoneyViews() assigns rather than re-declares.
-  // stSort likewise, so re-running renderMoneyViews() after a treasurer action
-  // doesn't reset the Standings sort toggle back to its default.
-  let MM, mmByName, stSort='total';
+  // stSort/stGW likewise, so re-running renderMoneyViews() after a treasurer action
+  // doesn't reset the Standings sort toggle or selected gameweek back to default.
+  let MM, mmByName, stSort='total', stGW=null;
 
   // chrome
   $('#tb-gw').textContent = `${L}/${TOTAL_GWS}`;
@@ -1194,7 +1194,7 @@ Promise.all([
     const grossDue = owed - paid;                              // unpaid before credit
     const creditLeft = Math.max(0, creditsBal - grossDue);     // surplus carried on account
     return { entry:m.entry, name:m.name, team:m.team, epithet:m.epithet, epithet_tagline:m.epithet_tagline,
-      pts:g.total||0, gwPts:gp, bottoms:m.bottom_finishes.length,
+      pts:g.total||0, gwPts:gp, weeklyRanks:g.weeklyRanks||[], bottomGWs:m.bottom_finishes, bottoms:m.bottom_finishes.length,
       bestGW:Math.max(0,...(gp.length?gp:[0])), avgGW:gp.length?Math.round(gp.reduce((a,b)=>a+b,0)/gp.length):0,
       hits:(g.gwHits||[]).reduce((a,b)=>a+b,0), bench:g.benchTotal||0, transfers:g.transfersTotal||0,
       chipsUsed:(g.chips||[]).length, captain:g.currentCaptain||'—', weeklyWins:(g.weeklyRanks||[]).filter(r=>r===1).length,
@@ -1217,9 +1217,12 @@ Promise.all([
     const led = mmByEntry[g.entry] || {};
     return { entry:g.entry, name:g.manager, team:g.team,
       epithet:led.epithet||null, epithet_tagline:led.epithet_tagline||null,
-      pts:g.total||0, gwPts:g.gwPts||[], bottoms:led.bottoms||0,
-      weeklyRankNow:(g.weeklyRanks||[])[idx]||0 };
+      gwPts:g.gwPts||[], weeklyRanks:g.weeklyRanks||[], bottomGWs:led.bottomGWs||[] };
   });
+  // Standings can rewind to any played gameweek — these derive a row's numbers
+  // as they stood after GW n, from the same per-GW arrays the live view uses.
+  const ptsThru = (m,n) => (m.gwPts||[]).slice(0,n).reduce((a,b)=>a+b,0);
+  const bottomsThru = (m,n) => (m.bottomGWs||[]).filter(g=>g<=n).length;
 
   function sparkline(vals,color,avgVal){
     if(!vals.length) return '';
@@ -1251,14 +1254,15 @@ Promise.all([
   const nG = (api.gwData[0] && api.gwData[0].gwPts.length) || 0;
   const leagueAvgPerGW=[]; for(let i=0;i<nG;i++){ leagueAvgPerGW[i]=Math.round(api.gwData.reduce((s,g)=>s+(g.gwPts[i]||0),0)/api.gwData.length); }
   const overallAvgGW = nG ? Math.round(leagueAvgPerGW.reduce((a,b)=>a+b,0)/nG) : 0;
-  function formDots(m){
-    const gp=m.gwPts, start=Math.max(0,gp.length-5); let out='';
+  function formDots(gpFull,n){
+    const gp=gpFull.slice(0,n), start=Math.max(0,gp.length-5); let out='';
     for(let i=start;i<gp.length;i++){ const diff=gp[i]-(leagueAvgPerGW[i]||0); const c=diff>=5?'g':diff<=-5?'r':'a';
       out+=`<span class="fd ${c}" title="GW${i+1}: ${gp[i]} pts (avg ${leagueAvgPerGW[i]})"></span>`; }
     return `<span class="form-dots" role="img" aria-label="Form, last 5 gameweeks vs league average">${out}</span>`;
   }
 
   // ── STANDINGS ──
+  if (stGW==null) stGW = L;   // first render only — default to the current/live GW
   function renderStandings(){
     // Empty until at least one manager has activated their season (live feed).
     if(!SR.length){
@@ -1268,31 +1272,45 @@ Promise.all([
         <div class="kpi"><div class="kpi-label">In The Drop</div><div class="kpi-value">—</div><div class="kpi-sub">no scores yet</div></div>
         <div class="kpi"><div class="kpi-label">League Average</div><div class="kpi-value">—</div><div class="kpi-sub">season points</div></div>`;
       $('#st-body').innerHTML=`<tr><td colspan="8" style="padding:26px 12px;text-align:center;color:var(--dim)">No teams have activated their ${SEASON} squad yet — the table fills in as managers set up their team.</td></tr>`;
+      $('#st-gw').hidden = true;
       return;
     }
-    const sorted=[...SR].sort((a,b)=>b.pts-a.pts), last=sorted[sorted.length-1], sLeader=sorted[0];
-    const leagueAvg=Math.round(SR.reduce((a,x)=>a+x.pts,0)/SR.length);
+    $('#st-gw').hidden = noGw;
+    const n = Math.max(1, Math.min(stGW, L)), live = n===L;
+    const view = SR.map(m=>({ entry:m.entry, name:m.name, team:m.team, epithet:m.epithet, epithet_tagline:m.epithet_tagline,
+      gwPtsFull:m.gwPts, pts:ptsThru(m,n), gwPtsAt:(m.gwPts||[])[n-1]??null,
+      weeklyRankAt:(m.weeklyRanks||[])[n-1]||0, bottoms:bottomsThru(m,n) }));
+    // bottom-3 as it stood after GW n — same "≤ 3rd-lowest-unique" rule as the LMP tab, replayed at n.
+    const scoresAtN = view.map(m=>({name:m.name, s:m.gwPtsAt??0}));
+    const uniqN = [...new Set(scoresAtN.map(x=>x.s))].sort((a,b)=>a-b);
+    const thrN = uniqN.length>=3?uniqN[2]:uniqN[uniqN.length-1];
+    const payersAtN = scoresAtN.filter(x=>x.s<=thrN);
+    const sorted=[...view].sort((a,b)=>b.pts-a.pts), last=sorted[sorted.length-1], sLeader=sorted[0];
+    const leagueAvg=Math.round(view.reduce((a,x)=>a+x.pts,0)/view.length);
     $('#st-kpis').innerHTML=`
-      <div class="kpi"><div class="kpi-label">${noGw?'Teams Activated':'League Leader'}</div><div class="kpi-value amber cond">${noGw?SR.length:firstName(sLeader.name)}</div><div class="kpi-sub">${noGw?'of '+SEASON:sLeader.pts.toLocaleString()+' pts · '+epiHtml(sLeader)}</div></div>
+      <div class="kpi"><div class="kpi-label">${noGw?'Teams Activated':(live?'League Leader':'Leader · GW'+n)}</div><div class="kpi-value amber cond">${noGw?SR.length:firstName(sLeader.name)}</div><div class="kpi-sub">${noGw?'of '+SEASON:sLeader.pts.toLocaleString()+' pts · '+epiHtml(sLeader)}</div></div>
       <div class="kpi"><div class="kpi-label">Points Gap · 1st→Last</div><div class="kpi-value">${noGw?'—':(sLeader.pts-last.pts).toLocaleString()}</div><div class="kpi-sub">${noGw?'awaiting GW1':sLeader.pts.toLocaleString()+' vs '+last.pts.toLocaleString()}</div></div>
-      <div class="kpi"><div class="kpi-label">In The Drop${noGw?'':' · GW'+L}</div><div class="kpi-value red">${noGw?'—':payers.length}</div><div class="kpi-sub">${noGw?'no scores yet':'charged this gameweek'}</div></div>
-      <div class="kpi"><div class="kpi-label">League Average</div><div class="kpi-value green">${noGw?'—':leagueAvg.toLocaleString()}</div><div class="kpi-sub">season points</div></div>`;
-    const rows=[...SR]; const maxPts=Math.max(...SR.map(x=>x.pts));
+      <div class="kpi"><div class="kpi-label">In The Drop${noGw?'':' · GW'+n}</div><div class="kpi-value red">${noGw?'—':payersAtN.length}</div><div class="kpi-sub">${noGw?'no scores yet':(live?'charged this gameweek':'charged that gameweek')}</div></div>
+      <div class="kpi"><div class="kpi-label">League Average</div><div class="kpi-value green">${noGw?'—':leagueAvg.toLocaleString()}</div><div class="kpi-sub">${live?'season points':'points thru GW'+n}</div></div>`;
+    const rows=[...view]; const maxPts=Math.max(...view.map(x=>x.pts));
     if(stSort==='total') rows.sort((a,b)=>b.pts-a.pts);
-    else rows.sort((a,b)=>(a.weeklyRankNow||99)-(b.weeklyRankNow||99));
+    else rows.sort((a,b)=>(a.weeklyRankAt||99)-(b.weeklyRankAt||99));
     $('#st-body').innerHTML=rows.map((m,i)=>{
-      const rank=i+1, gap=m.pts-maxPts;
-      return `<tr class="${noGw?'':'clk'}" ${noGw?'':'tabindex="0"'} data-mgr="${esc(m.name)}" aria-label="${esc(m.name)}${noGw?'':' — open GW'+L+' squad'}">
+      const rank=i+1, gap=m.pts-maxPts, clk=!noGw&&live;
+      return `<tr class="${clk?'clk':''}" ${clk?`tabindex="0" data-mgr="${esc(m.name)}"`:''} aria-label="${esc(m.name)}${clk?' — open GW'+L+' squad':''}">
         <td><span class="rkn ${(!noGw&&rank<=3)?'top':''}">${noGw?'·':rank}</span></td>
         <td><span class="nm2">${esc(m.name)}</span> ${epiHtml(m)}<div class="tm">${esc(m.team)}</div></td>
         <td class="num">${noGw?'—':m.pts.toLocaleString()}</td>
-        <td class="num">${noGw?'—':((m.gwPts||[])[idx]??'—')}</td>
+        <td class="num">${noGw?'—':(m.gwPtsAt??'—')}</td>
         <td class="num ${(!noGw&&gap<0)?'neg':''}">${noGw?'—':(gap===0?'—':gap)}</td>
-        <td class="num">${noGw?'—':(m.weeklyRankNow||'—')}</td>
+        <td class="num">${noGw?'—':(m.weeklyRankAt||'—')}</td>
         <td class="num" style="color:${m.bottoms>=8?'var(--red)':m.bottoms>=5?'var(--amber)':'var(--dim)'}">${noGw?'—':m.bottoms}</td>
-        <td>${noGw?'':formDots(m)}</td></tr>`;
+        <td>${noGw?'':formDots(m.gwPtsFull,n)}</td></tr>`;
     }).join('');
   }
+  { const opts=[]; for(let g=L; g>=1; g--) opts.push(`<option value="${g}">GW ${g}${g===L?' · Live':''}</option>`);
+    $('#st-gw').innerHTML = opts.join(''); $('#st-gw').value = stGW; }
+  $('#st-gw').onchange = ()=>{ stGW = Number($('#st-gw').value)||L; renderStandings(); };
   const toggleSort=()=>{ stSort=stSort==='total'?'gwrank':'total';
     $('#st-sort').textContent='SORT: '+(stSort==='total'?'TOTAL':'GW RANK')+' ▾'; renderStandings(); };
   $('#st-sort').onclick=toggleSort; $('#act-st-sort').onclick=toggleSort;
