@@ -1,18 +1,39 @@
 {
-  "generated_at": "2026-09-01T09:54:50.806Z",
+  "generated_at": "2026-09-01T14:42:36.155Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
-  "last_synced_gw": 1,
+  "last_synced_gw": 2,
   "managers": [
     {
       "entry": 6404452,
       "name": "Minenhle Khumalo",
       "team": "The Wirtz Edge",
       "joining_fee_paid": false,
-      "fines": [],
-      "bottom_finishes": [],
-      "epithet": "Wooden Spoon",
-      "epithet_tagline": "Fewest total points — 112",
+      "fines": [
+        {
+          "id": "f_6404452_gw2_bottom",
+          "gw": 2,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW2 (post-hits 72, threshold 72)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-09-01T14:42:36.093Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        2
+      ],
+      "epithet": "Steady Eddie",
+      "epithet_tagline": "Steadiest scorer — swings of only ±11",
       "credits": 0
     },
     {
@@ -43,8 +64,8 @@
       "bottom_finishes": [
         1
       ],
-      "epithet": "The Fugitive",
-      "epithet_tagline": "Owes the pot the most — R350",
+      "epithet": "Departure Lounge",
+      "epithet_tagline": "Stuck at the relegation gate — 1 bottom finishes",
       "credits": 0
     },
     {
@@ -175,7 +196,7 @@
       "fines": [],
       "bottom_finishes": [],
       "epithet": "The Tinkerman",
-      "epithet_tagline": "Can't stop fiddling — 2 transfers, 4 hit pts, 7th to show for it",
+      "epithet_tagline": "Can't stop fiddling — 2 transfers, 4 hit pts, 8th to show for it",
       "credits": 0
     },
     {
@@ -254,10 +275,31 @@
       "name": "Mhlengi Kunene",
       "team": "Hidden Hills",
       "joining_fee_paid": false,
-      "fines": [],
-      "bottom_finishes": [],
-      "epithet": null,
-      "epithet_tagline": null,
+      "fines": [
+        {
+          "id": "f_194373_gw2_bottom",
+          "gw": 2,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW2 (post-hits 70, threshold 72)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-09-01T14:42:36.093Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        2
+      ],
+      "epithet": "The Fugitive",
+      "epithet_tagline": "Owes the pot the most — R350",
       "credits": 0
     },
     {
@@ -289,10 +331,31 @@
       "name": "Zazi Zuma",
       "team": "Mpendles Finest",
       "joining_fee_paid": false,
-      "fines": [],
-      "bottom_finishes": [],
-      "epithet": "Steady Eddie",
-      "epithet_tagline": "Steadiest scorer — swings of only ±4",
+      "fines": [
+        {
+          "id": "f_5275613_gw2_bottom",
+          "gw": 2,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW2 (post-hits 63, threshold 72)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-09-01T14:42:36.093Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        2
+      ],
+      "epithet": "Wooden Spoon",
+      "epithet_tagline": "Fewest total points — 118",
       "credits": 0
     },
     {
