@@ -1308,7 +1308,7 @@ Promise.all([
         <td>${noGw?'':formDots(m.gwPtsFull,n)}</td></tr>`;
     }).join('');
   }
-  { const opts=[]; for(let g=L; g>=1; g--) opts.push(`<option value="${g}">GW ${g}${g===L?' · Live':''}</option>`);
+  { const opts=[]; for(let g=L; g>=1; g--) opts.push(`<option value="${g}">GW ${g}${g===L?(gwConfirmed?' · Final':' · Live'):''}</option>`);
     $('#st-gw').innerHTML = opts.join(''); $('#st-gw').value = stGW; }
   $('#st-gw').onchange = ()=>{ stGW = Number($('#st-gw').value)||L; renderStandings(); };
   const toggleSort=()=>{ stSort=stSort==='total'?'gwrank':'total';
