@@ -1135,6 +1135,10 @@ Promise.all([
   });
 
   const noGw = !(api.gwData||[]).some(g => (g.gwPts||[]).length > 0);   // off-season: no scored gameweeks yet
+  // apply_lmp_fines.js only fines the latest *finished* GW and bumps last_synced_gw
+  // once it does — so that's the real "locked into the ledger" signal, independent
+  // of whatever the live feed happens to show right now.
+  const gwConfirmed = !noGw && (ledger.last_synced_gw||0) >= L;
   const mostName = (noGw || !most || most.bottom_finishes.length===0) ? '—' : firstName(most.name);
   const mostSub  = (noGw || !most || most.bottom_finishes.length===0) ? 'no bottom finishes yet' : `${most.bottom_finishes.length}× · ${epiHtml(most)}`;
   $('#lmp-kpis').innerHTML = `
@@ -1151,7 +1155,7 @@ Promise.all([
   const WORDS=['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'];
   const word = (WORDS[payers.length] || payers.length).toString().toUpperCase();
   $('#lmp-rev-title').textContent = `GW${L} · Bottom Tally · ${word} Charged`;
-  $('#lmp-rev-meta').textContent = noGw ? 'Awaiting GW1 · no scores yet' : `Threshold ${thr} pts · Rule: ≤ 3rd-lowest unique`;
+  $('#lmp-rev-meta').textContent = noGw ? 'Awaiting GW1 · no scores yet' : `Threshold ${thr} pts · Rule: ≤ 3rd-lowest unique · ${gwConfirmed?'Confirmed':'Live · unconfirmed'}`;
   $('#lmp-bottom-rows').innerHTML = payers.map((p,i)=>{
     const m = byName[p.name]||{name:p.name};
     const tied = payers.filter(x=>x.s===p.s).length>1;
@@ -1168,7 +1172,7 @@ Promise.all([
     <div><span class="prompt">LMP&gt;</span> resolve_bottom --gw ${L} --rule "≤ 3rd-lowest-unique"</div>
     <div class="out">parsing ${scores.length} entries from live feed... ok</div>
     <div class="out">3rd-lowest unique score: ${thr} pts · at or below threshold: ${payers.length}</div>
-    <div class="ok">→ ${payers.length} manager${payers.length>1?'s':''} pending R${GW_FINE} ea · R${(payers.length*GW_FINE).toLocaleString()} awaiting final FPL confirmation</div>`;
+    <div class="ok">→ ${payers.length} manager${payers.length>1?'s':''} ${gwConfirmed?'charged':'pending'} R${GW_FINE} ea · R${(payers.length*GW_FINE).toLocaleString()} ${gwConfirmed?'confirmed · applied to ledger':'awaiting final FPL confirmation'}</div>`;
 
   // heat bars (season bottom frequency, all managers)
   const maxB = Math.max(1, ...ledger.managers.map(m=>m.bottom_finishes.length));
