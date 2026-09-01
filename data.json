@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T05:41:19.772Z",
+  "generated_at": "2026-09-01T05:42:32.416Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 1,
@@ -182,7 +182,7 @@
       "entry": 6934465,
       "name": "Siyanda Ndaba",
       "team": "Amad-ness",
-      "joining_fee_paid": false,
+      "joining_fee_paid": true,
       "fines": [
         {
           "id": "f_6934465_gw1_bottom",
@@ -208,7 +208,9 @@
       ],
       "epithet": "The Dark Horse",
       "epithet_tagline": "Quietly finished 15th without owning a single category",
-      "credits": 0
+      "credits": 0,
+      "joining_fee_paid_by": "treasurer",
+      "joining_fee_paid_date": "2026-09-01T05:42:32.416Z"
     },
     {
       "entry": 3805612,
