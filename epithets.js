@@ -26,6 +26,12 @@ function computeStats(ledger, gwByEntry, ptsByName, extraByEntry) {
       rankClimb: ranks.length ? Math.max(...ranks) - ranks[ranks.length - 1] : 0,
       bench: ex.bench, transfers: ex.transfers,
       outstanding: (m.joining_fee_paid ? 0 : 250) + af.filter(f => !f.paid_date).reduce((a, f) => a + f.amount, 0),
+      worstGW: (g.gwPts || []).length ? Math.min(...g.gwPts) : 0,
+      podiums: (g.weeklyRanks || []).filter(r => r > 0 && r <= 3).length,
+      runnerUps: ranks.filter(r => r === 2).length,
+      credits: m.credits || 0,
+      squadValue: g.squadValue || 0,
+      finesTotal: af.reduce((a, f) => a + f.amount, 0),
     };
   });
   // league position (1 = top)
@@ -54,6 +60,16 @@ const RULES = [
   { n:'Steady Eddie',       v:m=>-m.variance,  e:_=>true,             t:m=>`Steadiest scorer — swings of only ±${m.variance}` },
   { n:'The Hoarder',        v:m=>m.chipsUnused,e:m=>m.chipsUnused>=2, t:m=>`Hoarded ${m.chipsUnused} chips, never played them` },
   { n:'Departure Lounge',   v:m=>m.bottoms,    e:m=>m.bottoms>0,      t:m=>`Stuck at the relegation gate — ${m.bottoms} bottom finishes` },
+  { n:'Bottled It',         v:m=>-m.worstGW,   e:_=>true,             t:m=>`Rock bottom — GW low of ${m.worstGW} pts` },
+  { n:'Podium Regular',     v:m=>m.podiums,    e:m=>m.podiums>=3,     t:m=>`Top-3 gameweek finish ${m.podiums} times this season` },
+  { n:'Nearly Man',         v:m=>m.runnerUps,  e:m=>m.runnerUps>=2,   t:m=>`So close — ${m.runnerUps}× runner-up in the table` },
+  { n:'The Loan Shark',     v:m=>m.credits,    e:m=>m.credits>0,      t:m=>`R${m.credits} banked in credit — paid ahead of the pack` },
+  { n:'Big Spender',        v:m=>m.squadValue, e:_=>true,             t:m=>`Priciest squad in the league — £${(m.squadValue/10).toFixed(1)}m` },
+  { n:'Bargain Bin',        v:m=>-m.squadValue,e:_=>true,             t:m=>`Doing it on a shoestring — £${(m.squadValue/10).toFixed(1)}m squad` },
+  { n:'All In',             v:m=>m.pts,        e:m=>m.chipsUnused===0,t:m=>`Every chip played — nothing left in the locker` },
+  { n:'Fee Free',           v:m=>m.transfers,  e:m=>m.hitCost===0 && m.transfers>0, t:m=>`${m.transfers} transfers, never once paid a hit` },
+  { n:'Public Enemy #1',    v:m=>m.finesTotal, e:m=>m.finesTotal>0,   t:m=>`Paid more into the pot than anyone — R${m.finesTotal} in fines` },
+  { n:'Untouchable',        v:m=>m.pts,        e:m=>m.bottoms===0 && m.finesTotal===0, t:m=>`Spotless season — not a single fine` },
   { n:'The Dark Horse',     v:m=>m.pts,        e:_=>true,             t:m=>`Quietly finished ${ord(m.pos)} without owning a single category` },
   { n:'The Vibe',           v:m=>m.pts,        e:_=>true,             t:m=>`Quietly fine — ${m.pts.toLocaleString()} pts, no fuss` },
 ];
