@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T18:32:24.816Z",
+  "generated_at": "2026-09-02T19:03:35.709Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 2,
@@ -86,7 +86,26 @@
       "name": "Thembalethu Miya",
       "team": "Root_.5 FC",
       "joining_fee_paid": true,
-      "fines": [],
+      "fines": [
+        {
+          "id": "f_170177_1788375815968",
+          "gw": null,
+          "amount": 1,
+          "type": "losers_fine",
+          "status": "confirmed",
+          "reason": "Token rotation test",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "treasurer",
+          "added_date": "2026-09-02T19:03:35.709Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
       "bottom_finishes": [],
       "epithet": "Bottled It",
       "epithet_tagline": "Rock bottom — GW low of 46 pts",
