@@ -17,10 +17,11 @@ module.exports = async (req, res) => {
 
   try {
     const now = new Date().toISOString();
+    let newFine = null;
     const result = await mutateData(`Treasurer: add ${type} fine R${amount} — ${name}`, (data) => {
       const m = data.managers.find(x => x.name === name);
       if (!m) return false;
-      m.fines.push({
+      newFine = {
         id: `f_${m.entry}_${Date.now()}`,
         gw, amount, type, status: 'confirmed',
         reason: String(reason).trim(),
@@ -28,12 +29,15 @@ module.exports = async (req, res) => {
         reversed: false, reversed_reason: null, reversed_by: null, reversed_date: null,
         added_by: 'treasurer', added_date: now,
         edited_by: null, edited_date: null, edit_history: [],
-      });
+      };
+      m.fines.push(newFine);
       data.generated_at = now;
       return true;
     });
     if (result && result.aborted) return res.status(409).json({ error: 'manager not found' });
-    return res.status(200).json({ ok: true });
+    // Return the server-generated fine (id included) so the client doesn't have
+    // to guess it — a client-side Date.now() would never match the real one.
+    return res.status(200).json({ ok: true, fine: newFine });
   } catch (e) {
     console.error('add-fine:', e.message);
     return res.status(500).json({ error: 'Server error' });

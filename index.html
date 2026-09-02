@@ -815,14 +815,12 @@ function addFineFlow(preName){
       if(!(Number(amount)>0)){ $('#tm-err').textContent='Amount must be a positive number.'; return; }
       if(!reason){ $('#tm-err').textContent='Reason is required.'; return; }
       try {
-        await postAction('/api/add-fine',{password:pass,name,amount,type,reason,gw});
-        // Mirrors api/add-fine.js's push shape exactly.
+        const result = await postAction('/api/add-fine',{password:pass,name,amount,type,reason,gw});
+        // Use the server-generated fine (with its real id) rather than guessing
+        // one client-side — two independent Date.now() calls never match, which
+        // left "Reverse Fine" unable to find a fine added in the same session.
         const m=MANAGERS.find(x=>x.name===name);
-        if(m){ const now=new Date().toISOString();
-          m.fines.push({ id:`f_${m.entry}_${Date.now()}`, gw:(gw===''?null:Number(gw)), amount:Number(amount), type,
-            status:'confirmed', reason, paid_date:null,
-            reversed:false, reversed_reason:null, reversed_by:null, reversed_date:null,
-            added_by:'treasurer', added_date:now, edited_by:null, edited_date:null, edit_history:[] }); }
+        if(m && result && result.fine){ m.fines.push(result.fine); }
         if(refreshMoneyViews) refreshMoneyViews();
         done(`✓ ${fn(name)} — R${amount} ${type.replace(/_/g,' ')} fine added`);
       }
