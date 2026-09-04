@@ -9,8 +9,9 @@ const fs = require('fs');
 
 const API = 'https://fantasy.premierleague.com/api';
 
-// Times out a stalled request and retries transient network/timeout errors so
-// the guard can't hang the job; on genuine failure it falls through to proceed.
+// Times out a stalled request and retries transient network/timeout errors
+// and 5xx responses so the guard can't hang the job; on genuine failure it
+// falls through to proceed.
 async function fetchJSON(url, { retries = 2, timeoutMs = 15000 } = {}) {
   for (let attempt = 0; ; attempt++) {
     const ctrl = new AbortController();
@@ -25,7 +26,13 @@ async function fetchJSON(url, { retries = 2, timeoutMs = 15000 } = {}) {
       continue;
     }
     clearTimeout(timer);
-    if (!r.ok) throw new Error(`${url} -> HTTP ${r.status}`);
+    if (!r.ok) {
+      if (r.status >= 500 && attempt < retries) {
+        await new Promise(res => setTimeout(res, 500 * (attempt + 1)));
+        continue;
+      }
+      throw new Error(`${url} -> HTTP ${r.status}`);
+    }
     return r.json();
   }
 }

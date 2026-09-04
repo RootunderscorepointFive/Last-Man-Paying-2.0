@@ -17,8 +17,10 @@ const LEAGUE_ID = config.fpl_league_id;
 const DATA_FILE = 'fpl_data.json';
 
 // Times out a stalled request (the FPL API can hang under load, e.g. around a
-// deadline) and retries transient network/timeout errors — never HTTP status
-// errors — so one blip can't wedge the whole job for 15 minutes.
+// deadline) and retries transient network/timeout errors and 5xx responses
+// (the API's own transient failures) — never 4xx, since retrying a bad
+// request or missing resource can't fix it — so one blip can't wedge the
+// whole job for 15 minutes.
 async function fetchJSON(url, { retries = 2, timeoutMs = 15000 } = {}) {
   for (let attempt = 0; ; attempt++) {
     const ctrl = new AbortController();
@@ -33,7 +35,13 @@ async function fetchJSON(url, { retries = 2, timeoutMs = 15000 } = {}) {
       continue;
     }
     clearTimeout(timer);
-    if (!r.ok) throw new Error(`${url} -> HTTP ${r.status}`);
+    if (!r.ok) {
+      if (r.status >= 500 && attempt < retries) {
+        await new Promise(res => setTimeout(res, 500 * (attempt + 1)));
+        continue;
+      }
+      throw new Error(`${url} -> HTTP ${r.status}`);
+    }
     return r.json();
   }
 }
