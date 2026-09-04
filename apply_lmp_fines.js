@@ -27,7 +27,9 @@ const gwArg = args.find(a => a.startsWith('--gw='));
 let targetGW = gwArg ? parseInt(gwArg.split('=')[1], 10) : null;
 
 // Times out a stalled request and retries transient network/timeout errors
-// (never HTTP status errors) so one FPL blip can't hang the whole job.
+// and 5xx responses (the API's own transient failures) — never 4xx, since
+// retrying a bad request or missing resource can't fix it — so one FPL blip
+// can't hang the whole job.
 async function fetchJSON(url, { retries = 2, timeoutMs = 15000 } = {}) {
   for (let attempt = 0; ; attempt++) {
     const ctrl = new AbortController();
@@ -42,7 +44,13 @@ async function fetchJSON(url, { retries = 2, timeoutMs = 15000 } = {}) {
       continue;
     }
     clearTimeout(timer);
-    if (!r.ok) throw new Error(`${url} -> HTTP ${r.status}`);
+    if (!r.ok) {
+      if (r.status >= 500 && attempt < retries) {
+        await new Promise(res => setTimeout(res, 500 * (attempt + 1)));
+        continue;
+      }
+      throw new Error(`${url} -> HTTP ${r.status}`);
+    }
     return r.json();
   }
 }

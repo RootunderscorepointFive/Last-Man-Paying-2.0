@@ -69,11 +69,16 @@ jobs:
           node apply_lmp_fines.js $ARGS
 
       - name: Generate epithets
-        if: steps.guard.outputs.proceed == 'true'
+        if: ${{ !cancelled() && steps.guard.outputs.proceed == 'true' }}
         run: node generate_epithets.js
 
+      # Runs even if "Apply LMP bottom-3 fines" failed (e.g. FPL API 5xx on one
+      # manager after retries) — that failure never touches data.json (the
+      # write happens only after every manager's history is fetched), so it's
+      # safe to still commit whatever sync_fpl.js already computed. The job
+      # still reports failure overall so a genuine fines miss stays visible.
       - name: Commit & push if changed
-        if: ${{ steps.guard.outputs.proceed == 'true' && github.event.inputs.dry_run != 'true' }}
+        if: ${{ !cancelled() && steps.guard.outputs.proceed == 'true' && github.event.inputs.dry_run != 'true' }}
         run: |
           git config user.name  "lmp-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
