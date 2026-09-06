@@ -1,6 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
-    "api/*.js": { "maxDuration": 10, "includeFiles": "assets/**" }
+    "api/*.js": { "maxDuration": 10 },
+    "api/weekly-image.js": { "maxDuration": 10, "includeFiles": "assets/**" },
+    "api/send-weekly-summary.js": { "maxDuration": 10, "includeFiles": "assets/**" }
   }
 }
