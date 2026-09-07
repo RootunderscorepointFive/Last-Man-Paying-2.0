@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-07T12:17:26.049Z",
+  "generated_at": "2026-09-07T18:12:37.818Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
-  "last_synced_gw": 2,
+  "last_synced_gw": 3,
   "managers": [
     {
       "entry": 6404452,
@@ -32,8 +32,8 @@
       "bottom_finishes": [
         2
       ],
-      "epithet": "The Fugitive",
-      "epithet_tagline": "Owes the pot the most — R350",
+      "epithet": "Big Spender",
+      "epithet_tagline": "Priciest squad in the league — £99.7m",
       "credits": 0
     },
     {
@@ -64,8 +64,8 @@
       "bottom_finishes": [
         1
       ],
-      "epithet": "Departure Lounge",
-      "epithet_tagline": "Stuck at the relegation gate — 1 bottom finishes",
+      "epithet": "Bottled It",
+      "epithet_tagline": "Rock bottom — GW low of 36 pts",
       "credits": 0
     },
     {
@@ -131,8 +131,8 @@
       "joining_fee_paid": false,
       "fines": [],
       "bottom_finishes": [],
-      "epithet": "Glass Cannon",
-      "epithet_tagline": "Most volatile scorer — swings of ±28.4",
+      "epithet": "Trigger Happy",
+      "epithet_tagline": "Itchy trigger finger — 2 transfers",
       "credits": 0
     },
     {
@@ -192,8 +192,8 @@
       "joining_fee_paid": true,
       "fines": [],
       "bottom_finishes": [],
-      "epithet": "Big Spender",
-      "epithet_tagline": "Priciest squad in the league — £99.2m",
+      "epithet": "Bargain Bin",
+      "epithet_tagline": "Doing it on a shoestring — £99.2m squad",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-09-01T19:46:53.602Z"
@@ -203,10 +203,31 @@
       "name": "Kudzai Kupeta",
       "team": "Champions FC",
       "joining_fee_paid": false,
-      "fines": [],
-      "bottom_finishes": [],
-      "epithet": "Bottled It",
-      "epithet_tagline": "Rock bottom — GW low of 41 pts",
+      "fines": [
+        {
+          "id": "f_4893790_gw3_bottom",
+          "gw": 3,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW3 (post-hits 41, threshold 41)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-09-07T18:12:37.760Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        3
+      ],
+      "epithet": "The Regular",
+      "epithet_tagline": "Most bottom finishes — 1 of 38",
       "credits": 0
     },
     {
@@ -214,10 +235,31 @@
       "name": "Lethu Mkhwanazi",
       "team": "You Know Fernandes",
       "joining_fee_paid": false,
-      "fines": [],
-      "bottom_finishes": [],
-      "epithet": "The Tinkerman",
-      "epithet_tagline": "Can't stop fiddling — 4 transfers, 8 hit pts, 12th to show for it",
+      "fines": [
+        {
+          "id": "f_4370096_gw3_bottom",
+          "gw": 3,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW3 (post-hits 39, threshold 41)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-09-07T18:12:37.760Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        3
+      ],
+      "epithet": "The Fugitive",
+      "epithet_tagline": "Owes the pot the most — R350",
       "credits": 0
     },
     {
@@ -272,8 +314,29 @@
       "name": "President Gamede",
       "team": "Los Primeros",
       "joining_fee_paid": false,
-      "fines": [],
-      "bottom_finishes": [],
+      "fines": [
+        {
+          "id": "f_6255346_gw3_bottom",
+          "gw": 3,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW3 (post-hits 34, threshold 41)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-09-07T18:12:37.760Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        3
+      ],
       "epithet": "Free Hit Hero",
       "epithet_tagline": "Best chip week in the league — 117 pts",
       "credits": 0
@@ -285,8 +348,8 @@
       "joining_fee_paid": true,
       "fines": [],
       "bottom_finishes": [],
-      "epithet": "Trigger Happy",
-      "epithet_tagline": "Itchy trigger finger — 3 transfers",
+      "epithet": "The Tinkerman",
+      "epithet_tagline": "Can't stop fiddling — 3 transfers, 4 hit pts, 6th to show for it",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-08-25T05:08:51.225Z"
@@ -408,8 +471,8 @@
       "bottom_finishes": [
         1
       ],
-      "epithet": "The Regular",
-      "epithet_tagline": "Most bottom finishes — 1 of 38",
+      "epithet": "Departure Lounge",
+      "epithet_tagline": "Stuck at the relegation gate — 1 bottom finishes",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-08-25T05:10:06.125Z",
@@ -438,8 +501,8 @@
       "joining_fee_paid": false,
       "fines": [],
       "bottom_finishes": [],
-      "epithet": "Bargain Bin",
-      "epithet_tagline": "Doing it on a shoestring — £97.9m squad",
+      "epithet": "Glass Cannon",
+      "epithet_tagline": "Most volatile scorer — swings of ±27.9",
       "credits": 0
     }
   ],
