@@ -409,6 +409,7 @@
     <span class="live">Live</span>
     <span>GW <strong id="tb-gw">--</strong></span>
     <span>Session <strong id="tb-session">--</strong></span>
+    <span id="tb-deadline-wrap" hidden>Deadline <strong id="tb-deadline">--</strong></span>
     <span>SAST <strong id="tb-clock">--:--:--</strong></span>
   </div>
 </div>
@@ -1074,8 +1075,39 @@ Promise.all([
   // chrome
   $('#tb-gw').textContent = `${L}/${TOTAL_GWS}`;
   $('#tb-session').textContent = SEASON;
-  $('#ft-meta').textContent = `${ledger.managers.length} entries · GW${L}/${TOTAL_GWS} · LMP TERMINAL v2.0`;
   if (L < 1) $('#offseason').hidden = false;   // off-season: season hasn't started
+
+  // Freshness — how stale the live-points feed is right now. fpl_data.json's
+  // own generated_at updates on every successful sync, unlike data.json's
+  // (which only moves when a fine or roster change actually writes it).
+  const syncedAt = api.generated_at ? new Date(api.generated_at) : null;
+  const agoText = ms => {
+    const m = Math.max(0, Math.round(ms/60000));
+    if (m < 1) return 'just now';
+    if (m < 60) return `${m}m ago`;
+    const h = Math.floor(m/60);
+    if (h < 24) return `${h}h ${m%60}m ago`;
+    return `${Math.floor(h/24)}d ${h%24}h ago`;
+  };
+  const renderFreshness = () => {
+    const suffix = syncedAt ? ` · synced ${agoText(Date.now()-syncedAt.getTime())}` : '';
+    $('#ft-meta').textContent = `${ledger.managers.length} entries · GW${L}/${TOTAL_GWS} · LMP TERMINAL v2.0${suffix}`;
+  };
+  renderFreshness();
+  if (syncedAt) setInterval(renderFreshness, 30000);
+
+  // GW deadline countdown — nextDeadline is the upcoming GW's, from bootstrap.
+  if (api.nextDeadline) {
+    const dl = new Date(api.nextDeadline);
+    const wrap = $('#tb-deadline-wrap'), el = $('#tb-deadline');
+    const renderDeadline = () => {
+      const ms = dl.getTime() - Date.now();
+      if (ms <= 0) { el.textContent = `GW${api.nextGW} locked`; return; }
+      const mins = Math.floor(ms/60000), d = Math.floor(mins/1440), h = Math.floor((mins%1440)/60), m = mins%60;
+      el.textContent = d > 0 ? `${d}d ${h}h` : h > 0 ? `${h}h ${m}m` : `${m}m`;
+    };
+    wrap.hidden = false; renderDeadline(); setInterval(renderDeadline, 30000);
+  }
 
   // ── Rules modal (content from config.rules) ──
   const rEsc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
