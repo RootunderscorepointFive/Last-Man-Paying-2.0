@@ -1,6 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
-    "api/*.js": { "maxDuration": 10, "includeFiles": "assets/**" }
+    "api/add-fine.js": { "maxDuration": 10 },
+    "api/edit-fine.js": { "maxDuration": 10 },
+    "api/health.js": { "maxDuration": 10 },
+    "api/mark-fine-paid.js": { "maxDuration": 10 },
+    "api/mark-joining-paid.js": { "maxDuration": 10 },
+    "api/override-bottom3.js": { "maxDuration": 10 },
+    "api/record-payment.js": { "maxDuration": 10 },
+    "api/reverse-fine.js": { "maxDuration": 10 },
+    "api/send-announcement.js": { "maxDuration": 10 },
+    "api/send-reminders.js": { "maxDuration": 10 },
+    "api/send-weekly-summary.js": { "maxDuration": 10, "includeFiles": "assets/**" },
+    "api/weekly-image.js": { "maxDuration": 10, "includeFiles": "assets/**" }
   }
 }

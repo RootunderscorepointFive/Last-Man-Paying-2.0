@@ -76,6 +76,13 @@ async function sync() {
     || bootstrap.events[0];
   const squadGW = squadEvent ? squadEvent.id : 1;
 
+  // Next transfer deadline (the upcoming GW's, not the current one's — once a
+  // GW is underway its own deadline has already passed) for the site's
+  // countdown ticker. Null once the season has no more fixtures scheduled.
+  const nextEvent = bootstrap.events.find(e => e.is_next);
+  const nextDeadline = nextEvent ? nextEvent.deadline_time : null;
+  const nextGW = nextEvent ? nextEvent.id : null;
+
   const playerMap = {};
   bootstrap.elements.forEach(p => {
     playerMap[p.id] = {
@@ -199,7 +206,8 @@ async function sync() {
   const leagueOwnership = Object.values(ownershipCount)
     .sort((a, b) => b.count - a.count || parseFloat(b.fpl_pct) - parseFloat(a.fpl_pct));
 
-  const out = { MAX_GW: currentGW, standings, gwData, runInData, leagueOwnership, topFplTransfers };
+  const out = { MAX_GW: currentGW, standings, gwData, runInData, leagueOwnership, topFplTransfers, nextGW, nextDeadline,
+    generated_at: new Date().toISOString() };
   fs.writeFileSync(DATA_FILE, JSON.stringify(out, null, 2));
   console.log(`Done. fpl_data.json updated through GW${currentGW} (${managers.length} managers, ${gwData.length} with data).`);
 }
