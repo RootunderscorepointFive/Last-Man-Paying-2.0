@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T09:35:36.387Z",
+  "generated_at": "2026-09-08T11:04:58.531Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 3,
@@ -217,7 +217,7 @@
           "reversed_by": null,
           "reversed_date": null,
           "added_by": "fpl-api",
-          "added_date": "2026-09-08T09:35:36.327Z",
+          "added_date": "2026-09-07T18:12:37.760Z",
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
@@ -249,7 +249,7 @@
           "reversed_by": null,
           "reversed_date": null,
           "added_by": "fpl-api",
-          "added_date": "2026-09-08T09:35:36.327Z",
+          "added_date": "2026-09-07T18:12:37.760Z",
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
@@ -328,7 +328,7 @@
           "reversed_by": null,
           "reversed_date": null,
           "added_by": "fpl-api",
-          "added_date": "2026-09-08T09:35:36.327Z",
+          "added_date": "2026-09-07T18:12:37.760Z",
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
@@ -870,6 +870,119 @@
       "recipient": "Mtho Mabizela",
       "subject": "FPL — payment received",
       "sent_at": "2026-09-01T19:46:54.595Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "weekly_summary",
+      "gw": 3,
+      "recipients": [
+        "Minenhle Khumalo",
+        "Sthe Coqueto",
+        "Fanele Msweli",
+        "Thembalethu Miya",
+        "Learnmore Ntshangase",
+        "Bheka Bhengu",
+        "Thato Choshi",
+        "Mtho Mabizela",
+        "Kudzai Kupeta",
+        "Lethu Mkhwanazi",
+        "Siyanda Ndaba",
+        "Nhlakanipho Ntombela",
+        "President Gamede",
+        "Luthando Ngidi",
+        "Mhlengi Kunene",
+        "Mbuyi Katumba",
+        "Nkosi The Chef",
+        "Zazi Zuma",
+        "Kwazi Mthembu",
+        "Msizi Bhengu"
+      ],
+      "subject": "LMP · GW3 Weekly Report",
+      "sent_at": "2026-09-08T06:55:00.253Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Minenhle Khumalo",
+      "subject": "FPL Last Man Paying — outstanding R400",
+      "sent_at": "2026-09-08T06:57:29.924Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Sthe Coqueto",
+      "subject": "FPL Last Man Paying — outstanding R400",
+      "sent_at": "2026-09-08T06:57:30.109Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Kudzai Kupeta",
+      "subject": "FPL Last Man Paying — outstanding R400",
+      "sent_at": "2026-09-08T06:57:30.321Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Lethu Mkhwanazi",
+      "subject": "FPL Last Man Paying — outstanding R400",
+      "sent_at": "2026-09-08T06:57:30.517Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "President Gamede",
+      "subject": "FPL Last Man Paying — outstanding R400",
+      "sent_at": "2026-09-08T06:57:30.696Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Mhlengi Kunene",
+      "subject": "FPL Last Man Paying — outstanding R400",
+      "sent_at": "2026-09-08T06:57:30.916Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Zazi Zuma",
+      "subject": "FPL Last Man Paying — outstanding R400",
+      "sent_at": "2026-09-08T06:57:31.108Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Learnmore Ntshangase",
+      "subject": "FPL Last Man Paying — outstanding R300",
+      "sent_at": "2026-09-08T06:57:31.299Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Bheka Bhengu",
+      "subject": "FPL Last Man Paying — outstanding R300",
+      "sent_at": "2026-09-08T06:57:31.482Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Nkosi The Chef",
+      "subject": "FPL Last Man Paying — outstanding R300",
+      "sent_at": "2026-09-08T06:57:31.662Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Msizi Bhengu",
+      "subject": "FPL Last Man Paying — outstanding R300",
+      "sent_at": "2026-09-08T06:57:31.845Z",
+      "sent_by": "treasurer"
+    },
+    {
+      "type": "reminder",
+      "recipient": "Siyanda Ndaba",
+      "subject": "FPL Last Man Paying — outstanding R100",
+      "sent_at": "2026-09-08T06:57:32.028Z",
       "sent_by": "treasurer"
     }
   ]
