@@ -88,6 +88,7 @@ async function sync() {
     playerMap[p.id] = {
       web_name: p.web_name, team: p.team, element_type: p.element_type, code: p.code,
       now_cost: p.now_cost, selected_by_percent: p.selected_by_percent,
+      costChangeEvent: p.cost_change_event || 0,
     };
   });
   const teamShortName = {};
@@ -101,7 +102,14 @@ async function sync() {
     : { elements: [] };
   const liveByElement = {};
   (liveData.elements || []).forEach(e => {
-    liveByElement[e.id] = { points: (e.stats && e.stats.total_points) || 0, minutes: (e.stats && e.stats.minutes) || 0 };
+    const s = e.stats || {};
+    liveByElement[e.id] = {
+      points: s.total_points || 0, minutes: s.minutes || 0,
+      goals: s.goals_scored || 0, assists: s.assists || 0, bonus: s.bonus || 0,
+      cleanSheet: !!s.clean_sheets, ownGoals: s.own_goals || 0,
+      penSaved: s.penalties_saved || 0, penMissed: s.penalties_missed || 0,
+      yellow: s.yellow_cards || 0, red: s.red_cards || 0, saves: s.saves || 0,
+    };
   });
 
   // Fixture context for squads — which team each player's up against this GW,
@@ -208,10 +216,17 @@ async function sync() {
         is_captain: p.is_captain, is_vice_captain: p.is_vice_captain,
         cost: pl.now_cost || 0,
         ownership: pl.selected_by_percent || '0',
+        priceChange: pl.costChangeEvent || 0,
         live_pts: live.points || 0,
         minutes: live.minutes || 0,
         started, is_effective_captain: isEffectiveCaptain, effective_multiplier: effectiveMultiplier,
         fixture: fixtureByTeam[pl.team] || null,
+        stats: {
+          goals: live.goals || 0, assists: live.assists || 0, bonus: live.bonus || 0,
+          cleanSheet: live.cleanSheet || false, ownGoals: live.ownGoals || 0,
+          penSaved: live.penSaved || 0, penMissed: live.penMissed || 0,
+          yellow: live.yellow || 0, red: live.red || 0, saves: live.saves || 0,
+        },
       };
     });
     const captain = currentPicks.find(p => p.is_captain);
