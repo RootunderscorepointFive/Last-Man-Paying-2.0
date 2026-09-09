@@ -234,6 +234,10 @@
   .pname { font-size:9px; color:#e8edf2; margin-top:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .pcap { font-size:8px; font-weight:700; letter-spacing:1px; }
   .pcap.c{ color:var(--amber); } .pcap.v{ color:var(--blue); }
+  .ppts { font-size:9px; color:var(--dim); margin-top:2px; }
+  .pcard.cap .ppts { color:var(--amber); }
+  .psub { display:block; font-size:7px; font-weight:700; letter-spacing:1px; margin-top:1px; }
+  .psub.in { color:var(--green); } .psub.out { color:var(--red); }
   .bench { display:flex; justify-content:center; gap:8px; align-items:flex-start; margin:0 14px; padding:12px 0 14px; border-top:1px dashed var(--border); }
   .bench .blab { align-self:center; font-size:9px; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; margin-right:4px; }
   .modal-foot { text-align:center; font-size:10px; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; padding:0 16px 14px; }
@@ -1466,10 +1470,23 @@ Promise.all([
     const mm=mmByName[name]; const g=mm&&gwByEntry[mm.entry];
     if(!g||!g.currentPicks||!g.currentPicks.length) return;
     $('#sq-team').textContent=g.team; $('#sq-sub').textContent=`${g.manager} · GW${L} squad`;
-    const card=p=>{ const cls=p.is_captain?'cap':p.is_vice_captain?'vice':''; const badge=p.is_captain?'<span class="pcap c">CAPT</span>':p.is_vice_captain?'<span class="pcap v">VICE</span>':'<span class="pcap">&nbsp;</span>';
+    // automaticSubs/live_pts/started/effective_multiplier are new fields —
+    // guard for any stale cached response that predates them.
+    const hasLive = g.currentPicks.some(p=>typeof p.started==='boolean');
+    const subsIn = new Set((g.automaticSubs||[]).map(s=>s.element_in));
+    const subsOut = new Set((g.automaticSubs||[]).map(s=>s.element_out));
+    const card=p=>{
+      const isCap = hasLive ? p.is_effective_captain : p.is_captain;
+      const cls=isCap?'cap':p.is_vice_captain?'vice':'';
+      const badge=isCap?'<span class="pcap c">CAPT</span>':p.is_vice_captain?'<span class="pcap v">VICE</span>':'<span class="pcap">&nbsp;</span>';
       const img=`https://resources.premierleague.com/premierleague/photos/players/110x140/p${p.code}.png`;
-      return `<div class="pcard ${cls}"><img class="pphoto" src="${img}" alt="${esc(p.name)}" loading="lazy" onerror="this.src='https://fantasy.premierleague.com/static/media/player-missing-110.64095a5f.png'"><div class="pname">${esc(p.name)}</div>${badge}</div>`; };
-    const starters=g.currentPicks.slice(0,11), subs=g.currentPicks.slice(11);
+      const mult=p.effective_multiplier||0, counted=(p.live_pts||0)*mult;
+      const ptsLabel = !hasLive ? '' : `<div class="ppts">${mult>1?`${p.live_pts} ×${mult} = ${counted}`:`${p.live_pts} pts`}</div>`;
+      const subTag = subsIn.has(p.id)?'<span class="psub in">↑ IN</span>':subsOut.has(p.id)?'<span class="psub out">↓ OUT</span>':'';
+      return `<div class="pcard ${cls}"><img class="pphoto" src="${img}" alt="${esc(p.name)}" loading="lazy" onerror="this.src='https://fantasy.premierleague.com/static/media/player-missing-110.64095a5f.png'"><div class="pname">${esc(p.name)}</div>${badge}${ptsLabel}${subTag}</div>`;
+    };
+    const starters = hasLive ? g.currentPicks.filter(p=>p.started) : g.currentPicks.slice(0,11);
+    const subs = hasLive ? g.currentPicks.filter(p=>!p.started) : g.currentPicks.slice(11);
     const rows={1:[],2:[],3:[],4:[]}; starters.forEach(p=>{ (rows[p.position]||rows[3]).push(p); });
     $('#sq-pitch').innerHTML=[1,2,3,4].map(pos=>`<div class="prow">${rows[pos].map(card).join('')}</div>`).join('');
     $('#sq-bench').innerHTML=`<span class="blab">Bench</span>`+subs.map(card).join('');
