@@ -90,6 +90,8 @@ async function sync() {
       now_cost: p.now_cost, selected_by_percent: p.selected_by_percent,
     };
   });
+  const teamShortName = {};
+  (bootstrap.teams || []).forEach(t => { teamShortName[t.id] = t.short_name; });
 
   // Live per-player points for the GW being shown in squads (one league-wide
   // call, not per-manager). 404s pre-deadline same as picks; degrades to "no
@@ -100,6 +102,18 @@ async function sync() {
   const liveByElement = {};
   (liveData.elements || []).forEach(e => {
     liveByElement[e.id] = { points: (e.stats && e.stats.total_points) || 0, minutes: (e.stats && e.stats.minutes) || 0 };
+  });
+
+  // Fixture context for squads — which team each player's up against this GW,
+  // home/away, and whether it's kicked off/finished. Keyed by team id since
+  // that's what each player carries; a team only ever has one fixture per GW
+  // (barring the rare postponement, which just leaves them with none here).
+  const fixtures = squadGW ? await fetchSoft(`${API}/fixtures/?event=${squadGW}`, [], 'fixtures') : [];
+  const fixtureByTeam = {};
+  (fixtures || []).forEach(f => {
+    const base = { kickoff_time: f.kickoff_time, started: !!f.started, finished: !!f.finished };
+    fixtureByTeam[f.team_h] = { ...base, opponent: teamShortName[f.team_a] || '?', is_home: true };
+    fixtureByTeam[f.team_a] = { ...base, opponent: teamShortName[f.team_h] || '?', is_home: false };
   });
 
   // Top FPL transfers this GW (global, not mini-league).
@@ -197,6 +211,7 @@ async function sync() {
         live_pts: live.points || 0,
         minutes: live.minutes || 0,
         started, is_effective_captain: isEffectiveCaptain, effective_multiplier: effectiveMultiplier,
+        fixture: fixtureByTeam[pl.team] || null,
       };
     });
     const captain = currentPicks.find(p => p.is_captain);

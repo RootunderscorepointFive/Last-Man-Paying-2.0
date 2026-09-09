@@ -238,6 +238,9 @@
   .pcard.cap .ppts { color:var(--amber); }
   .psub { display:block; font-size:7px; font-weight:700; letter-spacing:1px; margin-top:1px; }
   .psub.in { color:var(--green); } .psub.out { color:var(--red); }
+  .pfix { font-size:7px; color:var(--dim); margin-top:2px; letter-spacing:0.5px; }
+  .pfix .flive::before { content:'●'; color:var(--red); margin-right:2px; animation:pulse 1.2s ease-in-out infinite; }
+  .pfix .ffull { color:var(--dim); }
   .bench { display:flex; justify-content:center; gap:8px; align-items:flex-start; margin:0 14px; padding:12px 0 14px; border-top:1px dashed var(--border); }
   .bench .blab { align-self:center; font-size:9px; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; margin-right:4px; }
   .modal-foot { text-align:center; font-size:10px; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; padding:0 16px 14px; }
@@ -1479,17 +1482,20 @@ Promise.all([
       const isCap = hasLive ? p.is_effective_captain : p.is_captain;
       const cls=isCap?'cap':p.is_vice_captain?'vice':'';
       const badge=isCap?'<span class="pcap c">CAPT</span>':p.is_vice_captain?'<span class="pcap v">VICE</span>':'<span class="pcap">&nbsp;</span>';
-      const img=`https://resources.premierleague.com/premierleague/photos/players/110x140/p${p.code}.png`;
+      const img=`https://resources.premierleague.com/premierleague/photos/players/250x250/p${p.code}.png`;
       const mult=p.effective_multiplier||0, counted=(p.live_pts||0)*mult;
       const ptsLabel = !hasLive ? '' : `<div class="ppts">${mult>1?`${p.live_pts} ×${mult} = ${counted}`:`${p.live_pts} pts`}</div>`;
       const subTag = subsIn.has(p.id)?'<span class="psub in">↑ IN</span>':subsOut.has(p.id)?'<span class="psub out">↓ OUT</span>':'';
-      return `<div class="pcard ${cls}"><img class="pphoto" src="${img}" alt="${esc(p.name)}" loading="lazy" onerror="this.src='https://fantasy.premierleague.com/static/media/player-missing-110.64095a5f.png'"><div class="pname">${esc(p.name)}</div>${badge}${ptsLabel}${subTag}</div>`;
+      const fx=p.fixture, fxLabel = !fx ? '' : `<div class="pfix">${esc(fx.opponent)} (${fx.is_home?'H':'A'})${fx.finished?' <span class="ffull">FT</span>':(fx.started?' <span class="flive"></span>':'')}</div>`;
+      return `<div class="pcard ${cls}"><img class="pphoto" src="${img}" alt="${esc(p.name)}" loading="lazy" onerror="this.src='https://fantasy.premierleague.com/static/media/player-missing-110.64095a5f.png'"><div class="pname">${esc(p.name)}</div>${badge}${ptsLabel}${fxLabel}${subTag}</div>`;
     };
     const starters = hasLive ? g.currentPicks.filter(p=>p.started) : g.currentPicks.slice(0,11);
     const subs = hasLive ? g.currentPicks.filter(p=>!p.started) : g.currentPicks.slice(11);
     const rows={1:[],2:[],3:[],4:[]}; starters.forEach(p=>{ (rows[p.position]||rows[3]).push(p); });
     $('#sq-pitch').innerHTML=[1,2,3,4].map(pos=>`<div class="prow">${rows[pos].map(card).join('')}</div>`).join('');
-    $('#sq-bench').innerHTML=`<span class="blab">Bench</span>`+subs.map(card).join('');
+    const benchPts = hasLive ? subs.reduce((a,p)=>a+(p.live_pts||0),0) : null;
+    const benchLabel = benchPts==null ? 'Bench' : `Bench · ${benchPts} pts`;
+    $('#sq-bench').innerHTML=`<span class="blab">${benchLabel}</span>`+subs.map(card).join('');
     sqModal.classList.add('active');
     $('#sq-x').focus();
   }
