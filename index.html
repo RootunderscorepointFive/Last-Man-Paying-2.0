@@ -528,6 +528,7 @@
     <div class="actions">
       <button class="action" id="act-pf-squad"><span class="key">F2</span><span class="label">GW Squad</span><div class="desc">view starting XI</div></button>
       <button class="action" id="act-pf-rand"><span class="key">F1</span><span class="label">Random Manager</span><div class="desc">surprise me</div></button>
+      <button class="action" id="act-pf-brag"><span class="key">F3</span><span class="label">Share Card</span><div class="desc">shareable PNG</div></button>
     </div>
   </section>
 
@@ -1455,6 +1456,7 @@ Promise.all([
   $('#pf-sel').onchange=renderProfile;
   $('#act-pf-rand').onclick=()=>{ $('#pf-sel').value=MM[Math.floor(Math.random()*MM.length)].name; renderProfile(); };
   $('#act-pf-squad').onclick=()=>openSquad($('#pf-sel').value);
+  $('#act-pf-brag').onclick=()=>window.open(`/api/brag-card?name=${encodeURIComponent($('#pf-sel').value)}`, '_blank', 'noopener');
   renderProfile();
   } // end renderMoneyViews
   renderMoneyViews();
