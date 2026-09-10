@@ -234,6 +234,21 @@
   .pname { font-size:9px; color:#e8edf2; margin-top:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .pcap { font-size:8px; font-weight:700; letter-spacing:1px; }
   .pcap.c{ color:var(--amber); } .pcap.v{ color:var(--blue); }
+  .ppts { font-size:9px; color:var(--dim); margin-top:2px; }
+  .pcard.cap .ppts { color:var(--amber); }
+  .psub { display:block; font-size:7px; font-weight:700; letter-spacing:1px; margin-top:1px; }
+  .psub.in { color:var(--green); } .psub.out { color:var(--red); }
+  .pfix { font-size:7px; color:var(--dim); margin-top:2px; letter-spacing:0.5px; }
+  .pfix .flive::before { content:'●'; color:var(--red); margin-right:2px; animation:pulse 1.2s ease-in-out infinite; }
+  .pfix .ffull { color:var(--dim); }
+  .pmeta { font-size:7px; color:var(--dim); margin-top:2px; letter-spacing:0.5px; }
+  .pmove.up { color:var(--green); } .pmove.down { color:var(--red); }
+  .pbadges { display:flex; gap:3px; flex-wrap:wrap; justify-content:center; margin-top:2px; font-size:9px; }
+  .pbadge { line-height:1; }
+  .pbadge.amber { color:var(--amber); font-size:8px; font-weight:700; }
+  .pbadge.red { color:var(--red); font-size:8px; font-weight:700; }
+  .pbadge.green { color:var(--green); font-size:8px; font-weight:700; }
+  .chip-badge { display:inline-block; margin-top:4px; font-size:9px; font-weight:700; letter-spacing:0.5px; color:var(--amber); background:rgba(255,190,90,0.1); border:1px solid rgba(255,190,90,0.3); border-radius:4px; padding:2px 6px; }
   .bench { display:flex; justify-content:center; gap:8px; align-items:flex-start; margin:0 14px; padding:12px 0 14px; border-top:1px dashed var(--border); }
   .bench .blab { align-self:center; font-size:9px; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; margin-right:4px; }
   .modal-foot { text-align:center; font-size:10px; color:var(--dim); letter-spacing:1.5px; text-transform:uppercase; padding:0 16px 14px; }
@@ -576,7 +591,7 @@
 <div class="modal" id="squad-modal" role="dialog" aria-modal="true" aria-labelledby="sq-team">
   <div class="modal-card">
     <div class="modal-top">
-      <div><div class="modal-team" id="sq-team">—</div><div class="modal-sub" id="sq-sub">—</div></div>
+      <div><div class="modal-team" id="sq-team">—</div><div class="modal-sub" id="sq-sub">—</div><span class="chip-badge" id="sq-chip" hidden></span></div>
       <button class="modal-x" id="sq-x">ESC ✕</button>
     </div>
     <div class="pitch" id="sq-pitch"></div>
@@ -1466,13 +1481,46 @@ Promise.all([
     const mm=mmByName[name]; const g=mm&&gwByEntry[mm.entry];
     if(!g||!g.currentPicks||!g.currentPicks.length) return;
     $('#sq-team').textContent=g.team; $('#sq-sub').textContent=`${g.manager} · GW${L} squad`;
-    const card=p=>{ const cls=p.is_captain?'cap':p.is_vice_captain?'vice':''; const badge=p.is_captain?'<span class="pcap c">CAPT</span>':p.is_vice_captain?'<span class="pcap v">VICE</span>':'<span class="pcap">&nbsp;</span>';
-      const img=`https://resources.premierleague.com/premierleague/photos/players/110x140/p${p.code}.png`;
-      return `<div class="pcard ${cls}"><img class="pphoto" src="${img}" alt="${esc(p.name)}" loading="lazy" onerror="this.src='https://fantasy.premierleague.com/static/media/player-missing-110.64095a5f.png'"><div class="pname">${esc(p.name)}</div>${badge}</div>`; };
-    const starters=g.currentPicks.slice(0,11), subs=g.currentPicks.slice(11);
+    const chipLabels={'3xc':'🎯 TRIPLE CAPTAIN','bboost':'🛡 BENCH BOOST','wildcard':'🔄 WILDCARD','freehit':'⚡ FREE HIT'};
+    const sqChip=$('#sq-chip');
+    if(g.activeChip && chipLabels[g.activeChip]){ sqChip.textContent=chipLabels[g.activeChip]; sqChip.hidden=false; }
+    else { sqChip.hidden=true; }
+    // automaticSubs/live_pts/started/effective_multiplier are new fields —
+    // guard for any stale cached response that predates them.
+    const hasLive = g.currentPicks.some(p=>typeof p.started==='boolean');
+    const subsIn = new Set((g.automaticSubs||[]).map(s=>s.element_in));
+    const subsOut = new Set((g.automaticSubs||[]).map(s=>s.element_out));
+    const card=p=>{
+      const isCap = hasLive ? p.is_effective_captain : p.is_captain;
+      const cls=isCap?'cap':p.is_vice_captain?'vice':'';
+      const badge=isCap?'<span class="pcap c">CAPT</span>':p.is_vice_captain?'<span class="pcap v">VICE</span>':'<span class="pcap">&nbsp;</span>';
+      const img=`https://resources.premierleague.com/premierleague/photos/players/250x250/p${p.code}.png`;
+      const mult=p.effective_multiplier||0, counted=(p.live_pts||0)*mult;
+      const ptsLabel = !hasLive ? '' : `<div class="ppts">${mult>1?`${p.live_pts} ×${mult} = ${counted}`:`${p.live_pts} pts`}</div>`;
+      const subTag = subsIn.has(p.id)?'<span class="psub in">↑ IN</span>':subsOut.has(p.id)?'<span class="psub out">↓ OUT</span>':'';
+      const fx=p.fixture, fxLabel = !fx ? '' : `<div class="pfix">${esc(fx.opponent)} (${fx.is_home?'H':'A'})${fx.finished?' <span class="ffull">FT</span>':(fx.started?' <span class="flive"></span>':'')}</div>`;
+      const priceArrow = p.priceChange>0 ? ' <span class="pmove up">▲</span>' : p.priceChange<0 ? ' <span class="pmove down">▼</span>' : '';
+      const metaLabel = `<div class="pmeta">£${((p.cost||0)/10).toFixed(1)}m${priceArrow} · ${p.ownership}%</div>`;
+      const st=p.stats||{}, badges=[];
+      if(st.goals) badges.push(`<span class="pbadge">⚽${st.goals>1?st.goals:''}</span>`);
+      if(st.assists) badges.push(`<span class="pbadge">🅰${st.assists>1?st.assists:''}</span>`);
+      if(st.cleanSheet) badges.push(`<span class="pbadge">🛡</span>`);
+      if(st.bonus) badges.push(`<span class="pbadge amber">+${st.bonus}</span>`);
+      if(st.yellow) badges.push(`<span class="pbadge">🟨</span>`);
+      if(st.red) badges.push(`<span class="pbadge">🟥</span>`);
+      if(st.ownGoals) badges.push(`<span class="pbadge red">OG</span>`);
+      if(st.penMissed) badges.push(`<span class="pbadge red">PM</span>`);
+      if(st.penSaved) badges.push(`<span class="pbadge green">PS</span>`);
+      const badgeLabel = (hasLive && badges.length) ? `<div class="pbadges">${badges.join('')}</div>` : '';
+      return `<div class="pcard ${cls}"><img class="pphoto" src="${img}" alt="${esc(p.name)}" loading="lazy" onerror="this.src='https://fantasy.premierleague.com/static/media/player-missing-110.64095a5f.png'"><div class="pname">${esc(p.name)}</div>${badge}${ptsLabel}${badgeLabel}${fxLabel}${metaLabel}${subTag}</div>`;
+    };
+    const starters = hasLive ? g.currentPicks.filter(p=>p.started) : g.currentPicks.slice(0,11);
+    const subs = hasLive ? g.currentPicks.filter(p=>!p.started) : g.currentPicks.slice(11);
     const rows={1:[],2:[],3:[],4:[]}; starters.forEach(p=>{ (rows[p.position]||rows[3]).push(p); });
     $('#sq-pitch').innerHTML=[1,2,3,4].map(pos=>`<div class="prow">${rows[pos].map(card).join('')}</div>`).join('');
-    $('#sq-bench').innerHTML=`<span class="blab">Bench</span>`+subs.map(card).join('');
+    const benchPts = hasLive ? subs.reduce((a,p)=>a+(p.live_pts||0),0) : null;
+    const benchLabel = benchPts==null ? 'Bench' : `Bench · ${benchPts} pts`;
+    $('#sq-bench').innerHTML=`<span class="blab">${benchLabel}</span>`+subs.map(card).join('');
     sqModal.classList.add('active');
     $('#sq-x').focus();
   }
