@@ -367,6 +367,13 @@
   .an-table .amb { color:var(--amber); font-weight:700; }
   .an-table .grn { color:var(--green); }
   .an-table .red { color:var(--red); }
+  .ppts { font-size:9px; color:var(--dim); margin-top:2px; }
+  .chip-tl { display:flex; flex-direction:column; }
+  .chip-tl-row { display:flex; align-items:center; gap:10px; padding:8px 8px; border-bottom:1px dashed var(--border); font-size:12px; }
+  .chip-tl-row:last-child { border-bottom:none; }
+  .chip-tl-gw { font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; color:var(--amber); width:36px; flex-shrink:0; }
+  .chip-tl-mgr { flex:1; color:#e8edf2; }
+  .chip-tl-chip { font-size:10px; letter-spacing:0.5px; color:var(--dim); text-transform:uppercase; }
   .an-matrix-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; padding:14px 18px; }
   .an-matrix { border-collapse:collapse; font-size:10px; }
   .an-matrix th, .an-matrix td { padding:4px 5px; text-align:center; font-variant-numeric:tabular-nums; }
@@ -1867,12 +1874,59 @@ Promise.all([
         <div class="panel-head"><div class="panel-title">Squad Values</div><div class="panel-meta">total squad cost · GW${L}</div></div>
         ${sqValRows || `<div class="an-placeholder">No squad value data</div>`}
       </div>`;
+    // Panel 6: Dream Team — FPL's official best XI for the GW, straight from
+    // event/{gw}/live/'s in_dreamteam flag (not league-derived).
+    const dreamTeam = api.dreamTeam || [];
+    const dreamTeamGW = api.dreamTeamGW;
+    const dtRows = { 1: [], 2: [], 3: [], 4: [] };
+    dreamTeam.forEach(p => { (dtRows[p.position] || dtRows[3]).push(p); });
+    const dtCard = p => `<div class="pcard"><img class="pphoto" src="${playerImg(p.code)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'"><div class="pname">${esc(p.name)}</div><div class="ppts">${p.team} · ${p.points} pts</div></div>`;
+    const dreamTeamPanel = `
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Dream Team${dreamTeamGW ? ' · GW'+dreamTeamGW : ''}</div><div class="panel-meta">FPL's official best XI this gameweek</div></div>
+        ${dreamTeam.length ? `<div class="pitch" style="margin:10px 10px 12px">${[1,2,3,4].map(pos => `<div class="prow">${dtRows[pos].map(dtCard).join('')}</div>`).join('')}</div>` : `<div class="an-placeholder">No dream team yet this gameweek</div>`}
+      </div>`;
+
+    // Panel 7: Price Movers — today's risers/fallers, straight from bootstrap's
+    // cost_change_event (global FPL data, not league-derived).
+    const priceRisers = api.priceRisers || [], priceFallers = api.priceFallers || [];
+    const pmRow = (p, up) => `<tr>
+        <td><img class="own-photo" src="${playerImg(p.code)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'"></td>
+        <td><span style="font-weight:600">${esc(p.name)}</span><div style="font-size:10px;color:var(--dim)">${posName[p.position]||''} · ${esc(p.team||'')}</div></td>
+        <td class="r">£${(p.now_cost/10).toFixed(1)}m</td>
+        <td class="r ${up?'grn':'red'}" style="font-weight:700">${up?'▲':'▼'} £${(Math.abs(p.change)/10).toFixed(1)}m</td>
+      </tr>`;
+    const pmRows = priceRisers.map(p => pmRow(p, true)).join('') + priceFallers.map(p => pmRow(p, false)).join('');
+    const priceMoversPanel = `
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Price Movers</div><div class="panel-meta">today's risers &amp; fallers · global FPL prices</div></div>
+        <div class="tablewrap"><table class="an-table">
+          <thead><tr><th></th><th>Player</th><th class="r">Price</th><th class="r">Change</th></tr></thead>
+          <tbody>${pmRows || `<tr><td colspan="4" class="dim" style="text-align:center;padding:14px">No price changes today</td></tr>`}</tbody>
+        </table></div>
+      </div>`;
+
+    // Panel 8: Chip Timeline — who played what, when, league-wide (already
+    // carried per-manager on gwData from the entry history endpoint).
+    const CHIP_LABELS = { wildcard: 'Wildcard', freehit: 'Free Hit', '3xc': 'Triple Captain', bboost: 'Bench Boost', manager: 'Assistant Manager' };
+    const chipEvents = [];
+    (api.gwData || []).forEach(g => {
+      (g.chips || []).forEach(c => chipEvents.push({ gw: c.event, manager: g.manager.split(' ')[0], chip: c.name }));
+    });
+    chipEvents.sort((a, b) => a.gw - b.gw || a.manager.localeCompare(b.manager));
+    const chipRows = chipEvents.map(c => `<div class="chip-tl-row"><span class="chip-tl-gw">GW${c.gw}</span><span class="chip-tl-mgr">${esc(c.manager)}</span><span class="chip-tl-chip">${esc(CHIP_LABELS[c.chip] || c.chip)}</span></div>`).join('');
+    const chipTimelinePanel = `
+      <div class="panel">
+        <div class="panel-head"><div class="panel-title">Chip Timeline</div><div class="panel-meta">league-wide · who played what, when</div></div>
+        <div class="chip-tl">${chipRows || `<div class="an-placeholder">No chips played yet</div>`}</div>
+      </div>`;
+
     const splitPanels = html => [...new DOMParser().parseFromString(html, 'text/html').body.children].map(el => el.outerHTML);
     const [ownershipPanel, captainPanel] = splitPanels(topPanels);
     const [differentialsPanel, transfersPanel] = splitPanels(midPanels);
     const [templatePanel, squadValuesPanel] = splitPanels(botPanels);
-    $('#an-col-left').innerHTML = ownershipPanel + differentialsPanel + templatePanel;
-    $('#an-col-right').innerHTML = captainPanel + transfersPanel + squadValuesPanel;
+    $('#an-col-left').innerHTML = ownershipPanel + differentialsPanel + templatePanel + dreamTeamPanel + chipTimelinePanel;
+    $('#an-col-right').innerHTML = captainPanel + transfersPanel + squadValuesPanel + priceMoversPanel;
   })();
 
 }).catch(e=>{
