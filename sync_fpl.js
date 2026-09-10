@@ -90,6 +90,8 @@ async function sync() {
       now_cost: p.now_cost, selected_by_percent: p.selected_by_percent,
     };
   });
+  const teamShortName = {};
+  (bootstrap.teams || []).forEach(t => { teamShortName[t.id] = t.short_name; });
 
   // Top FPL transfers this GW (global, not mini-league).
   const topFplTransfers = [...bootstrap.elements]
@@ -98,6 +100,31 @@ async function sync() {
     .map(p => ({ id: p.id, name: p.web_name, code: p.code, position: p.element_type,
       now_cost: p.now_cost, transfers_in: p.transfers_in_event, transfers_out: p.transfers_out_event,
       selected_by_percent: p.selected_by_percent }));
+
+  // Price movers today (global, not mini-league) — cost_change_event is FPL's
+  // own running tally of today's price move in tenths of a million.
+  const pricedMoves = bootstrap.elements
+    .filter(p => p.cost_change_event)
+    .map(p => ({ id: p.id, name: p.web_name, code: p.code, position: p.element_type,
+      team: teamShortName[p.team] || '?', now_cost: p.now_cost, change: p.cost_change_event,
+      selected_by_percent: p.selected_by_percent }));
+  const priceRisers = pricedMoves.filter(p => p.change > 0).sort((a, b) => b.change - a.change).slice(0, 10);
+  const priceFallers = pricedMoves.filter(p => p.change < 0).sort((a, b) => a.change - b.change).slice(0, 10);
+
+  // Official FPL "Dream Team" (best XI by points, position-balanced) for the
+  // GW just played — event/{gw}/live/ flags who made it via stats.in_dreamteam.
+  // Only meaningful once a GW is underway/finished, hence the currentGW>0 guard.
+  const liveForDreamTeam = currentGW
+    ? await fetchSoft(`${API}/event/${currentGW}/live/`, { elements: [] }, 'dream team live data')
+    : { elements: [] };
+  const dreamTeam = (liveForDreamTeam.elements || [])
+    .filter(e => e.stats && e.stats.in_dreamteam)
+    .map(e => {
+      const pl = playerMap[e.id] || {};
+      return { id: e.id, name: pl.web_name, code: pl.code, position: pl.element_type,
+        team: teamShortName[pl.team] || '?', points: e.stats.total_points || 0 };
+    })
+    .sort((a, b) => (a.position - b.position) || (b.points - a.points));
 
   const COLORS = ['#e63946','#f4845f','#4dabf7','#b197fc','#ff6b9d','#38d9a9','#9775fa','#339af0','#ff8c42','#74c0fc','#ffa94d','#5c7cfa','#c9f542','#da77f2','#63e6be','#ffe066','#ff6b6b'];
 
@@ -207,6 +234,7 @@ async function sync() {
     .sort((a, b) => b.count - a.count || parseFloat(b.fpl_pct) - parseFloat(a.fpl_pct));
 
   const out = { MAX_GW: currentGW, standings, gwData, runInData, leagueOwnership, topFplTransfers, nextGW, nextDeadline,
+    priceRisers, priceFallers, dreamTeam, dreamTeamGW: currentGW || null,
     generated_at: new Date().toISOString() };
   fs.writeFileSync(DATA_FILE, JSON.stringify(out, null, 2));
   console.log(`Done. fpl_data.json updated through GW${currentGW} (${managers.length} managers, ${gwData.length} with data).`);
