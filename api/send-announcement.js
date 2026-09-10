@@ -2,13 +2,14 @@
 // Treasurer-only general comms (deadline reminders, rules, invites). Not debt.
 // Defensive batch: a missing address or Resend error skips that recipient and
 // the batch continues. One audit entry logs the recipient NAMES + subject (no body).
-const { requireTreasurer } = require('../lib/auth');
+const { requireTreasurer, treasurerName } = require('../lib/auth');
 const { mutateData } = require('../lib/github');
 const { resendSend, announcementEmail } = require('../lib/email');
 
 module.exports = async (req, res) => {
   const body = requireTreasurer(req, res);
   if (!body) return;
+  const who = treasurerName(body);
 
   const recipients = Array.isArray(body.recipients) ? body.recipients : null;
   const subject = (body.subject || '').trim();
@@ -36,7 +37,7 @@ module.exports = async (req, res) => {
       await mutateData(
         `Email: announcement to ${sent.length} — "${subject.slice(0, 60)}"`.slice(0, 200),
         (d) => {
-          (d.email_log = d.email_log || []).push({ type: 'announcement', recipients: sent, subject, sent_at: new Date().toISOString(), sent_by: 'treasurer' });
+          (d.email_log = d.email_log || []).push({ type: 'announcement', recipients: sent, subject, sent_at: new Date().toISOString(), sent_by: who });
           d.generated_at = new Date().toISOString();
           return true;
         }
