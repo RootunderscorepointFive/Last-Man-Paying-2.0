@@ -1,6 +1,6 @@
 // POST /api/mark-fine-paid  { password, name, target }
 // target = a specific fine id, or 'all' for every outstanding (unpaid, un-reversed) fine.
-const { requireTreasurer } = require('../lib/auth');
+const { requireTreasurer, treasurerName } = require('../lib/auth');
 const { mutateData } = require('../lib/github');
 const { outstandingOf, sendConfirmation, auditEntry } = require('../lib/email');
 const { consumeCredit } = require('../lib/ledger');
@@ -9,13 +9,14 @@ const config = require('../config.json');
 module.exports = async (req, res) => {
   const body = requireTreasurer(req, res);
   if (!body) return;
+  const who = treasurerName(body);
   const { name, target } = body;
   if (!name || !target) return res.status(400).json({ error: 'name and target required' });
 
   try {
     let marked = 0, paidAmount = 0, newBalance = 0;
     const result = await mutateData(
-      `Treasurer: mark LMP fine paid — ${name} (${target === 'all' ? 'all outstanding' : target})`,
+      `Treasurer (${who}): mark LMP fine paid — ${name} (${target === 'all' ? 'all outstanding' : target})`,
       (data) => {
         const m = data.managers.find(x => x.name === name);
         if (!m) return false;
@@ -25,7 +26,7 @@ module.exports = async (req, res) => {
           if (f.reversed || f.paid_date) return;
           const { creditApplied, cashRequired } = consumeCredit(m, f.amount);
           f.paid_date = now;
-          f.paid_by = cashRequired === 0 ? 'credit' : 'treasurer';
+          f.paid_by = cashRequired === 0 ? 'credit' : who;
           if (creditApplied) f.credit_applied = creditApplied;
           marked++;
           paidAmount += cashRequired;

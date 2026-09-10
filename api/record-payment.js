@@ -3,7 +3,7 @@
 // already on account) is allocated to the joining fee first, then to unpaid fines
 // oldest-first. Any surplus over what they owe is banked as `credits`, which
 // offsets future charges. Fines are atomic — only settled when fully covered.
-const { requireTreasurer } = require('../lib/auth');
+const { requireTreasurer, treasurerName } = require('../lib/auth');
 const { mutateData } = require('../lib/github');
 const { outstandingOf, sendConfirmation, auditEntry } = require('../lib/email');
 const config = require('../config.json');
@@ -11,6 +11,7 @@ const config = require('../config.json');
 module.exports = async (req, res) => {
   const body = requireTreasurer(req, res);
   if (!body) return;
+  const who = treasurerName(body);
   let { name, amount } = body;
   amount = Number(amount);
   if (!name) return res.status(400).json({ error: 'name required' });
@@ -20,7 +21,7 @@ module.exports = async (req, res) => {
   try {
     let allocated = [], creditsAfter = 0, newBalance = 0;
     const result = await mutateData(
-      `Treasurer: record payment R${amount} — ${name}`,
+      `Treasurer (${who}): record payment R${amount} — ${name}`,
       (data) => {
         const m = data.managers.find(x => x.name === name);
         if (!m) return false;
@@ -55,7 +56,7 @@ module.exports = async (req, res) => {
 
         (m.payments = m.payments || []).push({
           id: `p_${m.entry}_${Date.now()}`, amount, date: now,
-          recorded_by: 'treasurer', allocated: allocated.slice(), credit_after: creditsAfter,
+          recorded_by: who, allocated: allocated.slice(), credit_after: creditsAfter,
         });
         newBalance = outstandingOf(m, fee).total;
         data.generated_at = now;

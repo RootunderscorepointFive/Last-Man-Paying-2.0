@@ -1,17 +1,18 @@
 // POST /api/edit-fine  { password, name, fineId, amount?, reason?, note }
 // note ("what changed and why") is required and appended to edit_history.
-const { requireTreasurer } = require('../lib/auth');
+const { requireTreasurer, treasurerName } = require('../lib/auth');
 const { mutateData } = require('../lib/github');
 
 module.exports = async (req, res) => {
   const body = requireTreasurer(req, res);
   if (!body) return;
+  const who = treasurerName(body);
   let { name, fineId, amount, reason, note } = body;
   if (!name || !fineId) return res.status(400).json({ error: 'name and fineId required' });
   if (!note || !String(note).trim()) return res.status(400).json({ error: 'edit note required' });
 
   try {
-    const result = await mutateData(`Treasurer: edit fine ${fineId} — ${name}`, (data) => {
+    const result = await mutateData(`Treasurer (${who}): edit fine ${fineId} — ${name}`, (data) => {
       const m = data.managers.find(x => x.name === name);
       if (!m) return false;
       const f = m.fines.find(x => x.id === fineId);
@@ -20,10 +21,10 @@ module.exports = async (req, res) => {
       if (amount != null && amount !== '' && Number(amount) > 0) f.amount = Number(amount);
       if (reason != null && String(reason).trim()) f.reason = String(reason).trim();
       const now = new Date().toISOString();
-      f.edited_by = 'treasurer';
+      f.edited_by = who;
       f.edited_date = now;
       (f.edit_history = f.edit_history || []).push({
-        at: now, by: 'treasurer', note: String(note).trim(),
+        at: now, by: who, note: String(note).trim(),
         before, after: { amount: f.amount, reason: f.reason },
       });
       data.generated_at = now;
