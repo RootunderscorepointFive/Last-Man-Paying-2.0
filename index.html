@@ -1456,7 +1456,7 @@ Promise.all([
   $('#pf-sel').onchange=renderProfile;
   $('#act-pf-rand').onclick=()=>{ $('#pf-sel').value=MM[Math.floor(Math.random()*MM.length)].name; renderProfile(); };
   $('#act-pf-squad').onclick=()=>openSquad($('#pf-sel').value);
-  $('#act-pf-brag').onclick=()=>window.open(`/api/brag-card?name=${encodeURIComponent($('#pf-sel').value)}`, '_blank', 'noopener');
+  $('#act-pf-brag').onclick=()=>window.open(`/api/weekly-image?name=${encodeURIComponent($('#pf-sel').value)}`, '_blank', 'noopener');
   renderProfile();
   } // end renderMoneyViews
   renderMoneyViews();

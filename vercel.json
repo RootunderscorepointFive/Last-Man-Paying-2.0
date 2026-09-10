@@ -2,7 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/add-fine.js": { "maxDuration": 10 },
-    "api/brag-card.js": { "maxDuration": 10, "includeFiles": "assets/**" },
     "api/edit-fine.js": { "maxDuration": 10 },
     "api/health.js": { "maxDuration": 10 },
     "api/mark-fine-paid.js": { "maxDuration": 10 },
