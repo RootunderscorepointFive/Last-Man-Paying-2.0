@@ -608,6 +608,7 @@
     </div>
     <form class="tform" id="tm-form">
       <div id="tm-body"></div>
+      <div><label for="tm-who">Your Name</label><input type="text" id="tm-who" autocomplete="name" placeholder="e.g. Themba"></div>
       <div><label for="tm-pass">Treasurer Password</label><input type="password" id="tm-pass" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
       <div class="terr" id="tm-err" role="alert"></div>
       <div class="tbtns"><button type="button" class="btn" id="tm-cancel">Cancel</button><button type="submit" class="btn primary" id="tm-go">Confirm</button></div>
@@ -699,8 +700,10 @@ function toast(msg, kind){ const t=document.createElement('div'); t.className='t
 function openTreasurer(cfg){
   $('#tm-title').textContent=cfg.title; $('#tm-sub').textContent=cfg.sub||'password required';
   $('#tm-body').innerHTML=cfg.bodyHtml||''; $('#tm-err').textContent=''; $('#tm-pass').value='';
+  let savedName=''; try { savedName = localStorage.getItem('lmp_treasurer_name') || ''; } catch {}
+  $('#tm-who').value = savedName;
   tSubmit=cfg.onSubmit; tModal.classList.add('active');
-  setTimeout(()=>{ const f=$('#tm-body').querySelector('select,input'); (f||$('#tm-pass')).focus(); }, 50);
+  setTimeout(()=>{ const f = savedName ? $('#tm-body').querySelector('select,input') : $('#tm-who'); (f||$('#tm-who')).focus(); }, 50);
 }
 const closeTreasurer=()=>tModal.classList.remove('active');
 $('#tm-x').onclick=$('#tm-cancel').onclick=closeTreasurer;
@@ -724,12 +727,16 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape' && tModal.classList
 })();
 $('#tm-form').addEventListener('submit', async e=>{
   e.preventDefault(); if(!tSubmit) return;
+  const who=$('#tm-who').value.trim();
+  if(!who){ $('#tm-err').textContent='Your name is required.'; $('#tm-who').focus(); return; }
+  try { localStorage.setItem('lmp_treasurer_name', who); } catch {}
   const go=$('#tm-go'); go.disabled=true; $('#tm-err').textContent='';
   try { await tSubmit($('#tm-pass').value); } finally { go.disabled=false; }
 });
 async function postAction(url, payload){
   let r;
-  try { r = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }); }
+  const treasurer_name = $('#tm-who') ? $('#tm-who').value.trim() : '';
+  try { r = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({...payload, treasurer_name}) }); }
   catch { const e=new Error('Network error — please try again.'); e.code=0; throw e; }
   if(r.status===401){ const e=new Error('Wrong password.'); e.code=401; throw e; }
   if(r.status===404){ const e=new Error('Action unavailable — please use the live site.'); e.code=404; throw e; }

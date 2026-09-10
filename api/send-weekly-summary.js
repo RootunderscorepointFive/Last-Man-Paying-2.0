@@ -2,7 +2,7 @@
 // Treasurer-only. Renders the weekly infographic once and emails it (attached),
 // with the headline numbers as text in the body. Defaults to every manager with
 // an email on file. Mirrors the defensive batch behaviour of send-announcement.
-const { requireTreasurer } = require('../lib/auth');
+const { requireTreasurer, treasurerName } = require('../lib/auth');
 const { getData, getFile, mutateData } = require('../lib/github');
 const { buildWeekly } = require('../lib/weekly');
 const { renderWeeklyPng } = require('../lib/weekly-image');
@@ -12,6 +12,7 @@ const config = require('../config.json');
 module.exports = async (req, res) => {
   const body = requireTreasurer(req, res);
   if (!body) return;
+  const who = treasurerName(body);
 
   let emails;
   try { emails = JSON.parse(process.env.MANAGER_EMAILS || '{}'); }
@@ -47,7 +48,7 @@ module.exports = async (req, res) => {
       await mutateData(
         `Email: GW${weekly.gw} weekly summary to ${sent.length}`.slice(0, 200),
         (d) => {
-          (d.email_log = d.email_log || []).push({ type: 'weekly_summary', gw: weekly.gw, recipients: sent, subject, sent_at: new Date().toISOString(), sent_by: 'treasurer' });
+          (d.email_log = d.email_log || []).push({ type: 'weekly_summary', gw: weekly.gw, recipients: sent, subject, sent_at: new Date().toISOString(), sent_by: who });
           d.generated_at = new Date().toISOString();
           return true;
         }

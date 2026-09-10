@@ -16,7 +16,15 @@ test('applyOverride: adding a manager who was not already flagged creates a fine
   assert.equal(m.fines[0].gw, 5);
   assert.equal(m.fines[0].amount, 100);
   assert.equal(m.fines[0].reversed, false);
-  assert.equal(m.fines[0].added_by, 'treasurer-override');
+  assert.equal(m.fines[0].added_by, 'treasurer-override:treasurer');
+});
+
+test('applyOverride: attributes fines and the log entry to the given treasurer name', () => {
+  const data = { managers: [manager()] };
+  applyOverride(data, { gw: 5, payers: ['Alice'], reason: 'FPL API bug' }, '2026-01-01T00:00:00.000Z', 'Themba');
+  const m = data.managers[0];
+  assert.equal(m.fines[0].added_by, 'treasurer-override:Themba');
+  assert.equal(data.overrides[0].by, 'Themba');
 });
 
 test('applyOverride: removing a manager reverses their active fine for that GW and drops it from bottom_finishes', () => {

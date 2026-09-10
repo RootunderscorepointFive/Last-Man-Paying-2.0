@@ -1,5 +1,5 @@
 // POST /api/add-fine  { password, name, amount, type, reason, gw? }
-const { requireTreasurer } = require('../lib/auth');
+const { requireTreasurer, treasurerName } = require('../lib/auth');
 const { mutateData } = require('../lib/github');
 
 const VALID_TYPES = ['losers_fine', 'disciplinary', 'late_payment', 'adjustment', 'other'];
@@ -7,6 +7,7 @@ const VALID_TYPES = ['losers_fine', 'disciplinary', 'late_payment', 'adjustment'
 module.exports = async (req, res) => {
   const body = requireTreasurer(req, res);
   if (!body) return;
+  const who = treasurerName(body);
   let { name, amount, type, reason, gw } = body;
   amount = Number(amount);
   if (!name) return res.status(400).json({ error: 'name required' });
@@ -18,7 +19,7 @@ module.exports = async (req, res) => {
   try {
     const now = new Date().toISOString();
     let newFine = null;
-    const result = await mutateData(`Treasurer: add ${type} fine R${amount} — ${name}`, (data) => {
+    const result = await mutateData(`Treasurer (${who}): add ${type} fine R${amount} — ${name}`, (data) => {
       const m = data.managers.find(x => x.name === name);
       if (!m) return false;
       newFine = {
@@ -27,7 +28,7 @@ module.exports = async (req, res) => {
         reason: String(reason).trim(),
         paid_date: null,
         reversed: false, reversed_reason: null, reversed_by: null, reversed_date: null,
-        added_by: 'treasurer', added_date: now,
+        added_by: who, added_date: now,
         edited_by: null, edited_date: null, edit_history: [],
       };
       m.fines.push(newFine);
