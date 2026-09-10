@@ -88,7 +88,40 @@ async function sync() {
     playerMap[p.id] = {
       web_name: p.web_name, team: p.team, element_type: p.element_type, code: p.code,
       now_cost: p.now_cost, selected_by_percent: p.selected_by_percent,
+      costChangeEvent: p.cost_change_event || 0,
     };
+  });
+  const teamShortName = {};
+  (bootstrap.teams || []).forEach(t => { teamShortName[t.id] = t.short_name; });
+
+  // Live per-player points for the GW being shown in squads (one league-wide
+  // call, not per-manager). 404s pre-deadline same as picks; degrades to "no
+  // live points yet" rather than failing the sync.
+  const liveData = squadGW
+    ? await fetchSoft(`${API}/event/${squadGW}/live/`, { elements: [] }, 'live points')
+    : { elements: [] };
+  const liveByElement = {};
+  (liveData.elements || []).forEach(e => {
+    const s = e.stats || {};
+    liveByElement[e.id] = {
+      points: s.total_points || 0, minutes: s.minutes || 0,
+      goals: s.goals_scored || 0, assists: s.assists || 0, bonus: s.bonus || 0,
+      cleanSheet: !!s.clean_sheets, ownGoals: s.own_goals || 0,
+      penSaved: s.penalties_saved || 0, penMissed: s.penalties_missed || 0,
+      yellow: s.yellow_cards || 0, red: s.red_cards || 0, saves: s.saves || 0,
+    };
+  });
+
+  // Fixture context for squads — which team each player's up against this GW,
+  // home/away, and whether it's kicked off/finished. Keyed by team id since
+  // that's what each player carries; a team only ever has one fixture per GW
+  // (barring the rare postponement, which just leaves them with none here).
+  const fixtures = squadGW ? await fetchSoft(`${API}/fixtures/?event=${squadGW}`, [], 'fixtures') : [];
+  const fixtureByTeam = {};
+  (fixtures || []).forEach(f => {
+    const base = { kickoff_time: f.kickoff_time, started: !!f.started, finished: !!f.finished };
+    fixtureByTeam[f.team_h] = { ...base, opponent: teamShortName[f.team_a] || '?', is_home: true };
+    fixtureByTeam[f.team_a] = { ...base, opponent: teamShortName[f.team_h] || '?', is_home: false };
   });
 
   // Top FPL transfers this GW (global, not mini-league).
@@ -153,15 +186,47 @@ async function sync() {
     const transfersTotal = rows.filter(h => h.event <= currentGW).reduce((a, h) => a + (h.event_transfers || 0), 0);
 
     // Picks are public only after a GW's deadline; before that this 404s.
-    const picksData = await fetchSoft(`${API}/entry/${m.entry}/event/${squadGW}/picks/`, { picks: [], active_chip: null }, 'picks');
-    const currentPicks = (picksData.picks || []).map(p => {
+    const picksData = await fetchSoft(`${API}/entry/${m.entry}/event/${squadGW}/picks/`, { picks: [], active_chip: null, automatic_subs: [] }, 'picks');
+    const rawPicks = picksData.picks || [];
+    const autoSubs = picksData.automatic_subs || [];
+    const subbedOut = new Set(autoSubs.map(s => s.element_out));
+    const subbedIn = new Set(autoSubs.map(s => s.element_in));
+
+    // FPL's own scoring falls back to the vice-captain if the captain didn't
+    // play a single minute; the picks endpoint's multiplier is fixed at the
+    // deadline and never reflects that swap, so it has to be derived here
+    // from live minutes — same source FPL's own engine uses.
+    const capPick = rawPicks.find(p => p.is_captain);
+    const vcPick = rawPicks.find(p => p.is_vice_captain);
+    const capMinutes = capPick ? (liveByElement[capPick.element] || {}).minutes || 0 : 0;
+    const effectiveCaptainId = capMinutes > 0 ? (capPick && capPick.element) : (vcPick && vcPick.element);
+    const isTripleCaptain = picksData.active_chip === '3xc';
+
+    const currentPicks = rawPicks.map(p => {
       const pl = playerMap[p.element] || {};
+      const live = liveByElement[p.element] || {};
+      // Effective starter: the original XI, minus anyone auto-subbed out,
+      // plus anyone auto-subbed in — i.e. whoever's points actually counted.
+      const started = subbedOut.has(p.element) ? false : (subbedIn.has(p.element) ? true : p.multiplier > 0);
+      const isEffectiveCaptain = started && p.element === effectiveCaptainId;
+      const effectiveMultiplier = !started ? 0 : (isEffectiveCaptain ? (isTripleCaptain ? 3 : 2) : 1);
       return {
         id: p.element, name: pl.web_name, position: pl.element_type,
         code: pl.code, multiplier: p.multiplier,
         is_captain: p.is_captain, is_vice_captain: p.is_vice_captain,
         cost: pl.now_cost || 0,
         ownership: pl.selected_by_percent || '0',
+        priceChange: pl.costChangeEvent || 0,
+        live_pts: live.points || 0,
+        minutes: live.minutes || 0,
+        started, is_effective_captain: isEffectiveCaptain, effective_multiplier: effectiveMultiplier,
+        fixture: fixtureByTeam[pl.team] || null,
+        stats: {
+          goals: live.goals || 0, assists: live.assists || 0, bonus: live.bonus || 0,
+          cleanSheet: live.cleanSheet || false, ownGoals: live.ownGoals || 0,
+          penSaved: live.penSaved || 0, penMissed: live.penMissed || 0,
+          yellow: live.yellow || 0, red: live.red || 0, saves: live.saves || 0,
+        },
       };
     });
     const captain = currentPicks.find(p => p.is_captain);
@@ -171,7 +236,7 @@ async function sync() {
       team: m.entry_name, manager: m.player_name, entry: m.entry,
       gwPts, gwHits, benchTotal, transfersTotal, chips: history.chips || [], total: m.total,
       currentCaptain: captain ? captain.name : 'Unknown',
-      activeChip: picksData.active_chip, currentPicks, squadValue,
+      activeChip: picksData.active_chip, currentPicks, squadValue, automaticSubs: autoSubs,
     });
   }
 
