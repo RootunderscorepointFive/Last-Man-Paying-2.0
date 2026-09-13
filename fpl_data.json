@@ -202,7 +202,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 48,
-          "ownership": "22.1",
+          "ownership": "22.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -274,7 +274,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "17.0",
+          "ownership": "17.1",
           "priceChange": 0,
           "live_pts": 6,
           "minutes": 90,
@@ -381,9 +381,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 76,
+          "cost": 77,
           "ownership": "35.2",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -490,7 +490,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "18.3",
+          "ownership": "18.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -525,9 +525,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": true,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -698,7 +698,7 @@
           }
         }
       ],
-      "squadValue": 1009,
+      "squadValue": 1011,
       "automaticSubs": [],
       "gwRanks": [
         3,
@@ -792,7 +792,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "17.0",
+          "ownership": "17.1",
           "priceChange": 0,
           "live_pts": 6,
           "minutes": 90,
@@ -864,7 +864,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 48,
-          "ownership": "22.1",
+          "ownership": "22.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -935,9 +935,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 76,
+          "cost": 77,
           "ownership": "35.2",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -1115,9 +1115,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": true,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -1188,7 +1188,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "18.3",
+          "ownership": "18.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -1288,7 +1288,7 @@
           }
         }
       ],
-      "squadValue": 987,
+      "squadValue": 989,
       "automaticSubs": [],
       "gwRanks": [
         2,
@@ -1514,9 +1514,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 76,
+          "cost": 77,
           "ownership": "35.2",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -1658,9 +1658,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": true,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -1802,9 +1802,9 @@
           "multiplier": 0,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 59,
+          "cost": 58,
           "ownership": "4.3",
-          "priceChange": 0,
+          "priceChange": -1,
           "live_pts": 0,
           "minutes": 0,
           "started": false,
@@ -1867,7 +1867,7 @@
           }
         }
       ],
-      "squadValue": 1000,
+      "squadValue": 1001,
       "automaticSubs": [],
       "gwRanks": [
         1,
@@ -2248,9 +2248,9 @@
           "multiplier": 2,
           "is_captain": true,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -2285,7 +2285,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "18.3",
+          "ownership": "18.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -2457,7 +2457,7 @@
           }
         }
       ],
-      "squadValue": 980,
+      "squadValue": 981,
       "automaticSubs": [],
       "gwRanks": [
         4,
@@ -2653,9 +2653,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 76,
+          "cost": 77,
           "ownership": "35.2",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -2833,9 +2833,9 @@
           "multiplier": 2,
           "is_captain": true,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -2870,7 +2870,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "18.3",
+          "ownership": "18.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -3014,7 +3014,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "11.7",
+          "ownership": "11.6",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -3042,7 +3042,7 @@
           }
         }
       ],
-      "squadValue": 994,
+      "squadValue": 996,
       "automaticSubs": [],
       "gwRanks": [
         12,
@@ -3238,9 +3238,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 76,
+          "cost": 77,
           "ownership": "35.2",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -3454,9 +3454,9 @@
           "multiplier": 2,
           "is_captain": true,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -3527,7 +3527,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "11.7",
+          "ownership": "11.6",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -3627,7 +3627,7 @@
           }
         }
       ],
-      "squadValue": 1002,
+      "squadValue": 1004,
       "automaticSubs": [],
       "gwRanks": [
         13,
@@ -4003,9 +4003,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -4212,7 +4212,7 @@
           }
         }
       ],
-      "squadValue": 998,
+      "squadValue": 999,
       "automaticSubs": [],
       "gwRanks": [
         5,
@@ -4546,9 +4546,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": true,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -4791,7 +4791,7 @@
           }
         }
       ],
-      "squadValue": 997,
+      "squadValue": 998,
       "automaticSubs": [],
       "gwRanks": [
         11,
@@ -5208,9 +5208,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -5381,7 +5381,7 @@
           }
         }
       ],
-      "squadValue": 995,
+      "squadValue": 996,
       "automaticSubs": [],
       "gwRanks": [
         7,
@@ -5571,9 +5571,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 76,
+          "cost": 77,
           "ownership": "35.2",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -5715,9 +5715,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 75,
+          "cost": 76,
           "ownership": "8.1",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 1,
           "minutes": 90,
           "started": true,
@@ -5751,9 +5751,9 @@
           "multiplier": 2,
           "is_captain": true,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -5960,7 +5960,7 @@
           }
         }
       ],
-      "squadValue": 954,
+      "squadValue": 957,
       "automaticSubs": [],
       "gwRanks": [
         8,
@@ -6186,9 +6186,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 76,
+          "cost": 77,
           "ownership": "35.2",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -6366,9 +6366,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": true,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -6539,7 +6539,7 @@
           }
         }
       ],
-      "squadValue": 990,
+      "squadValue": 992,
       "automaticSubs": [],
       "gwRanks": [
         16,
@@ -6622,7 +6622,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "11.7",
+          "ownership": "11.6",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -6909,9 +6909,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -7118,7 +7118,7 @@
           }
         }
       ],
-      "squadValue": 1003,
+      "squadValue": 1004,
       "automaticSubs": [],
       "gwRanks": [
         15,
@@ -7164,9 +7164,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 50,
+          "cost": 49,
           "ownership": "11.3",
-          "priceChange": 0,
+          "priceChange": -1,
           "live_pts": 0,
           "minutes": 0,
           "started": true,
@@ -7524,9 +7524,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -8001,9 +8001,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 76,
+          "cost": 77,
           "ownership": "35.2",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -8073,9 +8073,9 @@
           "multiplier": 2,
           "is_captain": true,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -8110,7 +8110,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "18.3",
+          "ownership": "18.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -8282,7 +8282,7 @@
           }
         }
       ],
-      "squadValue": 990,
+      "squadValue": 992,
       "automaticSubs": [],
       "gwRanks": [
         14,
@@ -8659,7 +8659,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "18.3",
+          "ownership": "18.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -8694,9 +8694,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": true,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -8767,7 +8767,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 48,
-          "ownership": "22.1",
+          "ownership": "22.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -8867,7 +8867,7 @@
           }
         }
       ],
-      "squadValue": 997,
+      "squadValue": 998,
       "automaticSubs": [],
       "gwRanks": [
         17,
@@ -9273,9 +9273,9 @@
           "multiplier": 2,
           "is_captain": true,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -9346,7 +9346,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "11.7",
+          "ownership": "11.6",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -9446,7 +9446,7 @@
           }
         }
       ],
-      "squadValue": 997,
+      "squadValue": 998,
       "automaticSubs": [],
       "gwRanks": [
         18,
@@ -9535,7 +9535,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "17.0",
+          "ownership": "17.1",
           "priceChange": 0,
           "live_pts": 6,
           "minutes": 90,
@@ -9858,9 +9858,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -10031,7 +10031,7 @@
           }
         }
       ],
-      "squadValue": 1010,
+      "squadValue": 1011,
       "automaticSubs": [],
       "gwRanks": [
         10,
@@ -10156,7 +10156,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "17.0",
+          "ownership": "17.1",
           "priceChange": 0,
           "live_pts": 6,
           "minutes": 90,
@@ -10407,9 +10407,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "74.0",
-          "priceChange": 0,
+          "cost": 78,
+          "ownership": "74.1",
+          "priceChange": 1,
           "live_pts": 12,
           "minutes": 90,
           "started": true,
@@ -10616,7 +10616,7 @@
           }
         }
       ],
-      "squadValue": 995,
+      "squadValue": 996,
       "automaticSubs": [],
       "gwRanks": [
         9,
@@ -10848,9 +10848,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 76,
+          "cost": 77,
           "ownership": "35.2",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -10993,7 +10993,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "18.3",
+          "ownership": "18.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -11201,7 +11201,7 @@
           }
         }
       ],
-      "squadValue": 1002,
+      "squadValue": 1003,
       "automaticSubs": [],
       "gwRanks": [
         20,
@@ -11290,7 +11290,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "11.7",
+          "ownership": "11.6",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -11469,9 +11469,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 76,
+          "cost": 77,
           "ownership": "35.2",
-          "priceChange": 0,
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -11786,7 +11786,7 @@
           }
         }
       ],
-      "squadValue": 995,
+      "squadValue": 996,
       "automaticSubs": [],
       "gwRanks": [
         19,
@@ -12050,8 +12050,8 @@
       "name": "João Pedro",
       "code": 475168,
       "position": 4,
-      "cost": 77,
-      "fpl_pct": "74.0",
+      "cost": 78,
+      "fpl_pct": "74.1",
       "count": 18
     },
     {
@@ -12086,7 +12086,7 @@
       "name": "Rogers",
       "code": 244850,
       "position": 3,
-      "cost": 76,
+      "cost": 77,
       "fpl_pct": "35.2",
       "count": 10
     },
@@ -12132,7 +12132,7 @@
       "code": 216646,
       "position": 4,
       "cost": 62,
-      "fpl_pct": "18.3",
+      "fpl_pct": "18.4",
       "count": 7
     },
     {
@@ -12204,7 +12204,7 @@
       "code": 106760,
       "position": 2,
       "cost": 44,
-      "fpl_pct": "11.7",
+      "fpl_pct": "11.6",
       "count": 5
     },
     {
@@ -12222,7 +12222,7 @@
       "code": 199798,
       "position": 2,
       "cost": 45,
-      "fpl_pct": "17.0",
+      "fpl_pct": "17.1",
       "count": 4
     },
     {
@@ -12294,7 +12294,7 @@
       "code": 465730,
       "position": 2,
       "cost": 48,
-      "fpl_pct": "22.1",
+      "fpl_pct": "22.0",
       "count": 3
     },
     {
@@ -12572,7 +12572,7 @@
       "name": "Lammens",
       "code": 465247,
       "position": 1,
-      "cost": 50,
+      "cost": 49,
       "fpl_pct": "11.3",
       "count": 1
     },
@@ -12590,7 +12590,7 @@
       "name": "Havertz",
       "code": 219847,
       "position": 4,
-      "cost": 75,
+      "cost": 76,
       "fpl_pct": "8.1",
       "count": 1
     },
@@ -12698,7 +12698,7 @@
       "name": "Senesi",
       "code": 221466,
       "position": 2,
-      "cost": 59,
+      "cost": 58,
       "fpl_pct": "4.3",
       "count": 1
     },
@@ -12952,9 +12952,9 @@
       "name": "Rogers",
       "code": 244850,
       "position": 3,
-      "now_cost": 76,
-      "transfers_in": 106815,
-      "transfers_out": 2589,
+      "now_cost": 77,
+      "transfers_in": 112052,
+      "transfers_out": 2839,
       "selected_by_percent": "35.2"
     },
     {
@@ -12963,19 +12963,9 @@
       "code": 540324,
       "position": 3,
       "now_cost": 50,
-      "transfers_in": 55159,
-      "transfers_out": 1105,
+      "transfers_in": 58891,
+      "transfers_out": 1245,
       "selected_by_percent": "1.6"
-    },
-    {
-      "id": 165,
-      "name": "João Pedro",
-      "code": 475168,
-      "position": 4,
-      "now_cost": 77,
-      "transfers_in": 43988,
-      "transfers_out": 2478,
-      "selected_by_percent": "74.0"
     },
     {
       "id": 94,
@@ -12983,19 +12973,19 @@
       "code": 513418,
       "position": 3,
       "now_cost": 60,
-      "transfers_in": 43877,
-      "transfers_out": 2574,
+      "transfers_in": 47285,
+      "transfers_out": 2771,
       "selected_by_percent": "4.1"
     },
     {
-      "id": 15,
-      "name": "Ødegaard",
-      "code": 184029,
-      "position": 3,
-      "now_cost": 67,
-      "transfers_in": 38651,
-      "transfers_out": 6822,
-      "selected_by_percent": "18.6"
+      "id": 165,
+      "name": "João Pedro",
+      "code": 475168,
+      "position": 4,
+      "now_cost": 78,
+      "transfers_in": 46765,
+      "transfers_out": 2631,
+      "selected_by_percent": "74.1"
     },
     {
       "id": 31,
@@ -13003,9 +12993,19 @@
       "code": 199798,
       "position": 2,
       "now_cost": 45,
-      "transfers_in": 38465,
-      "transfers_out": 4229,
-      "selected_by_percent": "17.0"
+      "transfers_in": 42669,
+      "transfers_out": 4540,
+      "selected_by_percent": "17.1"
+    },
+    {
+      "id": 15,
+      "name": "Ødegaard",
+      "code": 184029,
+      "position": 3,
+      "now_cost": 67,
+      "transfers_in": 40811,
+      "transfers_out": 7759,
+      "selected_by_percent": "18.6"
     },
     {
       "id": 279,
@@ -13013,8 +13013,8 @@
       "code": 146426,
       "position": 2,
       "now_cost": 42,
-      "transfers_in": 35815,
-      "transfers_out": 5446,
+      "transfers_in": 38818,
+      "transfers_out": 5909,
       "selected_by_percent": "12.9"
     },
     {
@@ -13023,8 +13023,8 @@
       "code": 466075,
       "position": 2,
       "now_cost": 58,
-      "transfers_in": 31718,
-      "transfers_out": 4878,
+      "transfers_in": 34771,
+      "transfers_out": 5233,
       "selected_by_percent": "49.4"
     },
     {
@@ -13033,19 +13033,9 @@
       "code": 17761,
       "position": 2,
       "now_cost": 60,
-      "transfers_in": 27523,
-      "transfers_out": 3179,
+      "transfers_in": 30728,
+      "transfers_out": 3386,
       "selected_by_percent": "11.8"
-    },
-    {
-      "id": 449,
-      "name": "Hall",
-      "code": 487838,
-      "position": 2,
-      "now_cost": 52,
-      "transfers_in": 27115,
-      "transfers_out": 3809,
-      "selected_by_percent": "14.2"
     },
     {
       "id": 305,
@@ -13053,8 +13043,8 @@
       "code": 455084,
       "position": 2,
       "now_cost": 40,
-      "transfers_in": 26813,
-      "transfers_out": 1226,
+      "transfers_in": 29298,
+      "transfers_out": 1368,
       "selected_by_percent": "5.4"
     },
     {
@@ -13063,9 +13053,19 @@
       "code": 201658,
       "position": 3,
       "now_cost": 60,
-      "transfers_in": 26557,
-      "transfers_out": 2640,
+      "transfers_in": 29216,
+      "transfers_out": 2844,
       "selected_by_percent": "4.0"
+    },
+    {
+      "id": 449,
+      "name": "Hall",
+      "code": 487838,
+      "position": 2,
+      "now_cost": 52,
+      "transfers_in": 28876,
+      "transfers_out": 4141,
+      "selected_by_percent": "14.2"
     },
     {
       "id": 464,
@@ -13073,9 +13073,9 @@
       "code": 216646,
       "position": 4,
       "now_cost": 62,
-      "transfers_in": 25834,
-      "transfers_out": 9936,
-      "selected_by_percent": "18.3"
+      "transfers_in": 27704,
+      "transfers_out": 10638,
+      "selected_by_percent": "18.4"
     },
     {
       "id": 1,
@@ -13083,8 +13083,8 @@
       "code": 154561,
       "position": 1,
       "now_cost": 60,
-      "transfers_in": 22993,
-      "transfers_out": 6580,
+      "transfers_in": 26101,
+      "transfers_out": 6818,
       "selected_by_percent": "39.2"
     },
     {
@@ -13093,8 +13093,8 @@
       "code": 477424,
       "position": 2,
       "now_cost": 56,
-      "transfers_in": 22228,
-      "transfers_out": 4630,
+      "transfers_in": 23823,
+      "transfers_out": 4979,
       "selected_by_percent": "20.5"
     },
     {
@@ -13103,8 +13103,8 @@
       "code": 473284,
       "position": 1,
       "now_cost": 46,
-      "transfers_in": 21801,
-      "transfers_out": 4103,
+      "transfers_in": 23149,
+      "transfers_out": 4492,
       "selected_by_percent": "10.3"
     },
     {
@@ -13113,9 +13113,19 @@
       "code": 222531,
       "position": 3,
       "now_cost": 79,
-      "transfers_in": 20647,
-      "transfers_out": 4289,
+      "transfers_in": 22655,
+      "transfers_out": 4489,
       "selected_by_percent": "9.6"
+    },
+    {
+      "id": 233,
+      "name": "Mykolenko",
+      "code": 224967,
+      "position": 2,
+      "now_cost": 45,
+      "transfers_in": 20340,
+      "transfers_out": 850,
+      "selected_by_percent": "2.3"
     },
     {
       "id": 282,
@@ -13123,8 +13133,8 @@
       "code": 232351,
       "position": 2,
       "now_cost": 40,
-      "transfers_in": 18564,
-      "transfers_out": 889,
+      "transfers_in": 19935,
+      "transfers_out": 983,
       "selected_by_percent": "1.9"
     },
     {
@@ -13133,25 +13143,147 @@
       "code": 543968,
       "position": 4,
       "now_cost": 55,
-      "transfers_in": 18138,
-      "transfers_out": 1196,
+      "transfers_in": 19824,
+      "transfers_out": 1307,
       "selected_by_percent": "1.9"
-    },
-    {
-      "id": 233,
-      "name": "Mykolenko",
-      "code": 224967,
-      "position": 2,
-      "now_cost": 45,
-      "transfers_in": 17963,
-      "transfers_out": 760,
-      "selected_by_percent": "2.2"
     }
   ],
   "nextGW": 5,
   "nextDeadline": "2026-09-18T17:30:00Z",
-  "priceRisers": [],
-  "priceFallers": [],
+  "priceRisers": [
+    {
+      "id": 26,
+      "name": "Havertz",
+      "code": 219847,
+      "position": 4,
+      "team": "ARS",
+      "now_cost": 76,
+      "change": 1,
+      "selected_by_percent": "8.1"
+    },
+    {
+      "id": 40,
+      "name": "Rogers",
+      "code": 244850,
+      "position": 3,
+      "team": "CHE",
+      "now_cost": 77,
+      "change": 1,
+      "selected_by_percent": "35.2"
+    },
+    {
+      "id": 165,
+      "name": "João Pedro",
+      "code": 475168,
+      "position": 4,
+      "team": "CHE",
+      "now_cost": 78,
+      "change": 1,
+      "selected_by_percent": "74.1"
+    }
+  ],
+  "priceFallers": [
+    {
+      "id": 19,
+      "name": "Zubimendi",
+      "code": 481655,
+      "position": 3,
+      "team": "ARS",
+      "now_cost": 53,
+      "change": -1,
+      "selected_by_percent": "0.7"
+    },
+    {
+      "id": 452,
+      "name": "Bruno G.",
+      "code": 208706,
+      "position": 3,
+      "team": "ARS",
+      "now_cost": 67,
+      "change": -1,
+      "selected_by_percent": "1.7"
+    },
+    {
+      "id": 48,
+      "name": "Onana",
+      "code": 449871,
+      "position": 3,
+      "team": "AVL",
+      "now_cost": 49,
+      "change": -1,
+      "selected_by_percent": "0.0"
+    },
+    {
+      "id": 160,
+      "name": "Garnacho",
+      "code": 493105,
+      "position": 3,
+      "team": "AVL",
+      "now_cost": 58,
+      "change": -1,
+      "selected_by_percent": "0.4"
+    },
+    {
+      "id": 582,
+      "name": "Madjo",
+      "code": 690838,
+      "position": 4,
+      "team": "AVL",
+      "now_cost": 54,
+      "change": -1,
+      "selected_by_percent": "0.2"
+    },
+    {
+      "id": 63,
+      "name": "Milosavljević",
+      "code": 620487,
+      "position": 2,
+      "team": "BOU",
+      "now_cost": 49,
+      "change": -1,
+      "selected_by_percent": "0.0"
+    },
+    {
+      "id": 105,
+      "name": "Anthony",
+      "code": 444180,
+      "position": 3,
+      "team": "BRE",
+      "now_cost": 59,
+      "change": -1,
+      "selected_by_percent": "0.1"
+    },
+    {
+      "id": 137,
+      "name": "Tzimas",
+      "code": 608181,
+      "position": 4,
+      "team": "BHA",
+      "now_cost": 54,
+      "change": -1,
+      "selected_by_percent": "0.0"
+    },
+    {
+      "id": 152,
+      "name": "Palestra",
+      "code": 620109,
+      "position": 2,
+      "team": "CHE",
+      "now_cost": 53,
+      "change": -1,
+      "selected_by_percent": "0.8"
+    },
+    {
+      "id": 157,
+      "name": "Estêvão",
+      "code": 624773,
+      "position": 3,
+      "team": "CHE",
+      "now_cost": 63,
+      "change": -1,
+      "selected_by_percent": "0.7"
+    }
+  ],
   "dreamTeam": [
     {
       "id": 1,
@@ -13243,5 +13375,5 @@
     }
   ],
   "dreamTeamGW": 4,
-  "generated_at": "2026-09-12T22:56:23.789Z"
+  "generated_at": "2026-09-13T00:49:18.526Z"
 }
