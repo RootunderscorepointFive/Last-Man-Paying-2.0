@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T13:51:05.867Z",
+  "generated_at": "2026-09-14T15:21:51.237Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 3,
@@ -414,7 +414,7 @@
       "entry": 5275613,
       "name": "Zazi Zuma",
       "team": "Mpendles Finest",
-      "joining_fee_paid": false,
+      "joining_fee_paid": true,
       "fines": [
         {
           "id": "f_5275613_gw2_bottom",
@@ -440,7 +440,9 @@
       ],
       "epithet": "Steady Eddie",
       "epithet_tagline": "Steadiest scorer — swings of only ±6.5",
-      "credits": 0
+      "credits": 0,
+      "joining_fee_paid_by": "Themba",
+      "joining_fee_paid_date": "2026-09-14T15:21:51.236Z"
     },
     {
       "entry": 804065,
