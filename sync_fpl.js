@@ -203,7 +203,13 @@ async function sync() {
     for (let gw = 1; gw <= currentGW; gw++) {
       const row = rows.find(h => h.event === gw);
       const hits = row ? row.event_transfers_cost : 0;
-      const pts = gw < currentGW ? (row ? row.points - hits : 0) : (m.total || 0) - priorCum - hits;
+      // The live GW's points come from m.total (the league standings' live
+      // cumulative total), which already has this GW's transfer-cost hit
+      // baked in — FPL applies it at the deadline, before kickoff. Subtracting
+      // `hits` again here double-counted it, undercounting anyone who took a
+      // hit this GW by exactly that amount (only affects the current GW;
+      // finished GWs use row.points, which is pre-hit and does need it).
+      const pts = gw < currentGW ? (row ? row.points - hits : 0) : (m.total || 0) - priorCum;
       gwPts.push(pts); gwHits.push(hits);
       priorCum += pts;
     }
