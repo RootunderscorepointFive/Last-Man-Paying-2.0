@@ -53,6 +53,30 @@ async function fetchSoft(url, fallback, label) {
   catch (e) { console.warn(`    ${label} unavailable (${e.message})`); return fallback; }
 }
 
+// Per-GW points, isolated and testable — this is what got the live-GW hit
+// double-counted (see git history) and had no test coverage to catch it.
+// `rows` is entry/{id}/history/'s `current` array; `mTotal` is the league
+// standings' live cumulative total for this entry.
+//
+// FPL settles a finished GW's points into `row.points` (pre-hit) with the
+// hit itself in `row.event_transfers_cost` — so that GW's net score is
+// `row.points - hits`. The live/in-progress GW isn't settled yet, so it's
+// derived as (live cumulative total so far) minus (already-settled prior
+// GWs) — and `mTotal` already has *this* GW's hit baked in (FPL applies it
+// at the deadline, before kickoff), so it must NOT be subtracted again.
+function computeGwPts(rows, currentGW, mTotal) {
+  let priorCum = 0;
+  const gwPts = [], gwHits = [];
+  for (let gw = 1; gw <= currentGW; gw++) {
+    const row = rows.find(h => h.event === gw);
+    const hits = row ? row.event_transfers_cost : 0;
+    const pts = gw < currentGW ? (row ? row.points - hits : 0) : (mTotal || 0) - priorCum;
+    gwPts.push(pts); gwHits.push(hits);
+    priorCum += pts;
+  }
+  return { gwPts, gwHits };
+}
+
 async function sync() {
   console.log(`Syncing live points for league ${LEAGUE_ID}...`);
 
@@ -198,21 +222,7 @@ async function sync() {
     // things stand right now" instead of waiting on history to catch up.
     // Transfer cost is fixed at the deadline (not points-dependent), so it's
     // read straight from the row — including the live GW's — when present.
-    let priorCum = 0;
-    const gwPts = [], gwHits = [];
-    for (let gw = 1; gw <= currentGW; gw++) {
-      const row = rows.find(h => h.event === gw);
-      const hits = row ? row.event_transfers_cost : 0;
-      // The live GW's points come from m.total (the league standings' live
-      // cumulative total), which already has this GW's transfer-cost hit
-      // baked in — FPL applies it at the deadline, before kickoff. Subtracting
-      // `hits` again here double-counted it, undercounting anyone who took a
-      // hit this GW by exactly that amount (only affects the current GW;
-      // finished GWs use row.points, which is pre-hit and does need it).
-      const pts = gw < currentGW ? (row ? row.points - hits : 0) : (m.total || 0) - priorCum;
-      gwPts.push(pts); gwHits.push(hits);
-      priorCum += pts;
-    }
+    const { gwPts, gwHits } = computeGwPts(rows, currentGW, m.total);
     const benchTotal = rows.filter(h => h.event < currentGW).reduce((a, h) => a + (h.points_on_bench || 0), 0);
     const transfersTotal = rows.filter(h => h.event <= currentGW).reduce((a, h) => a + (h.event_transfers || 0), 0);
 
@@ -309,4 +319,8 @@ async function sync() {
   console.log(`Done. fpl_data.json updated through GW${currentGW} (${managers.length} managers, ${gwData.length} with data).`);
 }
 
-sync().catch(e => { console.error('SYNC FAILED:', e.message); process.exit(1); });
+if (require.main === module) {
+  sync().catch(e => { console.error('SYNC FAILED:', e.message); process.exit(1); });
+}
+
+module.exports = { computeGwPts };
