@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T01:16:40.115Z",
+  "generated_at": "2026-09-16T05:45:45.692Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 4,
@@ -1052,6 +1052,35 @@
       "subject": "FPL — payment received",
       "sent_at": "2026-09-14T15:21:52.497Z",
       "sent_by": "treasurer"
+    },
+    {
+      "type": "weekly_summary",
+      "gw": 4,
+      "recipients": [
+        "Minenhle Khumalo",
+        "Sthe Coqueto",
+        "Fanele Msweli",
+        "Thembalethu Miya",
+        "Learnmore Ntshangase",
+        "Bheka Bhengu",
+        "Thato Choshi",
+        "Mtho Mabizela",
+        "Kudzai Kupeta",
+        "Lethu Mkhwanazi",
+        "Siyanda Ndaba",
+        "Nhlakanipho Ntombela",
+        "President Gamede",
+        "Luthando Ngidi",
+        "Mhlengi Kunene",
+        "Mbuyi Katumba",
+        "Nkosi The Chef",
+        "Zazi Zuma",
+        "Kwazi Mthembu",
+        "Msizi Bhengu"
+      ],
+      "subject": "LMP · GW4 Weekly Report",
+      "sent_at": "2026-09-16T05:45:45.692Z",
+      "sent_by": "Themba"
     }
   ]
 }
