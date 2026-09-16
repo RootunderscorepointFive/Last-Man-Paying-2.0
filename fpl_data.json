@@ -166,7 +166,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "40.5",
+          "ownership": "40.6",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -202,7 +202,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 48,
-          "ownership": "23.7",
+          "ownership": "23.8",
           "priceChange": 0,
           "live_pts": 11,
           "minutes": 90,
@@ -309,9 +309,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 56,
-          "ownership": "18.9",
-          "priceChange": 0,
+          "cost": 57,
+          "ownership": "19.0",
+          "priceChange": 1,
           "live_pts": 17,
           "minutes": 90,
           "started": true,
@@ -634,7 +634,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "23.2",
+          "ownership": "23.3",
           "priceChange": 1,
           "live_pts": 11,
           "minutes": 90,
@@ -670,7 +670,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "12.1",
+          "ownership": "12.0",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 90,
@@ -698,7 +698,7 @@
           }
         }
       ],
-      "squadValue": 1012,
+      "squadValue": 1013,
       "automaticSubs": [],
       "gwRanks": [
         3,
@@ -864,7 +864,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 48,
-          "ownership": "23.7",
+          "ownership": "23.8",
           "priceChange": 0,
           "live_pts": 11,
           "minutes": 90,
@@ -1520,9 +1520,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 56,
-          "ownership": "18.9",
-          "priceChange": 0,
+          "cost": 57,
+          "ownership": "19.0",
+          "priceChange": 1,
           "live_pts": 17,
           "minutes": 90,
           "started": true,
@@ -1844,9 +1844,9 @@
           "multiplier": 0,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 54,
+          "cost": 53,
           "ownership": "2.0",
-          "priceChange": 0,
+          "priceChange": -1,
           "live_pts": 0,
           "minutes": 0,
           "started": false,
@@ -2110,9 +2110,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 56,
-          "ownership": "18.9",
-          "priceChange": 0,
+          "cost": 57,
+          "ownership": "19.0",
+          "priceChange": 1,
           "live_pts": 17,
           "minutes": 90,
           "started": true,
@@ -2146,9 +2146,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 79,
-          "ownership": "12.2",
-          "priceChange": 0,
+          "cost": 80,
+          "ownership": "12.3",
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -2363,7 +2363,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 58,
-          "ownership": "4.0",
+          "ownership": "3.9",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 90,
@@ -2399,7 +2399,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 40,
-          "ownership": "13.8",
+          "ownership": "13.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -2463,7 +2463,7 @@
           }
         }
       ],
-      "squadValue": 981,
+      "squadValue": 983,
       "automaticSubs": [],
       "gwRanks": [
         4,
@@ -2510,7 +2510,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "40.5",
+          "ownership": "40.6",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -2942,7 +2942,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 58,
-          "ownership": "4.0",
+          "ownership": "3.9",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 90,
@@ -3089,7 +3089,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "40.5",
+          "ownership": "40.6",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -3817,9 +3817,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "6.1",
-          "priceChange": 0,
+          "cost": 61,
+          "ownership": "6.2",
+          "priceChange": 1,
           "live_pts": 15,
           "minutes": 90,
           "started": true,
@@ -4106,7 +4106,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 58,
-          "ownership": "4.0",
+          "ownership": "3.9",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 90,
@@ -4142,7 +4142,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 55,
-          "ownership": "1.4",
+          "ownership": "1.3",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -4178,7 +4178,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "10.3",
+          "ownership": "10.2",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -4206,7 +4206,7 @@
           }
         }
       ],
-      "squadValue": 996,
+      "squadValue": 997,
       "automaticSubs": [
         {
           "entry": 6404452,
@@ -4368,7 +4368,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "23.2",
+          "ownership": "23.3",
           "priceChange": 1,
           "live_pts": 11,
           "minutes": 90,
@@ -4512,7 +4512,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "12.1",
+          "ownership": "12.0",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 90,
@@ -4547,9 +4547,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 56,
-          "ownership": "18.9",
-          "priceChange": 0,
+          "cost": 57,
+          "ownership": "19.0",
+          "priceChange": 1,
           "live_pts": 17,
           "minutes": 90,
           "started": true,
@@ -4792,7 +4792,7 @@
           }
         }
       ],
-      "squadValue": 993,
+      "squadValue": 994,
       "automaticSubs": [],
       "gwRanks": [
         16,
@@ -4839,7 +4839,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "40.5",
+          "ownership": "40.6",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -4911,7 +4911,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 40,
-          "ownership": "13.8",
+          "ownership": "13.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -5343,7 +5343,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "10.3",
+          "ownership": "10.2",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -5503,7 +5503,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 40,
-          "ownership": "13.8",
+          "ownership": "13.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -5539,7 +5539,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "13.2",
+          "ownership": "13.3",
           "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
@@ -5683,7 +5683,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "12.1",
+          "ownership": "12.0",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 90,
@@ -5863,7 +5863,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "10.3",
+          "ownership": "10.2",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -6016,7 +6016,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 60,
-          "ownership": "40.5",
+          "ownership": "40.6",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -6124,7 +6124,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 40,
-          "ownership": "13.8",
+          "ownership": "13.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -6231,9 +6231,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 56,
-          "ownership": "18.9",
-          "priceChange": 0,
+          "cost": 57,
+          "ownership": "19.0",
+          "priceChange": 1,
           "live_pts": 17,
           "minutes": 90,
           "started": true,
@@ -6448,7 +6448,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "9.4",
+          "ownership": "9.3",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -6548,7 +6548,7 @@
           }
         }
       ],
-      "squadValue": 996,
+      "squadValue": 997,
       "automaticSubs": [
         {
           "entry": 4893790,
@@ -6613,7 +6613,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "40.5",
+          "ownership": "40.6",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -6828,9 +6828,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 79,
-          "ownership": "12.2",
-          "priceChange": 0,
+          "cost": 80,
+          "ownership": "12.3",
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -7145,7 +7145,7 @@
           }
         }
       ],
-      "squadValue": 996,
+      "squadValue": 997,
       "automaticSubs": [
         {
           "entry": 5275613,
@@ -7450,9 +7450,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 79,
-          "ownership": "12.2",
-          "priceChange": 0,
+          "cost": 80,
+          "ownership": "12.3",
+          "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
           "started": true,
@@ -7487,7 +7487,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 58,
-          "ownership": "4.0",
+          "ownership": "3.9",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 90,
@@ -7595,7 +7595,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 40,
-          "ownership": "4.1",
+          "ownership": "4.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -7667,7 +7667,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "12.1",
+          "ownership": "12.0",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 90,
@@ -7731,7 +7731,7 @@
           }
         }
       ],
-      "squadValue": 1005,
+      "squadValue": 1006,
       "automaticSubs": [],
       "gwRanks": [
         6,
@@ -7886,7 +7886,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 40,
-          "ownership": "13.8",
+          "ownership": "13.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -8210,7 +8210,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "10.3",
+          "ownership": "10.2",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -8357,7 +8357,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 60,
-          "ownership": "40.5",
+          "ownership": "40.6",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -8753,7 +8753,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 40,
-          "ownership": "4.1",
+          "ownership": "4.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -8789,7 +8789,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "12.1",
+          "ownership": "12.0",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 90,
@@ -8861,7 +8861,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 39,
-          "ownership": "0.7",
+          "ownership": "0.8",
           "priceChange": -1,
           "live_pts": 0,
           "minutes": 0,
@@ -8978,7 +8978,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "13.2",
+          "ownership": "13.3",
           "priceChange": 1,
           "live_pts": 8,
           "minutes": 90,
@@ -9374,7 +9374,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "9.4",
+          "ownership": "9.3",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -9966,7 +9966,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 48,
-          "ownership": "23.7",
+          "ownership": "23.8",
           "priceChange": 0,
           "live_pts": 11,
           "minutes": 90,
@@ -10119,7 +10119,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "40.5",
+          "ownership": "40.6",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -10191,7 +10191,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "23.2",
+          "ownership": "23.3",
           "priceChange": 1,
           "live_pts": 11,
           "minutes": 90,
@@ -10551,7 +10551,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "9.4",
+          "ownership": "9.3",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -10623,7 +10623,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "12.1",
+          "ownership": "12.0",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 90,
@@ -10747,7 +10747,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "10.3",
+          "ownership": "10.2",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -11303,7 +11303,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "40.5",
+          "ownership": "40.6",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -11734,9 +11734,9 @@
           "multiplier": 0,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 45,
+          "cost": 44,
           "ownership": "5.3",
-          "priceChange": 0,
+          "priceChange": -1,
           "live_pts": 0,
           "minutes": 0,
           "started": false,
@@ -11835,7 +11835,7 @@
           }
         }
       ],
-      "squadValue": 1003,
+      "squadValue": 1002,
       "automaticSubs": [],
       "gwRanks": [
         20,
@@ -12154,7 +12154,7 @@
       "code": 154561,
       "position": 1,
       "cost": 60,
-      "fpl_pct": "40.5",
+      "fpl_pct": "40.6",
       "count": 9
     },
     {
@@ -12199,7 +12199,7 @@
       "code": 513545,
       "position": 3,
       "cost": 57,
-      "fpl_pct": "12.1",
+      "fpl_pct": "12.0",
       "count": 6
     },
     {
@@ -12234,8 +12234,8 @@
       "name": "Groß",
       "code": 60307,
       "position": 3,
-      "cost": 56,
-      "fpl_pct": "18.9",
+      "cost": 57,
+      "fpl_pct": "19.0",
       "count": 5
     },
     {
@@ -12244,7 +12244,7 @@
       "code": 219924,
       "position": 2,
       "cost": 40,
-      "fpl_pct": "13.8",
+      "fpl_pct": "13.7",
       "count": 5
     },
     {
@@ -12253,7 +12253,7 @@
       "code": 106760,
       "position": 2,
       "cost": 44,
-      "fpl_pct": "10.3",
+      "fpl_pct": "10.2",
       "count": 5
     },
     {
@@ -12316,7 +12316,7 @@
       "code": 484420,
       "position": 3,
       "cost": 58,
-      "fpl_pct": "4.0",
+      "fpl_pct": "3.9",
       "count": 4
     },
     {
@@ -12325,7 +12325,7 @@
       "code": 465730,
       "position": 2,
       "cost": 48,
-      "fpl_pct": "23.7",
+      "fpl_pct": "23.8",
       "count": 3
     },
     {
@@ -12334,7 +12334,7 @@
       "code": 477424,
       "position": 2,
       "cost": 57,
-      "fpl_pct": "23.2",
+      "fpl_pct": "23.3",
       "count": 3
     },
     {
@@ -12369,8 +12369,8 @@
       "name": "Gibbs-White",
       "code": 222531,
       "position": 3,
-      "cost": 79,
-      "fpl_pct": "12.2",
+      "cost": 80,
+      "fpl_pct": "12.3",
       "count": 3
     },
     {
@@ -12388,7 +12388,7 @@
       "code": 449434,
       "position": 3,
       "cost": 62,
-      "fpl_pct": "9.4",
+      "fpl_pct": "9.3",
       "count": 3
     },
     {
@@ -12442,7 +12442,7 @@
       "code": 17761,
       "position": 2,
       "cost": 61,
-      "fpl_pct": "13.2",
+      "fpl_pct": "13.3",
       "count": 2
     },
     {
@@ -12550,7 +12550,7 @@
       "code": 112520,
       "position": 1,
       "cost": 40,
-      "fpl_pct": "4.1",
+      "fpl_pct": "4.0",
       "count": 2
     },
     {
@@ -12680,21 +12680,21 @@
       "count": 1
     },
     {
+      "id": 94,
+      "name": "Schade",
+      "code": 513418,
+      "position": 3,
+      "cost": 61,
+      "fpl_pct": "6.2",
+      "count": 1
+    },
+    {
       "id": 305,
       "name": "Davis",
       "code": 455084,
       "position": 2,
       "cost": 40,
       "fpl_pct": "6.2",
-      "count": 1
-    },
-    {
-      "id": 94,
-      "name": "Schade",
-      "code": 513418,
-      "position": 3,
-      "cost": 60,
-      "fpl_pct": "6.1",
       "count": 1
     },
     {
@@ -12738,7 +12738,7 @@
       "name": "Cash",
       "code": 199796,
       "position": 2,
-      "cost": 45,
+      "cost": 44,
       "fpl_pct": "5.3",
       "count": 1
     },
@@ -12855,7 +12855,7 @@
       "name": "Mosquera",
       "code": 500040,
       "position": 2,
-      "cost": 54,
+      "cost": 53,
       "fpl_pct": "2.0",
       "count": 1
     },
@@ -12901,7 +12901,7 @@
       "code": 227444,
       "position": 2,
       "cost": 55,
-      "fpl_pct": "1.4",
+      "fpl_pct": "1.3",
       "count": 1
     },
     {
@@ -12932,6 +12932,15 @@
       "count": 1
     },
     {
+      "id": 303,
+      "name": "Kipré",
+      "code": 183015,
+      "position": 2,
+      "cost": 39,
+      "fpl_pct": "0.8",
+      "count": 1
+    },
+    {
       "id": 102,
       "name": "Yarmoliuk",
       "code": 508395,
@@ -12946,15 +12955,6 @@
       "code": 539142,
       "position": 2,
       "cost": 40,
-      "fpl_pct": "0.7",
-      "count": 1
-    },
-    {
-      "id": 303,
-      "name": "Kipré",
-      "code": 183015,
-      "position": 2,
-      "cost": 39,
       "fpl_pct": "0.7",
       "count": 1
     },
@@ -13002,8 +13002,8 @@
       "code": 244850,
       "position": 3,
       "now_cost": 77,
-      "transfers_in": 399630,
-      "transfers_out": 27517,
+      "transfers_in": 404287,
+      "transfers_out": 28556,
       "selected_by_percent": "37.8"
     },
     {
@@ -13011,10 +13011,10 @@
       "name": "Groß",
       "code": 60307,
       "position": 3,
-      "now_cost": 56,
-      "transfers_in": 315947,
-      "transfers_out": 47110,
-      "selected_by_percent": "18.9"
+      "now_cost": 57,
+      "transfers_in": 322967,
+      "transfers_out": 48102,
+      "selected_by_percent": "19.0"
     },
     {
       "id": 391,
@@ -13022,29 +13022,29 @@
       "code": 477424,
       "position": 2,
       "now_cost": 57,
-      "transfers_in": 288021,
-      "transfers_out": 20854,
-      "selected_by_percent": "23.2"
+      "transfers_in": 293448,
+      "transfers_out": 21237,
+      "selected_by_percent": "23.3"
     },
     {
       "id": 480,
       "name": "Gibbs-White",
       "code": 222531,
       "position": 3,
-      "now_cost": 79,
-      "transfers_in": 279570,
-      "transfers_out": 18802,
-      "selected_by_percent": "12.2"
+      "now_cost": 80,
+      "transfers_in": 292198,
+      "transfers_out": 19141,
+      "selected_by_percent": "12.3"
     },
     {
       "id": 94,
       "name": "Schade",
       "code": 513418,
       "position": 3,
-      "now_cost": 60,
-      "transfers_in": 242752,
-      "transfers_out": 23187,
-      "selected_by_percent": "6.1"
+      "now_cost": 61,
+      "transfers_in": 246499,
+      "transfers_out": 24531,
+      "selected_by_percent": "6.2"
     },
     {
       "id": 115,
@@ -13052,18 +13052,18 @@
       "code": 465730,
       "position": 2,
       "now_cost": 48,
-      "transfers_in": 233402,
-      "transfers_out": 57007,
-      "selected_by_percent": "23.7"
+      "transfers_in": 237681,
+      "transfers_out": 58358,
+      "selected_by_percent": "23.8"
     },
     {
       "id": 286,
       "name": "Belloumi",
       "code": 540324,
       "position": 3,
-      "now_cost": 50,
-      "transfers_in": 215792,
-      "transfers_out": 13833,
+      "now_cost": 51,
+      "transfers_in": 219051,
+      "transfers_out": 14914,
       "selected_by_percent": "3.2"
     },
     {
@@ -13072,8 +13072,8 @@
       "code": 475168,
       "position": 4,
       "now_cost": 78,
-      "transfers_in": 196667,
-      "transfers_out": 15991,
+      "transfers_in": 198968,
+      "transfers_out": 16407,
       "selected_by_percent": "75.4"
     },
     {
@@ -13082,8 +13082,8 @@
       "code": 199798,
       "position": 2,
       "now_cost": 45,
-      "transfers_in": 185084,
-      "transfers_out": 29902,
+      "transfers_in": 188712,
+      "transfers_out": 30575,
       "selected_by_percent": "18.1"
     },
     {
@@ -13092,8 +13092,8 @@
       "code": 201658,
       "position": 3,
       "now_cost": 61,
-      "transfers_in": 183780,
-      "transfers_out": 23557,
+      "transfers_in": 186634,
+      "transfers_out": 24778,
       "selected_by_percent": "5.5"
     },
     {
@@ -13102,8 +13102,8 @@
       "code": 184029,
       "position": 3,
       "now_cost": 67,
-      "transfers_in": 183715,
-      "transfers_out": 64710,
+      "transfers_in": 186565,
+      "transfers_out": 66306,
       "selected_by_percent": "19.4"
     },
     {
@@ -13112,9 +13112,9 @@
       "code": 17761,
       "position": 2,
       "now_cost": 61,
-      "transfers_in": 166906,
-      "transfers_out": 23010,
-      "selected_by_percent": "13.2"
+      "transfers_in": 168834,
+      "transfers_out": 24104,
+      "selected_by_percent": "13.3"
     },
     {
       "id": 1,
@@ -13122,9 +13122,9 @@
       "code": 154561,
       "position": 1,
       "now_cost": 60,
-      "transfers_in": 163137,
-      "transfers_out": 29469,
-      "selected_by_percent": "40.5"
+      "transfers_in": 166213,
+      "transfers_out": 30159,
+      "selected_by_percent": "40.6"
     },
     {
       "id": 8,
@@ -13132,8 +13132,8 @@
       "code": 466075,
       "position": 2,
       "now_cost": 58,
-      "transfers_in": 156480,
-      "transfers_out": 37519,
+      "transfers_in": 158778,
+      "transfers_out": 38355,
       "selected_by_percent": "50.1"
     },
     {
@@ -13142,8 +13142,8 @@
       "code": 146426,
       "position": 2,
       "now_cost": 42,
-      "transfers_in": 153303,
-      "transfers_out": 46880,
+      "transfers_in": 154941,
+      "transfers_out": 47827,
       "selected_by_percent": "13.7"
     },
     {
@@ -13152,9 +13152,19 @@
       "code": 177815,
       "position": 4,
       "now_cost": 60,
-      "transfers_in": 145422,
-      "transfers_out": 88976,
+      "transfers_in": 149517,
+      "transfers_out": 90091,
       "selected_by_percent": "22.7"
+    },
+    {
+      "id": 330,
+      "name": "Bogle",
+      "code": 226182,
+      "position": 2,
+      "now_cost": 45,
+      "transfers_in": 122262,
+      "transfers_out": 9488,
+      "selected_by_percent": "3.3"
     },
     {
       "id": 464,
@@ -13162,8 +13172,8 @@
       "code": 216646,
       "position": 4,
       "now_cost": 62,
-      "transfers_in": 120031,
-      "transfers_out": 110670,
+      "transfers_in": 121610,
+      "transfers_out": 113087,
       "selected_by_percent": "18.2"
     },
     {
@@ -13172,19 +13182,9 @@
       "code": 455084,
       "position": 2,
       "now_cost": 40,
-      "transfers_in": 118913,
-      "transfers_out": 14670,
+      "transfers_in": 121492,
+      "transfers_out": 15132,
       "selected_by_percent": "6.2"
-    },
-    {
-      "id": 330,
-      "name": "Bogle",
-      "code": 226182,
-      "position": 2,
-      "now_cost": 45,
-      "transfers_in": 117246,
-      "transfers_out": 9167,
-      "selected_by_percent": "3.3"
     },
     {
       "id": 449,
@@ -13192,8 +13192,8 @@
       "code": 487838,
       "position": 2,
       "now_cost": 52,
-      "transfers_in": 110604,
-      "transfers_out": 60849,
+      "transfers_in": 112000,
+      "transfers_out": 62307,
       "selected_by_percent": "14.4"
     }
   ],
@@ -13219,6 +13219,26 @@
       "now_cost": 61,
       "change": 1,
       "selected_by_percent": "5.5"
+    },
+    {
+      "id": 94,
+      "name": "Schade",
+      "code": 513418,
+      "position": 3,
+      "team": "BRE",
+      "now_cost": 61,
+      "change": 1,
+      "selected_by_percent": "6.2"
+    },
+    {
+      "id": 124,
+      "name": "Groß",
+      "code": 60307,
+      "position": 3,
+      "team": "BHA",
+      "now_cost": 57,
+      "change": 1,
+      "selected_by_percent": "19.0"
     },
     {
       "id": 40,
@@ -13248,7 +13268,17 @@
       "team": "EVE",
       "now_cost": 61,
       "change": 1,
-      "selected_by_percent": "13.2"
+      "selected_by_percent": "13.3"
+    },
+    {
+      "id": 286,
+      "name": "Belloumi",
+      "code": 540324,
+      "position": 3,
+      "team": "HUL",
+      "now_cost": 51,
+      "change": 1,
+      "selected_by_percent": "3.2"
     },
     {
       "id": 391,
@@ -13258,10 +13288,30 @@
       "team": "MCI",
       "now_cost": 57,
       "change": 1,
-      "selected_by_percent": "23.2"
+      "selected_by_percent": "23.3"
+    },
+    {
+      "id": 480,
+      "name": "Gibbs-White",
+      "code": 222531,
+      "position": 3,
+      "team": "NFO",
+      "now_cost": 80,
+      "change": 1,
+      "selected_by_percent": "12.3"
     }
   ],
   "priceFallers": [
+    {
+      "id": 11,
+      "name": "Mosquera",
+      "code": 500040,
+      "position": 2,
+      "team": "ARS",
+      "now_cost": 53,
+      "change": -1,
+      "selected_by_percent": "2.0"
+    },
     {
       "id": 16,
       "name": "Madueke",
@@ -13291,6 +13341,16 @@
       "now_cost": 67,
       "change": -1,
       "selected_by_percent": "1.8"
+    },
+    {
+      "id": 32,
+      "name": "Cash",
+      "code": 199796,
+      "position": 2,
+      "team": "AVL",
+      "now_cost": 44,
+      "change": -1,
+      "selected_by_percent": "5.3"
     },
     {
       "id": 48,
@@ -13323,6 +13383,16 @@
       "selected_by_percent": "0.2"
     },
     {
+      "id": 618,
+      "name": "Goretzka",
+      "code": 119090,
+      "position": 3,
+      "team": "AVL",
+      "now_cost": 59,
+      "change": -1,
+      "selected_by_percent": "0.0"
+    },
+    {
       "id": 63,
       "name": "Milosavljević",
       "code": 620487,
@@ -13331,36 +13401,6 @@
       "now_cost": 49,
       "change": -1,
       "selected_by_percent": "0.0"
-    },
-    {
-      "id": 573,
-      "name": "Sanchez",
-      "code": 494928,
-      "position": 2,
-      "team": "BOU",
-      "now_cost": 44,
-      "change": -1,
-      "selected_by_percent": "0.2"
-    },
-    {
-      "id": 89,
-      "name": "Henry",
-      "code": 194010,
-      "position": 2,
-      "team": "BRE",
-      "now_cost": 44,
-      "change": -1,
-      "selected_by_percent": "0.2"
-    },
-    {
-      "id": 102,
-      "name": "Yarmoliuk",
-      "code": 508395,
-      "position": 3,
-      "team": "BRE",
-      "now_cost": 48,
-      "change": -1,
-      "selected_by_percent": "0.7"
     }
   ],
   "dreamTeam": [
@@ -13454,5 +13494,5 @@
     }
   ],
   "dreamTeamGW": 4,
-  "generated_at": "2026-09-15T22:04:25.524Z"
+  "generated_at": "2026-09-16T01:16:39.433Z"
 }
