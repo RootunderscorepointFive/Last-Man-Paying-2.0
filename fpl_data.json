@@ -4,25 +4,25 @@
     {
       "manager": "Nkosi The Chef",
       "team": "Mainoo Business",
-      "pts": 360,
+      "pts": 361,
       "bottomApps": 0
     },
     {
       "manager": "Nhlakanipho Ntombela",
       "team": "iam_ntombela",
-      "pts": 337,
+      "pts": 338,
       "bottomApps": 0
     },
     {
       "manager": "Msizi Bhengu",
       "team": "Invincible United",
-      "pts": 337,
+      "pts": 336,
       "bottomApps": 0
     },
     {
       "manager": "Bheka Bhengu",
       "team": "Khuphuka FC",
-      "pts": 331,
+      "pts": 333,
       "bottomApps": 0
     },
     {
@@ -40,7 +40,7 @@
     {
       "manager": "Minenhle Khumalo",
       "team": "The Wirtz Edge",
-      "pts": 298,
+      "pts": 300,
       "bottomApps": 0
     },
     {
@@ -58,7 +58,7 @@
     {
       "manager": "President Gamede",
       "team": "Los Primeros",
-      "pts": 282,
+      "pts": 284,
       "bottomApps": 0
     },
     {
@@ -74,21 +74,21 @@
       "bottomApps": 0
     },
     {
+      "manager": "Lethu Mkhwanazi",
+      "team": "You Know Fernandes",
+      "pts": 278,
+      "bottomApps": 0
+    },
+    {
       "manager": "Siyanda Ndaba",
       "team": "Amad-ness",
       "pts": 277,
       "bottomApps": 0
     },
     {
-      "manager": "Lethu Mkhwanazi",
-      "team": "You Know Fernandes",
-      "pts": 276,
-      "bottomApps": 0
-    },
-    {
       "manager": "Kudzai Kupeta",
       "team": "Champions FC",
-      "pts": 270,
+      "pts": 272,
       "bottomApps": 0
     },
     {
@@ -100,13 +100,13 @@
     {
       "manager": "Mhlengi Kunene",
       "team": "Hidden Hills",
-      "pts": 261,
+      "pts": 263,
       "bottomApps": 0
     },
     {
       "manager": "Learnmore Ntshangase",
       "team": "Cash n Carry.ck",
-      "pts": 257,
+      "pts": 258,
       "bottomApps": 0
     },
     {
@@ -118,7 +118,7 @@
     {
       "manager": "Kwazi Mthembu",
       "team": "Brothers xGaramazov",
-      "pts": 243,
+      "pts": 244,
       "bottomApps": 0
     }
   ],
@@ -132,7 +132,7 @@
         117,
         44,
         98,
-        32
+        33
       ],
       "gwHits": [
         0,
@@ -155,7 +155,7 @@
           "event": 3
         }
       ],
-      "total": 360,
+      "total": 361,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -168,7 +168,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "41.6",
+          "ownership": "41.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -204,7 +204,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "26.0",
+          "ownership": "26.1",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -276,9 +276,9 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 52,
-          "ownership": "15.2",
+          "ownership": "15.3",
           "priceChange": 0,
-          "live_pts": 12,
+          "live_pts": 13,
           "minutes": 90,
           "started": true,
           "is_effective_captain": false,
@@ -293,7 +293,7 @@
           "stats": {
             "goals": 1,
             "assists": 0,
-            "bonus": 2,
+            "bonus": 3,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -312,7 +312,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "22.8",
+          "ownership": "23.4",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -420,7 +420,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 97,
-          "ownership": "26.9",
+          "ownership": "26.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -456,7 +456,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -528,7 +528,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -600,7 +600,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 51,
-          "ownership": "4.4",
+          "ownership": "4.5",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 82,
@@ -672,9 +672,9 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 49,
-          "ownership": "25.5",
+          "ownership": "25.6",
           "priceChange": 0,
-          "live_pts": 5,
+          "live_pts": 6,
           "minutes": 90,
           "started": false,
           "is_effective_captain": false,
@@ -689,7 +689,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 0,
+            "bonus": 1,
             "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
@@ -726,7 +726,7 @@
         122,
         44,
         79,
-        20
+        21
       ],
       "gwHits": [
         0,
@@ -749,7 +749,7 @@
           "event": 4
         }
       ],
-      "total": 337,
+      "total": 338,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -870,9 +870,9 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 52,
-          "ownership": "15.2",
+          "ownership": "15.3",
           "priceChange": 0,
-          "live_pts": 12,
+          "live_pts": 13,
           "minutes": 90,
           "started": true,
           "is_effective_captain": false,
@@ -887,7 +887,7 @@
           "stats": {
             "goals": 1,
             "assists": 0,
-            "bonus": 2,
+            "bonus": 3,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -978,7 +978,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 97,
-          "ownership": "26.9",
+          "ownership": "26.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -1050,7 +1050,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -1086,7 +1086,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -1160,7 +1160,7 @@
           "cost": 45,
           "ownership": "21.7",
           "priceChange": 0,
-          "live_pts": 7,
+          "live_pts": 6,
           "minutes": 90,
           "started": false,
           "is_effective_captain": false,
@@ -1175,7 +1175,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
@@ -1230,9 +1230,9 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 49,
-          "ownership": "25.5",
+          "ownership": "25.6",
           "priceChange": 0,
-          "live_pts": 5,
+          "live_pts": 6,
           "minutes": 90,
           "started": false,
           "is_effective_captain": false,
@@ -1247,7 +1247,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 0,
+            "bonus": 1,
             "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
@@ -1320,7 +1320,7 @@
         113,
         52,
         86,
-        30
+        29
       ],
       "gwHits": [
         0,
@@ -1338,7 +1338,7 @@
           "event": 3
         }
       ],
-      "total": 337,
+      "total": 336,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -1353,7 +1353,7 @@
           "cost": 45,
           "ownership": "21.7",
           "priceChange": 0,
-          "live_pts": 7,
+          "live_pts": 6,
           "minutes": 90,
           "started": true,
           "is_effective_captain": false,
@@ -1368,7 +1368,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
@@ -1426,7 +1426,7 @@
           "ownership": "9.1",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -1440,7 +1440,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -1459,7 +1459,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "6.1",
+          "ownership": "6.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -1495,7 +1495,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "27.9",
+          "ownership": "27.8",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -1531,7 +1531,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "22.8",
+          "ownership": "23.4",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -1567,7 +1567,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 97,
-          "ownership": "26.9",
+          "ownership": "26.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -1603,7 +1603,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 51,
-          "ownership": "4.4",
+          "ownership": "4.5",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 82,
@@ -1639,7 +1639,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -1711,7 +1711,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -1897,7 +1897,7 @@
         5,
         8,
         4,
-        4
+        5
       ]
     },
     {
@@ -1909,7 +1909,7 @@
         113,
         45,
         79,
-        28
+        30
       ],
       "gwHits": [
         0,
@@ -1932,7 +1932,7 @@
           "event": 3
         }
       ],
-      "total": 331,
+      "total": 333,
       "currentCaptain": "Gibbs-White",
       "activeChip": null,
       "currentPicks": [
@@ -2089,7 +2089,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 97,
-          "ownership": "26.9",
+          "ownership": "26.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -2125,7 +2125,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "22.8",
+          "ownership": "23.4",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -2164,7 +2164,7 @@
           "ownership": "16.0",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": true,
           "effective_multiplier": 2,
@@ -2178,7 +2178,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -2233,7 +2233,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -2269,7 +2269,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -2343,7 +2343,7 @@
           "cost": 45,
           "ownership": "21.7",
           "priceChange": 0,
-          "live_pts": 7,
+          "live_pts": 6,
           "minutes": 90,
           "started": false,
           "is_effective_captain": false,
@@ -2358,7 +2358,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
@@ -2491,7 +2491,7 @@
         4,
         13,
         8,
-        5
+        4
       ]
     },
     {
@@ -2636,7 +2636,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "26.0",
+          "ownership": "26.1",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -2672,7 +2672,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 97,
-          "ownership": "26.9",
+          "ownership": "26.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -2780,7 +2780,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "22.8",
+          "ownership": "23.4",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -2852,7 +2852,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -2888,7 +2888,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -2926,7 +2926,7 @@
           "cost": 45,
           "ownership": "21.7",
           "priceChange": 0,
-          "live_pts": 7,
+          "live_pts": 6,
           "minutes": 90,
           "started": false,
           "is_effective_captain": false,
@@ -2941,7 +2941,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
@@ -2962,8 +2962,8 @@
           "cost": 40,
           "ownership": "8.6",
           "priceChange": 0,
-          "live_pts": 1,
-          "minutes": 35,
+          "live_pts": 9,
+          "minutes": 90,
           "started": false,
           "is_effective_captain": false,
           "effective_multiplier": 0,
@@ -2977,8 +2977,8 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
+            "bonus": 1,
+            "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
             "penMissed": 0,
@@ -2996,7 +2996,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "10.8",
+          "ownership": "10.7",
           "priceChange": -1,
           "live_pts": 0,
           "minutes": 21,
@@ -3111,7 +3111,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "41.6",
+          "ownership": "41.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -3147,7 +3147,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "18.6",
+          "ownership": "18.5",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -3363,7 +3363,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 72,
-          "ownership": "12.8",
+          "ownership": "12.7",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -3399,7 +3399,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -3435,7 +3435,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -3669,7 +3669,7 @@
         72,
         72,
         86,
-        18
+        20
       ],
       "gwHits": [
         0,
@@ -3687,7 +3687,7 @@
           "event": 3
         }
       ],
-      "total": 298,
+      "total": 300,
       "currentCaptain": "João Pedro",
       "activeChip": null,
       "currentPicks": [
@@ -3810,8 +3810,8 @@
           "cost": 55,
           "ownership": "2.1",
           "priceChange": 0,
-          "live_pts": 2,
-          "minutes": 35,
+          "live_pts": 4,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -3825,7 +3825,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -3880,7 +3880,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "8.3",
+          "ownership": "8.5",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -3916,7 +3916,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 64,
-          "ownership": "13.1",
+          "ownership": "13.0",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 72,
@@ -3988,7 +3988,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -4024,7 +4024,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -4204,7 +4204,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 43,
-          "ownership": "8.2",
+          "ownership": "8.1",
           "priceChange": -1,
           "live_pts": 0,
           "minutes": 0,
@@ -4397,7 +4397,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "14.3",
+          "ownership": "14.4",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -4541,7 +4541,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "10.8",
+          "ownership": "10.7",
           "priceChange": -1,
           "live_pts": 0,
           "minutes": 21,
@@ -4613,7 +4613,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -4649,7 +4649,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -4721,7 +4721,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 43,
-          "ownership": "8.2",
+          "ownership": "8.1",
           "priceChange": -1,
           "live_pts": 0,
           "minutes": 0,
@@ -4872,7 +4872,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "41.6",
+          "ownership": "41.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -5052,7 +5052,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 64,
-          "ownership": "13.1",
+          "ownership": "13.0",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 72,
@@ -5160,7 +5160,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -5232,7 +5232,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -5430,7 +5430,7 @@
         117,
         34,
         53,
-        36
+        38
       ],
       "gwHits": [
         0,
@@ -5453,7 +5453,7 @@
           "event": 5
         }
       ],
-      "total": 282,
+      "total": 284,
       "currentCaptain": "Haaland",
       "activeChip": "freehit",
       "currentPicks": [
@@ -5505,7 +5505,7 @@
           "ownership": "9.1",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -5519,7 +5519,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -5538,9 +5538,9 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 52,
-          "ownership": "15.2",
+          "ownership": "15.3",
           "priceChange": 0,
-          "live_pts": 12,
+          "live_pts": 13,
           "minutes": 90,
           "started": true,
           "is_effective_captain": false,
@@ -5555,7 +5555,7 @@
           "stats": {
             "goals": 1,
             "assists": 0,
-            "bonus": 2,
+            "bonus": 3,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -5610,7 +5610,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 97,
-          "ownership": "26.9",
+          "ownership": "26.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -5649,7 +5649,7 @@
           "ownership": "16.0",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -5663,7 +5663,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -5790,7 +5790,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -5826,7 +5826,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "7.9",
+          "ownership": "8.0",
           "priceChange": 0,
           "live_pts": 6,
           "minutes": 90,
@@ -6055,7 +6055,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "11.6",
+          "ownership": "11.7",
           "priceChange": 0,
           "live_pts": 6,
           "minutes": 90,
@@ -6091,7 +6091,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "26.0",
+          "ownership": "26.1",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -6127,7 +6127,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "14.3",
+          "ownership": "14.4",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -6199,7 +6199,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "22.8",
+          "ownership": "23.4",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -6343,7 +6343,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 72,
-          "ownership": "12.8",
+          "ownership": "12.7",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -6379,7 +6379,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -6487,7 +6487,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -6525,8 +6525,8 @@
           "cost": 40,
           "ownership": "8.6",
           "priceChange": 0,
-          "live_pts": 1,
-          "minutes": 35,
+          "live_pts": 9,
+          "minutes": 90,
           "started": false,
           "is_effective_captain": false,
           "effective_multiplier": 0,
@@ -6540,8 +6540,8 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
+            "bonus": 1,
+            "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
             "penMissed": 0,
@@ -6638,7 +6638,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "41.6",
+          "ownership": "41.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -6962,7 +6962,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -6998,7 +6998,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -7070,7 +7070,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 43,
-          "ownership": "8.2",
+          "ownership": "8.1",
           "priceChange": -1,
           "live_pts": 0,
           "minutes": 0,
@@ -7106,7 +7106,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 44,
-          "ownership": "7.7",
+          "ownership": "7.6",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -7184,596 +7184,7 @@
         9,
         6,
         9,
-        15
-      ]
-    },
-    {
-      "team": "Amad-ness",
-      "manager": "Siyanda Ndaba",
-      "entry": 6934465,
-      "gwPts": [
-        40,
-        89,
-        63,
-        62,
-        23
-      ],
-      "gwHits": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "benchTotal": 22,
-      "transfersTotal": 3,
-      "chips": [
-        {
-          "name": "wildcard",
-          "time": "2026-09-18T13:53:50.758050Z",
-          "event": 5
-        }
-      ],
-      "total": 277,
-      "currentCaptain": "Gibbs-White",
-      "activeChip": "wildcard",
-      "currentPicks": [
-        {
-          "id": 384,
-          "name": "Donnarumma",
-          "position": 1,
-          "code": 204936,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 55,
-          "ownership": "7.8",
-          "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 0,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-09-20T13:00:00Z",
-            "started": false,
-            "finished": false,
-            "opponent": "SUN",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 449,
-          "name": "Hall",
-          "position": 2,
-          "code": 487838,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 52,
-          "ownership": "15.2",
-          "priceChange": 0,
-          "live_pts": 12,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-09-19T14:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "HUL",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 1,
-            "assists": 0,
-            "bonus": 2,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 8,
-          "name": "Calafiori",
-          "position": 2,
-          "code": 466075,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 58,
-          "ownership": "50.7",
-          "priceChange": 0,
-          "live_pts": 1,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-09-19T14:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "BHA",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 282,
-          "name": "Giles",
-          "position": 2,
-          "code": 232351,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "2.9",
-          "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-09-19T14:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "NEW",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 1,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 480,
-          "name": "Gibbs-White",
-          "position": 3,
-          "code": 222531,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 80,
-          "ownership": "16.0",
-          "priceChange": 0,
-          "live_pts": 2,
-          "minutes": 35,
-          "started": true,
-          "is_effective_captain": true,
-          "effective_multiplier": 2,
-          "fixture": {
-            "kickoff_time": "2026-09-19T16:30:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "COV",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 1,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 40,
-          "name": "Rogers",
-          "position": 3,
-          "code": 244850,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 77,
-          "ownership": "40.1",
-          "priceChange": 0,
-          "live_pts": 2,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-09-18T19:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "BRE",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 154,
-          "name": "Palmer",
-          "position": 3,
-          "code": 244851,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 97,
-          "ownership": "26.9",
-          "priceChange": 0,
-          "live_pts": 2,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-09-18T19:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "BRE",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 397,
-          "name": "Semenyo",
-          "position": 3,
-          "code": 437730,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 84,
-          "ownership": "14.6",
-          "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 0,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-09-20T13:00:00Z",
-            "started": false,
-            "finished": false,
-            "opponent": "SUN",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 346,
-          "name": "Calvert-Lewin",
-          "position": 4,
-          "code": 177815,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "25.7",
-          "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 0,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-09-20T13:00:00Z",
-            "started": false,
-            "finished": false,
-            "opponent": "CRY",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 156,
-          "ownership": "73.3",
-          "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 0,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-09-20T13:00:00Z",
-            "started": false,
-            "finished": false,
-            "opponent": "SUN",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 167,
-          "name": "Delap",
-          "position": 4,
-          "code": 463034,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 56,
-          "ownership": "2.9",
-          "priceChange": 1,
-          "live_pts": 4,
-          "minutes": 35,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-09-19T16:30:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "COV",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 3,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 109,
-          "name": "Verbruggen",
-          "position": 1,
-          "code": 489639,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "21.7",
-          "priceChange": 0,
-          "live_pts": 7,
-          "minutes": 90,
-          "started": false,
-          "is_effective_captain": false,
-          "effective_multiplier": 0,
-          "fixture": {
-            "kickoff_time": "2026-09-19T14:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "ARS",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 1,
-            "cleanSheet": true,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 2
-          }
-        },
-        {
-          "id": 453,
-          "name": "Barnes",
-          "position": 3,
-          "code": 201666,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 61,
-          "ownership": "4.6",
-          "priceChange": 1,
-          "live_pts": 9,
-          "minutes": 90,
-          "started": false,
-          "is_effective_captain": false,
-          "effective_multiplier": 0,
-          "fixture": {
-            "kickoff_time": "2026-09-19T14:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "HUL",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 2,
-            "bonus": 1,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 259,
-          "name": "Diop",
-          "position": 2,
-          "code": 219924,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "13.2",
-          "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 90,
-          "started": false,
-          "is_effective_captain": false,
-          "effective_multiplier": 0,
-          "fixture": {
-            "kickoff_time": "2026-09-19T14:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "EVE",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 175,
-          "name": "van Ewijk",
-          "position": 2,
-          "code": 451284,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "9.4",
-          "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 0,
-          "started": false,
-          "is_effective_captain": false,
-          "effective_multiplier": 0,
-          "fixture": {
-            "kickoff_time": "2026-09-19T16:30:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "NFO",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        }
-      ],
-      "squadValue": 1001,
-      "automaticSubs": [],
-      "gwRanks": [
-        18,
-        15,
-        12,
-        14,
-        13
-      ],
-      "weeklyRanks": [
-        18,
-        12,
-        5,
-        16,
-        10
+        16
       ]
     },
     {
@@ -7785,7 +7196,7 @@
         98,
         39,
         59,
-        25
+        27
       ],
       "gwHits": [
         0,
@@ -7803,7 +7214,7 @@
           "event": 5
         }
       ],
-      "total": 276,
+      "total": 278,
       "currentCaptain": "Gibbs-White",
       "activeChip": "wildcard",
       "currentPicks": [
@@ -7816,7 +7227,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "41.6",
+          "ownership": "41.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -8035,7 +7446,7 @@
           "ownership": "16.0",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": true,
           "effective_multiplier": 2,
@@ -8049,7 +7460,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -8068,7 +7479,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "22.8",
+          "ownership": "23.4",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -8140,7 +7551,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -8353,9 +7764,9 @@
       "gwRanks": [
         7,
         8,
-        13,
+        12,
         15,
-        14
+        13
       ],
       "weeklyRanks": [
         7,
@@ -8363,6 +7774,595 @@
         19,
         17,
         9
+      ]
+    },
+    {
+      "team": "Amad-ness",
+      "manager": "Siyanda Ndaba",
+      "entry": 6934465,
+      "gwPts": [
+        40,
+        89,
+        63,
+        62,
+        23
+      ],
+      "gwHits": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "benchTotal": 22,
+      "transfersTotal": 3,
+      "chips": [
+        {
+          "name": "wildcard",
+          "time": "2026-09-18T13:53:50.758050Z",
+          "event": 5
+        }
+      ],
+      "total": 277,
+      "currentCaptain": "Gibbs-White",
+      "activeChip": "wildcard",
+      "currentPicks": [
+        {
+          "id": 384,
+          "name": "Donnarumma",
+          "position": 1,
+          "code": 204936,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 55,
+          "ownership": "7.8",
+          "priceChange": 0,
+          "live_pts": 0,
+          "minutes": 0,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-09-20T13:00:00Z",
+            "started": false,
+            "finished": false,
+            "opponent": "SUN",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 449,
+          "name": "Hall",
+          "position": 2,
+          "code": 487838,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 52,
+          "ownership": "15.3",
+          "priceChange": 0,
+          "live_pts": 13,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-09-19T14:00:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "HUL",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 1,
+            "assists": 0,
+            "bonus": 3,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 8,
+          "name": "Calafiori",
+          "position": 2,
+          "code": 466075,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 58,
+          "ownership": "50.7",
+          "priceChange": 0,
+          "live_pts": 1,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-09-19T14:00:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "BHA",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 282,
+          "name": "Giles",
+          "position": 2,
+          "code": 232351,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "2.9",
+          "priceChange": 0,
+          "live_pts": 0,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-09-19T14:00:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "NEW",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 1,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 480,
+          "name": "Gibbs-White",
+          "position": 3,
+          "code": 222531,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false,
+          "cost": 80,
+          "ownership": "16.0",
+          "priceChange": 0,
+          "live_pts": 2,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": true,
+          "effective_multiplier": 2,
+          "fixture": {
+            "kickoff_time": "2026-09-19T16:30:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "COV",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 40,
+          "name": "Rogers",
+          "position": 3,
+          "code": 244850,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 77,
+          "ownership": "40.1",
+          "priceChange": 0,
+          "live_pts": 2,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-09-18T19:00:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "BRE",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 154,
+          "name": "Palmer",
+          "position": 3,
+          "code": 244851,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true,
+          "cost": 97,
+          "ownership": "26.8",
+          "priceChange": 0,
+          "live_pts": 2,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-09-18T19:00:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "BRE",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 397,
+          "name": "Semenyo",
+          "position": 3,
+          "code": 437730,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 84,
+          "ownership": "14.6",
+          "priceChange": 0,
+          "live_pts": 0,
+          "minutes": 0,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-09-20T13:00:00Z",
+            "started": false,
+            "finished": false,
+            "opponent": "SUN",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 346,
+          "name": "Calvert-Lewin",
+          "position": 4,
+          "code": 177815,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "25.7",
+          "priceChange": 0,
+          "live_pts": 0,
+          "minutes": 0,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-09-20T13:00:00Z",
+            "started": false,
+            "finished": false,
+            "opponent": "CRY",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 411,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 156,
+          "ownership": "73.4",
+          "priceChange": 0,
+          "live_pts": 0,
+          "minutes": 0,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-09-20T13:00:00Z",
+            "started": false,
+            "finished": false,
+            "opponent": "SUN",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 167,
+          "name": "Delap",
+          "position": 4,
+          "code": 463034,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 56,
+          "ownership": "2.9",
+          "priceChange": 1,
+          "live_pts": 1,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-09-19T16:30:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "COV",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 1,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 109,
+          "name": "Verbruggen",
+          "position": 1,
+          "code": 489639,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "21.7",
+          "priceChange": 0,
+          "live_pts": 6,
+          "minutes": 90,
+          "started": false,
+          "is_effective_captain": false,
+          "effective_multiplier": 0,
+          "fixture": {
+            "kickoff_time": "2026-09-19T14:00:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "ARS",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": true,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 2
+          }
+        },
+        {
+          "id": 453,
+          "name": "Barnes",
+          "position": 3,
+          "code": 201666,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 61,
+          "ownership": "4.7",
+          "priceChange": 1,
+          "live_pts": 9,
+          "minutes": 90,
+          "started": false,
+          "is_effective_captain": false,
+          "effective_multiplier": 0,
+          "fixture": {
+            "kickoff_time": "2026-09-19T14:00:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "HUL",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 2,
+            "bonus": 1,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 259,
+          "name": "Diop",
+          "position": 2,
+          "code": 219924,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "13.2",
+          "priceChange": 0,
+          "live_pts": 4,
+          "minutes": 90,
+          "started": false,
+          "is_effective_captain": false,
+          "effective_multiplier": 0,
+          "fixture": {
+            "kickoff_time": "2026-09-19T14:00:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "EVE",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 175,
+          "name": "van Ewijk",
+          "position": 2,
+          "code": 451284,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "9.4",
+          "priceChange": 0,
+          "live_pts": 0,
+          "minutes": 0,
+          "started": false,
+          "is_effective_captain": false,
+          "effective_multiplier": 0,
+          "fixture": {
+            "kickoff_time": "2026-09-19T16:30:00Z",
+            "started": true,
+            "finished": false,
+            "opponent": "NFO",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        }
+      ],
+      "squadValue": 1001,
+      "automaticSubs": [],
+      "gwRanks": [
+        18,
+        15,
+        13,
+        14,
+        14
+      ],
+      "weeklyRanks": [
+        18,
+        12,
+        5,
+        16,
+        10
       ]
     },
     {
@@ -8374,7 +8374,7 @@
         79,
         41,
         91,
-        4
+        6
       ],
       "gwHits": [
         0,
@@ -8392,7 +8392,7 @@
           "event": 3
         }
       ],
-      "total": 270,
+      "total": 272,
       "currentCaptain": "Gibbs-White",
       "activeChip": null,
       "currentPicks": [
@@ -8405,7 +8405,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 60,
-          "ownership": "41.6",
+          "ownership": "41.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -8549,7 +8549,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "27.9",
+          "ownership": "27.8",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -8624,7 +8624,7 @@
           "ownership": "16.0",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": true,
           "effective_multiplier": 2,
@@ -8638,7 +8638,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -8729,7 +8729,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -8765,7 +8765,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -8837,7 +8837,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "22.8",
+          "ownership": "23.4",
           "priceChange": 0,
           "live_pts": 14,
           "minutes": 90,
@@ -9001,7 +9001,7 @@
           "cost": 45,
           "ownership": "21.7",
           "priceChange": 0,
-          "live_pts": 7,
+          "live_pts": 6,
           "minutes": 90,
           "started": true,
           "is_effective_captain": false,
@@ -9016,7 +9016,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
@@ -9035,7 +9035,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "26.0",
+          "ownership": "26.1",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -9143,7 +9143,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 51,
-          "ownership": "4.4",
+          "ownership": "4.5",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 82,
@@ -9290,7 +9290,7 @@
           "ownership": "16.0",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -9304,7 +9304,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -9323,7 +9323,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 55,
-          "ownership": "1.4",
+          "ownership": "1.6",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 75,
@@ -9359,7 +9359,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -9431,7 +9431,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "7.9",
+          "ownership": "8.0",
           "priceChange": 0,
           "live_pts": 6,
           "minutes": 90,
@@ -9557,7 +9557,7 @@
         70,
         51,
         70,
-        18
+        20
       ],
       "gwHits": [
         0,
@@ -9575,7 +9575,7 @@
           "event": 3
         }
       ],
-      "total": 261,
+      "total": 263,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -9588,7 +9588,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "41.6",
+          "ownership": "41.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -9624,9 +9624,9 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 52,
-          "ownership": "15.2",
+          "ownership": "15.3",
           "priceChange": 0,
-          "live_pts": 12,
+          "live_pts": 13,
           "minutes": 90,
           "started": true,
           "is_effective_captain": false,
@@ -9641,7 +9641,7 @@
           "stats": {
             "goals": 1,
             "assists": 0,
-            "bonus": 2,
+            "bonus": 3,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -9660,7 +9660,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 57,
-          "ownership": "26.0",
+          "ownership": "26.1",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -9699,7 +9699,7 @@
           "ownership": "9.1",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -9713,7 +9713,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -9732,7 +9732,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "10.8",
+          "ownership": "10.7",
           "priceChange": -1,
           "live_pts": 0,
           "minutes": 21,
@@ -9771,7 +9771,7 @@
           "ownership": "16.0",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": true,
           "effective_multiplier": 2,
@@ -9785,7 +9785,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -9804,7 +9804,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 97,
-          "ownership": "26.9",
+          "ownership": "26.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -9912,7 +9912,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -9948,7 +9948,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -9984,7 +9984,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "11.6",
+          "ownership": "11.7",
           "priceChange": 0,
           "live_pts": 6,
           "minutes": 90,
@@ -10092,7 +10092,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "5.6",
+          "ownership": "5.5",
           "priceChange": -1,
           "live_pts": 0,
           "minutes": 0,
@@ -10146,7 +10146,7 @@
         92,
         51,
         56,
-        2
+        3
       ],
       "gwHits": [
         0,
@@ -10158,7 +10158,7 @@
       "benchTotal": 48,
       "transfersTotal": 2,
       "chips": [],
-      "total": 257,
+      "total": 258,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -10171,7 +10171,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 49,
-          "ownership": "10.3",
+          "ownership": "10.2",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -10207,7 +10207,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "18.6",
+          "ownership": "18.5",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -10426,7 +10426,7 @@
           "ownership": "16.0",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -10440,7 +10440,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -10495,7 +10495,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -10531,7 +10531,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -10639,7 +10639,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "10.8",
+          "ownership": "10.7",
           "priceChange": -1,
           "live_pts": 0,
           "minutes": 21,
@@ -10765,7 +10765,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "41.6",
+          "ownership": "41.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -10801,7 +10801,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "18.6",
+          "ownership": "18.5",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -11125,7 +11125,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 78,
-          "ownership": "68.1",
+          "ownership": "68.0",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -11323,7 +11323,7 @@
         81,
         67,
         57,
-        7
+        8
       ],
       "gwHits": [
         0,
@@ -11341,7 +11341,7 @@
           "event": 3
         }
       ],
-      "total": 243,
+      "total": 244,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -11354,7 +11354,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 60,
-          "ownership": "41.6",
+          "ownership": "41.7",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -11573,7 +11573,7 @@
           "ownership": "16.0",
           "priceChange": 0,
           "live_pts": 2,
-          "minutes": 35,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -11587,7 +11587,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 1,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -11606,7 +11606,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 78,
-          "ownership": "27.9",
+          "ownership": "27.8",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -11642,7 +11642,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 156,
-          "ownership": "73.3",
+          "ownership": "73.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -11900,7 +11900,7 @@
         15,
         4,
         18,
-        16
+        15
       ]
     }
   ],
@@ -12062,27 +12062,27 @@
       "c": "#5c7cfa"
     },
     {
-      "f": "Siyanda Ndaba",
-      "s": "Siyanda",
-      "t": "Amad-ness",
-      "r": [
-        18,
-        15,
-        12,
-        14,
-        13
-      ],
-      "c": "#c9f542"
-    },
-    {
       "f": "Lethu Mkhwanazi",
       "s": "Lethu",
       "t": "You Know Fernandes",
       "r": [
         7,
         8,
-        13,
+        12,
         15,
+        13
+      ],
+      "c": "#c9f542"
+    },
+    {
+      "f": "Siyanda Ndaba",
+      "s": "Siyanda",
+      "t": "Amad-ness",
+      "r": [
+        18,
+        15,
+        13,
+        14,
         14
       ],
       "c": "#da77f2"
@@ -12173,7 +12173,7 @@
       "code": 223094,
       "position": 4,
       "cost": 156,
-      "fpl_pct": "73.3",
+      "fpl_pct": "73.4",
       "count": 19
     },
     {
@@ -12191,7 +12191,7 @@
       "code": 475168,
       "position": 4,
       "cost": 78,
-      "fpl_pct": "68.1",
+      "fpl_pct": "68.0",
       "count": 15
     },
     {
@@ -12218,7 +12218,7 @@
       "code": 154561,
       "position": 1,
       "cost": 60,
-      "fpl_pct": "41.6",
+      "fpl_pct": "41.7",
       "count": 9
     },
     {
@@ -12236,7 +12236,7 @@
       "code": 244851,
       "position": 3,
       "cost": 97,
-      "fpl_pct": "26.9",
+      "fpl_pct": "26.8",
       "count": 8
     },
     {
@@ -12245,7 +12245,7 @@
       "code": 60307,
       "position": 3,
       "cost": 57,
-      "fpl_pct": "22.8",
+      "fpl_pct": "23.4",
       "count": 7
     },
     {
@@ -12299,7 +12299,7 @@
       "code": 477424,
       "position": 2,
       "cost": 57,
-      "fpl_pct": "26.0",
+      "fpl_pct": "26.1",
       "count": 5
     },
     {
@@ -12326,7 +12326,7 @@
       "code": 487838,
       "position": 2,
       "cost": 52,
-      "fpl_pct": "15.2",
+      "fpl_pct": "15.3",
       "count": 5
     },
     {
@@ -12353,7 +12353,7 @@
       "code": 513545,
       "position": 3,
       "cost": 56,
-      "fpl_pct": "10.8",
+      "fpl_pct": "10.7",
       "count": 4
     },
     {
@@ -12380,7 +12380,7 @@
       "code": 466052,
       "position": 3,
       "cost": 78,
-      "fpl_pct": "27.9",
+      "fpl_pct": "27.8",
       "count": 3
     },
     {
@@ -12389,7 +12389,7 @@
       "code": 209036,
       "position": 2,
       "cost": 60,
-      "fpl_pct": "18.6",
+      "fpl_pct": "18.5",
       "count": 3
     },
     {
@@ -12443,7 +12443,7 @@
       "code": 106760,
       "position": 2,
       "cost": 43,
-      "fpl_pct": "8.2",
+      "fpl_pct": "8.1",
       "count": 3
     },
     {
@@ -12461,7 +12461,7 @@
       "code": 540324,
       "position": 3,
       "cost": 51,
-      "fpl_pct": "4.4",
+      "fpl_pct": "4.5",
       "count": 3
     },
     {
@@ -12488,7 +12488,7 @@
       "code": 465730,
       "position": 2,
       "cost": 49,
-      "fpl_pct": "25.5",
+      "fpl_pct": "25.6",
       "count": 2
     },
     {
@@ -12515,7 +12515,7 @@
       "code": 17761,
       "position": 2,
       "cost": 61,
-      "fpl_pct": "14.3",
+      "fpl_pct": "14.4",
       "count": 2
     },
     {
@@ -12524,7 +12524,7 @@
       "code": 439509,
       "position": 3,
       "cost": 64,
-      "fpl_pct": "13.1",
+      "fpl_pct": "13.0",
       "count": 2
     },
     {
@@ -12533,7 +12533,7 @@
       "code": 243298,
       "position": 3,
       "cost": 72,
-      "fpl_pct": "12.8",
+      "fpl_pct": "12.7",
       "count": 2
     },
     {
@@ -12542,7 +12542,7 @@
       "code": 473284,
       "position": 1,
       "cost": 46,
-      "fpl_pct": "11.6",
+      "fpl_pct": "11.7",
       "count": 2
     },
     {
@@ -12560,7 +12560,7 @@
       "code": 586309,
       "position": 4,
       "cost": 56,
-      "fpl_pct": "7.9",
+      "fpl_pct": "8.0",
       "count": 2
     },
     {
@@ -12668,7 +12668,7 @@
       "code": 465247,
       "position": 1,
       "cost": 49,
-      "fpl_pct": "10.3",
+      "fpl_pct": "10.2",
       "count": 1
     },
     {
@@ -12695,7 +12695,7 @@
       "code": 513418,
       "position": 3,
       "cost": 61,
-      "fpl_pct": "8.3",
+      "fpl_pct": "8.5",
       "count": 1
     },
     {
@@ -12722,7 +12722,7 @@
       "code": 108413,
       "position": 3,
       "cost": 44,
-      "fpl_pct": "7.7",
+      "fpl_pct": "7.6",
       "count": 1
     },
     {
@@ -12776,7 +12776,7 @@
       "code": 244723,
       "position": 2,
       "cost": 45,
-      "fpl_pct": "6.1",
+      "fpl_pct": "6.0",
       "count": 1
     },
     {
@@ -12803,7 +12803,7 @@
       "code": 449434,
       "position": 3,
       "cost": 61,
-      "fpl_pct": "5.6",
+      "fpl_pct": "5.5",
       "count": 1
     },
     {
@@ -12839,7 +12839,7 @@
       "code": 201666,
       "position": 3,
       "cost": 61,
-      "fpl_pct": "4.6",
+      "fpl_pct": "4.7",
       "count": 1
     },
     {
@@ -12996,6 +12996,15 @@
       "count": 1
     },
     {
+      "id": 138,
+      "name": "Kostoulas",
+      "code": 647850,
+      "position": 4,
+      "cost": 55,
+      "fpl_pct": "1.6",
+      "count": 1
+    },
+    {
       "id": 432,
       "name": "Mainoo",
       "code": 516895,
@@ -13011,15 +13020,6 @@
       "position": 2,
       "cost": 45,
       "fpl_pct": "1.5",
-      "count": 1
-    },
-    {
-      "id": 138,
-      "name": "Kostoulas",
-      "code": 647850,
-      "position": 4,
-      "cost": 55,
-      "fpl_pct": "1.4",
       "count": 1
     },
     {
@@ -13111,9 +13111,9 @@
       "code": 60307,
       "position": 3,
       "now_cost": 57,
-      "transfers_in": 177133,
-      "transfers_out": 2950,
-      "selected_by_percent": "22.8"
+      "transfers_in": 238050,
+      "transfers_out": 3164,
+      "selected_by_percent": "23.4"
     },
     {
       "id": 94,
@@ -13121,9 +13121,9 @@
       "code": 513418,
       "position": 3,
       "now_cost": 61,
-      "transfers_in": 79726,
-      "transfers_out": 3344,
-      "selected_by_percent": "8.3"
+      "transfers_in": 94044,
+      "transfers_out": 4014,
+      "selected_by_percent": "8.5"
     },
     {
       "id": 115,
@@ -13131,9 +13131,9 @@
       "code": 465730,
       "position": 2,
       "now_cost": 49,
-      "transfers_in": 55220,
-      "transfers_out": 3340,
-      "selected_by_percent": "25.5"
+      "transfers_in": 68123,
+      "transfers_out": 4004,
+      "selected_by_percent": "25.6"
     },
     {
       "id": 138,
@@ -13141,9 +13141,9 @@
       "code": 647850,
       "position": 4,
       "now_cost": 55,
-      "transfers_in": 44253,
-      "transfers_out": 939,
-      "selected_by_percent": "1.4"
+      "transfers_in": 60307,
+      "transfers_out": 1269,
+      "selected_by_percent": "1.6"
     },
     {
       "id": 453,
@@ -13151,29 +13151,9 @@
       "code": 201666,
       "position": 3,
       "now_cost": 61,
-      "transfers_in": 41872,
-      "transfers_out": 1973,
-      "selected_by_percent": "4.6"
-    },
-    {
-      "id": 31,
-      "name": "Konsa",
-      "code": 199798,
-      "position": 2,
-      "now_cost": 46,
-      "transfers_in": 33920,
-      "transfers_out": 6497,
-      "selected_by_percent": "19.4"
-    },
-    {
-      "id": 391,
-      "name": "Gvardiol",
-      "code": 477424,
-      "position": 2,
-      "now_cost": 57,
-      "transfers_in": 31693,
-      "transfers_out": 4753,
-      "selected_by_percent": "26.0"
+      "transfers_in": 47817,
+      "transfers_out": 2364,
+      "selected_by_percent": "4.7"
     },
     {
       "id": 449,
@@ -13181,9 +13161,9 @@
       "code": 487838,
       "position": 2,
       "now_cost": 52,
-      "transfers_in": 29912,
-      "transfers_out": 3814,
-      "selected_by_percent": "15.2"
+      "transfers_in": 38944,
+      "transfers_out": 4274,
+      "selected_by_percent": "15.3"
     },
     {
       "id": 1,
@@ -13191,9 +13171,29 @@
       "code": 154561,
       "position": 1,
       "now_cost": 60,
-      "transfers_in": 29700,
-      "transfers_out": 5377,
-      "selected_by_percent": "41.6"
+      "transfers_in": 38181,
+      "transfers_out": 7042,
+      "selected_by_percent": "41.7"
+    },
+    {
+      "id": 391,
+      "name": "Gvardiol",
+      "code": 477424,
+      "position": 2,
+      "now_cost": 57,
+      "transfers_in": 37174,
+      "transfers_out": 5838,
+      "selected_by_percent": "26.1"
+    },
+    {
+      "id": 31,
+      "name": "Konsa",
+      "code": 199798,
+      "position": 2,
+      "now_cost": 46,
+      "transfers_in": 36219,
+      "transfers_out": 8393,
+      "selected_by_percent": "19.4"
     },
     {
       "id": 40,
@@ -13201,9 +13201,19 @@
       "code": 244850,
       "position": 3,
       "now_cost": 77,
-      "transfers_in": 29226,
-      "transfers_out": 12066,
+      "transfers_in": 34019,
+      "transfers_out": 14700,
       "selected_by_percent": "40.1"
+    },
+    {
+      "id": 229,
+      "name": "Tarkowski",
+      "code": 17761,
+      "position": 2,
+      "now_cost": 61,
+      "transfers_in": 32517,
+      "transfers_out": 3467,
+      "selected_by_percent": "14.4"
     },
     {
       "id": 346,
@@ -13211,8 +13221,8 @@
       "code": 177815,
       "position": 4,
       "now_cost": 60,
-      "transfers_in": 27082,
-      "transfers_out": 25165,
+      "transfers_in": 31569,
+      "transfers_out": 28993,
       "selected_by_percent": "25.7"
     },
     {
@@ -13221,8 +13231,8 @@
       "code": 226182,
       "position": 2,
       "now_cost": 46,
-      "transfers_in": 26273,
-      "transfers_out": 3253,
+      "transfers_in": 30154,
+      "transfers_out": 3999,
       "selected_by_percent": "6.1"
     },
     {
@@ -13231,49 +13241,9 @@
       "code": 201658,
       "position": 3,
       "now_cost": 61,
-      "transfers_in": 23828,
-      "transfers_out": 5593,
+      "transfers_in": 26847,
+      "transfers_out": 6906,
       "selected_by_percent": "6.6"
-    },
-    {
-      "id": 229,
-      "name": "Tarkowski",
-      "code": 17761,
-      "position": 2,
-      "now_cost": 61,
-      "transfers_in": 22747,
-      "transfers_out": 3069,
-      "selected_by_percent": "14.3"
-    },
-    {
-      "id": 233,
-      "name": "Mykolenko",
-      "code": 224967,
-      "position": 2,
-      "now_cost": 46,
-      "transfers_in": 22214,
-      "transfers_out": 2344,
-      "selected_by_percent": "4.2"
-    },
-    {
-      "id": 464,
-      "name": "Wissa",
-      "code": 216646,
-      "position": 4,
-      "now_cost": 62,
-      "transfers_in": 21336,
-      "transfers_out": 22104,
-      "selected_by_percent": "19.2"
-    },
-    {
-      "id": 236,
-      "name": "Dewsbury-Hall",
-      "code": 215413,
-      "position": 3,
-      "now_cost": 66,
-      "transfers_in": 20619,
-      "transfers_out": 8371,
-      "selected_by_percent": "6.2"
     },
     {
       "id": 12,
@@ -13281,19 +13251,39 @@
       "code": 223340,
       "position": 3,
       "now_cost": 95,
-      "transfers_in": 20545,
-      "transfers_out": 5919,
+      "transfers_in": 23968,
+      "transfers_out": 7818,
       "selected_by_percent": "13.2"
     },
     {
-      "id": 480,
-      "name": "Gibbs-White",
-      "code": 222531,
+      "id": 464,
+      "name": "Wissa",
+      "code": 216646,
+      "position": 4,
+      "now_cost": 62,
+      "transfers_in": 23841,
+      "transfers_out": 29376,
+      "selected_by_percent": "19.2"
+    },
+    {
+      "id": 233,
+      "name": "Mykolenko",
+      "code": 224967,
+      "position": 2,
+      "now_cost": 46,
+      "transfers_in": 23316,
+      "transfers_out": 3030,
+      "selected_by_percent": "4.2"
+    },
+    {
+      "id": 236,
+      "name": "Dewsbury-Hall",
+      "code": 215413,
       "position": 3,
-      "now_cost": 80,
-      "transfers_in": 18278,
-      "transfers_out": 6543,
-      "selected_by_percent": "16.0"
+      "now_cost": 66,
+      "transfers_in": 21249,
+      "transfers_out": 10996,
+      "selected_by_percent": "6.2"
     },
     {
       "id": 268,
@@ -13301,9 +13291,19 @@
       "code": 577725,
       "position": 3,
       "now_cost": 55,
-      "transfers_in": 17963,
-      "transfers_out": 2724,
+      "transfers_in": 20437,
+      "transfers_out": 3402,
       "selected_by_percent": "2.1"
+    },
+    {
+      "id": 572,
+      "name": "Tzolakis",
+      "code": 473284,
+      "position": 1,
+      "now_cost": 46,
+      "transfers_in": 20331,
+      "transfers_out": 4526,
+      "selected_by_percent": "11.7"
     }
   ],
   "nextGW": 6,
@@ -13347,7 +13347,7 @@
       "team": "NEW",
       "now_cost": 61,
       "change": 1,
-      "selected_by_percent": "4.6"
+      "selected_by_percent": "4.7"
     },
     {
       "id": 167,
@@ -13389,7 +13389,7 @@
       "team": "BRE",
       "now_cost": 56,
       "change": -1,
-      "selected_by_percent": "10.8"
+      "selected_by_percent": "10.7"
     },
     {
       "id": 594,
@@ -13464,12 +13464,20 @@
   ],
   "dreamTeam": [
     {
-      "id": 226,
-      "name": "Pickford",
-      "code": 111234,
+      "id": 110,
+      "name": "Rushworth",
+      "code": 472739,
       "position": 1,
-      "team": "EVE",
-      "points": 8
+      "team": "COV",
+      "points": 12
+    },
+    {
+      "id": 176,
+      "name": "Dasilva",
+      "code": 173878,
+      "position": 2,
+      "team": "COV",
+      "points": 15
     },
     {
       "id": 93,
@@ -13493,15 +13501,7 @@
       "code": 487838,
       "position": 2,
       "team": "NEW",
-      "points": 12
-    },
-    {
-      "id": 649,
-      "name": "Maitland-Niles",
-      "code": 154043,
-      "position": 2,
-      "team": "EVE",
-      "points": 8
+      "points": 13
     },
     {
       "id": 124,
@@ -13553,5 +13553,5 @@
     }
   ],
   "dreamTeamGW": 5,
-  "generated_at": "2026-09-19T17:08:59.226Z"
+  "generated_at": "2026-09-19T20:28:41.162Z"
 }
