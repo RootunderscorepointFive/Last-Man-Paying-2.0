@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-21T13:53:22.154Z",
+  "generated_at": "2026-09-21T15:40:30.905Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
-  "last_synced_gw": 4,
+  "last_synced_gw": 5,
   "managers": [
     {
       "entry": 6404452,
@@ -64,8 +64,8 @@
       "bottom_finishes": [
         1
       ],
-      "epithet": "Bargain Bin",
-      "epithet_tagline": "Doing it on a shoestring — £99.6m squad",
+      "epithet": "Bottled It",
+      "epithet_tagline": "Rock bottom — GW low of 36 pts",
       "credits": 0
     },
     {
@@ -73,8 +73,29 @@
       "name": "Fanele Msweli",
       "team": "Project X_abi Alonso",
       "joining_fee_paid": true,
-      "fines": [],
-      "bottom_finishes": [],
+      "fines": [
+        {
+          "id": "f_800204_gw5_bottom",
+          "gw": 5,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW5 (post-hits 35, threshold 38)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-09-21T15:40:30.839Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        5
+      ],
       "epithet": "The Banker",
       "epithet_tagline": "Top weekly scorer 1 times",
       "credits": 0,
@@ -242,13 +263,32 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_4893790_gw5_bottom",
+          "gw": 5,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW5 (post-hits 38, threshold 38)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-09-21T15:40:30.839Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
-        3
+        3,
+        5
       ],
-      "epithet": "Departure Lounge",
-      "epithet_tagline": "Stuck at the relegation gate — 1 bottom finishes",
+      "epithet": "The Fugitive",
+      "epithet_tagline": "Owes the pot the most — R450",
       "credits": 0
     },
     {
@@ -377,8 +417,8 @@
         3,
         4
       ],
-      "epithet": "The Fugitive",
-      "epithet_tagline": "Owes the pot the most — R450",
+      "epithet": "Free Hit Hero",
+      "epithet_tagline": "Best chip week in the league — 117 pts",
       "credits": 0
     },
     {
@@ -388,8 +428,8 @@
       "joining_fee_paid": true,
       "fines": [],
       "bottom_finishes": [],
-      "epithet": "Untouchable",
-      "epithet_tagline": "Spotless season — not a single fine",
+      "epithet": "Bargain Bin",
+      "epithet_tagline": "Doing it on a shoestring — £100.3m squad",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-08-25T05:08:51.225Z"
@@ -431,10 +471,31 @@
       "name": "Mbuyi Katumba",
       "team": "Finding Mbeumo",
       "joining_fee_paid": true,
-      "fines": [],
-      "bottom_finishes": [],
-      "epithet": "Bottled It",
-      "epithet_tagline": "Rock bottom — GW low of 33 pts",
+      "fines": [
+        {
+          "id": "f_7068091_gw5_bottom",
+          "gw": 5,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW5 (post-hits 33, threshold 38)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-09-21T15:40:30.839Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        5
+      ],
+      "epithet": "Departure Lounge",
+      "epithet_tagline": "Stuck at the relegation gate — 1 bottom finishes",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-09-01T05:41:19.772Z"
@@ -526,14 +587,33 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_804065_gw5_bottom",
+          "gw": 5,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW5 (post-hits 38, threshold 38)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-09-21T15:40:30.839Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         1,
-        4
+        4,
+        5
       ],
       "epithet": "The Regular",
-      "epithet_tagline": "Most bottom finishes — 2 of 38",
+      "epithet_tagline": "Most bottom finishes — 3 of 38",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-08-25T05:10:06.125Z",
