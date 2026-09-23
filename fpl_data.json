@@ -672,7 +672,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 49,
-          "ownership": "27.2",
+          "ownership": "27.3",
           "priceChange": 0,
           "live_pts": 6,
           "minutes": 90,
@@ -1833,7 +1833,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 49,
-          "ownership": "27.2",
+          "ownership": "27.3",
           "priceChange": 0,
           "live_pts": 6,
           "minutes": 90,
@@ -3898,7 +3898,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "10.7",
+          "ownership": "10.8",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -4560,7 +4560,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 84,
-          "ownership": "15.4",
+          "ownership": "15.5",
           "priceChange": 0,
           "live_pts": 17,
           "minutes": 90,
@@ -6034,7 +6034,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 45,
-          "ownership": "5.5",
+          "ownership": "5.4",
           "priceChange": 0,
           "live_pts": 0,
           "minutes": 0,
@@ -6347,7 +6347,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 84,
-          "ownership": "15.4",
+          "ownership": "15.5",
           "priceChange": 0,
           "live_pts": 17,
           "minutes": 90,
@@ -6491,7 +6491,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 91,
-          "ownership": "22.3",
+          "ownership": "22.4",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 80,
@@ -6979,7 +6979,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 84,
-          "ownership": "15.4",
+          "ownership": "15.5",
           "priceChange": 0,
           "live_pts": 17,
           "minutes": 90,
@@ -11824,7 +11824,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 91,
-          "ownership": "22.3",
+          "ownership": "22.4",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 80,
@@ -12517,7 +12517,7 @@
       "code": 437730,
       "position": 3,
       "cost": 84,
-      "fpl_pct": "15.4",
+      "fpl_pct": "15.5",
       "count": 3
     },
     {
@@ -12598,7 +12598,7 @@
       "code": 465730,
       "position": 2,
       "cost": 49,
-      "fpl_pct": "27.2",
+      "fpl_pct": "27.3",
       "count": 2
     },
     {
@@ -12607,7 +12607,7 @@
       "code": 219168,
       "position": 4,
       "cost": 91,
-      "fpl_pct": "22.3",
+      "fpl_pct": "22.4",
       "count": 2
     },
     {
@@ -12778,7 +12778,7 @@
       "code": 513418,
       "position": 3,
       "cost": 62,
-      "fpl_pct": "10.7",
+      "fpl_pct": "10.8",
       "count": 1
     },
     {
@@ -12899,21 +12899,21 @@
       "count": 1
     },
     {
-      "id": 272,
-      "name": "Kusi-Asare",
-      "code": 631786,
-      "position": 4,
-      "cost": 45,
-      "fpl_pct": "5.5",
-      "count": 1
-    },
-    {
       "id": 385,
       "name": "Trafford",
       "code": 432720,
       "position": 1,
       "cost": 50,
       "fpl_pct": "5.5",
+      "count": 1
+    },
+    {
+      "id": 272,
+      "name": "Kusi-Asare",
+      "code": 631786,
+      "position": 4,
+      "cost": 45,
+      "fpl_pct": "5.4",
       "count": 1
     },
     {
@@ -13221,8 +13221,8 @@
       "code": 60307,
       "position": 3,
       "now_cost": 58,
-      "transfers_in": 671710,
-      "transfers_out": 8101,
+      "transfers_in": 675484,
+      "transfers_out": 8176,
       "selected_by_percent": "27.7"
     },
     {
@@ -13231,9 +13231,9 @@
       "code": 513418,
       "position": 3,
       "now_cost": 62,
-      "transfers_in": 320107,
-      "transfers_out": 16236,
-      "selected_by_percent": "10.7"
+      "transfers_in": 322195,
+      "transfers_out": 16442,
+      "selected_by_percent": "10.8"
     },
     {
       "id": 138,
@@ -13241,8 +13241,8 @@
       "code": 647850,
       "position": 4,
       "now_cost": 56,
-      "transfers_in": 251895,
-      "transfers_out": 10787,
+      "transfers_in": 253542,
+      "transfers_out": 10976,
       "selected_by_percent": "3.5"
     },
     {
@@ -13251,9 +13251,9 @@
       "code": 465730,
       "position": 2,
       "now_cost": 49,
-      "transfers_in": 234095,
-      "transfers_out": 14332,
-      "selected_by_percent": "27.2"
+      "transfers_in": 235772,
+      "transfers_out": 14514,
+      "selected_by_percent": "27.3"
     },
     {
       "id": 449,
@@ -13261,8 +13261,8 @@
       "code": 487838,
       "position": 2,
       "now_cost": 53,
-      "transfers_in": 202003,
-      "transfers_out": 12965,
+      "transfers_in": 203337,
+      "transfers_out": 13145,
       "selected_by_percent": "16.8"
     },
     {
@@ -13271,8 +13271,8 @@
       "code": 17761,
       "position": 2,
       "now_cost": 61,
-      "transfers_in": 171813,
-      "transfers_out": 13098,
+      "transfers_in": 173179,
+      "transfers_out": 13266,
       "selected_by_percent": "15.9"
     },
     {
@@ -13281,8 +13281,8 @@
       "code": 441264,
       "position": 4,
       "now_cost": 57,
-      "transfers_in": 167070,
-      "transfers_out": 22387,
+      "transfers_in": 168401,
+      "transfers_out": 22564,
       "selected_by_percent": "6.9"
     },
     {
@@ -13291,8 +13291,8 @@
       "code": 201666,
       "position": 3,
       "now_cost": 61,
-      "transfers_in": 129234,
-      "transfers_out": 11065,
+      "transfers_in": 130043,
+      "transfers_out": 11249,
       "selected_by_percent": "5.4"
     },
     {
@@ -13301,8 +13301,8 @@
       "code": 477424,
       "position": 2,
       "now_cost": 57,
-      "transfers_in": 117101,
-      "transfers_out": 38774,
+      "transfers_in": 118007,
+      "transfers_out": 39118,
       "selected_by_percent": "26.6"
     },
     {
@@ -13311,8 +13311,8 @@
       "code": 244850,
       "position": 3,
       "now_cost": 77,
-      "transfers_in": 110470,
-      "transfers_out": 55674,
+      "transfers_in": 111372,
+      "transfers_out": 56071,
       "selected_by_percent": "40.4"
     },
     {
@@ -13321,9 +13321,9 @@
       "code": 437730,
       "position": 3,
       "now_cost": 84,
-      "transfers_in": 105133,
-      "transfers_out": 36151,
-      "selected_by_percent": "15.4"
+      "transfers_in": 106178,
+      "transfers_out": 36416,
+      "selected_by_percent": "15.5"
     },
     {
       "id": 1,
@@ -13331,8 +13331,8 @@
       "code": 154561,
       "position": 1,
       "now_cost": 61,
-      "transfers_in": 104814,
-      "transfers_out": 34288,
+      "transfers_in": 105359,
+      "transfers_out": 34650,
       "selected_by_percent": "42.2"
     },
     {
@@ -13341,8 +13341,8 @@
       "code": 226182,
       "position": 2,
       "now_cost": 46,
-      "transfers_in": 96100,
-      "transfers_out": 17864,
+      "transfers_in": 96976,
+      "transfers_out": 18070,
       "selected_by_percent": "6.8"
     },
     {
@@ -13351,8 +13351,8 @@
       "code": 473284,
       "position": 1,
       "now_cost": 46,
-      "transfers_in": 91355,
-      "transfers_out": 15064,
+      "transfers_in": 92333,
+      "transfers_out": 15226,
       "selected_by_percent": "12.4"
     },
     {
@@ -13361,9 +13361,9 @@
       "code": 219168,
       "position": 4,
       "now_cost": 91,
-      "transfers_in": 88366,
-      "transfers_out": 54144,
-      "selected_by_percent": "22.3"
+      "transfers_in": 89169,
+      "transfers_out": 54536,
+      "selected_by_percent": "22.4"
     },
     {
       "id": 399,
@@ -13371,8 +13371,8 @@
       "code": 466052,
       "position": 3,
       "now_cost": 78,
-      "transfers_in": 87729,
-      "transfers_out": 71274,
+      "transfers_in": 88508,
+      "transfers_out": 71717,
       "selected_by_percent": "28.2"
     },
     {
@@ -13381,19 +13381,9 @@
       "code": 223340,
       "position": 3,
       "now_cost": 95,
-      "transfers_in": 77044,
-      "transfers_out": 36028,
+      "transfers_in": 77739,
+      "transfers_out": 36346,
       "selected_by_percent": "13.5"
-    },
-    {
-      "id": 346,
-      "name": "Calvert-Lewin",
-      "code": 177815,
-      "position": 4,
-      "now_cost": 60,
-      "transfers_in": 73136,
-      "transfers_out": 134911,
-      "selected_by_percent": "25.0"
     },
     {
       "id": 31,
@@ -13401,9 +13391,19 @@
       "code": 199798,
       "position": 2,
       "now_cost": 46,
-      "transfers_in": 73025,
-      "transfers_out": 34555,
+      "transfers_in": 73532,
+      "transfers_out": 34847,
       "selected_by_percent": "19.4"
+    },
+    {
+      "id": 346,
+      "name": "Calvert-Lewin",
+      "code": 177815,
+      "position": 4,
+      "now_cost": 60,
+      "transfers_in": 73499,
+      "transfers_out": 135898,
+      "selected_by_percent": "25.0"
     },
     {
       "id": 464,
@@ -13411,8 +13411,8 @@
       "code": 216646,
       "position": 4,
       "now_cost": 62,
-      "transfers_in": 65524,
-      "transfers_out": 116727,
+      "transfers_in": 65974,
+      "transfers_out": 117483,
       "selected_by_percent": "18.7"
     }
   ],
@@ -13447,7 +13447,7 @@
       "team": "BRE",
       "now_cost": 62,
       "change": 1,
-      "selected_by_percent": "10.7"
+      "selected_by_percent": "10.8"
     },
     {
       "id": 124,
@@ -13713,5 +13713,5 @@
     }
   ],
   "dreamTeamGW": 5,
-  "generated_at": "2026-09-23T00:20:12.531Z"
+  "generated_at": "2026-09-23T05:48:01.999Z"
 }
