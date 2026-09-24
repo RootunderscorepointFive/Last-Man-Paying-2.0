@@ -489,8 +489,9 @@
     </div>
     <div class="actions">
       <button class="action" disabled><span class="key">F4</span><span class="label">Refresh FPL</span><div class="desc">updates automatically</div></button>
-      <button class="action" id="act-lmp-override"><span class="key">F5</span><span class="label">Override Result</span><div class="desc">treasurer · disputes</div></button>
-      <button class="action" id="act-lmp-weekly"><span class="key">F6</span><span class="label">Send Weekly Summary</span><div class="desc">infographic + email</div></button>
+      <button class="action act-unlock" id="act-lmp-unlock"><span class="key">&#128274;</span><span class="label">Unlock Treasurer Actions</span><div class="desc">password required</div></button>
+      <button class="action treasurer-gated" id="act-lmp-override" hidden><span class="key">F5</span><span class="label">Override Result</span><div class="desc">treasurer · disputes</div></button>
+      <button class="action treasurer-gated" id="act-lmp-weekly" hidden><span class="key">F6</span><span class="label">Send Weekly Summary</span><div class="desc">infographic + email</div></button>
     </div>
   </section>
 
@@ -504,13 +505,14 @@
       <div class="terminal" id="lg-terminal"></div>
     </div></div>
     <div class="actions">
-      <button class="action" id="act-lg-remind"><span class="key">F1</span><span class="label">Email Reminders</span><div class="desc">treasurer · debtors</div></button>
-      <button class="action" id="act-lg-markpaid"><span class="key">F2</span><span class="label">Mark Paid</span><div class="desc">joining fee or fine</div></button>
-      <button class="action" id="act-lg-addfine"><span class="key">F3</span><span class="label">Add Fine</span><div class="desc">manual · audited</div></button>
-      <button class="action" id="act-lg-reverse"><span class="key">F4</span><span class="label">Reverse Fine</span><div class="desc">never deletes</div></button>
-      <button class="action" id="act-lg-edit"><span class="key">F5</span><span class="label">Edit Fine</span><div class="desc">tracked history</div></button>
-      <button class="action" id="act-lg-announce"><span class="key">F6</span><span class="label">Send Announcement</span><div class="desc">treasurer · league-wide</div></button>
-      <button class="action" id="act-lg-payment"><span class="key">F7</span><span class="label">Record Payment</span><div class="desc">amount · banks overpay</div></button>
+      <button class="action act-unlock" id="act-lg-unlock"><span class="key">&#128274;</span><span class="label">Unlock Treasurer Actions</span><div class="desc">password required</div></button>
+      <button class="action treasurer-gated" id="act-lg-remind" hidden><span class="key">F1</span><span class="label">Email Reminders</span><div class="desc">treasurer · debtors</div></button>
+      <button class="action treasurer-gated" id="act-lg-markpaid" hidden><span class="key">F2</span><span class="label">Mark Paid</span><div class="desc">joining fee or fine</div></button>
+      <button class="action treasurer-gated" id="act-lg-addfine" hidden><span class="key">F3</span><span class="label">Add Fine</span><div class="desc">manual · audited</div></button>
+      <button class="action treasurer-gated" id="act-lg-reverse" hidden><span class="key">F4</span><span class="label">Reverse Fine</span><div class="desc">never deletes</div></button>
+      <button class="action treasurer-gated" id="act-lg-edit" hidden><span class="key">F5</span><span class="label">Edit Fine</span><div class="desc">tracked history</div></button>
+      <button class="action treasurer-gated" id="act-lg-announce" hidden><span class="key">F6</span><span class="label">Send Announcement</span><div class="desc">treasurer · league-wide</div></button>
+      <button class="action treasurer-gated" id="act-lg-payment" hidden><span class="key">F7</span><span class="label">Record Payment</span><div class="desc">amount · banks overpay</div></button>
     </div>
   </section>
   <section id="panel-h2h" role="tabpanel" aria-labelledby="tab-h2h" tabindex="0" hidden>
@@ -1079,6 +1081,32 @@ $('#act-lg-reverse').onclick=()=>reverseFineFlow();
 $('#act-lg-edit').onclick=()=>editFineFlow();
 $('#act-lmp-override').onclick=()=>overrideFlow();
 $('#act-lmp-weekly').onclick=()=>weeklySummaryFlow();
+
+// ── lock treasurer actions behind the password (buttons hidden until unlocked) ──
+// Actions themselves are already server-side password-gated (postAction); this
+// is a separate client-side UI lock so casual visitors don't see F1-F7 / F5-F6
+// at all. Unlock state is per-tab-session only (sessionStorage), not persisted.
+function revealTreasurerActions(){
+  document.querySelectorAll('.treasurer-gated').forEach(b=>{ b.hidden=false; });
+  document.querySelectorAll('.act-unlock').forEach(b=>{ b.hidden=true; });
+}
+function unlockTreasurerFlow(){
+  openTreasurer({ title:'Unlock Treasurer Actions', sub:'reveals treasurer actions on this device, this browser session',
+    bodyHtml:'',
+    onSubmit: async pass=>{
+      try {
+        await postAction('/api/health', { password: pass });
+        try { sessionStorage.setItem('lmp_treasurer_unlocked','1'); } catch {}
+        revealTreasurerActions();
+        closeTreasurer();
+        toast('✓ Treasurer actions unlocked','ok');
+      } catch(err){ onErr(err); }
+    }
+  });
+}
+$('#act-lmp-unlock').onclick=unlockTreasurerFlow;
+$('#act-lg-unlock').onclick=unlockTreasurerFlow;
+try { if(sessionStorage.getItem('lmp_treasurer_unlocked')==='1') revealTreasurerActions(); } catch {}
 $('#lg-body').addEventListener('click',e=>{ const j=e.target.closest('[data-join]'); if(j){ markPaidFlow(j.dataset.join); return; } const p=e.target.closest('[data-pay]'); if(p) recordPaymentFlow(p.dataset.pay); });
 $('#lg-body').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ const j=e.target.closest('[data-join]'); if(j){ e.preventDefault(); markPaidFlow(j.dataset.join); return; } const p=e.target.closest('[data-pay]'); if(p){ e.preventDefault(); recordPaymentFlow(p.dataset.pay); } } });
 

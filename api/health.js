@@ -1,6 +1,16 @@
 // GET /api/health — verify the function runtime + env wiring.
 // Reports only whether each secret is SET (booleans) — never the values.
+// POST /api/health { password } — password check only, no data mutated. Lets the
+// client reveal the treasurer action buttons without a dedicated endpoint (Vercel
+// Hobby's 12-function cap is already spent by the rest of the API).
+const { checkPassword } = require('../lib/auth');
+
 module.exports = (req, res) => {
+  if (req.method === 'POST') {
+    const body = req.body || {};
+    if (!checkPassword(body.password)) return res.status(401).json({ error: 'Unauthorized' });
+    return res.status(200).json({ ok: true });
+  }
   const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev';
   res.status(200).json({
     ok: true,
