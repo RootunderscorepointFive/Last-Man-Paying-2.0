@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T05:43:17.861Z",
+  "generated_at": "2026-09-24T05:44:40.899Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 5,
@@ -49,7 +49,7 @@
           "type": "bottom",
           "status": "confirmed",
           "reason": "LMP bottom-3 — GW1 (post-hits 36, threshold 40)",
-          "paid_date": null,
+          "paid_date": "2026-09-24T05:44:40.899Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -58,7 +58,8 @@
           "added_date": "2026-08-25T13:01:32.569Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "payment"
         }
       ],
       "bottom_finishes": [
@@ -68,7 +69,24 @@
       "epithet_tagline": "Rock bottom — GW low of 36 pts",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
-      "joining_fee_paid_date": "2026-09-24T05:43:17.861Z"
+      "joining_fee_paid_date": "2026-09-24T05:43:17.861Z",
+      "payments": [
+        {
+          "id": "p_3801396_1790228680899",
+          "amount": 100,
+          "date": "2026-09-24T05:44:40.899Z",
+          "recorded_by": "Themba",
+          "allocated": [
+            {
+              "kind": "fine",
+              "id": "f_3801396_gw1_bottom",
+              "gw": 1,
+              "amount": 100
+            }
+          ],
+          "credit_after": 0
+        }
+      ]
     },
     {
       "entry": 800204,
