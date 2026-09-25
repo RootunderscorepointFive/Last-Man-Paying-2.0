@@ -7911,9 +7911,9 @@
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 46,
-          "ownership": "12.6",
-          "priceChange": 0,
+          "cost": 47,
+          "ownership": "12.7",
+          "priceChange": 1,
           "live_pts": 6,
           "minutes": 90,
           "started": true,
@@ -8444,7 +8444,7 @@
           }
         }
       ],
-      "squadValue": 1002,
+      "squadValue": 1003,
       "automaticSubs": [],
       "gwRanks": [
         14,
@@ -11263,9 +11263,9 @@
           "multiplier": 0,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 46,
-          "ownership": "12.6",
-          "priceChange": 0,
+          "cost": 47,
+          "ownership": "12.7",
+          "priceChange": 1,
           "live_pts": 6,
           "minutes": 90,
           "started": false,
@@ -11400,7 +11400,7 @@
           }
         }
       ],
-      "squadValue": 1015,
+      "squadValue": 1016,
       "automaticSubs": [
         {
           "entry": 194373,
@@ -12629,20 +12629,20 @@
       "count": 2
     },
     {
+      "id": 572,
+      "name": "Tzolakis",
+      "code": 473284,
+      "position": 1,
+      "cost": 47,
+      "fpl_pct": "12.7",
+      "count": 2
+    },
+    {
       "id": 367,
       "name": "Gakpo",
       "code": 243298,
       "position": 3,
       "cost": 72,
-      "fpl_pct": "12.6",
-      "count": 2
-    },
-    {
-      "id": 572,
-      "name": "Tzolakis",
-      "code": 473284,
-      "position": 1,
-      "cost": 46,
       "fpl_pct": "12.6",
       "count": 2
     },
@@ -13221,8 +13221,8 @@
       "code": 60307,
       "position": 3,
       "now_cost": 58,
-      "transfers_in": 723525,
-      "transfers_out": 9445,
+      "transfers_in": 725119,
+      "transfers_out": 9498,
       "selected_by_percent": "28.2"
     },
     {
@@ -13231,8 +13231,8 @@
       "code": 513418,
       "position": 3,
       "now_cost": 62,
-      "transfers_in": 348553,
-      "transfers_out": 19458,
+      "transfers_in": 349505,
+      "transfers_out": 19579,
       "selected_by_percent": "11.1"
     },
     {
@@ -13241,8 +13241,8 @@
       "code": 647850,
       "position": 4,
       "now_cost": 56,
-      "transfers_in": 272916,
-      "transfers_out": 13881,
+      "transfers_in": 273924,
+      "transfers_out": 14017,
       "selected_by_percent": "3.7"
     },
     {
@@ -13251,8 +13251,8 @@
       "code": 465730,
       "position": 2,
       "now_cost": 49,
-      "transfers_in": 260087,
-      "transfers_out": 16842,
+      "transfers_in": 266730,
+      "transfers_out": 16945,
       "selected_by_percent": "27.5"
     },
     {
@@ -13261,8 +13261,8 @@
       "code": 487838,
       "position": 2,
       "now_cost": 53,
-      "transfers_in": 220876,
-      "transfers_out": 15603,
+      "transfers_in": 221484,
+      "transfers_out": 15712,
       "selected_by_percent": "17.1"
     },
     {
@@ -13271,8 +13271,8 @@
       "code": 17761,
       "position": 2,
       "now_cost": 61,
-      "transfers_in": 192088,
-      "transfers_out": 15881,
+      "transfers_in": 192710,
+      "transfers_out": 16001,
       "selected_by_percent": "16.1"
     },
     {
@@ -13281,8 +13281,8 @@
       "code": 441264,
       "position": 4,
       "now_cost": 57,
-      "transfers_in": 187684,
-      "transfers_out": 26916,
+      "transfers_in": 187885,
+      "transfers_out": 27712,
       "selected_by_percent": "7.1"
     },
     {
@@ -13291,8 +13291,8 @@
       "code": 201666,
       "position": 3,
       "now_cost": 61,
-      "transfers_in": 140719,
-      "transfers_out": 13482,
+      "transfers_in": 141111,
+      "transfers_out": 13563,
       "selected_by_percent": "5.5"
     },
     {
@@ -13301,8 +13301,8 @@
       "code": 477424,
       "position": 2,
       "now_cost": 57,
-      "transfers_in": 129545,
-      "transfers_out": 44368,
+      "transfers_in": 129947,
+      "transfers_out": 44579,
       "selected_by_percent": "26.7"
     },
     {
@@ -13311,8 +13311,8 @@
       "code": 244850,
       "position": 3,
       "now_cost": 77,
-      "transfers_in": 124575,
-      "transfers_out": 61743,
+      "transfers_in": 125047,
+      "transfers_out": 61946,
       "selected_by_percent": "40.4"
     },
     {
@@ -13321,8 +13321,8 @@
       "code": 437730,
       "position": 3,
       "now_cost": 84,
-      "transfers_in": 118408,
-      "transfers_out": 43882,
+      "transfers_in": 118558,
+      "transfers_out": 44484,
       "selected_by_percent": "15.5"
     },
     {
@@ -13331,8 +13331,8 @@
       "code": 154561,
       "position": 1,
       "now_cost": 61,
-      "transfers_in": 113172,
-      "transfers_out": 40035,
+      "transfers_in": 113455,
+      "transfers_out": 40206,
       "selected_by_percent": "42.2"
     },
     {
@@ -13340,10 +13340,10 @@
       "name": "Tzolakis",
       "code": 473284,
       "position": 1,
-      "now_cost": 46,
-      "transfers_in": 112652,
-      "transfers_out": 17498,
-      "selected_by_percent": "12.6"
+      "now_cost": 47,
+      "transfers_in": 113404,
+      "transfers_out": 17588,
+      "selected_by_percent": "12.7"
     },
     {
       "id": 330,
@@ -13351,8 +13351,8 @@
       "code": 226182,
       "position": 2,
       "now_cost": 46,
-      "transfers_in": 107739,
-      "transfers_out": 20798,
+      "transfers_in": 108087,
+      "transfers_out": 20910,
       "selected_by_percent": "7.0"
     },
     {
@@ -13361,8 +13361,8 @@
       "code": 466052,
       "position": 3,
       "now_cost": 78,
-      "transfers_in": 100928,
-      "transfers_out": 77942,
+      "transfers_in": 101412,
+      "transfers_out": 78147,
       "selected_by_percent": "28.3"
     },
     {
@@ -13371,8 +13371,8 @@
       "code": 219168,
       "position": 4,
       "now_cost": 91,
-      "transfers_in": 100376,
-      "transfers_out": 60425,
+      "transfers_in": 100855,
+      "transfers_out": 60642,
       "selected_by_percent": "22.4"
     },
     {
@@ -13381,8 +13381,8 @@
       "code": 223340,
       "position": 3,
       "now_cost": 95,
-      "transfers_in": 87951,
-      "transfers_out": 40394,
+      "transfers_in": 88487,
+      "transfers_out": 40540,
       "selected_by_percent": "13.6"
     },
     {
@@ -13391,8 +13391,8 @@
       "code": 199798,
       "position": 2,
       "now_cost": 46,
-      "transfers_in": 80267,
-      "transfers_out": 38895,
+      "transfers_in": 80538,
+      "transfers_out": 39042,
       "selected_by_percent": "19.4"
     },
     {
@@ -13401,8 +13401,8 @@
       "code": 177815,
       "position": 4,
       "now_cost": 60,
-      "transfers_in": 79037,
-      "transfers_out": 150156,
+      "transfers_in": 79326,
+      "transfers_out": 150615,
       "selected_by_percent": "24.9"
     },
     {
@@ -13411,8 +13411,8 @@
       "code": 577725,
       "position": 3,
       "now_cost": 55,
-      "transfers_in": 72871,
-      "transfers_out": 14671,
+      "transfers_in": 73183,
+      "transfers_out": 14747,
       "selected_by_percent": "2.5"
     }
   ],
@@ -13490,6 +13490,16 @@
       "selected_by_percent": "6.0"
     },
     {
+      "id": 572,
+      "name": "Tzolakis",
+      "code": 473284,
+      "position": 1,
+      "team": "HUL",
+      "now_cost": 47,
+      "change": 1,
+      "selected_by_percent": "12.7"
+    },
+    {
       "id": 449,
       "name": "Hall",
       "code": 487838,
@@ -13508,16 +13518,6 @@
       "now_cost": 61,
       "change": 1,
       "selected_by_percent": "5.5"
-    },
-    {
-      "id": 167,
-      "name": "Delap",
-      "code": 463034,
-      "position": 4,
-      "team": "NFO",
-      "now_cost": 56,
-      "change": 1,
-      "selected_by_percent": "2.7"
     }
   ],
   "priceFallers": [
@@ -13713,5 +13713,5 @@
     }
   ],
   "dreamTeamGW": 5,
-  "generated_at": "2026-09-24T22:16:48.992Z"
+  "generated_at": "2026-09-25T01:21:56.243Z"
 }
