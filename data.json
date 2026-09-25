@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T06:26:27.762Z",
+  "generated_at": "2026-09-25T06:26:49.639Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 5,
@@ -167,7 +167,7 @@
           "type": "bottom",
           "status": "confirmed",
           "reason": "LMP bottom-3 — GW4 (post-hits 56, threshold 57)",
-          "paid_date": null,
+          "paid_date": "2026-09-25T06:26:49.639Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -176,7 +176,8 @@
           "added_date": "2026-09-15T14:02:53.588Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "payment"
         }
       ],
       "bottom_finishes": [
@@ -186,7 +187,24 @@
       "epithet_tagline": "Hoarded 8 chips, never played them",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
-      "joining_fee_paid_date": "2026-09-25T06:26:27.762Z"
+      "joining_fee_paid_date": "2026-09-25T06:26:27.762Z",
+      "payments": [
+        {
+          "id": "p_3490103_1790317609639",
+          "amount": 100,
+          "date": "2026-09-25T06:26:49.639Z",
+          "recorded_by": "Themba",
+          "allocated": [
+            {
+              "kind": "fine",
+              "id": "f_3490103_gw4_bottom",
+              "gw": 4,
+              "amount": 100
+            }
+          ],
+          "credit_after": 0
+        }
+      ]
     },
     {
       "entry": 3808647,
