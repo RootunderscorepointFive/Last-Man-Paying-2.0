@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T19:17:31.102Z",
+  "generated_at": "2026-09-29T20:49:09.038Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 5,
@@ -521,7 +521,7 @@
           "type": "bottom",
           "status": "confirmed",
           "reason": "LMP bottom-3 — GW5 (post-hits 33, threshold 38)",
-          "paid_date": null,
+          "paid_date": "2026-09-29T20:49:09.038Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -530,7 +530,8 @@
           "added_date": "2026-09-21T15:40:30.839Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "payment"
         }
       ],
       "bottom_finishes": [
@@ -540,7 +541,24 @@
       "epithet_tagline": "Stuck at the relegation gate — 1 bottom finishes",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
-      "joining_fee_paid_date": "2026-09-01T05:41:19.772Z"
+      "joining_fee_paid_date": "2026-09-01T05:41:19.772Z",
+      "payments": [
+        {
+          "id": "p_7068091_1790714949038",
+          "amount": 100,
+          "date": "2026-09-29T20:49:09.038Z",
+          "recorded_by": "Themba",
+          "allocated": [
+            {
+              "kind": "fine",
+              "id": "f_7068091_gw5_bottom",
+              "gw": 5,
+              "amount": 100
+            }
+          ],
+          "credit_after": 0
+        }
+      ]
     },
     {
       "entry": 112702,
