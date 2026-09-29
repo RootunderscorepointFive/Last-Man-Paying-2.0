@@ -1490,6 +1490,13 @@
       "subject": "FPL — payment received",
       "sent_at": "2026-09-29T06:03:17.553Z",
       "sent_by": "treasurer"
+    },
+    {
+      "type": "confirmation",
+      "recipient": "Mbuyi Katumba",
+      "subject": "FPL — payment received",
+      "sent_at": "2026-09-29T20:49:10.393Z",
+      "sent_by": "treasurer"
     }
   ]
 }
