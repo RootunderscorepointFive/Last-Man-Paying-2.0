@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T00:55:45.845Z",
+  "generated_at": "2026-09-29T06:03:16.251Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 5,
@@ -546,12 +546,14 @@
       "entry": 112702,
       "name": "Nkosi The Chef",
       "team": "Mainoo Business",
-      "joining_fee_paid": false,
+      "joining_fee_paid": true,
       "fines": [],
       "bottom_finishes": [],
       "epithet": "The Chef's Special",
       "epithet_tagline": "League leader — 383 pts",
-      "credits": 0
+      "credits": 0,
+      "joining_fee_paid_by": "Themba",
+      "joining_fee_paid_date": "2026-09-29T06:03:16.251Z"
     },
     {
       "entry": 5275613,
