@@ -1531,6 +1531,13 @@
       "subject": "FPL — payment received",
       "sent_at": "2026-09-30T03:52:59.666Z",
       "sent_by": "treasurer"
+    },
+    {
+      "type": "confirmation",
+      "recipient": "Kudzai Kupeta",
+      "subject": "FPL — payment received",
+      "sent_at": "2026-09-30T03:53:16.261Z",
+      "sent_by": "treasurer"
     }
   ]
 }
