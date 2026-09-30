@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T03:52:58.541Z",
+  "generated_at": "2026-09-30T03:53:15.180Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 5,
@@ -295,7 +295,7 @@
           "type": "bottom",
           "status": "confirmed",
           "reason": "LMP bottom-3 — GW3 (post-hits 41, threshold 41)",
-          "paid_date": null,
+          "paid_date": "2026-09-30T03:53:15.180Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -304,7 +304,8 @@
           "added_date": "2026-09-07T18:12:37.760Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "payment"
         },
         {
           "id": "f_4893790_gw5_bottom",
@@ -313,7 +314,7 @@
           "type": "bottom",
           "status": "confirmed",
           "reason": "LMP bottom-3 — GW5 (post-hits 38, threshold 38)",
-          "paid_date": null,
+          "paid_date": "2026-09-30T03:53:15.180Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -322,7 +323,8 @@
           "added_date": "2026-09-21T15:40:30.839Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "payment"
         }
       ],
       "bottom_finishes": [
@@ -333,7 +335,30 @@
       "epithet_tagline": "Owes the pot the most — R450",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
-      "joining_fee_paid_date": "2026-09-30T03:52:58.541Z"
+      "joining_fee_paid_date": "2026-09-30T03:52:58.541Z",
+      "payments": [
+        {
+          "id": "p_4893790_1790740395209",
+          "amount": 200,
+          "date": "2026-09-30T03:53:15.180Z",
+          "recorded_by": "Themba",
+          "allocated": [
+            {
+              "kind": "fine",
+              "id": "f_4893790_gw3_bottom",
+              "gw": 3,
+              "amount": 100
+            },
+            {
+              "kind": "fine",
+              "id": "f_4893790_gw5_bottom",
+              "gw": 5,
+              "amount": 100
+            }
+          ],
+          "credit_after": 0
+        }
+      ]
     },
     {
       "entry": 4370096,
