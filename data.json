@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T03:53:15.180Z",
+  "generated_at": "2026-09-30T04:26:48.710Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 5,
@@ -507,7 +507,7 @@
       "entry": 194373,
       "name": "Mhlengi Kunene",
       "team": "Hidden Hills",
-      "joining_fee_paid": false,
+      "joining_fee_paid": true,
       "fines": [
         {
           "id": "f_194373_gw2_bottom",
@@ -533,7 +533,9 @@
       ],
       "epithet": "Steady Eddie",
       "epithet_tagline": "Steadiest scorer — swings of only ±11.4",
-      "credits": 0
+      "credits": 0,
+      "joining_fee_paid_by": "Themba",
+      "joining_fee_paid_date": "2026-09-30T04:26:48.710Z"
     },
     {
       "entry": 7068091,
