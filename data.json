@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T23:36:43.363Z",
+  "generated_at": "2026-09-30T03:52:58.541Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 5,
@@ -286,7 +286,7 @@
       "entry": 4893790,
       "name": "Kudzai Kupeta",
       "team": "Champions FC",
-      "joining_fee_paid": false,
+      "joining_fee_paid": true,
       "fines": [
         {
           "id": "f_4893790_gw3_bottom",
@@ -331,7 +331,9 @@
       ],
       "epithet": "The Fugitive",
       "epithet_tagline": "Owes the pot the most — R450",
-      "credits": 0
+      "credits": 0,
+      "joining_fee_paid_by": "Themba",
+      "joining_fee_paid_date": "2026-09-30T03:52:58.541Z"
     },
     {
       "entry": 4370096,
