@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T04:26:48.710Z",
+  "generated_at": "2026-09-30T04:27:15.715Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 5,
@@ -516,7 +516,7 @@
           "type": "bottom",
           "status": "confirmed",
           "reason": "LMP bottom-3 — GW2 (post-hits 70, threshold 72)",
-          "paid_date": null,
+          "paid_date": "2026-09-30T04:27:15.715Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -525,7 +525,8 @@
           "added_date": "2026-09-01T14:42:36.093Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "payment"
         }
       ],
       "bottom_finishes": [
@@ -535,7 +536,24 @@
       "epithet_tagline": "Steadiest scorer — swings of only ±11.4",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
-      "joining_fee_paid_date": "2026-09-30T04:26:48.710Z"
+      "joining_fee_paid_date": "2026-09-30T04:26:48.710Z",
+      "payments": [
+        {
+          "id": "p_194373_1790742435715",
+          "amount": 100,
+          "date": "2026-09-30T04:27:15.715Z",
+          "recorded_by": "Themba",
+          "allocated": [
+            {
+              "kind": "fine",
+              "id": "f_194373_gw2_bottom",
+              "gw": 2,
+              "amount": 100
+            }
+          ],
+          "credit_after": 0
+        }
+      ]
     },
     {
       "entry": 7068091,
