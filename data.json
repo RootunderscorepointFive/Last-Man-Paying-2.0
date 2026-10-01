@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T17:44:29.002Z",
+  "generated_at": "2026-10-01T17:45:33.207Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 5,
@@ -24,6 +24,24 @@
           "reversed_date": null,
           "added_by": "fpl-api",
           "added_date": "2026-09-01T14:42:36.093Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        },
+        {
+          "id": "f_6404452_1790876733481",
+          "gw": null,
+          "amount": 150,
+          "type": "losers_fine",
+          "status": "confirmed",
+          "reason": "Joining fee not paid on time.",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "Themba",
+          "added_date": "2026-10-01T17:45:33.207Z",
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
