@@ -342,7 +342,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 97,
-          "ownership": "25.7",
+          "ownership": "25.6",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -974,7 +974,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 97,
-          "ownership": "25.7",
+          "ownership": "25.6",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -1647,7 +1647,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 97,
-          "ownership": "25.7",
+          "ownership": "25.6",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -2146,7 +2146,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 97,
-          "ownership": "25.7",
+          "ownership": "25.6",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -2736,7 +2736,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 97,
-          "ownership": "25.7",
+          "ownership": "25.6",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -5596,7 +5596,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "16.5",
+          "ownership": "16.6",
           "priceChange": 1,
           "live_pts": 14,
           "minutes": 90,
@@ -6937,7 +6937,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 97,
-          "ownership": "25.7",
+          "ownership": "25.6",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -7978,7 +7978,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "16.5",
+          "ownership": "16.6",
           "priceChange": 1,
           "live_pts": 14,
           "minutes": 90,
@@ -10484,7 +10484,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 97,
-          "ownership": "25.7",
+          "ownership": "25.6",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -11742,7 +11742,7 @@
       "code": 244851,
       "position": 3,
       "cost": 97,
-      "fpl_pct": "25.7",
+      "fpl_pct": "25.6",
       "count": 7
     },
     {
@@ -11976,7 +11976,7 @@
       "code": 17761,
       "position": 2,
       "cost": 62,
-      "fpl_pct": "16.5",
+      "fpl_pct": "16.6",
       "count": 2
     },
     {
@@ -12590,8 +12590,8 @@
       "code": 60307,
       "position": 3,
       "now_cost": 58,
-      "transfers_in": 786590,
-      "transfers_out": 11827,
+      "transfers_in": 789222,
+      "transfers_out": 11969,
       "selected_by_percent": "28.9"
     },
     {
@@ -12600,8 +12600,8 @@
       "code": 513418,
       "position": 3,
       "now_cost": 62,
-      "transfers_in": 389635,
-      "transfers_out": 24582,
+      "transfers_in": 391483,
+      "transfers_out": 24821,
       "selected_by_percent": "11.5"
     },
     {
@@ -12610,8 +12610,8 @@
       "code": 647850,
       "position": 4,
       "now_cost": 56,
-      "transfers_in": 310990,
-      "transfers_out": 18773,
+      "transfers_in": 312735,
+      "transfers_out": 18972,
       "selected_by_percent": "4.2"
     },
     {
@@ -12620,8 +12620,8 @@
       "code": 465730,
       "position": 2,
       "now_cost": 50,
-      "transfers_in": 298203,
-      "transfers_out": 21155,
+      "transfers_in": 299473,
+      "transfers_out": 21390,
       "selected_by_percent": "27.8"
     },
     {
@@ -12630,8 +12630,8 @@
       "code": 487838,
       "position": 2,
       "now_cost": 53,
-      "transfers_in": 244268,
-      "transfers_out": 20201,
+      "transfers_in": 245331,
+      "transfers_out": 20410,
       "selected_by_percent": "17.3"
     },
     {
@@ -12640,9 +12640,9 @@
       "code": 17761,
       "position": 2,
       "now_cost": 62,
-      "transfers_in": 231638,
-      "transfers_out": 20206,
-      "selected_by_percent": "16.5"
+      "transfers_in": 232681,
+      "transfers_out": 20445,
+      "selected_by_percent": "16.6"
     },
     {
       "id": 552,
@@ -12650,8 +12650,8 @@
       "code": 441264,
       "position": 4,
       "now_cost": 57,
-      "transfers_in": 194469,
-      "transfers_out": 44918,
+      "transfers_in": 194699,
+      "transfers_out": 45407,
       "selected_by_percent": "6.9"
     },
     {
@@ -12660,8 +12660,8 @@
       "code": 201666,
       "position": 3,
       "now_cost": 61,
-      "transfers_in": 158319,
-      "transfers_out": 17680,
+      "transfers_in": 159257,
+      "transfers_out": 17908,
       "selected_by_percent": "5.7"
     },
     {
@@ -12670,8 +12670,8 @@
       "code": 244850,
       "position": 3,
       "now_cost": 77,
-      "transfers_in": 146725,
-      "transfers_out": 69814,
+      "transfers_in": 147827,
+      "transfers_out": 70142,
       "selected_by_percent": "40.5"
     },
     {
@@ -12680,8 +12680,8 @@
       "code": 477424,
       "position": 2,
       "now_cost": 57,
-      "transfers_in": 145711,
-      "transfers_out": 53885,
+      "transfers_in": 146370,
+      "transfers_out": 54315,
       "selected_by_percent": "26.8"
     },
     {
@@ -12690,8 +12690,8 @@
       "code": 154561,
       "position": 1,
       "now_cost": 61,
-      "transfers_in": 125931,
-      "transfers_out": 47503,
+      "transfers_in": 126560,
+      "transfers_out": 47822,
       "selected_by_percent": "42.3"
     },
     {
@@ -12700,8 +12700,8 @@
       "code": 437730,
       "position": 3,
       "now_cost": 84,
-      "transfers_in": 125070,
-      "transfers_out": 65831,
+      "transfers_in": 125275,
+      "transfers_out": 66751,
       "selected_by_percent": "15.3"
     },
     {
@@ -12710,8 +12710,8 @@
       "code": 473284,
       "position": 1,
       "now_cost": 47,
-      "transfers_in": 124488,
-      "transfers_out": 21575,
+      "transfers_in": 124973,
+      "transfers_out": 21773,
       "selected_by_percent": "12.8"
     },
     {
@@ -12720,8 +12720,8 @@
       "code": 226182,
       "position": 2,
       "now_cost": 46,
-      "transfers_in": 123221,
-      "transfers_out": 25303,
+      "transfers_in": 123927,
+      "transfers_out": 25489,
       "selected_by_percent": "7.2"
     },
     {
@@ -12730,8 +12730,8 @@
       "code": 466052,
       "position": 3,
       "now_cost": 78,
-      "transfers_in": 121803,
-      "transfers_out": 88224,
+      "transfers_in": 122547,
+      "transfers_out": 88699,
       "selected_by_percent": "28.4"
     },
     {
@@ -12740,8 +12740,8 @@
       "code": 219168,
       "position": 4,
       "now_cost": 91,
-      "transfers_in": 114899,
-      "transfers_out": 82198,
+      "transfers_in": 115201,
+      "transfers_out": 83469,
       "selected_by_percent": "22.4"
     },
     {
@@ -12750,8 +12750,8 @@
       "code": 223340,
       "position": 3,
       "now_cost": 95,
-      "transfers_in": 108349,
-      "transfers_out": 47145,
+      "transfers_in": 109355,
+      "transfers_out": 47438,
       "selected_by_percent": "13.7"
     },
     {
@@ -12760,8 +12760,8 @@
       "code": 177815,
       "position": 4,
       "now_cost": 60,
-      "transfers_in": 92776,
-      "transfers_out": 167355,
+      "transfers_in": 93316,
+      "transfers_out": 168076,
       "selected_by_percent": "24.8"
     },
     {
@@ -12770,8 +12770,8 @@
       "code": 199798,
       "position": 2,
       "now_cost": 46,
-      "transfers_in": 90155,
-      "transfers_out": 45673,
+      "transfers_in": 90639,
+      "transfers_out": 46111,
       "selected_by_percent": "19.4"
     },
     {
@@ -12780,8 +12780,8 @@
       "code": 577725,
       "position": 3,
       "now_cost": 55,
-      "transfers_in": 86560,
-      "transfers_out": 17959,
+      "transfers_in": 87256,
+      "transfers_out": 18128,
       "selected_by_percent": "2.6"
     }
   ],
@@ -12856,7 +12856,7 @@
       "team": "EVE",
       "now_cost": 62,
       "change": 1,
-      "selected_by_percent": "16.5"
+      "selected_by_percent": "16.6"
     },
     {
       "id": 233,
@@ -13082,5 +13082,5 @@
     }
   ],
   "dreamTeamGW": 5,
-  "generated_at": "2026-10-01T08:45:45.131Z"
+  "generated_at": "2026-10-01T16:16:04.623Z"
 }
