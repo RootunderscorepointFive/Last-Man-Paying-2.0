@@ -7153,7 +7153,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "5.8",
+          "ownership": "5.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -12241,6 +12241,15 @@
       "count": 1
     },
     {
+      "id": 453,
+      "name": "Barnes",
+      "code": 201666,
+      "position": 3,
+      "cost": 61,
+      "fpl_pct": "5.9",
+      "count": 1
+    },
+    {
       "id": 69,
       "name": "Scott",
       "code": 503139,
@@ -12255,15 +12264,6 @@
       "code": 225796,
       "position": 2,
       "cost": 53,
-      "fpl_pct": "5.8",
-      "count": 1
-    },
-    {
-      "id": 453,
-      "name": "Barnes",
-      "code": 201666,
-      "position": 3,
-      "cost": 61,
       "fpl_pct": "5.8",
       "count": 1
     },
@@ -12590,8 +12590,8 @@
       "code": 60307,
       "position": 3,
       "now_cost": 59,
-      "transfers_in": 826078,
-      "transfers_out": 13584,
+      "transfers_in": 827622,
+      "transfers_out": 13678,
       "selected_by_percent": "29.3"
     },
     {
@@ -12600,8 +12600,8 @@
       "code": 513418,
       "position": 3,
       "now_cost": 62,
-      "transfers_in": 414563,
-      "transfers_out": 28407,
+      "transfers_in": 415699,
+      "transfers_out": 28588,
       "selected_by_percent": "11.8"
     },
     {
@@ -12610,8 +12610,8 @@
       "code": 647850,
       "position": 4,
       "now_cost": 56,
-      "transfers_in": 332330,
-      "transfers_out": 21403,
+      "transfers_in": 333363,
+      "transfers_out": 21529,
       "selected_by_percent": "4.4"
     },
     {
@@ -12620,8 +12620,8 @@
       "code": 465730,
       "position": 2,
       "now_cost": 50,
-      "transfers_in": 314254,
-      "transfers_out": 23915,
+      "transfers_in": 314909,
+      "transfers_out": 24054,
       "selected_by_percent": "27.9"
     },
     {
@@ -12630,8 +12630,8 @@
       "code": 487838,
       "position": 2,
       "now_cost": 53,
-      "transfers_in": 258687,
-      "transfers_out": 22734,
+      "transfers_in": 259387,
+      "transfers_out": 22880,
       "selected_by_percent": "17.4"
     },
     {
@@ -12640,8 +12640,8 @@
       "code": 17761,
       "position": 2,
       "now_cost": 62,
-      "transfers_in": 244663,
-      "transfers_out": 23279,
+      "transfers_in": 245186,
+      "transfers_out": 23467,
       "selected_by_percent": "16.7"
     },
     {
@@ -12650,8 +12650,8 @@
       "code": 441264,
       "position": 4,
       "now_cost": 57,
-      "transfers_in": 197159,
-      "transfers_out": 50973,
+      "transfers_in": 197240,
+      "transfers_out": 51226,
       "selected_by_percent": "6.9"
     },
     {
@@ -12660,9 +12660,9 @@
       "code": 201666,
       "position": 3,
       "now_cost": 61,
-      "transfers_in": 170945,
-      "transfers_out": 21143,
-      "selected_by_percent": "5.8"
+      "transfers_in": 171471,
+      "transfers_out": 21404,
+      "selected_by_percent": "5.9"
     },
     {
       "id": 40,
@@ -12670,8 +12670,8 @@
       "code": 244850,
       "position": 3,
       "now_cost": 77,
-      "transfers_in": 161958,
-      "transfers_out": 74337,
+      "transfers_in": 162905,
+      "transfers_out": 74478,
       "selected_by_percent": "40.6"
     },
     {
@@ -12680,19 +12680,9 @@
       "code": 477424,
       "position": 2,
       "now_cost": 57,
-      "transfers_in": 154892,
-      "transfers_out": 59214,
+      "transfers_in": 155270,
+      "transfers_out": 59432,
       "selected_by_percent": "26.9"
-    },
-    {
-      "id": 1,
-      "name": "Raya",
-      "code": 154561,
-      "position": 1,
-      "now_cost": 61,
-      "transfers_in": 133524,
-      "transfers_out": 52945,
-      "selected_by_percent": "42.3"
     },
     {
       "id": 12,
@@ -12700,9 +12690,19 @@
       "code": 223340,
       "position": 3,
       "now_cost": 95,
-      "transfers_in": 133140,
-      "transfers_out": 50527,
+      "transfers_in": 134188,
+      "transfers_out": 50655,
       "selected_by_percent": "13.9"
+    },
+    {
+      "id": 1,
+      "name": "Raya",
+      "code": 154561,
+      "position": 1,
+      "now_cost": 61,
+      "transfers_in": 133837,
+      "transfers_out": 53185,
+      "selected_by_percent": "42.3"
     },
     {
       "id": 330,
@@ -12710,8 +12710,8 @@
       "code": 226182,
       "position": 2,
       "now_cost": 46,
-      "transfers_in": 132994,
-      "transfers_out": 27807,
+      "transfers_in": 133423,
+      "transfers_out": 27916,
       "selected_by_percent": "7.3"
     },
     {
@@ -12720,8 +12720,8 @@
       "code": 466052,
       "position": 3,
       "now_cost": 78,
-      "transfers_in": 131662,
-      "transfers_out": 95695,
+      "transfers_in": 132047,
+      "transfers_out": 96000,
       "selected_by_percent": "28.4"
     },
     {
@@ -12730,8 +12730,8 @@
       "code": 473284,
       "position": 1,
       "now_cost": 47,
-      "transfers_in": 130552,
-      "transfers_out": 24008,
+      "transfers_in": 130892,
+      "transfers_out": 24148,
       "selected_by_percent": "12.8"
     },
     {
@@ -12740,8 +12740,8 @@
       "code": 437730,
       "position": 3,
       "now_cost": 84,
-      "transfers_in": 127720,
-      "transfers_out": 77966,
+      "transfers_in": 127786,
+      "transfers_out": 78503,
       "selected_by_percent": "15.2"
     },
     {
@@ -12750,8 +12750,8 @@
       "code": 219168,
       "position": 4,
       "now_cost": 91,
-      "transfers_in": 118541,
-      "transfers_out": 97385,
+      "transfers_in": 118664,
+      "transfers_out": 98036,
       "selected_by_percent": "22.2"
     },
     {
@@ -12760,8 +12760,8 @@
       "code": 177815,
       "position": 4,
       "now_cost": 60,
-      "transfers_in": 99574,
-      "transfers_out": 177038,
+      "transfers_in": 99835,
+      "transfers_out": 177453,
       "selected_by_percent": "24.8"
     },
     {
@@ -12770,8 +12770,8 @@
       "code": 577725,
       "position": 3,
       "now_cost": 55,
-      "transfers_in": 98821,
-      "transfers_out": 20216,
+      "transfers_in": 99536,
+      "transfers_out": 20300,
       "selected_by_percent": "2.7"
     },
     {
@@ -12780,8 +12780,8 @@
       "code": 199798,
       "position": 2,
       "now_cost": 46,
-      "transfers_in": 96159,
-      "transfers_out": 51624,
+      "transfers_in": 96401,
+      "transfers_out": 51897,
       "selected_by_percent": "19.4"
     }
   ],
@@ -13082,5 +13082,5 @@
     }
   ],
   "dreamTeamGW": 5,
-  "generated_at": "2026-10-05T00:41:27.958Z"
+  "generated_at": "2026-10-05T06:48:33.055Z"
 }
