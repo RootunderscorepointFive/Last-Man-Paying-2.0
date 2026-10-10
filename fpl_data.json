@@ -4,7 +4,7 @@
     {
       "manager": "Nkosi The Chef",
       "team": "Mainoo Business",
-      "pts": 388,
+      "pts": 389,
       "bottomApps": 0
     },
     {
@@ -28,7 +28,7 @@
     {
       "manager": "Fanele Msweli",
       "team": "Project X_abi Alonso",
-      "pts": 336,
+      "pts": 337,
       "bottomApps": 0
     },
     {
@@ -40,7 +40,7 @@
     {
       "manager": "Thembalethu Miya",
       "team": "Root_.5 FC",
-      "pts": 328,
+      "pts": 329,
       "bottomApps": 0
     },
     {
@@ -52,31 +52,31 @@
     {
       "manager": "Mbuyi Katumba",
       "team": "Finding Mbeumo",
-      "pts": 321,
+      "pts": 322,
       "bottomApps": 0
     },
     {
       "manager": "Zazi Zuma",
       "team": "Mpendles Finest",
-      "pts": 316,
+      "pts": 319,
       "bottomApps": 0
     },
     {
       "manager": "Luthando Ngidi",
       "team": "Cops and Rogers",
-      "pts": 312,
+      "pts": 314,
       "bottomApps": 0
     },
     {
       "manager": "Kudzai Kupeta",
       "team": "Champions FC",
-      "pts": 311,
+      "pts": 314,
       "bottomApps": 0
     },
     {
       "manager": "Mtho Mabizela",
       "team": "Reece's Pieces",
-      "pts": 309,
+      "pts": 306,
       "bottomApps": 0
     },
     {
@@ -88,7 +88,7 @@
     {
       "manager": "Lethu Mkhwanazi",
       "team": "You Know Fernandes",
-      "pts": 297,
+      "pts": 298,
       "bottomApps": 0
     },
     {
@@ -100,7 +100,7 @@
     {
       "manager": "Mhlengi Kunene",
       "team": "Hidden Hills",
-      "pts": 288,
+      "pts": 289,
       "bottomApps": 0
     },
     {
@@ -112,7 +112,7 @@
     {
       "manager": "Kwazi Mthembu",
       "team": "Brothers xGaramazov",
-      "pts": 279,
+      "pts": 280,
       "bottomApps": 0
     }
   ],
@@ -127,7 +127,7 @@
         44,
         98,
         55,
-        5
+        6
       ],
       "gwHits": [
         0,
@@ -151,7 +151,7 @@
           "event": 3
         }
       ],
-      "total": 388,
+      "total": 389,
       "currentCaptain": "Palmer",
       "activeChip": null,
       "currentPicks": [
@@ -166,8 +166,8 @@
           "cost": 61,
           "ownership": "43.7",
           "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 34,
+          "live_pts": 5,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -188,7 +188,7 @@
             "penMissed": 0,
             "yellow": 0,
             "red": 0,
-            "saves": 1
+            "saves": 3
           }
         },
         {
@@ -239,7 +239,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -634,8 +634,8 @@
           "cost": 46,
           "ownership": "17.3",
           "priceChange": 0,
-          "live_pts": 1,
-          "minutes": 34,
+          "live_pts": 3,
+          "minutes": 45,
           "started": false,
           "is_effective_captain": false,
           "effective_multiplier": 0,
@@ -649,7 +649,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 0,
+            "bonus": 2,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -712,7 +712,7 @@
         16,
         1,
         4,
-        8
+        7
       ]
     },
     {
@@ -801,7 +801,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -981,7 +981,7 @@
           "ownership": "17.2",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": true,
           "effective_multiplier": 2,
@@ -1310,7 +1310,7 @@
         8,
         4,
         1,
-        11
+        12
       ]
     },
     {
@@ -1399,7 +1399,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -1579,7 +1579,7 @@
           "ownership": "20.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -1794,8 +1794,8 @@
           "cost": 46,
           "ownership": "17.3",
           "priceChange": 0,
-          "live_pts": 1,
-          "minutes": 34,
+          "live_pts": 3,
+          "minutes": 45,
           "started": false,
           "is_effective_captain": false,
           "effective_multiplier": 0,
@@ -1809,7 +1809,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 0,
+            "bonus": 2,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -1908,7 +1908,7 @@
         15,
         7,
         7,
-        12
+        13
       ]
     },
     {
@@ -2033,7 +2033,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -2519,7 +2519,7 @@
         69,
         71,
         35,
-        6
+        7
       ],
       "gwHits": [
         0,
@@ -2532,7 +2532,7 @@
       "benchTotal": 19,
       "transfersTotal": 4,
       "chips": [],
-      "total": 336,
+      "total": 337,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -2547,8 +2547,8 @@
           "cost": 61,
           "ownership": "43.7",
           "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 34,
+          "live_pts": 5,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -2569,7 +2569,7 @@
             "penMissed": 0,
             "yellow": 0,
             "red": 0,
-            "saves": 1
+            "saves": 3
           }
         },
         {
@@ -2692,7 +2692,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -2764,7 +2764,7 @@
           "ownership": "20.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -3093,7 +3093,7 @@
         3,
         10,
         18,
-        2
+        3
       ]
     },
     {
@@ -3207,7 +3207,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -3423,7 +3423,7 @@
           "ownership": "22.8",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -3680,7 +3680,7 @@
         17,
         3,
         2,
-        13
+        14
       ]
     },
     {
@@ -3693,7 +3693,7 @@
         56,
         73,
         48,
-        6
+        7
       ],
       "gwHits": [
         0,
@@ -3706,7 +3706,7 @@
       "benchTotal": 14,
       "transfersTotal": 2,
       "chips": [],
-      "total": 328,
+      "total": 329,
       "currentCaptain": "B.Fernandes",
       "activeChip": null,
       "currentPicks": [
@@ -3721,8 +3721,8 @@
           "cost": 61,
           "ownership": "43.7",
           "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 34,
+          "live_pts": 5,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -3743,7 +3743,7 @@
             "penMissed": 0,
             "yellow": 0,
             "red": 0,
-            "saves": 1
+            "saves": 3
           }
         },
         {
@@ -3794,7 +3794,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -4010,7 +4010,7 @@
           "ownership": "22.8",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -4267,7 +4267,7 @@
         6,
         9,
         8,
-        3
+        4
       ]
     },
     {
@@ -4387,7 +4387,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -4873,7 +4873,7 @@
         48,
         84,
         33,
-        6
+        7
       ],
       "gwHits": [
         0,
@@ -4886,7 +4886,7 @@
       "benchTotal": 32,
       "transfersTotal": 4,
       "chips": [],
-      "total": 321,
+      "total": 322,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -4901,8 +4901,8 @@
           "cost": 61,
           "ownership": "43.7",
           "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 34,
+          "live_pts": 5,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -4923,7 +4923,7 @@
             "penMissed": 0,
             "yellow": 0,
             "red": 0,
-            "saves": 1
+            "saves": 3
           }
         },
         {
@@ -4974,7 +4974,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -5226,7 +5226,7 @@
           "ownership": "22.8",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -5447,7 +5447,7 @@
         11,
         6,
         19,
-        4
+        5
       ]
     },
     {
@@ -5460,7 +5460,7 @@
         73,
         70,
         49,
-        6
+        9
       ],
       "gwHits": [
         0,
@@ -5484,7 +5484,7 @@
           "event": 4
         }
       ],
-      "total": 316,
+      "total": 319,
       "currentCaptain": "João Pedro",
       "activeChip": null,
       "currentPicks": [
@@ -5499,8 +5499,8 @@
           "cost": 61,
           "ownership": "43.7",
           "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 34,
+          "live_pts": 5,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -5521,7 +5521,7 @@
             "penMissed": 0,
             "yellow": 0,
             "red": 0,
-            "saves": 1
+            "saves": 3
           }
         },
         {
@@ -5787,8 +5787,8 @@
           "cost": 74,
           "ownership": "10.7",
           "priceChange": 0,
-          "live_pts": 1,
-          "minutes": 34,
+          "live_pts": 2,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -5802,7 +5802,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 0,
+            "bonus": 1,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -5824,7 +5824,7 @@
           "ownership": "20.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -6045,7 +6045,7 @@
         1,
         11,
         6,
-        5
+        2
       ]
     },
     {
@@ -6058,7 +6058,7 @@
         46,
         66,
         41,
-        2
+        4
       ],
       "gwHits": [
         0,
@@ -6082,7 +6082,7 @@
           "event": 6
         }
       ],
-      "total": 312,
+      "total": 314,
       "currentCaptain": "B.Fernandes",
       "activeChip": "wildcard",
       "currentPicks": [
@@ -6134,7 +6134,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -6241,8 +6241,8 @@
           "cost": 46,
           "ownership": "17.3",
           "priceChange": 0,
-          "live_pts": 1,
-          "minutes": 34,
+          "live_pts": 3,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -6256,7 +6256,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 0,
+            "bonus": 2,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -6643,7 +6643,7 @@
         12,
         14,
         12,
-        14
+        10
       ]
     },
     {
@@ -6656,7 +6656,7 @@
         41,
         91,
         38,
-        7
+        10
       ],
       "gwHits": [
         0,
@@ -6675,7 +6675,7 @@
           "event": 3
         }
       ],
-      "total": 311,
+      "total": 314,
       "currentCaptain": "Groß",
       "activeChip": null,
       "currentPicks": [
@@ -6690,8 +6690,8 @@
           "cost": 61,
           "ownership": "43.7",
           "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 34,
+          "live_pts": 5,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -6712,7 +6712,7 @@
             "penMissed": 0,
             "yellow": 0,
             "red": 0,
-            "saves": 1
+            "saves": 3
           }
         },
         {
@@ -6727,7 +6727,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -6762,8 +6762,8 @@
           "cost": 46,
           "ownership": "17.3",
           "priceChange": 0,
-          "live_pts": 1,
-          "minutes": 34,
+          "live_pts": 3,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -6777,7 +6777,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 0,
+            "bonus": 2,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -6979,7 +6979,7 @@
           "ownership": "22.8",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -7249,7 +7249,7 @@
         45,
         67,
         56,
-        6
+        3
       ],
       "gwHits": [
         0,
@@ -7273,7 +7273,7 @@
           "event": 6
         }
       ],
-      "total": 309,
+      "total": 306,
       "currentCaptain": "Haaland",
       "activeChip": "bboost",
       "currentPicks": [
@@ -7397,7 +7397,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -7469,7 +7469,7 @@
           "ownership": "20.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -7684,8 +7684,8 @@
           "cost": 50,
           "ownership": "5.6",
           "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 34,
+          "live_pts": 1,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -7699,7 +7699,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 3,
+            "bonus": 0,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -7834,7 +7834,7 @@
         14,
         13,
         3,
-        6
+        11
       ]
     },
     {
@@ -7954,7 +7954,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -8350,7 +8350,7 @@
           "ownership": "22.8",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": false,
           "is_effective_captain": false,
           "effective_multiplier": 0,
@@ -8440,7 +8440,7 @@
         39,
         59,
         40,
-        6
+        7
       ],
       "gwHits": [
         0,
@@ -8459,7 +8459,7 @@
           "event": 5
         }
       ],
-      "total": 297,
+      "total": 298,
       "currentCaptain": "B.Fernandes",
       "activeChip": null,
       "currentPicks": [
@@ -8474,8 +8474,8 @@
           "cost": 61,
           "ownership": "43.7",
           "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 34,
+          "live_pts": 5,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -8496,7 +8496,7 @@
             "penMissed": 0,
             "yellow": 0,
             "red": 0,
-            "saves": 1
+            "saves": 3
           }
         },
         {
@@ -8511,7 +8511,7 @@
           "ownership": "8.3",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -8547,7 +8547,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -9020,7 +9020,7 @@
         19,
         17,
         14,
-        7
+        6
       ]
     },
     {
@@ -9134,7 +9134,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -9620,7 +9620,7 @@
         51,
         70,
         41,
-        4
+        5
       ],
       "gwHits": [
         0,
@@ -9639,7 +9639,7 @@
           "event": 3
         }
       ],
-      "total": 288,
+      "total": 289,
       "currentCaptain": "Haaland",
       "activeChip": null,
       "currentPicks": [
@@ -9654,8 +9654,8 @@
           "cost": 61,
           "ownership": "43.7",
           "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 34,
+          "live_pts": 5,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -9676,7 +9676,7 @@
             "penMissed": 0,
             "yellow": 0,
             "red": 0,
-            "saves": 1
+            "saves": 3
           }
         },
         {
@@ -10086,8 +10086,8 @@
           "cost": 46,
           "ownership": "17.3",
           "priceChange": 0,
-          "live_pts": 1,
-          "minutes": 34,
+          "live_pts": 3,
+          "minutes": 45,
           "started": false,
           "is_effective_captain": false,
           "effective_multiplier": 0,
@@ -10101,7 +10101,7 @@
           "stats": {
             "goals": 0,
             "assists": 0,
-            "bonus": 0,
+            "bonus": 2,
             "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
@@ -10200,7 +10200,7 @@
         10,
         12,
         13,
-        10
+        9
       ]
     },
     {
@@ -10325,7 +10325,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -10469,7 +10469,7 @@
           "ownership": "20.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -10721,7 +10721,7 @@
           "ownership": "8.3",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": false,
           "is_effective_captain": false,
           "effective_multiplier": 0,
@@ -10811,7 +10811,7 @@
         67,
         57,
         38,
-        5
+        6
       ],
       "gwHits": [
         0,
@@ -10830,7 +10830,7 @@
           "event": 3
         }
       ],
-      "total": 279,
+      "total": 280,
       "currentCaptain": "João Pedro",
       "activeChip": null,
       "currentPicks": [
@@ -10845,8 +10845,8 @@
           "cost": 61,
           "ownership": "43.7",
           "priceChange": 0,
-          "live_pts": 4,
-          "minutes": 34,
+          "live_pts": 5,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -10867,7 +10867,7 @@
             "penMissed": 0,
             "yellow": 0,
             "red": 0,
-            "saves": 1
+            "saves": 3
           }
         },
         {
@@ -10918,7 +10918,7 @@
           "ownership": "51.4",
           "priceChange": 0,
           "live_pts": 1,
-          "minutes": 34,
+          "minutes": 45,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
@@ -11391,7 +11391,7 @@
         4,
         18,
         17,
-        9
+        8
       ]
     }
   ],
@@ -12683,20 +12683,12 @@
   "priceFallers": [],
   "dreamTeam": [
     {
-      "id": 385,
-      "name": "Trafford",
-      "code": 432720,
+      "id": 1,
+      "name": "Raya",
+      "code": 154561,
       "position": 1,
-      "team": "LEE",
-      "points": 4
-    },
-    {
-      "id": 10,
-      "name": "White",
-      "code": 198869,
-      "position": 2,
       "team": "ARS",
-      "points": 1
+      "points": 5
     },
     {
       "id": 31,
@@ -12704,14 +12696,22 @@
       "code": 199798,
       "position": 2,
       "team": "ARS",
+      "points": 3
+    },
+    {
+      "id": 4,
+      "name": "Gabriel",
+      "code": 226597,
+      "position": 2,
+      "team": "ARS",
       "points": 1
     },
     {
-      "id": 330,
-      "name": "Bogle",
-      "code": 226182,
+      "id": 10,
+      "name": "White",
+      "code": 198869,
       "position": 2,
-      "team": "LEE",
+      "team": "ARS",
       "points": 1
     },
     {
@@ -12731,6 +12731,22 @@
       "points": 1
     },
     {
+      "id": 7,
+      "name": "Lewis-Skelly",
+      "code": 499169,
+      "position": 3,
+      "team": "ARS",
+      "points": 2
+    },
+    {
+      "id": 13,
+      "name": "Rice",
+      "code": 204480,
+      "position": 3,
+      "team": "ARS",
+      "points": 2
+    },
+    {
       "id": 16,
       "name": "Madueke",
       "code": 248857,
@@ -12739,25 +12755,9 @@
       "points": 2
     },
     {
-      "id": 15,
-      "name": "Ødegaard",
-      "code": 184029,
-      "position": 3,
-      "team": "ARS",
-      "points": 1
-    },
-    {
       "id": 335,
       "name": "Stach",
       "code": 466525,
-      "position": 3,
-      "team": "LEE",
-      "points": 1
-    },
-    {
-      "id": 345,
-      "name": "Tanaka",
-      "code": 248056,
       "position": 3,
       "team": "LEE",
       "points": 1
@@ -12772,5 +12772,5 @@
     }
   ],
   "dreamTeamGW": 6,
-  "generated_at": "2026-10-10T12:06:42.454Z"
+  "generated_at": "2026-10-10T12:19:24.876Z"
 }
