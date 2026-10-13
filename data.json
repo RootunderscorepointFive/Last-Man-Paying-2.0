@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-13T10:23:42.220Z",
+  "generated_at": "2026-10-13T18:05:56.567Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
-  "last_synced_gw": 5,
+  "last_synced_gw": 6,
   "managers": [
     {
       "entry": 6404452,
@@ -196,10 +196,29 @@
           "edited_date": null,
           "edit_history": [],
           "paid_by": "payment"
+        },
+        {
+          "id": "f_3490103_gw6_bottom",
+          "gw": 6,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW6 (post-hits 51, threshold 54)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-10-13T18:05:56.511Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
-        4
+        4,
+        6
       ],
       "epithet": "The Hoarder",
       "epithet_tagline": "Hoarded 8 chips, never played them",
@@ -420,10 +439,29 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_4370096_gw6_bottom",
+          "gw": 6,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW6 (post-hits 42, threshold 54)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-10-13T18:05:56.511Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
-        3
+        3,
+        6
       ],
       "epithet": "The Tinkerman",
       "epithet_tagline": "Can't stop fiddling — 7 transfers, 12 hit pts, 19th to show for it",
@@ -622,7 +660,7 @@
         5
       ],
       "epithet": "Glass Cannon",
-      "epithet_tagline": "Most volatile scorer — swings of ±22.6",
+      "epithet_tagline": "Most volatile scorer — swings of ±22.4",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-09-01T05:41:19.772Z",
@@ -652,7 +690,7 @@
       "fines": [],
       "bottom_finishes": [],
       "epithet": "The Chef's Special",
-      "epithet_tagline": "League leader — 461 pts",
+      "epithet_tagline": "League leader — 467 pts",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-09-29T06:03:16.251Z"
@@ -680,10 +718,29 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_5275613_gw6_bottom",
+          "gw": 6,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW6 (post-hits 54, threshold 54)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-10-13T18:05:56.511Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
-        2
+        2,
+        6
       ],
       "epithet": "Trigger Happy",
       "epithet_tagline": "Itchy trigger finger — 7 transfers",
