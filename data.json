@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-20T11:21:28.156Z",
+  "generated_at": "2026-10-20T16:46:07.685Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
-  "last_synced_gw": 6,
+  "last_synced_gw": 7,
   "managers": [
     {
       "entry": 6404452,
@@ -166,8 +166,8 @@
         }
       ],
       "bottom_finishes": [],
-      "epithet": "The Phoenix",
-      "epithet_tagline": "Rose from the ashes — climbed 9 places",
+      "epithet": "Fee Free",
+      "epithet_tagline": "5 transfers, never once paid a hit",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-08-25T05:07:47.358Z"
@@ -330,8 +330,29 @@
       "name": "Mtho Mabizela",
       "team": "Reece's Pieces",
       "joining_fee_paid": true,
-      "fines": [],
-      "bottom_finishes": [],
+      "fines": [
+        {
+          "id": "f_3484324_gw7_bottom",
+          "gw": 7,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW7 (post-hits 52, threshold 55)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-10-20T16:46:07.387Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        7
+      ],
       "epithet": "Big Spender",
       "epithet_tagline": "Priciest squad in the league — £101.7m",
       "credits": 0,
@@ -387,8 +408,8 @@
         3,
         5
       ],
-      "epithet": "Departure Lounge",
-      "epithet_tagline": "Stuck at the relegation gate — 2 bottom finishes",
+      "epithet": "The Phoenix",
+      "epithet_tagline": "Rose from the ashes — climbed 8 places",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-09-30T03:52:58.541Z",
@@ -508,10 +529,29 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_6934465_gw7_bottom",
+          "gw": 7,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW7 (post-hits 52, threshold 55)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-10-20T16:46:07.387Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
-        1
+        1,
+        7
       ],
       "epithet": "The Dark Horse",
       "epithet_tagline": "Quietly finished 15th without owning a single category",
@@ -626,7 +666,7 @@
         2
       ],
       "epithet": "Steady Eddie",
-      "epithet_tagline": "Steadiest scorer — swings of only ±11.3",
+      "epithet_tagline": "Steadiest scorer — swings of only ±11.9",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-09-30T04:26:48.710Z",
@@ -754,11 +794,30 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_5275613_gw7_bottom",
+          "gw": 7,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW7 (post-hits 47, threshold 55)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-10-20T16:46:07.387Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         2,
-        6
+        6,
+        7
       ],
       "epithet": "The Tinkerman",
       "epithet_tagline": "Can't stop fiddling — 8 transfers, 12 hit pts, 16th to show for it",
@@ -861,10 +920,31 @@
       "name": "Msizi Bhengu",
       "team": "Invincible United",
       "joining_fee_paid": true,
-      "fines": [],
-      "bottom_finishes": [],
-      "epithet": "Fee Free",
-      "epithet_tagline": "5 transfers, never once paid a hit",
+      "fines": [
+        {
+          "id": "f_770193_gw7_bottom",
+          "gw": 7,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW7 (post-hits 55, threshold 55)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-10-20T16:46:07.387Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        7
+      ],
+      "epithet": "Departure Lounge",
+      "epithet_tagline": "Stuck at the relegation gate — 1 bottom finishes",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-10-01T17:44:29.002Z"
