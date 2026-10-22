@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T15:35:06.420Z",
+  "generated_at": "2026-10-22T15:37:27.913Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 7,
@@ -511,6 +511,24 @@
           "reversed_date": null,
           "added_by": "Themba",
           "added_date": "2026-10-14T05:22:50.254Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        },
+        {
+          "id": "f_4370096_1792683448195",
+          "gw": null,
+          "amount": 150,
+          "type": "late_payment",
+          "status": "confirmed",
+          "reason": "Still hasn't paid joining fee",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "Themba",
+          "added_date": "2026-10-22T15:37:27.913Z",
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
