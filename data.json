@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T15:08:25.235Z",
+  "generated_at": "2026-10-22T15:35:06.420Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 7,
@@ -338,7 +338,7 @@
           "type": "bottom",
           "status": "confirmed",
           "reason": "LMP bottom-3 — GW7 (post-hits 52, threshold 55)",
-          "paid_date": null,
+          "paid_date": "2026-10-22T15:35:06.420Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -347,7 +347,8 @@
           "added_date": "2026-10-20T16:46:07.387Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "payment"
         }
       ],
       "bottom_finishes": [
@@ -357,7 +358,24 @@
       "epithet_tagline": "Priciest squad in the league — £101.7m",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
-      "joining_fee_paid_date": "2026-09-01T19:46:53.602Z"
+      "joining_fee_paid_date": "2026-09-01T19:46:53.602Z",
+      "payments": [
+        {
+          "id": "p_3484324_1792683306420",
+          "amount": 100,
+          "date": "2026-10-22T15:35:06.420Z",
+          "recorded_by": "Themba",
+          "allocated": [
+            {
+              "kind": "fine",
+              "id": "f_3484324_gw7_bottom",
+              "gw": 7,
+              "amount": 100
+            }
+          ],
+          "credit_after": 0
+        }
+      ]
     },
     {
       "entry": 4893790,
