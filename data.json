@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-26T12:46:47.734Z",
+  "generated_at": "2026-10-26T19:08:26.959Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
-  "last_synced_gw": 7,
+  "last_synced_gw": 8,
   "managers": [
     {
       "entry": 6404452,
@@ -232,11 +232,30 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_3490103_gw8_bottom",
+          "gw": 8,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW8 (post-hits 25, threshold 31)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-10-26T19:08:26.903Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         4,
-        6
+        6,
+        8
       ],
       "epithet": "The Patient One",
       "epithet_tagline": "Only 4 transfers all season",
@@ -601,11 +620,30 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_6934465_gw8_bottom",
+          "gw": 8,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW8 (post-hits 31, threshold 31)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-10-26T19:08:26.903Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         1,
-        7
+        7,
+        8
       ],
       "epithet": "The Dark Horse",
       "epithet_tagline": "Quietly finished 16th without owning a single category",
@@ -992,10 +1030,29 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_770193_gw8_bottom",
+          "gw": 8,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW8 (post-hits 18, threshold 31)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-10-26T19:08:26.903Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
-        7
+        7,
+        8
       ],
       "epithet": "Glass Cannon",
       "epithet_tagline": "Most volatile scorer — swings of ±25.9",
