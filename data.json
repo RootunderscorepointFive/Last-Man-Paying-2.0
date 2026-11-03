@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-03T14:58:16.336Z",
+  "generated_at": "2026-11-03T20:54:18.367Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
-  "last_synced_gw": 8,
+  "last_synced_gw": 9,
   "managers": [
     {
       "entry": 6404452,
@@ -86,8 +86,8 @@
       "bottom_finishes": [
         2
       ],
-      "epithet": "Trigger Happy",
-      "epithet_tagline": "Itchy trigger finger — 9 transfers",
+      "epithet": "The Tinkerman",
+      "epithet_tagline": "Can't stop fiddling — 9 transfers, 4 hit pts, 7th to show for it",
       "credits": 0
     },
     {
@@ -119,8 +119,8 @@
       "bottom_finishes": [
         1
       ],
-      "epithet": "Bargain Bin",
-      "epithet_tagline": "Doing it on a shoestring — £99.8m squad",
+      "epithet": "Steady Eddie",
+      "epithet_tagline": "Steadiest scorer — swings of only ±14.2",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-09-24T05:43:17.861Z",
@@ -275,8 +275,8 @@
         6,
         8
       ],
-      "epithet": "Departure Lounge",
-      "epithet_tagline": "Stuck at the relegation gate — 3 bottom finishes",
+      "epithet": "Bottled It",
+      "epithet_tagline": "Rock bottom — GW low of 25 pts",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-09-25T06:26:27.762Z",
@@ -404,13 +404,32 @@
           "edited_date": null,
           "edit_history": [],
           "paid_by": "payment"
+        },
+        {
+          "id": "f_3484324_gw9_bottom",
+          "gw": 9,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW9 (post-hits 42, threshold 45)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-03T20:54:18.317Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
-        7
+        7,
+        9
       ],
       "epithet": "Public Enemy #1",
-      "epithet_tagline": "Paid more into the pot than anyone — R100 in fines",
+      "epithet_tagline": "Paid more into the pot than anyone — R200 in fines",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-09-01T19:46:53.602Z",
@@ -674,12 +693,31 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_6934465_gw9_bottom",
+          "gw": 9,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW9 (post-hits 45, threshold 45)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-03T20:54:18.317Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         1,
         7,
-        8
+        8,
+        9
       ],
       "epithet": "The Dark Horse",
       "epithet_tagline": "Quietly finished 16th without owning a single category",
@@ -793,8 +831,8 @@
       "bottom_finishes": [
         2
       ],
-      "epithet": "Steady Eddie",
-      "epithet_tagline": "Steadiest scorer — swings of only ±11.2",
+      "epithet": "Trigger Happy",
+      "epithet_tagline": "Itchy trigger finger — 8 transfers",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-09-30T04:26:48.710Z",
@@ -845,8 +883,8 @@
       "bottom_finishes": [
         5
       ],
-      "epithet": "Bottled It",
-      "epithet_tagline": "Rock bottom — GW low of 33 pts",
+      "epithet": "Bargain Bin",
+      "epithet_tagline": "Doing it on a shoestring — £100.0m squad",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-09-01T05:41:19.772Z",
@@ -940,15 +978,34 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_5275613_gw9_bottom",
+          "gw": 9,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW9 (post-hits 40, threshold 45)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-03T20:54:18.317Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         2,
         6,
-        7
+        7,
+        9
       ],
-      "epithet": "The Tinkerman",
-      "epithet_tagline": "Can't stop fiddling — 10 transfers, 12 hit pts, 15th to show for it",
+      "epithet": "The Regular",
+      "epithet_tagline": "Most bottom finishes — 4 of 38",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-09-14T15:21:51.236Z"
@@ -1020,8 +1077,8 @@
         4,
         5
       ],
-      "epithet": "The Regular",
-      "epithet_tagline": "Most bottom finishes — 3 of 38",
+      "epithet": "Departure Lounge",
+      "epithet_tagline": "Stuck at the relegation gate — 3 bottom finishes",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-08-25T05:10:06.125Z",
