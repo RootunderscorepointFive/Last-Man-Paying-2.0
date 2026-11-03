@@ -58,7 +58,7 @@
     {
       "manager": "Fanele Msweli",
       "team": "Project X_abi Alonso",
-      "pts": 545,
+      "pts": 551,
       "bottomApps": 0
     },
     {
@@ -104,15 +104,15 @@
       "bottomApps": 0
     },
     {
-      "manager": "Lethu Mkhwanazi",
-      "team": "You Know Fernandes",
-      "pts": 485,
+      "manager": "Learnmore Ntshangase",
+      "team": "Cash n Carry.ck",
+      "pts": 486,
       "bottomApps": 0
     },
     {
-      "manager": "Learnmore Ntshangase",
-      "team": "Cash n Carry.ck",
-      "pts": 480,
+      "manager": "Lethu Mkhwanazi",
+      "team": "You Know Fernandes",
+      "pts": 485,
       "bottomApps": 0
     }
   ],
@@ -175,7 +175,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "23.0",
+          "ownership": "23.1",
           "priceChange": 0,
           "live_pts": 11,
           "minutes": 90,
@@ -185,7 +185,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -211,7 +211,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 53,
-          "ownership": "20.1",
+          "ownership": "20.0",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -221,7 +221,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "EVE",
             "is_home": true
           },
@@ -247,7 +247,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 47,
-          "ownership": "22.8",
+          "ownership": "22.9",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 90,
@@ -257,7 +257,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -293,7 +293,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "NFO",
             "is_home": true
           },
@@ -329,7 +329,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -355,7 +355,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -365,7 +365,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -401,7 +401,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -427,7 +427,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 98,
-          "ownership": "28.0",
+          "ownership": "28.1",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 90,
@@ -437,7 +437,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -473,7 +473,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -499,7 +499,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -509,7 +509,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -535,7 +535,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "7.5",
+          "ownership": "7.6",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 79,
@@ -545,7 +545,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "NEW",
             "is_home": false
           },
@@ -581,7 +581,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "SUN",
             "is_home": true
           },
@@ -617,7 +617,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -643,7 +643,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -653,7 +653,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -689,7 +689,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -785,7 +785,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -795,7 +795,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -821,7 +821,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 53,
-          "ownership": "20.1",
+          "ownership": "20.0",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -831,7 +831,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "EVE",
             "is_home": true
           },
@@ -867,7 +867,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -903,7 +903,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -939,7 +939,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -965,7 +965,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -975,7 +975,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -1001,7 +1001,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 98,
-          "ownership": "28.0",
+          "ownership": "28.1",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 90,
@@ -1011,7 +1011,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -1047,7 +1047,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CHE",
             "is_home": false
           },
@@ -1083,7 +1083,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -1109,7 +1109,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -1119,7 +1119,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -1145,7 +1145,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 64,
-          "ownership": "17.6",
+          "ownership": "17.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 75,
@@ -1155,7 +1155,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -1191,7 +1191,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -1227,7 +1227,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -1253,7 +1253,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 47,
-          "ownership": "22.8",
+          "ownership": "22.9",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 90,
@@ -1263,7 +1263,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -1289,7 +1289,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -1299,7 +1299,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -1339,7 +1339,7 @@
         2,
         8,
         5,
-        9
+        10
       ]
     },
     {
@@ -1410,7 +1410,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -1436,7 +1436,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 47,
-          "ownership": "22.8",
+          "ownership": "22.9",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 90,
@@ -1446,7 +1446,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -1472,7 +1472,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "11.0",
+          "ownership": "11.1",
           "priceChange": 1,
           "live_pts": 15,
           "minutes": 90,
@@ -1482,7 +1482,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -1508,7 +1508,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -1518,7 +1518,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -1554,7 +1554,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -1580,7 +1580,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -1590,7 +1590,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -1616,7 +1616,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 79,
-          "ownership": "35.7",
+          "ownership": "35.5",
           "priceChange": -1,
           "live_pts": 1,
           "minutes": 35,
@@ -1626,7 +1626,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -1662,7 +1662,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "AVL",
             "is_home": false
           },
@@ -1698,7 +1698,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -1724,7 +1724,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "20.9",
+          "ownership": "20.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -1734,7 +1734,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BOU",
             "is_home": false
           },
@@ -1760,7 +1760,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -1770,7 +1770,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -1796,7 +1796,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "23.0",
+          "ownership": "23.1",
           "priceChange": 0,
           "live_pts": 11,
           "minutes": 90,
@@ -1806,7 +1806,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -1832,7 +1832,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -1842,7 +1842,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -1878,7 +1878,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -1914,7 +1914,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "SUN",
             "is_home": true
           },
@@ -2025,7 +2025,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -2051,7 +2051,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "11.0",
+          "ownership": "11.1",
           "priceChange": 1,
           "live_pts": 15,
           "minutes": 90,
@@ -2061,7 +2061,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -2087,7 +2087,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 41,
-          "ownership": "7.1",
+          "ownership": "7.0",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 45,
@@ -2097,7 +2097,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -2133,7 +2133,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "NEW",
             "is_home": false
           },
@@ -2159,7 +2159,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "6.9",
+          "ownership": "7.0",
           "priceChange": 0,
           "live_pts": 7,
           "minutes": 65,
@@ -2169,7 +2169,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -2205,7 +2205,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -2231,7 +2231,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -2241,7 +2241,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -2267,7 +2267,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -2277,7 +2277,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -2313,7 +2313,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -2339,7 +2339,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -2349,7 +2349,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -2375,7 +2375,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 64,
-          "ownership": "17.6",
+          "ownership": "17.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 75,
@@ -2385,7 +2385,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -2421,7 +2421,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "HUL",
             "is_home": false
           },
@@ -2457,7 +2457,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -2493,7 +2493,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -2519,7 +2519,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -2529,7 +2529,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -2624,7 +2624,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -2650,7 +2650,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 47,
-          "ownership": "22.8",
+          "ownership": "22.9",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 90,
@@ -2660,7 +2660,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -2696,7 +2696,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -2722,7 +2722,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -2732,7 +2732,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -2758,7 +2758,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -2768,7 +2768,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -2794,7 +2794,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 98,
-          "ownership": "28.0",
+          "ownership": "28.1",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 90,
@@ -2804,7 +2804,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -2830,7 +2830,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -2840,7 +2840,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -2866,7 +2866,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 79,
-          "ownership": "35.7",
+          "ownership": "35.5",
           "priceChange": -1,
           "live_pts": 1,
           "minutes": 35,
@@ -2876,7 +2876,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -2912,7 +2912,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -2948,7 +2948,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -2974,7 +2974,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -2984,7 +2984,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -3010,7 +3010,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "23.0",
+          "ownership": "23.1",
           "priceChange": 0,
           "live_pts": 11,
           "minutes": 90,
@@ -3020,7 +3020,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -3046,7 +3046,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "20.9",
+          "ownership": "20.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -3056,7 +3056,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BOU",
             "is_home": false
           },
@@ -3092,7 +3092,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -3128,7 +3128,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "SUN",
             "is_home": true
           },
@@ -3219,7 +3219,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -3229,7 +3229,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -3255,7 +3255,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "11.0",
+          "ownership": "11.1",
           "priceChange": 1,
           "live_pts": 15,
           "minutes": 90,
@@ -3265,7 +3265,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -3291,7 +3291,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 47,
-          "ownership": "22.8",
+          "ownership": "22.9",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 90,
@@ -3301,7 +3301,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -3327,7 +3327,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -3337,7 +3337,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -3363,7 +3363,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -3373,7 +3373,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -3409,7 +3409,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CHE",
             "is_home": false
           },
@@ -3445,7 +3445,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -3471,7 +3471,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -3481,7 +3481,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -3507,7 +3507,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -3517,7 +3517,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -3543,7 +3543,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 92,
-          "ownership": "21.5",
+          "ownership": "21.6",
           "priceChange": 1,
           "live_pts": 2,
           "minutes": 90,
@@ -3553,7 +3553,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "ARS",
             "is_home": true
           },
@@ -3589,7 +3589,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -3625,7 +3625,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -3661,7 +3661,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -3697,7 +3697,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BOU",
             "is_home": false
           },
@@ -3723,7 +3723,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 41,
-          "ownership": "7.1",
+          "ownership": "7.0",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 45,
@@ -3733,7 +3733,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -3834,7 +3834,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -3870,7 +3870,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "ARS",
             "is_home": true
           },
@@ -3896,7 +3896,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 53,
-          "ownership": "20.1",
+          "ownership": "20.0",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -3906,7 +3906,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "EVE",
             "is_home": true
           },
@@ -3932,7 +3932,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -3942,7 +3942,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -3968,7 +3968,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -3978,7 +3978,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -4004,7 +4004,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -4014,7 +4014,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -4040,7 +4040,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "14.4",
+          "ownership": "14.3",
           "priceChange": 0,
           "live_pts": 3,
           "minutes": 83,
@@ -4050,7 +4050,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "NFO",
             "is_home": true
           },
@@ -4076,7 +4076,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "6.9",
+          "ownership": "7.0",
           "priceChange": 0,
           "live_pts": 7,
           "minutes": 65,
@@ -4086,7 +4086,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -4122,7 +4122,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -4158,7 +4158,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -4184,7 +4184,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -4194,7 +4194,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -4230,7 +4230,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -4266,7 +4266,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "EVE",
             "is_home": true
           },
@@ -4302,7 +4302,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -4338,7 +4338,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CHE",
             "is_home": false
           },
@@ -4378,7 +4378,7 @@
         15,
         11,
         1,
-        10
+        11
       ]
     },
     {
@@ -4429,7 +4429,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -4439,7 +4439,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -4475,7 +4475,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "HUL",
             "is_home": false
           },
@@ -4501,7 +4501,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 47,
-          "ownership": "22.8",
+          "ownership": "22.9",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 90,
@@ -4511,7 +4511,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -4537,7 +4537,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -4547,7 +4547,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -4583,7 +4583,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -4609,7 +4609,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 79,
-          "ownership": "35.7",
+          "ownership": "35.5",
           "priceChange": -1,
           "live_pts": 1,
           "minutes": 35,
@@ -4619,7 +4619,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -4655,7 +4655,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -4681,7 +4681,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -4691,7 +4691,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -4717,7 +4717,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 92,
-          "ownership": "21.5",
+          "ownership": "21.6",
           "priceChange": 1,
           "live_pts": 2,
           "minutes": 90,
@@ -4727,7 +4727,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "ARS",
             "is_home": true
           },
@@ -4753,7 +4753,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -4763,7 +4763,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -4799,7 +4799,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -4835,7 +4835,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -4861,7 +4861,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 79,
-          "ownership": "10.8",
+          "ownership": "10.7",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -4871,7 +4871,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BRE",
             "is_home": false
           },
@@ -4907,7 +4907,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -4943,7 +4943,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -5028,7 +5028,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -5038,7 +5038,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -5064,7 +5064,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -5074,7 +5074,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -5110,7 +5110,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -5146,7 +5146,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -5182,7 +5182,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -5218,7 +5218,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CHE",
             "is_home": false
           },
@@ -5244,7 +5244,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -5254,7 +5254,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -5280,7 +5280,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -5290,7 +5290,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -5316,7 +5316,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "20.9",
+          "ownership": "20.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -5326,7 +5326,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BOU",
             "is_home": false
           },
@@ -5352,7 +5352,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 64,
-          "ownership": "17.6",
+          "ownership": "17.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 75,
@@ -5362,7 +5362,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -5398,7 +5398,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -5434,7 +5434,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -5470,7 +5470,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "HUL",
             "is_home": false
           },
@@ -5506,7 +5506,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "TOT",
             "is_home": false
           },
@@ -5532,7 +5532,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 39,
-          "ownership": "7.1",
+          "ownership": "7.0",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 90,
@@ -5542,7 +5542,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "SUN",
             "is_home": true
           },
@@ -5582,7 +5582,7 @@
         10,
         7,
         10,
-        11
+        13
       ]
     },
     {
@@ -5598,7 +5598,7 @@
         65,
         67,
         35,
-        48
+        54
       ],
       "gwHits": [
         0,
@@ -5620,7 +5620,7 @@
           "event": 9
         }
       ],
-      "total": 545,
+      "total": 551,
       "currentCaptain": "Haaland",
       "activeChip": "wildcard",
       "currentPicks": [
@@ -5633,7 +5633,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -5643,7 +5643,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -5661,33 +5661,33 @@
           }
         },
         {
-          "id": 388,
-          "name": "Guéhi",
+          "id": 8,
+          "name": "Calafiori",
           "position": 2,
-          "code": 209036,
+          "code": 466075,
           "multiplier": 1,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "16.0",
+          "cost": 59,
+          "ownership": "47.9",
           "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 0,
+          "live_pts": 6,
+          "minutes": 90,
           "started": true,
           "is_effective_captain": false,
           "effective_multiplier": 1,
           "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
+            "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
-            "opponent": "BHA",
-            "is_home": true
+            "finished": true,
+            "opponent": "LIV",
+            "is_home": false
           },
           "stats": {
             "goals": 0,
             "assists": 0,
             "bonus": 0,
-            "cleanSheet": false,
+            "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
             "penMissed": 0,
@@ -5705,7 +5705,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -5715,7 +5715,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -5741,7 +5741,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 53,
-          "ownership": "20.1",
+          "ownership": "20.0",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -5751,7 +5751,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "EVE",
             "is_home": true
           },
@@ -5777,7 +5777,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -5787,7 +5787,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -5823,7 +5823,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -5859,7 +5859,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -5885,7 +5885,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -5895,7 +5895,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -5931,7 +5931,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -5957,7 +5957,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 64,
-          "ownership": "17.6",
+          "ownership": "17.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 75,
@@ -5967,7 +5967,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -5993,7 +5993,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "20.9",
+          "ownership": "20.8",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -6003,7 +6003,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BOU",
             "is_home": false
           },
@@ -6039,7 +6039,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -6057,33 +6057,33 @@
           }
         },
         {
-          "id": 8,
-          "name": "Calafiori",
+          "id": 388,
+          "name": "Guéhi",
           "position": 2,
-          "code": 466075,
+          "code": 209036,
           "multiplier": 0,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 59,
-          "ownership": "47.9",
+          "cost": 60,
+          "ownership": "16.0",
           "priceChange": 0,
-          "live_pts": 6,
-          "minutes": 90,
+          "live_pts": 0,
+          "minutes": 0,
           "started": false,
           "is_effective_captain": false,
           "effective_multiplier": 0,
           "fixture": {
-            "kickoff_time": "2026-11-01T16:30:00Z",
+            "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
-            "opponent": "LIV",
-            "is_home": false
+            "finished": true,
+            "opponent": "BHA",
+            "is_home": true
           },
           "stats": {
             "goals": 0,
             "assists": 0,
             "bonus": 0,
-            "cleanSheet": true,
+            "cleanSheet": false,
             "ownGoals": 0,
             "penSaved": 0,
             "penMissed": 0,
@@ -6111,7 +6111,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "COV",
             "is_home": false
           },
@@ -6147,7 +6147,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "COV",
             "is_home": false
           },
@@ -6166,7 +6166,14 @@
         }
       ],
       "squadValue": 998,
-      "automaticSubs": [],
+      "automaticSubs": [
+        {
+          "entry": 800204,
+          "element_in": 8,
+          "element_out": 388,
+          "event": 9
+        }
+      ],
       "gwRanks": [
         1,
         6,
@@ -6187,7 +6194,7 @@
         9,
         12,
         16,
-        14
+        12
       ]
     },
     {
@@ -6248,7 +6255,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -6258,7 +6265,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -6294,7 +6301,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -6320,7 +6327,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 53,
-          "ownership": "20.1",
+          "ownership": "20.0",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -6330,7 +6337,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "EVE",
             "is_home": true
           },
@@ -6356,7 +6363,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 50,
-          "ownership": "2.4",
+          "ownership": "2.5",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 90,
@@ -6366,7 +6373,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -6392,7 +6399,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 47,
-          "ownership": "22.8",
+          "ownership": "22.9",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 90,
@@ -6402,7 +6409,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -6428,7 +6435,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -6438,7 +6445,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -6464,7 +6471,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -6474,7 +6481,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -6500,7 +6507,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 98,
-          "ownership": "28.0",
+          "ownership": "28.1",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 90,
@@ -6510,7 +6517,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -6546,7 +6553,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -6582,7 +6589,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -6608,7 +6615,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -6618,7 +6625,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -6654,7 +6661,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -6690,7 +6697,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -6716,7 +6723,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 79,
-          "ownership": "10.8",
+          "ownership": "10.7",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -6726,7 +6733,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BRE",
             "is_home": false
           },
@@ -6762,7 +6769,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "AVL",
             "is_home": false
           },
@@ -6863,7 +6870,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -6873,7 +6880,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -6909,7 +6916,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -6935,7 +6942,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 47,
-          "ownership": "22.8",
+          "ownership": "22.9",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 90,
@@ -6945,7 +6952,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -6971,7 +6978,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -6981,7 +6988,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -7007,7 +7014,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -7017,7 +7024,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -7043,7 +7050,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -7053,7 +7060,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -7079,7 +7086,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 79,
-          "ownership": "35.7",
+          "ownership": "35.5",
           "priceChange": -1,
           "live_pts": 1,
           "minutes": 35,
@@ -7089,7 +7096,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -7125,7 +7132,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -7161,7 +7168,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -7197,7 +7204,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -7223,7 +7230,7 @@
           "is_captain": true,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -7233,7 +7240,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -7269,7 +7276,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CRY",
             "is_home": true
           },
@@ -7305,7 +7312,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -7341,7 +7348,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -7377,7 +7384,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -7483,7 +7490,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -7509,7 +7516,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 47,
-          "ownership": "22.8",
+          "ownership": "22.9",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 90,
@@ -7519,7 +7526,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -7555,7 +7562,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -7591,7 +7598,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "NFO",
             "is_home": true
           },
@@ -7617,7 +7624,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 53,
-          "ownership": "20.1",
+          "ownership": "20.0",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -7627,7 +7634,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "EVE",
             "is_home": true
           },
@@ -7653,7 +7660,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -7663,7 +7670,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -7699,7 +7706,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -7725,7 +7732,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 79,
-          "ownership": "35.7",
+          "ownership": "35.5",
           "priceChange": -1,
           "live_pts": 1,
           "minutes": 35,
@@ -7735,7 +7742,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -7761,7 +7768,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 98,
-          "ownership": "28.0",
+          "ownership": "28.1",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 90,
@@ -7771,7 +7778,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -7797,7 +7804,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -7807,7 +7814,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -7843,7 +7850,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -7869,7 +7876,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -7879,7 +7886,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -7905,7 +7912,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "44.8",
+          "ownership": "44.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 71,
@@ -7915,7 +7922,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -7951,7 +7958,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "NFO",
             "is_home": true
           },
@@ -7977,7 +7984,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 77,
-          "ownership": "40.7",
+          "ownership": "40.2",
           "priceChange": -1,
           "live_pts": 0,
           "minutes": 0,
@@ -7987,7 +7994,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -8027,7 +8034,7 @@
         14,
         6,
         2,
-        13
+        14
       ]
     },
     {
@@ -8093,7 +8100,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -8129,7 +8136,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -8165,7 +8172,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "NEW",
             "is_home": false
           },
@@ -8201,7 +8208,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -8237,7 +8244,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -8263,7 +8270,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 79,
-          "ownership": "35.7",
+          "ownership": "35.5",
           "priceChange": -1,
           "live_pts": 1,
           "minutes": 35,
@@ -8273,7 +8280,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -8309,7 +8316,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CHE",
             "is_home": false
           },
@@ -8335,7 +8342,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -8345,7 +8352,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -8381,7 +8388,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -8417,7 +8424,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "EVE",
             "is_home": true
           },
@@ -8443,7 +8450,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -8453,7 +8460,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -8489,7 +8496,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BOU",
             "is_home": false
           },
@@ -8515,7 +8522,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "14.4",
+          "ownership": "14.3",
           "priceChange": 0,
           "live_pts": 3,
           "minutes": 83,
@@ -8525,7 +8532,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "NFO",
             "is_home": true
           },
@@ -8561,7 +8568,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "SUN",
             "is_home": true
           },
@@ -8597,7 +8604,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -8698,7 +8705,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -8708,7 +8715,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -8721,42 +8728,6 @@
             "penSaved": 0,
             "penMissed": 0,
             "yellow": 1,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 388,
-          "name": "Guéhi",
-          "position": 2,
-          "code": 209036,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "16.0",
-          "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 0,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "BHA",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
             "red": 0,
             "saves": 0
           }
@@ -8780,7 +8751,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "ARS",
             "is_home": true
           },
@@ -8816,7 +8787,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "CHE",
             "is_home": false
           },
@@ -8852,7 +8823,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -8870,6 +8841,42 @@
           }
         },
         {
+          "id": 289,
+          "name": "Crooks",
+          "position": 3,
+          "code": 101282,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 44,
+          "ownership": "0.6",
+          "priceChange": 0,
+          "live_pts": 0,
+          "minutes": 45,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "IPS",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 1,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
           "id": 13,
           "name": "Rice",
           "position": 3,
@@ -8878,7 +8885,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 74,
-          "ownership": "12.3",
+          "ownership": "12.4",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 90,
@@ -8888,7 +8895,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -8896,42 +8903,6 @@
             "goals": 0,
             "assists": 1,
             "bonus": 2,
-            "cleanSheet": true,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 15,
-          "name": "Ødegaard",
-          "position": 3,
-          "code": 184029,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 67,
-          "ownership": "16.6",
-          "priceChange": 0,
-          "live_pts": 3,
-          "minutes": 87,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-11-01T16:30:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "LIV",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
             "cleanSheet": true,
             "ownGoals": 0,
             "penSaved": 0,
@@ -8960,7 +8931,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -8978,6 +8949,78 @@
           }
         },
         {
+          "id": 15,
+          "name": "Ødegaard",
+          "position": 3,
+          "code": 184029,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 67,
+          "ownership": "16.6",
+          "priceChange": 0,
+          "live_pts": 3,
+          "minutes": 87,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-11-01T16:30:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "LIV",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": true,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 379,
+          "name": "Isak",
+          "position": 4,
+          "code": 219168,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true,
+          "cost": 92,
+          "ownership": "21.6",
+          "priceChange": 1,
+          "live_pts": 2,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-11-01T16:30:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "ARS",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
           "id": 166,
           "name": "N.Jackson",
           "position": 4,
@@ -8986,7 +9029,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -8996,7 +9039,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -9032,44 +9075,8 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 379,
-          "name": "Isak",
-          "position": 4,
-          "code": 219168,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 92,
-          "ownership": "21.5",
-          "priceChange": 1,
-          "live_pts": 2,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-11-01T16:30:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "ARS",
             "is_home": true
           },
           "stats": {
@@ -9104,7 +9111,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -9140,7 +9147,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T17:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "TOT",
             "is_home": false
           },
@@ -9158,26 +9165,26 @@
           }
         },
         {
-          "id": 289,
-          "name": "Crooks",
-          "position": 3,
-          "code": 101282,
+          "id": 388,
+          "name": "Guéhi",
+          "position": 2,
+          "code": 209036,
           "multiplier": 0,
           "is_captain": false,
           "is_vice_captain": false,
-          "cost": 44,
-          "ownership": "0.6",
+          "cost": 60,
+          "ownership": "16.0",
           "priceChange": 0,
           "live_pts": 0,
-          "minutes": 45,
+          "minutes": 0,
           "started": false,
           "is_effective_captain": false,
           "effective_multiplier": 0,
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
-            "opponent": "IPS",
+            "finished": true,
+            "opponent": "BHA",
             "is_home": true
           },
           "stats": {
@@ -9188,7 +9195,7 @@
             "ownGoals": 0,
             "penSaved": 0,
             "penMissed": 0,
-            "yellow": 1,
+            "yellow": 0,
             "red": 0,
             "saves": 0
           }
@@ -9212,7 +9219,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -9231,7 +9238,14 @@
         }
       ],
       "squadValue": 978,
-      "automaticSubs": [],
+      "automaticSubs": [
+        {
+          "entry": 5275613,
+          "element_in": 289,
+          "element_out": 388,
+          "event": 9
+        }
+      ],
       "gwRanks": [
         8,
         18,
@@ -9313,7 +9327,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -9339,7 +9353,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 53,
-          "ownership": "20.1",
+          "ownership": "20.0",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -9349,7 +9363,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "EVE",
             "is_home": true
           },
@@ -9375,7 +9389,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 39,
-          "ownership": "7.1",
+          "ownership": "7.0",
           "priceChange": 0,
           "live_pts": 4,
           "minutes": 90,
@@ -9385,7 +9399,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "SUN",
             "is_home": true
           },
@@ -9411,7 +9425,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 40,
-          "ownership": "2.7",
+          "ownership": "2.6",
           "priceChange": 0,
           "live_pts": 1,
           "minutes": 90,
@@ -9421,7 +9435,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -9457,7 +9471,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -9483,7 +9497,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -9493,7 +9507,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -9519,7 +9533,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 98,
-          "ownership": "28.0",
+          "ownership": "28.1",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 90,
@@ -9529,7 +9543,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -9565,7 +9579,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -9591,7 +9605,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 61,
-          "ownership": "7.5",
+          "ownership": "7.4",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -9601,7 +9615,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "EVE",
             "is_home": true
           },
@@ -9637,7 +9651,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -9663,7 +9677,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 70,
-          "ownership": "25.6",
+          "ownership": "25.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 90,
@@ -9673,7 +9687,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "FUL",
             "is_home": true
           },
@@ -9699,7 +9713,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "23.0",
+          "ownership": "23.1",
           "priceChange": 0,
           "live_pts": 11,
           "minutes": 90,
@@ -9709,7 +9723,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -9735,7 +9749,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 54,
-          "ownership": "1.6",
+          "ownership": "1.5",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 64,
@@ -9745,7 +9759,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BRE",
             "is_home": false
           },
@@ -9781,7 +9795,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -9817,7 +9831,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "HUL",
             "is_home": false
           },
@@ -9913,7 +9927,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -9923,7 +9937,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -9959,7 +9973,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -9995,7 +10009,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -10031,7 +10045,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BOU",
             "is_home": false
           },
@@ -10057,7 +10071,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 98,
-          "ownership": "28.0",
+          "ownership": "28.1",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 90,
@@ -10067,7 +10081,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -10093,7 +10107,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -10103,7 +10117,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -10139,7 +10153,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -10165,7 +10179,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 79,
-          "ownership": "10.8",
+          "ownership": "10.7",
           "priceChange": 0,
           "live_pts": 2,
           "minutes": 90,
@@ -10175,7 +10189,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BRE",
             "is_home": false
           },
@@ -10211,7 +10225,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -10247,7 +10261,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -10283,7 +10297,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -10309,7 +10323,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 46,
-          "ownership": "23.0",
+          "ownership": "23.1",
           "priceChange": 0,
           "live_pts": 11,
           "minutes": 90,
@@ -10319,7 +10333,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -10345,7 +10359,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 56,
-          "ownership": "7.5",
+          "ownership": "7.6",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 79,
@@ -10355,7 +10369,7 @@
           "fixture": {
             "kickoff_time": "2026-11-02T20:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "NEW",
             "is_home": false
           },
@@ -10391,7 +10405,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -10427,7 +10441,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "COV",
             "is_home": false
           },
@@ -10468,6 +10482,618 @@
         13,
         11,
         16
+      ]
+    },
+    {
+      "team": "Cash n Carry.ck",
+      "manager": "Learnmore Ntshangase",
+      "entry": 3490103,
+      "gwPts": [
+        56,
+        92,
+        51,
+        56,
+        39,
+        51,
+        58,
+        25,
+        58
+      ],
+      "gwHits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "benchTotal": 57,
+      "transfersTotal": 7,
+      "chips": [
+        {
+          "name": "wildcard",
+          "time": "2026-10-11T05:53:51.330557Z",
+          "event": 7
+        }
+      ],
+      "total": 486,
+      "currentCaptain": "Haaland",
+      "activeChip": null,
+      "currentPicks": [
+        {
+          "id": 109,
+          "name": "Verbruggen",
+          "position": 1,
+          "code": 489639,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 46,
+          "ownership": "23.1",
+          "priceChange": 0,
+          "live_pts": 11,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "MCI",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 3,
+            "cleanSheet": true,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 7
+          }
+        },
+        {
+          "id": 8,
+          "name": "Calafiori",
+          "position": 2,
+          "code": 466075,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 59,
+          "ownership": "47.9",
+          "priceChange": 0,
+          "live_pts": 6,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-11-01T16:30:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "LIV",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": true,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 449,
+          "name": "Hall",
+          "position": 2,
+          "code": 487838,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 53,
+          "ownership": "20.0",
+          "priceChange": 0,
+          "live_pts": 2,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-11-02T20:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "EVE",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 115,
+          "name": "De Cuyper",
+          "position": 2,
+          "code": 465730,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 54,
+          "ownership": "44.9",
+          "priceChange": 1,
+          "live_pts": 9,
+          "minutes": 71,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "MCI",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 1,
+            "bonus": 1,
+            "cleanSheet": true,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 1,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 40,
+          "name": "Rogers",
+          "position": 3,
+          "code": 244850,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 81,
+          "ownership": "52.4",
+          "priceChange": 0,
+          "live_pts": 9,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-10-31T12:30:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "MUN",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 1,
+            "assists": 0,
+            "bonus": 1,
+            "cleanSheet": true,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 480,
+          "name": "Gibbs-White",
+          "position": 3,
+          "code": 222531,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": true,
+          "cost": 79,
+          "ownership": "10.7",
+          "priceChange": 0,
+          "live_pts": 2,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "BRE",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 68,
+          "name": "Tavernier",
+          "position": 3,
+          "code": 201658,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 66,
+          "ownership": "27.5",
+          "priceChange": 1,
+          "live_pts": 3,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "LEE",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": true,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 124,
+          "name": "Groß",
+          "position": 3,
+          "code": 60307,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 62,
+          "ownership": "46.9",
+          "priceChange": 0,
+          "live_pts": 2,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "MCI",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": true,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 1,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 399,
+          "name": "Cherki",
+          "position": 3,
+          "code": 466052,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 79,
+          "ownership": "35.5",
+          "priceChange": -1,
+          "live_pts": 1,
+          "minutes": 35,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "BHA",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 411,
+          "name": "Haaland",
+          "position": 4,
+          "code": 223094,
+          "multiplier": 2,
+          "is_captain": true,
+          "is_vice_captain": false,
+          "cost": 158,
+          "ownership": "79.0",
+          "priceChange": 0,
+          "live_pts": 2,
+          "minutes": 90,
+          "started": true,
+          "is_effective_captain": true,
+          "effective_multiplier": 2,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "BHA",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 79,
+          "name": "Evanilson",
+          "position": 4,
+          "code": 444102,
+          "multiplier": 1,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 64,
+          "ownership": "17.9",
+          "priceChange": 1,
+          "live_pts": 9,
+          "minutes": 75,
+          "started": true,
+          "is_effective_captain": false,
+          "effective_multiplier": 1,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "LEE",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 1,
+            "assists": 0,
+            "bonus": 3,
+            "cleanSheet": true,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 301,
+          "name": "Palmer",
+          "position": 1,
+          "code": 112520,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "3.5",
+          "priceChange": 0,
+          "live_pts": 0,
+          "minutes": 0,
+          "started": false,
+          "is_effective_captain": false,
+          "effective_multiplier": 0,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "HUL",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 388,
+          "name": "Guéhi",
+          "position": 2,
+          "code": 209036,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 60,
+          "ownership": "16.0",
+          "priceChange": 0,
+          "live_pts": 0,
+          "minutes": 0,
+          "started": false,
+          "is_effective_captain": false,
+          "effective_multiplier": 0,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "BHA",
+            "is_home": true
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 305,
+          "name": "Davis",
+          "position": 2,
+          "code": 455084,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 40,
+          "ownership": "6.9",
+          "priceChange": 0,
+          "live_pts": 1,
+          "minutes": 90,
+          "started": false,
+          "is_effective_captain": false,
+          "effective_multiplier": 0,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "HUL",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        },
+        {
+          "id": 321,
+          "name": "Walle Egeli",
+          "position": 4,
+          "code": 557012,
+          "multiplier": 0,
+          "is_captain": false,
+          "is_vice_captain": false,
+          "cost": 45,
+          "ownership": "2.8",
+          "priceChange": 0,
+          "live_pts": 0,
+          "minutes": 0,
+          "started": false,
+          "is_effective_captain": false,
+          "effective_multiplier": 0,
+          "fixture": {
+            "kickoff_time": "2026-10-31T15:00:00Z",
+            "started": true,
+            "finished": true,
+            "opponent": "HUL",
+            "is_home": false
+          },
+          "stats": {
+            "goals": 0,
+            "assists": 0,
+            "bonus": 0,
+            "cleanSheet": false,
+            "ownGoals": 0,
+            "penSaved": 0,
+            "penMissed": 0,
+            "yellow": 0,
+            "red": 0,
+            "saves": 0
+          }
+        }
+      ],
+      "squadValue": 986,
+      "automaticSubs": [
+        {
+          "entry": 3490103,
+          "element_in": 8,
+          "element_out": 388,
+          "event": 9
+        }
+      ],
+      "gwRanks": [
+        6,
+        9,
+        8,
+        13,
+        15,
+        15,
+        18,
+        19,
+        18
+      ],
+      "weeklyRanks": [
+        6,
+        10,
+        9,
+        19,
+        15,
+        18,
+        15,
+        18,
+        9
       ]
     },
     {
@@ -10518,7 +11144,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 62,
-          "ownership": "46.5",
+          "ownership": "46.6",
           "priceChange": 0,
           "live_pts": 5,
           "minutes": 90,
@@ -10528,7 +11154,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -10564,7 +11190,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BOU",
             "is_home": false
           },
@@ -10590,7 +11216,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 47,
-          "ownership": "22.8",
+          "ownership": "22.9",
           "priceChange": 0,
           "live_pts": 10,
           "minutes": 90,
@@ -10600,7 +11226,7 @@
           "fixture": {
             "kickoff_time": "2026-11-01T16:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LIV",
             "is_home": false
           },
@@ -10636,7 +11262,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -10662,7 +11288,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 81,
-          "ownership": "52.3",
+          "ownership": "52.4",
           "priceChange": 0,
           "live_pts": 9,
           "minutes": 90,
@@ -10672,7 +11298,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -10698,7 +11324,7 @@
           "is_captain": false,
           "is_vice_captain": true,
           "cost": 98,
-          "ownership": "28.0",
+          "ownership": "28.1",
           "priceChange": 0,
           "live_pts": 8,
           "minutes": 90,
@@ -10708,7 +11334,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T12:30:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MUN",
             "is_home": true
           },
@@ -10734,7 +11360,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 66,
-          "ownership": "27.3",
+          "ownership": "27.5",
           "priceChange": 1,
           "live_pts": 3,
           "minutes": 90,
@@ -10744,7 +11370,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -10780,7 +11406,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -10816,7 +11442,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -10852,7 +11478,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "BHA",
             "is_home": true
           },
@@ -10878,7 +11504,7 @@
           "is_captain": false,
           "is_vice_captain": false,
           "cost": 64,
-          "ownership": "17.6",
+          "ownership": "17.9",
           "priceChange": 1,
           "live_pts": 9,
           "minutes": 75,
@@ -10888,7 +11514,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "LEE",
             "is_home": true
           },
@@ -10924,7 +11550,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "HUL",
             "is_home": false
           },
@@ -10960,7 +11586,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "MCI",
             "is_home": false
           },
@@ -10996,7 +11622,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "IPS",
             "is_home": true
           },
@@ -11032,7 +11658,7 @@
           "fixture": {
             "kickoff_time": "2026-10-31T15:00:00Z",
             "started": true,
-            "finished": false,
+            "finished": true,
             "opponent": "HUL",
             "is_home": false
           },
@@ -11061,7 +11687,7 @@
         19,
         19,
         18,
-        18
+        19
       ],
       "weeklyRanks": [
         9,
@@ -11073,611 +11699,6 @@
         9,
         15,
         15
-      ]
-    },
-    {
-      "team": "Cash n Carry.ck",
-      "manager": "Learnmore Ntshangase",
-      "entry": 3490103,
-      "gwPts": [
-        56,
-        92,
-        51,
-        56,
-        39,
-        51,
-        58,
-        25,
-        52
-      ],
-      "gwHits": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "benchTotal": 57,
-      "transfersTotal": 7,
-      "chips": [
-        {
-          "name": "wildcard",
-          "time": "2026-10-11T05:53:51.330557Z",
-          "event": 7
-        }
-      ],
-      "total": 480,
-      "currentCaptain": "Haaland",
-      "activeChip": null,
-      "currentPicks": [
-        {
-          "id": 109,
-          "name": "Verbruggen",
-          "position": 1,
-          "code": 489639,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 46,
-          "ownership": "23.0",
-          "priceChange": 0,
-          "live_pts": 11,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "MCI",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 3,
-            "cleanSheet": true,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 7
-          }
-        },
-        {
-          "id": 388,
-          "name": "Guéhi",
-          "position": 2,
-          "code": 209036,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 60,
-          "ownership": "16.0",
-          "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 0,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "BHA",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 449,
-          "name": "Hall",
-          "position": 2,
-          "code": 487838,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 53,
-          "ownership": "20.1",
-          "priceChange": 0,
-          "live_pts": 2,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-11-02T20:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "EVE",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 115,
-          "name": "De Cuyper",
-          "position": 2,
-          "code": 465730,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 54,
-          "ownership": "44.8",
-          "priceChange": 1,
-          "live_pts": 9,
-          "minutes": 71,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "MCI",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 1,
-            "bonus": 1,
-            "cleanSheet": true,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 1,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 480,
-          "name": "Gibbs-White",
-          "position": 3,
-          "code": 222531,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": true,
-          "cost": 79,
-          "ownership": "10.8",
-          "priceChange": 0,
-          "live_pts": 2,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "BRE",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 68,
-          "name": "Tavernier",
-          "position": 3,
-          "code": 201658,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 66,
-          "ownership": "27.3",
-          "priceChange": 1,
-          "live_pts": 3,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "LEE",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": true,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 40,
-          "name": "Rogers",
-          "position": 3,
-          "code": 244850,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 81,
-          "ownership": "52.3",
-          "priceChange": 0,
-          "live_pts": 9,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-10-31T12:30:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "MUN",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 1,
-            "assists": 0,
-            "bonus": 1,
-            "cleanSheet": true,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 399,
-          "name": "Cherki",
-          "position": 3,
-          "code": 466052,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 79,
-          "ownership": "35.7",
-          "priceChange": -1,
-          "live_pts": 1,
-          "minutes": 35,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "BHA",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 124,
-          "name": "Groß",
-          "position": 3,
-          "code": 60307,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 62,
-          "ownership": "46.9",
-          "priceChange": 0,
-          "live_pts": 2,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "MCI",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": true,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 1,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 411,
-          "name": "Haaland",
-          "position": 4,
-          "code": 223094,
-          "multiplier": 2,
-          "is_captain": true,
-          "is_vice_captain": false,
-          "cost": 158,
-          "ownership": "79.0",
-          "priceChange": 0,
-          "live_pts": 2,
-          "minutes": 90,
-          "started": true,
-          "is_effective_captain": true,
-          "effective_multiplier": 2,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "BHA",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 79,
-          "name": "Evanilson",
-          "position": 4,
-          "code": 444102,
-          "multiplier": 1,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 64,
-          "ownership": "17.6",
-          "priceChange": 1,
-          "live_pts": 9,
-          "minutes": 75,
-          "started": true,
-          "is_effective_captain": false,
-          "effective_multiplier": 1,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "LEE",
-            "is_home": true
-          },
-          "stats": {
-            "goals": 1,
-            "assists": 0,
-            "bonus": 3,
-            "cleanSheet": true,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 301,
-          "name": "Palmer",
-          "position": 1,
-          "code": 112520,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "3.5",
-          "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 0,
-          "started": false,
-          "is_effective_captain": false,
-          "effective_multiplier": 0,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "HUL",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 8,
-          "name": "Calafiori",
-          "position": 2,
-          "code": 466075,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 59,
-          "ownership": "47.9",
-          "priceChange": 0,
-          "live_pts": 6,
-          "minutes": 90,
-          "started": false,
-          "is_effective_captain": false,
-          "effective_multiplier": 0,
-          "fixture": {
-            "kickoff_time": "2026-11-01T16:30:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "LIV",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": true,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 305,
-          "name": "Davis",
-          "position": 2,
-          "code": 455084,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 40,
-          "ownership": "6.9",
-          "priceChange": 0,
-          "live_pts": 1,
-          "minutes": 90,
-          "started": false,
-          "is_effective_captain": false,
-          "effective_multiplier": 0,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "HUL",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        },
-        {
-          "id": 321,
-          "name": "Walle Egeli",
-          "position": 4,
-          "code": 557012,
-          "multiplier": 0,
-          "is_captain": false,
-          "is_vice_captain": false,
-          "cost": 45,
-          "ownership": "2.8",
-          "priceChange": 0,
-          "live_pts": 0,
-          "minutes": 0,
-          "started": false,
-          "is_effective_captain": false,
-          "effective_multiplier": 0,
-          "fixture": {
-            "kickoff_time": "2026-10-31T15:00:00Z",
-            "started": true,
-            "finished": false,
-            "opponent": "HUL",
-            "is_home": false
-          },
-          "stats": {
-            "goals": 0,
-            "assists": 0,
-            "bonus": 0,
-            "cleanSheet": false,
-            "ownGoals": 0,
-            "penSaved": 0,
-            "penMissed": 0,
-            "yellow": 0,
-            "red": 0,
-            "saves": 0
-          }
-        }
-      ],
-      "squadValue": 986,
-      "automaticSubs": [],
-      "gwRanks": [
-        6,
-        9,
-        8,
-        13,
-        15,
-        15,
-        18,
-        19,
-        19
-      ],
-      "weeklyRanks": [
-        6,
-        10,
-        9,
-        19,
-        15,
-        18,
-        15,
-        18,
-        12
       ]
     }
   ],
@@ -11972,23 +11993,6 @@
       "c": "#ff6b6b"
     },
     {
-      "f": "Lethu Mkhwanazi",
-      "s": "Lethu",
-      "t": "You Know Fernandes",
-      "r": [
-        9,
-        7,
-        12,
-        15,
-        16,
-        19,
-        19,
-        18,
-        18
-      ],
-      "c": "#e63946"
-    },
-    {
       "f": "Learnmore Ntshangase",
       "s": "Learnmore",
       "t": "Cash n Carry.ck",
@@ -12001,6 +12005,23 @@
         15,
         18,
         19,
+        18
+      ],
+      "c": "#e63946"
+    },
+    {
+      "f": "Lethu Mkhwanazi",
+      "s": "Lethu",
+      "t": "You Know Fernandes",
+      "r": [
+        9,
+        7,
+        12,
+        15,
+        16,
+        19,
+        19,
+        18,
         19
       ],
       "c": "#f4845f"
@@ -12022,7 +12043,7 @@
       "code": 244850,
       "position": 3,
       "cost": 81,
-      "fpl_pct": "52.3",
+      "fpl_pct": "52.4",
       "count": 17
     },
     {
@@ -12040,7 +12061,7 @@
       "code": 517052,
       "position": 4,
       "cost": 70,
-      "fpl_pct": "25.6",
+      "fpl_pct": "25.9",
       "count": 14
     },
     {
@@ -12049,7 +12070,7 @@
       "code": 465730,
       "position": 2,
       "cost": 54,
-      "fpl_pct": "44.8",
+      "fpl_pct": "44.9",
       "count": 13
     },
     {
@@ -12067,7 +12088,7 @@
       "code": 201658,
       "position": 3,
       "cost": 66,
-      "fpl_pct": "27.3",
+      "fpl_pct": "27.5",
       "count": 12
     },
     {
@@ -12076,7 +12097,7 @@
       "code": 154561,
       "position": 1,
       "cost": 62,
-      "fpl_pct": "46.5",
+      "fpl_pct": "46.6",
       "count": 11
     },
     {
@@ -12085,7 +12106,7 @@
       "code": 199798,
       "position": 2,
       "cost": 47,
-      "fpl_pct": "22.8",
+      "fpl_pct": "22.9",
       "count": 10
     },
     {
@@ -12094,7 +12115,7 @@
       "code": 244851,
       "position": 3,
       "cost": 98,
-      "fpl_pct": "28.0",
+      "fpl_pct": "28.1",
       "count": 8
     },
     {
@@ -12103,7 +12124,7 @@
       "code": 487838,
       "position": 2,
       "cost": 53,
-      "fpl_pct": "20.1",
+      "fpl_pct": "20.0",
       "count": 8
     },
     {
@@ -12112,7 +12133,7 @@
       "code": 466052,
       "position": 3,
       "cost": 79,
-      "fpl_pct": "35.7",
+      "fpl_pct": "35.5",
       "count": 7
     },
     {
@@ -12130,7 +12151,7 @@
       "code": 489639,
       "position": 1,
       "cost": 46,
-      "fpl_pct": "23.0",
+      "fpl_pct": "23.1",
       "count": 6
     },
     {
@@ -12139,7 +12160,7 @@
       "code": 444102,
       "position": 4,
       "cost": 64,
-      "fpl_pct": "17.6",
+      "fpl_pct": "17.9",
       "count": 6
     },
     {
@@ -12166,7 +12187,7 @@
       "code": 177815,
       "position": 4,
       "cost": 61,
-      "fpl_pct": "20.9",
+      "fpl_pct": "20.8",
       "count": 4
     },
     {
@@ -12193,7 +12214,7 @@
       "code": 222531,
       "position": 3,
       "cost": 79,
-      "fpl_pct": "10.8",
+      "fpl_pct": "10.7",
       "count": 4
     },
     {
@@ -12202,7 +12223,7 @@
       "code": 219168,
       "position": 4,
       "cost": 92,
-      "fpl_pct": "21.5",
+      "fpl_pct": "21.6",
       "count": 3
     },
     {
@@ -12238,7 +12259,7 @@
       "code": 469142,
       "position": 2,
       "cost": 50,
-      "fpl_pct": "11.0",
+      "fpl_pct": "11.1",
       "count": 3
     },
     {
@@ -12310,7 +12331,7 @@
       "code": 513418,
       "position": 3,
       "cost": 62,
-      "fpl_pct": "14.4",
+      "fpl_pct": "14.3",
       "count": 2
     },
     {
@@ -12346,25 +12367,7 @@
       "code": 586309,
       "position": 4,
       "cost": 56,
-      "fpl_pct": "7.5",
-      "count": 2
-    },
-    {
-      "id": 175,
-      "name": "van Ewijk",
-      "code": 451284,
-      "position": 2,
-      "cost": 39,
-      "fpl_pct": "7.1",
-      "count": 2
-    },
-    {
-      "id": 277,
-      "name": "Egan",
-      "code": 108416,
-      "position": 2,
-      "cost": 41,
-      "fpl_pct": "7.1",
+      "fpl_pct": "7.6",
       "count": 2
     },
     {
@@ -12373,7 +12376,25 @@
       "code": 614071,
       "position": 3,
       "cost": 61,
-      "fpl_pct": "6.9",
+      "fpl_pct": "7.0",
+      "count": 2
+    },
+    {
+      "id": 175,
+      "name": "van Ewijk",
+      "code": 451284,
+      "position": 2,
+      "cost": 39,
+      "fpl_pct": "7.0",
+      "count": 2
+    },
+    {
+      "id": 277,
+      "name": "Egan",
+      "code": 108416,
+      "position": 2,
+      "cost": 41,
+      "fpl_pct": "7.0",
       "count": 2
     },
     {
@@ -12409,7 +12430,7 @@
       "code": 475168,
       "position": 4,
       "cost": 77,
-      "fpl_pct": "40.7",
+      "fpl_pct": "40.2",
       "count": 1
     },
     {
@@ -12418,16 +12439,7 @@
       "code": 204480,
       "position": 3,
       "cost": 74,
-      "fpl_pct": "12.3",
-      "count": 1
-    },
-    {
-      "id": 453,
-      "name": "Barnes",
-      "code": 201666,
-      "position": 3,
-      "cost": 61,
-      "fpl_pct": "7.5",
+      "fpl_pct": "12.4",
       "count": 1
     },
     {
@@ -12436,6 +12448,15 @@
       "code": 204936,
       "position": 1,
       "cost": 55,
+      "fpl_pct": "7.4",
+      "count": 1
+    },
+    {
+      "id": 453,
+      "name": "Barnes",
+      "code": 201666,
+      "position": 3,
+      "cost": 61,
       "fpl_pct": "7.4",
       "count": 1
     },
@@ -12575,15 +12596,6 @@
       "count": 1
     },
     {
-      "id": 282,
-      "name": "Giles",
-      "code": 232351,
-      "position": 2,
-      "cost": 40,
-      "fpl_pct": "2.7",
-      "count": 1
-    },
-    {
       "id": 542,
       "name": "E.Le Fée",
       "code": 484420,
@@ -12593,12 +12605,12 @@
       "count": 1
     },
     {
-      "id": 539,
-      "name": "O'Nien",
-      "code": 167512,
+      "id": 282,
+      "name": "Giles",
+      "code": 232351,
       "position": 2,
-      "cost": 39,
-      "fpl_pct": "2.4",
+      "cost": 40,
+      "fpl_pct": "2.6",
       "count": 1
     },
     {
@@ -12607,6 +12619,15 @@
       "code": 483067,
       "position": 2,
       "cost": 50,
+      "fpl_pct": "2.5",
+      "count": 1
+    },
+    {
+      "id": 539,
+      "name": "O'Nien",
+      "code": 167512,
+      "position": 2,
+      "cost": 39,
       "fpl_pct": "2.4",
       "count": 1
     },
@@ -12629,21 +12650,21 @@
       "count": 1
     },
     {
-      "id": 167,
-      "name": "Delap",
-      "code": 463034,
-      "position": 4,
-      "cost": 54,
-      "fpl_pct": "1.6",
-      "count": 1
-    },
-    {
       "id": 533,
       "name": "Mukiele",
       "code": 200834,
       "position": 2,
       "cost": 54,
       "fpl_pct": "1.6",
+      "count": 1
+    },
+    {
+      "id": 167,
+      "name": "Delap",
+      "code": 463034,
+      "position": 4,
+      "cost": 54,
+      "fpl_pct": "1.5",
       "count": 1
     },
     {
@@ -12726,9 +12747,9 @@
       "code": 444102,
       "position": 4,
       "now_cost": 64,
-      "transfers_in": 360623,
-      "transfers_out": 5103,
-      "selected_by_percent": "17.6"
+      "transfers_in": 390999,
+      "transfers_out": 5850,
+      "selected_by_percent": "17.9"
     },
     {
       "id": 166,
@@ -12736,9 +12757,9 @@
       "code": 517052,
       "position": 4,
       "now_cost": 70,
-      "transfers_in": 291686,
-      "transfers_out": 9271,
-      "selected_by_percent": "25.6"
+      "transfers_in": 317619,
+      "transfers_out": 10500,
+      "selected_by_percent": "25.9"
     },
     {
       "id": 68,
@@ -12746,9 +12767,9 @@
       "code": 201658,
       "position": 3,
       "now_cost": 66,
-      "transfers_in": 231620,
-      "transfers_out": 9315,
-      "selected_by_percent": "27.3"
+      "transfers_in": 254159,
+      "transfers_out": 10445,
+      "selected_by_percent": "27.5"
     },
     {
       "id": 379,
@@ -12756,9 +12777,9 @@
       "code": 219168,
       "position": 4,
       "now_cost": 92,
-      "transfers_in": 177331,
-      "transfers_out": 12679,
-      "selected_by_percent": "21.5"
+      "transfers_in": 191769,
+      "transfers_out": 14180,
+      "selected_by_percent": "21.6"
     },
     {
       "id": 112,
@@ -12766,9 +12787,9 @@
       "code": 469142,
       "position": 2,
       "now_cost": 50,
-      "transfers_in": 169793,
-      "transfers_out": 3092,
-      "selected_by_percent": "11.0"
+      "transfers_in": 187446,
+      "transfers_out": 3496,
+      "selected_by_percent": "11.1"
     },
     {
       "id": 40,
@@ -12776,9 +12797,9 @@
       "code": 244850,
       "position": 3,
       "now_cost": 81,
-      "transfers_in": 152959,
-      "transfers_out": 5581,
-      "selected_by_percent": "52.3"
+      "transfers_in": 167409,
+      "transfers_out": 6310,
+      "selected_by_percent": "52.4"
     },
     {
       "id": 115,
@@ -12786,9 +12807,9 @@
       "code": 465730,
       "position": 2,
       "now_cost": 54,
-      "transfers_in": 140719,
-      "transfers_out": 3785,
-      "selected_by_percent": "44.8"
+      "transfers_in": 154168,
+      "transfers_out": 4216,
+      "selected_by_percent": "44.9"
     },
     {
       "id": 31,
@@ -12796,9 +12817,9 @@
       "code": 199798,
       "position": 2,
       "now_cost": 47,
-      "transfers_in": 121558,
-      "transfers_out": 4339,
-      "selected_by_percent": "22.8"
+      "transfers_in": 137711,
+      "transfers_out": 4818,
+      "selected_by_percent": "22.9"
     },
     {
       "id": 154,
@@ -12806,9 +12827,9 @@
       "code": 244851,
       "position": 3,
       "now_cost": 98,
-      "transfers_in": 94871,
-      "transfers_out": 14641,
-      "selected_by_percent": "28.0"
+      "transfers_in": 102805,
+      "transfers_out": 16399,
+      "selected_by_percent": "28.1"
     },
     {
       "id": 53,
@@ -12816,9 +12837,9 @@
       "code": 614071,
       "position": 3,
       "now_cost": 61,
-      "transfers_in": 83456,
-      "transfers_out": 4660,
-      "selected_by_percent": "6.9"
+      "transfers_in": 92721,
+      "transfers_out": 5251,
+      "selected_by_percent": "7.0"
     },
     {
       "id": 4,
@@ -12826,9 +12847,9 @@
       "code": 226597,
       "position": 2,
       "now_cost": 80,
-      "transfers_in": 70069,
-      "transfers_out": 7503,
-      "selected_by_percent": "24.4"
+      "transfers_in": 77020,
+      "transfers_out": 8380,
+      "selected_by_percent": "24.5"
     },
     {
       "id": 109,
@@ -12836,9 +12857,9 @@
       "code": 489639,
       "position": 1,
       "now_cost": 46,
-      "transfers_in": 64112,
-      "transfers_out": 6065,
-      "selected_by_percent": "23.0"
+      "transfers_in": 69923,
+      "transfers_out": 6702,
+      "selected_by_percent": "23.1"
     },
     {
       "id": 124,
@@ -12846,8 +12867,8 @@
       "code": 60307,
       "position": 3,
       "now_cost": 62,
-      "transfers_in": 60669,
-      "transfers_out": 33567,
+      "transfers_in": 67036,
+      "transfers_out": 36838,
       "selected_by_percent": "46.9"
     },
     {
@@ -12856,9 +12877,9 @@
       "code": 204480,
       "position": 3,
       "now_cost": 74,
-      "transfers_in": 55499,
-      "transfers_out": 17238,
-      "selected_by_percent": "12.3"
+      "transfers_in": 66102,
+      "transfers_out": 17825,
+      "selected_by_percent": "12.4"
     },
     {
       "id": 129,
@@ -12866,9 +12887,19 @@
       "code": 509416,
       "position": 3,
       "now_cost": 54,
-      "transfers_in": 53601,
-      "transfers_out": 1374,
-      "selected_by_percent": "1.3"
+      "transfers_in": 59002,
+      "transfers_out": 1544,
+      "selected_by_percent": "1.4"
+    },
+    {
+      "id": 566,
+      "name": "Silva",
+      "code": 483067,
+      "position": 2,
+      "now_cost": 50,
+      "transfers_in": 51505,
+      "transfers_out": 1628,
+      "selected_by_percent": "2.5"
     },
     {
       "id": 504,
@@ -12876,8 +12907,8 @@
       "code": 610799,
       "position": 2,
       "now_cost": 52,
-      "transfers_in": 46387,
-      "transfers_out": 6584,
+      "transfers_in": 51173,
+      "transfers_out": 7217,
       "selected_by_percent": "7.3"
     },
     {
@@ -12886,29 +12917,9 @@
       "code": 154561,
       "position": 1,
       "now_cost": 62,
-      "transfers_in": 44186,
-      "transfers_out": 9508,
-      "selected_by_percent": "46.5"
-    },
-    {
-      "id": 566,
-      "name": "Silva",
-      "code": 483067,
-      "position": 2,
-      "now_cost": 50,
-      "transfers_in": 42947,
-      "transfers_out": 1395,
-      "selected_by_percent": "2.4"
-    },
-    {
-      "id": 138,
-      "name": "Kostoulas",
-      "code": 647850,
-      "position": 4,
-      "now_cost": 58,
-      "transfers_in": 34253,
-      "transfers_out": 36057,
-      "selected_by_percent": "10.2"
+      "transfers_in": 49140,
+      "transfers_out": 10554,
+      "selected_by_percent": "46.6"
     },
     {
       "id": 8,
@@ -12916,9 +12927,19 @@
       "code": 466075,
       "position": 2,
       "now_cost": 59,
-      "transfers_in": 33545,
-      "transfers_out": 71180,
+      "transfers_in": 38519,
+      "transfers_out": 73421,
       "selected_by_percent": "47.9"
+    },
+    {
+      "id": 138,
+      "name": "Kostoulas",
+      "code": 647850,
+      "position": 4,
+      "now_cost": 58,
+      "transfers_in": 37541,
+      "transfers_out": 39541,
+      "selected_by_percent": "10.2"
     }
   ],
   "nextGW": 10,
@@ -12932,7 +12953,7 @@
       "team": "AVL",
       "now_cost": 70,
       "change": 1,
-      "selected_by_percent": "25.6"
+      "selected_by_percent": "25.9"
     },
     {
       "id": 68,
@@ -12942,7 +12963,7 @@
       "team": "BOU",
       "now_cost": 66,
       "change": 1,
-      "selected_by_percent": "27.3"
+      "selected_by_percent": "27.5"
     },
     {
       "id": 79,
@@ -12952,7 +12973,7 @@
       "team": "BOU",
       "now_cost": 64,
       "change": 1,
-      "selected_by_percent": "17.6"
+      "selected_by_percent": "17.9"
     },
     {
       "id": 115,
@@ -12962,7 +12983,7 @@
       "team": "BHA",
       "now_cost": 54,
       "change": 1,
-      "selected_by_percent": "44.8"
+      "selected_by_percent": "44.9"
     },
     {
       "id": 286,
@@ -12982,7 +13003,7 @@
       "team": "LIV",
       "now_cost": 92,
       "change": 1,
-      "selected_by_percent": "21.5"
+      "selected_by_percent": "21.6"
     },
     {
       "id": 112,
@@ -12992,7 +13013,7 @@
       "team": "TOT",
       "now_cost": 50,
       "change": 1,
-      "selected_by_percent": "11.0"
+      "selected_by_percent": "11.1"
     }
   ],
   "priceFallers": [
@@ -13034,7 +13055,7 @@
       "team": "CHE",
       "now_cost": 77,
       "change": -1,
-      "selected_by_percent": "40.7"
+      "selected_by_percent": "40.2"
     },
     {
       "id": 568,
@@ -13094,7 +13115,7 @@
       "team": "MCI",
       "now_cost": 79,
       "change": -1,
-      "selected_by_percent": "35.7"
+      "selected_by_percent": "35.5"
     }
   ],
   "dreamTeam": [
@@ -13188,5 +13209,5 @@
     }
   ],
   "dreamTeamGW": 9,
-  "generated_at": "2026-11-03T06:24:20.672Z"
+  "generated_at": "2026-11-03T14:58:16.049Z"
 }
