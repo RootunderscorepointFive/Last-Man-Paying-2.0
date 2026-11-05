@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T15:20:09.692Z",
+  "generated_at": "2026-11-05T16:33:38.140Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 9,
@@ -2127,6 +2127,35 @@
       "subject": "FPL Last Man Paying — outstanding R100",
       "sent_at": "2026-10-27T06:27:47.441Z",
       "sent_by": "treasurer"
+    },
+    {
+      "type": "weekly_summary",
+      "gw": 9,
+      "recipients": [
+        "Minenhle Khumalo",
+        "Sthe Coqueto",
+        "Fanele Msweli",
+        "Thembalethu Miya",
+        "Learnmore Ntshangase",
+        "Bheka Bhengu",
+        "Thato Choshi",
+        "Mtho Mabizela",
+        "Kudzai Kupeta",
+        "Lethu Mkhwanazi",
+        "Siyanda Ndaba",
+        "Nhlakanipho Ntombela",
+        "President Gamede",
+        "Luthando Ngidi",
+        "Mhlengi Kunene",
+        "Mbuyi Katumba",
+        "Nkosi The Chef",
+        "Zazi Zuma",
+        "Kwazi Mthembu",
+        "Msizi Bhengu"
+      ],
+      "subject": "LMP · GW9 Weekly Report",
+      "sent_at": "2026-11-05T16:33:38.140Z",
+      "sent_by": "Themba"
     }
   ]
 }
