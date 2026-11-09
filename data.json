@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-09T05:56:01.738Z",
+  "generated_at": "2026-11-09T15:58:15.984Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
-  "last_synced_gw": 9,
+  "last_synced_gw": 10,
   "managers": [
     {
       "entry": 6404452,
@@ -99,13 +99,32 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_6404452_gw10_bottom",
+          "gw": 10,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW10 (post-hits 49, threshold 57)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-09T15:58:15.929Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
-        2
+        2,
+        10
       ],
-      "epithet": "Public Enemy #1",
-      "epithet_tagline": "Paid more into the pot than anyone — R700 in fines",
+      "epithet": "Big Spender",
+      "epithet_tagline": "Priciest squad in the league — £98.9m",
       "credits": 0
     },
     {
@@ -137,8 +156,8 @@
       "bottom_finishes": [
         1
       ],
-      "epithet": "Bargain Bin",
-      "epithet_tagline": "Doing it on a shoestring — £98.8m squad",
+      "epithet": "Public Enemy #1",
+      "epithet_tagline": "Paid more into the pot than anyone — R100 in fines",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-09-24T05:43:17.861Z",
@@ -183,10 +202,29 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_800204_gw10_bottom",
+          "gw": 10,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW10 (post-hits 57, threshold 57)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-09T15:58:15.929Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
-        5
+        5,
+        10
       ],
       "epithet": "The Patient One",
       "epithet_tagline": "Only 6 transfers all season",
@@ -286,15 +324,34 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_3490103_gw10_bottom",
+          "gw": 10,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW10 (post-hits 55, threshold 57)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-09T15:58:15.929Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         4,
         6,
-        8
+        8,
+        10
       ],
-      "epithet": "Bottled It",
-      "epithet_tagline": "Rock bottom — GW low of 25 pts",
+      "epithet": "The Regular",
+      "epithet_tagline": "Most bottom finishes — 4 of 38",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-09-25T06:26:27.762Z",
@@ -446,8 +503,8 @@
         7,
         9
       ],
-      "epithet": "The Tinkerman",
-      "epithet_tagline": "Can't stop fiddling — 10 transfers, 8 hit pts, 14th to show for it",
+      "epithet": "Trigger Happy",
+      "epithet_tagline": "Itchy trigger finger — 10 transfers",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-09-01T19:46:53.602Z",
@@ -660,14 +717,33 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_4370096_gw10_bottom",
+          "gw": 10,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW10 (post-hits 57, threshold 57)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-09T15:58:15.929Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         3,
-        6
+        6,
+        10
       ],
       "epithet": "The Fugitive",
-      "epithet_tagline": "Owes the pot the most — R1050",
+      "epithet_tagline": "Owes the pot the most — R1150",
       "credits": 0
     },
     {
@@ -747,16 +823,35 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_6934465_gw10_bottom",
+          "gw": 10,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW10 (post-hits 55, threshold 57)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-09T15:58:15.929Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         1,
         7,
         8,
-        9
+        9,
+        10
       ],
       "epithet": "The Dark Horse",
-      "epithet_tagline": "Quietly finished 16th without owning a single category",
+      "epithet_tagline": "Quietly finished 17th without owning a single category",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-09-01T05:42:32.416Z"
@@ -832,8 +927,8 @@
       "joining_fee_paid": true,
       "fines": [],
       "bottom_finishes": [],
-      "epithet": "Trigger Happy",
-      "epithet_tagline": "Itchy trigger finger — 9 transfers",
+      "epithet": "Bargain Bin",
+      "epithet_tagline": "Doing it on a shoestring — £98.5m squad",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-08-25T05:08:51.225Z"
@@ -919,8 +1014,8 @@
       "bottom_finishes": [
         5
       ],
-      "epithet": "Big Spender",
-      "epithet_tagline": "Priciest squad in the league — £100.8m",
+      "epithet": "Bottled It",
+      "epithet_tagline": "Rock bottom — GW low of 33 pts",
       "credits": 0,
       "joining_fee_paid_by": "treasurer",
       "joining_fee_paid_date": "2026-09-01T05:41:19.772Z",
@@ -947,8 +1042,29 @@
       "name": "Nkosi The Chef",
       "team": "Mainoo Business",
       "joining_fee_paid": true,
-      "fines": [],
-      "bottom_finishes": [],
+      "fines": [
+        {
+          "id": "f_112702_gw10_bottom",
+          "gw": 10,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW10 (post-hits 57, threshold 57)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-09T15:58:15.929Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        10
+      ],
       "epithet": "One-Hit Wonder",
       "epithet_tagline": "One big week — season-high 117, forgettable rest",
       "credits": 0,
@@ -1040,8 +1156,8 @@
         7,
         9
       ],
-      "epithet": "The Regular",
-      "epithet_tagline": "Most bottom finishes — 4 of 38",
+      "epithet": "The Tinkerman",
+      "epithet_tagline": "Can't stop fiddling — 11 transfers, 12 hit pts, 15th to show for it",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
       "joining_fee_paid_date": "2026-09-14T15:21:51.236Z"
