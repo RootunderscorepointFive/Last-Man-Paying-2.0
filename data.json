@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T18:08:13.915Z",
+  "generated_at": "2026-11-09T18:08:44.196Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 10,
@@ -8,7 +8,7 @@
       "entry": 6404452,
       "name": "Minenhle Khumalo",
       "team": "The Wirtz Edge",
-      "joining_fee_paid": false,
+      "joining_fee_paid": true,
       "fines": [
         {
           "id": "f_6404452_gw2_bottom",
@@ -125,7 +125,9 @@
       ],
       "epithet": "Big Spender",
       "epithet_tagline": "Priciest squad in the league — £98.9m",
-      "credits": 0
+      "credits": 0,
+      "joining_fee_paid_by": "Themba",
+      "joining_fee_paid_date": "2026-11-09T18:08:44.196Z"
     },
     {
       "entry": 3801396,
