@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T12:46:23.562Z",
+  "generated_at": "2026-11-19T14:50:37.209Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 10,
@@ -489,7 +489,7 @@
           "type": "bottom",
           "status": "confirmed",
           "reason": "LMP bottom-3 — GW9 (post-hits 42, threshold 45)",
-          "paid_date": null,
+          "paid_date": "2026-11-19T14:50:37.209Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -498,7 +498,8 @@
           "added_date": "2026-11-03T20:54:18.317Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "Themba"
         }
       ],
       "bottom_finishes": [
