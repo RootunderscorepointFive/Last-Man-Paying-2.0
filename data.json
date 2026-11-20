@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T07:13:31.576Z",
+  "generated_at": "2026-11-20T07:15:16.496Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 10,
@@ -2494,6 +2494,15 @@
       "subject": "FPL Last Man Paying — outstanding R100",
       "sent_at": "2026-11-20T07:13:31.307Z",
       "sent_by": "treasurer"
+    },
+    {
+      "type": "announcement",
+      "recipients": [
+        "Thembalethu Miya"
+      ],
+      "subject": "Demo email for AI session",
+      "sent_at": "2026-11-20T07:15:16.495Z",
+      "sent_by": "Themba"
     }
   ]
 }
