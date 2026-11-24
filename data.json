@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T06:53:19.841Z",
+  "generated_at": "2026-11-24T16:36:48.211Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
   "last_synced_gw": 10,
@@ -17,7 +17,7 @@
           "type": "bottom",
           "status": "confirmed",
           "reason": "LMP bottom-3 — GW2 (post-hits 72, threshold 72)",
-          "paid_date": null,
+          "paid_date": "2026-11-24T16:36:48.211Z",
           "reversed": false,
           "reversed_reason": null,
           "reversed_by": null,
@@ -26,7 +26,8 @@
           "added_date": "2026-09-01T14:42:36.093Z",
           "edited_by": null,
           "edited_date": null,
-          "edit_history": []
+          "edit_history": [],
+          "paid_by": "payment"
         },
         {
           "id": "f_6404452_1790876733481",
@@ -127,7 +128,24 @@
       "epithet_tagline": "Top-3 gameweek finish 3 times this season",
       "credits": 0,
       "joining_fee_paid_by": "Themba",
-      "joining_fee_paid_date": "2026-11-09T18:08:44.196Z"
+      "joining_fee_paid_date": "2026-11-09T18:08:44.196Z",
+      "payments": [
+        {
+          "id": "p_6404452_1795538208236",
+          "amount": 100,
+          "date": "2026-11-24T16:36:48.211Z",
+          "recorded_by": "Themba",
+          "allocated": [
+            {
+              "kind": "fine",
+              "id": "f_6404452_gw2_bottom",
+              "gw": 2,
+              "amount": 100
+            }
+          ],
+          "credit_after": 0
+        }
+      ]
     },
     {
       "entry": 3801396,
