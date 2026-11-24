@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-24T16:36:48.211Z",
+  "generated_at": "2026-11-24T16:40:06.385Z",
   "source": "season reset: 2025-26 archived -> 2026-27 opened",
   "current_season": "2026-27",
-  "last_synced_gw": 10,
+  "last_synced_gw": 11,
   "managers": [
     {
       "entry": 6404452,
@@ -590,11 +590,30 @@
           "edited_date": null,
           "edit_history": [],
           "paid_by": "payment"
+        },
+        {
+          "id": "f_4893790_gw11_bottom",
+          "gw": 11,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW11 (post-hits 25, threshold 27)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-24T16:40:06.324Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         3,
-        5
+        5,
+        11
       ],
       "epithet": "The Phoenix",
       "epithet_tagline": "Rose from the ashes — climbed 10 places",
@@ -862,6 +881,24 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_6934465_gw11_bottom",
+          "gw": 11,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW11 (post-hits 27, threshold 27)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-24T16:40:06.324Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
@@ -869,7 +906,8 @@
         7,
         8,
         9,
-        10
+        10,
+        11
       ],
       "epithet": "The Dark Horse",
       "epithet_tagline": "Quietly finished 19th without owning a single category",
@@ -882,8 +920,29 @@
       "name": "Nhlakanipho Ntombela",
       "team": "iam_ntombela",
       "joining_fee_paid": true,
-      "fines": [],
-      "bottom_finishes": [],
+      "fines": [
+        {
+          "id": "f_3805612_gw11_bottom",
+          "gw": 11,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW11 (post-hits 26, threshold 27)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-24T16:40:06.324Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
+        }
+      ],
+      "bottom_finishes": [
+        11
+      ],
       "epithet": "The Chef's Special",
       "epithet_tagline": "League leader — 745 pts",
       "credits": 0,
@@ -1314,11 +1373,30 @@
           "edited_by": null,
           "edited_date": null,
           "edit_history": []
+        },
+        {
+          "id": "f_770193_gw11_bottom",
+          "gw": 11,
+          "amount": 100,
+          "type": "bottom",
+          "status": "confirmed",
+          "reason": "LMP bottom-3 — GW11 (post-hits 26, threshold 27)",
+          "paid_date": null,
+          "reversed": false,
+          "reversed_reason": null,
+          "reversed_by": null,
+          "reversed_date": null,
+          "added_by": "fpl-api",
+          "added_date": "2026-11-24T16:40:06.324Z",
+          "edited_by": null,
+          "edited_date": null,
+          "edit_history": []
         }
       ],
       "bottom_finishes": [
         7,
-        8
+        8,
+        11
       ],
       "epithet": "Glass Cannon",
       "epithet_tagline": "Most volatile scorer — swings of ±24.8",
